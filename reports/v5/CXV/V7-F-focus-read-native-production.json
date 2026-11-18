@@ -1,0 +1,145 @@
+{
+  "utc": "2026-11-18T01:17:51.954Z",
+  "source": "3050ee5ae7e14cdd57a6b31b7ecc03405c44eacf",
+  "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "indexSha256": "45f38b9326b12abeb837ca2bcd74a7c998de21c32c30c6064be4508366b34cf0",
+  "nativeFocusSha256": "0f1a74b4fc490e8a9cc7cd88c7c3aba97b33b3b0effdacb230d1124c39206a45",
+  "artifactTransforms": 0,
+  "envDir": false,
+  "artifactFilesExactToPrototype": true,
+  "artifactFiles": 3764,
+  "snapshots": [
+    {
+      "name": "run-focus-read-native-production.mjs",
+      "sha256": "c0a74f53232b37306584f6d60fe29650a6666dbec3f726a6b2bb2107c9e1bb43"
+    },
+    {
+      "name": "build-hud-production.mjs",
+      "sha256": "ed0207338f9a07a6cdd74cd1728251a41608f6a43ac73ebf78064c2fd4fa45a2"
+    },
+    {
+      "name": "benchmark-boss-play.mjs",
+      "sha256": "1971fd677f6426f88331a82cfbb6afbabbe8fec2e07cc24af920d8254c8c6071"
+    },
+    {
+      "name": "production-candidate-fixture.mjs",
+      "sha256": "a5a7e659ba0c3f5e69e9881ab817c580721a669bdb8b7d1ff3c0b552f12494f1"
+    }
+  ],
+  "raw": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-focus-read-native-production/trial/report.json",
+    "sha256": "117133c530a5f05a14fd90a6758c6de8b563240db5b310058a3f807463a84b23"
+  },
+  "buildManifest": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-focus-read-native-production/build.json",
+    "sha256": "26c3010e4fb6118a88ab866c2c1476c3a65c80e2c986325137a154007c1203f8"
+  },
+  "url": "http://127.0.0.1:6312/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "started": "2026-11-18T01:16:41.961Z",
+  "ended": "2026-11-18T01:17:51.679Z",
+  "pass": true,
+  "runs": [
+    {
+      "rate": 1,
+      "elapsedMs": 32000.5,
+      "actions": 26,
+      "ultimates": 6,
+      "focus": {
+        "median": 4.299999997019768,
+        "p95": 5.699999988079071,
+        "p99": 5.699999988079071,
+        "max": 5.699999988079071
+      },
+      "entryRender": {
+        "median": 10.299999997019768,
+        "p95": 18.200000002980232,
+        "p99": 18.200000002980232,
+        "max": 18.200000002980232
+      },
+      "frame": {
+        "median": 16.69999999999891,
+        "p95": 16.700000000004366,
+        "p99": 16.80000000000109,
+        "max": 16.80000000000291
+      },
+      "layout": {
+        "LayoutCount": 2746,
+        "LayoutDuration": 0.101046,
+        "RecalcStyleCount": 5674,
+        "RecalcStyleDuration": 0.632583,
+        "TaskDuration": 9.702583
+      },
+      "blockedRequests": []
+    },
+    {
+      "rate": 4,
+      "elapsedMs": 32032,
+      "actions": 26,
+      "ultimates": 6,
+      "focus": {
+        "median": 18.799999997019768,
+        "p95": 22,
+        "p99": 22,
+        "max": 22
+      },
+      "entryRender": {
+        "median": 43.29999999701977,
+        "p95": 59.1000000089407,
+        "p99": 59.1000000089407,
+        "max": 59.1000000089407
+      },
+      "frame": {
+        "median": 16.700000000000728,
+        "p95": 33.400000000001455,
+        "p99": 66.59999999999991,
+        "max": 133.30000000000018
+      },
+      "layout": {
+        "LayoutCount": 2070,
+        "LayoutDuration": 0.388085,
+        "RecalcStyleCount": 4332,
+        "RecalcStyleDuration": 2.356646,
+        "TaskDuration": 31.835926999999998
+      },
+      "blockedRequests": []
+    }
+  ],
+  "errors": [],
+  "captures": [
+    {
+      "rate": 1,
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-focus-read-native-production/trial/boss-1x.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "adad5ef780bfe7d5c3e843a848d673e156f0ef89eba225646a835594aec792d8",
+      "rgbSha256": "80cf4e9a3f0b7db7f0f49abe0c98910a7926280e4b950046f6eb014f404871d5",
+      "review": {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-focus-read-native-production/1x-review.jpg",
+        "width": 1024,
+        "height": 576,
+        "sha256": "2db7cb2dc6c561f2278d5b348b57931ca09291da468cf8924209bf9513dfe508"
+      }
+    },
+    {
+      "rate": 4,
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-focus-read-native-production/trial/boss-4x.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "33ba76460d9d94e337962a04c56cacb87b7037fbe28163139a366e144da235ce",
+      "rgbSha256": "6d75063ecfe74bbb8dfeab961913977c8000ba56479e05c93c1f82dc06d40b56",
+      "review": {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-focus-read-native-production/4x-review.jpg",
+        "width": 1024,
+        "height": 576,
+        "sha256": "da0acd29217dbced0744a8e23f81d872a2546fb84cc01970d0b84627d0fccb4a"
+      }
+    }
+  ],
+  "reviewedUtc": "2026-11-18T01:18:31.104836+00:00",
+  "interpretation": "Two new measured1024x576 production views reviewed once; four heroes, status labels, boss and HUD remain readable. Native untransformed source3050ee5ae matches all3764 prototype artifact files;26actions/6ultimates per32s rate,zeroerrors/blocks. Native focus medians4.3/18.8ms are validation only; six alternating trials support bounded focus-entry reduction, not general FPS. Independent CXI judge acceptance pending.",
+  "limits": "Untransformed native local production validation, not another causal comparison or independent judge acceptance. All timing is elapsed, not exclusive CPU. Host-relative4x is not physical laptop equivalence."
+}

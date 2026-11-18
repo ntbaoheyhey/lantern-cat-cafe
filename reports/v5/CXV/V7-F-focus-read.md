@@ -1,0 +1,11 @@
+# Ultimate focus geometry reads
+
+Native application change: 3050ee5ae, only `battle-v3/identified-focus.ts`. Reuse HUD rectangles from the current synchronous paint and measure the title before temporary pending-label clones are inserted. Existing identity/width/parent/canvas ordering, label callbacks, collision inputs and dirty events remain intact; there is no cross-frame cache.
+
+Correctness: 13 focused tests, full web typecheck with zero diagnostics, 80 exact geometry groups and eight exact full-frame RGB comparisons. Four fresh 1024×576 comparison sheets reviewed once after measuring eight native 1280×720 frames. Native fixture records its predeclared Google Fonts CSS block; no unexpected block or browser error occurred. Details: `V7-F-focus-read-native-{adoption,correctness,vitest}.json` and `V7-F-focus-read-types-native.json`.
+
+Six alternating production trials support a bounded reduction in focus-entry elapsed time: medians 4.8→4.1ms at1× and22.7→19.6ms at4×. Every candidate trial median was below every baseline median. Entry-render medians11.0→11.1ms and44.4→43.1ms overlap; global4×framep95 remains33.4ms, with no late-frame improvement. Whole-page layout totals decrease modestly, while task/style totals overlap. These are elapsed measurements, not exclusive CPU or a general FPS improvement. See `V7-F-focus-read-production.json`.
+
+Production gate passed: untransformed3050ee5ae, index45f38b9326b12abeb837ca2bcd74a7c998de21c32c30c6064be4508366b34cf0, all3764 artifact files exactly match the tested prototype. Two32s runs each produced26actions/sixultimates with zero errors/blocks. Native focus medians4.3/18.8ms, entry-render10.3/43.3ms and framep9516.7/33.4ms are validation samples, not another causal comparison. Two fresh views were measured and reviewed once. Details: `V7-F-focus-read-native-production.json`. Independent CXI judge acceptance remains pending. The normalized native source matches the preserved exact production prototype except one whitespace-only blank line. Study gate01:12:31Z preceded adoption01:14:55Z.
+
+The complete natural battle stress gate will reuse the verified native artifact, so later ultimates, normal/reduced rule parity and the victory transition are exercised without rebuilding or substituting application modules.

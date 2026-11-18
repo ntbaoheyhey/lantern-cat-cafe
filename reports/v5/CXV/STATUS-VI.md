@@ -47,3 +47,5 @@ AGV còn T-CXV-1 audit REDO và T-CXV-2 nghiên cứu có nguồn; đã ACK17:02
 2026-11-18T00:05:21.828385+00:00 Trận đầyđủ4xCPU:hai chếđộ đều thắng~101giây,68hànhđộng/24ulti vàlog giốngnhau;0lỗi,4ảnh mới đãxem. Hiệuứng/số/mặt/mànthắng rõ. Framep95=50ms;64/79khoảng>50.5ms còn tồn tại,không kếtluận máy thật chạy20FPS hayđã tốiưu xong.
 
 2026-11-18: Đã sửa fallback chiến thắng khi WebGL khởi tạo lại thất bại (d4491cbb5): 6 kiểm thử và typecheck đạt; hai chế độ chuyển động đạt. Đã gửi CXI kiểm tra tích hợp. Sai khác pixel nền giữa các lượt vẫn được giữ lại, tối ưu render chiến thắng vẫn bị chặn. Xác nhận toast mở khóa che một phần cạnh dưới Next/Details, đã gửi CXI. Đang kiểm tra trọn trận bằng bản build production cục bộ ở mức CPU 4x; không dùng làm bằng chứng laptop thực tế.
+
+2026-11-18T01:18:31.104836+00:00 Focus3050ee5ae đã qua13test/typecheck0,80nhóm vị trí và8cặp RGB trùng;production native3764file trùng prototype,0lỗi/0requestbịchặn,2ảnh mới rõ. Sáu lượt đối chứng giảm thời gian focus4.8→4.1/22.7→19.6ms;framep95 vẫn33.4ms ở4x,không gọi là hết giật. Tiếp tục trận đầy đủ;CXI chưa kiểm độc lập.
