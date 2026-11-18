@@ -22,3 +22,5 @@ Cập nhật 2026-11-18T05:16:45.928309+00:00. Panko đã qua16 kiểm tra tập
 2026-11-18T09:07:08.966183+00:00 — Đã đối chiếu 37 tệp âm thanh với bản R5 đang phục vụ, đúng byte/hash và index. Tải âm thanh đo được 2,22/2,44/2,46 MB; đây chỉ là bằng chứng tải, chưa chứng minh có thể bỏ preload. Bản sửa ngừng video ẩn đã nhập và qua 40 kiểm tra tập trung, chưa dựng R6. Chưa phát hành.
 
 2026-11-18T09:14:37.307271+00:00 — R6 đã ngừng video sân đấu khi mở màn thắng: đồng hồ và bộ đếm frame/drop giữ nguyên ở cả hai chế độ; video màn thắng vẫn chạy đủ vòng10giây.146mẫu và2ảnh mới đạt. Toàn bộ5499kiểm tra thành công theo kỳ vọng(5486đạt,11bỏqua,2lỗidựkiến);chưa có kết luận FPS chung. CXV kiểm tra trận tự nhiên/panelboss;Clover và ngân sách8MB còn chặn phát hành.
+
+2026-11-18T09:32:35.121889+00:00 — R6: kiểm tra độc lập trận thường/giảm chuyển động đạt phạm vi hẹp (1.059 mẫu không che chân dung; bộ giải mã dừng ở kết quả). Tải lạnh 8.509.074 / 8.975.988 / 8.584.766 byte vẫn vượt 8 MB, chưa có Clover nên chưa phát hành. 37 tệp âm thanh và 12 bản gọi tên không đổi; chưa chấp nhận thay thế âm thanh. Landing R9 vẫn làm mịn chi tiết, không dùng.
