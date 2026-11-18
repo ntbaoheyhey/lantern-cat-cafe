@@ -1,10 +1,10 @@
 # CXV V8 handoff
-ACTIVE footer lifecycle fourpage capture running;frozen prototype unchanged;empty/focus-loss check;measure beforeview.
+ACTIVE footer R1 lifecycleREJECT:Scald focuslost350ms+ whileoriginal6of6retains;32PNGs/16repeats/64states/4rawpairsPASS;strictscenecontrolFAILretained.
 Worktree /Users/bao/taskbar-hero-cardrpg-a6;branch codex/v5-vfx-2026-11-17;desktop1280x720.
-NEXT 1: Measure work/v5/CXV/batch-m/footer-lifecycle-r1-180931;preserve focus and pixel failures;no images viewed.
+NEXT 1: Localize lifecycle before/after failures;design stable status-node update in separate prototype revision;never refit R1 evidence.
 NEXT 2: Implement Panko original/candidate offline parity harness;no timing before separate CXI grant;no appsource changed.
 NEXT 3: AGV Sorrel film/hashACCEPT;inventorystillOPEN;localizedEN/ZH eye sourcesaccepted withrandominterval0..16 limit;new focus lifecycle researchactive.
-Last confirmed pushed95ef4a737;GREENv5-m1.15 merged;Mochi-only e66485f9/sourcebf01 diagnostic;source registryempty.
+Last confirmed pushedb205c5702;GREENv5-m1.15 merged;Mochi-only e66485f9/sourcebf01 diagnostic;source registryempty.
 Order ORDER-V8.txt SHA256 a2b825b3cc7b3e145c95858ead33312bcbeae0af0521f201ded923f3f87efbbd.
 Wake cxv-wake ACTIVE15min app+TOML verified2026-11-18T17:59:38.669032+00:00;preserve unchanged.
 Jobs:none;footerLifecycle82346 exit0/groupempty verified;explicitrelease 2026-11-18T18:10:58.045084+00:00

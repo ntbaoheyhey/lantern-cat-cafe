@@ -1,0 +1,83 @@
+{
+  "utc": "2026-11-18T18:13:11.263081+00:00",
+  "fixtures": [
+    "panko",
+    "mochi",
+    "clover",
+    "teacup-healer",
+    "binding-thread",
+    "needle-moth",
+    "yarn-giant"
+  ],
+  "scope": "Offline whole DrawingLayer synthetic timing;not natural gameplay or browser FPS.",
+  "prerequisite": "All3101finite/recovery sample comparisons plus7initial and3missing-offHand states exact;no Soot fixture.",
+  "warmupSamples": 256,
+  "samplesPerBlock": 2048,
+  "order": [
+    "A",
+    "B",
+    "B",
+    "A",
+    "B",
+    "A",
+    "A",
+    "B"
+  ],
+  "coldPairs": [
+    "AB",
+    "BA",
+    "AB",
+    "BA",
+    "AB",
+    "BA",
+    "AB",
+    "BA",
+    "AB",
+    "BA",
+    "AB",
+    "BA",
+    "AB",
+    "BA",
+    "AB",
+    "BA"
+  ],
+  "groups": [
+    {
+      "name": "panko",
+      "fixtures": [
+        "panko"
+      ]
+    },
+    {
+      "name": "seven-drawings",
+      "fixtures": [
+        "panko",
+        "mochi",
+        "clover",
+        "teacup-healer",
+        "binding-thread",
+        "needle-moth",
+        "yarn-giant"
+      ]
+    }
+  ],
+  "scenario": "Normal motion,3idle samples per1skill;idle0..10s,skill0..1s at1/60 steps;clock30+t,target.7,critAge-1. Fixedsynthetic distribution,not observed live action rates.",
+  "caseCounts": {
+    "paritySamples": 3101,
+    "initialStates": 7,
+    "missingOffHandStates": 3,
+    "coldConstructors": 32,
+    "timedBlocks": 16,
+    "timedSyntheticFrames": 32768
+  },
+  "timeBound": "Request6minute host lease including module build/parity;timing expected<90s;check STOP/lease each block and retain any overrun as failure.",
+  "coldMeaning": "Already compiled/warm code,per-instance new geometry and empty cache;texture objects precreated;allocation duration excludes texture decode and disposal. No claim actual firstload.",
+  "decision": {
+    "advanceToNativeOnlyIf": "Exactparity;Panko median>=5percent gain;7drawing median>=3percent and>=.05ms/syntheticframe gain;atleast3of4 adjacent pairs faster;median cold allocation increment<=1ms. Otherwise reject timing escalation.",
+    "statistics": "Observed medians/ranges and paired differences;not confidence intervals."
+  },
+  "hostGrantRequired": true,
+  "productionAcceptance": false,
+  "harnessSha256": "24f8cb02ca0080496d2b9c8d56936c8b29a5c1eeaaf512b16177190558e7672f",
+  "parityHarnessSha256": "83a6e36207aba91ab83c96c5eac1413ce1903b1e68bc8ae0561ed388e0aacb8d"
+}
