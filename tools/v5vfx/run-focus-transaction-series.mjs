@@ -6,7 +6,7 @@ import {existsSync} from 'node:fs';
 import {resolve} from 'node:path';
 import {buildProductionComparison,root,appRoot,require} from './build-hud-production.mjs';
 import {hash} from './victory-demand-source.mjs';
-const out=resolve(root,'work/v5/CXV/films/V7-F-focus-transaction-production');assert(existsSync(out));
+const out=resolve(process.env.CXV_PRODUCTION_OUT??resolve(root,'work/v5/CXV/films/V7-F-focus-transaction-production'));assert(out.startsWith(resolve(root,'work/v5/CXV')+'/'));assert(existsSync(out));
 const built=JSON.parse(await readFile(resolve(out,'build.json'))),snapshots=built.snapshots;assert(built.staticAssetsExact);
 const prototype=JSON.parse(await readFile(resolve(root,'work/v5/CXV/films/V7-F-focus-transaction/report.json')));assert(prototype.pass);
 for(const file of snapshots)assert.equal(hash(await readFile(resolve(out,file.name))),file.sha256);

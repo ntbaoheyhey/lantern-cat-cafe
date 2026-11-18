@@ -9,7 +9,7 @@ import {waitForBattleReady} from '../v4ship-lab/rehearsal/battle-ready.mjs';
 const root=resolve(import.meta.dirname,'../..'),require=createRequire(resolve(root,'apps/web/package.json'));
 export const {chromium}=require('@playwright/test');
 export const config=JSON.parse(readFileSync(resolve(root,'scripts/v3a2/fixtures.json')));
-const mode=process.env.CXV_ARTIFACT_MODE;assert(['baseline','text','pruned','native','read'].includes(mode));
+const mode=process.env.CXV_ARTIFACT_MODE;assert(['baseline','text','pruned','native','read','transaction'].includes(mode));
 const parent=resolve(process.env.CXV_PRODUCTION_OUT??resolve(root,'work/v5/CXV/films/V7-F-hud-production'));
 assert(parent.startsWith(resolve(root,'work/v5/CXV')+'/'));
 const built=JSON.parse(readFileSync(resolve(parent,'build.json'))),artifact=built.artifacts.find(a=>a.mode===mode);

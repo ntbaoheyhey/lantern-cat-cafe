@@ -1,0 +1,26 @@
+{
+  "utc": "2026-11-18T04:25:31.712432+00:00",
+  "status": "FAILED harness before candidate browser launch",
+  "cause": "Production fixture allowed modes did not include transaction;baseline trial0 completed,transaction trial1 stopped at import assertion.",
+  "files": [
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-focus-transaction-production/build.json",
+      "sha256": "85a1f35a20183e13495f875cd1a5c23b2585978386af5b75a53712c1b18a0f8b"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-focus-transaction-production/series.json",
+      "sha256": "6f599487e80d2779f66b19227840d938ae76b630cf79ab7ce3c2467bf61e91c0"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-focus-transaction-production/1-transaction.log",
+      "sha256": "0e7717da9fa3582586d03a55079f56d29fe7c5e845c6ce215375702ec4a7fc67"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-focus-transaction-production/trials/0-baseline/report.json",
+      "sha256": "233029433b97b8154cbddda2926f27de7ed3691b8c5d3fb26abb05700f5039e6"
+    }
+  ],
+  "applicationChanged": false,
+  "comparisonAccepted": false,
+  "recovery": "Add explicit transaction fixture mode;retain original directory unchanged;restart all6trials against freshly snapshotted R2 artifacts with same DPR1/1x4x/order/criteria. No failed timings reused or mixed across harness versions."
+}

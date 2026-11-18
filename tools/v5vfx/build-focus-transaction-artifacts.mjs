@@ -6,7 +6,7 @@ import {resolve} from 'node:path';
 import {root,buildProductionComparison} from './build-hud-production.mjs';
 import {transactionSources,focusPath,statusPath} from './focus-transaction-source.mjs';
 import {hash} from './victory-demand-source.mjs';
-const out=resolve(root,'work/v5/CXV/films/V7-F-focus-transaction-production');assert(!existsSync(out));await mkdir(out,{recursive:true});
+const out=resolve(process.env.CXV_PRODUCTION_OUT??resolve(root,'work/v5/CXV/films/V7-F-focus-transaction-production'));assert(out.startsWith(resolve(root,'work/v5/CXV')+'/'));assert(!existsSync(out));await mkdir(out,{recursive:true});
 const sources=await transactionSources(root),snapshots=[];
 for(const name of ['build-focus-transaction-artifacts.mjs','run-focus-transaction-series.mjs','focus-transaction-source.mjs','build-hud-production.mjs','benchmark-boss-play.mjs','production-candidate-fixture.mjs']){
  const bytes=await readFile(resolve(root,'tools/v5vfx',name));await writeFile(resolve(out,name),bytes);snapshots.push({name,sha256:hash(bytes)});
