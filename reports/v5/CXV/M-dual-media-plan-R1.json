@@ -1,0 +1,90 @@
+{
+  "utc": "2026-11-18T12:54:18.725871+00:00",
+  "scope": "Offline preparation only; no new native capture or production acceptance",
+  "simulation": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/dual-media-natural-plan-r1/rules-plan.json",
+    "sha256": "87fb1a71d53b1e8574af3176845e77d2749cf123116abdb8954b607acef65993",
+    "passValue": true,
+    "runs": [
+      {
+        "roster": [
+          "mochi",
+          "clover",
+          "panko",
+          "mallow"
+        ],
+        "initialSha256": "d8d2599f2040eb59f7026812676ebd8ccae0155fad58e079fe06a218c171639c",
+        "actions": 55,
+        "result": "party",
+        "logEvents": 503,
+        "round": 8,
+        "finalSha256": "eb62df711d59f409a29e8a14aa793a1a3b5c642e29acca635ee73fa33f671af5",
+        "actors": [
+          {
+            "id": "mochi",
+            "hp": 732,
+            "maxHp": 732
+          },
+          {
+            "id": "clover",
+            "hp": 475,
+            "maxHp": 475
+          },
+          {
+            "id": "panko",
+            "hp": 748,
+            "maxHp": 748
+          },
+          {
+            "id": "mallow",
+            "hp": 560,
+            "maxHp": 560
+          },
+          {
+            "id": "foe-0-yarn-giant",
+            "hp": 0,
+            "maxHp": 1398
+          },
+          {
+            "id": "foe-1-binding-thread",
+            "hp": 0,
+            "maxHp": 987
+          },
+          {
+            "id": "foe-2-binding-thread",
+            "hp": 0,
+            "maxHp": 987
+          },
+          {
+            "id": "foe-7-binding-thread",
+            "hp": 0,
+            "maxHp": 506
+          },
+          {
+            "id": "foe-8-binding-thread",
+            "hp": 0,
+            "maxHp": 506
+          }
+        ]
+      }
+    ]
+  },
+  "roster": [
+    "mochi",
+    "clover",
+    "panko",
+    "mallow"
+  ],
+  "plannedChecks": [
+    "two distinct video elements and independent callbacks",
+    "normal/reduced full boss battles at speed1",
+    "independent full-state rules replay",
+    "both commissioned ultimates observed",
+    "HP/body/face/prop/other-label rectangle overlap",
+    "post-result retained decoder suspension"
+  ],
+  "harnessChecks": "node --check for three JS files; py_compile for runner/measurement",
+  "applicationChanges": [],
+  "imageViews": 0,
+  "captureState": "BLOCKED-ON explicit CXI candidate and lease; next independent work remains active"
+}

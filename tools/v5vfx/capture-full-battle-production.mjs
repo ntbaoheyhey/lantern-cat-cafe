@@ -37,7 +37,7 @@ report.method+=' CPU throttling'+cpuRate+'x begins after fixture loading;4x is a
 const save=()=>writeFile(resolve(out,'report.json'),JSON.stringify(report,null,2)+'\n');
 let active;
 const persistTimeline=async(page,dir)=>{
- const data=await page.evaluate(()=>{const d=globalThis.__cxvFull,m=window.__depthReview;if(d){d.scene.render=d.render;d.scene.beforeFrame=d.beforeFrame;}if(m){m.paused=true;m.notify(false);}return{elapsedMs:d?performance.now()-d.start:null,frames:d?.frames??[],plans:d?.plans??[],log:m?.battle?.log,mediaAudit:globalThis.__cxvMediaAudit??null};});
+ const data=await page.evaluate(()=>{const d=globalThis.__cxvFull,m=window.__depthReview;if(d){d.scene.render=d.render;d.scene.beforeFrame=d.beforeFrame;}if(m){m.paused=true;m.notify(false);}return{elapsedMs:d?performance.now()-d.start:null,frames:d?.frames??[],plans:d?.plans??[],log:m?.battle?.log,finalBattle:m?.battle?structuredClone(m.battle):null,mediaAudit:globalThis.__cxvMediaAudit??null,mediaAudits:globalThis.__cxvMediaAudits??null};});
  await writeFile(resolve(dir,'timeline.json'),JSON.stringify(data));return data;
 };
 try{
@@ -94,7 +94,7 @@ try{
     const density=await(await import('./desktop-density.mjs')).desktopDensity(page,change.ratio),after=await snapshot();for(const b of Object.values(density.composer))assert.deepEqual(b,density.drawingBuffer);
     run.densityTransitions.push({scheduledMs:change.at,ratio:change.ratio,before,after,density});
    }
-   if(state.signal&&run.captures.length<6)await capture(state.signal);
+   if(state.signal&&run.captures.length<6&&(!artifactIdentity.mediaCats?.length||!state.signal.startsWith('ultimate-')||artifactIdentity.roster.includes(state.signal.slice(9))))await capture(state.signal);
    if(state.screen==='result'){reachedResult=true;break;}
    await page.waitForTimeout(150);
   }
@@ -113,7 +113,7 @@ try{
      const after=await snapshot();assert.deepEqual(after.crew[0].rect,before.crew[0].rect);assert.deepEqual(after.actors,before.actors);run.victoryDensityTransitions.push({ratio,before,after});
     }
    }
-   await page.waitForTimeout(700);await capture('result-later');
+   await page.waitForTimeout(artifactIdentity.mediaCats?.length===2?1500:700);await capture('result-later');
   }else await capture('timeout');
   const data=await persistTimeline(page,dir);
   const stats=values=>{const a=values.filter(Number.isFinite).sort((a,b)=>a-b);return{samples:a.length,median:a[Math.floor(a.length*.5)],p95:a[Math.floor(a.length*.95)],max:a.at(-1)};};

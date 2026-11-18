@@ -1,10 +1,10 @@
 # CXV V8 handoff
 ACTIVE BatchM introR2 transientWave1/1 attributed;onefreshsheetonce;authoredanchorsPASS;assistant:AGV.
 Worktree /Users/bao/taskbar-hero-cardrpg-a6;branch codex/v5-vfx-2026-11-17;desktop1280x720.
-NEXT 1: Extend tools/v5vfx/media-production-fixture.mjs and run-media-natural.py for bothMochi+Clover/Panko/Mallow;prepare independent lifecycle/rules measurement before lease.
+NEXT 1: Obtain next validated dualcat descriptor+explicit6301lease;run run-media-natural.py --cat both;rules replay+measure before views.
 NEXT 2: Review higher-sampling Clover trial on explicitcandidate+lease after native gates;loop/matte/performance stillopen.
 NEXT 3: Review AGV T-M1/T-M2;continue BatchM art/loop/performance before legacy.
-Last confirmed push8687a6aac (remote verified12:50Z); GREENv5-m1.14@254ad41d6 merged; R1 captures0b669/index3e7d27 are not freshm114.
+Last confirmed pushd4d4e6dc2 (push observed12:51Z); GREENv5-m1.14@254ad41d6 merged; R1 captures0b669/index3e7d27 are not freshm114.
 Order ORDER-V8.txt SHA256 a2b825b3cc7b3e145c95858ead33312bcbeae0af0521f201ded923f3f87efbbd.
 Wake cxv-wake ACTIVE15min verified2026-11-18T12:50Z app+TOML;chat01a1e9cc-2dbe-7022-83de-f2d876839be5;preserve unchanged.
 Jobs:none.IntroR2PID2595 done12:46:27Z;6301 explicitlyreleased12:46Z;R1failed noaction assumption retained.
