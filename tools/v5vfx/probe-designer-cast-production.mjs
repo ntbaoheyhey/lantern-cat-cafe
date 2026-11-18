@@ -28,7 +28,9 @@ function fixture(reduced,skill){
 try{
  stop();assert.equal(execFileSync('git',['diff',build.sourceCommit,'--','packages/game-rules/src'],{cwd:'/Users/bao/taskbar-hero-chain',encoding:'utf8'}),'','Rules match candidate source');assert.equal(runtimeEvidence().indexSha256,build.indexSha256);assert.equal(hash(Buffer.from(await(await fetch(judgeUrl)).arrayBuffer())),build.indexSha256);
  browser=await chromium.launch({headless:true,args:['--use-angle=metal']});const{page,errors,blockedRequests}=await openFixture(browser,config.fixtures.find(f=>f.id==='boss'));
- for(const reduced of [false,true])for(const skill of [1,2,3,4]){
+ // A6 exposes only the basic card and ultimate. Legacy -2/-3 cards belong
+ // to the compiled gallery contract, not legal judge-facing actions.
+ for(const reduced of [false,true])for(const skill of [1,4]){
   stop();const f=fixture(reduced,skill);
   await page.evaluate(({state,battle})=>{const m=window.__depthReview,s=window.__depthScene;cancelAnimationFrame(s.raf);m.state=state;Object.assign(m,{tutorialBattle:battle,galleryBattle:null,replay:null,plan:null,roundPlan:null,watching:true,paused:true,sceneStarted:true,screen:'map',beforeImpact:null,afterImpact:null,animationAt:0});m.notify(false);},f);
   await page.waitForFunction(cat=>{const s=window.__depthScene,m=window.__depthReview,a=[...s.actors.values()].find(e=>e.asset===cat)?.actor;return s.ready&&a?.source==='media'&&a.designerMedia.media.state.ready&&s.view().actors.every(a=>a.hp===m.visualBattle.actors.find(b=>b.id===a.id)?.hp);},cat,{timeout:90000});
@@ -55,8 +57,9 @@ try{
   await save();
  }
  report.errors=errors;report.blockedRequests=blockedRequests;assert.deepEqual(errors,[]);assert.deepEqual(blockedRequests,[]);assert.equal(runtimeEvidence().indexSha256,build.indexSha256);
- report.routingPass=report.rows.filter(r=>[2,3].includes(r.skill)&&r.ms<800).every(r=>r.sampled.name==='skill');
- report.hitPass=report.rows.filter(r=>[2,3].includes(r.skill)&&r.ms===350).every(r=>Math.abs(r.sampled.at-.55)<1e-8);
- report.pass=report.routingPass&&report.hitPass;report.limits='Real production candidate model actions. No screenshots, art acceptance, final enrollment or FPS claim. Static intake bounds are not per-frame silhouette.';
+ report.routingPass=report.rows.filter(r=>r.ms<(r.skill===4?2200:800)).every(r=>r.sampled.name===(r.skill===4?'ult':'attack'));
+ report.hitPass=report.rows.filter(r=>r.ms===(r.skill===4?1100:350)).every(r=>Math.abs(r.sampled.at-(r.skill===4?1.1:.35))<1e-8);
+ report.mediaCastPass=report.rows.some(r=>r.skill===4&&!r.reduced&&r.maxMeshDelta>0)&&report.rows.filter(r=>r.reduced).every(r=>r.maxMeshDelta===0);
+ report.pass=report.routingPass&&report.hitPass&&report.mediaCastPass;report.limits='Actual A6 basic/ultimate actions only; -2/-3 are not legal judge cards and are excluded. No screenshots, art acceptance, final enrollment or FPS claim. Static intake bounds are not per-frame silhouette.';
 }catch(error){report.failure=error.stack;process.exitCode=1;}
 finally{if(browser)await browser.close();await modules.vite.close();report.finishedUTC=new Date().toISOString();await save();console.log(JSON.stringify({out,pass:report.pass,routingPass:report.routingPass,hitPass:report.hitPass,rows:report.rows.length,failure:report.failure}));}

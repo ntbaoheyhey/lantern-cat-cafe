@@ -1,13 +1,13 @@
 # CXV V8 handoff
-ACTIVE Batch M: Mochi303scene samples CXIACCEPT; own actualcard cast probe prepared; media routing suspicion must be reproduced. assistant: AGV.
+ACTIVE Batch M: Mochi idlefilm300frames PASS; mediaultimatecontact fix31focused/TSC0, production rerun pending. assistant: AGV.
 Worktree /Users/bao/taskbar-hero-cardrpg-a6; branch codex/v5-vfx-2026-11-17; desktop1280x720 only.
-NEXT 1: After CXI6301 coldbyte lease release run probe-designer-cast-production.mjs with mochi-scene-q22-r2/build.json into fresh M-media-cast-production-R1.
-NEXT 2: Prove/fix any media active-card routing or foot drift, then full300frame sameheight film and realcast comparisons; Clover still unregistered.
+NEXT 1: Checkpoint scoped3file mediaClipContact candidate and request CXI build; production1100ms must sample authored1.1, not1.21.
+NEXT 2: Review new sameheightMochi comparison4previews; capture corrected realcast films, then Clovermedia and gallerycontract scope.
 NEXT 3: M/C media+casts; Mochi931787B full300frames Chromium/WebKit passed07:04Z;no enrollment. AGV landing/T-M1 refinement; legacy afterM.
-Last confirmed pushd069de95b; code33fd55ef5; committed field applicationdelta replaces a3173c08e equivalence. LatestGREEN m1.13@4e5fe161a9975bbcb66c8e295a9aea82d39a4dd1.
+Last confirmed push36e1269c3; code33fd55ef5; committed field applicationdelta replaces a3173c08e equivalence. LatestGREEN m1.13@4e5fe161a9975bbcb66c8e295a9aea82d39a4dd1.
 Order ORDER-V8.txt SHA256 a2b825b3cc7b3e145c95858ead33312bcbeae0af0521f201ded923f3f87efbbd.
 Wake cxv-wake ACTIVE15min preserved/viewed07:28Z; targetchat01a1e9cc-2dbe-7022-83de-f2d876839be5; no mutation.
-Running Vite21525/6310 only; CXI holds6301 for Mochicoldbytes; sourcefd70cf41e/index9fb4ca0a ignoredregistryMochi.
+Running Vite21525/6310 only; idlefilm/castprobe jobsdone. 6301 released07:43Z; fd70cf41e/index9fb4 media study.
 AGV active T-CXI-11 landingR3REDO92117B +T-M1REDO1255B unsupportedindependence/uncertainty; T-M2deferred;T-M3/T-M4queued.
 CXI owns M/C ingest/loaders/budget/release; accepted mediaAPI9deee558a,eae267416,b543af3fb; source=media; M/C24x24mesh and512footy0.
 Native7 CXI productionACCEPT06:16:45Z; scopedmotiononly; own60focused/TSC0/7films/28images/feet0/.55/mintriangle.5533955.
