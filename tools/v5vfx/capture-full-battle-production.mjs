@@ -61,7 +61,7 @@ try{
    return{wallMs:globalThis.__cxvFull?performance.now()-globalThis.__cxvFull.start:0,devicePixelRatio,screen:m.screen,result:m.battle?.result??null,round:m.battle?.round,age:m.animationAt,
     plan:m.plan?{actor:m.plan.actorId,skill:m.plan.skillId,ultimate:m.plan.ultimate,duration:m.plan.duration,contact:m.plan.contact,leadIn:m.plan.speechLeadInMs??null}:null,
     actors:m.battle?.actors.map(a=>({id:a.id,catalogId:a.catalogId,side:a.side,hp:a.hp,shield:a.shield,statuses:a.statuses})),
-    scene:s?{ready:s.ready,stats:s.stats,bodyFx:s.bodyFx?.audit,cinema:s.cinema?.audit,boxes:[...s.bodyBoxes],anchors:s.anchors}:null,
+    scene:s?{ready:s.ready,stats:s.stats,bodyFx:s.bodyFx?.audit,cinema:s.cinema?.audit,bossPhase:s.bossPhase?.audit,boxes:[...s.bodyBoxes],anchors:s.anchors}:null,
     crew:[...document.querySelectorAll('.b3-victory-crew')].map(e=>({ready:e.dataset.ready,drawn:e.dataset.drawn,loadError:e.dataset.loadError,confetti:e.querySelectorAll('.b3-confetti').length,rect:e.getBoundingClientRect().toJSON(),width:e.clientWidth,height:e.clientHeight,canvas:{width:e.querySelector('canvas')?.width??0,height:e.querySelector('canvas')?.height??0}}))};
   });
   active.snapshot=snapshot;

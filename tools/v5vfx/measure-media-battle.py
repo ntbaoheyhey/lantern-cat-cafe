@@ -82,6 +82,20 @@ for run, timeline in zip(raw['runs'], timelines):
     media_gates = dict(noFailures=not failures, sampledThroughResult=samples[-1]['fullAt'] >= natural_end-250,
                        normalFramesAdvance=bool(callbacks) if run['mode'] == 'normal' else True,
                        reducedClockStatic=max(s['state']['currentTime'] for s in samples) <= 1/30 if run['mode'] == 'reduced' else True)
+    post = [s for s in audit['samples'] if s['fullAt'] is not None and s['screen'] == 'result']
+    stable_post = [s for s in post if s['fullAt'] >= post[0]['fullAt']+250] if post else []
+    post_quality = [s['quality'] for s in stable_post if s['quality']]
+    post_callbacks = [d for d in audit['decoded'] if d['fullAt'] is not None and stable_post and d['fullAt'] >= stable_post[0]['fullAt']]
+    post_gates = dict(observed=len(stable_post)>=4,
+                      allPaused=bool(post) and all(s['state']['paused'] for s in post),
+                      allSuspended=bool(post) and all(s['state'].get('suspended') and not s['state']['disposed'] for s in post),
+                      stoppedClock=bool(stable_post) and max(s['state']['currentTime'] for s in stable_post)-min(s['state']['currentTime'] for s in stable_post)<=1e-6,
+                      stoppedDecoder=bool(post_quality) and all(q==post_quality[0] for q in post_quality) and not post_callbacks)
+    phases = [s for s in samples if s.get('bossPhase')]
+    phase_actions = [s for s in phases if s.get('phaseFrame') and s['phaseFrame']['actorId'] and s['phaseFrame']['elapsed'] >= 200]
+    phase_overlaps = [dict(at=s['fullAt'],frame=s['phaseFrame'],phase=s['bossPhase']) for s in phase_actions if s['bossPhase']['visible']]
+    phase_gates = dict(observed=bool(phase_actions),phaseAuraRetained=any(s['bossPhase']['phase']>1 and s['bossPhase']['aura'] for s in phases),
+                       unopposedPortraitRetained=any(s['bossPhase']['visible'] for s in phases),actorFieldClear=not phase_overlaps)
     actions = [p for p in timeline['plans'] if any(e['type'] in ('action_start', 'charge') for e in p['events'])]
     assert all(p['fixedTiming'] and p['leadIn'] == 0 and p['duration'] == (2200 if p['ultimate'] else 800) for p in actions)
     row = dict(mode=run['mode'], result=run['final']['result'], naturalResultMs=natural_end,
@@ -96,6 +110,9 @@ for run, timeline in zip(raw['runs'], timelines):
                           decodedIntervalsRunningWithoutCaptureMs=stats(decoded_clean), observedTenSecondWraps=wraps,
                           events=event_counts, qualityFirst=quality[0] if quality else None, qualityLast=quality[-1] if quality else None,
                           gates=media_gates, failures=failures),
+               postResultMedia=dict(samples=len(post),stableSamples=len(stable_post),qualityFirst=post_quality[0] if post_quality else None,
+                                    qualityLast=post_quality[-1] if post_quality else None,callbacksAfterSettledPause=len(post_callbacks),gates=post_gates),
+               bossPhase=dict(samples=len(phases),actionSamplesAfter200ms=len(phase_actions),overlaps=phase_overlaps,gates=phase_gates),
                timeline=dict(path=str(base/run['mode']/'timeline.json'), sha256=sha(base/run['mode']/'timeline.json')))
     result['runs'].append(row)
     for c in run['captures']:
@@ -111,6 +128,8 @@ for run, timeline in zip(raw['runs'], timelines):
         assert not dest.exists()
         cv2.imwrite(str(dest), sheet, [cv2.IMWRITE_JPEG_QUALITY,92])
         result['reviewImages'].append(dict(path=str(dest), sha256=sha(dest), dimensions=[1024,576], mode=run['mode'], reasons=[c['reason'] for c in captures], bytes=dest.stat().st_size, reviewed=False, views=0))
-result['numericPass'] = all(parity.values()) and all(all(r['media']['gates'].values()) for r in result['runs'])
+result['postResultDecoderPaused'] = all(all(r['postResultMedia']['gates'].values()) for r in result['runs'])
+result['phaseYieldNumericPass'] = all(all(r['bossPhase']['gates'].values()) for r in result['runs'])
+result['numericPass'] = all(parity.values()) and all(all(r['media']['gates'].values()) for r in result['runs']) and result['postResultDecoderPaused'] and result['phaseYieldNumericPass']
 output.write_text(json.dumps(result, indent=2)+'\n')
 print(json.dumps(dict(output=str(output), numericPass=result['numericPass'], runs=result['runs'], reviewImages=result['reviewImages'])))
