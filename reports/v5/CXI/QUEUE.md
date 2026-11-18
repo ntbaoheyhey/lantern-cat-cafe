@@ -68,3 +68,7 @@ M-I2 AGS588 REVIEW 2026-11-18T17:38:29.859484+00:00:twoENofficiallinks verified;
 M-I2 CPU COUNT AUDIT 2026-11-18T17:45:49.949503+00:00:all4rules/plans/outcomes exact;202source/serveditems;261artifacthashes;2profiles58776/59447samples.5negative1us intervals retained,count-only estimates;off/on/on/offRAF p95~50msCPU4. Generatedrender~19%,drawingpoint~10.3% sample share;source correspondence inferred,not causal. No laptop/art/release acceptance.
 
 M-I2 PEER AUDIT 2026-11-18T17:49:11.426580+00:00:CXV58749filehashes+capturetool2edbd6fff exact;40PNGs/frozenboxes/PTS/iris copies/brackets consistent,no images reopened or semantic expansion. AGS593four realJSONs1200PTS equal independently probed packetPTS;30keyframes reconfirmed. Command provenance/blank-field cause/EN+ZHresearch remainOPEN.
+
+2026-11-18T17:57:04.341926+00:00 M-I2 normal1x baseline ACCEPT numerical:237hashes/202source+served/two55action21ultimate rules/plans exact;RAF p95 16.8/16.7ms;11/2425 and6/2424 dropped;8wraps each. Explicit timing release17:55:26Z. Host-relative only;art/laptop OPEN. CXV footer pilot leased until2026-11-18T18:05:04.341926+00:00 ANDrelease.
+
+2026-11-18T17:57:53.190314+00:00 M-I2 CXV596 ACCEPT numbers only:60hashes/30PNG/20repeat/60fullstates/15pixelstats;5independent rules replay,2normal/reduced pairs exact. Residualoutside7351..24743;nominal footer33px slack. No paint/association/art acceptance.

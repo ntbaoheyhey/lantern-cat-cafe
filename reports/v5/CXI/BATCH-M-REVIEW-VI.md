@@ -48,3 +48,5 @@ Kiểm tra mới:598hash/56đối chứng/134.456phép đếm tái lập vị tr
 2026-11-18T17:10:54.687921+00:00: Profile chỉMochi cài local và enrollment đạt2trang/8mẫu/3payload,không có requestvideoClover. Hai ảnh1280x720 đo trước khi xem bản1024:banner đầuwave che mặt,không dùng làm duyệtart. R7 nguyênvẹn trong work/v5/CXI/releases/v8-mochi-only-profile-prior-170729-dist. Đối chứng nhãn mới tái lập50hash/1.700statechecks/160pixelstats;4ca đổi sau ẩn/hiện,nguyênnhân chưa kết luận.
 
 2026-11-18T17:22:53.556032+00:00: Mochi-only dùng Clover native có phim nguồn-vs-game300khung/30fps/10s ở227px;3ảnh mới đã xem. Đây là phim tái dựng theo thời gian nguồn, không chứng minh FPS laptop. Audit20case khẳng định loại phương án nhãn thấp; media đặt hàng vẫn chưa phát hành.
+
+2026-11-18T17:57:04.341926+00:00 — Hai trận Mochi-only không giảm tốc CPU đã kiểm chứng237 tệp:55 hành động/21 ultimate mỗi trận,luật và kế hoạch trùng khớp. p95 khung hình16,8/16,7ms;video bỏ11/2425 và6/2424 khung. Chỉ là số đo trên M3 Pro,không chứng nhận laptop phổ thông. Đã nhả timing;CXV thử footer riêng,không nhập mã. Bản xanh vẫn v5-m1.15.

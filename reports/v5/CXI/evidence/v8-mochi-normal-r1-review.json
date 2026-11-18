@@ -1,0 +1,163 @@
+{
+  "utc": "2026-11-18T17:55:02.603452+00:00",
+  "sourceCommit": "bf01d462ac32233ab11475605d571aea691f96bf",
+  "indexSha256": "e66485f99d6c488da1363ba2d2fc739b779dc524e31800874e55b5e167f7daf1",
+  "url": "http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+  "preregistration": {
+    "path": "/Users/bao/taskbar-hero-chain/reports/v5/CXI/evidence/v8-mochi-normal-r1-preregistration.json",
+    "sha256": "d0100d4079e0f3a80ac6f0412d2b6373dd2a03996738ab480b5fc398c73e81e1"
+  },
+  "identityRules": {
+    "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/mochi-normal-r1/identity-rules-r1.json",
+    "sha256": "d738fc25a95ca98e5567fa721bebc55936a6c08d88a95a2304882efa214408d4"
+  },
+  "twoWayParity": true,
+  "sourceAndServedItemsVerified": 202,
+  "hashedArtifacts": 237,
+  "artifactManifest": {
+    "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/mochi-normal-r1/audit-r1-manifest.json",
+    "sha256": "e8d2c7e9f499e0db023c2a3119937fbcc58654bdcbc1b3a2cf249d6b7a17c4fc"
+  },
+  "runs": [
+    {
+      "name": "01-off",
+      "sampling": "off",
+      "actions": 55,
+      "ultimates": 21,
+      "ruleReplay": {
+        "mode": "normal",
+        "actions": 55,
+        "observedActions": 55,
+        "comparisons": {
+          "log": true,
+          "actors": true,
+          "queue": true,
+          "round": true,
+          "result": true
+        },
+        "fullBattleExact": true,
+        "replaySha256": "eb62df711d59f409a29e8a14aa793a1a3b5c642e29acca635ee73fa33f671af5",
+        "observedSha256": "eb62df711d59f409a29e8a14aa793a1a3b5c642e29acca635ee73fa33f671af5"
+      },
+      "metricsWindowMs": 81035.3640000103,
+      "metricsMs": {
+        "LayoutDuration": 407.858,
+        "RecalcStyleDuration": 6807.834,
+        "DevToolsCommandDuration": 89.99399999999999,
+        "ScriptDuration": 17242.267000000003,
+        "V8CompileDuration": 0,
+        "TaskDuration": 30635.555,
+        "TaskOtherDuration": 6087.602,
+        "ThreadTime": 30433.965,
+        "ProcessTime": 41816.442
+      },
+      "layoutCount": 7014,
+      "recalcStyleCount": 14626,
+      "frameMsWithoutCapture": {
+        "count": 4850,
+        "min": 16.5,
+        "median": 16.69999999999709,
+        "p95": 16.799999999995634,
+        "p99": 16.80000000000291,
+        "max": 50.100000000000364
+      },
+      "renderCpuMsWithoutCapture": {
+        "count": 4850,
+        "min": 2.7000000029802322,
+        "median": 4,
+        "p95": 4.899999991059303,
+        "p99": 8.599999994039536,
+        "max": 51.20000000298023
+      },
+      "wallMs": 81034,
+      "dropped": 11,
+      "total": 2425,
+      "dropFraction": 0.004536082474226804,
+      "callbacks": 2416,
+      "missedCallbacks": 3,
+      "wraps": 8,
+      "waitingEvents": 8,
+      "runtimeErrors": 0,
+      "playback": {
+        "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/mochi-normal-r1/01-off/playback-audit-r1.json",
+        "sha256": "13665d454a443dfd520fc69f9940f278ff1864201f68b60e46dfa7cda58c0987"
+      }
+    },
+    {
+      "name": "02-off",
+      "sampling": "off",
+      "actions": 55,
+      "ultimates": 21,
+      "ruleReplay": {
+        "mode": "normal",
+        "actions": 55,
+        "observedActions": 55,
+        "comparisons": {
+          "log": true,
+          "actors": true,
+          "queue": true,
+          "round": true,
+          "result": true
+        },
+        "fullBattleExact": true,
+        "replaySha256": "eb62df711d59f409a29e8a14aa793a1a3b5c642e29acca635ee73fa33f671af5",
+        "observedSha256": "eb62df711d59f409a29e8a14aa793a1a3b5c642e29acca635ee73fa33f671af5"
+      },
+      "metricsWindowMs": 81001.8600000185,
+      "metricsMs": {
+        "LayoutDuration": 441.232,
+        "RecalcStyleDuration": 7404.4220000000005,
+        "DevToolsCommandDuration": 95.05999999999999,
+        "ScriptDuration": 18462.177999999996,
+        "V8CompileDuration": 0,
+        "TaskDuration": 32898.645,
+        "TaskOtherDuration": 6495.753,
+        "ThreadTime": 32666.154,
+        "ProcessTime": 44138.728
+      },
+      "layoutCount": 7007,
+      "recalcStyleCount": 14635,
+      "frameMsWithoutCapture": {
+        "count": 4849,
+        "min": 16.5,
+        "median": 16.69999999999709,
+        "p95": 16.70000000001164,
+        "p99": 16.80000000000291,
+        "max": 50
+      },
+      "renderCpuMsWithoutCapture": {
+        "count": 4849,
+        "min": 2.9000000059604645,
+        "median": 4.4000000059604645,
+        "p95": 5.200000002980232,
+        "p99": 8.599999994039536,
+        "max": 47.099999994039536
+      },
+      "wallMs": 81001.60000000894,
+      "dropped": 6,
+      "total": 2424,
+      "dropFraction": 0.0024752475247524753,
+      "callbacks": 2421,
+      "missedCallbacks": 4,
+      "wraps": 8,
+      "waitingEvents": 8,
+      "runtimeErrors": 0,
+      "playback": {
+        "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/mochi-normal-r1/02-off/playback-audit-r1.json",
+        "sha256": "841f3c9fb0551adf3ff04c3d3f48224515b8fcd5469f982673f30264f6d1944c"
+      }
+    }
+  ],
+  "imagesViewed": 0,
+  "productionAcceptance": false,
+  "decision": "ACCEPT identity, two natural battles, independent rule replay and descriptive CPU1 counters only",
+  "limits": [
+    "Two repetitions on this Apple M3 Pro are descriptive,not ordinary-laptop proof.",
+    "No source/registry/art/label change or release acceptance.",
+    "Do not pool with prior dualmedia or Sorrel populations.",
+    "Counters observer still has overhead;CPU4comparison is host-relative only.",
+    "Two arms are descriptive; no calibrated overhead estimate.",
+    "CDP timeTicks duration metrics differ from ThreadTime and ProcessTime; do not sum TaskDuration with its parts.",
+    "Dropped video frames are distinct from missed JavaScript callbacks; no causal attribution."
+  ]
+}
