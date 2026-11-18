@@ -1,0 +1,181 @@
+{
+  "utc": "2026-11-18T08:02:19.582233+00:00",
+  "authority": "ORDER-V8.txt",
+  "wake": {
+    "id": "cxi-wake",
+    "status": "ACTIVE",
+    "minutes": 15,
+    "verifiedToolAndToml": true
+  },
+  "stopFilesPresent": false,
+  "cursors": {
+    "INBOX-CXI": 242,
+    "USER": 24,
+    "LEARN": 95
+  },
+  "diagnostic": {
+    "utc": "2026-11-18T07:57:07.591442+00:00",
+    "source": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/matte-r2/clover-premul.rgba",
+    "sourceSha256": "c7741308c934b742022fe293dc3419c2d28cb72c3c3d7bc960bb56117e86574f",
+    "toolSha256": "59addcaaa9c173492f5774503f9bd070bb3c70970dc4d7968d6ad73e05e095ab",
+    "rows": [
+      {
+        "frame": 0,
+        "componentArea": 3013,
+        "filledArea": 3121,
+        "bounds": [
+          20,
+          256,
+          56,
+          81,
+          3013
+        ],
+        "skeletonPixels": 109,
+        "endpoints": [
+          [
+            71,
+            278
+          ],
+          [
+            75,
+            336
+          ]
+        ],
+        "thinningIterations": 18,
+        "centerlineLength": 119.6396103067892,
+        "controls": [
+          [
+            71.0,
+            278.0
+          ],
+          [
+            63.53033008588992,
+            269.0
+          ],
+          [
+            49.578427124746206,
+            269.4215728752538
+          ],
+          [
+            43.0,
+            281.65165042944955
+          ],
+          [
+            41.0,
+            294.9497474683058
+          ],
+          [
+            45.882359312880695,
+            307.8823593128807
+          ],
+          [
+            57.3357864376269,
+            316.3357864376269
+          ],
+          [
+            63.66789321881345,
+            328.66789321881345
+          ],
+          [
+            75.0,
+            336.0
+          ]
+        ]
+      },
+      {
+        "frame": 299,
+        "componentArea": 2950,
+        "filledArea": 3051,
+        "bounds": [
+          26,
+          270,
+          80,
+          79,
+          2950
+        ],
+        "skeletonPixels": 112,
+        "endpoints": [
+          [
+            65,
+            281
+          ],
+          [
+            103,
+            337
+          ]
+        ],
+        "thinningIterations": 18,
+        "centerlineLength": 118.08326112068517,
+        "controls": [
+          [
+            65.0,
+            281.0
+          ],
+          [
+            52.805456351737,
+            287.194543648263
+          ],
+          [
+            48.0251262658471,
+            299.9748737341529
+          ],
+          [
+            49.340990257669716,
+            313.3409902576697
+          ],
+          [
+            56.94974746830583,
+            324.9497474683058
+          ],
+          [
+            63.144291116568844,
+            337.14429111656887
+          ],
+          [
+            75.13603896932108,
+            341.0
+          ],
+          [
+            89.34099025766973,
+            339.6590097423303
+          ],
+          [
+            103.0,
+            337.0
+          ]
+        ]
+      }
+    ],
+    "image": {
+      "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/clover-tail-controls-r1/control-diagnostic.png",
+      "dimensions": [
+        812,
+        420
+      ],
+      "sha256": "0eefc9a044cc7e15d188ad1758754c875b203c03b17305ca9135c6d6197a7069",
+      "rgbMean": [
+        101.51849636406287,
+        93.1958450621628,
+        72.71385174759558
+      ],
+      "viewed": true,
+      "viewedOnceBefore": "2026-11-18T08:00:00Z",
+      "ledgerReconciledUTC": "2026-11-18T08:02:19.582233+00:00",
+      "observation": "Visible root endpoints differ with dress occlusion; skeleton endpoints are not established physical correspondences. Diagnostic viewed once before continuation; not reopened."
+    },
+    "limits": [
+      "Color component and longest skeleton path are geometric hypotheses, not designer parameter recovery.",
+      "Tip-to-root ordering must be visually checked; no warp applied."
+    ],
+    "sequenceChanged": false,
+    "runtimeChanged": false
+  },
+  "openTasks": [
+    "T-M1",
+    "T-M2",
+    "T-CXI-5"
+  ],
+  "candidateRelease": false,
+  "focusBlocker": "CXV fullcast both modes ultimate533ms yellow rectangle; cause not yet confirmed",
+  "preservedReviewSha256": "7a860af938973a346e9a7cd51dcf335381facf142ac90792319956308da0d875"
+}
