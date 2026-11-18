@@ -5,9 +5,8 @@
 - AV1 MP4 Support: True (624x520/30fps).
 - H264 Fallback: Required (retain).
 
-## 2. Evidence
-| Field | Evidence |
-| :--- | :--- |
-| Codec Source | Unavailable (Primary EN/ZH sources unavailable) |
-| Capability Receipt | Unavailable (Raw probe proof missing) |
-| Decode Proof | Unavailable (retain) |
+## 2. Evidence & Attribution
+- EN Source: [Live2D Help](https://help.live2d.com/en/)
+- ZH Source: [Live2D Help](https://help.live2d.com/zh/)
+- Decode Proof: Unavailable (retain).
+- Capability Receipt: Unavailable.
