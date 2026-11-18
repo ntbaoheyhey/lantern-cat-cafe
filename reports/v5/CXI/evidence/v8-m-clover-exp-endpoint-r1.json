@@ -1,0 +1,170 @@
+{
+  "utc": "2026-11-18T07:30:19.047763+00:00",
+  "scriptSha256": "1f8ef0ba9ad2a8c857c91dd5597ce2d325d4906c58e60626ecca18e321a0bac6",
+  "inputHashes": {
+    "flow.npy": "31775125651b1c616a50c38c83664062bbed903f688e91644a49bc5565b23b6c",
+    "mask.npy": "50744fec83b0552a8651184b4455cab2dc94b3db6e8407e4387620270af5e8f8"
+  },
+  "raw": {
+    "centralMinActive": -1.1043627603930872,
+    "centralFolds": 80,
+    "coreFolds": 21,
+    "transitionFolds": 59,
+    "foldBounds": [
+      48,
+      276,
+      99,
+      341
+    ],
+    "gradientFrobeniusMaxActive": 3.4059075223867916,
+    "cellCornerMinActive": -2.476568727305448,
+    "foldedActiveCells": 165,
+    "maxDisplacement": 18.49810549677155
+  },
+  "masked": {
+    "centralMinActive": -2.2976502783120583,
+    "centralFolds": 277,
+    "coreFolds": 35,
+    "transitionFolds": 242,
+    "foldBounds": [
+      48,
+      275,
+      94,
+      347
+    ],
+    "gradientFrobeniusMaxActive": 3.639357418774837,
+    "cellCornerMinActive": -3.212933692306217,
+    "foldedActiveCells": 368,
+    "maxDisplacement": 18.49810549677155
+  },
+  "analyticChecks": "identity +1, translation +1, reflection -1 at all four corners",
+  "sequenceChanged": false,
+  "runtimeRegistered": false,
+  "endpoint": {
+    "method": "One smoothed DIS-as-velocity hypothesis; sigma1 before the unchanged cloth mask; scaling/squaring with initial maximum step<=0.5px; no field refit or frame blend.",
+    "sourceSha256": "c7741308c934b742022fe293dc3419c2d28cb72c3c3d7bc960bb56117e86574f",
+    "scalingSquaringSteps": 6,
+    "stages": [
+      {
+        "centralMinActive": 0.9627095022439707,
+        "centralFolds": 0,
+        "coreFolds": 0,
+        "transitionFolds": 0,
+        "foldBounds": null,
+        "gradientFrobeniusMaxActive": 0.050917963530234575,
+        "cellCornerMinActive": 0.9552772964290005,
+        "foldedActiveCells": 0,
+        "maxDisplacement": 0.28850948080732386
+      },
+      {
+        "centralMinActive": 0.9269307879759539,
+        "centralFolds": 0,
+        "coreFolds": 0,
+        "transitionFolds": 0,
+        "foldBounds": null,
+        "gradientFrobeniusMaxActive": 0.10051824481265373,
+        "cellCornerMinActive": 0.9140722773333461,
+        "foldedActiveCells": 0,
+        "maxDisplacement": 0.5769241712172175
+      },
+      {
+        "centralMinActive": 0.8597442220043744,
+        "centralFolds": 0,
+        "coreFolds": 0,
+        "transitionFolds": 0,
+        "foldBounds": null,
+        "gradientFrobeniusMaxActive": 0.19585290900707228,
+        "cellCornerMinActive": 0.8408360601793304,
+        "foldedActiveCells": 0,
+        "maxDisplacement": 1.1536638719260568
+      },
+      {
+        "centralMinActive": 0.7416318794277881,
+        "centralFolds": 0,
+        "coreFolds": 0,
+        "transitionFolds": 0,
+        "foldBounds": null,
+        "gradientFrobeniusMaxActive": 0.3717027539279092,
+        "cellCornerMinActive": 0.7235438256905781,
+        "foldedActiveCells": 0,
+        "maxDisplacement": 2.306831160661919
+      },
+      {
+        "centralMinActive": 0.560317049112904,
+        "centralFolds": 0,
+        "coreFolds": 0,
+        "transitionFolds": 0,
+        "foldBounds": null,
+        "gradientFrobeniusMaxActive": 0.6911439166482694,
+        "cellCornerMinActive": 0.542395809719176,
+        "foldedActiveCells": 0,
+        "maxDisplacement": 4.61175419400004
+      },
+      {
+        "centralMinActive": 0.33279401220448074,
+        "centralFolds": 0,
+        "coreFolds": 0,
+        "transitionFolds": 0,
+        "foldBounds": null,
+        "gradientFrobeniusMaxActive": 1.5544812758773185,
+        "cellCornerMinActive": 0.304479858772905,
+        "foldedActiveCells": 0,
+        "maxDisplacement": 9.215208706518222
+      },
+      {
+        "centralMinActive": 0.1339072645911897,
+        "centralFolds": 0,
+        "coreFolds": 0,
+        "transitionFolds": 0,
+        "foldBounds": null,
+        "gradientFrobeniusMaxActive": 3.698297782619613,
+        "cellCornerMinActive": 0.0783942062992529,
+        "foldedActiveCells": 0,
+        "maxDisplacement": 18.338941781208312
+      }
+    ],
+    "seamMAE": 11.882933795156928,
+    "iou": 0.9047009328699469,
+    "zeroMaskPixelsChanged": 0,
+    "outsideRegionPixelsChanged": 0,
+    "allCellCornerMin": 0.0783942062992529,
+    "foldedCellsAnywhere": 0,
+    "numericPromising": true,
+    "foregroundStrainDiagnostic": {
+      "warmTailPixels": 3560,
+      "determinantPercentiles": [
+        0.1339072645911897,
+        0.19088525631088923,
+        0.25111623606493033,
+        0.9780920394272166,
+        1.0936952193429563,
+        2.5239249230303016,
+        4.350948961638714
+      ],
+      "minStretchPercentiles": [
+        0.12494743592191694,
+        0.1462032236959355,
+        0.19309304131176175,
+        0.942794266927088,
+        0.9990040714200733,
+        1.0017480965914465,
+        1.0203261564651596
+      ],
+      "maxStretchPercentiles": [
+        0.9209141326667901,
+        0.9440568489529787,
+        0.9784412165049939,
+        1.0402918150530225,
+        1.5093043895965346,
+        2.8506809614844135,
+        4.6267347872727544
+      ]
+    }
+  },
+  "visualReview": {
+    "utc": "2026-11-18T07:31:32.297837+00:00",
+    "views": 2,
+    "status": "NOT ACCEPTED; endpoint research only",
+    "finding": "Fold-free and closer tail placement, but inner curl is narrower and lower edge flatter than target first frame. No full-sequence rewrite; quantify residual correspondence and foreground strain before a new hypothesis."
+  }
+}

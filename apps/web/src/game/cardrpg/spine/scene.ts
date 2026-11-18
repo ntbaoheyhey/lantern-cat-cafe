@@ -26,7 +26,7 @@ import { fixedActionClipTime,retimedClipTime, type SpineCue } from './events';
 import { stagePosition } from './layout';
 import { stageLayoutC2 } from '../stage/layout-c2';
 import {unitCore,unitFace,spriteFacing,ELEMENT_COLORS} from '../stage/core';
-import {opaqueWorldBounds} from '../stage/opaque-pose-bounds';
+import {actorOpaqueWorldBounds} from '../stage/media-pose-bounds';
 import { PaintedStage } from './stage';
 import { PAINT } from './style';
 import { PaintedVfx } from './vfx';
@@ -417,7 +417,7 @@ export class SpineScene {
    const cos=Math.cos(-angle),sin=Math.sin(-angle);
    actor.root.position.set(position.x+footX-(cos*footX*sx-sin*footY*sy)+dx*pixelsToWorld,position.y+footY-(sin*footX*sx+cos*footY*sy)-dy*pixelsToWorld,0);
    actor.root.updateMatrixWorld(true);
-   const opaque=opaqueWorldBounds(actor.root);
+   const opaque=actorOpaqueWorldBounds(entry.asset,actor);
    if(opaque&&opaque.height>0&&unit.hp>0&&view.formationC2&&!actor.mesh?.livingCat){
     const target=core.world.height*position.scale*arrival.sy;
     const factor=Math.max(target*.985,Math.min(target*1.015,opaque.height))/opaque.height;

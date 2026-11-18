@@ -1,10 +1,10 @@
 # CXI V8 — Batch M first
-M-I1 BLOCKED-ON new matte/seam evidence: Mochi384CRF23 isolated56PASS but native4images show edge speckles; CloverR5/R6 rejected/unaccepted. Panko own production scene ACCEPT; release budgets still open. Mallow own production scene ACCEPT4freshimages/10scomparison. Native7 scopedimport85cb62233,66focused/1120parityPASS;all7 ownproduction4images/10scomparison ACCEPT.
+M-I1 OPEN: Mochi931787B four-plane codec/native300frames PASS;64new+92legacy runtime checks. Scoped media posed-bounds fix imported/80focused/TSC0; fresh production scene gate next. Registry empty. Clover DIS/exp endpoint unaccepted; source originals unchanged.
 M-I2 OPEN:fail-loud edge/halo/seam/height/bytes/frame gate;own currentbuild1280x720 captures.
 M-I3 OPEN:BatchM READY acceptance/tag/BOARD catslive;Vietnamese owner draft requests+sizes;no uploads/license acceptance.
 SOOT EXCLUDED:prove all Soot paths and shared-loader entries unchanged fromc4bd12552.
-AGS priorityOPEN:T-M1L3research,T-M2threeheighttrials,T-M3frienddraft;older6tasks deferred.
-CXV coordinationOPEN:L1/L2/L4,rig/stage hooks and11catcast/9othercatidle;AGVT11landing reprioritized for141046B budgetgap;delivery pending.
+AGS priorityOPEN:T-M1correct sourced license/real receipts,T-M2raw mask provenance,T-CXI-5audio provenance/listening. T-M3 ownerdraftACCEPT only; maintain>=2useful tasks.
+CXV coordinationOPEN: all9native scoped motionACCEPT; FIELD5 correctedR2 production capture done/visualreviewpending; Mochi scene/height/casts next. AGV landingR3qualityREDO;wave3 historicalgap141786B.
 
 Deferred V7 work and retained evidence
 # CXI V7 assignments — evidence required
