@@ -1,0 +1,309 @@
+{
+  "utc": "2026-11-18T03:27:26.291Z",
+  "source": "9efabfa865f95cb4f020b9a68bba6b9f388356da",
+  "indexSha256": "6f27065a021e115c3acec1e7c985d690af7fea26d4bdd6f6248b8ac595bc353d",
+  "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "componentSha256": "01826fc7c13e470d7d52b8800d9a1b72b97356b01a1544701c77acc2523289c3",
+  "artifactTransforms": 0,
+  "artifactFiles": 3764,
+  "snapshots": [
+    {
+      "name": "run-battle-context-native.mjs",
+      "sha256": "602229c971b305c4eb083c4acc8374a9804c7566b9b5ffa8e4459cbef6744f6b"
+    },
+    {
+      "name": "build-hud-production.mjs",
+      "sha256": "ed0207338f9a07a6cdd74cd1728251a41608f6a43ac73ebf78064c2fd4fa45a2"
+    },
+    {
+      "name": "probe-battle-context-loss.mjs",
+      "sha256": "d2a15e1e85973db57a17bba9aaa000e9709473bce8893a6352f4d91eb551f8fb"
+    },
+    {
+      "name": "probe-battle-context-lifecycle.mjs",
+      "sha256": "66af58ffcbcb55968f290203076ea3b3830a5f44facc3daaae8b2fb953b350e8"
+    },
+    {
+      "name": "measure-battle-context.mjs",
+      "sha256": "0aa73e31c448ac0ac71e7d4df78bb6214e7cb96e407d810c73748434dc9b27b7"
+    },
+    {
+      "name": "desktop-density.mjs",
+      "sha256": "975caa1c159664052871f72045576455f42190ac4738f9b43413cea14f44b690"
+    },
+    {
+      "name": "benchmark-boss-play.mjs",
+      "sha256": "1fa44c8981a2f5ad7289e58b5ed50462d755b6f4f02be4a30df704185bc920c8"
+    },
+    {
+      "name": "production-candidate-fixture.mjs",
+      "sha256": "ce88ae0010c17189e38a8a6a1c20b4f4934ecd2897b9491224959f51e28689a9"
+    }
+  ],
+  "buildManifest": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-battle-context-native-production/build.json",
+    "sha256": "a4606dff8ee110f56557af4d0dfaa780a79cfdca365634ed775c65e38385832e"
+  },
+  "context": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v5/CXV/V7-F-battle-context-native.json",
+    "sha256": "ec43604b37285f263da1160ad47ecb9c695a1759556d172c22b5da7ff3dd0d91"
+  },
+  "lifecycle": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v5/CXV/V7-F-battle-context-native-lifecycle.json",
+    "sha256": "b4a4d073fcfa656e91383842e41e48c77e3c28cb849a1298122488cdfcf91b4e"
+  },
+  "raw": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-battle-context-native-production/trial/report.json",
+    "sha256": "440d14f4a62ede4f6162e0ae97153e8af27eb6ad2134dc047a3586d32c6113e5"
+  },
+  "url": "http://127.0.0.1:6312/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "deviceScaleFactor": 2,
+  "runs": [
+    {
+      "rate": 1,
+      "elapsedMs": 32005.10000000894,
+      "actions": 26,
+      "ultimates": 6,
+      "frame": {
+        "median": 16.69999999999891,
+        "p95": 16.700000000004366,
+        "p99": 16.800000000000182,
+        "max": 16.80000000000291
+      },
+      "density": {
+        "before": {
+          "devicePixelRatio": 2,
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "rendererRatio": 2,
+          "sceneSize": {
+            "width": 1280,
+            "height": 720
+          },
+          "canvas": {
+            "width": 2560,
+            "height": 1440,
+            "clientWidth": 1280,
+            "clientHeight": 720,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 1280,
+              "height": 720
+            }
+          },
+          "drawingBuffer": {
+            "width": 2560,
+            "height": 1440
+          },
+          "contextLost": false,
+          "checksEnabled": true,
+          "composer": {
+            "input": {
+              "width": 2560,
+              "height": 1440
+            },
+            "output": {
+              "width": 2560,
+              "height": 1440
+            }
+          },
+          "actors": 7,
+          "ready": true,
+          "sceneError": ""
+        },
+        "after": {
+          "devicePixelRatio": 2,
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "rendererRatio": 2,
+          "sceneSize": {
+            "width": 1280,
+            "height": 720
+          },
+          "canvas": {
+            "width": 2560,
+            "height": 1440,
+            "clientWidth": 1280,
+            "clientHeight": 720,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 1280,
+              "height": 720
+            }
+          },
+          "drawingBuffer": {
+            "width": 2560,
+            "height": 1440
+          },
+          "contextLost": false,
+          "checksEnabled": true,
+          "composer": {
+            "input": {
+              "width": 2560,
+              "height": 1440
+            },
+            "output": {
+              "width": 2560,
+              "height": 1440
+            }
+          },
+          "actors": 7,
+          "ready": true,
+          "sceneError": ""
+        }
+      },
+      "blockedRequests": []
+    },
+    {
+      "rate": 4,
+      "elapsedMs": 32042,
+      "actions": 26,
+      "ultimates": 6,
+      "frame": {
+        "median": 16.700000000000728,
+        "p95": 33.400000000001455,
+        "p99": 66.60000000000036,
+        "max": 116.60000000000218
+      },
+      "density": {
+        "before": {
+          "devicePixelRatio": 2,
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "rendererRatio": 2,
+          "sceneSize": {
+            "width": 1280,
+            "height": 720
+          },
+          "canvas": {
+            "width": 2560,
+            "height": 1440,
+            "clientWidth": 1280,
+            "clientHeight": 720,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 1280,
+              "height": 720
+            }
+          },
+          "drawingBuffer": {
+            "width": 2560,
+            "height": 1440
+          },
+          "contextLost": false,
+          "checksEnabled": true,
+          "composer": {
+            "input": {
+              "width": 2560,
+              "height": 1440
+            },
+            "output": {
+              "width": 2560,
+              "height": 1440
+            }
+          },
+          "actors": 7,
+          "ready": true,
+          "sceneError": ""
+        },
+        "after": {
+          "devicePixelRatio": 2,
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "rendererRatio": 2,
+          "sceneSize": {
+            "width": 1280,
+            "height": 720
+          },
+          "canvas": {
+            "width": 2560,
+            "height": 1440,
+            "clientWidth": 1280,
+            "clientHeight": 720,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 1280,
+              "height": 720
+            }
+          },
+          "drawingBuffer": {
+            "width": 2560,
+            "height": 1440
+          },
+          "contextLost": false,
+          "checksEnabled": true,
+          "composer": {
+            "input": {
+              "width": 2560,
+              "height": 1440
+            },
+            "output": {
+              "width": 2560,
+              "height": 1440
+            }
+          },
+          "actors": 7,
+          "ready": true,
+          "sceneError": ""
+        }
+      },
+      "blockedRequests": []
+    }
+  ],
+  "errors": [],
+  "captures": [
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-battle-context-native-production/trial/boss-1x.png",
+      "rate": 1,
+      "width": 1280,
+      "height": 720,
+      "sha256": "8d4ad1cfcbcfa9791465081ce0726a27977baf8106a261cae9b56529fde06bca",
+      "rgbSha256": "e55727301b0087c5e96d88742ed2bbf060ec82b9b85bde818eec1ad6d71d579f",
+      "mean": 113.25180013020834,
+      "stdDev": 52.19672780868014,
+      "review": {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-battle-context-native-production/1x-review.jpg",
+        "width": 1024,
+        "height": 576,
+        "sha256": "1b5fbb7d5cc8be29310c12b8398c82173f5ad935a820e743f341b9f3e7b37b2e"
+      }
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-battle-context-native-production/trial/boss-4x.png",
+      "rate": 4,
+      "width": 1280,
+      "height": 720,
+      "sha256": "94cf70ecd9354e70cc0dbab096414bb0c6f60c04ae5bc0e746c68be98fc49390",
+      "rgbSha256": "24d984b35b343e1870c0e21374f3328f5fcee73725301741efb00fe08c5048d0",
+      "mean": 114.14532624421297,
+      "stdDev": 51.93372859588261,
+      "review": {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-battle-context-native-production/4x-review.jpg",
+        "width": 1024,
+        "height": 576,
+        "sha256": "4d7c4e2c60c1de57c2654a3c4cc08a42da659003c0f71e6e025e8faf99fddcf1"
+      }
+    }
+  ],
+  "pass": true,
+  "reviewedUtc": "2026-11-18T03:29:33.882315+00:00",
+  "limits": "Untransformed local application;independent acceptance pending. Native extension events are injected failures,not hardware incidence. Density/motion/error-notification controls are synthetic. Ordinary CPU1x/4x runs are configuration coverage,not a speedup or physical laptop equivalence.",
+  "visualPass": true,
+  "visualNotes": "Two fresh ordinary boss captures reviewed once: seven actors, HP/status labels and controls remain readable; Yarn sweep retains identifiable recipients. No performance improvement claim."
+}
