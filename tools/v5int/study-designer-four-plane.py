@@ -48,7 +48,7 @@ for mode in (['rgba','ycrcb'] if quality==23 and not roi and not vp9 else ['ycrc
   original=np.clip(f[:,:,:3]+255-f[:,:,3:4],0,255);actual=np.clip(color+255-alpha[:,:,None],0,255);err=np.abs(actual-original)
   white_errors.append(float(err[f[:,:,3]>16].mean()));black_errors.append(float(np.abs(color-f[:,:,:3])[f[:,:,3]>16].mean()));edge_errors.append(float(err[(f[:,:,3]>4)&(f[:,:,3]<250)].mean()));mask_errors.append(float(np.abs(alpha-f[:,:,3]).mean()))
  trial={'mode':mode,'video':str(video),'bytes':video.stat().st_size,'sha256':hashlib.sha256(video.read_bytes()).hexdigest(),'encodedDimensions':[w*2,h*2],'foregroundWhiteMAE':float(np.mean(white_errors)),'foregroundBlackMAE':float(np.mean(black_errors)),'edgeFrameMax':max(edge_errors),'maskMAE':float(np.mean(mask_errors)),'command':command}
- trial['numericPass']=trial['bytes']<=1000000 and trial['foregroundWhiteMAE']<=3 and trial['edgeFrameMax']<=15 and trial['maskMAE']<=2
+ trial['numericPass']=trial['foregroundWhiteMAE']<=3 and trial['edgeFrameMax']<=15 and trial['maskMAE']<=2
  report['trials'].append(trial);(OUT/'report.json').write_text(json.dumps(report,indent=2)+'\n');print(json.dumps({k:v for k,v in trial.items() if k!='command'}),flush=True)
 report['completedUTC']=datetime.now(timezone.utc).isoformat();(OUT/'report.json').write_text(json.dumps(report,indent=2)+'\n')
 name='v8-m-four-plane-local-vslow-study.json' if vslow else ('v8-m-four-plane-local-q225-study.json' if local else ('v8-m-four-plane-roi-full-nopsy-study.json' if no_psy else ('v8-m-four-plane-roi-full-study.json' if full else ('v8-m-four-plane-vp9-study.json' if vp9 else ('v8-m-four-plane-roi-study.json' if roi else ('v8-m-four-plane-study.json' if quality==23 else 'v8-m-four-plane-q20-study.json'))))))

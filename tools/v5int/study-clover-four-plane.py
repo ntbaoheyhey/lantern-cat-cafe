@@ -60,7 +60,7 @@ for frame, packed in zip(resized, decoded):
     mask.append(float(np.abs(alpha-original_frame[:, :, 3]).mean()))
 trial = dict(mode='ycrcb', video=str(video), bytes=video.stat().st_size, sha256=sha(video), encodedDimensions=[w*2, h*2],
              foregroundWhiteMAE=float(np.mean(white)), foregroundBlackMAE=float(np.mean(black)), edgeFrameMax=max(edge), maskMAE=float(np.mean(mask)), command=command)
-trial['numericPass'] = trial['bytes'] <= 1000000 and trial['foregroundWhiteMAE'] <= 3 and trial['edgeFrameMax'] <= 15 and trial['maskMAE'] <= 2
+trial['numericPass'] = trial['foregroundWhiteMAE'] <= 3 and trial['edgeFrameMax'] <= 15 and trial['maskMAE'] <= 2
 report = dict(utc=datetime.now(timezone.utc).isoformat(), cat='clover', status='STUDY_ONLY', sourceRgba=str(resized_path), sourceRgbaSha256=sha(resized_path), originalMatte=dict(path=str(source), sha256=sha(source)),
               sourceSize=[318, 390], logicalSize=[w, h], opaqueHeight=256, frames=300, fps=30, duration=10, scale=2/3, resize='INTER_AREA on premultiplied RGBA', trials=[trial],
               nativeAssetAcceptance=False, loopAccepted=False, imagesViewed=0, limits='Compression error measured against resized pinned matte only. Original alpha/fringe quality, downsampling loss, tail seam and provisional head/palm sockets remain unaccepted. No runtime or registry change.')

@@ -76,7 +76,7 @@ metrics = {'bytes': video.stat().st_size,
            'foregroundBlackMAE': float(np.mean([x['blackMAE'] for x in rows])),
            'edgeFrameMax': max(x['edgeMAE'] for x in rows),
            'maskMAE': float(np.mean([x['maskMAE'] for x in rows]))}
-passed = metrics['bytes'] <= 1000000 and metrics['foregroundWhiteMAE'] <= 3 and metrics['edgeFrameMax'] <= 15 and metrics['maskMAE'] <= 2
+passed = metrics['foregroundWhiteMAE'] <= 3 and metrics['edgeFrameMax'] <= 15 and metrics['maskMAE'] <= 2
 report.update(video=str(video), videoSha256=hashlib.sha256(video.read_bytes()).hexdigest(),
               metrics=metrics, numericPass=passed, completedUTC=datetime.now(timezone.utc).isoformat())
 (OUT/'frame-metrics.json').write_text(json.dumps(rows, indent=2)+'\n')

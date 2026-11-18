@@ -1,4 +1,4 @@
-/** Ignored Clover spout study, retaining the exact Mochi R6 media payload. */
+/** Ignored Clover study, retaining exact media and optionally audited head/paw bindings. */
 import assert from 'node:assert/strict';
 import {createRequire} from 'node:module';
 import {readFile,writeFile,mkdir} from 'node:fs/promises';
@@ -11,6 +11,7 @@ const req=createRequire(resolve(app,'package.json')),sharp=req('sharp');
 const {build,createServer}=await import(req.resolve('vite'));
 const sha=data=>createHash('sha256').update(data).digest('hex');
 const label=process.argv[2]??'clover-spout-q21-r1';assert(/^[a-z0-9-]+$/.test(label));
+const authored=process.argv[3]==='--authored-head-paw';assert(process.argv[3]===undefined||authored);
 const out=resolve(root,'work/v5/CXI/batch-m',label),dist=resolve(out,'dist');
 const evidence=[];
 async function pinned(path,expected){
@@ -24,7 +25,7 @@ assert(native.runs.length===2&&native.runs.every(r=>r.numericPass&&r.samples.len
 const offline=await json(resolve(root,'work/v5/CXI/batch-m/clover-four-plane-q21-r1/report.json'));
 const trial=offline.trials.find(t=>t.mode==='ycrcb');assert(trial.numericPass);
 const video=await pinned(trial.video,trial.sha256);assert.equal(sha(video),native.video.sha256);
-assert(video.length<=1000000);assert.deepEqual(offline.logicalSize,[212,260]);
+assert.deepEqual(offline.logicalSize,[212,260]); // Bytes are report-only under OWNER INBOX-CXI386.
 const source=await pinned(offline.sourceRgba,offline.sourceRgbaSha256);
 assert.equal(sha(source),native.sourceRgbaSha256);
 const w=212,h=260,ratio=2/3,scaled=xy=>xy.map(v=>v*ratio);
@@ -57,6 +58,24 @@ for(const partial of [hip.partialManifest,spout.partialManifest]){
  Object.assign(socketChannels,partial.socketChannels);
 }
 assert.deepEqual(socketChannels,{hip:'hip','main-hand':'prop','vfx-origin':'spout'});
+let authoredBindings;
+if(authored){
+ const reviewed=await json(resolve(root,'reports/v5/CXI/evidence/v8-clover-authored-bindings-review.json'));
+ assert.equal(reviewed.freshPawControls,24);assert(reviewed.noRefit&&reviewed.priorCombinedRejectionPreserved);
+ authoredBindings=[];
+ for(const [name,channel,socket]of [['M-clover-eye-delivery-R5.json','head','head'],['M-clover-paw-delivery-R6.json','freePaw','off-hand']]){
+  const path='/Users/bao/taskbar-hero-cardrpg-a6/reports/v5/CXV/'+name;
+  assert(reviewed.artifactHashes[path]);const payload=await json(path,reviewed.artifactHashes[path]);
+  assert.deepEqual(payload.deliverySize,[318,390]);assert.equal(payload.opaqueHeight,384);
+  assert.equal(payload.sourceVideo.sha256,base.sourceSha256);assert.deepEqual(payload.foot.xy,base.foot.xy);
+  assert.deepEqual(payload.partialManifest.socketChannels,{[socket]:channel});
+  sockets[socket]=scaled(payload.partialManifest.sockets[socket]);
+  socketTracks[channel]=payload.partialManifest.socketTracks[channel].map(scaled);
+  socketChannels[socket]=channel;
+  authoredBindings.push({path,sha256:reviewed.artifactHashes[path],channel,socket,scale:ratio,
+   convention:'Scale both socket coordinates/offsets and the existing foot/opaque-height contract by2/3;world-relative coordinates remain unchanged. Native decoded alignment remains required.'});
+ }
+}
 const manifest={version:1,id:'clover',format:'h264-ycrcb-alpha-four-plane',
  video:`/units/clover/designer-idle-${sha(video).slice(0,16)}.mp4`,poster:`/units/clover/designer-idle-${sha(poster).slice(0,16)}.webp`,
  width:w,height:h,opaqueHeight:256,foot,opaqueBounds:[left,top,right,bottom],faceROI:scaled([135,60,90,90]),
@@ -83,11 +102,11 @@ const files=[];
 for(const [url,data] of payloads){const path=resolve(dist,url.slice(1));await mkdir(resolve(path,'..'),{recursive:true});await writeFile(path,data);files.push({url,path,bytes:data.length,sha256:sha(data)});}
 const report={utc:new Date().toISOString(),sourceCommit,sourceKind:'Committed application source plus explicit ignored Mochi+Clover study registry override',
  toolSha256:sha(await readFile(import.meta.filename)),dist,indexSha256:sha(await readFile(resolve(dist,'index.html'))),registryOverride,
- productionRegistrySha256:sha(registryBefore),productionRegistryChanged:false,runtimeSources,evidence,files,
+ productionRegistrySha256:sha(registryBefore),productionRegistryChanged:false,runtimeSources,evidence,files,authoredBindings,
  clover:{scale:ratio,logicalSize:[w,h],opaqueHeight:256,foot,opaqueBounds:manifest.opaqueBounds,faceROI:manifest.faceROI,sockets,socketChannels,
-  provisional:['head','off-hand','faceROI','hp-anchor native centering/readability'],hpFormula:'[footX,footY-1.12*opaqueHeight]; no track',
+  provisional:authored?['faceROI','head/freePaw native decoded alignment']:['head','off-hand','faceROI','hp-anchor native centering/readability'],hpFormula:'[footX,footY-1.12*opaqueHeight]; no track',
   opaqueBoundsBasis:'Union of all300 resized source masks at alpha>=16; right/bottom exclusive',
-  unresolved:['original matte/fringe/halo','tail loop seam','anatomy','decoded scene/cast','cold bytes','performance']},
+  unresolved:['original matte/fringe/halo','tail loop seam','anatomy','decoded scene/cast','performance'],bytePolicy:'report-only'},
  priorMochiBuildSha256:sha(await readFile(resolve(root,'work/v5/CXI/batch-m/mochi-scene-q22-r6/build.json'))),
  productionInstalled:false,accepted:false,imagesViewed:0};
 await writeFile(resolve(out,'build.json'),JSON.stringify(report,null,2)+'\n');
