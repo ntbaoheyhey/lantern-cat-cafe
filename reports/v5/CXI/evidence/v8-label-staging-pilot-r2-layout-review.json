@@ -1,0 +1,49 @@
+{
+  "utc": "2026-11-18T15:21:20.824Z",
+  "raw": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/label-staging-pilot-r2-151636/report.json",
+    "sha256": "bb8eb0a7842b6f685869c9f6e521627144e2ab14df07a3058f7ce5179ea4b7ee"
+  },
+  "rulesAudit": {
+    "path": "/Users/bao/taskbar-hero-chain/reports/v5/CXI/evidence/v8-label-staging-pilot-r2-rules-review.json",
+    "sha256": "7b9d5580b3c1bdb5ffab187905381e30cb193a4797aadf1b3dfa350685b390a2"
+  },
+  "toolSha256": "79ec3ef33d0d12f7c0798ad222c5d54e2d879b9664cbc033d2d82e7ac9abed24",
+  "sourceCommit": "bf01d462ac32233ab11475605d571aea691f96bf",
+  "indexSha256": "eb93ee0dbdfb500c3f9aed80acdb134f027d8093240c86b545807a87dc79ce67",
+  "url": "http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+  "sourceFiles": [
+    {
+      "path": "apps/web/src/game/cardrpg/battle-v3/world-label-layout.ts",
+      "sha256": "e11e0464b2169b5d17f5a835f6c44ffb0656fa1989d325b59d2135e098c4fb2a"
+    },
+    {
+      "path": "apps/web/src/game/cardrpg/spine/scene.ts",
+      "sha256": "ffeb33801e1b66aa255a71104d863fad871a41a3da80b085c9923d2980cc14c0"
+    }
+  ],
+  "geometryRows": 57,
+  "pixelCases": 10,
+  "samples": 67,
+  "labels": 469,
+  "maxErrorCSSpx": 0.015086915979054538,
+  "maxDrift": 0,
+  "gapRange": [
+    6,
+    6
+  ],
+  "otherLabelsUnchanged": true,
+  "failedSamples": 0,
+  "failures": [],
+  "geometryAccepted": true,
+  "productionAcceptance": false,
+  "imagesViewed": 0,
+  "limits": [
+    "Exact explicit staging schedule; seeded states are not natural reachability.",
+    "Observed DOM extents are inputs; CSS measurement is not independently reproduced.",
+    "Original Mochi hp target reconstructed from source anchor.y; Clover diagnostic retained in both layouts.",
+    "Association design bounds do not prove perceived ownership.",
+    "Native body margin checks are rejection gates, not live solver constraints.",
+    "No painted-body, fringe/halo, seam, performance or release acceptance."
+  ]
+}
