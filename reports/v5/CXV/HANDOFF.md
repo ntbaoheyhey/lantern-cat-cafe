@@ -3,8 +3,8 @@ ACTIVE initial/sham/conceal control study prepared;Mochi-only sourceproposal NOT
 Worktree /Users/bao/taskbar-hero-cardrpg-a6;branch codex/v5-vfx-2026-11-17;desktop1280x720.
 NEXT 1: Read INBOX-CXV after522 for explicit6301/timing lease;only then launch run-media-action-labels.py --capture controls on frozen R1 prereg.
 NEXT 2: Measure controls with measure-label-controls.py;then Mochi-only fresh baseline/candidate native study before any appchange.
-NEXT 3: Review AGV T-M1/T-M2;continue BatchM art/loop/performance before legacy.
-Last confirmed pushed 8537fb12c;GREENv5-m1.15 merged;R7bf01d462a/indexeb93ee0d;productionregistryempty.
+NEXT 3: Review AGV T-M2/T-M4-EVIDENCE;dualbelowbody Clover1534failures retained;Mochi-only path prioritized.
+Last confirmed pushed 7020c9099;GREENv5-m1.15 merged;R7bf01d462a/indexeb93ee0d;productionregistryempty.
 Order ORDER-V8.txt SHA256 a2b825b3cc7b3e145c95858ead33312bcbeae0af0521f201ded923f3f87efbbd.
 Wake cxv-wake ACTIVE15min app+TOML verified 2026-11-18T16:45:46.952586+00:00;preserve unchanged.
 Jobs:none;CXI observer exclusive6301/timing until16:57:18Z AND release;CXV8min control lease requested,no launch.

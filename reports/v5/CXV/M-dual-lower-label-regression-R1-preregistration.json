@@ -1,0 +1,42 @@
+{
+  "utc": "2026-11-18T16:57:59.336560+00:00",
+  "hypothesis": "Use one structural complete-label top rule for both authored Mochi and Clover: max(bodyBottom,footY)+6; existing original horizontal hpAnchor axes. No fixed Clover translation.",
+  "reason": "Own-body avoidance disproved rigid shifts. Below-body top positioning is the existing lowerMochi idea applied to both commissioned bodies, with the same six-pixel design gap.",
+  "sourceCommit": "bf01d462ac32233ab11475605d571aea691f96bf",
+  "indexSha256": "eb93ee0dbdfb500c3f9aed80acdb134f027d8093240c86b545807a87dc79ce67",
+  "raw": {
+    "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/staging-full-r1/report.json",
+    "sha256": "95adc6f239c6bd92bcebbc24fbf2ef1f6ee04c738cc1de220f55da738bcb057f"
+  },
+  "scope": "Offline source-layout regression only. The34paintcase+1500row reserved dataset has been seen;never call it heldout. Freeze before running this new structural candidate.",
+  "candidate": {
+    "cats": [
+      "mochi",
+      "clover"
+    ],
+    "completeLabelTop": "max(anchor.body.y+anchor.body.height,anchor.footY)+6",
+    "x": "original anchor.labelX + observed DOM extent offset",
+    "solver": "Unchanged pinned world-label-layout; ownavoidbody retained. No scope change to native or Soot."
+  },
+  "criteria": {
+    "baselineReconstructionToleranceCSSpx": 0.015625,
+    "otherLabelsToleranceCSSpx": 0.015625,
+    "maxFallbackCSSpx": 12,
+    "bodyBottomGapCSSpx": [
+      6,
+      18
+    ],
+    "ownerAxisInsideLabel": true,
+    "nativeBodyMarginCSSpx": 6,
+    "otherLabelMarginCSSpx": 10,
+    "viewportInsetCSSpx": 4,
+    "HUDAndFaceOverlap": 0
+  },
+  "limits": [
+    "No offset fitting or search;report every failure,then decide a new independent hypothesis if needed.",
+    "A geometry pass never establishes painted clearance,association,alpha/seam orperformance.",
+    "Native target paint and fresh idle/status/action cases still required;no source adoption.",
+    "Complete label paint including shadows remains threshold0 with2px dilation,unchanged from prior gate.",
+    "No browser or images viewed in this step."
+  ]
+}

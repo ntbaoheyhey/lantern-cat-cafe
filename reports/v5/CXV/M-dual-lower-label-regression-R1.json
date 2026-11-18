@@ -1,0 +1,55 @@
+{
+  "utc": "2026-11-18T16:58:32.628Z",
+  "url": "http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+  "sourceCommit": "bf01d462ac32233ab11475605d571aea691f96bf",
+  "indexSha256": "eb93ee0dbdfb500c3f9aed80acdb134f027d8093240c86b545807a87dc79ce67",
+  "raw": {
+    "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/staging-full-r1/report.json",
+    "sha256": "95adc6f239c6bd92bcebbc24fbf2ef1f6ee04c738cc1de220f55da738bcb057f"
+  },
+  "preregistration": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v5/CXV/M-dual-lower-label-regression-R1-preregistration.json",
+    "sha256": "1ff96d29167e9ecad32fbb8c59bc101c6d459e7250d5ab10ae0d181ee57f3c37"
+  },
+  "harnessSha256": "d469efb8e56475105072b7d72c6ba32c1e3d980c937ae70b4109a3e8112bcd21",
+  "sourceSha256": "e11e0464b2169b5d17f5a835f6c44ffb0656fa1989d325b59d2135e098c4fb2a",
+  "samples": 1534,
+  "maxBaselineError": 0.015580714705720311,
+  "maxOtherError": 0.015418694960303014,
+  "productionAcceptance": false,
+  "imagesViewed": 0,
+  "limits": [
+    "No offset fitting or search;report every failure,then decide a new independent hypothesis if needed.",
+    "A geometry pass never establishes painted clearance,association,alpha/seam orperformance.",
+    "Native target paint and fresh idle/status/action cases still required;no source adoption.",
+    "Complete label paint including shadows remains threshold0 with2px dilation,unchanged from prior gate.",
+    "No browser or images viewed in this step."
+  ],
+  "rawAnalysis": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/dual-lower-label-regression-r1/report.json",
+    "sha256": "60631f1f95388d269dc19ba2655cb1a26a522157da25d551f033f2f4af9b5881"
+  },
+  "failureCount": 1534,
+  "failureGroups": {
+    "clover:fallback": 1534,
+    "clover:axis": 1534,
+    "clover:gap": 1534
+  },
+  "targetSummary": {
+    "mochi": {
+      "maxFallback": 0,
+      "gapRange": [
+        6,
+        6
+      ]
+    },
+    "clover": {
+      "maxFallback": 125.7881287862885,
+      "gapRange": [
+        -47.17924172463836,
+        -22.894674938533967
+      ]
+    }
+  },
+  "decision": "Geometric regression rejected;no refit/source adoption."
+}
