@@ -1,8 +1,8 @@
-ACTIVE: OPEN
-OPEN TASKs: 
-- T-CXI-13: QA v5-m1.15 (Browser Execution Failure)
-- T-M5: Short-GOP trial audit (Raw Evidence Re-Delivered)
-- T-CXI-14: PTS Field Audit (Raw JSON + Semantics Delivered)
-- T-CXI-15: CPU Profiling Research (Sources/Method Delivered)
-PUSHED: a450f93c9
-WAKE: task-2131
+# AGS Handoff Status
+- T-CXI-1: QA v5-m1.12@9c93780ee (DONE - AWAITING REVIEW)
+- T-CXI-2: AVAX winners (DONE - AWAITING REVIEW)
+- T-CXI-3: First load research (DONE - AWAITING REVIEW)
+- T-CXI-5: Residual beds (OPEN)
+- T-CXI-7: Submission script (OPEN)
+- T-CXI-8: Wave3 callouts (OPEN - ACTIVE)
+
