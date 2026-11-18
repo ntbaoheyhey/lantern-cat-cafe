@@ -1,5 +1,5 @@
 # CXI V8 — Batch M first
-NEXT ACTIVE:Panko frozen4fd743c107a6 host-only lease until18:20:00Z ANDrelease;await actual evidence without hostoverlap. Footer focus repair CXV-owned. Normal1x baseline DONE237hashes/2exact55actionbattles.
+NEXT ACTIVE:CXI4freshMochi4 focusheldouts preregistered;freeze harness then reserve/run. R2 regression accepted259hash/32PNG/64states/24values/4rules;surviving focus sameNode6/6 botharms. Panko synthetic gateREJECT2.11/1.45percent;no app adoption.
 M-I1 ACTIVE: decodedPTS correction ae1e69fb5 scopedACCEPT actualGPU24matches/8controls+124lifecyclechecks+52castrows/8actions. R7 adds authoredHP;3250web/30focused/TSC0. Productionregistry{}.
 M-I2 OPEN: original matte/fringe/halo, Clover tail seam and native authored tracking/performance. Source trajectory native scopedPASS;fresh R5 seam REJECT MAE11.158076 vs nearmed 2.248417;historicalR2 preserved. Bytes report-only per OWNER INBOX386.
 M-I3 DONE/REPEAT: native9 shipped v5-m1.15@59f5f3c57;sourceb9b6f1728/indexfedad6e2;5556checks inherited/7fresh browser gates/3actual30sfilms;remote branch/tag verified. No commissioned media accepted.

@@ -6,13 +6,19 @@ import json
 import math
 import subprocess
 import sys
+import argparse
 
 sys.path.insert(0, '/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/python')
 import cv2
 import numpy as np
 cv2.setNumThreads(1)
 root = Path(__file__).resolve().parents[2]
-base, output = map(Path, sys.argv[1:])
+parser = argparse.ArgumentParser()
+parser.add_argument('base', type=Path)
+parser.add_argument('output', type=Path)
+parser.add_argument('--revision', choices=['r1', 'r2'], default='r1')
+args = parser.parse_args()
+base, output = args.base, args.output
 assert not output.exists(), 'Preserve earlier evidence'
 hashes = {}
 
@@ -60,9 +66,11 @@ for k in ['url', 'sourceCommit', 'indexSha256']:
     assert raw[k] == pre[k] == artifact[k]
 for item in load(base/'harness-provenance.json'):
     read(base/item['name'], item['sha256'])
-read(base/'probe-footer-lifecycle.mjs', raw['harnessSha256'])
+capture_name = 'probe-footer-lifecycle-r2.mjs' if args.revision == 'r2' else 'probe-footer-lifecycle.mjs'
+prototype_name = 'footer-identity-stable-prototype.mjs' if args.revision == 'r2' else 'footer-identity-prototype.mjs'
+read(base/capture_name, raw['harnessSha256'])
 assert raw['harnessSha256'] == pre['harnessSha256']
-read(base/'footer-identity-prototype.mjs', pre['prototypeSha256'])
+read(base/prototype_name, pre['prototypeSha256'])
 assert raw['prototypeSha256'] == pre['prototypeSha256']
 build = load(artifact['build']['path'], artifact['build']['sha256'])
 assert raw['fixture']['buildSha256'] == artifact['build']['sha256']
@@ -135,6 +143,11 @@ for run in raw['runs']:
                          panelsExpected=len(panels) == (1 if prototype else 0),
                          focusTitle=title, focusTargetSurvives=survives,
                          focusRetained=focused if survives else None, focus=after['information']['focus'], geometry=geometry))
+        if args.revision == 'r2':
+            rows[-1]['focusNodeRetained'] = bool(focused and after['information']['focus']['sameNode'] and
+                                               after['information']['focus']['originalConnected']) if survives else None
+            rows[-1]['focusRetained'] = rows[-1]['focusNodeRetained']
+            rows[-1]['emptyLabelCorrect'] = not prototype or target['noEffects'] == ('No effects' if not native['badges'] else None)
     initial_world = next(n for n in world(run['initial']) if n['actor'] == 'mochi')
     initial_panels = [n for n in run['initial']['information']['nodes'] if n['class'] == 'b3-cxv-identity']
     empty = None
@@ -149,6 +162,9 @@ for run in raw['runs']:
                         allTransferPass=all(all(row[k] for k in ['sceneUnchanged', 'worldUnchanged',
                                                                'footerControlsUnchanged', 'valuesExact', 'panelsExpected']) for row in rows),
                         survivingFocusPass=all(row['focusRetained'] for row in rows if row['focusTargetSurvives'])))
+    if args.revision == 'r2':
+        results[-1]['survivingFocusPass'] = all(row['focusNodeRetained'] for row in rows if row['focusTargetSurvives'])
+        results[-1]['allTransferPass'] = results[-1]['allTransferPass'] and all(row['emptyLabelCorrect'] for row in rows)
 cross = []
 for status in ['empty', 'capacity']:
     for phase in ['initial', 'final']:
@@ -168,16 +184,21 @@ if peer_path.exists():
         for own_row, claim_row in zip(own['rows'], claim['rows']):
             assert {k: own_row[k] for k in claim_row} == claim_row
     peer_checked = True
+focus_gate = 'focusNodeRetained' if args.revision == 'r2' else 'focusRetained'
 failures = [dict(case=r['key'], ms=row['ms'], focus=row['focus']) for r in results
-            for row in r['rows'] if row['focusTargetSurvives'] and not row['focusRetained']]
+            for row in r['rows'] if row['focusTargetSurvives'] and not row[focus_gate]]
+regression_pass = not failures and all(r['allTransferPass'] and r['allRepeatStatePass'] and
+                                      r['emptyInitialCorrect'] is not False for r in results)
 result = dict(utc=datetime.now(timezone.utc).isoformat(), sourceCommit=raw['sourceCommit'], indexSha256=raw['indexSha256'],
               url=raw['url'], captureUTC=raw['utc'], finishedUTC=raw['finishedUTC'],
               pngs=picture_count, fullStateComparisons=state_count, repeatPairs=repeat_count,
               sourceAndArtifactItems=sum(len(artifact[k]) for k in ['sourceFiles', 'artifacts', 'mediaFiles']),
               runs=results, crossArm=cross, survivingFocusFailures=failures, peerNumbersExact=peer_checked,
               hashes=hashes, toolSha256=hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
-              imagesViewed=0, productionAcceptance=False,
-              disposition='REJECT lifecycle: prototype loses surviving status focus' if failures else 'Scoped numeric acceptance only',
+              imagesViewed=0, productionAcceptance=False, revision=args.revision,
+              regressionPass=regression_pass,
+              disposition='REJECT lifecycle: prototype loses surviving status focus' if failures else
+                          'Scoped numeric regression acceptance only' if regression_pass else 'REJECT strict transfer or capture controls',
               limits=['Manual sync development pilot, normal Mochi only; not native integration or natural reachability.',
                       'Rules replay is separate. Full paint restoration, fallback, dual media, art and performance remain open.'])
 output.write_text(json.dumps(result, indent=2)+'\n')

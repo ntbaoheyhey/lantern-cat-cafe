@@ -1,0 +1,62 @@
+{
+  "utc": "2026-11-18T18:21:13.100650+00:00",
+  "classification": "Fresh CXI heldout development cases chosen from source before evaluating these cases;not full production acceptance",
+  "sourceCommit": "bf01d462ac32233ab11475605d571aea691f96bf",
+  "indexSha256": "e66485f99d6c488da1363ba2d2fc739b779dc524e31800874e55b5e167f7daf1",
+  "build": {
+    "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/mochi-only-profile-r1/build.json",
+    "sha256": "f6db611441d33815deddfdfe9aa04b068de567abb6b15adcb493f7d81d203b07"
+  },
+  "url": "http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+  "viewport": [
+    1280,
+    720
+  ],
+  "prototype": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/tools/v5vfx/footer-identity-stable-prototype.mjs",
+    "sha256": "3bea8edc07dada887e578d9df71ea944817e78e58b7111ece3fcc9755b50f09d"
+  },
+  "cases": [
+    {
+      "mode": "normal",
+      "cat": "mochi",
+      "skill": 4,
+      "statusCase": "capacity",
+      "focusStatusId": "bitter",
+      "expectation": "First debuff scald removed;surviving Bitter changes visible position,retain same focused node as original control."
+    },
+    {
+      "mode": "reduced",
+      "cat": "mochi",
+      "skill": 4,
+      "statusCase": "capacity",
+      "focusStatusId": "scald",
+      "expectation": "Focused Burn is cleansed;preserve original focus fallback without calling focus() or retaining removed status."
+    }
+  ],
+  "arms": [
+    "original",
+    "prototype"
+  ],
+  "freshPages": 4,
+  "sampleMs": [
+    0,
+    175,
+    250,
+    350,
+    600,
+    1100,
+    1300,
+    2199,
+    2200
+  ],
+  "captures": "Initial/final screen+canvas,2repeats each,max32PNGs;no image review before numeric measurements. At most2new1024px previews once if controls valid.",
+  "fixture": "Same seeded roster mochi/clover/panko/mallow;initial4capped statuses andshield80 synthetic. Legal ultimate replayed against exact captured rules;not natural reachability.",
+  "observation": "Atomic full before/sync/after snapshot and original control;no focus restoration or global clock freezing. Preserve R1/R2 evidence;no app source edits.",
+  "launchPrerequisites": [
+    "R2 regression accepted in scope after independent audit.",
+    "R2 processgroup empty AND explicit timing release.",
+    "Own lease and frozen harness/dependency hashes before launch."
+  ],
+  "productionAcceptance": false
+}
