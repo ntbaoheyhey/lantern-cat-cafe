@@ -50,3 +50,5 @@ Kiểm tra mới:598hash/56đối chứng/134.456phép đếm tái lập vị tr
 2026-11-18T17:22:53.556032+00:00: Mochi-only dùng Clover native có phim nguồn-vs-game300khung/30fps/10s ở227px;3ảnh mới đã xem. Đây là phim tái dựng theo thời gian nguồn, không chứng minh FPS laptop. Audit20case khẳng định loại phương án nhãn thấp; media đặt hàng vẫn chưa phát hành.
 
 2026-11-18T17:57:04.341926+00:00 — Hai trận Mochi-only không giảm tốc CPU đã kiểm chứng237 tệp:55 hành động/21 ultimate mỗi trận,luật và kế hoạch trùng khớp. p95 khung hình16,8/16,7ms;video bỏ11/2425 và6/2424 khung. Chỉ là số đo trên M3 Pro,không chứng nhận laptop phổ thông. Đã nhả timing;CXV thử footer riêng,không nhập mã. Bản xanh vẫn v5-m1.15.
+
+2026-11-18T18:05:43.697097+00:00 — Thử nhóm HP/trạng thái có tên Mochi ở footer:kiểm chứng120ảnh/240trạng thái/4hành động của CXV;thêm2ảnh mới tự chụp và xem một lần cho thấy tên rõ,không đè thân/control tại hai mốc. Đối chứng phục hồi còn sai1015/409/1010/943pixel;nhánh không hiệu ứng,fallback,cả chuỗi chuyển động chưa đủ. Chưa nhập prototype hay phát hành media;v5-m1.15 vẫn bản xanh.
