@@ -1,0 +1,110 @@
+{
+  "utc": "2026-11-18T15:16:21.394907+00:00",
+  "decision": "INCOMPLETE;no candidate acceptance",
+  "capture": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/label-staging-pilot-r1-151413",
+    "reportSha256": "809c0501fdfc718a10a3f27c2fe9e41f70397ed2a23867c1d240af2e84e0551d",
+    "analysisSha256": "9d1641353c3620ecaff97eab3542e00a182f50eb1d35cbc1953ecf35ed497a6a"
+  },
+  "actions": 1,
+  "rows": 8,
+  "paintCases": 1,
+  "rulesEqual": true,
+  "controls": true,
+  "layout": {
+    "utc": "2026-11-18T15:15:27.944Z",
+    "sourceCommit": "bf01d462ac32233ab11475605d571aea691f96bf",
+    "indexSha256": "eb93ee0dbdfb500c3f9aed80acdb134f027d8093240c86b545807a87dc79ce67",
+    "url": "http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+    "input": {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/label-staging-pilot-r1-151413/report.json",
+      "sha256": "809c0501fdfc718a10a3f27c2fe9e41f70397ed2a23867c1d240af2e84e0551d"
+    },
+    "layoutSourceSha256": "e11e0464b2169b5d17f5a835f6c44ffb0656fa1989d325b59d2135e098c4fb2a",
+    "harnessSha256": "dca5d9445e5d74bb9c937cdc7113c07618d99e5751ef4c66e4b98440de38a38b",
+    "samples": 9,
+    "maxReplayError": 0.014667941127981976,
+    "maxOtherLabelError": 0.014667941127981976,
+    "maxDrift": 0.006249999999965894,
+    "association": true,
+    "geometryClear": true,
+    "results": null,
+    "pass": true
+  },
+  "failure": "page.waitForFunction: Timeout 10000ms exceeded.\n    at waitForDecodedMediaFrame (/Users/bao/taskbar-hero-cardrpg-a6/tools/v5vfx/media-production-fixture.mjs:22:13)\n    at renderDecoded (/Users/bao/taskbar-hero-cardrpg-a6/tools/v5vfx/probe-action-labels.mjs:60:8)\n    at async file:///Users/bao/taskbar-hero-cardrpg-a6/tools/v5vfx/probe-action-labels.mjs:119:31",
+  "failureMedia": {
+    "mochi": {
+      "state": {
+        "ready": true,
+        "desired": 1.347999999999999,
+        "currentTime": 1.339666,
+        "presentedTime": 1.333333,
+        "presentationClock": "callback",
+        "sourceFrame": 40,
+        "seeking": false,
+        "paused": true,
+        "suspended": false,
+        "disposed": false
+      },
+      "decoded": {
+        "at": 8090.5,
+        "fullAt": null,
+        "mediaTime": 1.333333,
+        "presentedFrames": 13,
+        "processingDuration": 0.0028,
+        "expectedDisplayTime": 8090.8
+      },
+      "planeVisible": true,
+      "rootVisible": true,
+      "body": {
+        "x": 337.1656294533051,
+        "y": 169.2000008188987,
+        "width": 272.8687508977014,
+        "height": 226.79999881795854
+      },
+      "face": {
+        "x": 423.98749999999995,
+        "y": 195.77812500000005,
+        "width": 116.35312499999998,
+        "height": 78.55312499999991
+      }
+    },
+    "clover": {
+      "state": {
+        "ready": true,
+        "desired": 4.9680000000000035,
+        "currentTime": 4.959666,
+        "presentedTime": 4.933333,
+        "presentationClock": "callback",
+        "sourceFrame": 148,
+        "seeking": false,
+        "paused": true,
+        "suspended": false,
+        "disposed": false
+      },
+      "decoded": {
+        "at": 8140.5,
+        "fullAt": null,
+        "mediaTime": 4.933333,
+        "presentedFrames": 12,
+        "processingDuration": 0.0016,
+        "expectedDisplayTime": 8134.4
+      },
+      "planeVisible": true,
+      "rootVisible": true,
+      "body": {
+        "x": 265.8585498227243,
+        "y": 406.80000054310375,
+        "width": 185.08290162477772,
+        "height": 226.79999921605548
+      },
+      "face": {
+        "x": 347.1166136279793,
+        "y": 444.307818534715,
+        "width": 52.88082901554401,
+        "height": 52.88082901554401
+      }
+    }
+  },
+  "next": "R2 displayed-frame gate preregistered;no app edit."
+}

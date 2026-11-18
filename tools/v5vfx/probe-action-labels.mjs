@@ -57,7 +57,7 @@ function fixture(mode,cat,skill){
 
 async function renderDecoded(page,fixedTime,reduced){
  await page.evaluate(fixedTime=>{const s=window.__depthScene;cancelAnimationFrame(s.raf);s.render({...s.view(),fixedTime,paused:true},0);},fixedTime);
- await waitForDecodedMediaFrame(page,{reduced});
+ await waitForDecodedMediaFrame(page,{reduced,displayedFrame:!!prereg.displayedFrameGate});
  await page.evaluate(fixedTime=>{const s=window.__depthScene;cancelAnimationFrame(s.raf);s.render({...s.view(),fixedTime,paused:true},0);},fixedTime);
  await page.evaluate(()=>new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r))));
 }

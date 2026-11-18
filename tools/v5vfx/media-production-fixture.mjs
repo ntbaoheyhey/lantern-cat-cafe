@@ -18,13 +18,17 @@ const group=0;assert(Number.isInteger(group)&&squads[group]);
 assert.equal(execFileSync('git',['diff',source,'--','packages/game-rules/src'],{cwd:root,encoding:'utf8'}),'','Production rules must match source');
 export function runtimeEvidence(){return{indexSha256:hash(readFileSync(resolve(root,'apps/web/dist/index.html'))),harnessSha256:hash(readFileSync(import.meta.filename)),servedSource:source,roster:squads[group],mediaCats,group,buildPath,buildSha256:hash(readFileSync(buildPath)),registryOverride:build.registryOverride};}
 /** A completed seek can precede frame presentation. Require native callback evidence too. */
-export async function waitForDecodedMediaFrame(page,{sourceFrame,reduced=false}={}){
- await page.waitForFunction(({mediaCats,sourceFrame,reduced})=>mediaCats.every(id=>{
+export async function waitForDecodedMediaFrame(page,{sourceFrame,reduced=false,displayedFrame=false}={}){
+ await page.waitForFunction(({mediaCats,sourceFrame,reduced,displayedFrame})=>mediaCats.every(id=>{
   const media=[...window.__depthScene.actors.values()].find(e=>e.asset===id)?.actor?.designerMedia?.media.state,decoded=(window.__cxvMediaAudits?.[id]??window.__cxvMediaAudit)?.decoded.at(-1);
   if(!media?.ready||media.failure||media.disposed||media.seeking||!decoded)return false;
+  if(displayedFrame){
+   const currentFrame=Math.floor((media.currentTime+1e-6)*30),presentedFrame=Math.round(decoded.mediaTime*30);
+   return Math.abs(media.currentTime-media.desired)<=1/60&&currentFrame===presentedFrame&&Math.abs(media.sourceFrame-presentedFrame)<=1e-5&&(!reduced||presentedFrame===0);
+  }
   const expected=reduced?0:sourceFrame!==undefined?sourceFrame/30:media.desired;
   return Math.abs(media.currentTime-media.desired)<=1/60&&Math.abs(decoded.mediaTime-expected)<=(reduced||sourceFrame!==undefined?1e-5:1/30+1e-6);
- }),{mediaCats,sourceFrame,reduced},{timeout:10000});
+ }),{mediaCats,sourceFrame,reduced,displayedFrame},{timeout:10000});
 }
 export async function openFixture(browser,fixture,{setupPage}={}){
  for(const name of ['STOP-ALL','STOP-CXV'])assert(!existsSync('/Users/bao/taskbar-hero-mailbox/'+name),'STOP: '+name);
