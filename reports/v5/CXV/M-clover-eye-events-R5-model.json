@@ -1,0 +1,452 @@
+{
+  "utc": "2026-11-18T11:58:18.622491+00:00",
+  "source": "work/v5/CXV/ref/batch-m/clover-frames.npy",
+  "sourceSha256": "dcc06d163cfd968db4f4a7674576eb5a419646ce27f65e4805784b92923f3b4e",
+  "model": {
+    "method": "PchipInterpolator,independent X/Y,three copies at-300/0/+300 of combined48training knots;no smoothing/search",
+    "gate": {
+      "freshHeldoutPerAxisSourcePx": 8,
+      "trainingExactPx": 1e-08,
+      "periodicValuePx": 1e-08,
+      "periodicDerivativePxPerFrame": 1e-08,
+      "allFinite": true
+    }
+  },
+  "modelPreregistrationSha256": "8474bac5cbcdd15d6299b14e3b5835cd426f3ef8645a48d07081a48c31f355a3",
+  "observations": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-eye-events-R5/frozen-observations.json",
+    "sha256": "41cad89cc2f2e009675c870ba45e31876302b24f66ad1b672f330be94014cb55"
+  },
+  "priorTraining": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-presentation-anchors-R4/frozen-observations.json",
+    "sha256": "5730943e33425bbea3856ca76c06ae1462ef354a496c61f43c6f1923409221d2",
+    "rows": "Use only the24 R4 training eyeLine centers;no prior holdouts fit"
+  },
+  "priorFailure": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v5/CXV/M-clover-presentation-R4-model.json",
+    "sha256": "f42774dc95b3a880988d9b4aa4e906efafdda62d9d2c6c72ac17603252b1d7d4"
+  },
+  "toolSha256": "d54549b09a22563508c5f62c5925e8c155aa5312f413634dabd3b17f1a327ff1",
+  "versions": {
+    "python": "3.9.6",
+    "numpy": "2.0.2",
+    "scipy": "1.13.1"
+  },
+  "trainingCount": 48,
+  "heldoutCount": 24,
+  "heldoutPassCount": 24,
+  "checks": {
+    "finite": true,
+    "trainingExact": true,
+    "freshHeldouts": true,
+    "periodicValue": true,
+    "periodicDerivative": true
+  },
+  "passSparseControls": true,
+  "trainingMaxErrorSourcePx": 0.0,
+  "maximumHeldoutAbsErrorSourcePx": [
+    1.361218073110706,
+    1.9337147853371164
+  ],
+  "periodicValueErrorSourcePx": 0.0,
+  "periodicDerivativeErrorSourcePxPerFrame": 0.0,
+  "maximumAdjacentStepSourcePx": 5.0286155639499786,
+  "seamAdjacentStepSourcePx": 0.1329666015324581,
+  "holdouts": [
+    {
+      "frame": 16,
+      "observed": [
+        301.0714,
+        158.9286
+      ],
+      "predicted": [
+        301.44166860763517,
+        158.26847685309468
+      ],
+      "errorSourcePx": [
+        0.37026860763518243,
+        -0.6601231469053062
+      ],
+      "passBound": true
+    },
+    {
+      "frame": 20,
+      "observed": [
+        304.1071,
+        165.1786
+      ],
+      "predicted": [
+        304.7735277781928,
+        165.35231878245966
+      ],
+      "errorSourcePx": [
+        0.6664277781927694,
+        0.1737187824596731
+      ],
+      "passBound": true
+    },
+    {
+      "frame": 23,
+      "observed": [
+        306.25,
+        166.0714
+      ],
+      "predicted": [
+        305.24313831914924,
+        165.0
+      ],
+      "errorSourcePx": [
+        -1.0068616808507613,
+        -1.0714000000000112
+      ],
+      "passBound": true
+    },
+    {
+      "frame": 26,
+      "observed": [
+        309.8214,
+        163.2143
+      ],
+      "predicted": [
+        309.060612740708,
+        163.11934096011217
+      ],
+      "errorSourcePx": [
+        -0.7607872592919875,
+        -0.09495903988783994
+      ],
+      "passBound": true
+    },
+    {
+      "frame": 29,
+      "observed": [
+        311.4286,
+        157.1428
+      ],
+      "predicted": [
+        311.20744378003053,
+        156.1245288446183
+      ],
+      "errorSourcePx": [
+        -0.22115621996948676,
+        -1.018271155381683
+      ],
+      "passBound": true
+    },
+    {
+      "frame": 162,
+      "observed": [
+        301.9643,
+        155.3571
+      ],
+      "predicted": [
+        301.99916331691446,
+        155.77264738034887
+      ],
+      "errorSourcePx": [
+        0.03486331691448186,
+        0.41554738034886896
+      ],
+      "passBound": true
+    },
+    {
+      "frame": 165,
+      "observed": [
+        302.3214,
+        159.2857
+      ],
+      "predicted": [
+        302.1850245824693,
+        159.1006124596141
+      ],
+      "errorSourcePx": [
+        -0.13637541753070082,
+        -0.1850875403858936
+      ],
+      "passBound": true
+    },
+    {
+      "frame": 169,
+      "observed": [
+        303.3929,
+        162.8571
+      ],
+      "predicted": [
+        302.54113590303047,
+        162.84136815699898
+      ],
+      "errorSourcePx": [
+        -0.8517640969695321,
+        -0.015731843001020707
+      ],
+      "passBound": true
+    },
+    {
+      "frame": 173,
+      "observed": [
+        302.5,
+        160.0
+      ],
+      "predicted": [
+        302.01760827517,
+        159.5195644412949
+      ],
+      "errorSourcePx": [
+        -0.48239172482999493,
+        -0.48043555870509635
+      ],
+      "passBound": true
+    },
+    {
+      "frame": 176,
+      "observed": [
+        302.1429,
+        154.2857
+      ],
+      "predicted": [
+        303.2329704220711,
+        154.75009932842906
+      ],
+      "errorSourcePx": [
+        1.0900704220711077,
+        0.4643993284290673
+      ],
+      "passBound": true
+    },
+    {
+      "frame": 179,
+      "observed": [
+        303.2142,
+        148.5714
+      ],
+      "predicted": [
+        303.4656693583893,
+        149.521543850111
+      ],
+      "errorSourcePx": [
+        0.2514693583892722,
+        0.950143850110976
+      ],
+      "passBound": true
+    },
+    {
+      "frame": 200,
+      "observed": [
+        298.9286,
+        150.3571
+      ],
+      "predicted": [
+        299.5921353910694,
+        150.33250501886496
+      ],
+      "errorSourcePx": [
+        0.663535391069388,
+        -0.02459498113503855
+      ],
+      "passBound": true
+    },
+    {
+      "frame": 202,
+      "observed": [
+        300.0,
+        154.8214
+      ],
+      "predicted": [
+        300.5251769376977,
+        155.37277534619372
+      ],
+      "errorSourcePx": [
+        0.5251769376977222,
+        0.5513753461937085
+      ],
+      "passBound": true
+    },
+    {
+      "frame": 203,
+      "observed": [
+        299.8214,
+        156.9643
+      ],
+      "predicted": [
+        301.1826180731107,
+        157.7161543397635
+      ],
+      "errorSourcePx": [
+        1.361218073110706,
+        0.7518543397634971
+      ],
+      "passBound": true
+    },
+    {
+      "frame": 207,
+      "observed": [
+        302.8571,
+        155.8929
+      ],
+      "predicted": [
+        303.25171335864326,
+        155.0275620336762
+      ],
+      "errorSourcePx": [
+        0.3946133586432552,
+        -0.865337966323807
+      ],
+      "passBound": true
+    },
+    {
+      "frame": 209,
+      "observed": [
+        303.0357,
+        149.1071
+      ],
+      "predicted": [
+        303.73997307134607,
+        150.6995876669911
+      ],
+      "errorSourcePx": [
+        0.7042730713460514,
+        1.5924876669911043
+      ],
+      "passBound": true
+    },
+    {
+      "frame": 3,
+      "observed": [
+        293.3929,
+        145.7143
+      ],
+      "predicted": [
+        292.99218647260716,
+        146.49617780432612
+      ],
+      "errorSourcePx": [
+        -0.4007135273928384,
+        0.7818778043261148
+      ],
+      "passBound": true
+    },
+    {
+      "frame": 51,
+      "observed": [
+        312.6785,
+        145.3571
+      ],
+      "predicted": [
+        312.175824226485,
+        147.112898
+      ],
+      "errorSourcePx": [
+        -0.5026757735149658,
+        1.7557979999999986
+      ],
+      "passBound": true
+    },
+    {
+      "frame": 89,
+      "observed": [
+        288.3929,
+        148.2143
+      ],
+      "predicted": [
+        288.2728986163901,
+        147.19618006192874
+      ],
+      "errorSourcePx": [
+        -0.12000138360991741,
+        -1.0181199380712656
+      ],
+      "passBound": true
+    },
+    {
+      "frame": 120,
+      "observed": [
+        293.9286,
+        139.2857
+      ],
+      "predicted": [
+        294.2841149663371,
+        139.85725299040718
+      ],
+      "errorSourcePx": [
+        0.35551496633706847,
+        0.5715529904071843
+      ],
+      "passBound": true
+    },
+    {
+      "frame": 145,
+      "observed": [
+        299.6429,
+        155.0
+      ],
+      "predicted": [
+        299.1524972439686,
+        155.55751312100645
+      ],
+      "errorSourcePx": [
+        -0.4904027560314148,
+        0.5575131210064512
+      ],
+      "passBound": true
+    },
+    {
+      "frame": 190,
+      "observed": [
+        300.8929,
+        146.9643
+      ],
+      "predicted": [
+        300.38317900297625,
+        145.0305852146629
+      ],
+      "errorSourcePx": [
+        -0.5097209970237486,
+        -1.9337147853371164
+      ],
+      "passBound": true
+    },
+    {
+      "frame": 239,
+      "observed": [
+        299.1071,
+        147.8571
+      ],
+      "predicted": [
+        298.7997413275942,
+        147.71116589124105
+      ],
+      "errorSourcePx": [
+        -0.30735867240582593,
+        -0.14593410875895074
+      ],
+      "passBound": true
+    },
+    {
+      "frame": 275,
+      "observed": [
+        291.6071,
+        152.3214
+      ],
+      "predicted": [
+        291.71057091820023,
+        152.69956827821818
+      ],
+      "errorSourcePx": [
+        0.10347091820023024,
+        0.378168278218169
+      ],
+      "passBound": true
+    }
+  ],
+  "raw": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-eye-events-R5/model-output.json",
+    "sha256": "06da7f82a9eb376f95c2efd08d8aee65ce9572230140faf1c030bb8ac15c765b"
+  },
+  "runtimeExported": false,
+  "limits": [
+    "Single-observer approximate authored presentation anchor,not anatomical or material truth.",
+    "Fresh model choice predates fresh views;event selection follows failed R4 and existing L1 blink evidence.",
+    "R4original failure retained;none of its holdouts used as fit targets.",
+    "Sparse source controls only;continuous source alignment,independent review,native capture and release gates separate."
+  ]
+}

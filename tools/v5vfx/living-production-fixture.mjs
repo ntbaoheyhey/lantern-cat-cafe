@@ -11,7 +11,8 @@ const root='/Users/bao/taskbar-hero-chain',req=createRequire(resolve(root,'apps/
 export const {chromium}=req('@playwright/test');
 export const config=JSON.parse(readFileSync(resolve(root,'scripts/v3a2/fixtures.json')));
 export const judgeUrl='http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3';
-const source='85cb62233d016faf5c5235ffe178408df1682af3',index='d75197ff94529a92091902510795dd1ec3000e516e8ef02ec13108b6a4d4ef84';
+const source=process.env.CXV_SERVED_SOURCE??'85cb62233d016faf5c5235ffe178408df1682af3',index=process.env.CXV_EXPECTED_INDEX??'d75197ff94529a92091902510795dd1ec3000e516e8ef02ec13108b6a4d4ef84';
+assert(/^[a-f0-9]{40}$/.test(source)&&/^[a-f0-9]{64}$/.test(index),'Explicit pinned source/index identity');
 const hash=data=>createHash('sha256').update(data).digest('hex');
 const squads=[['mallow','sorrel','biscuit','inkcap'],['cinnamon','brioche','velvet','marigold'],['panko','mallow','sorrel','biscuit']];
 const group=Number(process.env.CXV_M_GROUP);assert(Number.isInteger(group)&&squads[group]);
