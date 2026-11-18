@@ -1,10 +1,10 @@
 ACTIVE: IDLE.
 OPEN TASKs: 
+- T-CXI-1: QA/Doc review (T-CXI-7)
 - T-CXI-5: Awaiting generation provenance records.
-- T-CXI-11: Reachability audit open (data unavailable).
-- T-CXI-12: Vietnamese draft (model/mask export) open.
-- T-M4: Staged delivery research (stall/byte measurements missing).
-- T-M5: Short-GOP trial measurements missing (Audit pending).
-- T-CXI-13: QA v5-m1.15 finalized (Audit pending final check).
+- T-CXI-10: Attribution fix
+- T-CXI-11: Reachability audit open.
+- T-CXI-12: Vietnamese draft open.
+- T-M1: Cost completion.
 PUSHED: a450f93c9
 WAKE: task-2131
