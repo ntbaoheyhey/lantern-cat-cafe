@@ -11,13 +11,14 @@ import {loadRules} from '/Users/bao/taskbar-hero-chain/tools/cardrpg-big/a4-load
 const root=resolve(import.meta.dirname,'../..'),out=resolve(process.env.CXV_CAPTURE_OUT??''),sha=b=>createHash('sha256').update(b).digest('hex');
 assert.equal(process.env.CXV_MEDIA_CAT,'both');assert(out.startsWith(resolve(root,'work/v5/CXV')+'/'));assert(!existsSync(resolve(out,'report.json')));
 const buildPath=process.env.CXV_MEDIA_BUILD,build=JSON.parse(await readFile(buildPath));
-const preregPath=resolve(process.env.CXV_ACTION_LABEL_PREREG??resolve(root,'reports/v5/CXV/M-action-label-R2-preregistration.json')),prereg=JSON.parse(await readFile(preregPath));
+const preregPath=resolve(process.env.CXV_ACTION_LABEL_PREREG??resolve(root,'reports/v5/CXV/M-action-label-R3-preregistration.json')),prereg=JSON.parse(await readFile(preregPath));
 assert(prereg.hudPortraitPause?.enabled);
 assert.equal(build.sourceCommit,prereg.sourceCommit);assert.equal(build.indexSha256,prereg.indexSha256);
 const hiddenStyle='.b3-world { visibility: hidden !important; }';
 const cats=['mochi','clover','panko','mallow'];
-const plannedActions=['normal','reduced'].flatMap(mode=>cats.flatMap(cat=>[1,4].map(skill=>({mode,cat,skill})))).filter(x=>!process.env.CXV_ACTION_LABEL_PILOT||`${x.mode}-${x.cat}-${x.skill}`===process.env.CXV_ACTION_LABEL_PILOT);assert(plannedActions.length);
-const plannedPixelCases=plannedActions.map(x=>({...x,ms:x.skill===1?350:1100,key:`${x.mode}-${x.cat}-${x.skill}-${x.skill===1?350:1100}`}));
+const recovery=process.env.CXV_ACTION_LABEL_SUITE==='recovery';
+const plannedActions=['normal','reduced'].flatMap(mode=>cats.flatMap(cat=>[1,4].map(skill=>({mode,cat,skill})))).filter(x=>(!recovery||(x.cat==='panko'&&x.skill===1)||(x.cat==='mallow'&&x.skill===4))&&(!process.env.CXV_ACTION_LABEL_PILOT||`${x.mode}-${x.cat}-${x.skill}`===process.env.CXV_ACTION_LABEL_PILOT));assert(plannedActions.length);
+const plannedPixelCases=plannedActions.flatMap(x=>(recovery&&x.cat==='panko'?[0,175,250,350,600,799.9999,800]:[x.skill===1?350:1100]).map(ms=>({...x,ms,key:`${x.mode}-${x.cat}-${x.skill}-${ms}`})));
 const report={utc:new Date().toISOString(),url:judgeUrl,viewport:[1280,720],sourceCommit:build.sourceCommit,indexSha256:build.indexSha256,
  build:{path:buildPath,sha256:sha(await readFile(buildPath))},preregistration:{path:preregPath,sha256:sha(await readFile(preregPath))},
  harnessSha256:sha(await readFile(import.meta.filename)),helperSha256:sha(await readFile(resolve(root,'tools/v5vfx/action-label-observation.mjs'))),fixture:runtimeEvidence(),
@@ -57,10 +58,15 @@ async function renderDecoded(page,fixedTime,reduced){
  await page.evaluate(fixedTime=>{const s=window.__depthScene;cancelAnimationFrame(s.raf);s.render({...s.view(),fixedTime,paused:true},0);},fixedTime);
  await waitForDecodedMediaFrame(page,{reduced});
  await page.evaluate(fixedTime=>{const s=window.__depthScene;cancelAnimationFrame(s.raf);s.render({...s.view(),fixedTime,paused:true},0);},fixedTime);
+ await page.evaluate(()=>new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r))));
 }
 
 async function captureCase(page,condition,fixedTime){
  const folder=resolve(out,condition.key);await mkdir(folder,{recursive:false});
+ const totalSnapshot=()=>{const n=document.querySelector('.b3-total');return{wallTime:performance.now(),hidden:n?.hidden??true,text:n?.textContent??null,rect:n?.getBoundingClientRect().toJSON()??null};};
+ const totalBefore=await page.evaluate(totalSnapshot);
+ await page.waitForFunction(()=>document.querySelector('.b3-total')?.hidden!==false,{},{timeout:2500});
+ const totalAfter=await page.evaluate(totalSnapshot);
  const hudPortraitPause=await page.evaluate(async()=>{
   const animations=document.getAnimations().filter(a=>a.effect?.target?.closest('.b3-bottom')&&a.effect.target.matches('.b3-portrait,.b3-portrait-shine')&&!Number.isFinite(a.effect.getComputedTiming().endTime));
   const records=animations.map(a=>({target:a.effect.target.className,rect:a.effect.target.getBoundingClientRect().toJSON(),observedTime:a.currentTime,duration:a.effect.getComputedTiming().duration}));
@@ -74,8 +80,8 @@ async function captureCase(page,condition,fixedTime){
   precondition.push({variant,path,sha256:sha(await readFile(path)),utc:new Date().toISOString()});
  }
  const before=await page.evaluate(sample),expectedFrames=Object.fromEntries(['mochi','clover'].map(cat=>[cat,Math.round(before.media[cat].decoded.mediaTime*30)]));
- const entry={...condition,frame:expectedFrames.clover,fixedTime,expectedFrames,hudPortraitPause,before,precondition,captures:[]};report.cases.push(entry);await save();
- assert(before.paused&&before.plan?.skillId===condition.cat+'-'+condition.skill);
+ const entry={...condition,frame:expectedFrames.clover,fixedTime,expectedFrames,totalLifecycle:{before:totalBefore,after:totalAfter},hudPortraitPause,before,precondition,captures:[]};report.cases.push(entry);await save();
+ assert(before.paused&&(before.plan?.skillId??null)===condition.expectedPlan);
  for(const variant of ['baseline','baseline-repeat','labels-hidden','labels-hidden-repeat',...cats.map(cat=>'without-'+cat),'restored']){
   const hidden=variant.startsWith('without-')?variant.slice(8):null,hideLabels=variant.startsWith('labels-hidden')||!!hidden;
   await page.evaluate(({fixedTime,hidden})=>{const s=window.__depthScene;cancelAnimationFrame(s.raf);window.__cxvActionIsolation.hidden=hidden;s.render({...s.view(),fixedTime,paused:true},0);},{fixedTime,hidden});
@@ -108,9 +114,9 @@ try{
    await page.evaluate(({previous,ms})=>{const m=window.__depthReview;let at=previous,now=100000+previous;m.tick(0,now);m.paused=false;while(at<ms-1e-8){const delta=Math.min(16,ms-at);now+=delta;at+=delta;m.tick(delta,now);}m.paused=true;m.notify(false);},{previous,ms});previous=ms;
    const fixedTime=70+ms/1000;await renderDecoded(page,fixedTime,reduced);
    const observed=await page.evaluate(sample);report.rows.push({...actionCase,ms,fixedTime,snapshot:observed});
-   if(ms===action.plan.contact){
+   if(plannedPixelCases.some(c=>c.mode===mode&&c.cat===cat&&c.skill===skill&&c.ms===ms)){
     await page.evaluate(async()=>{await Promise.all(document.getAnimations().filter(a=>a.effect?.target?.closest('.b3-world')&&Number.isFinite(a.effect.getComputedTiming().endTime)).map(a=>a.finished));await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));});
-    await captureCase(page,{...actionCase,ms,key:`${mode}-${cat}-${skill}-${ms}`},fixedTime);
+    await captureCase(page,{...actionCase,ms,key:`${mode}-${cat}-${skill}-${ms}`,expectedPlan:ms>=action.plan.duration?null:cat+'-'+skill},fixedTime);
    }
   }
   report.errors.push(...errors);report.blockedRequests.push(...blockedRequests);assert.deepEqual(errors,[]);assert.deepEqual(blockedRequests,[]);await page.close();await save();

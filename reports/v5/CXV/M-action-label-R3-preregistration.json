@@ -1,0 +1,97 @@
+{
+  "utc": "2026-11-18T14:46:08.002234+00:00",
+  "sourceCommit": "bf01d462ac32233ab11475605d571aea691f96bf",
+  "indexSha256": "eb93ee0dbdfb500c3f9aed80acdb134f027d8093240c86b545807a87dc79ce67",
+  "url": "http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+  "viewport": [
+    1280,
+    720
+  ],
+  "candidate": {
+    "cloverDx": -12,
+    "cloverDy": 19,
+    "relativeTo": "R7",
+    "applicationSourceUnchanged": true
+  },
+  "pilot": "normal-mallow-4:8state samples,one1100ms contact. Requireexact controls/rules and frozen totalbadgeafter naturalexpiry.",
+  "fullActions": {
+    "cats": [
+      "mochi",
+      "clover",
+      "panko",
+      "mallow"
+    ],
+    "skills": [
+      1,
+      4
+    ],
+    "modes": [
+      "normal",
+      "reduced"
+    ],
+    "count": 16
+  },
+  "seededSetup": "Level6 roster as naturalpair;HP65%,castercharge100/turns3/queuefront;legalChoices/act onactualrules. Modified initialstate is not naturalreachability. Preserve initial/expected/observed fullbattle.",
+  "times": "0/175/250/350/600/1100/duration-epsilon/duration,filtered to duration;paint atactual350msbasic or1100msultimatecontact.",
+  "diagnostics": "CloverprojectAnchors shift;nativePanko/Mallow root or authoredM/Cplane hidden only duringpostFx and restored. Bothvideos decoded callbackPTS required;labels hidden withstyle. Native shadows and separateVFX remain outside isolatedbody.",
+  "controls": [
+    "No appsource substitution;fullservedsource/index/media hashes.",
+    "Every legalaction result matches independent R.act fullbattle exactly.",
+    "Capture baseline/repeat,labels-hidden/repeat,withoutM/C/Panko/Mallow,andrestored;exact RGB plus frozenplan/rules/anchors/labels/HUD/media clocks.",
+    "One conceal/restore precondition retained;no allframe or ordinaryplay promotion.",
+    "Measure M/C labelpaint againstallfourbody contributions atthreshold0/1/2/4;preserve nativeandmedia rectanglefailures.",
+    "Review atmost4fresh1024wide sheets after hashduplicate check;no revisits."
+  ],
+  "productionAcceptance": false,
+  "sampleCountCorrection": {
+    "utc": "2026-11-18T14:33:52.285182+00:00",
+    "previousSha256": "a0699952b223bc2213df531bf2d2f82216934b45b663a0d6f8298cf6189b31f4",
+    "frozenPrevious": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/action-label-preregistration-original.json",
+    "reason": "Pre-launch arithmetic correction: filtering 1100ms out of an800ms basic leaves7 unique samples; no capture has run."
+  },
+  "priorPreregistration": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v5/CXV/M-action-label-R2-preregistration.json",
+    "sha256": "95401aab6e00f443da000f2299971dce6c268313e6f3b7bd1dc3e1306a5d9a5c"
+  },
+  "hudPortraitPause": {
+    "enabled": true,
+    "targets": [
+      ".b3-bottom .b3-portrait",
+      ".b3-bottom .b3-portrait-shine"
+    ],
+    "basis": "R1 controls differed only readiness portrait area617..749x606..720. Recorded infinite1200ms ready and2400ms shine kept advancing; all world-state gates exact.",
+    "method": "Pause these existing infinite HUD animations at their observed currentTime; await ready and require paused. Record targets/times/rects. Do not hide HUD or alter labels; no blanket animation disabling.",
+    "scope": "Additional diagnostic only;no natural presentation acceptance. Preserve R1invalid result."
+  },
+  "followupSuite": {
+    "name": "recovery",
+    "actions": [
+      "normal-mallow-4",
+      "reduced-mallow-4",
+      "normal-panko-1",
+      "reduced-panko-1"
+    ],
+    "pankoPixelMs": [
+      0,
+      175,
+      250,
+      350,
+      600,
+      799.9999,
+      800
+    ],
+    "mallowPixelMs": [
+      1100
+    ],
+    "scope": "16pixelcases,30state samples;modified seeded legalactions,not naturally reached."
+  },
+  "hudPublication": {
+    "method": "After decoded scene render,await two requestAnimationFrame callbacks for existing HUD label painter before sampling;preserve scene/source clocks and rules.",
+    "failureRetained": "R2twenty noncontact geometry snapshots did not reproduce; all16contact ones did. This tests publication timing,not a productfix."
+  },
+  "totalBadge": {
+    "source": "Pinned BattleHud.tsx sets totalState.until=performance.now()+1000; independent rAF painter updates hidden.",
+    "method": "Record visible/text/rect/wallclock before waiting;wait actual hidden property naturally true (timeout2500ms),then record expiry. Do not hide/patch badge,clock orHUD. Require hidden/text/rect unchanged across pairedcaptures.",
+    "limit": "Post-expiry pausedpaint only;totalbadge ordinarypresentation not accepted."
+  }
+}
