@@ -1,0 +1,81 @@
+{
+  "utc": "2026-11-18T03:48:41.436735+00:00",
+  "manifest": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v5/CXV/V7-pending-integration-m112.json",
+  "manifestSha256": "f2e1d69f001ac280a7d347ba32d8fdb3ec893522b5b864f6c63115c7e01f356c",
+  "target": "1157eaafb",
+  "sourceVerified": [
+    {
+      "entry": "Pose readback",
+      "path": "apps/web/src/game/cardrpg/stage/opaque-pose-bounds.ts",
+      "sha256": "df90874d54c51422b1d057aa152758fa95a0de5a71375854e91d63f562dc4b42"
+    },
+    {
+      "entry": "Pose readback",
+      "path": "apps/web/src/game/cardrpg/stage/opaque-pose-crop.test.ts",
+      "sha256": "d3517e4751d80757846f45bc7e7cd3e54930793234c8feb40012784f65e9a902"
+    },
+    {
+      "entry": "Pose readback",
+      "path": "apps/web/src/game/rig/drawing-layer.ts",
+      "sha256": "36b4bc7a4f56b0441c8be8d3e2a0dc7b2f5ef7c8de088efb16c2f049f9a56727"
+    },
+    {
+      "entry": "Pending labels",
+      "path": "apps/web/src/game/cardrpg/battle-v3/identified-focus.ts",
+      "sha256": "0f1a74b4fc490e8a9cc7cd88c7c3aba97b33b3b0effdacb230d1124c39206a45"
+    },
+    {
+      "entry": "Pending labels",
+      "path": "apps/web/src/game/cardrpg/battle-v3/world-label-status.test.ts",
+      "sha256": "62e9f25907fce1e7293953ad669f6fc88f954ab7439fbaf325ad37124b2b925e"
+    },
+    {
+      "entry": "Pending labels",
+      "path": "apps/web/src/game/cardrpg/battle-v3/world-label-status.ts",
+      "sha256": "f86428d851e735caa4b7b8e3c71f7e88ce260b2aa31f1bbc9c10d80dd7d32754"
+    },
+    {
+      "entry": "HUD text",
+      "path": "apps/web/src/game/cardrpg/battle-v3/BattleHud.tsx",
+      "sha256": "c749831df8272ce32f60a0fd3892e768e8f09b63aead2073e1f431721935db99"
+    },
+    {
+      "entry": "Stationary rows",
+      "path": "apps/web/src/game/rig/drawing-layer-static.test.ts",
+      "sha256": "d6a6de217094f14cba059c70f01960a601e58e45b8c950e2d360d4e429340848"
+    },
+    {
+      "entry": "Stationary rows",
+      "path": "apps/web/src/game/rig/drawing-layer.ts",
+      "sha256": "36b4bc7a4f56b0441c8be8d3e2a0dc7b2f5ef7c8de088efb16c2f049f9a56727"
+    },
+    {
+      "entry": "Original Panko crumb",
+      "path": "apps/web/public/vfx/v5/from-cx/panko-crumb-v7-r1.webp",
+      "sha256": "ed6826915dff02f904968c5e0a730085b37518152877444429a8d76a07171425"
+    },
+    {
+      "entry": "Original Panko crumb",
+      "path": "apps/web/src/game/cardrpg/vfx-layered/skill-texture-selection.ts",
+      "sha256": "84ab4d3970b970d3e72a17e7fa7a5fe8b946e9b91d3dfce72074265406df4fe8"
+    },
+    {
+      "entry": "Original Panko crumb",
+      "path": "apps/web/src/game/cardrpg/vfx-layered/skill-timeline.test.ts",
+      "sha256": "d9d8f07b677d53718731d3539551333094dd853de765acd3876d7f6d7dc396da"
+    },
+    {
+      "entry": "Same-paint focus reads",
+      "path": "apps/web/src/game/cardrpg/battle-v3/identified-focus.ts",
+      "sha256": "0f1a74b4fc490e8a9cc7cd88c7c3aba97b33b3b0effdacb230d1124c39206a45"
+    }
+  ],
+  "disposition": "Source review in progress; no import or behavioral acceptance",
+  "notes": [
+    "HUD avoids unchanged textContent writes; ordinary display logic retained.",
+    "Pending labels append clones together before reads and remove in finally; same-paint HUD rectangles reused without cross-frame cache. Current CSS interaction still needs native parity.",
+    "Pose alpha readback uses validated metadata crop plus2px guard; original coordinate system retained; native asset-mask coverage must be independently checked.",
+    "Stationary vertex rows require finite inputs/metadata; full refresh after invalid motion. Full geometry/motion/native parity remains pending.",
+    "Panko original crumb is a separate visual change; needs owned loader mapping and fresh visual acceptance, not implied by source hash."
+  ]
+}
