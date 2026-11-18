@@ -1,0 +1,431 @@
+{
+  "utc": "2026-11-18T14:58:36.004246+00:00",
+  "preregistration": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v5/CXV/M-action-label-translation-R1-preregistration.json",
+    "sha256": "58b1345b1df1db5b0ade2625174d20b0e9beff6b7cf9c7ff18ae1d2e09cf418d"
+  },
+  "harnessSha256": "d6e313c706071b23bed776c3003b04e07c9d9726bee34fef71bf75bc931adf5e",
+  "train": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/action-label-full-r2-143611/analysis.json",
+    "sha256": "09922a0ef65fc235ad036330de6828cf70d6fec3f7fc02455bb3f9a17537d3da"
+  },
+  "holdout": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/action-label-recovery-r3-144918/analysis.json",
+    "sha256": "0b924f64b394e5cb495ae9ca5623bf807bb69f273c1e68c538cdc822d9b31cd3"
+  },
+  "sourceCommit": "bf01d462ac32233ab11475605d571aea691f96bf",
+  "grid": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/action-label-translation-r1/candidate-grid.npz",
+    "sha256": "a3f39cf2133f6bee1deca61c7aba37389595fc35de5f4cbc9e3e7b9e7af7c193"
+  },
+  "candidates": 16641,
+  "passingTrainingCandidates": 1775,
+  "sensitivity": {
+    "threshold0-margin0": 2127,
+    "threshold1-margin0": 2162,
+    "threshold2-margin0": 2172,
+    "threshold4-margin0": 2192,
+    "threshold0-margin1": 1952,
+    "threshold1-margin1": 1986,
+    "threshold2-margin1": 1996,
+    "threshold4-margin1": 2016,
+    "threshold0-margin2": 1775,
+    "threshold1-margin2": 1808,
+    "threshold2-margin2": 1818,
+    "threshold4-margin2": 1838
+  },
+  "nearest": [
+    [
+      0,
+      -53
+    ],
+    [
+      -1,
+      -53
+    ],
+    [
+      1,
+      -53
+    ],
+    [
+      -2,
+      -53
+    ],
+    [
+      2,
+      -53
+    ],
+    [
+      -3,
+      -53
+    ],
+    [
+      3,
+      -53
+    ],
+    [
+      -4,
+      -53
+    ],
+    [
+      4,
+      -53
+    ],
+    [
+      -5,
+      -53
+    ],
+    [
+      5,
+      -53
+    ],
+    [
+      -6,
+      -53
+    ]
+  ],
+  "chosen": [
+    0,
+    -53
+  ],
+  "evaluations": [
+    {
+      "suite": "training",
+      "key": "normal-mochi-1-350",
+      "geometryClear": true,
+      "intersections": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "4": 0
+      }
+    },
+    {
+      "suite": "training",
+      "key": "normal-mochi-4-1100",
+      "geometryClear": true,
+      "intersections": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "4": 0
+      }
+    },
+    {
+      "suite": "training",
+      "key": "normal-clover-1-350",
+      "geometryClear": true,
+      "intersections": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "4": 0
+      }
+    },
+    {
+      "suite": "training",
+      "key": "normal-clover-4-1100",
+      "geometryClear": true,
+      "intersections": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "4": 0
+      }
+    },
+    {
+      "suite": "training",
+      "key": "normal-panko-1-350",
+      "geometryClear": true,
+      "intersections": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "4": 0
+      }
+    },
+    {
+      "suite": "training",
+      "key": "normal-panko-4-1100",
+      "geometryClear": true,
+      "intersections": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "4": 0
+      }
+    },
+    {
+      "suite": "training",
+      "key": "normal-mallow-1-350",
+      "geometryClear": true,
+      "intersections": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "4": 0
+      }
+    },
+    {
+      "suite": "training",
+      "key": "reduced-mochi-1-350",
+      "geometryClear": true,
+      "intersections": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "4": 0
+      }
+    },
+    {
+      "suite": "training",
+      "key": "reduced-mochi-4-1100",
+      "geometryClear": true,
+      "intersections": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "4": 0
+      }
+    },
+    {
+      "suite": "training",
+      "key": "reduced-clover-1-350",
+      "geometryClear": true,
+      "intersections": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "4": 0
+      }
+    },
+    {
+      "suite": "training",
+      "key": "reduced-clover-4-1100",
+      "geometryClear": true,
+      "intersections": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "4": 0
+      }
+    },
+    {
+      "suite": "training",
+      "key": "reduced-panko-1-350",
+      "geometryClear": true,
+      "intersections": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "4": 0
+      }
+    },
+    {
+      "suite": "training",
+      "key": "reduced-panko-4-1100",
+      "geometryClear": true,
+      "intersections": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "4": 0
+      }
+    },
+    {
+      "suite": "training",
+      "key": "reduced-mallow-1-350",
+      "geometryClear": true,
+      "intersections": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "4": 0
+      }
+    },
+    {
+      "suite": "reservedProgression",
+      "key": "normal-panko-1-0",
+      "geometryClear": true,
+      "intersections": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "4": 0
+      }
+    },
+    {
+      "suite": "reservedProgression",
+      "key": "normal-panko-1-175",
+      "geometryClear": false,
+      "intersections": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "4": 0
+      }
+    },
+    {
+      "suite": "reservedProgression",
+      "key": "normal-panko-1-250",
+      "geometryClear": false,
+      "intersections": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "4": 0
+      }
+    },
+    {
+      "suite": "reservedProgression",
+      "key": "normal-panko-1-350",
+      "geometryClear": true,
+      "intersections": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "4": 0
+      }
+    },
+    {
+      "suite": "reservedProgression",
+      "key": "normal-panko-1-600",
+      "geometryClear": false,
+      "intersections": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "4": 0
+      }
+    },
+    {
+      "suite": "reservedProgression",
+      "key": "normal-panko-1-799.9999",
+      "geometryClear": true,
+      "intersections": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "4": 0
+      }
+    },
+    {
+      "suite": "reservedProgression",
+      "key": "normal-panko-1-800",
+      "geometryClear": true,
+      "intersections": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "4": 0
+      }
+    },
+    {
+      "suite": "reservedProgression",
+      "key": "normal-mallow-4-1100",
+      "geometryClear": true,
+      "intersections": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "4": 0
+      }
+    },
+    {
+      "suite": "reservedProgression",
+      "key": "reduced-panko-1-0",
+      "geometryClear": true,
+      "intersections": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "4": 0
+      }
+    },
+    {
+      "suite": "reservedProgression",
+      "key": "reduced-panko-1-175",
+      "geometryClear": false,
+      "intersections": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "4": 0
+      }
+    },
+    {
+      "suite": "reservedProgression",
+      "key": "reduced-panko-1-250",
+      "geometryClear": false,
+      "intersections": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "4": 0
+      }
+    },
+    {
+      "suite": "reservedProgression",
+      "key": "reduced-panko-1-350",
+      "geometryClear": true,
+      "intersections": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "4": 0
+      }
+    },
+    {
+      "suite": "reservedProgression",
+      "key": "reduced-panko-1-600",
+      "geometryClear": false,
+      "intersections": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "4": 0
+      }
+    },
+    {
+      "suite": "reservedProgression",
+      "key": "reduced-panko-1-799.9999",
+      "geometryClear": true,
+      "intersections": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "4": 0
+      }
+    },
+    {
+      "suite": "reservedProgression",
+      "key": "reduced-panko-1-800",
+      "geometryClear": true,
+      "intersections": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "4": 0
+      }
+    },
+    {
+      "suite": "reservedProgression",
+      "key": "reduced-mallow-4-1100",
+      "geometryClear": true,
+      "intersections": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "4": 0
+      }
+    }
+  ],
+  "reservedPass": false,
+  "productionAcceptance": false,
+  "limits": [
+    "Fit14old validcontacts only;reserved16progressioncases are evaluated without refitting.",
+    "Integer mask translation is a static paint hypothesis; actual CSS placement and background antialiasing may differ.",
+    "Previous idle/expanded-status and fresh native candidate capture still required. No appsource edit."
+  ],
+  "disposition": "REJECT static contact-only translation: chosen(0,-53) clears painted pixels but overlaps HUD/face/otherlabel constraints at six reserved progression phases. No refit or sourcechange."
+}

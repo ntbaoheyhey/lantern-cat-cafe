@@ -1,0 +1,757 @@
+{
+  "utc": "2026-11-18T14:49:17.950372+00:00",
+  "url": "http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+  "sourceCommit": "bf01d462ac32233ab11475605d571aea691f96bf",
+  "indexSha256": "eb93ee0dbdfb500c3f9aed80acdb134f027d8093240c86b545807a87dc79ce67",
+  "viewport": [
+    1280,
+    720
+  ],
+  "raw": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/action-label-pilot-r3-144841/report.json",
+    "sha256": "5c5442662d8432faa1be22225b4c3c41cd167ff338170c004424fc5ed7467e8d"
+  },
+  "artifactVerification": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/action-label-pilot-r3-144841/artifact-verification.json",
+    "sha256": "62943485c03498006b3697526718a2e2d58baeacc0a5723985538c1109707387"
+  },
+  "provenance": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/action-label-pilot-r3-144841/harness-provenance.json",
+    "sha256": "9ca7465d9d8b6618340ee366bb970f36d41b151d8c98717c6981500d947238aa"
+  },
+  "harness": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/tools/v5vfx/measure-action-labels.py",
+    "sha256": "e4f84fabb8ff96e84c3899bb86e5659954a4d63981c7ec56d0c58e73e3904d74"
+  },
+  "runtimeDiagnostic": {
+    "labelTarget": {
+      "dx": -12,
+      "dy": 19,
+      "wrapperSha256": "f4fcfe113d7507d6e87e7fe4a0694f42275f60c2fc75cf3c9744a892673de010"
+    },
+    "hiddenLabelCss": ".b3-world { visibility: hidden !important; }",
+    "hiddenLabelCssSha256": "85522b6a33ec22cac09b1563d7d7b58babc5f0c9404c3953d63d4957099d9873",
+    "bodyIsolation": {
+      "wrapperSha256": "bacd43ac77a4b3c4c0d74ebf48f10ccae18ef6090703810b4cb19b3fb3021efa",
+      "scope": "Hide commissioned media plane or native actor root only during postFx draw,then restore. Native shadow/effects are not isolated."
+    }
+  },
+  "actions": 1,
+  "geometryRows": 8,
+  "capturePass": true,
+  "captureFailure": null,
+  "rulesEqual": true,
+  "cases": [
+    {
+      "key": "normal-mallow-4-1100",
+      "mode": "normal",
+      "cat": "mallow",
+      "skill": 4,
+      "ms": 1100,
+      "frame": 178,
+      "fixedTime": 71.1,
+      "expectedFrames": {
+        "mochi": 69,
+        "clover": 178
+      },
+      "totalLifecycle": {
+        "before": {
+          "wallTime": 5707.70000000298,
+          "hidden": false,
+          "text": "\u03a3213",
+          "rect": {
+            "x": 20.564218521118164,
+            "y": 554.7418212890625,
+            "width": 232.87155151367188,
+            "height": 72.844482421875,
+            "top": 554.7418212890625,
+            "right": 253.43577003479004,
+            "bottom": 627.5863037109375,
+            "left": 20.564218521118164
+          }
+        },
+        "after": {
+          "wallTime": 6410.20000000298,
+          "hidden": true,
+          "text": "\u03a3213",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          }
+        }
+      },
+      "hudPortraitPause": [],
+      "controls": {
+        "baselineRepeat": {
+          "count": 0,
+          "bbox": null
+        },
+        "hiddenRepeat": {
+          "count": 0,
+          "bbox": null
+        },
+        "restored": {
+          "count": 0,
+          "bbox": null
+        }
+      },
+      "stateGates": [
+        {
+          "variant": "baseline",
+          "when": "before",
+          "gates": {
+            "paused": true,
+            "samePlan": true,
+            "rules": true,
+            "labels": true,
+            "paint": true,
+            "clock": true,
+            "host": true,
+            "anchors": true,
+            "hud": true,
+            "animations": true,
+            "totalBadge": true,
+            "mochi": true,
+            "clover": true
+          }
+        },
+        {
+          "variant": "baseline",
+          "when": "after",
+          "gates": {
+            "paused": true,
+            "samePlan": true,
+            "rules": true,
+            "labels": true,
+            "paint": true,
+            "clock": true,
+            "host": true,
+            "anchors": true,
+            "hud": true,
+            "animations": true,
+            "totalBadge": true,
+            "mochi": true,
+            "clover": true
+          }
+        },
+        {
+          "variant": "baseline-repeat",
+          "when": "before",
+          "gates": {
+            "paused": true,
+            "samePlan": true,
+            "rules": true,
+            "labels": true,
+            "paint": true,
+            "clock": true,
+            "host": true,
+            "anchors": true,
+            "hud": true,
+            "animations": true,
+            "totalBadge": true,
+            "mochi": true,
+            "clover": true
+          }
+        },
+        {
+          "variant": "baseline-repeat",
+          "when": "after",
+          "gates": {
+            "paused": true,
+            "samePlan": true,
+            "rules": true,
+            "labels": true,
+            "paint": true,
+            "clock": true,
+            "host": true,
+            "anchors": true,
+            "hud": true,
+            "animations": true,
+            "totalBadge": true,
+            "mochi": true,
+            "clover": true
+          }
+        },
+        {
+          "variant": "labels-hidden",
+          "when": "before",
+          "gates": {
+            "paused": true,
+            "samePlan": true,
+            "rules": true,
+            "labels": true,
+            "paint": true,
+            "clock": true,
+            "host": true,
+            "anchors": true,
+            "hud": true,
+            "animations": true,
+            "totalBadge": true,
+            "mochi": true,
+            "clover": true
+          }
+        },
+        {
+          "variant": "labels-hidden",
+          "when": "after",
+          "gates": {
+            "paused": true,
+            "samePlan": true,
+            "rules": true,
+            "labels": true,
+            "paint": true,
+            "clock": true,
+            "host": true,
+            "anchors": true,
+            "hud": true,
+            "animations": true,
+            "totalBadge": true,
+            "mochi": true,
+            "clover": true
+          }
+        },
+        {
+          "variant": "labels-hidden-repeat",
+          "when": "before",
+          "gates": {
+            "paused": true,
+            "samePlan": true,
+            "rules": true,
+            "labels": true,
+            "paint": true,
+            "clock": true,
+            "host": true,
+            "anchors": true,
+            "hud": true,
+            "animations": true,
+            "totalBadge": true,
+            "mochi": true,
+            "clover": true
+          }
+        },
+        {
+          "variant": "labels-hidden-repeat",
+          "when": "after",
+          "gates": {
+            "paused": true,
+            "samePlan": true,
+            "rules": true,
+            "labels": true,
+            "paint": true,
+            "clock": true,
+            "host": true,
+            "anchors": true,
+            "hud": true,
+            "animations": true,
+            "totalBadge": true,
+            "mochi": true,
+            "clover": true
+          }
+        },
+        {
+          "variant": "without-mochi",
+          "when": "before",
+          "gates": {
+            "paused": true,
+            "samePlan": true,
+            "rules": true,
+            "labels": true,
+            "paint": true,
+            "clock": true,
+            "host": true,
+            "anchors": true,
+            "hud": true,
+            "animations": true,
+            "totalBadge": true,
+            "mochi": true,
+            "clover": true
+          }
+        },
+        {
+          "variant": "without-mochi",
+          "when": "after",
+          "gates": {
+            "paused": true,
+            "samePlan": true,
+            "rules": true,
+            "labels": true,
+            "paint": true,
+            "clock": true,
+            "host": true,
+            "anchors": true,
+            "hud": true,
+            "animations": true,
+            "totalBadge": true,
+            "mochi": true,
+            "clover": true
+          }
+        },
+        {
+          "variant": "without-clover",
+          "when": "before",
+          "gates": {
+            "paused": true,
+            "samePlan": true,
+            "rules": true,
+            "labels": true,
+            "paint": true,
+            "clock": true,
+            "host": true,
+            "anchors": true,
+            "hud": true,
+            "animations": true,
+            "totalBadge": true,
+            "mochi": true,
+            "clover": true
+          }
+        },
+        {
+          "variant": "without-clover",
+          "when": "after",
+          "gates": {
+            "paused": true,
+            "samePlan": true,
+            "rules": true,
+            "labels": true,
+            "paint": true,
+            "clock": true,
+            "host": true,
+            "anchors": true,
+            "hud": true,
+            "animations": true,
+            "totalBadge": true,
+            "mochi": true,
+            "clover": true
+          }
+        },
+        {
+          "variant": "without-panko",
+          "when": "before",
+          "gates": {
+            "paused": true,
+            "samePlan": true,
+            "rules": true,
+            "labels": true,
+            "paint": true,
+            "clock": true,
+            "host": true,
+            "anchors": true,
+            "hud": true,
+            "animations": true,
+            "totalBadge": true,
+            "mochi": true,
+            "clover": true
+          }
+        },
+        {
+          "variant": "without-panko",
+          "when": "after",
+          "gates": {
+            "paused": true,
+            "samePlan": true,
+            "rules": true,
+            "labels": true,
+            "paint": true,
+            "clock": true,
+            "host": true,
+            "anchors": true,
+            "hud": true,
+            "animations": true,
+            "totalBadge": true,
+            "mochi": true,
+            "clover": true
+          }
+        },
+        {
+          "variant": "without-mallow",
+          "when": "before",
+          "gates": {
+            "paused": true,
+            "samePlan": true,
+            "rules": true,
+            "labels": true,
+            "paint": true,
+            "clock": true,
+            "host": true,
+            "anchors": true,
+            "hud": true,
+            "animations": true,
+            "totalBadge": true,
+            "mochi": true,
+            "clover": true
+          }
+        },
+        {
+          "variant": "without-mallow",
+          "when": "after",
+          "gates": {
+            "paused": true,
+            "samePlan": true,
+            "rules": true,
+            "labels": true,
+            "paint": true,
+            "clock": true,
+            "host": true,
+            "anchors": true,
+            "hud": true,
+            "animations": true,
+            "totalBadge": true,
+            "mochi": true,
+            "clover": true
+          }
+        },
+        {
+          "variant": "restored",
+          "when": "before",
+          "gates": {
+            "paused": true,
+            "samePlan": true,
+            "rules": true,
+            "labels": true,
+            "paint": true,
+            "clock": true,
+            "host": true,
+            "anchors": true,
+            "hud": true,
+            "animations": true,
+            "totalBadge": true,
+            "mochi": true,
+            "clover": true
+          }
+        },
+        {
+          "variant": "restored",
+          "when": "after",
+          "gates": {
+            "paused": true,
+            "samePlan": true,
+            "rules": true,
+            "labels": true,
+            "paint": true,
+            "clock": true,
+            "host": true,
+            "anchors": true,
+            "hud": true,
+            "animations": true,
+            "totalBadge": true,
+            "mochi": true,
+            "clover": true
+          }
+        }
+      ],
+      "complete": true,
+      "labels": [
+        {
+          "id": "mochi",
+          "rect": {
+            "x": 447.75,
+            "y": 113.921875,
+            "width": 64,
+            "height": 34
+          },
+          "thresholds": {
+            "0": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            },
+            "1": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            },
+            "2": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            },
+            "4": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            }
+          }
+        },
+        {
+          "id": "clover",
+          "rect": {
+            "x": 309.8125,
+            "y": 371.484375,
+            "width": 64,
+            "height": 34
+          },
+          "thresholds": {
+            "0": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            },
+            "1": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            },
+            "2": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            },
+            "4": {
+              "mochi": {
+                "count": 0,
+                "bbox": null
+              },
+              "clover": {
+                "count": 0,
+                "bbox": null
+              },
+              "panko": {
+                "count": 0,
+                "bbox": null
+              },
+              "mallow": {
+                "count": 0,
+                "bbox": null
+              }
+            }
+          }
+        }
+      ],
+      "valid": true,
+      "decodedExact": true,
+      "pixelDifferences": {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/action-label-pilot-r3-144841/action-review-144917950076/normal-mallow-4-1100-differences.npz",
+        "sha256": "4e58a8dfec302060da0a3122d828f7cc37f3681628c50d3b9025e3e54222aa0b"
+      },
+      "commissionedLabelsAgainstAllFourBodies": {
+        "count": 0,
+        "bbox": null
+      }
+    }
+  ],
+  "geometryFailures": [
+    {
+      "mode": "normal",
+      "cat": "mallow",
+      "skill": 4,
+      "ms": 0,
+      "labelId": "clover",
+      "bodies": [
+        {
+          "id": "mochi",
+          "area": 1010.8029963160595
+        }
+      ]
+    },
+    {
+      "mode": "normal",
+      "cat": "mallow",
+      "skill": 4,
+      "ms": 175,
+      "labelId": "clover",
+      "bodies": [
+        {
+          "id": "mochi",
+          "area": 1010.8029963160595
+        }
+      ]
+    },
+    {
+      "mode": "normal",
+      "cat": "mallow",
+      "skill": 4,
+      "ms": 250,
+      "labelId": "clover",
+      "bodies": [
+        {
+          "id": "mochi",
+          "area": 1010.8029963160595
+        }
+      ]
+    },
+    {
+      "mode": "normal",
+      "cat": "mallow",
+      "skill": 4,
+      "ms": 350,
+      "labelId": "clover",
+      "bodies": [
+        {
+          "id": "mochi",
+          "area": 1010.8029963160595
+        }
+      ]
+    },
+    {
+      "mode": "normal",
+      "cat": "mallow",
+      "skill": 4,
+      "ms": 600,
+      "labelId": "clover",
+      "bodies": [
+        {
+          "id": "mochi",
+          "area": 1010.8029963160595
+        }
+      ]
+    },
+    {
+      "mode": "normal",
+      "cat": "mallow",
+      "skill": 4,
+      "ms": 1100,
+      "labelId": "clover",
+      "bodies": [
+        {
+          "id": "mochi",
+          "area": 1010.6172042652801
+        }
+      ]
+    },
+    {
+      "mode": "normal",
+      "cat": "mallow",
+      "skill": 4,
+      "ms": 2199.9999,
+      "labelId": "clover",
+      "bodies": [
+        {
+          "id": "mochi",
+          "area": 1010.8029963160595
+        }
+      ]
+    },
+    {
+      "mode": "normal",
+      "cat": "mallow",
+      "skill": 4,
+      "ms": 2200,
+      "labelId": "clover",
+      "bodies": [
+        {
+          "id": "mochi",
+          "area": 1010.8029963160595
+        }
+      ]
+    }
+  ],
+  "reviewImages": [
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/action-label-pilot-r3-144841/action-review-144917950076/normal-mallow-4-1100.png",
+      "sha256": "fa86d71d478b8056be209adcbee1d9d4af3969074bbe4f1e16d64aa10ef75a31",
+      "dimensions": [
+        1024,
+        600
+      ],
+      "caseKey": "normal-mallow-4-1100",
+      "views": 0,
+      "reviewed": false
+    }
+  ],
+  "imagesViewed": 0,
+  "productionAcceptance": false,
+  "limits": [
+    "Seeded setup modifies HP/charge/queue,then real legalChoices/act and model.tick;not a naturally reached state.",
+    "Pixel isolation hides the commissioned media plane or native actor root,excluding native shadows and separate VFX.",
+    "Unchanged application source plus explicit Clover(-12,+19) diagnostic. No ordinary-play,seam,matte or laptop acceptance."
+  ],
+  "attributionValid": true,
+  "sampledPaintClear": true
+}
