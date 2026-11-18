@@ -1,0 +1,81 @@
+{
+  "utc": "2026-11-18T10:22:33.639484+00:00",
+  "verified": [
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v5/CXV/M-clover-geometric-anchors-R1.json",
+      "sha256": "07d973eda3ac1875ac6adea50e22edc37de2f0cc4b95124ccf164f0ebfa85931"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-geometric-anchors-R1/holdout-annotations.json",
+      "sha256": "d0027a6605308aed890775b2487a2ea0046a1dde6ed262f7787671bae11be0e9"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-geometric-anchors-R1/fit.json",
+      "sha256": "9eaa591ff58d6b33429e39de337953c4e9f7fc6d266e6d68cecae1cfe3d30472"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-geometric-anchors-R1/face-training-annotations.json",
+      "sha256": "998c6e1091ab1cab867527cfb0a8e07f848a26f80f771d0fb02fb8a4c48d2682"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-geometric-anchors-R1/palm-training-annotations.json",
+      "sha256": "b639ea099b0d65871bd4d7637556be0ddbd0e5614c416321e2efd413dfa2cd58"
+    }
+  ],
+  "reproducedLeastSquares": [
+    {
+      "channel": "face",
+      "training": {
+        "samples": 16,
+        "passed": 16,
+        "maxAxisErrorSourcePx": [
+          4.882151414745522,
+          1.1442827784881615
+        ],
+        "failedFrames": []
+      },
+      "holdout": {
+        "samples": 9,
+        "passed": 8,
+        "maxAxisErrorSourcePx": [
+          6.429262506423811,
+          13.07895227190133
+        ],
+        "failedFrames": [
+          37
+        ]
+      }
+    },
+    {
+      "channel": "palm",
+      "training": {
+        "samples": 16,
+        "passed": 16,
+        "maxAxisErrorSourcePx": [
+          3.0850399523995407,
+          1.244679605815577
+        ],
+        "failedFrames": []
+      },
+      "holdout": {
+        "samples": 9,
+        "passed": 4,
+        "maxAxisErrorSourcePx": [
+          5.43485216153563,
+          10.843088316972853
+        ],
+        "failedFrames": [
+          0,
+          75,
+          225,
+          262,
+          299
+        ]
+      }
+    }
+  ],
+  "decision": "REJECT both geometric curves under frozen observational bounds; no threshold changes or parameter sweep",
+  "imagesViewed": 0,
+  "runtimeChanged": false,
+  "limits": "Training/holdout arithmetic reproduced; sparse manual labels not full anatomical ground truth."
+}
