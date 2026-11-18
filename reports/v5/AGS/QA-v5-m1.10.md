@@ -2,14 +2,15 @@
 
 **URL**: `http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3`
 **Index**: `34e015ec`
-**Capture UTC**: `2026-11-18T00:18:25Z`
-
-**Progression Trace**:
-1. Click "Next" (Victory screen)
-2. Click "Fight" (Hub screen)
-3. Click "Choose Cinder crumb" (Night route selection dialog)
+**Capture UTC**: `2026-11-18T08:17:40Z`
 
 **Findings**:
-- Night route selection dialog successfully reached and captured.
-- No version string observed on UI.
-- Browser automation successful.
+- Unable to progress to receipt screen; battle sequence became stuck after initiating 'Pause Auto'.
+- "Night" button not found or interactive.
+- Browser automation blocked.
+
+**Click Trace**:
+1. 08:15:31Z: Navigate to URL
+2. 08:15:41Z: Click 'Fight' (Main Screen)
+3. 08:15:53Z: Click 'Fight' (Prepare Screen)
+4. 08:17:32Z: Click 'Pause Auto' (Battle Screen)
