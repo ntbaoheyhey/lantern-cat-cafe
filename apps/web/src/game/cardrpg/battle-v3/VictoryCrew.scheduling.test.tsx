@@ -5,7 +5,7 @@ import {VictoryCrew} from './VictoryCrew';
 
 const {construct,load}=vi.hoisted(()=>({construct:vi.fn(),load:vi.fn()}));
 vi.mock('three',async original=>({...await original<typeof import('three')>(),WebGLRenderer:class {
- domElement=document.createElement('canvas');render=vi.fn();setPixelRatio=vi.fn();getPixelRatio=()=>1;dispose=vi.fn();forceContextLoss=vi.fn();
+ domElement=document.createElement('canvas');render=vi.fn();setPixelRatio=vi.fn();getPixelRatio=()=>1;getContext=()=>({isContextLost:()=>false});dispose=vi.fn();forceContextLoss=vi.fn();
  setSize(w:number,h:number){this.domElement.width=w;this.domElement.height=h;}
  constructor(){construct(this);}
 }}));
