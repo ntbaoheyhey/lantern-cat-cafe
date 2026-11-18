@@ -1,0 +1,2259 @@
+{
+  "utc": "2026-11-18T03:51:32.711Z",
+  "source": "9efabfa865f95cb4f020b9a68bba6b9f388356da",
+  "indexSha256": "6f27065a021e115c3acec1e7c985d690af7fea26d4bdd6f6248b8ac595bc353d",
+  "deviceScaleFactor": 2,
+  "url": "http://127.0.0.1:6312/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+  "raw": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-battle-context-attribution/report.json",
+    "sha256": "6e3a2c2d3bdc59c4b868136ae2f66e41aa99606d80c840a65b6328ae347ae83b"
+  },
+  "tool": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/tools/v5vfx/analyze-render-phases.mjs",
+    "sha256": "6d4ab707958a83b175159f7bfdb857ebfc6dfd40112d969164efd60ad6b17c2d"
+  },
+  "runs": [
+    {
+      "rate": 1,
+      "trace": {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-battle-context-attribution/1x.trace.json",
+        "sha256": "cd11753378dac757cb11841a779f7c857ab3b1e033c877fab978575d86f5bdf7"
+      },
+      "rendererThread": {
+        "pid": 42586,
+        "tid": 3522265
+      },
+      "windowMs": 32001.61,
+      "renderFrames": 1919,
+      "renderUnionMs": 6771.066,
+      "observedCompleteEvents": 47452,
+      "phases": {
+        "style": {
+          "events": 5677,
+          "names": {
+            "UpdateLayoutTree": 5677
+          },
+          "windowUnionMs": 701.831,
+          "insideRenderUnionMs": 150.205,
+          "outsideRenderUnionMs": 551.626,
+          "naiveNestedDurationMs": 701.831
+        },
+        "layout": {
+          "events": 2749,
+          "names": {
+            "Layout": 2749
+          },
+          "windowUnionMs": 132.353,
+          "insideRenderUnionMs": 89,
+          "outsideRenderUnionMs": 43.353,
+          "naiveNestedDurationMs": 132.353
+        },
+        "prePaint": {
+          "events": 3843,
+          "names": {
+            "PrePaint": 3843
+          },
+          "windowUnionMs": 390.718,
+          "insideRenderUnionMs": 0,
+          "outsideRenderUnionMs": 390.718,
+          "naiveNestedDurationMs": 390.718
+        },
+        "paint": {
+          "events": 13728,
+          "names": {
+            "Paint": 13728
+          },
+          "windowUnionMs": 203.34,
+          "insideRenderUnionMs": 0,
+          "outsideRenderUnionMs": 203.34,
+          "naiveNestedDurationMs": 301.551
+        },
+        "layerize": {
+          "events": 1919,
+          "names": {
+            "Layerize": 1919
+          },
+          "windowUnionMs": 411.543,
+          "insideRenderUnionMs": 0,
+          "outsideRenderUnionMs": 411.543,
+          "naiveNestedDurationMs": 411.543
+        },
+        "gcLabelled": {
+          "events": 7106,
+          "names": {
+            "V8.GC_HEAP_EXTERNAL_PROLOGUE": 284,
+            "MinorGC": 278,
+            "V8.GC_HEAP_PROLOGUE": 123,
+            "V8.GC_TIME_TO_SAFEPOINT": 164,
+            "V8.GC_SCAVENGER": 278,
+            "V8.GC_HEAP_PROLOGUE_SAFEPOINT": 98,
+            "V8.GC_SCAVENGER_SCAVENGE": 278,
+            "V8.GC_SCAVENGER_SCAVENGE_WEAK_GLOBAL_HANDLES_IDENTIFY": 278,
+            "V8.GC_SCAVENGER_TRACED_HANDLES_COMPUTE_WEAKNESS_PARALLEL": 278,
+            "V8.GC_SCAVENGER_SCAVENGE_COLLECT_OLD_TO_NEW_PAGES": 278,
+            "V8.GC_SCAVENGER_SCAVENGE_PARALLEL_PHASE": 278,
+            "V8.GC_SCAVENGER_SCAVENGE_ROOTS": 278,
+            "V8.GC_SCAVENGER_SCAVENGE_PARALLEL": 288,
+            "V8.GC_SCAVENGER_SCAVENGE_WEAK_GLOBAL_HANDLES_PROCESS": 278,
+            "V8.GC_SCAVENGER_TRACED_HANDLES_RESET_PARALLEL": 277,
+            "V8.GC_SCAVENGER_SCAVENGE_FINALIZE": 278,
+            "V8.GC_SCAVENGER_SCAVENGE_RESTORE_AND_QUARANTINE_PINNED": 277,
+            "V8.GC_SCAVENGER_FREE_REMEMBERED_SET": 272,
+            "V8.GC_SCAVENGER_SWEEP_ARRAY_BUFFERS": 56,
+            "V8.GC_HEAP_EPILOGUE_SAFEPOINT": 284,
+            "V8.GC_HEAP_EPILOGUE": 284,
+            "V8.GC_HEAP_EXTERNAL_EPILOGUE": 229,
+            "V8.GC_SCAVENGER_COMPLETE_SWEEP_ARRAY_BUFFERS": 38,
+            "V8.GC_SCAVENGER_RESIZE_NEW_SPACE": 137,
+            "V8.GC_HEAP_EXTERNAL_WEAK_GLOBAL_HANDLES": 7,
+            "V8.GC_HEAP_EXTERNAL_SECOND_PASS_CALLBACKS": 7,
+            "V8.GC_HEAP_ENSURE_SWEEPING_COMPLETED": 12,
+            "V8.GC_MC_INCREMENTAL_START": 6,
+            "V8.GC_MC_INCREMENTAL_EXTERNAL_PROLOGUE": 6,
+            "V8.GC_MC_MARK_EMBEDDER_PROLOGUE": 12,
+            "V8.GC_MC_MARK_ROOTS": 18,
+            "V8.GC_MC_INCREMENTAL_EXTERNAL_EPILOGUE": 6,
+            "V8.GC_MC_INCREMENTAL": 738,
+            "V8.GC_MC_INCREMENTAL_EMBEDDER_TRACING": 368,
+            "MajorGC": 6,
+            "V8.GC_MARK_COMPACTOR": 6,
+            "V8.GC_MC_PROLOGUE": 6,
+            "V8.GC_MC_MARK": 6,
+            "V8.GC_MC_MARK_FINISH_INCREMENTAL": 6,
+            "V8.GC_MC_MARK_CLIENT_HEAPS": 3,
+            "V8.GC_MC_MARK_RETAIN_MAPS": 6,
+            "V8.GC_MC_MARK_FULL_CLOSURE_PARALLEL": 6,
+            "V8.GC_MC_MARK_WEAK_CLOSURE_EPHEMERON_MARKING": 56,
+            "V8.GC_MC_MARK_EMBEDDER_TRACING": 33,
+            "V8.GC_CONSERVATIVE_STACK_SCANNING": 5,
+            "V8.GC_MC_MARK_FULL_CLOSURE_SERIAL": 6,
+            "V8.GC_MC_MARK_WEAK_CLOSURE_EPHEMERON_LINEAR": 2,
+            "V8.GC_MC_CLEAR": 6,
+            "V8.GC_MC_CLEAR_JOIN_JOB": 6,
+            "V8.GC_MC_CLEAR_WEAK_COLLECTIONS": 6,
+            "V8.GC_MC_CLEAR_WEAK_GLOBAL_HANDLES": 2,
+            "V8.GC_MC_CLEAR_FLUSHABLE_BYTECODE": 3,
+            "V8.GC_MC_CLEAR_SWEEP_TRUSTED_POINTER_TABLE": 4,
+            "V8.GC_MC_SWEEP": 22,
+            "V8.GC_MC_EVACUATE": 11,
+            "V8.GC_MC_EVACUATE_PROLOGUE": 6,
+            "V8.GC_MC_EVACUATE_COPY": 6,
+            "V8.GC_MC_EVACUATE_COPY_PARALLEL": 6,
+            "V8.GC_MC_EVACUATE_UPDATE_POINTERS": 6,
+            "V8.GC_MC_EVACUATE_UPDATE_POINTERS_TO_NEW_ROOTS": 6,
+            "V8.GC_MC_EVACUATE_UPDATE_POINTERS_CLIENT_HEAPS": 5,
+            "V8.GC_MC_EVACUATE_UPDATE_POINTERS_SLOTS_MAIN": 6,
+            "V8.GC_MC_EVACUATE_UPDATE_POINTERS_PARALLEL": 6,
+            "V8.GC_MC_EVACUATE_UPDATE_POINTERS_WEAK": 6,
+            "V8.GC_MC_EVACUATE_UPDATE_POINTERS_POINTER_TABLES": 6,
+            "V8.GC_MC_EVACUATE_CLEAN_UP": 6,
+            "V8.GC_MC_EVACUATE_EPILOGUE": 4,
+            "V8.GC_MC_FINISH": 6,
+            "V8.GC_MC_FINISH_SWEEP_ARRAY_BUFFERS": 6,
+            "V8.GC_MC_SWEEP_START_JOBS": 6,
+            "V8.GC_HEAP_EMBEDDER_TRACING_EPILOGUE": 6,
+            "V8.GC_MC_COMPLETE_SWEEPING": 6,
+            "V8.GC_MC_CLEAR_FLUSHED_JS_FUNCTIONS": 1,
+            "V8.GC_MC_CLEAR_SWEEP_EXTERNAL_POINTER_TABLE": 3,
+            "V8.GC_MC_SWEEP_NEW_LO": 3,
+            "V8.GC_MC_EVACUATE_REBALANCE": 2,
+            "V8.GC_MC_EPILOGUE": 3,
+            "V8.GC_MC_COMPLETE_SWEEP_ARRAY_BUFFERS": 5,
+            "V8.GC_MC_CLEAR_MAPS": 3,
+            "V8.GC_MC_CLEAR_EXTERNAL_STRING_TABLE": 2,
+            "V8.GC_MC_CLEAR_STRING_TABLE": 5,
+            "V8.GC_MC_CLEAR_JS_WEAK_REFERENCES": 1,
+            "V8.GC_MC_CLEAR_SWEEP_WASM_CODE_POINTER_TABLE": 1
+          },
+          "windowUnionMs": 150.578,
+          "insideRenderUnionMs": 6.644,
+          "outsideRenderUnionMs": 143.934,
+          "naiveNestedDurationMs": 492.235
+        },
+        "imageDecode": {
+          "events": 0,
+          "names": {},
+          "windowUnionMs": 0,
+          "insideRenderUnionMs": 0,
+          "outsideRenderUnionMs": 0,
+          "naiveNestedDurationMs": 0
+        }
+      },
+      "slowFrames": [
+        {
+          "serial": 27,
+          "wallMs": 443.8999999910593,
+          "skill": "mochi-1",
+          "age": 366.6999999999998,
+          "renderElapsedMs": 38.70000000298023,
+          "traceSpanMs": 38.728,
+          "phaseMs": {
+            "style": 0.288,
+            "layout": 0.038,
+            "prePaint": 0,
+            "paint": 0,
+            "layerize": 0,
+            "gcLabelled": 0.28,
+            "imageDecode": 0
+          },
+          "recordedPhaseUnionMs": 0.606,
+          "wrapperCosts": {
+            "native.pose": {
+              "calls": 9,
+              "elapsedMs": 0.4000000059604645,
+              "maxMs": 0.10000000894069672
+            },
+            "actor.sample": {
+              "calls": 7,
+              "elapsedMs": 1.7000000029802322,
+              "maxMs": 1
+            },
+            "drawing.sample": {
+              "calls": 9,
+              "elapsedMs": 5.899999961256981,
+              "maxMs": 1.2000000029802322
+            },
+            "craft.deform": {
+              "calls": 7,
+              "elapsedMs": 4.69999997317791,
+              "maxMs": 1.2000000029802322
+            },
+            "canvas.drawImage": {
+              "calls": 119,
+              "elapsedMs": 1.2999999970197678,
+              "maxMs": 0.4000000059604645
+            },
+            "canvas.getImageData": {
+              "calls": 21,
+              "elapsedMs": 12.000000029802322,
+              "maxMs": 5
+            },
+            "gl.bufferSubData": {
+              "calls": 7,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "gl.texSubImage2D": {
+              "calls": 2,
+              "elapsedMs": 9.999999985098839,
+              "maxMs": 6.0999999940395355
+            },
+            "gl.drawElements": {
+              "calls": 30,
+              "elapsedMs": 0,
+              "maxMs": 0
+            }
+          }
+        },
+        {
+          "serial": 236,
+          "wallMs": 3944,
+          "skill": "yarnAttack",
+          "age": 283.40000000000146,
+          "renderElapsedMs": 22.399999991059303,
+          "traceSpanMs": 22.444,
+          "phaseMs": {
+            "style": 0.083,
+            "layout": 0.042,
+            "prePaint": 0,
+            "paint": 0,
+            "layerize": 0,
+            "gcLabelled": 0.487,
+            "imageDecode": 0
+          },
+          "recordedPhaseUnionMs": 0.612,
+          "wrapperCosts": {
+            "native.pose": {
+              "calls": 7,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "actor.sample": {
+              "calls": 7,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "drawing.sample": {
+              "calls": 7,
+              "elapsedMs": 0.9999999850988388,
+              "maxMs": 0.20000000298023224
+            },
+            "craft.deform": {
+              "calls": 7,
+              "elapsedMs": 0.9999999850988388,
+              "maxMs": 0.20000000298023224
+            },
+            "canvas.drawImage": {
+              "calls": 85,
+              "elapsedMs": 0.5999999940395355,
+              "maxMs": 0.5999999940395355
+            },
+            "canvas.getImageData": {
+              "calls": 1,
+              "elapsedMs": 7.5999999940395355,
+              "maxMs": 7.5999999940395355
+            },
+            "gl.bufferSubData": {
+              "calls": 7,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "gl.drawElements": {
+              "calls": 31,
+              "elapsedMs": 0.10000000894069672,
+              "maxMs": 0.10000000894069672
+            },
+            "gl.texImage2D": {
+              "calls": 1,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "gl.texSubImage2D": {
+              "calls": 1,
+              "elapsedMs": 8.200000002980232,
+              "maxMs": 8.200000002980232
+            },
+            "gl.bufferData": {
+              "calls": 4,
+              "elapsedMs": 0.10000000894069672,
+              "maxMs": 0.10000000894069672
+            }
+          }
+        },
+        {
+          "serial": 22,
+          "wallMs": 360.5,
+          "skill": "mochi-1",
+          "age": 283.3000000000002,
+          "renderElapsedMs": 20.5,
+          "traceSpanMs": 20.448,
+          "phaseMs": {
+            "style": 0.086,
+            "layout": 0.04,
+            "prePaint": 0,
+            "paint": 0,
+            "layerize": 0,
+            "gcLabelled": 0.306,
+            "imageDecode": 0
+          },
+          "recordedPhaseUnionMs": 0.432,
+          "wrapperCosts": {
+            "native.pose": {
+              "calls": 7,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "actor.sample": {
+              "calls": 7,
+              "elapsedMs": 0.09999999403953552,
+              "maxMs": 0.09999999403953552
+            },
+            "drawing.sample": {
+              "calls": 7,
+              "elapsedMs": 3.800000011920929,
+              "maxMs": 0.9000000059604645
+            },
+            "craft.deform": {
+              "calls": 7,
+              "elapsedMs": 4,
+              "maxMs": 0.9000000059604645
+            },
+            "canvas.drawImage": {
+              "calls": 106,
+              "elapsedMs": 0.7000000178813934,
+              "maxMs": 0.4000000059604645
+            },
+            "canvas.getImageData": {
+              "calls": 1,
+              "elapsedMs": 5.399999991059303,
+              "maxMs": 5.399999991059303
+            },
+            "gl.bufferSubData": {
+              "calls": 7,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "gl.drawElements": {
+              "calls": 32,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "gl.texImage2D": {
+              "calls": 1,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "gl.texSubImage2D": {
+              "calls": 1,
+              "elapsedMs": 6,
+              "maxMs": 6
+            }
+          }
+        },
+        {
+          "serial": 222,
+          "wallMs": 3711.3999999910593,
+          "skill": "yarnAttack",
+          "age": 50.100000000000364,
+          "renderElapsedMs": 19.600000008940697,
+          "traceSpanMs": 19.628,
+          "phaseMs": {
+            "style": 0.155,
+            "layout": 0.056,
+            "prePaint": 0,
+            "paint": 0,
+            "layerize": 0,
+            "gcLabelled": 0,
+            "imageDecode": 0
+          },
+          "recordedPhaseUnionMs": 0.211,
+          "wrapperCosts": {
+            "native.pose": {
+              "calls": 7,
+              "elapsedMs": 0.09999999403953552,
+              "maxMs": 0.09999999403953552
+            },
+            "actor.sample": {
+              "calls": 7,
+              "elapsedMs": 0.09999999403953552,
+              "maxMs": 0.09999999403953552
+            },
+            "drawing.sample": {
+              "calls": 7,
+              "elapsedMs": 1.300000011920929,
+              "maxMs": 0.20000000298023224
+            },
+            "craft.deform": {
+              "calls": 7,
+              "elapsedMs": 1.300000011920929,
+              "maxMs": 0.20000000298023224
+            },
+            "canvas.drawImage": {
+              "calls": 85,
+              "elapsedMs": 0.9000000208616257,
+              "maxMs": 0.800000011920929
+            },
+            "canvas.getImageData": {
+              "calls": 1,
+              "elapsedMs": 6.299999997019768,
+              "maxMs": 6.299999997019768
+            },
+            "gl.bufferSubData": {
+              "calls": 7,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "gl.drawElements": {
+              "calls": 29,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "gl.texImage2D": {
+              "calls": 1,
+              "elapsedMs": 0.10000000894069672,
+              "maxMs": 0.10000000894069672
+            },
+            "gl.texSubImage2D": {
+              "calls": 1,
+              "elapsedMs": 7.200000002980232,
+              "maxMs": 7.200000002980232
+            }
+          }
+        },
+        {
+          "serial": 1833,
+          "wallMs": 30559.79999999702,
+          "skill": "yarnAttack",
+          "age": 300,
+          "renderElapsedMs": 19.599999994039536,
+          "traceSpanMs": 19.568,
+          "phaseMs": {
+            "style": 0.06,
+            "layout": 0.043,
+            "prePaint": 0,
+            "paint": 0,
+            "layerize": 0,
+            "gcLabelled": 0,
+            "imageDecode": 0
+          },
+          "recordedPhaseUnionMs": 0.103,
+          "wrapperCosts": {
+            "native.pose": {
+              "calls": 7,
+              "elapsedMs": 0.09999999403953552,
+              "maxMs": 0.09999999403953552
+            },
+            "actor.sample": {
+              "calls": 7,
+              "elapsedMs": 0.09999999403953552,
+              "maxMs": 0.09999999403953552
+            },
+            "drawing.sample": {
+              "calls": 7,
+              "elapsedMs": 1.1000000089406967,
+              "maxMs": 0.20000000298023224
+            },
+            "craft.deform": {
+              "calls": 7,
+              "elapsedMs": 1.1000000089406967,
+              "maxMs": 0.20000000298023224
+            },
+            "canvas.drawImage": {
+              "calls": 85,
+              "elapsedMs": 0.4000000059604645,
+              "maxMs": 0.4000000059604645
+            },
+            "canvas.getImageData": {
+              "calls": 1,
+              "elapsedMs": 7,
+              "maxMs": 7
+            },
+            "gl.bufferSubData": {
+              "calls": 7,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "gl.drawElements": {
+              "calls": 37,
+              "elapsedMs": 0.10000000894069672,
+              "maxMs": 0.10000000894069672
+            },
+            "gl.texSubImage2D": {
+              "calls": 1,
+              "elapsedMs": 7.4000000059604645,
+              "maxMs": 7.4000000059604645
+            }
+          }
+        },
+        {
+          "serial": 574,
+          "wallMs": 9577.5,
+          "skill": "panko-4",
+          "age": 300,
+          "renderElapsedMs": 19.399999991059303,
+          "traceSpanMs": 19.459,
+          "phaseMs": {
+            "style": 0.057,
+            "layout": 0.061,
+            "prePaint": 0,
+            "paint": 0,
+            "layerize": 0,
+            "gcLabelled": 0.506,
+            "imageDecode": 0
+          },
+          "recordedPhaseUnionMs": 0.624,
+          "wrapperCosts": {
+            "native.pose": {
+              "calls": 7,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "actor.sample": {
+              "calls": 7,
+              "elapsedMs": 0.09999999403953552,
+              "maxMs": 0.09999999403953552
+            },
+            "drawing.sample": {
+              "calls": 7,
+              "elapsedMs": 4.200000017881393,
+              "maxMs": 1
+            },
+            "craft.deform": {
+              "calls": 7,
+              "elapsedMs": 4.4000000059604645,
+              "maxMs": 1.0999999940395355
+            },
+            "canvas.drawImage": {
+              "calls": 85,
+              "elapsedMs": 0.6000000089406967,
+              "maxMs": 0.4000000059604645
+            },
+            "canvas.getImageData": {
+              "calls": 1,
+              "elapsedMs": 5.4000000059604645,
+              "maxMs": 5.4000000059604645
+            },
+            "gl.bufferSubData": {
+              "calls": 7,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "gl.drawElements": {
+              "calls": 37,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "gl.texSubImage2D": {
+              "calls": 1,
+              "elapsedMs": 5,
+              "maxMs": 5
+            }
+          }
+        },
+        {
+          "serial": 1013,
+          "wallMs": 16895.5,
+          "skill": "soot-4",
+          "age": 16.700000000000728,
+          "renderElapsedMs": 17.69999998807907,
+          "traceSpanMs": 17.638,
+          "phaseMs": {
+            "style": 2.02,
+            "layout": 0.396,
+            "prePaint": 0,
+            "paint": 0,
+            "layerize": 0,
+            "gcLabelled": 0.377,
+            "imageDecode": 0
+          },
+          "recordedPhaseUnionMs": 2.793,
+          "wrapperCosts": {
+            "native.pose": {
+              "calls": 8,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "drawing.sample": {
+              "calls": 8,
+              "elapsedMs": 0.8999999761581421,
+              "maxMs": 0.20000000298023224
+            },
+            "actor.sample": {
+              "calls": 7,
+              "elapsedMs": 0.20000000298023224,
+              "maxMs": 0.20000000298023224
+            },
+            "craft.deform": {
+              "calls": 7,
+              "elapsedMs": 0.7999999821186066,
+              "maxMs": 0.20000000298023224
+            },
+            "canvas.drawImage": {
+              "calls": 84,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "gl.bufferSubData": {
+              "calls": 7,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "gl.drawElements": {
+              "calls": 38,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "gl.bufferData": {
+              "calls": 3,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "gl.compileShader": {
+              "calls": 4,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "gl.linkProgram": {
+              "calls": 2,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "gl.texSubImage2D": {
+              "calls": 1,
+              "elapsedMs": 0,
+              "maxMs": 0
+            }
+          }
+        },
+        {
+          "serial": 8,
+          "wallMs": 127.3999999910593,
+          "skill": "mochi-1",
+          "age": 50,
+          "renderElapsedMs": 16.900000005960464,
+          "traceSpanMs": 16.95,
+          "phaseMs": {
+            "style": 0.084,
+            "layout": 0.042,
+            "prePaint": 0,
+            "paint": 0,
+            "layerize": 0,
+            "gcLabelled": 0,
+            "imageDecode": 0
+          },
+          "recordedPhaseUnionMs": 0.126,
+          "wrapperCosts": {
+            "native.pose": {
+              "calls": 7,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "actor.sample": {
+              "calls": 7,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "drawing.sample": {
+              "calls": 7,
+              "elapsedMs": 1.4000000059604645,
+              "maxMs": 0.7999999970197678
+            },
+            "craft.deform": {
+              "calls": 7,
+              "elapsedMs": 1.4000000059604645,
+              "maxMs": 0.7999999970197678
+            },
+            "canvas.drawImage": {
+              "calls": 85,
+              "elapsedMs": 0.5,
+              "maxMs": 0.5
+            },
+            "canvas.getImageData": {
+              "calls": 1,
+              "elapsedMs": 4.9000000059604645,
+              "maxMs": 4.9000000059604645
+            },
+            "gl.bufferSubData": {
+              "calls": 7,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "gl.drawElements": {
+              "calls": 29,
+              "elapsedMs": 0.09999999403953552,
+              "maxMs": 0.09999999403953552
+            },
+            "gl.texImage2D": {
+              "calls": 1,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "gl.texSubImage2D": {
+              "calls": 1,
+              "elapsedMs": 5.5999999940395355,
+              "maxMs": 5.5999999940395355
+            }
+          }
+        },
+        {
+          "serial": 557,
+          "wallMs": 9295.29999999702,
+          "skill": "panko-4",
+          "age": 16.600000000000364,
+          "renderElapsedMs": 16.299999997019768,
+          "traceSpanMs": 16.205,
+          "phaseMs": {
+            "style": 2.007,
+            "layout": 0.571,
+            "prePaint": 0,
+            "paint": 0,
+            "layerize": 0,
+            "gcLabelled": 0.318,
+            "imageDecode": 0
+          },
+          "recordedPhaseUnionMs": 2.896,
+          "wrapperCosts": {
+            "native.pose": {
+              "calls": 8,
+              "elapsedMs": 0.10000000894069672,
+              "maxMs": 0.10000000894069672
+            },
+            "drawing.sample": {
+              "calls": 8,
+              "elapsedMs": 4.200000002980232,
+              "maxMs": 1.2000000029802322
+            },
+            "actor.sample": {
+              "calls": 7,
+              "elapsedMs": 0.30000001192092896,
+              "maxMs": 0.20000000298023224
+            },
+            "craft.deform": {
+              "calls": 7,
+              "elapsedMs": 4.0999999940395355,
+              "maxMs": 1.2000000029802322
+            },
+            "canvas.drawImage": {
+              "calls": 84,
+              "elapsedMs": 0.09999999403953552,
+              "maxMs": 0.09999999403953552
+            },
+            "gl.bufferSubData": {
+              "calls": 7,
+              "elapsedMs": 0.09999999403953552,
+              "maxMs": 0.09999999403953552
+            },
+            "gl.drawElements": {
+              "calls": 37,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "gl.compileShader": {
+              "calls": 2,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "gl.linkProgram": {
+              "calls": 1,
+              "elapsedMs": 0,
+              "maxMs": 0
+            }
+          }
+        },
+        {
+          "serial": 893,
+          "wallMs": 14894,
+          "skill": "mochi-4",
+          "age": 316.59999999999854,
+          "renderElapsedMs": 15.399999991059303,
+          "traceSpanMs": 15.413,
+          "phaseMs": {
+            "style": 0.095,
+            "layout": 0.072,
+            "prePaint": 0,
+            "paint": 0,
+            "layerize": 0,
+            "gcLabelled": 0,
+            "imageDecode": 0
+          },
+          "recordedPhaseUnionMs": 0.167,
+          "wrapperCosts": {
+            "native.pose": {
+              "calls": 7,
+              "elapsedMs": 0.09999999403953552,
+              "maxMs": 0.09999999403953552
+            },
+            "actor.sample": {
+              "calls": 7,
+              "elapsedMs": 0.09999999403953552,
+              "maxMs": 0.09999999403953552
+            },
+            "drawing.sample": {
+              "calls": 7,
+              "elapsedMs": 0.8999999910593033,
+              "maxMs": 0.29999999701976776
+            },
+            "craft.deform": {
+              "calls": 7,
+              "elapsedMs": 0.8999999910593033,
+              "maxMs": 0.29999999701976776
+            },
+            "canvas.drawImage": {
+              "calls": 85,
+              "elapsedMs": 0.4000000059604645,
+              "maxMs": 0.30000001192092896
+            },
+            "canvas.getImageData": {
+              "calls": 1,
+              "elapsedMs": 5.199999988079071,
+              "maxMs": 5.199999988079071
+            },
+            "gl.bufferSubData": {
+              "calls": 7,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "gl.drawElements": {
+              "calls": 37,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "gl.texSubImage2D": {
+              "calls": 1,
+              "elapsedMs": 5.0999999940395355,
+              "maxMs": 5.0999999940395355
+            }
+          }
+        },
+        {
+          "serial": 1168,
+          "wallMs": 19477.39999999106,
+          "skill": "clover-4",
+          "age": 300.09999999999854,
+          "renderElapsedMs": 15.100000008940697,
+          "traceSpanMs": 15.064,
+          "phaseMs": {
+            "style": 0.055,
+            "layout": 0.039,
+            "prePaint": 0,
+            "paint": 0,
+            "layerize": 0,
+            "gcLabelled": 0,
+            "imageDecode": 0
+          },
+          "recordedPhaseUnionMs": 0.094,
+          "wrapperCosts": {
+            "native.pose": {
+              "calls": 7,
+              "elapsedMs": 0.09999999403953552,
+              "maxMs": 0.09999999403953552
+            },
+            "actor.sample": {
+              "calls": 7,
+              "elapsedMs": 0.19999998807907104,
+              "maxMs": 0.09999999403953552
+            },
+            "drawing.sample": {
+              "calls": 7,
+              "elapsedMs": 1.1000000089406967,
+              "maxMs": 0.29999999701976776
+            },
+            "craft.deform": {
+              "calls": 7,
+              "elapsedMs": 1.1000000089406967,
+              "maxMs": 0.29999999701976776
+            },
+            "canvas.drawImage": {
+              "calls": 85,
+              "elapsedMs": 0.29999999701976776,
+              "maxMs": 0.29999999701976776
+            },
+            "canvas.getImageData": {
+              "calls": 1,
+              "elapsedMs": 5.0999999940395355,
+              "maxMs": 5.0999999940395355
+            },
+            "gl.bufferSubData": {
+              "calls": 7,
+              "elapsedMs": 0.10000000894069672,
+              "maxMs": 0.10000000894069672
+            },
+            "gl.drawElements": {
+              "calls": 37,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "gl.texSubImage2D": {
+              "calls": 1,
+              "elapsedMs": 5.200000002980232,
+              "maxMs": 5.200000002980232
+            }
+          }
+        },
+        {
+          "serial": 1030,
+          "wallMs": 17177.29999999702,
+          "skill": "soot-4",
+          "age": 300.09999999999854,
+          "renderElapsedMs": 15,
+          "traceSpanMs": 15.036,
+          "phaseMs": {
+            "style": 0.059,
+            "layout": 0.071,
+            "prePaint": 0,
+            "paint": 0,
+            "layerize": 0,
+            "gcLabelled": 0,
+            "imageDecode": 0
+          },
+          "recordedPhaseUnionMs": 0.13,
+          "wrapperCosts": {
+            "native.pose": {
+              "calls": 7,
+              "elapsedMs": 0.10000000894069672,
+              "maxMs": 0.10000000894069672
+            },
+            "actor.sample": {
+              "calls": 7,
+              "elapsedMs": 0.20000000298023224,
+              "maxMs": 0.10000000894069672
+            },
+            "drawing.sample": {
+              "calls": 7,
+              "elapsedMs": 0.8999999910593033,
+              "maxMs": 0.20000000298023224
+            },
+            "craft.deform": {
+              "calls": 7,
+              "elapsedMs": 0.9999999850988388,
+              "maxMs": 0.29999999701976776
+            },
+            "canvas.drawImage": {
+              "calls": 85,
+              "elapsedMs": 0.4000000059604645,
+              "maxMs": 0.4000000059604645
+            },
+            "canvas.getImageData": {
+              "calls": 1,
+              "elapsedMs": 4.5999999940395355,
+              "maxMs": 4.5999999940395355
+            },
+            "gl.bufferSubData": {
+              "calls": 10,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "gl.drawElements": {
+              "calls": 40,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "gl.texSubImage2D": {
+              "calls": 1,
+              "elapsedMs": 4,
+              "maxMs": 4
+            }
+          }
+        },
+        {
+          "serial": 1198,
+          "wallMs": 19977.39999999106,
+          "skill": "clover-4",
+          "age": 800,
+          "renderElapsedMs": 14.5,
+          "traceSpanMs": 14.564,
+          "phaseMs": {
+            "style": 0.06,
+            "layout": 0.038,
+            "prePaint": 0,
+            "paint": 0,
+            "layerize": 0,
+            "gcLabelled": 0,
+            "imageDecode": 0
+          },
+          "recordedPhaseUnionMs": 0.098,
+          "wrapperCosts": {
+            "native.pose": {
+              "calls": 7,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "actor.sample": {
+              "calls": 7,
+              "elapsedMs": 0.09999999403953552,
+              "maxMs": 0.09999999403953552
+            },
+            "drawing.sample": {
+              "calls": 7,
+              "elapsedMs": 1,
+              "maxMs": 0.20000000298023224
+            },
+            "craft.deform": {
+              "calls": 7,
+              "elapsedMs": 1,
+              "maxMs": 0.20000000298023224
+            },
+            "canvas.drawImage": {
+              "calls": 84,
+              "elapsedMs": 0.10000000894069672,
+              "maxMs": 0.10000000894069672
+            },
+            "gl.bufferSubData": {
+              "calls": 7,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "gl.drawElements": {
+              "calls": 31,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "gl.bufferData": {
+              "calls": 4,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "gl.compileShader": {
+              "calls": 2,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "gl.linkProgram": {
+              "calls": 1,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "gl.texSubImage2D": {
+              "calls": 1,
+              "elapsedMs": 8.900000005960464,
+              "maxMs": 8.900000005960464
+            }
+          }
+        }
+      ]
+    },
+    {
+      "rate": 4,
+      "trace": {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-F-battle-context-attribution/4x.trace.json",
+        "sha256": "5d654aea89b25b53d1bf90bf8108e6c0f9235d0c399391ee66208d44dbae5512"
+      },
+      "rendererThread": {
+        "pid": 43058,
+        "tid": 3525290
+      },
+      "windowMs": 32043.02,
+      "renderFrames": 1245,
+      "renderUnionMs": 20190.658,
+      "observedCompleteEvents": 30422,
+      "phases": {
+        "style": {
+          "events": 3719,
+          "names": {
+            "UpdateLayoutTree": 3719
+          },
+          "windowUnionMs": 2481.21,
+          "insideRenderUnionMs": 577.69,
+          "outsideRenderUnionMs": 1903.52,
+          "naiveNestedDurationMs": 2481.21
+        },
+        "layout": {
+          "events": 1789,
+          "names": {
+            "Layout": 1789
+          },
+          "windowUnionMs": 506.695,
+          "insideRenderUnionMs": 328.156,
+          "outsideRenderUnionMs": 178.539,
+          "naiveNestedDurationMs": 506.695
+        },
+        "prePaint": {
+          "events": 2495,
+          "names": {
+            "PrePaint": 2495
+          },
+          "windowUnionMs": 911.817,
+          "insideRenderUnionMs": 0,
+          "outsideRenderUnionMs": 911.817,
+          "naiveNestedDurationMs": 911.817
+        },
+        "paint": {
+          "events": 9240,
+          "names": {
+            "Paint": 9240
+          },
+          "windowUnionMs": 497.178,
+          "insideRenderUnionMs": 0,
+          "outsideRenderUnionMs": 497.178,
+          "naiveNestedDurationMs": 755.612
+        },
+        "layerize": {
+          "events": 1245,
+          "names": {
+            "Layerize": 1245
+          },
+          "windowUnionMs": 1015.386,
+          "insideRenderUnionMs": 0,
+          "outsideRenderUnionMs": 1015.386,
+          "naiveNestedDurationMs": 1015.386
+        },
+        "gcLabelled": {
+          "events": 3389,
+          "names": {
+            "V8.GC_HEAP_EXTERNAL_PROLOGUE": 148,
+            "MinorGC": 144,
+            "V8.GC_HEAP_PROLOGUE": 144,
+            "V8.GC_TIME_TO_SAFEPOINT": 85,
+            "V8.GC_SCAVENGER": 144,
+            "V8.GC_HEAP_PROLOGUE_SAFEPOINT": 63,
+            "V8.GC_SCAVENGER_SCAVENGE": 144,
+            "V8.GC_SCAVENGER_SCAVENGE_WEAK_GLOBAL_HANDLES_IDENTIFY": 144,
+            "V8.GC_SCAVENGER_TRACED_HANDLES_COMPUTE_WEAKNESS_PARALLEL": 142,
+            "V8.GC_SCAVENGER_SCAVENGE_COLLECT_OLD_TO_NEW_PAGES": 144,
+            "V8.GC_SCAVENGER_SCAVENGE_PARALLEL_PHASE": 144,
+            "V8.GC_SCAVENGER_SCAVENGE_ROOTS": 144,
+            "V8.GC_SCAVENGER_SCAVENGE_PARALLEL": 134,
+            "V8.GC_SCAVENGER_SCAVENGE_WEAK_GLOBAL_HANDLES_PROCESS": 144,
+            "V8.GC_SCAVENGER_TRACED_HANDLES_RESET_PARALLEL": 141,
+            "V8.GC_SCAVENGER_SCAVENGE_FINALIZE": 144,
+            "V8.GC_SCAVENGER_SCAVENGE_RESTORE_AND_QUARANTINE_PINNED": 144,
+            "V8.GC_SCAVENGER_FREE_REMEMBERED_SET": 144,
+            "V8.GC_SCAVENGER_SWEEP_ARRAY_BUFFERS": 48,
+            "V8.GC_SCAVENGER_RESIZE_NEW_SPACE": 85,
+            "V8.GC_HEAP_EXTERNAL_WEAK_GLOBAL_HANDLES": 6,
+            "V8.GC_HEAP_EPILOGUE_SAFEPOINT": 148,
+            "V8.GC_HEAP_EPILOGUE": 148,
+            "V8.GC_HEAP_EXTERNAL_EPILOGUE": 137,
+            "V8.GC_HEAP_EXTERNAL_SECOND_PASS_CALLBACKS": 6,
+            "V8.GC_SCAVENGER_COMPLETE_SWEEP_ARRAY_BUFFERS": 21,
+            "V8.GC_HEAP_ENSURE_SWEEPING_COMPLETED": 8,
+            "V8.GC_MC_INCREMENTAL_START": 4,
+            "V8.GC_MC_INCREMENTAL_EXTERNAL_PROLOGUE": 4,
+            "V8.GC_MC_MARK_EMBEDDER_PROLOGUE": 8,
+            "V8.GC_MC_MARK_ROOTS": 12,
+            "V8.GC_MC_INCREMENTAL_EXTERNAL_EPILOGUE": 4,
+            "V8.GC_MC_INCREMENTAL": 37,
+            "V8.GC_MC_INCREMENTAL_EMBEDDER_TRACING": 32,
+            "MajorGC": 4,
+            "V8.GC_MARK_COMPACTOR": 4,
+            "V8.GC_MC_PROLOGUE": 4,
+            "V8.GC_MC_MARK": 4,
+            "V8.GC_MC_MARK_FINISH_INCREMENTAL": 4,
+            "V8.GC_MC_MARK_RETAIN_MAPS": 4,
+            "V8.GC_MC_MARK_FULL_CLOSURE_PARALLEL": 4,
+            "V8.GC_MC_MARK_WEAK_CLOSURE_EPHEMERON_MARKING": 46,
+            "V8.GC_MC_MARK_EMBEDDER_TRACING": 30,
+            "V8.GC_CONSERVATIVE_STACK_SCANNING": 2,
+            "V8.GC_MC_MARK_FULL_CLOSURE_SERIAL": 4,
+            "V8.GC_MC_MARK_WEAK_CLOSURE_EPHEMERON_LINEAR": 3,
+            "V8.GC_MC_CLEAR": 4,
+            "V8.GC_MC_CLEAR_JOIN_JOB": 4,
+            "V8.GC_MC_CLEAR_WEAK_COLLECTIONS": 4,
+            "V8.GC_MC_CLEAR_WEAK_LISTS": 1,
+            "V8.GC_MC_CLEAR_JS_WEAK_REFERENCES": 2,
+            "V8.GC_MC_SWEEP": 13,
+            "V8.GC_MC_EVACUATE": 8,
+            "V8.GC_MC_EVACUATE_PROLOGUE": 4,
+            "V8.GC_MC_EVACUATE_COPY": 4,
+            "V8.GC_MC_EVACUATE_COPY_PARALLEL": 4,
+            "V8.GC_MC_EVACUATE_UPDATE_POINTERS": 4,
+            "V8.GC_MC_EVACUATE_UPDATE_POINTERS_TO_NEW_ROOTS": 4,
+            "V8.GC_MC_EVACUATE_UPDATE_POINTERS_CLIENT_HEAPS": 4,
+            "V8.GC_MC_EVACUATE_UPDATE_POINTERS_SLOTS_MAIN": 4,
+            "V8.GC_MC_EVACUATE_UPDATE_POINTERS_PARALLEL": 4,
+            "V8.GC_MC_EVACUATE_UPDATE_POINTERS_WEAK": 4,
+            "V8.GC_MC_EVACUATE_UPDATE_POINTERS_POINTER_TABLES": 4,
+            "V8.GC_MC_EVACUATE_CLEAN_UP": 4,
+            "V8.GC_MC_EVACUATE_EPILOGUE": 4,
+            "V8.GC_MC_SWEEP_NEW_LO": 3,
+            "V8.GC_MC_EVACUATE_REBALANCE": 4,
+            "V8.GC_MC_FINISH": 4,
+            "V8.GC_MC_FINISH_SWEEP_ARRAY_BUFFERS": 4,
+            "V8.GC_MC_SWEEP_START_JOBS": 4,
+            "V8.GC_MC_EPILOGUE": 3,
+            "V8.GC_HEAP_EMBEDDER_TRACING_EPILOGUE": 4,
+            "V8.GC_MC_COMPLETE_SWEEPING": 4,
+            "V8.GC_MC_MARK_CLIENT_HEAPS": 3,
+            "V8.GC_MC_CLEAR_SWEEP_JS_DISPATCH_TABLE": 1,
+            "V8.GC_MC_CLEAR_STRING_TABLE": 4,
+            "V8.GC_MC_COMPLETE_SWEEP_ARRAY_BUFFERS": 3,
+            "V8.GC_MC_CLEAR_EXTERNAL_STRING_TABLE": 1,
+            "V8.GC_MC_CLEAR_SWEEP_EXTERNAL_POINTER_TABLE": 1
+          },
+          "windowUnionMs": 267.161,
+          "insideRenderUnionMs": 234.653,
+          "outsideRenderUnionMs": 32.508,
+          "naiveNestedDurationMs": 979.509
+        },
+        "imageDecode": {
+          "events": 0,
+          "names": {},
+          "windowUnionMs": 0,
+          "insideRenderUnionMs": 0,
+          "outsideRenderUnionMs": 0,
+          "naiveNestedDurationMs": 0
+        }
+      },
+      "slowFrames": [
+        {
+          "serial": 9,
+          "wallMs": 520.5,
+          "skill": "mochi-1",
+          "age": 400,
+          "renderElapsedMs": 154.20000000298023,
+          "traceSpanMs": 154.719,
+          "phaseMs": {
+            "style": 2.445,
+            "layout": 0.082,
+            "prePaint": 0,
+            "paint": 0,
+            "layerize": 0,
+            "gcLabelled": 0,
+            "imageDecode": 0
+          },
+          "recordedPhaseUnionMs": 2.527,
+          "wrapperCosts": {
+            "native.pose": {
+              "calls": 9,
+              "elapsedMs": 0.7999999970197678,
+              "maxMs": 0.7000000029802322
+            },
+            "actor.sample": {
+              "calls": 7,
+              "elapsedMs": 3,
+              "maxMs": 1.2000000029802322
+            },
+            "drawing.sample": {
+              "calls": 9,
+              "elapsedMs": 15.100000008940697,
+              "maxMs": 5.5
+            },
+            "craft.deform": {
+              "calls": 7,
+              "elapsedMs": 14.600000008940697,
+              "maxMs": 5.5
+            },
+            "canvas.drawImage": {
+              "calls": 119,
+              "elapsedMs": 5.899999976158142,
+              "maxMs": 2.5999999940395355
+            },
+            "canvas.getImageData": {
+              "calls": 21,
+              "elapsedMs": 45.299999967217445,
+              "maxMs": 17.700000002980232
+            },
+            "gl.bufferSubData": {
+              "calls": 7,
+              "elapsedMs": 0.5999999940395355,
+              "maxMs": 0.5999999940395355
+            },
+            "gl.texSubImage2D": {
+              "calls": 2,
+              "elapsedMs": 34,
+              "maxMs": 20.900000005960464
+            },
+            "gl.drawElements": {
+              "calls": 36,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "gl.bufferData": {
+              "calls": 24,
+              "elapsedMs": 0,
+              "maxMs": 0
+            }
+          }
+        },
+        {
+          "serial": 6,
+          "wallMs": 230.90000000596046,
+          "skill": "mochi-1",
+          "age": 116.59999999999991,
+          "renderElapsedMs": 98.29999999701977,
+          "traceSpanMs": 98.315,
+          "phaseMs": {
+            "style": 0.096,
+            "layout": 0.914,
+            "prePaint": 0,
+            "paint": 0,
+            "layerize": 0,
+            "gcLabelled": 0,
+            "imageDecode": 0
+          },
+          "recordedPhaseUnionMs": 1.01,
+          "wrapperCosts": {
+            "native.pose": {
+              "calls": 7,
+              "elapsedMs": 0.10000000894069672,
+              "maxMs": 0.10000000894069672
+            },
+            "actor.sample": {
+              "calls": 7,
+              "elapsedMs": 0.10000000894069672,
+              "maxMs": 0.10000000894069672
+            },
+            "drawing.sample": {
+              "calls": 7,
+              "elapsedMs": 13.999999970197678,
+              "maxMs": 7.299999997019768
+            },
+            "craft.deform": {
+              "calls": 7,
+              "elapsedMs": 14.099999979138374,
+              "maxMs": 7.299999997019768
+            },
+            "canvas.drawImage": {
+              "calls": 85,
+              "elapsedMs": 0.7000000029802322,
+              "maxMs": 0.5
+            },
+            "canvas.getImageData": {
+              "calls": 1,
+              "elapsedMs": 16,
+              "maxMs": 16
+            },
+            "gl.texImage2D": {
+              "calls": 2,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "gl.bufferSubData": {
+              "calls": 7,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "gl.drawElements": {
+              "calls": 31,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "gl.texSubImage2D": {
+              "calls": 3,
+              "elapsedMs": 28.099999994039536,
+              "maxMs": 18
+            },
+            "gl.bufferData": {
+              "calls": 8,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "gl.compileShader": {
+              "calls": 2,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "gl.linkProgram": {
+              "calls": 1,
+              "elapsedMs": 0,
+              "maxMs": 0
+            }
+          }
+        },
+        {
+          "serial": 8,
+          "wallMs": 406.90000000596046,
+          "skill": "mochi-1",
+          "age": 299.9000000000001,
+          "renderElapsedMs": 85.90000000596046,
+          "traceSpanMs": 85.94,
+          "phaseMs": {
+            "style": 3.177,
+            "layout": 0.873,
+            "prePaint": 0,
+            "paint": 0,
+            "layerize": 0,
+            "gcLabelled": 1.172,
+            "imageDecode": 0
+          },
+          "recordedPhaseUnionMs": 5.222,
+          "wrapperCosts": {
+            "native.pose": {
+              "calls": 8,
+              "elapsedMs": 0.699999988079071,
+              "maxMs": 0.699999988079071
+            },
+            "actor.sample": {
+              "calls": 7,
+              "elapsedMs": 0.7999999970197678,
+              "maxMs": 0.7999999970197678
+            },
+            "drawing.sample": {
+              "calls": 8,
+              "elapsedMs": 9.000000029802322,
+              "maxMs": 4.300000011920929
+            },
+            "craft.deform": {
+              "calls": 7,
+              "elapsedMs": 8.900000020861626,
+              "maxMs": 4.300000011920929
+            },
+            "canvas.drawImage": {
+              "calls": 106,
+              "elapsedMs": 5.399999991059303,
+              "maxMs": 3.7999999970197678
+            },
+            "canvas.getImageData": {
+              "calls": 1,
+              "elapsedMs": 16.900000005960464,
+              "maxMs": 16.900000005960464
+            },
+            "gl.bufferSubData": {
+              "calls": 7,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "gl.drawElements": {
+              "calls": 32,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "gl.texImage2D": {
+              "calls": 2,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "gl.texSubImage2D": {
+              "calls": 1,
+              "elapsedMs": 19.299999997019768,
+              "maxMs": 19.299999997019768
+            },
+            "gl.bufferData": {
+              "calls": 4,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "gl.compileShader": {
+              "calls": 2,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "gl.linkProgram": {
+              "calls": 1,
+              "elapsedMs": 0,
+              "maxMs": 0
+            }
+          }
+        },
+        {
+          "serial": 653,
+          "wallMs": 17566.20000000298,
+          "skill": "soot-4",
+          "age": 33.29999999999927,
+          "renderElapsedMs": 65,
+          "traceSpanMs": 64.974,
+          "phaseMs": {
+            "style": 10.298,
+            "layout": 2.139,
+            "prePaint": 0,
+            "paint": 0,
+            "layerize": 0,
+            "gcLabelled": 1.209,
+            "imageDecode": 0
+          },
+          "recordedPhaseUnionMs": 13.646,
+          "wrapperCosts": {
+            "native.pose": {
+              "calls": 8,
+              "elapsedMs": 0.10000000894069672,
+              "maxMs": 0.10000000894069672
+            },
+            "drawing.sample": {
+              "calls": 8,
+              "elapsedMs": 5.899999991059303,
+              "maxMs": 1.5
+            },
+            "actor.sample": {
+              "calls": 7,
+              "elapsedMs": 1.4000000059604645,
+              "maxMs": 1.4000000059604645
+            },
+            "craft.deform": {
+              "calls": 7,
+              "elapsedMs": 4.699999988079071,
+              "maxMs": 1.5999999940395355
+            },
+            "canvas.drawImage": {
+              "calls": 84,
+              "elapsedMs": 0.10000000894069672,
+              "maxMs": 0.10000000894069672
+            },
+            "gl.bufferSubData": {
+              "calls": 7,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "gl.drawElements": {
+              "calls": 38,
+              "elapsedMs": 0.20000000298023224,
+              "maxMs": 0.20000000298023224
+            },
+            "gl.bufferData": {
+              "calls": 3,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "gl.compileShader": {
+              "calls": 4,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "gl.linkProgram": {
+              "calls": 2,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "gl.texSubImage2D": {
+              "calls": 1,
+              "elapsedMs": 0.19999998807907104,
+              "maxMs": 0.19999998807907104
+            }
+          }
+        },
+        {
+          "serial": 21,
+          "wallMs": 1153.9000000059605,
+          "skill": "soot-1",
+          "age": 83.40000000000009,
+          "renderElapsedMs": 62.5,
+          "traceSpanMs": 62.51,
+          "phaseMs": {
+            "style": 0.581,
+            "layout": 0.336,
+            "prePaint": 0,
+            "paint": 0,
+            "layerize": 0,
+            "gcLabelled": 0,
+            "imageDecode": 0
+          },
+          "recordedPhaseUnionMs": 0.917,
+          "wrapperCosts": {
+            "native.pose": {
+              "calls": 7,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "actor.sample": {
+              "calls": 7,
+              "elapsedMs": 0.10000000894069672,
+              "maxMs": 0.10000000894069672
+            },
+            "drawing.sample": {
+              "calls": 7,
+              "elapsedMs": 7.299999997019768,
+              "maxMs": 2.5
+            },
+            "craft.deform": {
+              "calls": 7,
+              "elapsedMs": 7.299999997019768,
+              "maxMs": 2.5
+            },
+            "canvas.drawImage": {
+              "calls": 85,
+              "elapsedMs": 1.2000000029802322,
+              "maxMs": 0.6000000089406967
+            },
+            "canvas.getImageData": {
+              "calls": 1,
+              "elapsedMs": 12.199999988079071,
+              "maxMs": 12.199999988079071
+            },
+            "gl.bufferSubData": {
+              "calls": 7,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "gl.drawElements": {
+              "calls": 32,
+              "elapsedMs": 0.09999999403953552,
+              "maxMs": 0.09999999403953552
+            },
+            "gl.texImage2D": {
+              "calls": 1,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "gl.texSubImage2D": {
+              "calls": 2,
+              "elapsedMs": 10.599999994039536,
+              "maxMs": 10.599999994039536
+            },
+            "gl.bufferData": {
+              "calls": 9,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "gl.compileShader": {
+              "calls": 2,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "gl.linkProgram": {
+              "calls": 1,
+              "elapsedMs": 0,
+              "maxMs": 0
+            }
+          }
+        },
+        {
+          "serial": 345,
+          "wallMs": 9778.40000000596,
+          "skill": "panko-4",
+          "age": 33.399999999999636,
+          "renderElapsedMs": 61.29999999701977,
+          "traceSpanMs": 61.243,
+          "phaseMs": {
+            "style": 12.674,
+            "layout": 2.645,
+            "prePaint": 0,
+            "paint": 0,
+            "layerize": 0,
+            "gcLabelled": 0,
+            "imageDecode": 0
+          },
+          "recordedPhaseUnionMs": 15.319,
+          "wrapperCosts": {
+            "native.pose": {
+              "calls": 8,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "drawing.sample": {
+              "calls": 8,
+              "elapsedMs": 9.899999976158142,
+              "maxMs": 2.8999999910593033
+            },
+            "actor.sample": {
+              "calls": 7,
+              "elapsedMs": 0.9000000059604645,
+              "maxMs": 0.9000000059604645
+            },
+            "craft.deform": {
+              "calls": 7,
+              "elapsedMs": 9.099999979138374,
+              "maxMs": 2.8999999910593033
+            },
+            "canvas.drawImage": {
+              "calls": 84,
+              "elapsedMs": 0.7999999970197678,
+              "maxMs": 0.699999988079071
+            },
+            "gl.bufferSubData": {
+              "calls": 7,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "gl.drawElements": {
+              "calls": 37,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "gl.compileShader": {
+              "calls": 2,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "gl.linkProgram": {
+              "calls": 1,
+              "elapsedMs": 0,
+              "maxMs": 0
+            }
+          }
+        },
+        {
+          "serial": 125,
+          "wallMs": 4142.20000000298,
+          "skill": "yarnAttack",
+          "age": 283.39999999999964,
+          "renderElapsedMs": 55.900000005960464,
+          "traceSpanMs": 55.811,
+          "phaseMs": {
+            "style": 1.225,
+            "layout": 0.057,
+            "prePaint": 0,
+            "paint": 0,
+            "layerize": 0,
+            "gcLabelled": 0,
+            "imageDecode": 0
+          },
+          "recordedPhaseUnionMs": 1.282,
+          "wrapperCosts": {
+            "native.pose": {
+              "calls": 7,
+              "elapsedMs": 0.20000000298023224,
+              "maxMs": 0.20000000298023224
+            },
+            "actor.sample": {
+              "calls": 7,
+              "elapsedMs": 0.4000000059604645,
+              "maxMs": 0.20000000298023224
+            },
+            "drawing.sample": {
+              "calls": 7,
+              "elapsedMs": 5.100000008940697,
+              "maxMs": 1.7000000029802322
+            },
+            "craft.deform": {
+              "calls": 7,
+              "elapsedMs": 5.100000008940697,
+              "maxMs": 1.7000000029802322
+            },
+            "canvas.drawImage": {
+              "calls": 85,
+              "elapsedMs": 1.1000000089406967,
+              "maxMs": 1
+            },
+            "canvas.getImageData": {
+              "calls": 1,
+              "elapsedMs": 13.799999997019768,
+              "maxMs": 13.799999997019768
+            },
+            "gl.texImage2D": {
+              "calls": 1,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "gl.bufferSubData": {
+              "calls": 7,
+              "elapsedMs": 1.0999999940395355,
+              "maxMs": 0.5999999940395355
+            },
+            "gl.texSubImage2D": {
+              "calls": 1,
+              "elapsedMs": 17.5,
+              "maxMs": 17.5
+            },
+            "gl.drawElements": {
+              "calls": 31,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "gl.bufferData": {
+              "calls": 4,
+              "elapsedMs": 0,
+              "maxMs": 0
+            }
+          }
+        },
+        {
+          "serial": 27,
+          "wallMs": 1356.4000000059605,
+          "skill": "soot-1",
+          "age": 300,
+          "renderElapsedMs": 53.900000005960464,
+          "traceSpanMs": 53.971,
+          "phaseMs": {
+            "style": 0.779,
+            "layout": 0.042,
+            "prePaint": 0,
+            "paint": 0,
+            "layerize": 0,
+            "gcLabelled": 0,
+            "imageDecode": 0
+          },
+          "recordedPhaseUnionMs": 0.821,
+          "wrapperCosts": {
+            "native.pose": {
+              "calls": 7,
+              "elapsedMs": 0.10000000894069672,
+              "maxMs": 0.10000000894069672
+            },
+            "actor.sample": {
+              "calls": 7,
+              "elapsedMs": 0.800000011920929,
+              "maxMs": 0.5999999940395355
+            },
+            "drawing.sample": {
+              "calls": 7,
+              "elapsedMs": 3.999999985098839,
+              "maxMs": 1.2000000029802322
+            },
+            "craft.deform": {
+              "calls": 7,
+              "elapsedMs": 3.999999985098839,
+              "maxMs": 1.2000000029802322
+            },
+            "canvas.drawImage": {
+              "calls": 98,
+              "elapsedMs": 2.8999999910593033,
+              "maxMs": 2.0999999940395355
+            },
+            "canvas.getImageData": {
+              "calls": 1,
+              "elapsedMs": 13,
+              "maxMs": 13
+            },
+            "gl.bufferSubData": {
+              "calls": 12,
+              "elapsedMs": 0.09999999403953552,
+              "maxMs": 0.09999999403953552
+            },
+            "gl.drawElements": {
+              "calls": 36,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "gl.texImage2D": {
+              "calls": 1,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "gl.texSubImage2D": {
+              "calls": 1,
+              "elapsedMs": 11.399999991059303,
+              "maxMs": 11.399999991059303
+            },
+            "gl.bufferData": {
+              "calls": 6,
+              "elapsedMs": 0,
+              "maxMs": 0
+            }
+          }
+        },
+        {
+          "serial": 1225,
+          "wallMs": 31585.5,
+          "skill": "yarnAttack",
+          "age": 300,
+          "renderElapsedMs": 51.30000001192093,
+          "traceSpanMs": 51.343,
+          "phaseMs": {
+            "style": 0.382,
+            "layout": 0.045,
+            "prePaint": 0,
+            "paint": 0,
+            "layerize": 0,
+            "gcLabelled": 0,
+            "imageDecode": 0
+          },
+          "recordedPhaseUnionMs": 0.427,
+          "wrapperCosts": {
+            "native.pose": {
+              "calls": 7,
+              "elapsedMs": 0.10000000894069672,
+              "maxMs": 0.10000000894069672
+            },
+            "actor.sample": {
+              "calls": 7,
+              "elapsedMs": 0.20000001788139343,
+              "maxMs": 0.10000000894069672
+            },
+            "drawing.sample": {
+              "calls": 7,
+              "elapsedMs": 5.199999988079071,
+              "maxMs": 1.699999988079071
+            },
+            "craft.deform": {
+              "calls": 7,
+              "elapsedMs": 5.199999988079071,
+              "maxMs": 1.699999988079071
+            },
+            "canvas.drawImage": {
+              "calls": 85,
+              "elapsedMs": 1.2999999970197678,
+              "maxMs": 1
+            },
+            "canvas.getImageData": {
+              "calls": 1,
+              "elapsedMs": 13.5,
+              "maxMs": 13.5
+            },
+            "gl.bufferSubData": {
+              "calls": 7,
+              "elapsedMs": 0.09999999403953552,
+              "maxMs": 0.09999999403953552
+            },
+            "gl.texSubImage2D": {
+              "calls": 1,
+              "elapsedMs": 16.400000005960464,
+              "maxMs": 16.400000005960464
+            },
+            "gl.drawElements": {
+              "calls": 37,
+              "elapsedMs": 0.5,
+              "maxMs": 0.5
+            }
+          }
+        },
+        {
+          "serial": 563,
+          "wallMs": 15232.300000011921,
+          "skill": "mochi-4",
+          "age": 33.400000000001455,
+          "renderElapsedMs": 46.8999999910593,
+          "traceSpanMs": 46.98,
+          "phaseMs": {
+            "style": 11.828,
+            "layout": 2.272,
+            "prePaint": 0,
+            "paint": 0,
+            "layerize": 0,
+            "gcLabelled": 0,
+            "imageDecode": 0
+          },
+          "recordedPhaseUnionMs": 14.1,
+          "wrapperCosts": {
+            "native.pose": {
+              "calls": 8,
+              "elapsedMs": 0.09999999403953552,
+              "maxMs": 0.09999999403953552
+            },
+            "drawing.sample": {
+              "calls": 8,
+              "elapsedMs": 4.999999985098839,
+              "maxMs": 0.8999999910593033
+            },
+            "actor.sample": {
+              "calls": 7,
+              "elapsedMs": 1.2999999970197678,
+              "maxMs": 0.7000000029802322
+            },
+            "craft.deform": {
+              "calls": 7,
+              "elapsedMs": 4.899999991059303,
+              "maxMs": 1.2999999970197678
+            },
+            "canvas.drawImage": {
+              "calls": 84,
+              "elapsedMs": 0.5,
+              "maxMs": 0.5
+            },
+            "gl.bufferSubData": {
+              "calls": 7,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "gl.drawElements": {
+              "calls": 37,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "gl.compileShader": {
+              "calls": 2,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "gl.linkProgram": {
+              "calls": 1,
+              "elapsedMs": 0,
+              "maxMs": 0
+            }
+          }
+        },
+        {
+          "serial": 354,
+          "wallMs": 10033.90000000596,
+          "skill": "panko-4",
+          "age": 300,
+          "renderElapsedMs": 46.599999994039536,
+          "traceSpanMs": 46.536,
+          "phaseMs": {
+            "style": 0.098,
+            "layout": 0.697,
+            "prePaint": 0,
+            "paint": 0,
+            "layerize": 0,
+            "gcLabelled": 2,
+            "imageDecode": 0
+          },
+          "recordedPhaseUnionMs": 2.795,
+          "wrapperCosts": {
+            "native.pose": {
+              "calls": 7,
+              "elapsedMs": 0.19999998807907104,
+              "maxMs": 0.09999999403953552
+            },
+            "actor.sample": {
+              "calls": 7,
+              "elapsedMs": 0.29999999701976776,
+              "maxMs": 0.10000000894069672
+            },
+            "drawing.sample": {
+              "calls": 7,
+              "elapsedMs": 8.700000017881393,
+              "maxMs": 5.300000011920929
+            },
+            "craft.deform": {
+              "calls": 7,
+              "elapsedMs": 9.000000014901161,
+              "maxMs": 5.5
+            },
+            "canvas.drawImage": {
+              "calls": 85,
+              "elapsedMs": 1,
+              "maxMs": 0.8999999910593033
+            },
+            "canvas.getImageData": {
+              "calls": 1,
+              "elapsedMs": 9.700000002980232,
+              "maxMs": 9.700000002980232
+            },
+            "gl.bufferSubData": {
+              "calls": 7,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "gl.drawElements": {
+              "calls": 37,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "gl.texSubImage2D": {
+              "calls": 1,
+              "elapsedMs": 10,
+              "maxMs": 10
+            }
+          }
+        },
+        {
+          "serial": 738,
+          "wallMs": 20187,
+          "skill": "clover-4",
+          "age": 316.7000000000007,
+          "renderElapsedMs": 44.1000000089407,
+          "traceSpanMs": 44.11,
+          "phaseMs": {
+            "style": 0.804,
+            "layout": 0.51,
+            "prePaint": 0,
+            "paint": 0,
+            "layerize": 0,
+            "gcLabelled": 1.946,
+            "imageDecode": 0
+          },
+          "recordedPhaseUnionMs": 3.26,
+          "wrapperCosts": {
+            "native.pose": {
+              "calls": 7,
+              "elapsedMs": 0.10000000894069672,
+              "maxMs": 0.10000000894069672
+            },
+            "actor.sample": {
+              "calls": 7,
+              "elapsedMs": 0.10000000894069672,
+              "maxMs": 0.10000000894069672
+            },
+            "drawing.sample": {
+              "calls": 7,
+              "elapsedMs": 6.299999997019768,
+              "maxMs": 1.7999999970197678
+            },
+            "craft.deform": {
+              "calls": 7,
+              "elapsedMs": 6.299999997019768,
+              "maxMs": 1.7999999970197678
+            },
+            "canvas.drawImage": {
+              "calls": 85,
+              "elapsedMs": 0.7999999970197678,
+              "maxMs": 0.7999999970197678
+            },
+            "canvas.getImageData": {
+              "calls": 1,
+              "elapsedMs": 8.5,
+              "maxMs": 8.5
+            },
+            "gl.bufferSubData": {
+              "calls": 7,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "gl.drawElements": {
+              "calls": 37,
+              "elapsedMs": 0.10000000894069672,
+              "maxMs": 0.10000000894069672
+            },
+            "gl.texSubImage2D": {
+              "calls": 1,
+              "elapsedMs": 11.299999997019768,
+              "maxMs": 11.299999997019768
+            }
+          }
+        },
+        {
+          "serial": 660,
+          "wallMs": 17807.5,
+          "skill": "soot-4",
+          "age": 300,
+          "renderElapsedMs": 44,
+          "traceSpanMs": 43.932,
+          "phaseMs": {
+            "style": 0.447,
+            "layout": 0.079,
+            "prePaint": 0,
+            "paint": 0,
+            "layerize": 0,
+            "gcLabelled": 0,
+            "imageDecode": 0
+          },
+          "recordedPhaseUnionMs": 0.526,
+          "wrapperCosts": {
+            "native.pose": {
+              "calls": 7,
+              "elapsedMs": 0.7000000029802322,
+              "maxMs": 0.5
+            },
+            "actor.sample": {
+              "calls": 7,
+              "elapsedMs": 0.7000000029802322,
+              "maxMs": 0.5
+            },
+            "drawing.sample": {
+              "calls": 7,
+              "elapsedMs": 4.299999997019768,
+              "maxMs": 0.9000000059604645
+            },
+            "craft.deform": {
+              "calls": 7,
+              "elapsedMs": 4.600000008940697,
+              "maxMs": 0.9000000059604645
+            },
+            "canvas.drawImage": {
+              "calls": 85,
+              "elapsedMs": 2,
+              "maxMs": 1
+            },
+            "canvas.getImageData": {
+              "calls": 1,
+              "elapsedMs": 8.200000002980232,
+              "maxMs": 8.200000002980232
+            },
+            "gl.bufferSubData": {
+              "calls": 10,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "gl.drawElements": {
+              "calls": 40,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "gl.texSubImage2D": {
+              "calls": 1,
+              "elapsedMs": 6.700000002980232,
+              "maxMs": 6.700000002980232
+            }
+          }
+        },
+        {
+          "serial": 758,
+          "wallMs": 20682.30000001192,
+          "skill": "clover-4",
+          "age": 800,
+          "renderElapsedMs": 42.599999994039536,
+          "traceSpanMs": 42.573,
+          "phaseMs": {
+            "style": 0.852,
+            "layout": 0.648,
+            "prePaint": 0,
+            "paint": 0,
+            "layerize": 0,
+            "gcLabelled": 0,
+            "imageDecode": 0
+          },
+          "recordedPhaseUnionMs": 1.5,
+          "wrapperCosts": {
+            "native.pose": {
+              "calls": 7,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "actor.sample": {
+              "calls": 7,
+              "elapsedMs": 0.3999999910593033,
+              "maxMs": 0.3999999910593033
+            },
+            "drawing.sample": {
+              "calls": 7,
+              "elapsedMs": 5.9000000059604645,
+              "maxMs": 1.6000000089406967
+            },
+            "craft.deform": {
+              "calls": 7,
+              "elapsedMs": 5.9000000059604645,
+              "maxMs": 1.6000000089406967
+            },
+            "canvas.drawImage": {
+              "calls": 84,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "gl.bufferSubData": {
+              "calls": 7,
+              "elapsedMs": 0.20000000298023224,
+              "maxMs": 0.20000000298023224
+            },
+            "gl.drawElements": {
+              "calls": 31,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "gl.bufferData": {
+              "calls": 4,
+              "elapsedMs": 0.10000000894069672,
+              "maxMs": 0.10000000894069672
+            },
+            "gl.compileShader": {
+              "calls": 2,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "gl.linkProgram": {
+              "calls": 1,
+              "elapsedMs": 0,
+              "maxMs": 0
+            },
+            "gl.texSubImage2D": {
+              "calls": 1,
+              "elapsedMs": 20.599999994039536,
+              "maxMs": 20.599999994039536
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "pass": true,
+  "method": "Read-only intersection of complete X trace events on the renderer thread identified by user-timing marks. Microseconds convert to milliseconds. Clip to the recording and union nested intervals per family; separate inside-render work from work outside the wrapper.",
+  "limits": "Saved trace attribution, not new gameplay capture or a performance comparison. Event families can overlap each other; do not sum family totals. GC-labelled instrumentation includes nested helpers. Absence of a recorded phase does not prove absence of native/GPU work. Older source findings do not establish the current native bottleneck."
+}

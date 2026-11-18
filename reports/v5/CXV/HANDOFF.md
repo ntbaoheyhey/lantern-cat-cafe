@@ -1,20 +1,20 @@
 # CXV V7 handoff
-ACTIVE V7 V-F: paused-battle repair CXI ACCEPT03:37 integrated13fb390e9;44independenttests/native5loss4restore per mode;assistant: AGV.
-Worktree /Users/bao/taskbar-hero-cardrpg-a6; branch codex/v5-vfx-2026-11-17; desktop1280x720.
-NEXT 1: Finish native attribution;then release browser to CXI. T-CXI-10 notice study/candidate next;merge announced GREEN m1.13 after trace source check.
-NEXT 2: On explicit CXI release launch node tools/v5vfx/run-battle-context-attribution.mjs detached;analyze currentDPR2 late stalls,measure/review2freshimages once.
-NEXT 3: Follow CXI integration and AGV2openTASKs;continue visible V-E/F debt. No repeat of rejected shader/scalar/clamp/facecache/number/reset experiments.
-Last confirmed pushc20543ccb;greenm1.12@9c93780ee merged16e18b352 without application delta. Scene01826fc7 exact;V-A3WIP13659e2b4 pushed;capture-arrival SHA1f1d220e unchanged.
-Native production completed00:48:20Z: source96d1e75c3/indexb507c31b/empty runtime patch; four32s runs zeroerrors/blocks; reduced0GLdraws/uploads and exactRGB; normal7680GLcalls each. One new sheet reviewed 2026-11-18T00:52:28.000344+00:00.
-Native gates:12tests/TSC0,8matched-delivery fullframe+9lifecycle crew comparisons; lifecycle fontCSS blocked-request failure preserved. Decoder transport A/B exactly reproduced; no tolerance change.
-V-A3 fresh6301 normal/reduced19:29/19:30Z eight sheets reviewed once;4heroes feetstable/reduceddepth0;CXI ACCEPT16:10 retained.
-V-C fresh18:04Z six sheets:240/620ms arrival,160ms action yield,netclear1640/Yarn1760;0errors. V-B2 contact1100/duration2200/leadIn0 reasoned no change.
-V-E/F judge6301 source d69b9dc5c/indexaf3adbe2 natural wins97.5/97.2s;68actions24ults,82apply46expire each,exactgameparity,0errors/blocks;53f8c4a17READY.
-V-F DPR2/CPU4x fullbattle3050ee5ae100.141/100.252s;68actions24ults;82apply46expire;exactgameparity0errors/blocks;p9533.4both/late40,41.16captures/4sheetsreviewedonce 2026-11-18T01:54:11.513985+00:00.
-Pending CXI:toast;6groups/11paths in V7-pending-integration-m112.md. Battlecontext ACCEPT03:37/13fb390e9;victorycontext ACCEPT03:10/8b8d0b8ca;density/fallback/demand ACCEPT02:57. m1.12 merged;m1.13 GREEN4e5fe161a announced03:46Z;not yet merged.
-Open TASKs: T-CXV-1 audit REDO20:07Z; T-CXV-2 research REDO17:16Z; T-CXI-9 CXI-owned. AGV3bc27db67 audio-tool scope reported; no integration. Preserve12approvedtextures/AGVmanifest.
+ACTIVE V7 T-CXI-10: recovery-notice layout study/probe; no application fix yet. Assistant: AGV.
+Worktree /Users/bao/taskbar-hero-cardrpg-a6; branch codex/v5-vfx-2026-11-17; desktop1280x720 only.
+NEXT 1: After explicit CXI browser release run node tools/v5vfx/probe-battle-notice-layout.mjs; measure text/HP/control bounds before reviewing. No application adoption before04:05:43Z.
+NEXT 2: Adopt only passing notice class/span/CSS, focusedchecks/fullTSC/native production verification;fresh1280x720 evidence,exactRGBrestore,controls/rules retained;scopedREADY toCXI.
+NEXT 3: Inspect current late-render sampled stacks for distinct V-F work;do not repeat rejected shader/scalar/clamp/facecache/opacitymask/Cloverleaf/offlinenumbers/reset/preupload/crop/Blob experiments.
+Last confirmed push9a256103c3986fe9a9096911c9bcab910b7eec2f;announcedgreen m1.13@4e5fe161a9975bbcb66c8e295a9aea82d39a4dd1 merged with zero applicationdelta.
+V-A3 WIP13659e2b4 remains pushed;capture-arrival.mjs SHA1f1d220e464515f67e9cf3458b0295ea7be09c2ab3625f43e960e0fa61f97ba6 unchanged.
+Battle recovery172c317d4 CXI ACCEPT03:37 integrated13fb390e9;own35tests/TSC0+2exactRGBrestores/2lifecycles/2x32sDPR2;CXI44tests/native5loss4restore per mode.
+Current native attribution9efabfa86/index6f27065a ran03:49-03:50Z:DPR2 1919/1245frames;1x0late/4x3render>50ms+9RAF>50.5ms;0errors/blocks.2fresh1024images reviewedonce;no speedupclaim.
+AttributionR1 screenshot640px failure preserved;R2same-CDPmetrics passes1280x720. Reports V7-F-battle-context-{attribution,render-phases}.json;startup154.2ms,lateSoot65/Panko61.3ms at4x.
+V-A3 accepted16:10;fresh6301 normal/reduced19:29/19:30. V-C18:04 captures:240/620msarrival,160msactionyield,net1640/Yarn1760clear. V-B2 contact1100/duration2200/leadIn0 retained.
+V-E nativevictory recovery/density/fallback/demand accepted and integratedm1.12. Naturaljudge wins~97s,68actions24ults/mode;toast overlap remainsCXI-owned.
+Pending local6groups/11paths in V7-pending-integration-m112.{md,json,patch};exact isolated-index applicability proven;not independentacceptance. Panko loader mapping stillCXI.
+Open AGV:T-CXV-1 measuredcell audit REDO20:07;T-CXV-2 sourcedresearch REDO17:16. T-CXI-9 four-halfAVIF scopedCXItakeover approved03:50/OWNERSHIP recorded03:52;preserve12textures/manifests.
 Order ORDER-V7.txt SHA256 aabbf59d05c57e6117b626c58665fc1c6cb018109f3871dc0d71d2f10221aeac.
-Wake cxv-wake ACTIVE15min exactORDER updated/verified03:50Z;targetchat01a1e9cc-2dbe-7022-83de-f2d876839be5;preserved,never delete/duplicate.
-Running: Vite21525/6310;attribution R2 PID42576,log work/v5/CXV/jobs/V7-F-battle-context-attribution-R2.log. CXI released03:44;CXV reserved6312 until04:00Z or explicit release.
-Mailbox INBOX-CXV213/USER23;STOP absent;RULES reread03:47Z;scene01826fc7/capture-arrival1f1d220e unchanged;T-CXI-10 assigned/ACK, no fix implemented.
-Judge http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3; candidate6310 same query; production6312 same query. Local experiments are not independent judge acceptance.
+Wake cxv-wake ACTIVE15min exactORDER updated thisturn;targetchat01a1e9cc-2dbe-7022-83de-f2d876839be5;never delete/duplicate.
+Running: Vite21525/6310 only;noCXV browser/detachedjobs. Browser explicitly RELEASED toCXI for toast validation;notice probe BLOCKED-ON explicitrelease. Study/probe preparation continues offline.
+Mailbox INBOX-CXV215/USER23;STOP absent;RULES reread03:47:13Z. Last statewrite 2026-11-18T03:54:26.558057+00:00.
+Judge http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3;candidate6310/production6312 samequery. LEARN/CXV-battle-notice-layout-v7-20261118.md study gate04:05:43Z.
