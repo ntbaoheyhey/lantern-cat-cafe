@@ -35,3 +35,4 @@ DualcatR1 cold9276444/9743370/9353970B FAIL8MB;own50rowspout+10glint arithmeticP
 HP R2 source93498388c installed,index6afd6640;24focused/TSC0/3833protected unchanged. Own56rows/4actions/10glints/2freshviews HPclearancePASS;minimum19.30px bodygap,<=0.016px center error;callback<=1/30s. Art/loop/bytes/performance remainOPEN.
 
 STAGED DELIVERY scoped study DONE:20cases/60pixel comparisons/4two-wrap loops;ordinary saving259773B insufficient vs historical wave3 deficit1743370B. No production adoption. Evidence v8-staged-video-study-review.json.
+ATLAS CANDIDATE:2272sourcecases/33792draw samples;51focused/TSC0;3833protectedpaths unchanged. Fiveenemy narrowed only confirmedC2+A6/nooverride/nongallery. Native/transfer acceptance pending;6301HP R2 pinned forCXV.
