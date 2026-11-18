@@ -15,8 +15,8 @@ await writeFile(resolve(out,'fixture.ts'),`export {pilotFixture} from '${root}/a
 const {build}=await import(req.resolve('vite'));
 await build({configFile:false,root,envDir:false,publicDir:false,logLevel:'silent',resolve:{alias:{'@taskbar-hero/game-rules':resolve(root,'packages/game-rules')}},build:{emptyOutDir:false,outDir:out,minify:false,lib:{entry:resolve(out,'fixture.ts'),formats:['es'],fileName:()=> 'fixture.mjs'}}});
 const {pilotFixture,configureSequence}=await import(pathToFileURL(resolve(out,'fixture.mjs')).href);
-const sharedPath=resolve(root,'reports/v5/CXI/evidence/v8-m-mallow-import.json'),sharedRaw=await readFile(sharedPath);report.sharedCodeParity={path:sharedPath,sha256:hash(sharedRaw),...JSON.parse(sharedRaw)};assert(report.sharedCodeParity.pass);
-report.buildSource=process.env.CXI_M_BUILD_SOURCE??'d1192596cee2d6fcbf2d92542f8e1809d57e8d6f';
+const sharedPath=resolve(root,process.env.CXI_M_PARITY_REPORT??'reports/v5/CXI/evidence/v8-m-mallow-import.json'),sharedRaw=await readFile(sharedPath);report.sharedCodeParity={path:sharedPath,sha256:hash(sharedRaw),...JSON.parse(sharedRaw)};assert(report.sharedCodeParity.pass);
+report.buildSource=process.env.CXI_M_BUILD_SOURCE;assert(report.buildSource,'CXI_M_BUILD_SOURCE must identify the production build');
 const browser=await chromium.launch({headless:true,args:['--use-angle=metal']});
 try{
  const {page,errors}=await openFixture(browser,config.fixtures.find(f=>f.id==='boss'),{fixedClock:false});report.url=page.url();report.artifactSha256=hash(await(await page.request.get(judgeUrl)).body());

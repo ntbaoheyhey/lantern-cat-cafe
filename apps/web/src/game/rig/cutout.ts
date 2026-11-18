@@ -96,7 +96,7 @@ export class CutoutMesh extends T.Group {
    if(track.property==='rotate')p[2]!+=value(track.keys,at,'value',0);
    if(track.property==='scale'){p[3]!*=value(track.keys,at,'x',1);p[4]!*=value(track.keys,at,'y',1);}
   }
-  if(living)applyNativeLivingPose(this.data.nodes,this.local,this.proceduralTime,name,at,this.livingReducedMotion);
+  if(living)applyNativeLivingPose(this.data.nodes,this.local,this.proceduralTime,name,at,this.livingReducedMotion,this.livingCat);
   for(const i of this.boneOrder){
    const p=this.local[i]!,b=this.bones[i]!,parent=this.bones[this.data.nodes[i]!.parent],r=p[2]!*Math.PI/180,a=Math.cos(r)*p[3]!,c=Math.sin(r)*p[3]!,bb=-Math.sin(r)*p[4]!,d=Math.cos(r)*p[4]!;
    if(parent){b.worldX=parent.a*p[0]!+parent.b*p[1]!+parent.worldX;b.worldY=parent.c*p[0]!+parent.d*p[1]!+parent.worldY;b.a=parent.a*a+parent.b*c;b.b=parent.a*bb+parent.b*d;b.c=parent.c*a+parent.d*c;b.d=parent.c*bb+parent.d*d;}
@@ -113,7 +113,7 @@ export class CutoutMesh extends T.Group {
   const attachments=new Map<string,string|null>();for(const v of clip?.visibility??[]){let key:CutoutKey|undefined;for(const k of v.keys)if((k.time??0)<=at)key=k;else break;if(key)attachments.set(v.slot,key.name??null);}
   const living=this.livingCat&&nativeLivingClip(name);
   if(living){
-   for(const side of ['l','r'])attachments.set('eye_'+side,'eye_'+side+(nativeLivingBlink(this.nativeClock,side==='r')>.995?'_closed':''));
+   for(const side of ['l','r'])attachments.set('eye_'+side,'eye_'+side+(nativeLivingBlink(this.nativeClock,side==='r',this.livingCat)>.995?'_closed':''));
    attachments.set('mouth',name==='skill'&&at>.23&&at<.67?'mouth_open':'mouth_neutral');
   }else if(this.data.face){const face=faceAt(name,at,clip?.duration??1,this.nativeClock,this.data.face.seed);
    for(const side of ['l','r'])attachments.set('eye_'+side,'eye_'+side+(face.closed?'_closed':''));
@@ -121,11 +121,11 @@ export class CutoutMesh extends T.Group {
   }
   const blink=living?undefined:this.data.blink,amount=blink?blinkAt(this.nativeClock,blink.seed):0;
   for(const batch of this.batches){for(const {part,offset} of batch.parts){const visible=attachments.has(part.slot)?attachments.get(part.slot)===part.name:part.visible;
-   const center=living?this.livingFeatures.get(part.slot):undefined,feature=center?nativeLivingFeature(part.slot,this.nativeClock,this.livingReducedMotion):undefined;
+   const center=living?this.livingFeatures.get(part.slot):undefined,feature=center?nativeLivingFeature(part.slot,this.nativeClock,this.livingReducedMotion,this.livingCat):undefined;
    for(let i=0;i<part.vertices.length;i++){let x=0,y=0;if(visible)for(const w of part.vertices[i]!){const b=this.bones[w.bone]!;
     let lx=w.x,ly=w.y;if(center&&feature){lx+=feature.x;if(part.name===part.slot)ly=center.y+(w.y-center.y)*(1-.96*feature.blink);}
     x+=(b.a*lx+b.b*ly+b.worldX)*w.weight;y+=(b.c*lx+b.d*ly+b.worldY)*w.weight;}
-    if(visible&&living&&part.name==='body')x+=nativeLivingCloth(y,this.nativeClock,this.livingReducedMotion);
+    if(visible&&living&&part.name==='body')x+=nativeLivingCloth(y,this.nativeClock,this.livingReducedMotion,this.livingCat);
     if(visible&&blink&&amount>0&&part.name===blink.part){const b=this.bones[blink.bone]!,det=b.a*b.d-b.b*b.c,dx=x-b.worldX,dy=y-b.worldY,lx=(b.d*dx-b.b*dy)/det;let ly=(-b.c*dx+b.a*dy)/det;
      for(const eye of blink.eyes){const qx=Math.abs(lx-eye.x)/eye.rx,qy=Math.abs(ly-eye.y)/eye.ry;if(qx<1&&qy<1)ly+=(eye.y-ly)*amount*.94*(1-qx**4)*(1-qy**4);}
      x=b.a*lx+b.b*ly+b.worldX;y=b.c*lx+b.d*ly+b.worldY;
