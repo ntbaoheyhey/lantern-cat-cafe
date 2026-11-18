@@ -60,3 +60,5 @@ M-I2 MOCHI IDLE REVIEW 2026-11-18T17:19:49.603790+00:00:300hashes/PTS/root/banne
 
 M-I2 CONTROL/LAYOUT AUDIT 2026-11-18T17:22:53.556032+00:00:200hashes/6400states/640counts exact;20RGBfail;176layoutsreplayed,86/88Cloverconflicts,6associationfails. LowerproposalREJECT.
 AGS581 PARTIAL ACCEPT30PTS;T14command/rawJSON/EN+ZHsources missing;T13/M5/T15 remainOPEN. Profilingstudy active since17:15:34Z,implementation after17:30:34Z.
+
+M-I2 LOCALIZATION:25,338firstconcealdiffpixels allwithinlabelrects+2px;no browsercause inferred. Crossmethodpages notRGBidentical in normalmotion;all20initialcontrols stillREJECTED.
