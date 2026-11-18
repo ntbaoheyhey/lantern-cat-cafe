@@ -1,0 +1,190 @@
+{
+  "utc": "2026-11-18T17:47:35.902647+00:00",
+  "mailboxLine": 593,
+  "method": "Read-only packet metadata probe; no decode/conversion/browser",
+  "runs": [
+    {
+      "name": "clover-1s",
+      "submitted": {
+        "path": "/Users/bao/th-v5-ag4/reports/v5/AGS/clover-1s_PTS_RAW.json",
+        "sha256": "dbd3874811850e3a67461128cc9e959a68885884fe51ce535ff15b7b798440a9"
+      },
+      "clip": {
+        "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/short-gop-r1/clover-1s/native.mp4",
+        "sha256": "ef482448b83e73501857d900782a1b2f3b195048118917b9a90b383e32a7086a"
+      },
+      "command": [
+        "ffprobe",
+        "-v",
+        "error",
+        "-select_streams",
+        "v:0",
+        "-show_packets",
+        "-show_entries",
+        "packet=pts_time,flags",
+        "-of",
+        "json",
+        "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/short-gop-r1/clover-1s/native.mp4"
+      ],
+      "exitCode": 0,
+      "independentPacketRaw": {
+        "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/ags-593-audit/clover-1s-packets.json",
+        "sha256": "89d46a2bd0be6e316258dbc8b420d6b33a7080a64e3bc09142e87a9caf3715d5"
+      },
+      "submittedFramePTS": 300,
+      "exactSortedPacketPTS": true,
+      "independentKeyframePTS": [
+        0.0,
+        1.0,
+        2.0,
+        3.0,
+        4.0,
+        5.0,
+        6.0,
+        7.0,
+        8.0,
+        9.0
+      ],
+      "hasKeyframeFlagsInSubmitted": false
+    },
+    {
+      "name": "clover-2s",
+      "submitted": {
+        "path": "/Users/bao/th-v5-ag4/reports/v5/AGS/clover-2s_PTS_RAW.json",
+        "sha256": "dbd3874811850e3a67461128cc9e959a68885884fe51ce535ff15b7b798440a9"
+      },
+      "clip": {
+        "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/short-gop-r1/clover-2s/native.mp4",
+        "sha256": "1b71b61314d2273ea69d61579e96f327ee2f37d9c0d54f968c182b1d83c516b2"
+      },
+      "command": [
+        "ffprobe",
+        "-v",
+        "error",
+        "-select_streams",
+        "v:0",
+        "-show_packets",
+        "-show_entries",
+        "packet=pts_time,flags",
+        "-of",
+        "json",
+        "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/short-gop-r1/clover-2s/native.mp4"
+      ],
+      "exitCode": 0,
+      "independentPacketRaw": {
+        "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/ags-593-audit/clover-2s-packets.json",
+        "sha256": "f2068c42e269e85c521c5519a67353a409008ae7d6b5147e0644a3851ef8766a"
+      },
+      "submittedFramePTS": 300,
+      "exactSortedPacketPTS": true,
+      "independentKeyframePTS": [
+        0.0,
+        2.0,
+        4.0,
+        6.0,
+        8.0
+      ],
+      "hasKeyframeFlagsInSubmitted": false
+    },
+    {
+      "name": "mochi-1s",
+      "submitted": {
+        "path": "/Users/bao/th-v5-ag4/reports/v5/AGS/mochi-1s_PTS_RAW.json",
+        "sha256": "dbd3874811850e3a67461128cc9e959a68885884fe51ce535ff15b7b798440a9"
+      },
+      "clip": {
+        "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/short-gop-r1/mochi-1s/native.mp4",
+        "sha256": "63405856a6b912f39df651832bb20d4413db48fef7c9a1275408ac9dd72e0181"
+      },
+      "command": [
+        "ffprobe",
+        "-v",
+        "error",
+        "-select_streams",
+        "v:0",
+        "-show_packets",
+        "-show_entries",
+        "packet=pts_time,flags",
+        "-of",
+        "json",
+        "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/short-gop-r1/mochi-1s/native.mp4"
+      ],
+      "exitCode": 0,
+      "independentPacketRaw": {
+        "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/ags-593-audit/mochi-1s-packets.json",
+        "sha256": "acaeb0d24b61415e1987dfbae0110306e6b39ef033b3953180baf220e8863160"
+      },
+      "submittedFramePTS": 300,
+      "exactSortedPacketPTS": true,
+      "independentKeyframePTS": [
+        0.0,
+        1.0,
+        2.0,
+        3.0,
+        4.0,
+        5.0,
+        6.0,
+        7.0,
+        8.0,
+        9.0
+      ],
+      "hasKeyframeFlagsInSubmitted": false
+    },
+    {
+      "name": "mochi-2s",
+      "submitted": {
+        "path": "/Users/bao/th-v5-ag4/reports/v5/AGS/mochi-2s_PTS_RAW.json",
+        "sha256": "dbd3874811850e3a67461128cc9e959a68885884fe51ce535ff15b7b798440a9"
+      },
+      "clip": {
+        "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/short-gop-r1/mochi-2s/native.mp4",
+        "sha256": "8d0be48f4c92a334ba4966159ee85799c9c2abadd66a98c2622bff3de78cfec2"
+      },
+      "command": [
+        "ffprobe",
+        "-v",
+        "error",
+        "-select_streams",
+        "v:0",
+        "-show_packets",
+        "-show_entries",
+        "packet=pts_time,flags",
+        "-of",
+        "json",
+        "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/short-gop-r1/mochi-2s/native.mp4"
+      ],
+      "exitCode": 0,
+      "independentPacketRaw": {
+        "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/ags-593-audit/mochi-2s-packets.json",
+        "sha256": "369edd75987bdbd7bffaaa8f63e93baacdd741b3c887f329abf1f941af7ff5fa"
+      },
+      "submittedFramePTS": 300,
+      "exactSortedPacketPTS": true,
+      "independentKeyframePTS": [
+        0.0,
+        2.0,
+        4.0,
+        6.0,
+        8.0
+      ],
+      "hasKeyframeFlagsInSubmitted": false
+    }
+  ],
+  "semantics": {
+    "path": "/Users/bao/th-v5-ag4/reports/v5/AGS/T-CXI-14-FIELD-SEMANTICS.md",
+    "sha256": "604f7519ab825dda3a6ab7d1682595fbd7fa552d7b5edd6463fcc24d227dccd1"
+  },
+  "accepted": [
+    "Four actual JSON files contain1200numeric frame PTS equal independent sorted packetPTS",
+    "Four known clip hashes and30keyframePTS reconfirmed"
+  ],
+  "open": [
+    "Actual command/raw execution provenance for the delivered JSON not provided; prior V2 showed CSV/nokey command",
+    "Delivered300frame files have no keyframe flags and are not keyframe-only outputs",
+    "Field-semantics note has no primary EN/ZH URLs or explanation of original blank field",
+    "T-M5 seek/stall/quality and T-CXI-13/T-CXI-15 remain open"
+  ],
+  "historicalFinding": "V2 explicitly mocked absent named rawJSON; preserve v8-ags-585-review.json. New real files partially address this,do not erase history.",
+  "decision": "PARTIAL ACCEPT actual numericJSON;REDO field research and exact command provenance",
+  "productionAcceptance": false
+}

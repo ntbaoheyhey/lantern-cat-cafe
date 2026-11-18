@@ -1,5 +1,5 @@
 # CXI V8 — Batch M first
-NEXT ACTIVE:Audit running samebuild Mochi-only CPU4 ABBA trials;parent75283,deadline17:48:34Z AND explicit release. Pilot passed4exact outputs/523samples;2profiles expected. No runtimechange.
+NEXT ACTIVE:Prepare normal1x samepopulation baseline without profiler;no browser until CXV current pilot explicitrelease. Audit latest paint/footercapacity evidence when complete;performance hypotheses remain diagnostic.
 M-I1 ACTIVE: decodedPTS correction ae1e69fb5 scopedACCEPT actualGPU24matches/8controls+124lifecyclechecks+52castrows/8actions. R7 adds authoredHP;3250web/30focused/TSC0. Productionregistry{}.
 M-I2 OPEN: original matte/fringe/halo, Clover tail seam and native authored tracking/performance. Source trajectory native scopedPASS;fresh R5 seam REJECT MAE11.158076 vs nearmed 2.248417;historicalR2 preserved. Bytes report-only per OWNER INBOX386.
 M-I3 DONE/REPEAT: native9 shipped v5-m1.15@59f5f3c57;sourceb9b6f1728/indexfedad6e2;5556checks inherited/7fresh browser gates/3actual30sfilms;remote branch/tag verified. No commissioned media accepted.
@@ -66,3 +66,5 @@ M-I2 LOCALIZATION:25,338firstconcealdiffpixels allwithinlabelrects+2px;no browse
 M-I2 AGS588 REVIEW 2026-11-18T17:38:29.859484+00:00:twoENofficiallinks verified;InfoQ unverified,requestedreport missing,no rawexperiment. PartialACCEPT links/tasktracking,REDO15;13/M5/14/15 OPEN.
 
 M-I2 CPU COUNT AUDIT 2026-11-18T17:45:49.949503+00:00:all4rules/plans/outcomes exact;202source/serveditems;261artifacthashes;2profiles58776/59447samples.5negative1us intervals retained,count-only estimates;off/on/on/offRAF p95~50msCPU4. Generatedrender~19%,drawingpoint~10.3% sample share;source correspondence inferred,not causal. No laptop/art/release acceptance.
+
+M-I2 PEER AUDIT 2026-11-18T17:49:11.426580+00:00:CXV58749filehashes+capturetool2edbd6fff exact;40PNGs/frozenboxes/PTS/iris copies/brackets consistent,no images reopened or semantic expansion. AGS593four realJSONs1200PTS equal independently probed packetPTS;30keyframes reconfirmed. Command provenance/blank-field cause/EN+ZHresearch remainOPEN.
