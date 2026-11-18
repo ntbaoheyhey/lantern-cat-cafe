@@ -1,0 +1,659 @@
+{
+  "utc": "2026-11-18T05:52:04.683Z",
+  "cat": "velvet",
+  "sourceCommit": "1859cb5994badc8b3bfd7bbb64c20aa1fd2fdee9",
+  "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "runtimeUntrackedSha256": {},
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "method": "Actual native pilot and real rules fixture, deterministic simulation30Hz. No performance claim.",
+  "modes": [
+    {
+      "mode": "reduced",
+      "box": {
+        "x": 19,
+        "y": 18,
+        "width": 271,
+        "height": 291,
+        "body": {
+          "x": 51.31783354291038,
+          "y": 50.355829910987126,
+          "width": 206.32619395073465,
+          "height": 226.45192202189676
+        }
+      },
+      "measure": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-V2-velvet-native-R1/reduced/measure.json",
+      "boundaries": [
+        {
+          "clock": 0.9,
+          "at": 0,
+          "maxDelta": 0
+        },
+        {
+          "clock": 0.9,
+          "at": 1,
+          "maxDelta": 0
+        },
+        {
+          "clock": 1.3,
+          "at": 0,
+          "maxDelta": 0
+        },
+        {
+          "clock": 1.3,
+          "at": 1,
+          "maxDelta": 0
+        },
+        {
+          "clock": 4.57,
+          "at": 0,
+          "maxDelta": 0
+        },
+        {
+          "clock": 4.57,
+          "at": 1,
+          "maxDelta": 0
+        }
+      ],
+      "maxFootWorldDelta": 0,
+      "seamMeshDelta": 0,
+      "seamRootDelta": 0
+    },
+    {
+      "mode": "candidate",
+      "box": {
+        "x": 18,
+        "y": 17,
+        "width": 270,
+        "height": 292,
+        "body": {
+          "x": 50.83329982246667,
+          "y": 49.056767793016476,
+          "width": 205.0987861172937,
+          "height": 227.7509841398674
+        }
+      },
+      "measure": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-V2-velvet-native-R1/candidate/measure.json",
+      "boundaries": [
+        {
+          "clock": 0.9,
+          "at": 0,
+          "maxDelta": 0
+        },
+        {
+          "clock": 0.9,
+          "at": 1,
+          "maxDelta": 0
+        },
+        {
+          "clock": 1.3,
+          "at": 0,
+          "maxDelta": 0
+        },
+        {
+          "clock": 1.3,
+          "at": 1,
+          "maxDelta": 0
+        },
+        {
+          "clock": 4.57,
+          "at": 0,
+          "maxDelta": 0
+        },
+        {
+          "clock": 4.57,
+          "at": 1,
+          "maxDelta": 0
+        }
+      ],
+      "maxFootWorldDelta": 0,
+      "seamMeshDelta": 0,
+      "seamRootDelta": 0
+    }
+  ],
+  "url": "http://127.0.0.1:6310/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&dev=1",
+  "artifactSha256": "c1906e0424090c67e5682333de494dbea6f3241cb8a31b46ffd566ea2d5bbcf6",
+  "sootParity": [
+    {
+      "reduced": false,
+      "exact": true,
+      "sha256": "6d201f55a3f9b545f46b00769fb6ae143fef2019d03de865f77fd1301800ad40"
+    },
+    {
+      "reduced": true,
+      "exact": true,
+      "sha256": "5258f71c2833e454da26d8441ba06885b6a12e6e591641ee163e01763b144767"
+    }
+  ],
+  "cast": {
+    "duration": 800,
+    "hit": 350,
+    "skillId": "velvet-2",
+    "samples": [
+      {
+        "ms": 0,
+        "pose": "skill",
+        "at": 0
+      },
+      {
+        "ms": 33.333333333333336,
+        "pose": "skill",
+        "at": 0.05238095238095239
+      },
+      {
+        "ms": 66.66666666666667,
+        "pose": "skill",
+        "at": 0.10476190476190478
+      },
+      {
+        "ms": 100,
+        "pose": "skill",
+        "at": 0.15714285714285714
+      },
+      {
+        "ms": 133.33333333333334,
+        "pose": "skill",
+        "at": 0.20952380952380956
+      },
+      {
+        "ms": 166.66666666666669,
+        "pose": "skill",
+        "at": 0.2619047619047619
+      },
+      {
+        "ms": 200.00000000000003,
+        "pose": "skill",
+        "at": 0.31428571428571433
+      },
+      {
+        "ms": 233.33333333333337,
+        "pose": "skill",
+        "at": 0.36666666666666675
+      },
+      {
+        "ms": 266.6666666666667,
+        "pose": "skill",
+        "at": 0.4190476190476191
+      },
+      {
+        "ms": 300,
+        "pose": "skill",
+        "at": 0.4714285714285714
+      },
+      {
+        "ms": 333.3333333333333,
+        "pose": "skill",
+        "at": 0.5238095238095238
+      },
+      {
+        "ms": 366.66666666666663,
+        "pose": "skill",
+        "at": 0.55
+      },
+      {
+        "ms": 399.99999999999994,
+        "pose": "skill",
+        "at": 0.55
+      },
+      {
+        "ms": 433.33333333333326,
+        "pose": "skill",
+        "at": 0.55
+      },
+      {
+        "ms": 466.6666666666666,
+        "pose": "skill",
+        "at": 0.5832257534224868
+      },
+      {
+        "ms": 499.9999999999999,
+        "pose": "skill",
+        "at": 0.639572010869565
+      },
+      {
+        "ms": 533.3333333333333,
+        "pose": "skill",
+        "at": 0.686934239922677
+      },
+      {
+        "ms": 566.6666666666666,
+        "pose": "skill",
+        "at": 0.7260869565217392
+      },
+      {
+        "ms": 600,
+        "pose": "skill",
+        "at": 0.7652173913043478
+      },
+      {
+        "ms": 633.3333333333334,
+        "pose": "skill",
+        "at": 0.8043478260869565
+      },
+      {
+        "ms": 666.6666666666667,
+        "pose": "skill",
+        "at": 0.8434782608695653
+      },
+      {
+        "ms": 700.0000000000001,
+        "pose": "skill",
+        "at": 0.882608695652174
+      },
+      {
+        "ms": 733.3333333333335,
+        "pose": "skill",
+        "at": 0.9217391304347828
+      },
+      {
+        "ms": 766.6666666666669,
+        "pose": "skill",
+        "at": 0.9608695652173915
+      },
+      {
+        "ms": 800.0000000000002,
+        "pose": "idle",
+        "at": 5.120000000000001
+      },
+      {
+        "ms": 833.3333333333336,
+        "pose": "idle",
+        "at": 5.153333333333332
+      },
+      {
+        "ms": 866.666666666667,
+        "pose": "idle",
+        "at": 5.186666666666667
+      },
+      {
+        "ms": 900.0000000000003,
+        "pose": "idle",
+        "at": 5.219999999999999
+      },
+      {
+        "ms": 933.3333333333337,
+        "pose": "idle",
+        "at": 5.253333333333334
+      },
+      {
+        "ms": 966.6666666666671,
+        "pose": "idle",
+        "at": 5.286666666666669
+      },
+      {
+        "ms": 1000.0000000000005,
+        "pose": "idle",
+        "at": 5.32
+      },
+      {
+        "ms": 1033.3333333333337,
+        "pose": "idle",
+        "at": 5.353333333333335
+      },
+      {
+        "ms": 1066.666666666667,
+        "pose": "idle",
+        "at": 5.386666666666667
+      }
+    ],
+    "exactHit": {
+      "ms": 350,
+      "pose": "skill",
+      "at": 0.55
+    },
+    "pass": true,
+    "handoffs": [
+      {
+        "reduced": false,
+        "boundary": 0,
+        "clockDelta": 1.0000000116860974e-07,
+        "maxMeshDelta": 3.0517578125e-05,
+        "maxRootDelta": 0
+      },
+      {
+        "reduced": false,
+        "boundary": 800,
+        "clockDelta": 1.0000000116860974e-07,
+        "maxMeshDelta": 3.0517578125e-05,
+        "maxRootDelta": 1.3491694314316654e-14
+      },
+      {
+        "reduced": true,
+        "boundary": 0,
+        "clockDelta": 1.0000000116860974e-07,
+        "maxMeshDelta": 3.0517578125e-05,
+        "maxRootDelta": 0
+      },
+      {
+        "reduced": true,
+        "boundary": 800,
+        "clockDelta": 1.0000000116860974e-07,
+        "maxMeshDelta": 3.0517578125e-05,
+        "maxRootDelta": 1.3491694314316654e-14
+      }
+    ],
+    "reducedHit": {
+      "ms": 350,
+      "pose": "skill",
+      "at": 0.55
+    }
+  },
+  "errors": [],
+  "pass": true,
+  "completedUTC": "2026-11-18T05:53:19.479Z",
+  "visualReview": {
+    "utc": "2026-11-18T05:53:36.698201+00:00",
+    "cat": "velvet",
+    "captureReport": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-V2-velvet-native-R1/report.json",
+    "captureReportSha256": "a41f632e9eb040ceeb518248a4d4830c677cbbba3b3944f10c679e7a436fdd7e",
+    "comparison": {
+      "utc": "2026-11-18T05:53:24.793222+00:00",
+      "video": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-V2-velvet-native-R1/velvet-vs-mochi-1280x720.mp4",
+      "sha256": "d99d2e4292786bbd5f1227a2a74d3c456ab977c8bb841429c7b0de6118a3fdc4",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "frames": 300,
+      "fps": 30,
+      "durationSeconds": 10,
+      "sameBodyHeightPx": 228,
+      "sourceHeightPx": 431,
+      "cat": "velvet",
+      "candidateMeasuredHeight": 227.7509841398674,
+      "sourcePhase": "F0..299",
+      "candidatePhase": "simulation20+n/30 plus existing per-actor idle offset",
+      "captureReport": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-V2-velvet-native-R1/report.json",
+      "captureReportSha256": "a41f632e9eb040ceeb518248a4d4830c677cbbba3b3944f10c679e7a436fdd7e",
+      "reviews": [
+        {
+          "frame": 15,
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-V2-velvet-native-R1/comparison-15.jpg",
+          "width": 1024,
+          "height": 576,
+          "sha256": "3da8df6026f7a3680125be835724549e320ac943dadab412e34253498395d8bb"
+        },
+        {
+          "frame": 75,
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-V2-velvet-native-R1/comparison-75.jpg",
+          "width": 1024,
+          "height": 576,
+          "sha256": "541636ef40cbb1722299c749e623774ff0382c110bfae4995f9095a29eb63f04"
+        },
+        {
+          "frame": 165,
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-V2-velvet-native-R1/comparison-165.jpg",
+          "width": 1024,
+          "height": 576,
+          "sha256": "742a078d291da9096b4648a4a502d5655a22759d7b17d413498f4c783e1fdb2c"
+        },
+        {
+          "frame": 255,
+          "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-V2-velvet-native-R1/comparison-255.jpg",
+          "width": 1024,
+          "height": 576,
+          "sha256": "a51e90c66d52d100443e8a3bba1f7585d921e5a78037535c0826261761289272"
+        }
+      ],
+      "limitation": "Captured deterministic dev study; no delivery alpha or performance claim."
+    },
+    "rangesPercentH": {
+      "leg_l": [
+        0.0,
+        0.0
+      ],
+      "leg_r": [
+        0.0,
+        0.0
+      ],
+      "head": [
+        1.8709043129880727,
+        1.6698033398200085
+      ],
+      "tail_3": [
+        0.673264440329091,
+        2.125237285861323
+      ],
+      "weapon": [
+        1.040252736206354,
+        1.1633489464117575
+      ],
+      "torso": [
+        0.23436455816110216,
+        0.7966640730543539
+      ]
+    },
+    "images": [
+      {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-V2-velvet-native-R1/comparison-255.jpg",
+        "dimensions": [
+          1024,
+          576
+        ],
+        "bytes": 51229,
+        "sha256": "a51e90c66d52d100443e8a3bba1f7585d921e5a78037535c0826261761289272",
+        "reviewed": true,
+        "reviewedUTC": "2026-11-18T05:54:05.172722+00:00",
+        "views": 1
+      },
+      {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-V2-velvet-native-R1/comparison-165.jpg",
+        "dimensions": [
+          1024,
+          576
+        ],
+        "bytes": 50592,
+        "sha256": "742a078d291da9096b4648a4a502d5655a22759d7b17d413498f4c783e1fdb2c",
+        "reviewed": true,
+        "reviewedUTC": "2026-11-18T05:54:05.172722+00:00",
+        "views": 1
+      },
+      {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-V2-velvet-native-R1/candidate/blink-sheet.jpg",
+        "dimensions": [
+          1024,
+          224
+        ],
+        "bytes": 44256,
+        "sha256": "e12e5615a0da1652eb444d8fcaf3cf60da3a2368aecc7c25b6a2126616ca8121",
+        "reviewed": true,
+        "reviewedUTC": "2026-11-18T05:54:05.172722+00:00",
+        "views": 1
+      },
+      {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/M-V2-velvet-native-R1/cast/cast-sheet.jpg",
+        "dimensions": [
+          1024,
+          576
+        ],
+        "bytes": 84258,
+        "sha256": "8ab299572044226cfb7bdd52c109bc907ca973c9652c8b77815c4162763a0429",
+        "reviewed": true,
+        "reviewedUTC": "2026-11-18T05:54:05.172722+00:00",
+        "views": 1
+      }
+    ],
+    "scope": "Fresh candidate body/style/blink/cast review at desktop1280x720; no integrated judge or performance claim.",
+    "assessment": {
+      "motion": "Velvet's upright breath, slight head turn and delayed cape/tail sway preserve a composed conductor silhouette; the cast extends the free arm while keeping the long prop controlled.",
+      "quality": "Selected idle extremes keep the collar, hands and cape joins coherent. Blink samples show a smooth complete closure and reopening. The cast actor remains readable as the existing multi-target ribbons fan outward, with no visible foot slide or sudden body offset in the sampled sequence.",
+      "limits": "The health/status HUD overlaps the upper prop; the large target ribbons hide some enemy detail at impact. This review covers Velvet's motion in a fixed experimental scene and does not establish full-battle effect or integrated performance acceptance."
+    },
+    "status": "Scoped motion evidence passes; pending integrated judge acceptance.",
+    "filmProbe": {
+      "width": 1280,
+      "height": 720,
+      "avg_frame_rate": "30/1",
+      "duration": "10.000000",
+      "nb_frames": "300"
+    }
+  },
+  "geometry": [
+    {
+      "cat": "velvet",
+      "reduced": false,
+      "profile": {
+        "idea": "floating lantern invocation",
+        "neck": 4.2,
+        "tilt": 1.2,
+        "breath": 0.85,
+        "ear": 0.8,
+        "tail": 1.15,
+        "prop": 1.1,
+        "cloth": 1.2,
+        "face": 1.15,
+        "offset": 3.3,
+        "blink": -0.12,
+        "lag": 1.3,
+        "castX": 0.9,
+        "castY": 1.35,
+        "castArm": 1.1,
+        "castRight": 0.75,
+        "castProp": 1.3
+      },
+      "rigSha256": "f667656ef1583f88bbdb15e138b25ce0899cc1384454af795bb17129ae85b069",
+      "maxFootDelta": 0,
+      "minTriangleRatio": 0.5639897183969379,
+      "castBoundaryDelta": 0,
+      "minByClipPart": {
+        "idle:hidden-body": 0.9949013935028023,
+        "idle:body": 0.9803674584164148,
+        "idle:foot-r": 1,
+        "idle:foot-l": 1,
+        "idle:tail": 0.6413286186352525,
+        "idle:arm-l": 0.8938813509017295,
+        "idle:weapon": 0.9949013122105828,
+        "idle:hidden-arm-r": 0.9949013511974739,
+        "idle:arm-r": 0.8609717347995872,
+        "idle:head": 0.942322324851146,
+        "skill:hidden-body": 0.9951869081898234,
+        "skill:body": 0.9320093910944467,
+        "skill:foot-r": 1,
+        "skill:foot-l": 1,
+        "skill:tail": 0.5639897183969379,
+        "skill:arm-l": 0.6468813760938708,
+        "skill:weapon": 0.9951870898824716,
+        "skill:hidden-arm-r": 0.9951870380314566,
+        "skill:arm-r": 0.6095768468865652,
+        "skill:head": 0.9166506288805898
+      },
+      "worst": {
+        "clip": "skill",
+        "part": "tail",
+        "clock": 1.1,
+        "at": 0.38333333333333336,
+        "triangle": 0
+      },
+      "seamDelta": 0,
+      "rangesPercentH": {
+        "head": [
+          1.8709043129880727,
+          1.6698033398200085
+        ],
+        "tail_3": [
+          0.673264440329091,
+          2.125237285861323
+        ],
+        "weapon": [
+          1.040252736206354,
+          1.1633489464117575
+        ],
+        "torso": [
+          0.23436455816110216,
+          0.7966640730543539
+        ]
+      },
+      "originalDataUnchanged": true,
+      "pass": true
+    },
+    {
+      "cat": "velvet",
+      "reduced": true,
+      "profile": {
+        "idea": "floating lantern invocation",
+        "neck": 4.2,
+        "tilt": 1.2,
+        "breath": 0.85,
+        "ear": 0.8,
+        "tail": 1.15,
+        "prop": 1.1,
+        "cloth": 1.2,
+        "face": 1.15,
+        "offset": 3.3,
+        "blink": -0.12,
+        "lag": 1.3,
+        "castX": 0.9,
+        "castY": 1.35,
+        "castArm": 1.1,
+        "castRight": 0.75,
+        "castProp": 1.3
+      },
+      "rigSha256": "f667656ef1583f88bbdb15e138b25ce0899cc1384454af795bb17129ae85b069",
+      "maxFootDelta": 0,
+      "minTriangleRatio": 0.9954846760315802,
+      "castBoundaryDelta": 0,
+      "minByClipPart": {
+        "idle:hidden-body": 0.9988273765822161,
+        "idle:body": 0.9954846760315802,
+        "idle:foot-r": 1,
+        "idle:foot-l": 1,
+        "idle:tail": 1,
+        "idle:arm-l": 0.9988249371831003,
+        "idle:weapon": 0.9988273591706434,
+        "idle:hidden-arm-r": 0.9988274281232276,
+        "idle:arm-r": 0.9988271349605504,
+        "idle:head": 0.9988206090043192,
+        "skill:hidden-body": 0.9988930069399949,
+        "skill:body": 0.9957379421375934,
+        "skill:foot-r": 1,
+        "skill:foot-l": 1,
+        "skill:tail": 1,
+        "skill:arm-l": 0.9988915240760579,
+        "skill:weapon": 0.998893055905307,
+        "skill:hidden-arm-r": 0.9988929791293508,
+        "skill:arm-r": 0.9988928201368263,
+        "skill:head": 0.9988885315963001
+      },
+      "worst": {
+        "clip": "idle",
+        "part": "body",
+        "clock": 2.3333333333333335,
+        "at": 0,
+        "triangle": 48
+      },
+      "seamDelta": 0,
+      "rangesPercentH": {
+        "head": [
+          0,
+          0.38405476815860373
+        ],
+        "tail_3": [
+          0,
+          0
+        ],
+        "weapon": [
+          0,
+          0.20707629319456355
+        ],
+        "torso": [
+          0,
+          0.18323273680249663
+        ]
+      },
+      "originalDataUnchanged": true,
+      "pass": true
+    }
+  ],
+  "checks": {
+    "focused": 60,
+    "files": 4,
+    "typecheckExit": 0,
+    "runtimeEquivalentTo": "a3173c08e",
+    "logs": [
+      "work/v5/CXV/jobs/m-native-eight-tests-r2.log",
+      "work/v5/CXV/jobs/m-native-eight-typecheck-r2.log"
+    ]
+  }
+}
