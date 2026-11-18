@@ -1,7 +1,7 @@
 /** Bounded, per-actor designer video delivery. Only explicitly registered M/C assets use it. */
 import * as T from 'three';
 
-export const DESIGNER_SOCKET_CHANNELS=['head','prop','hip','shieldWrist','lantern'] as const;
+export const DESIGNER_SOCKET_CHANNELS=['head','prop','hip','shieldWrist','lantern','spout'] as const;
 export type DesignerSocketChannel=typeof DESIGNER_SOCKET_CHANNELS[number];
 export type DesignerIdleFormat='h264-rgb-mask'|'h264-ycrcb-alpha-four-plane';
 export interface DesignerIdleManifest {
