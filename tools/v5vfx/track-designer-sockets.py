@@ -1,6 +1,6 @@
 """Track specified anatomical points with local similarity fits; reject lost support."""
 from pathlib import Path
-import sys,json,hashlib,datetime
+import sys,json,hashlib,datetime,os
 sys.path.insert(0,str(Path('work/v5/CXV/python').resolve()))
 import cv2,numpy as np
 cv2.setNumThreads(2);cv2.setRNGSeed(42)
@@ -8,9 +8,13 @@ root=Path('work/v5/CXV/ref/batch-m');frames=np.load(root/'mochi-frames.npy',mmap
 radius=int(sys.argv[1]) if len(sys.argv)>1 else 24
 full_affine=len(sys.argv)>2 and sys.argv[2]=='affine'
 points={'head':[249,115],'hip':[248,268],'mainHand':[370,183],'offHand':[143,254],'vfxOrigin':[424,254]}
+if len(sys.argv)>3:points=json.loads(Path(sys.argv[3]).read_text())
 scale=np.array([468/525,390/437]);crop=np.array([40,31]);result={'utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'sourceSha256':hashlib.sha256((root/'Scene1.mp4').read_bytes()).hexdigest(),'fps':30,'frames':300,'cat':'mochi','method':'CXI provisional F0 socket pixel→source preview; local corners tracked by LK with forward/back<.75px; only full-cycle survivors; per-frame RANSAC similarity fit. No claim of recovered bone transforms.','sockets':{}}
-for name,delivery in points.items():
+for name,spec in points.items():
+ delivery=spec['delivery'] if isinstance(spec,dict) else spec
  target=(np.array(delivery)+.5)/scale+crop-.5;x,y=np.round(target).astype(int);mask=np.zeros(gray[0].shape,np.uint8);mask[max(0,y-radius):y+radius,max(0,x-radius):x+radius]=255
+ if isinstance(spec,dict) and 'sourceRoi' in spec:
+  xx,yy,ww,hh=spec['sourceRoi'];mask[:]=0;mask[yy:yy+hh,xx:xx+ww]=255
  first=cv2.goodFeaturesToTrack(gray[0],maxCorners=32,qualityLevel=.02,minDistance=3,mask=mask)
  if first is None:result['sockets'][name]={'accepted':False,'reason':'No corner support'};continue
  at=first.copy();alive=np.ones(len(first),bool);hist=[at[:,0].copy()]
@@ -31,5 +35,6 @@ for name,delivery in points.items():
  entry['accepted']=min_inlier>=.7 and max_error<=2 and unsupported<=3 and seam<=2
  if not entry['accepted']:entry['reason']='Quality gate: inliers>=.7,error<=2px,unsupported<=3frames,seam<=2deliverypx'
 result['radius']=radius;result['fit']='affine' if full_affine else 'similarity'
-out=Path(f'reports/v5/CXV/M-mochi-socket-point-study-r{radius}-{result["fit"]}.json');out.write_text(json.dumps(result,separators=(',',':'))+'\n')
+tag=os.environ.get('CXV_M_SOCKET_TAG','')
+out=Path(f'reports/v5/CXV/M-mochi-socket-point-study-r{radius}-{result["fit"]}{tag}.json');out.write_text(json.dumps(result,separators=(',',':'))+'\n')
 print(json.dumps({k:{f:v for f,v in r.items() if f!='worldOffsets'} for k,r in result['sockets'].items()}))
