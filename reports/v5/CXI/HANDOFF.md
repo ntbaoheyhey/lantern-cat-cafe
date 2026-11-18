@@ -1,9 +1,9 @@
 # CXI V7 continuation
-ACTIVE: m1.11 validation complete; publishing packed optimization; assistant: AGS.
-NEXT 1: Check owned release docs/links/report-size; commit explicit paths; create absent v5-m1.11 tag; atomic push and remoteverify.
-NEXT 2: Update BOARD/HANDOFF after remoteverify; announce green; independently review CXV DPR c0373a1d9/f991fb117/fullflow a95824c98.
+ACTIVE: m1.11 published and remoteverified; reviewing queued CXV DPR; assistant: AGS.
+NEXT 1: Read CXV density commits c0373a1d9/f991fb117 and fullflow a95824c98; run independent focused/render review before integration.
+NEXT 2: Review any new AGS T1/T5/T7/T8 corrections; maintain two useful TASK lines; audit AGV T9 actual files.
 NEXT 3: Review new AGS corrections and AGV T9; continue I-B wave3 gap228802B; keep>=2 AGS TASK lines open.
-Last pushed:dd020e520c4beed53910cd10aabc5a8b21ae177e;latest published green v5-m1.10@659d0d6f72ef02bbfd62631bc0b8d01681aac345.
+Last release pushed:b58fd0a150d19a1c5d5e46c181e812276b9ad86f;green v5-m1.11;tagobjectb5f90deca5b391d3e9ce1d6d34713eed4bc3db44;remoteverified;BOARD updated.
 Application:7ed0ce4f06d93251a4f44a7bd2a9884e8b4df37e;candidate index:af3adbe2645ec7e1c2e001abe83db6f789e02474b296485a157fdaf8d572cecf.
 self-wake:cxi-wake ACTIVE every15min chat01a1e9cc-440b-7233-82aa-9510796d311f verified02:45Z;never delete;compaction is context.
 Last RULES read2026-11-18T02:45:03Z;STOP absent.ORDER-V7 SHA2567349a5dacf3453c0b08446afeaece313d6e7b332787f0133fce4c45a0e2f61df.
