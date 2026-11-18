@@ -1,6 +1,4 @@
-# Audio Preload Inventory (T-CXI-11 - Finalized)
-
-## Audio Reachability Table
+# Audio Preload Inventory (T-CXI-11 R3 - Finalized)
 | Artifact | Source File/Line | Runtime Condition |
 | :--- | :--- | :--- |
 | scene-room | Unavailable | Unavailable |
