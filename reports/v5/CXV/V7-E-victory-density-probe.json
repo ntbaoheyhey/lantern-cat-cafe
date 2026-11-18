@@ -1,0 +1,657 @@
+{
+  "utc": "2026-11-18T02:21:01.491Z",
+  "url": "http://127.0.0.1:6312/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+  "source": "fb35576aec51a725b062e2041ee3b168c1cd217e",
+  "buildSource": "c0373a1d97b6c991888bb66e259142ed4efe3635",
+  "indexSha256": "6c93080042b25bfa98bdf699fb081e2af41ccc8c890ef2ee30a2b36c3982a635",
+  "runtimePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "method": "Untransformed production; rule-resolved wave1 result fixture. Live CDP density1->2->1.5->1. Existing ResizeObserver is triggered by a temporary +1CSSpx width then restored, proving density after a real native redraw. No application-response patch. Same-session CSS screenshots. CDP event delivery is recorded separately from buffer correctness.",
+  "raw": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-victory-density-probe/report.json",
+    "sha256": "8fc0bab1c6f976047ef3c28bb4d195d1eacc8fce32624b12bd8544587c702605"
+  },
+  "captureUtc": "2026-11-18T02:20:12.961Z",
+  "captureEnded": "2026-11-18T02:20:24.669Z",
+  "runs": [
+    {
+      "mode": "normal",
+      "transitions": [
+        {
+          "ratio": 2,
+          "beforeRedraw": {
+            "dpr": 2,
+            "expectedRatio": 1.5,
+            "width": 461,
+            "height": 245,
+            "canvas": {
+              "width": 461,
+              "height": 245
+            },
+            "drawingBuffer": {
+              "width": 461,
+              "height": 245
+            },
+            "rect": {
+              "x": 133.1875,
+              "y": 263,
+              "width": 461.21875,
+              "height": 245,
+              "top": 263,
+              "right": 594.40625,
+              "bottom": 508,
+              "left": 133.1875
+            },
+            "ready": "true",
+            "drawn": "4",
+            "contextLost": false,
+            "draws": 84,
+            "resizeEvents": 0,
+            "mediaEvents": [],
+            "matches": [
+              false,
+              false,
+              true
+            ]
+          },
+          "after": {
+            "dpr": 2,
+            "expectedRatio": 1.5,
+            "width": 461,
+            "height": 245,
+            "canvas": {
+              "width": 461,
+              "height": 245
+            },
+            "drawingBuffer": {
+              "width": 461,
+              "height": 245
+            },
+            "rect": {
+              "x": 133.1875,
+              "y": 263,
+              "width": 461.21875,
+              "height": 245,
+              "top": 263,
+              "right": 594.40625,
+              "bottom": 508,
+              "left": 133.1875
+            },
+            "ready": "true",
+            "drawn": "4",
+            "contextLost": false,
+            "draws": 132,
+            "resizeEvents": 0,
+            "mediaEvents": [],
+            "matches": [
+              false,
+              false,
+              true
+            ]
+          },
+          "expected": {
+            "width": 691,
+            "height": 367
+          },
+          "stale": true
+        },
+        {
+          "ratio": 1.5,
+          "beforeRedraw": {
+            "dpr": 1.5,
+            "expectedRatio": 1.5,
+            "width": 461,
+            "height": 245,
+            "canvas": {
+              "width": 461,
+              "height": 245
+            },
+            "drawingBuffer": {
+              "width": 461,
+              "height": 245
+            },
+            "rect": {
+              "x": 133.1875,
+              "y": 263,
+              "width": 461.21875,
+              "height": 245,
+              "top": 263,
+              "right": 594.40625,
+              "bottom": 508,
+              "left": 133.1875
+            },
+            "ready": "true",
+            "drawn": "4",
+            "contextLost": false,
+            "draws": 220,
+            "resizeEvents": 0,
+            "mediaEvents": [],
+            "matches": [
+              false,
+              true,
+              false
+            ]
+          },
+          "after": {
+            "dpr": 1.5,
+            "expectedRatio": 1.5,
+            "width": 461,
+            "height": 245,
+            "canvas": {
+              "width": 461,
+              "height": 245
+            },
+            "drawingBuffer": {
+              "width": 461,
+              "height": 245
+            },
+            "rect": {
+              "x": 133.1875,
+              "y": 263,
+              "width": 461.21875,
+              "height": 245,
+              "top": 263,
+              "right": 594.40625,
+              "bottom": 508,
+              "left": 133.1875
+            },
+            "ready": "true",
+            "drawn": "4",
+            "contextLost": false,
+            "draws": 268,
+            "resizeEvents": 0,
+            "mediaEvents": [],
+            "matches": [
+              false,
+              true,
+              false
+            ]
+          },
+          "expected": {
+            "width": 691,
+            "height": 367
+          },
+          "stale": true
+        },
+        {
+          "ratio": 1,
+          "beforeRedraw": {
+            "dpr": 1,
+            "expectedRatio": 1,
+            "width": 461,
+            "height": 245,
+            "canvas": {
+              "width": 461,
+              "height": 245
+            },
+            "drawingBuffer": {
+              "width": 461,
+              "height": 245
+            },
+            "rect": {
+              "x": 133.1875,
+              "y": 263,
+              "width": 461.21875,
+              "height": 245,
+              "top": 263,
+              "right": 594.40625,
+              "bottom": 508,
+              "left": 133.1875
+            },
+            "ready": "true",
+            "drawn": "4",
+            "contextLost": false,
+            "draws": 356,
+            "resizeEvents": 0,
+            "mediaEvents": [],
+            "matches": [
+              true,
+              false,
+              false
+            ]
+          },
+          "after": {
+            "dpr": 1,
+            "expectedRatio": 1,
+            "width": 461,
+            "height": 245,
+            "canvas": {
+              "width": 461,
+              "height": 245
+            },
+            "drawingBuffer": {
+              "width": 461,
+              "height": 245
+            },
+            "rect": {
+              "x": 133.1875,
+              "y": 263,
+              "width": 461.21875,
+              "height": 245,
+              "top": 263,
+              "right": 594.40625,
+              "bottom": 508,
+              "left": 133.1875
+            },
+            "ready": "true",
+            "drawn": "4",
+            "contextLost": false,
+            "draws": 404,
+            "resizeEvents": 0,
+            "mediaEvents": [],
+            "matches": [
+              true,
+              false,
+              false
+            ]
+          },
+          "expected": {
+            "width": 461,
+            "height": 245
+          },
+          "stale": false
+        }
+      ],
+      "idleDraws": 120,
+      "errors": [],
+      "blockedRequests": []
+    },
+    {
+      "mode": "reduced",
+      "transitions": [
+        {
+          "ratio": 2,
+          "beforeRedraw": {
+            "dpr": 2,
+            "expectedRatio": 1.5,
+            "width": 461,
+            "height": 245,
+            "canvas": {
+              "width": 461,
+              "height": 245
+            },
+            "drawingBuffer": {
+              "width": 461,
+              "height": 245
+            },
+            "rect": {
+              "x": 133.1875,
+              "y": 263,
+              "width": 461.21875,
+              "height": 245,
+              "top": 263,
+              "right": 594.40625,
+              "bottom": 508,
+              "left": 133.1875
+            },
+            "ready": "true",
+            "drawn": "4",
+            "contextLost": false,
+            "draws": 0,
+            "resizeEvents": 0,
+            "mediaEvents": [],
+            "matches": [
+              false,
+              false,
+              true
+            ]
+          },
+          "after": {
+            "dpr": 2,
+            "expectedRatio": 1.5,
+            "width": 461,
+            "height": 245,
+            "canvas": {
+              "width": 461,
+              "height": 245
+            },
+            "drawingBuffer": {
+              "width": 461,
+              "height": 245
+            },
+            "rect": {
+              "x": 133.1875,
+              "y": 263,
+              "width": 461.21875,
+              "height": 245,
+              "top": 263,
+              "right": 594.40625,
+              "bottom": 508,
+              "left": 133.1875
+            },
+            "ready": "true",
+            "drawn": "4",
+            "contextLost": false,
+            "draws": 8,
+            "resizeEvents": 0,
+            "mediaEvents": [],
+            "matches": [
+              false,
+              false,
+              true
+            ]
+          },
+          "expected": {
+            "width": 691,
+            "height": 367
+          },
+          "stale": true
+        },
+        {
+          "ratio": 1.5,
+          "beforeRedraw": {
+            "dpr": 1.5,
+            "expectedRatio": 1.5,
+            "width": 461,
+            "height": 245,
+            "canvas": {
+              "width": 461,
+              "height": 245
+            },
+            "drawingBuffer": {
+              "width": 461,
+              "height": 245
+            },
+            "rect": {
+              "x": 133.1875,
+              "y": 263,
+              "width": 461.21875,
+              "height": 245,
+              "top": 263,
+              "right": 594.40625,
+              "bottom": 508,
+              "left": 133.1875
+            },
+            "ready": "true",
+            "drawn": "4",
+            "contextLost": false,
+            "draws": 8,
+            "resizeEvents": 0,
+            "mediaEvents": [],
+            "matches": [
+              false,
+              true,
+              false
+            ]
+          },
+          "after": {
+            "dpr": 1.5,
+            "expectedRatio": 1.5,
+            "width": 461,
+            "height": 245,
+            "canvas": {
+              "width": 461,
+              "height": 245
+            },
+            "drawingBuffer": {
+              "width": 461,
+              "height": 245
+            },
+            "rect": {
+              "x": 133.1875,
+              "y": 263,
+              "width": 461.21875,
+              "height": 245,
+              "top": 263,
+              "right": 594.40625,
+              "bottom": 508,
+              "left": 133.1875
+            },
+            "ready": "true",
+            "drawn": "4",
+            "contextLost": false,
+            "draws": 16,
+            "resizeEvents": 0,
+            "mediaEvents": [],
+            "matches": [
+              false,
+              true,
+              false
+            ]
+          },
+          "expected": {
+            "width": 691,
+            "height": 367
+          },
+          "stale": true
+        },
+        {
+          "ratio": 1,
+          "beforeRedraw": {
+            "dpr": 1,
+            "expectedRatio": 1,
+            "width": 461,
+            "height": 245,
+            "canvas": {
+              "width": 461,
+              "height": 245
+            },
+            "drawingBuffer": {
+              "width": 461,
+              "height": 245
+            },
+            "rect": {
+              "x": 133.1875,
+              "y": 263,
+              "width": 461.21875,
+              "height": 245,
+              "top": 263,
+              "right": 594.40625,
+              "bottom": 508,
+              "left": 133.1875
+            },
+            "ready": "true",
+            "drawn": "4",
+            "contextLost": false,
+            "draws": 16,
+            "resizeEvents": 0,
+            "mediaEvents": [],
+            "matches": [
+              true,
+              false,
+              false
+            ]
+          },
+          "after": {
+            "dpr": 1,
+            "expectedRatio": 1,
+            "width": 461,
+            "height": 245,
+            "canvas": {
+              "width": 461,
+              "height": 245
+            },
+            "drawingBuffer": {
+              "width": 461,
+              "height": 245
+            },
+            "rect": {
+              "x": 133.1875,
+              "y": 263,
+              "width": 461.21875,
+              "height": 245,
+              "top": 263,
+              "right": 594.40625,
+              "bottom": 508,
+              "left": 133.1875
+            },
+            "ready": "true",
+            "drawn": "4",
+            "contextLost": false,
+            "draws": 24,
+            "resizeEvents": 0,
+            "mediaEvents": [],
+            "matches": [
+              true,
+              false,
+              false
+            ]
+          },
+          "expected": {
+            "width": 461,
+            "height": 245
+          },
+          "stale": false
+        }
+      ],
+      "idleDraws": 0,
+      "errors": [],
+      "blockedRequests": []
+    }
+  ],
+  "captures": [
+    {
+      "name": "initial-dpr1",
+      "mode": "normal",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-victory-density-probe/normal/initial-dpr1.png",
+      "utc": "2026-11-18T02:20:17.222Z",
+      "width": 1280,
+      "height": 720,
+      "bytes": 937316,
+      "sha256": "4f7e31987f27c7ae6c06ea8e12cb165b6576de8b5727b727bb25a12b59c06822",
+      "mean": 53.83782407407407,
+      "stdDev": 36.6799451321143
+    },
+    {
+      "name": "dpr2",
+      "mode": "normal",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-victory-density-probe/normal/dpr2.png",
+      "utc": "2026-11-18T02:20:17.789Z",
+      "width": 1280,
+      "height": 720,
+      "bytes": 937198,
+      "sha256": "944ea94e10505470df1adfa542a36349fafe4b674b4c2e624b567ea4c75d11d5",
+      "mean": 53.775300925925926,
+      "stdDev": 36.58611791670361
+    },
+    {
+      "name": "dpr1.5",
+      "mode": "normal",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-victory-density-probe/normal/dpr1.5.png",
+      "utc": "2026-11-18T02:20:18.364Z",
+      "width": 1280,
+      "height": 720,
+      "bytes": 937439,
+      "sha256": "e7abde4f3b0d583013dd0fd84eec78cb73130c18288c9899e6c2c183b626be80",
+      "mean": 53.75666666666667,
+      "stdDev": 36.520511131874066
+    },
+    {
+      "name": "dpr1",
+      "mode": "normal",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-victory-density-probe/normal/dpr1.png",
+      "utc": "2026-11-18T02:20:18.922Z",
+      "width": 1280,
+      "height": 720,
+      "bytes": 937090,
+      "sha256": "6efcd773c751d84c4b6117d1fe0192d2f2e56976615ade0afc3379ed5e9fdc05",
+      "mean": 53.7269212962963,
+      "stdDev": 36.49090814292792
+    },
+    {
+      "name": "initial-dpr1",
+      "mode": "reduced",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-victory-density-probe/reduced/initial-dpr1.png",
+      "utc": "2026-11-18T02:20:22.522Z",
+      "width": 1280,
+      "height": 720,
+      "bytes": 932594,
+      "sha256": "719f8162e0f228d8425319aaa67c81ff50225bcd6012f31b25b416db6d6fe467",
+      "mean": 53.72266203703704,
+      "stdDev": 36.584441331572954
+    },
+    {
+      "name": "dpr2",
+      "mode": "reduced",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-victory-density-probe/reduced/dpr2.png",
+      "utc": "2026-11-18T02:20:23.066Z",
+      "width": 1280,
+      "height": 720,
+      "bytes": 932594,
+      "sha256": "719f8162e0f228d8425319aaa67c81ff50225bcd6012f31b25b416db6d6fe467",
+      "mean": 53.72266203703704,
+      "stdDev": 36.584441331572954
+    },
+    {
+      "name": "dpr1.5",
+      "mode": "reduced",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-victory-density-probe/reduced/dpr1.5.png",
+      "utc": "2026-11-18T02:20:23.610Z",
+      "width": 1280,
+      "height": 720,
+      "bytes": 932594,
+      "sha256": "719f8162e0f228d8425319aaa67c81ff50225bcd6012f31b25b416db6d6fe467",
+      "mean": 53.72266203703704,
+      "stdDev": 36.584441331572954
+    },
+    {
+      "name": "dpr1",
+      "mode": "reduced",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-victory-density-probe/reduced/dpr1.png",
+      "utc": "2026-11-18T02:20:24.150Z",
+      "width": 1280,
+      "height": 720,
+      "bytes": 932594,
+      "sha256": "719f8162e0f228d8425319aaa67c81ff50225bcd6012f31b25b416db6d6fe467",
+      "mean": 53.72266203703704,
+      "stdDev": 36.584441331572954
+    }
+  ],
+  "sheets": [
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-victory-density-probe/review/review-0.jpg",
+      "width": 1024,
+      "height": 576,
+      "frames": [
+        {
+          "name": "initial-dpr1",
+          "mode": "normal"
+        },
+        {
+          "name": "dpr2",
+          "mode": "normal"
+        },
+        {
+          "name": "dpr1.5",
+          "mode": "normal"
+        },
+        {
+          "name": "dpr1",
+          "mode": "normal"
+        }
+      ],
+      "sha256": "e98a9aeecc73c5c1eae435e9cc18e90cf3e0cc613323000f727d92ee5b3561e9"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/films/V7-E-victory-density-probe/review/review-1.jpg",
+      "width": 1024,
+      "height": 576,
+      "frames": [
+        {
+          "name": "initial-dpr1",
+          "mode": "reduced"
+        },
+        {
+          "name": "dpr2",
+          "mode": "reduced"
+        },
+        {
+          "name": "dpr1.5",
+          "mode": "reduced"
+        },
+        {
+          "name": "dpr1",
+          "mode": "reduced"
+        }
+      ],
+      "sha256": "629f98cc9759d9657d236b160d485dca7bbef5d283181b02fd1bc4e3f5f0f122"
+    }
+  ],
+  "reviewedUtc": "2026-11-18T02:21:48.960645+00:00",
+  "visualReview": "Two fresh measured 1024x576 sheets reviewed once: all four cats, result content and controls stay present. No blank/cropped crew after changes. Density correctness is established by backing-buffer measurements, not sharpness inferred from these reduced sheets. Existing shell toast overlap persists.",
+  "pass": true,
+  "verdict": "Probe passed by reproducing four stale outcome buffers; this is a confirmed defect, not a passing application density gate."
+}

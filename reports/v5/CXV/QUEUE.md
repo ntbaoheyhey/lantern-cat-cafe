@@ -89,3 +89,5 @@
 - [ ] V-F live density-transition fullbattle stress on currentnative;natural normal/reduced progression and outcome parity.
 
 - [x] V-F live desktop-density full battles: six correct transitions; exact rules/logs/final parity vs staticDPR2,68actions24ults each;16captures/4sheets reviewed once. Local coverage; independentCXI pending.
+
+- [ ] V-E victory density defect reproduced:4stale buffers after actual resize/draw;nativeprobe V7-E-victory-density-probe.json. Preserve reduced0idle draw;event-driven correction requires exact pixels/lifecycle.

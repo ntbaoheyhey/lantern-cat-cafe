@@ -58,3 +58,5 @@ AGV còn T-CXV-1 audit REDO và T-CXV-2 nghiên cứu có nguồn; đã ACK17:02
 2026-11-18T02:09:49.151028+00:00 Sửa chuyển mật độ màn hình c0373a1d9 đãpush:18kiểm thử/typecheck0. Khi dừng,đổi DPR vẫn cập nhật canvas/composer;giữ giới hạn2x. Prototype16cặpRGB chính xác với nativeAPI,4vòng đời đạt. Build native mới đãqua20ảnh/16cặpRGB;đang chạy32s ởCPU1x/4x,DPR2;chưa gửiREADY.
 
 2026-11-18T02:18:02.904281+00:00: Đã kiểm tra hai trận đầy đủ CPU4× với DPR2→1→1.5→2; 6 lần đổi mật độ đúng bộ đệm, logic và kết quả trùng đối chứng, không lỗi. 16 ảnh/4 bảng đã xem một lần; toast vẫn chờ CXI; tiếp tục kiểm tra mật độ màn thắng.
+
+2026-11-18T02:21:48.960645+00:00: Phát hiện màn thắng giữ bộ đệm cũ ở DPR2/1.5 dù đã resize/vẽ lại. Chế độ giảm chuyển động vẫn không vẽ khi nghỉ. Đã đo8ảnh/xem2bảng; chuẩn bị thử sửa qua sự kiện, chưa đổi mã ứng dụng.
