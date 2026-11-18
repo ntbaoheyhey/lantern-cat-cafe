@@ -23,6 +23,7 @@ const servedIndex=await readFile(resolve(app,'dist/index.html'));
 const require=createRequire(resolve(app,'package.json'));
 const {build}=await import(require.resolve('vite'));
 execFileSync(process.execPath,[resolve(root,'tools/v5int/audio-delivery.mjs'),'--check'],{cwd:root,stdio:'inherit'});
+execFileSync(process.execPath,[resolve(root,'tools/v5int/native-rig-data-delivery.mjs'),'--check'],{cwd:root,stdio:'inherit'});
 await mkdir(out);
 await build({root:app,configFile:resolve(app,'vite.config.ts'),envFile:false,build:{outDir:dist,emptyOutDir:false}});
 execFileSync(process.execPath,[resolve(root,'tools/chain/economy-v3-metadata.mjs'),`--out=${resolve(dist,'relics')}`],{cwd:root,stdio:'inherit'});

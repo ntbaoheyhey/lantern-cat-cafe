@@ -15,6 +15,7 @@ import sampledAtlases from './sampled-atlases.json';
 import {loadAtlasImage} from './atlas-delivery';
 import {nativeRigDelivery} from './native-rig-loader';
 import {deferredRigFactory} from './deferred-atlas-loader';
+import {loadNativeRigData} from './native-rig-data-loader';
 import {loadV5Textures} from './v5-texture-loader';
 import {loadDesignerIdleActor,type DesignerIdleActorMedia} from './designer-idle-actor-loader';
 const files=import.meta.glob('../../../../../../assets/cardrpg-look/{spine,vfx-designer}/**/*.{json,skel,atlas,png}',{eager:true,query:'?url',import:'default'}) as Record<string,string>;
@@ -38,8 +39,7 @@ const designerIds=new Set(['mochi','soot','clover']);
 export function loadNativeRig(id:string,deferPixels=false):Promise<SkeletonAsset>{
  const key='native:'+id+(deferPixels?':drawn':''),cached=skeletonCache.get(key);if(cached)return cached;
  const pending=(async()=>{
-  const r=await fetch(`/units/${id}/rig.json`);if(!r.ok)throw Error(`Native rig ${id}: HTTP ${r.status}`);
-  const data=await r.json() as CutoutData;if(data.format!=='taskbar-cutout-v1'||!data.parts?.length)throw Error('Invalid native cut-out rig '+id);
+  const data=await loadNativeRigData(id,deferPixels);if(data.format!=='taskbar-cutout-v1'||!data.parts?.length)throw Error('Invalid native cut-out rig '+id);
   const decode=async()=>{const textures:T.Texture[]=[];
    try{for(const page of data.pages){const path=`/units/${id}/${page.name}`,loaded=await loadAtlasImage(deliveryUrls.get(path)??path,sampledPages.get(path)??nativeRigDelivery(path));textures.push(paintedAtlasTexture(loaded.image,loaded.alphaEncoding));}return textures;
    }catch(e){textures.forEach(t=>t.dispose());throw e;}
