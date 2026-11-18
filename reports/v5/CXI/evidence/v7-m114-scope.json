@@ -1,0 +1,62 @@
+{
+  "utc": "2026-11-18T04:22:52.131116+00:00",
+  "from": "v5-m1.13",
+  "application": "f1aa8f49bac2abe757150d591a4b1d1a9b9c56db",
+  "paths": [
+    {
+      "path": "apps/web/public/units/crumb-sentinel/rig-depth.half.avif",
+      "sha256": "113c62a9a28890f9937b9c5bb9443e6546fbd1622888a877eae103e8292345d6",
+      "bytes": 36306
+    },
+    {
+      "path": "apps/web/public/units/kettle-knight/rig-depth.half.avif",
+      "sha256": "b47cb72745b68eb5e382454a97541ad4a03701488dc87f38b4df80b0f0db0fde",
+      "bytes": 42699
+    },
+    {
+      "path": "apps/web/public/units/pollen-scout/rig-depth.half.avif",
+      "sha256": "455febf955e24f80c7c95196a96a8703a0245edc4549a38d9dc5fe163e21af18",
+      "bytes": 36705
+    },
+    {
+      "path": "apps/web/public/units/spool-ram/rig-depth.half.avif",
+      "sha256": "34256f4aa66953c073f8c2a32ca96d955cfdebc24d87af6b47292cb4417f2b9c",
+      "bytes": 29806
+    },
+    {
+      "path": "apps/web/src/game/cardrpg/depth/Battle.tsx",
+      "sha256": "829c4871481cecad02e1da9fb264c8ec51238a2c22f0f99389751824e061effd",
+      "bytes": 27707
+    },
+    {
+      "path": "apps/web/src/game/cardrpg/depth/depth.css",
+      "sha256": "9f5c92731c59da0f3bdef12d426e680c0d55622d99c6e769f61ccb01bd9193a1",
+      "bytes": 33781
+    },
+    {
+      "path": "apps/web/src/game/cardrpg/shell/screen-skin.css",
+      "sha256": "4de63adc390c0f7d13035c18eac737cdd875760ce5ccfa80ceaa7abe94f09664",
+      "bytes": 85361
+    },
+    {
+      "path": "apps/web/src/game/cardrpg/spine/native-rig-manifest-loader.json",
+      "sha256": "529631ffab5921763e96afb0b4908974d1bb56b1d64ab572a32b64787f1c92aa",
+      "bytes": 8263
+    }
+  ],
+  "acceptedScope": [
+    "result-only toast position",
+    "four halfAVIF siblings and loader URLs",
+    "two-file recovery notice layout"
+  ],
+  "unchanged": [
+    "game rules",
+    "audio engine and media",
+    "original image files",
+    "approved texture/style manifests",
+    "owner-only paths"
+  ],
+  "pipeline": "work/v5/CXI/jobs/v7-m114-final-browser-pipeline.py",
+  "pipelineSha256": "2c44e6afeffb968e9a6ac924b980d44473d34870e36bf420171ea0649c87db00",
+  "state": "Suite/build/native acceptance passed; six fresh browser gates still pending CXV release"
+}
