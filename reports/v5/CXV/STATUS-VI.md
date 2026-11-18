@@ -8,4 +8,4 @@ Clover HP đã đạt56 trạng thái/4 hành động/10 glint,không chồng nh
 Chủ dự án bỏ giới hạn8MB từ12:09:40Z;byte chỉ báo cáo,không chặn phát hành/hình ảnh. Bằng chứng thất bại cũ giữ nguyên nhưng cách diễn giải chặn theo byte đã bị thay thế.
 AGV giữ hai nhiệm vụ:số liệu tay Clover độc lập và nghiên cứu L2/L4 Trung/Anh;ngừng nén landing theo giới hạn đã bỏ.
 Kiểm tra merge:17 ca focus+16 preload,TSC0,3.833 đường dẫn bảo vệ và capture-arrival.mjs không đổi. cxv-wake còn ACTIVE mỗi15phút;không có job hoặc lease capture đang chạy;đã trả6301 lúc12:35Z.
-Đang chuẩn bị trận đủ Mochi+Clover/Panko/Mallow để kiểm tra hai decoder cùng lúc,đối chiếu luật và tạm dừng sau thắng;chưa capture mới,CXI đang giữ6301.
+R5 mới8aef/index82f:hai trận Mochi+Clover/Panko/Mallow thắng,110 hành động;replay độc lập toàn trạng thái khớp tuyệt đối. Hai decoder hoạt động đúng và dừng sau thắng,không callback muộn/không lỗi;16 ảnh,4 ảnh ghép xem một lần. P95 khung16,7/16,8ms trên M3 Pro,chỉ mô tả máy này. Hộp HP chồng hộp thân ở cả hai mèo;chưa kết luận che pixel thật,cần đo riêng trước khi sửa.6301 đã trả13:02Z.

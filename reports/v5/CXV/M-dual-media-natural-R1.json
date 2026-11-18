@@ -1,0 +1,1978 @@
+{
+  "utc": "2026-11-18T13:02:22.479913+00:00",
+  "sourceCommit": "8aef40187d03fbc6651d5239e7a93907e973284a",
+  "indexSha256": "82f086119196c891d644defce7a83c9a383d4fb6573ea47476ed0e517a3a0895",
+  "url": "http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "roster": [
+    "mochi",
+    "clover",
+    "panko",
+    "mallow"
+  ],
+  "raw": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/dual-media-natural-r1-125906/report.json",
+    "sha256": "7dfc0e512416efa204e0f177d101681cc63627696008c12e4a76cf64c0f6fa02"
+  },
+  "rules": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/dual-media-natural-r1-125906/rules-verification.json",
+    "sha256": "62f4c82e31809a138a74cb71488a7b79f0266484fda21b2c64840bc8986c029f"
+  },
+  "provenance": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/dual-media-natural-r1-125906/harness-provenance.json",
+    "sha256": "4c2f7661b2ae5ac3ca5da17e61022ff451495689ae5c9e1d40a234f3b3e9d172"
+  },
+  "artifactVerification": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/dual-media-natural-r1-125906/artifact-verification.json",
+    "sha256": "9c51966a4b24ae5d65d77b5eb262980b38ff0ec583b76ad2ce36ec92873e57fe"
+  },
+  "hostLoad": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/dual-media-natural-r1-125906/host-load.txt",
+    "sha256": "0d4540eeb76693a1565bf6bb42171a9ae980edbeaf7a8fc906bf13f0afea2e88"
+  },
+  "browser": "156.0.8078.4",
+  "hardware": "Apple M3 Pro",
+  "parity": {
+    "initial": true,
+    "result": true,
+    "logs": true,
+    "presentations": true,
+    "independentRules": true
+  },
+  "runs": [
+    {
+      "mode": "normal",
+      "result": "party",
+      "naturalResultMs": 81116,
+      "actions": 55,
+      "ultimates": {
+        "mochi": 3,
+        "clover": 2,
+        "panko": 3,
+        "mallow": 4
+      },
+      "frameMsWithoutCaptureWindows": {
+        "samples": 4773,
+        "median": 16.69999999999709,
+        "p95": 16.70000000001164,
+        "max": 50
+      },
+      "renderCpuMsWithoutCaptureWindows": {
+        "samples": 4773,
+        "median": 4.100000008940697,
+        "p95": 5.100000008940697,
+        "max": 49.3999999910593
+      },
+      "intervalsOver50p5ms": 0,
+      "media": {
+        "mochi": {
+          "videoSrc": "http://127.0.0.1:6301/units/mochi/designer-idle-3f92069b2aa15723.mp4",
+          "samples": 784,
+          "runningSamples": 783,
+          "seekingSamples": 1,
+          "sampleGapsMs": {
+            "samples": 783,
+            "median": 100.0,
+            "p95": 116.60000000000582,
+            "max": 149.89999999999964
+          },
+          "nonseekingRunningClockDriftSeconds": {
+            "samples": 782,
+            "median": 0.11160000000010761,
+            "p95": 0.1382000000049146,
+            "max": 0.14630000000502896
+          },
+          "callbacks": 2416,
+          "decodedIntervalsRunningWithoutCaptureMs": {
+            "samples": 2370,
+            "median": 33.30000000000291,
+            "p95": 50.0,
+            "max": 66.70000000000437
+          },
+          "observedTenSecondWraps": [
+            {
+              "before": 9.966667,
+              "after": 0.033333,
+              "at": 8807.40000000894
+            },
+            {
+              "before": 9.966667,
+              "after": 0,
+              "at": 18807.000000008942
+            },
+            {
+              "before": 9.966667,
+              "after": 0,
+              "at": 28806.70000000894
+            },
+            {
+              "before": 9.966667,
+              "after": 0,
+              "at": 38822.90000000894
+            },
+            {
+              "before": 9.966667,
+              "after": 0,
+              "at": 48822.50000000894
+            },
+            {
+              "before": 9.966667,
+              "after": 0,
+              "at": 58838.80000000894
+            },
+            {
+              "before": 9.966667,
+              "after": 0.033333,
+              "at": 68855.10000000894
+            },
+            {
+              "before": 9.966667,
+              "after": 0,
+              "at": 78854.70000000895
+            }
+          ],
+          "events": {
+            "pause": 1,
+            "playing": 9,
+            "seeked": 8,
+            "seeking": 8,
+            "waiting": 8
+          },
+          "qualityFirst": {
+            "totalVideoFrames": 46,
+            "droppedVideoFrames": 0,
+            "corruptedVideoFrames": 0
+          },
+          "qualityLast": {
+            "totalVideoFrames": 2476,
+            "droppedVideoFrames": 15,
+            "corruptedVideoFrames": 0
+          },
+          "failureCount": 0,
+          "failures": [],
+          "hpSamples": 783,
+          "hpFailureCount": 783,
+          "hpFailures": [
+            {
+              "at": 24.500000008940788,
+              "phase": null,
+              "hp": {
+                "label": {
+                  "x": 546.34375,
+                  "y": 218.0625,
+                  "width": 64,
+                  "height": 34
+                },
+                "actorId": "mochi",
+                "value": 732,
+                "alive": true,
+                "visible": true,
+                "body": {
+                  "x": 337.1656294533051,
+                  "y": 169.2000008188987,
+                  "width": 272.8687508977014,
+                  "height": 226.79999881795854
+                },
+                "face": {
+                  "x": 423.98749999999995,
+                  "y": 195.77812500000005,
+                  "width": 116.35312499999998,
+                  "height": 78.55312499999991
+                },
+                "bodyOverlapArea": 2165.4814319342195,
+                "faceOverlapArea": 0,
+                "allBodyOverlapArea": 2165.4814319342195,
+                "otherLabelOverlapArea": 0,
+                "propInside": false
+              }
+            },
+            {
+              "at": 124.50000000894079,
+              "phase": {
+                "actorId": "mochi",
+                "skillId": "mochi-1",
+                "elapsed": 33.29999999999973
+              },
+              "hp": {
+                "label": {
+                  "x": 546.796875,
+                  "y": 218.265625,
+                  "width": 64,
+                  "height": 34
+                },
+                "actorId": "mochi",
+                "value": 732,
+                "alive": true,
+                "visible": true,
+                "body": {
+                  "x": 337.0097247792272,
+                  "y": 169.19943928799006,
+                  "width": 273.61269704517974,
+                  "height": 227.0611133861201
+                },
+                "face": {
+                  "x": 424.1626307707345,
+                  "y": 195.91290218049272,
+                  "width": 116.63575504813764,
+                  "height": 78.6852790952758
+                },
+                "bodyOverlapArea": 2170.0685920298365,
+                "faceOverlapArea": 0,
+                "allBodyOverlapArea": 2225.4047088775583,
+                "otherLabelOverlapArea": 0,
+                "propInside": false
+              }
+            },
+            {
+              "at": 224.5000000089408,
+              "phase": {
+                "actorId": "mochi",
+                "skillId": "mochi-1",
+                "elapsed": 133.29999999999973
+              },
+              "hp": {
+                "label": {
+                  "x": 552.09375,
+                  "y": 220.671875,
+                  "width": 64,
+                  "height": 34
+                },
+                "actorId": "mochi",
+                "value": 732,
+                "alive": true,
+                "visible": true,
+                "body": {
+                  "x": 335.2133507882162,
+                  "y": 169.2094198892225,
+                  "width": 282.2146907714566,
+                  "height": 230.16097682172324
+                },
+                "face": {
+                  "x": 426.19665540004314,
+                  "y": 197.53626984617165,
+                  "width": 119.90270082350673,
+                  "height": 80.25683287426904
+                },
+                "bodyOverlapArea": 2176,
+                "faceOverlapArea": 0,
+                "allBodyOverlapArea": 2176,
+                "otherLabelOverlapArea": 0,
+                "propInside": false
+              }
+            },
+            {
+              "at": 341.20000000894106,
+              "phase": {
+                "actorId": "mochi",
+                "skillId": "mochi-1",
+                "elapsed": 249.9000000000001
+              },
+              "hp": {
+                "label": {
+                  "x": 558.5,
+                  "y": 227.96875,
+                  "width": 64,
+                  "height": 34
+                },
+                "actorId": "mochi",
+                "value": 732,
+                "alive": true,
+                "visible": true,
+                "body": {
+                  "x": 335.5037902629397,
+                  "y": 174.10827547468077,
+                  "width": 289.04521247903006,
+                  "height": 230.20200000000003
+                },
+                "face": {
+                  "x": 430.27817741693707,
+                  "y": 204.42570774361985,
+                  "width": 122.22197952887632,
+                  "height": 81.06194321607421
+                },
+                "bodyOverlapArea": 2176,
+                "faceOverlapArea": 0,
+                "allBodyOverlapArea": 2180.970589152999,
+                "otherLabelOverlapArea": 0,
+                "propInside": false
+              }
+            },
+            {
+              "at": 491.1000000089407,
+              "phase": {
+                "actorId": "mochi",
+                "skillId": "mochi-1",
+                "elapsed": 366.5999999999999
+              },
+              "hp": {
+                "label": {
+                  "x": 541.609375,
+                  "y": 226.609375,
+                  "width": 64,
+                  "height": 34
+                },
+                "actorId": "mochi",
+                "value": 732,
+                "alive": true,
+                "visible": true,
+                "body": {
+                  "x": 319.72403960871867,
+                  "y": 173.9937348051873,
+                  "width": 294.3984705181869,
+                  "height": 230.20199999999997
+                },
+                "face": {
+                  "x": 411.0210535924738,
+                  "y": 203.12096836957124,
+                  "width": 124.58753450506094,
+                  "height": 80.97685519309942
+                },
+                "bodyOverlapArea": 2176,
+                "faceOverlapArea": 0,
+                "allBodyOverlapArea": 2176,
+                "otherLabelOverlapArea": 0,
+                "propInside": false
+              }
+            },
+            {
+              "at": 591.1000000089407,
+              "phase": {
+                "actorId": "mochi",
+                "skillId": "mochi-1",
+                "elapsed": 499.9000000000001
+              },
+              "hp": {
+                "label": {
+                  "x": 542.859375,
+                  "y": 225.09375,
+                  "width": 64,
+                  "height": 34
+                },
+                "actorId": "mochi",
+                "value": 732,
+                "alive": true,
+                "visible": true,
+                "body": {
+                  "x": 321.87106305748887,
+                  "y": 172.7641871981975,
+                  "width": 292.7765637396484,
+                  "height": 230.20200000000003
+                },
+                "face": {
+                  "x": 412.88035281765144,
+                  "y": 201.66676896170756,
+                  "width": 123.98688512831575,
+                  "height": 80.84674736153326
+                },
+                "bodyOverlapArea": 2176,
+                "faceOverlapArea": 0,
+                "allBodyOverlapArea": 2176,
+                "otherLabelOverlapArea": 0,
+                "propInside": false
+              }
+            },
+            {
+              "at": 691.1000000089407,
+              "phase": {
+                "actorId": "mochi",
+                "skillId": "mochi-1",
+                "elapsed": 599.9000000000001
+              },
+              "hp": {
+                "label": {
+                  "x": 544.4375,
+                  "y": 221.734375,
+                  "width": 64,
+                  "height": 34
+                },
+                "actorId": "mochi",
+                "value": 732,
+                "alive": true,
+                "visible": true,
+                "body": {
+                  "x": 327.4654104002426,
+                  "y": 170.63993253215315,
+                  "width": 285.78119711194097,
+                  "height": 229.45481649430954
+                },
+                "face": {
+                  "x": 417.09173688062265,
+                  "y": 198.66115164444287,
+                  "width": 121.33969983237444,
+                  "height": 80.1282241427675
+                },
+                "bodyOverlapArea": 2176,
+                "faceOverlapArea": 0,
+                "allBodyOverlapArea": 2176,
+                "otherLabelOverlapArea": 0,
+                "propInside": false
+              }
+            },
+            {
+              "at": 791.1000000089407,
+              "phase": {
+                "actorId": "mochi",
+                "skillId": "mochi-1",
+                "elapsed": 699.9000000000001
+              },
+              "hp": {
+                "label": {
+                  "x": 545.71875,
+                  "y": 219.203125,
+                  "width": 64,
+                  "height": 34
+                },
+                "actorId": "mochi",
+                "value": 732,
+                "alive": true,
+                "visible": true,
+                "body": {
+                  "x": 334.04277022519636,
+                  "y": 169.65663200990386,
+                  "width": 277.0229807918588,
+                  "height": 227.620806807825
+                },
+                "face": {
+                  "x": 421.7660638195945,
+                  "y": 196.68408957417475,
+                  "width": 117.95708796488213,
+                  "height": 79.04194033117162
+                },
+                "bodyOverlapArea": 2176,
+                "faceOverlapArea": 0,
+                "allBodyOverlapArea": 2176,
+                "otherLabelOverlapArea": 0,
+                "propInside": false
+              }
+            }
+          ],
+          "hpMaxOverlapArea": {
+            "bodyOverlapArea": 2472.6324383739798,
+            "faceOverlapArea": 0,
+            "allBodyOverlapArea": 5278.204786538601,
+            "otherLabelOverlapArea": 0
+          },
+          "bossActionSamples": 601,
+          "bossPhaseFailureCount": 0,
+          "bossPhaseFailures": [],
+          "postResult": {
+            "samples": 22,
+            "stableSamples": 19,
+            "lateCallbacks": 0,
+            "gates": {
+              "observed": true,
+              "allPaused": true,
+              "allSuspended": true,
+              "stoppedClock": true,
+              "stoppedDecoder": true
+            }
+          },
+          "gates": {
+            "observed": true,
+            "noFailures": true,
+            "sampledThroughResult": true,
+            "normalFramesAdvance": true,
+            "reducedClockStatic": true,
+            "ownUltimateObserved": true,
+            "ownCastSamples": true,
+            "hpObserved": true,
+            "hpClear": false,
+            "bossPhaseActionClear": true,
+            "postResult": true
+          }
+        },
+        "clover": {
+          "videoSrc": "http://127.0.0.1:6301/units/clover/designer-idle-6ac1c3d45c70bbc3.mp4",
+          "samples": 784,
+          "runningSamples": 783,
+          "seekingSamples": 1,
+          "sampleGapsMs": {
+            "samples": 783,
+            "median": 100.0,
+            "p95": 116.60000000000582,
+            "max": 149.89999999999964
+          },
+          "nonseekingRunningClockDriftSeconds": {
+            "samples": 782,
+            "median": 0.1256000000002615,
+            "p95": 0.15900000000441672,
+            "max": 0.1606000000046066
+          },
+          "callbacks": 2415,
+          "decodedIntervalsRunningWithoutCaptureMs": {
+            "samples": 2369,
+            "median": 33.30000000000291,
+            "p95": 50.0,
+            "max": 50.10000000000582
+          },
+          "observedTenSecondWraps": [
+            {
+              "before": 9.966667,
+              "after": 0,
+              "at": 5174.200000008941
+            },
+            {
+              "before": 9.966667,
+              "after": 0,
+              "at": 15190.500000008942
+            },
+            {
+              "before": 9.966667,
+              "after": 0,
+              "at": 25206.80000000894
+            },
+            {
+              "before": 9.966667,
+              "after": 0.033333,
+              "at": 35223.00000000894
+            },
+            {
+              "before": 9.966667,
+              "after": 0,
+              "at": 45222.60000000894
+            },
+            {
+              "before": 9.966667,
+              "after": 0.033333,
+              "at": 55255.60000000894
+            },
+            {
+              "before": 9.966667,
+              "after": 0,
+              "at": 65238.500000008935
+            },
+            {
+              "before": 9.966667,
+              "after": 0.033333,
+              "at": 75254.80000000894
+            }
+          ],
+          "events": {
+            "pause": 1,
+            "playing": 9,
+            "seeked": 8,
+            "seeking": 8,
+            "waiting": 8
+          },
+          "qualityFirst": {
+            "totalVideoFrames": 154,
+            "droppedVideoFrames": 0,
+            "corruptedVideoFrames": 0
+          },
+          "qualityLast": {
+            "totalVideoFrames": 2585,
+            "droppedVideoFrames": 19,
+            "corruptedVideoFrames": 0
+          },
+          "failureCount": 0,
+          "failures": [],
+          "hpSamples": 783,
+          "hpFailureCount": 752,
+          "hpFailures": [
+            {
+              "at": 24.500000008940788,
+              "phase": null,
+              "hp": {
+                "label": {
+                  "x": 324.515625,
+                  "y": 346.3125,
+                  "width": 64,
+                  "height": 34
+                },
+                "actorId": "clover",
+                "value": 475,
+                "alive": true,
+                "visible": true,
+                "body": {
+                  "x": 265.8585498227243,
+                  "y": 406.80000054310375,
+                  "width": 185.08290162477772,
+                  "height": 226.79999921605548
+                },
+                "face": {
+                  "x": 346.87471219110876,
+                  "y": 444.2244516903731,
+                  "width": 52.88082901554401,
+                  "height": 52.88082901554395
+                },
+                "bodyOverlapArea": 0,
+                "faceOverlapArea": 0,
+                "allBodyOverlapArea": 1745.899848587627,
+                "otherLabelOverlapArea": 0,
+                "propInside": false
+              }
+            },
+            {
+              "at": 124.50000000894079,
+              "phase": {
+                "actorId": "mochi",
+                "skillId": "mochi-1",
+                "elapsed": 33.29999999999973
+              },
+              "hp": {
+                "label": {
+                  "x": 324.515625,
+                  "y": 346.3125,
+                  "width": 64,
+                  "height": 34
+                },
+                "actorId": "clover",
+                "value": 475,
+                "alive": true,
+                "visible": true,
+                "body": {
+                  "x": 265.8585498227243,
+                  "y": 406.80000054310375,
+                  "width": 185.08290162477772,
+                  "height": 226.79999921605548
+                },
+                "face": {
+                  "x": 347.1477096072165,
+                  "y": 444.2958107003751,
+                  "width": 52.880829015544066,
+                  "height": 52.88082901554401
+                },
+                "bodyOverlapArea": 0,
+                "faceOverlapArea": 0,
+                "allBodyOverlapArea": 1751.2006075062748,
+                "otherLabelOverlapArea": 0,
+                "propInside": false
+              }
+            },
+            {
+              "at": 224.5000000089408,
+              "phase": {
+                "actorId": "mochi",
+                "skillId": "mochi-1",
+                "elapsed": 133.29999999999973
+              },
+              "hp": {
+                "label": {
+                  "x": 324.515625,
+                  "y": 346.3125,
+                  "width": 64,
+                  "height": 34
+                },
+                "actorId": "clover",
+                "value": 475,
+                "alive": true,
+                "visible": true,
+                "body": {
+                  "x": 265.8585498227243,
+                  "y": 406.80000054310375,
+                  "width": 185.08290162477772,
+                  "height": 226.79999921605548
+                },
+                "face": {
+                  "x": 347.4396091734196,
+                  "y": 444.1211540997668,
+                  "width": 52.880829015544066,
+                  "height": 52.880829015544066
+                },
+                "bodyOverlapArea": 0,
+                "faceOverlapArea": 0,
+                "allBodyOverlapArea": 1812.2773232006496,
+                "otherLabelOverlapArea": 0,
+                "propInside": false
+              }
+            },
+            {
+              "at": 341.20000000894106,
+              "phase": {
+                "actorId": "mochi",
+                "skillId": "mochi-1",
+                "elapsed": 249.9000000000001
+              },
+              "hp": {
+                "label": {
+                  "x": 324.515625,
+                  "y": 346.3125,
+                  "width": 64,
+                  "height": 34
+                },
+                "actorId": "clover",
+                "value": 475,
+                "alive": true,
+                "visible": true,
+                "body": {
+                  "x": 265.8585498227243,
+                  "y": 406.80000054310375,
+                  "width": 185.08290162477772,
+                  "height": 226.79999921605548
+                },
+                "face": {
+                  "x": 347.76427980842897,
+                  "y": 443.81602129353575,
+                  "width": 52.880829015544066,
+                  "height": 52.88082901554401
+                },
+                "bodyOverlapArea": 0,
+                "faceOverlapArea": 0,
+                "allBodyOverlapArea": 1802.402381060051,
+                "otherLabelOverlapArea": 0,
+                "propInside": false
+              }
+            },
+            {
+              "at": 491.1000000089407,
+              "phase": {
+                "actorId": "mochi",
+                "skillId": "mochi-1",
+                "elapsed": 366.5999999999999
+              },
+              "hp": {
+                "label": {
+                  "x": 323.75,
+                  "y": 346.71875,
+                  "width": 64,
+                  "height": 34
+                },
+                "actorId": "clover",
+                "value": 475,
+                "alive": true,
+                "visible": true,
+                "body": {
+                  "x": 265.09049833102665,
+                  "y": 407.21691012896946,
+                  "width": 185.0829016247776,
+                  "height": 226.79999921605548
+                },
+                "face": {
+                  "x": 347.207329372323,
+                  "y": 443.99148574767923,
+                  "width": 52.88082901554401,
+                  "height": 52.880829015544066
+                },
+                "bodyOverlapArea": 0,
+                "faceOverlapArea": 0,
+                "allBodyOverlapArea": 2176,
+                "otherLabelOverlapArea": 0,
+                "propInside": false
+              }
+            },
+            {
+              "at": 591.1000000089407,
+              "phase": {
+                "actorId": "mochi",
+                "skillId": "mochi-1",
+                "elapsed": 499.9000000000001
+              },
+              "hp": {
+                "label": {
+                  "x": 324.515625,
+                  "y": 346.3125,
+                  "width": 64,
+                  "height": 34
+                },
+                "actorId": "clover",
+                "value": 475,
+                "alive": true,
+                "visible": true,
+                "body": {
+                  "x": 265.8585498227243,
+                  "y": 406.80000054310375,
+                  "width": 185.08290162477772,
+                  "height": 226.79999921605548
+                },
+                "face": {
+                  "x": 347.89559720702584,
+                  "y": 444.3577918523627,
+                  "width": 52.88082901554401,
+                  "height": 52.880829015544066
+                },
+                "bodyOverlapArea": 0,
+                "faceOverlapArea": 0,
+                "allBodyOverlapArea": 2176,
+                "otherLabelOverlapArea": 0,
+                "propInside": false
+              }
+            },
+            {
+              "at": 691.1000000089407,
+              "phase": {
+                "actorId": "mochi",
+                "skillId": "mochi-1",
+                "elapsed": 599.9000000000001
+              },
+              "hp": {
+                "label": {
+                  "x": 324.515625,
+                  "y": 346.3125,
+                  "width": 64,
+                  "height": 34
+                },
+                "actorId": "clover",
+                "value": 475,
+                "alive": true,
+                "visible": true,
+                "body": {
+                  "x": 265.8585498227243,
+                  "y": 406.80000054310375,
+                  "width": 185.08290162477772,
+                  "height": 226.79999921605548
+                },
+                "face": {
+                  "x": 347.9603915280445,
+                  "y": 445.6722535535005,
+                  "width": 52.880829015544066,
+                  "height": 52.880829015544066
+                },
+                "bodyOverlapArea": 0,
+                "faceOverlapArea": 0,
+                "allBodyOverlapArea": 2075.7072963917517,
+                "otherLabelOverlapArea": 0,
+                "propInside": false
+              }
+            },
+            {
+              "at": 791.1000000089407,
+              "phase": {
+                "actorId": "mochi",
+                "skillId": "mochi-1",
+                "elapsed": 699.9000000000001
+              },
+              "hp": {
+                "label": {
+                  "x": 324.515625,
+                  "y": 346.3125,
+                  "width": 64,
+                  "height": 34
+                },
+                "actorId": "clover",
+                "value": 475,
+                "alive": true,
+                "visible": true,
+                "body": {
+                  "x": 265.8585498227243,
+                  "y": 406.80000054310375,
+                  "width": 185.08290162477772,
+                  "height": 226.79999921605548
+                },
+                "face": {
+                  "x": 348.0265631561077,
+                  "y": 446.8729883841326,
+                  "width": 52.880829015544066,
+                  "height": 52.88082901554412
+                },
+                "bodyOverlapArea": 0,
+                "faceOverlapArea": 0,
+                "allBodyOverlapArea": 1852.0770623433236,
+                "otherLabelOverlapArea": 0,
+                "propInside": false
+              }
+            }
+          ],
+          "hpMaxOverlapArea": {
+            "bodyOverlapArea": 0,
+            "faceOverlapArea": 0,
+            "allBodyOverlapArea": 4924.899848587627,
+            "otherLabelOverlapArea": 0
+          },
+          "bossActionSamples": 601,
+          "bossPhaseFailureCount": 0,
+          "bossPhaseFailures": [],
+          "postResult": {
+            "samples": 22,
+            "stableSamples": 19,
+            "lateCallbacks": 0,
+            "gates": {
+              "observed": true,
+              "allPaused": true,
+              "allSuspended": true,
+              "stoppedClock": true,
+              "stoppedDecoder": true
+            }
+          },
+          "gates": {
+            "observed": true,
+            "noFailures": true,
+            "sampledThroughResult": true,
+            "normalFramesAdvance": true,
+            "reducedClockStatic": true,
+            "ownUltimateObserved": true,
+            "ownCastSamples": true,
+            "hpObserved": true,
+            "hpClear": false,
+            "bossPhaseActionClear": true,
+            "postResult": true
+          }
+        }
+      },
+      "timeline": {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/dual-media-natural-r1-125906/normal/timeline.json",
+        "sha256": "76e5b8fd5ce7ebedc83d2efbc53a7b4b745196554641fdf13abb93cff169d0f6"
+      },
+      "distinctVideoSources": true,
+      "pass": false
+    },
+    {
+      "mode": "reduced",
+      "result": "party",
+      "naturalResultMs": 81166,
+      "actions": 55,
+      "ultimates": {
+        "mochi": 3,
+        "clover": 2,
+        "panko": 3,
+        "mallow": 4
+      },
+      "frameMsWithoutCaptureWindows": {
+        "samples": 4783,
+        "median": 16.69999999999709,
+        "p95": 16.79999999998836,
+        "max": 50
+      },
+      "renderCpuMsWithoutCaptureWindows": {
+        "samples": 4783,
+        "median": 4.0999999940395355,
+        "p95": 5,
+        "max": 54.3999999910593
+      },
+      "intervalsOver50p5ms": 0,
+      "media": {
+        "mochi": {
+          "videoSrc": "http://127.0.0.1:6301/units/mochi/designer-idle-3f92069b2aa15723.mp4",
+          "samples": 783,
+          "runningSamples": 0,
+          "seekingSamples": 0,
+          "sampleGapsMs": {
+            "samples": 782,
+            "median": 100.0,
+            "p95": 116.69999999999709,
+            "max": 133.29999999999563
+          },
+          "nonseekingRunningClockDriftSeconds": {
+            "samples": 0
+          },
+          "callbacks": 1,
+          "decodedIntervalsRunningWithoutCaptureMs": {
+            "samples": 0
+          },
+          "observedTenSecondWraps": [],
+          "events": {
+            "seeked": 1,
+            "seeking": 1
+          },
+          "qualityFirst": {
+            "totalVideoFrames": 49,
+            "droppedVideoFrames": 0,
+            "corruptedVideoFrames": 0
+          },
+          "qualityLast": {
+            "totalVideoFrames": 49,
+            "droppedVideoFrames": 0,
+            "corruptedVideoFrames": 0
+          },
+          "failureCount": 0,
+          "failures": [],
+          "hpSamples": 782,
+          "hpFailureCount": 782,
+          "hpFailures": [
+            {
+              "at": 60.3999999910593,
+              "phase": null,
+              "hp": {
+                "label": {
+                  "x": 546.34375,
+                  "y": 218.0625,
+                  "width": 64,
+                  "height": 34
+                },
+                "actorId": "mochi",
+                "value": 732,
+                "alive": true,
+                "visible": true,
+                "body": {
+                  "x": 337.1656294533051,
+                  "y": 169.2000008188987,
+                  "width": 272.8687508977014,
+                  "height": 226.79999881795854
+                },
+                "face": {
+                  "x": 423.98749999999995,
+                  "y": 195.77812500000005,
+                  "width": 116.35312499999998,
+                  "height": 78.55312499999991
+                },
+                "bodyOverlapArea": 2165.4814319342195,
+                "faceOverlapArea": 0,
+                "allBodyOverlapArea": 2165.4814319342195,
+                "otherLabelOverlapArea": 0,
+                "propInside": false
+              }
+            },
+            {
+              "at": 160.3999999910593,
+              "phase": {
+                "actorId": "mochi",
+                "skillId": "mochi-1",
+                "elapsed": 66.60000000000036
+              },
+              "hp": {
+                "label": {
+                  "x": 546.34375,
+                  "y": 218.0625,
+                  "width": 64,
+                  "height": 34
+                },
+                "actorId": "mochi",
+                "value": 732,
+                "alive": true,
+                "visible": true,
+                "body": {
+                  "x": 337.1656294533051,
+                  "y": 169.2000008188987,
+                  "width": 272.8687508977014,
+                  "height": 226.79999881795854
+                },
+                "face": {
+                  "x": 423.98749999999995,
+                  "y": 195.77812500000005,
+                  "width": 116.35312499999998,
+                  "height": 78.55312499999991
+                },
+                "bodyOverlapArea": 2165.4814319342195,
+                "faceOverlapArea": 0,
+                "allBodyOverlapArea": 2165.4814319342195,
+                "otherLabelOverlapArea": 0,
+                "propInside": false
+              }
+            },
+            {
+              "at": 260.49999999105967,
+              "phase": {
+                "actorId": "mochi",
+                "skillId": "mochi-1",
+                "elapsed": 166.69999999999982
+              },
+              "hp": {
+                "label": {
+                  "x": 546.34375,
+                  "y": 218.0625,
+                  "width": 64,
+                  "height": 34
+                },
+                "actorId": "mochi",
+                "value": 732,
+                "alive": true,
+                "visible": true,
+                "body": {
+                  "x": 337.1656294533051,
+                  "y": 169.2000008188987,
+                  "width": 272.8687508977014,
+                  "height": 226.79999881795854
+                },
+                "face": {
+                  "x": 423.98749999999995,
+                  "y": 195.77812500000005,
+                  "width": 116.35312499999998,
+                  "height": 78.55312499999991
+                },
+                "bodyOverlapArea": 2165.4814319342195,
+                "faceOverlapArea": 0,
+                "allBodyOverlapArea": 2165.4814319342195,
+                "otherLabelOverlapArea": 0,
+                "propInside": false
+              }
+            },
+            {
+              "at": 377.0999999910591,
+              "phase": {
+                "actorId": "mochi",
+                "skillId": "mochi-1",
+                "elapsed": 283.3000000000002
+              },
+              "hp": {
+                "label": {
+                  "x": 546.34375,
+                  "y": 218.0625,
+                  "width": 64,
+                  "height": 34
+                },
+                "actorId": "mochi",
+                "value": 732,
+                "alive": true,
+                "visible": true,
+                "body": {
+                  "x": 337.1656294533051,
+                  "y": 169.2000008188987,
+                  "width": 272.8687508977014,
+                  "height": 226.79999881795854
+                },
+                "face": {
+                  "x": 423.98749999999995,
+                  "y": 195.77812500000005,
+                  "width": 116.35312499999998,
+                  "height": 78.55312499999991
+                },
+                "bodyOverlapArea": 2165.4814319342195,
+                "faceOverlapArea": 0,
+                "allBodyOverlapArea": 2165.4814319342195,
+                "otherLabelOverlapArea": 0,
+                "propInside": false
+              }
+            },
+            {
+              "at": 493.79999999105894,
+              "phase": {
+                "actorId": "mochi",
+                "skillId": "mochi-1",
+                "elapsed": 366.6999999999998
+              },
+              "hp": {
+                "label": {
+                  "x": 546.34375,
+                  "y": 218.0625,
+                  "width": 64,
+                  "height": 34
+                },
+                "actorId": "mochi",
+                "value": 732,
+                "alive": true,
+                "visible": true,
+                "body": {
+                  "x": 337.1656294533051,
+                  "y": 169.2000008188987,
+                  "width": 272.8687508977014,
+                  "height": 226.79999881795854
+                },
+                "face": {
+                  "x": 423.98749999999995,
+                  "y": 195.77812500000005,
+                  "width": 116.35312499999998,
+                  "height": 78.55312499999991
+                },
+                "bodyOverlapArea": 2165.4814319342195,
+                "faceOverlapArea": 0,
+                "allBodyOverlapArea": 2165.4814319342195,
+                "otherLabelOverlapArea": 0,
+                "propInside": false
+              }
+            },
+            {
+              "at": 610.3999999910593,
+              "phase": {
+                "actorId": "mochi",
+                "skillId": "mochi-1",
+                "elapsed": 516.6000000000004
+              },
+              "hp": {
+                "label": {
+                  "x": 546.34375,
+                  "y": 218.0625,
+                  "width": 64,
+                  "height": 34
+                },
+                "actorId": "mochi",
+                "value": 732,
+                "alive": true,
+                "visible": true,
+                "body": {
+                  "x": 337.1656294533051,
+                  "y": 169.2000008188987,
+                  "width": 272.8687508977014,
+                  "height": 226.79999881795854
+                },
+                "face": {
+                  "x": 423.98749999999995,
+                  "y": 195.77812500000005,
+                  "width": 116.35312499999998,
+                  "height": 78.55312499999991
+                },
+                "bodyOverlapArea": 2165.4814319342195,
+                "faceOverlapArea": 0,
+                "allBodyOverlapArea": 2165.4814319342195,
+                "otherLabelOverlapArea": 0,
+                "propInside": false
+              }
+            },
+            {
+              "at": 710.3999999910593,
+              "phase": {
+                "actorId": "mochi",
+                "skillId": "mochi-1",
+                "elapsed": 616.6000000000004
+              },
+              "hp": {
+                "label": {
+                  "x": 546.34375,
+                  "y": 218.0625,
+                  "width": 64,
+                  "height": 34
+                },
+                "actorId": "mochi",
+                "value": 732,
+                "alive": true,
+                "visible": true,
+                "body": {
+                  "x": 337.1656294533051,
+                  "y": 169.2000008188987,
+                  "width": 272.8687508977014,
+                  "height": 226.79999881795854
+                },
+                "face": {
+                  "x": 423.98749999999995,
+                  "y": 195.77812500000005,
+                  "width": 116.35312499999998,
+                  "height": 78.55312499999991
+                },
+                "bodyOverlapArea": 2165.4814319342195,
+                "faceOverlapArea": 0,
+                "allBodyOverlapArea": 2165.4814319342195,
+                "otherLabelOverlapArea": 0,
+                "propInside": false
+              }
+            },
+            {
+              "at": 810.3999999910593,
+              "phase": {
+                "actorId": "mochi",
+                "skillId": "mochi-1",
+                "elapsed": 716.6000000000004
+              },
+              "hp": {
+                "label": {
+                  "x": 546.34375,
+                  "y": 218.0625,
+                  "width": 64,
+                  "height": 34
+                },
+                "actorId": "mochi",
+                "value": 732,
+                "alive": true,
+                "visible": true,
+                "body": {
+                  "x": 337.1656294533051,
+                  "y": 169.2000008188987,
+                  "width": 272.8687508977014,
+                  "height": 226.79999881795854
+                },
+                "face": {
+                  "x": 423.98749999999995,
+                  "y": 195.77812500000005,
+                  "width": 116.35312499999998,
+                  "height": 78.55312499999991
+                },
+                "bodyOverlapArea": 2165.4814319342195,
+                "faceOverlapArea": 0,
+                "allBodyOverlapArea": 2165.4814319342195,
+                "otherLabelOverlapArea": 0,
+                "propInside": false
+              }
+            }
+          ],
+          "hpMaxOverlapArea": {
+            "bodyOverlapArea": 2176,
+            "faceOverlapArea": 0,
+            "allBodyOverlapArea": 4987.4814319342195,
+            "otherLabelOverlapArea": 0
+          },
+          "bossActionSamples": 605,
+          "bossPhaseFailureCount": 0,
+          "bossPhaseFailures": [],
+          "postResult": {
+            "samples": 22,
+            "stableSamples": 19,
+            "lateCallbacks": 0,
+            "gates": {
+              "observed": true,
+              "allPaused": true,
+              "allSuspended": true,
+              "stoppedClock": true,
+              "stoppedDecoder": true
+            }
+          },
+          "gates": {
+            "observed": true,
+            "noFailures": true,
+            "sampledThroughResult": true,
+            "normalFramesAdvance": true,
+            "reducedClockStatic": true,
+            "ownUltimateObserved": true,
+            "ownCastSamples": true,
+            "hpObserved": true,
+            "hpClear": false,
+            "bossPhaseActionClear": true,
+            "postResult": true
+          }
+        },
+        "clover": {
+          "videoSrc": "http://127.0.0.1:6301/units/clover/designer-idle-6ac1c3d45c70bbc3.mp4",
+          "samples": 783,
+          "runningSamples": 0,
+          "seekingSamples": 0,
+          "sampleGapsMs": {
+            "samples": 782,
+            "median": 100.0,
+            "p95": 116.69999999999709,
+            "max": 133.29999999999563
+          },
+          "nonseekingRunningClockDriftSeconds": {
+            "samples": 0
+          },
+          "callbacks": 1,
+          "decodedIntervalsRunningWithoutCaptureMs": {
+            "samples": 0
+          },
+          "observedTenSecondWraps": [],
+          "events": {
+            "seeked": 1,
+            "seeking": 1
+          },
+          "qualityFirst": {
+            "totalVideoFrames": 162,
+            "droppedVideoFrames": 0,
+            "corruptedVideoFrames": 0
+          },
+          "qualityLast": {
+            "totalVideoFrames": 162,
+            "droppedVideoFrames": 0,
+            "corruptedVideoFrames": 0
+          },
+          "failureCount": 0,
+          "failures": [],
+          "hpSamples": 782,
+          "hpFailureCount": 768,
+          "hpFailures": [
+            {
+              "at": 60.3999999910593,
+              "phase": null,
+              "hp": {
+                "label": {
+                  "x": 324.515625,
+                  "y": 346.3125,
+                  "width": 64,
+                  "height": 34
+                },
+                "actorId": "clover",
+                "value": 475,
+                "alive": true,
+                "visible": true,
+                "body": {
+                  "x": 265.8585498227243,
+                  "y": 406.80000054310375,
+                  "width": 185.08290162477772,
+                  "height": 226.79999921605548
+                },
+                "face": {
+                  "x": 344.5922279792746,
+                  "y": 440.87875647668386,
+                  "width": 52.880829015544066,
+                  "height": 52.880829015544066
+                },
+                "bodyOverlapArea": 0,
+                "faceOverlapArea": 0,
+                "allBodyOverlapArea": 1745.899848587627,
+                "otherLabelOverlapArea": 0,
+                "propInside": false
+              }
+            },
+            {
+              "at": 160.3999999910593,
+              "phase": {
+                "actorId": "mochi",
+                "skillId": "mochi-1",
+                "elapsed": 66.60000000000036
+              },
+              "hp": {
+                "label": {
+                  "x": 324.515625,
+                  "y": 346.3125,
+                  "width": 64,
+                  "height": 34
+                },
+                "actorId": "clover",
+                "value": 475,
+                "alive": true,
+                "visible": true,
+                "body": {
+                  "x": 265.8585498227243,
+                  "y": 406.80000054310375,
+                  "width": 185.08290162477772,
+                  "height": 226.79999921605548
+                },
+                "face": {
+                  "x": 344.5922279792746,
+                  "y": 440.87875647668386,
+                  "width": 52.880829015544066,
+                  "height": 52.880829015544066
+                },
+                "bodyOverlapArea": 0,
+                "faceOverlapArea": 0,
+                "allBodyOverlapArea": 1745.899848587627,
+                "otherLabelOverlapArea": 0,
+                "propInside": false
+              }
+            },
+            {
+              "at": 260.49999999105967,
+              "phase": {
+                "actorId": "mochi",
+                "skillId": "mochi-1",
+                "elapsed": 166.69999999999982
+              },
+              "hp": {
+                "label": {
+                  "x": 324.515625,
+                  "y": 346.3125,
+                  "width": 64,
+                  "height": 34
+                },
+                "actorId": "clover",
+                "value": 475,
+                "alive": true,
+                "visible": true,
+                "body": {
+                  "x": 265.8585498227243,
+                  "y": 406.80000054310375,
+                  "width": 185.08290162477772,
+                  "height": 226.79999921605548
+                },
+                "face": {
+                  "x": 344.5922279792746,
+                  "y": 440.87875647668386,
+                  "width": 52.880829015544066,
+                  "height": 52.880829015544066
+                },
+                "bodyOverlapArea": 0,
+                "faceOverlapArea": 0,
+                "allBodyOverlapArea": 1745.899848587627,
+                "otherLabelOverlapArea": 0,
+                "propInside": false
+              }
+            },
+            {
+              "at": 377.0999999910591,
+              "phase": {
+                "actorId": "mochi",
+                "skillId": "mochi-1",
+                "elapsed": 283.3000000000002
+              },
+              "hp": {
+                "label": {
+                  "x": 324.515625,
+                  "y": 346.3125,
+                  "width": 64,
+                  "height": 34
+                },
+                "actorId": "clover",
+                "value": 475,
+                "alive": true,
+                "visible": true,
+                "body": {
+                  "x": 265.8585498227243,
+                  "y": 406.80000054310375,
+                  "width": 185.08290162477772,
+                  "height": 226.79999921605548
+                },
+                "face": {
+                  "x": 344.5922279792746,
+                  "y": 440.87875647668386,
+                  "width": 52.880829015544066,
+                  "height": 52.880829015544066
+                },
+                "bodyOverlapArea": 0,
+                "faceOverlapArea": 0,
+                "allBodyOverlapArea": 1745.899848587627,
+                "otherLabelOverlapArea": 0,
+                "propInside": false
+              }
+            },
+            {
+              "at": 493.79999999105894,
+              "phase": {
+                "actorId": "mochi",
+                "skillId": "mochi-1",
+                "elapsed": 366.6999999999998
+              },
+              "hp": {
+                "label": {
+                  "x": 324.515625,
+                  "y": 346.3125,
+                  "width": 64,
+                  "height": 34
+                },
+                "actorId": "clover",
+                "value": 475,
+                "alive": true,
+                "visible": true,
+                "body": {
+                  "x": 265.8585498227243,
+                  "y": 406.80000054310375,
+                  "width": 185.08290162477772,
+                  "height": 226.79999921605548
+                },
+                "face": {
+                  "x": 344.5922279792746,
+                  "y": 440.87875647668386,
+                  "width": 52.880829015544066,
+                  "height": 52.880829015544066
+                },
+                "bodyOverlapArea": 0,
+                "faceOverlapArea": 0,
+                "allBodyOverlapArea": 1745.899848587627,
+                "otherLabelOverlapArea": 0,
+                "propInside": false
+              }
+            },
+            {
+              "at": 610.3999999910593,
+              "phase": {
+                "actorId": "mochi",
+                "skillId": "mochi-1",
+                "elapsed": 516.6000000000004
+              },
+              "hp": {
+                "label": {
+                  "x": 324.515625,
+                  "y": 346.3125,
+                  "width": 64,
+                  "height": 34
+                },
+                "actorId": "clover",
+                "value": 475,
+                "alive": true,
+                "visible": true,
+                "body": {
+                  "x": 265.8585498227243,
+                  "y": 406.80000054310375,
+                  "width": 185.08290162477772,
+                  "height": 226.79999921605548
+                },
+                "face": {
+                  "x": 344.5922279792746,
+                  "y": 440.87875647668386,
+                  "width": 52.880829015544066,
+                  "height": 52.880829015544066
+                },
+                "bodyOverlapArea": 0,
+                "faceOverlapArea": 0,
+                "allBodyOverlapArea": 1745.899848587627,
+                "otherLabelOverlapArea": 0,
+                "propInside": false
+              }
+            },
+            {
+              "at": 710.3999999910593,
+              "phase": {
+                "actorId": "mochi",
+                "skillId": "mochi-1",
+                "elapsed": 616.6000000000004
+              },
+              "hp": {
+                "label": {
+                  "x": 324.515625,
+                  "y": 346.3125,
+                  "width": 64,
+                  "height": 34
+                },
+                "actorId": "clover",
+                "value": 475,
+                "alive": true,
+                "visible": true,
+                "body": {
+                  "x": 265.8585498227243,
+                  "y": 406.80000054310375,
+                  "width": 185.08290162477772,
+                  "height": 226.79999921605548
+                },
+                "face": {
+                  "x": 344.5922279792746,
+                  "y": 440.87875647668386,
+                  "width": 52.880829015544066,
+                  "height": 52.880829015544066
+                },
+                "bodyOverlapArea": 0,
+                "faceOverlapArea": 0,
+                "allBodyOverlapArea": 1745.899848587627,
+                "otherLabelOverlapArea": 0,
+                "propInside": false
+              }
+            },
+            {
+              "at": 810.3999999910593,
+              "phase": {
+                "actorId": "mochi",
+                "skillId": "mochi-1",
+                "elapsed": 716.6000000000004
+              },
+              "hp": {
+                "label": {
+                  "x": 324.515625,
+                  "y": 346.3125,
+                  "width": 64,
+                  "height": 34
+                },
+                "actorId": "clover",
+                "value": 475,
+                "alive": true,
+                "visible": true,
+                "body": {
+                  "x": 265.8585498227243,
+                  "y": 406.80000054310375,
+                  "width": 185.08290162477772,
+                  "height": 226.79999921605548
+                },
+                "face": {
+                  "x": 344.5922279792746,
+                  "y": 440.87875647668386,
+                  "width": 52.880829015544066,
+                  "height": 52.880829015544066
+                },
+                "bodyOverlapArea": 0,
+                "faceOverlapArea": 0,
+                "allBodyOverlapArea": 1745.899848587627,
+                "otherLabelOverlapArea": 0,
+                "propInside": false
+              }
+            }
+          ],
+          "hpMaxOverlapArea": {
+            "bodyOverlapArea": 0,
+            "faceOverlapArea": 0,
+            "allBodyOverlapArea": 4924.899848587627,
+            "otherLabelOverlapArea": 0
+          },
+          "bossActionSamples": 605,
+          "bossPhaseFailureCount": 0,
+          "bossPhaseFailures": [],
+          "postResult": {
+            "samples": 22,
+            "stableSamples": 19,
+            "lateCallbacks": 0,
+            "gates": {
+              "observed": true,
+              "allPaused": true,
+              "allSuspended": true,
+              "stoppedClock": true,
+              "stoppedDecoder": true
+            }
+          },
+          "gates": {
+            "observed": true,
+            "noFailures": true,
+            "sampledThroughResult": true,
+            "normalFramesAdvance": true,
+            "reducedClockStatic": true,
+            "ownUltimateObserved": true,
+            "ownCastSamples": true,
+            "hpObserved": true,
+            "hpClear": false,
+            "bossPhaseActionClear": true,
+            "postResult": true
+          }
+        }
+      },
+      "timeline": {
+        "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/dual-media-natural-r1-125906/reduced/timeline.json",
+        "sha256": "0ade8ba497c766ca1038cf02c86244d194c5c98a7f55f0d15e17baa1b463a348"
+      },
+      "distinctVideoSources": true,
+      "pass": false
+    }
+  ],
+  "captures": [
+    {
+      "mode": "normal",
+      "reason": "opening",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/dual-media-natural-r1-125906/normal/00-opening.png",
+      "sha256": "3d97135181a9e62415d76f25ba6cf19712f3488b7db28fa4ddbb3dc57082371b",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "utc": "2026-11-18T12:59:11.040Z",
+      "rgbMean": 112.85394603587963,
+      "rgbStdDev": 49.39470782094393
+    },
+    {
+      "mode": "normal",
+      "reason": "status",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/dual-media-natural-r1-125906/normal/01-status.png",
+      "sha256": "b63a2df63b3caa88d841b5cd116289e2f8984f7d7cabbb275e07fe98268c11e8",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "utc": "2026-11-18T12:59:14.343Z",
+      "rgbMean": 120.81426866319444,
+      "rgbStdDev": 57.906455456943355
+    },
+    {
+      "mode": "normal",
+      "reason": "ultimate-mallow",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/dual-media-natural-r1-125906/normal/02-ultimate-mallow.png",
+      "sha256": "9a4e67c2f0c3f95f0dd4404de83698a5cd182a71a2ea66509b8ecfe177527622",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "utc": "2026-11-18T12:59:21.694Z",
+      "rgbMean": 128.30169343171298,
+      "rgbStdDev": 62.252777375544426
+    },
+    {
+      "mode": "normal",
+      "reason": "ultimate-mochi",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/dual-media-natural-r1-125906/normal/03-ultimate-mochi.png",
+      "sha256": "d7ef81e664f7b76d01c3abfb8ff723952cea80aaadab8bef46bcbee75802af4a",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "utc": "2026-11-18T12:59:28.406Z",
+      "rgbMean": 120.13563512731481,
+      "rgbStdDev": 56.833762097335644
+    },
+    {
+      "mode": "normal",
+      "reason": "ultimate-clover",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/dual-media-natural-r1-125906/normal/04-ultimate-clover.png",
+      "sha256": "aed10af4cd187708191ca4d8c576c2a0fe68fb9cf9eb8f0ebd4af5f7edd28fc2",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "utc": "2026-11-18T12:59:30.667Z",
+      "rgbMean": 121.34220920138888,
+      "rgbStdDev": 55.049724452072034
+    },
+    {
+      "mode": "normal",
+      "reason": "ultimate-panko",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/dual-media-natural-r1-125906/normal/05-ultimate-panko.png",
+      "sha256": "1f22982444b0415b4ddbafe75b503635387d9d2be942372efbd313109262a5f2",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "utc": "2026-11-18T12:59:32.894Z",
+      "rgbMean": 115.10668981481481,
+      "rgbStdDev": 51.945474527437284
+    },
+    {
+      "mode": "normal",
+      "reason": "result-ready",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/dual-media-natural-r1-125906/normal/06-result-ready.png",
+      "sha256": "d879d37ff0fe10b263102212cd13bd826aca9cded44ce9035f1dd149d20c1b75",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "utc": "2026-11-18T13:00:32.760Z",
+      "rgbMean": 52.567744140625,
+      "rgbStdDev": 39.87718573296528
+    },
+    {
+      "mode": "normal",
+      "reason": "result-later",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/dual-media-natural-r1-125906/normal/07-result-later.png",
+      "sha256": "299b6a9b5ae51235fbdb25763c89d41e5bf36d24759d35f0385d09e22988051b",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "utc": "2026-11-18T13:00:34.428Z",
+      "rgbMean": 53.51699978298611,
+      "rgbStdDev": 42.162610700714104
+    },
+    {
+      "mode": "reduced",
+      "reason": "opening",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/dual-media-natural-r1-125906/reduced/00-opening.png",
+      "sha256": "3d97135181a9e62415d76f25ba6cf19712f3488b7db28fa4ddbb3dc57082371b",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "utc": "2026-11-18T13:00:41.869Z",
+      "rgbMean": 112.85394603587963,
+      "rgbStdDev": 49.39470782094393
+    },
+    {
+      "mode": "reduced",
+      "reason": "status",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/dual-media-natural-r1-125906/reduced/01-status.png",
+      "sha256": "4ceaa3ce660c0b0a38e9cec7e2c5aa186f91d8ac64a85fa9e065ed2b6e570e54",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "utc": "2026-11-18T13:00:45.189Z",
+      "rgbMean": 115.18885561342593,
+      "rgbStdDev": 53.24799198057638
+    },
+    {
+      "mode": "reduced",
+      "reason": "ultimate-mallow",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/dual-media-natural-r1-125906/reduced/02-ultimate-mallow.png",
+      "sha256": "9ce8491f79ef2ae03875ff19237f7aef0889cef49c856b9274af87af9697797e",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "utc": "2026-11-18T13:00:52.531Z",
+      "rgbMean": 121.18543294270833,
+      "rgbStdDev": 58.31305642223343
+    },
+    {
+      "mode": "reduced",
+      "reason": "ultimate-mochi",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/dual-media-natural-r1-125906/reduced/03-ultimate-mochi.png",
+      "sha256": "054fed4309b61b00f3dc38f1d4fddcb9b23240c1e1f253a3d424571be737e536",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "utc": "2026-11-18T13:00:59.221Z",
+      "rgbMean": 119.85127640335648,
+      "rgbStdDev": 56.705396101667525
+    },
+    {
+      "mode": "reduced",
+      "reason": "ultimate-clover",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/dual-media-natural-r1-125906/reduced/04-ultimate-clover.png",
+      "sha256": "8ff2be976bb7a2dd3fa6f72395815494cdeca76d80c0e343d28e49d9c81db51a",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "utc": "2026-11-18T13:01:01.567Z",
+      "rgbMean": 121.67482421875,
+      "rgbStdDev": 55.237722340208585
+    },
+    {
+      "mode": "reduced",
+      "reason": "ultimate-panko",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/dual-media-natural-r1-125906/reduced/05-ultimate-panko.png",
+      "sha256": "bc2c57892babbe9666ae71ebb71e2e174f445c6aadf0afd444fd839b8fc012bd",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "utc": "2026-11-18T13:01:03.801Z",
+      "rgbMean": 115.28267975983796,
+      "rgbStdDev": 53.07473144518051
+    },
+    {
+      "mode": "reduced",
+      "reason": "result-ready",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/dual-media-natural-r1-125906/reduced/06-result-ready.png",
+      "sha256": "7ad5650dd143d89776a457032dc4dc5a8072772a2399cbdefe0b01a426f29b6c",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "utc": "2026-11-18T13:02:03.655Z",
+      "rgbMean": 53.453277633101855,
+      "rgbStdDev": 42.05270312730509
+    },
+    {
+      "mode": "reduced",
+      "reason": "result-later",
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/dual-media-natural-r1-125906/reduced/07-result-later.png",
+      "sha256": "7ad5650dd143d89776a457032dc4dc5a8072772a2399cbdefe0b01a426f29b6c",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "utc": "2026-11-18T13:02:05.309Z",
+      "rgbMean": 53.453277633101855,
+      "rgbStdDev": 42.05270312730509
+    }
+  ],
+  "reviewImages": [
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/dual-media-natural-r1-125906/review/normal-0.jpg",
+      "sha256": "7fcfc4b0bab7067d11dbfcae1123982de90561093c7c9b0a35327ec5db5dbec4",
+      "dimensions": [
+        1024,
+        576
+      ],
+      "mode": "normal",
+      "reasons": [
+        "opening",
+        "status",
+        "ultimate-mallow",
+        "ultimate-mochi"
+      ],
+      "bytes": 227122,
+      "reviewed": true,
+      "views": 1,
+      "reviewedUTC": "2026-11-18T13:04:02.987650+00:00"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/dual-media-natural-r1-125906/review/normal-1.jpg",
+      "sha256": "f5a3f8777573cbf3ac9569cec299ba1b850ec47a127e061561aa8636d09093c4",
+      "dimensions": [
+        1024,
+        576
+      ],
+      "mode": "normal",
+      "reasons": [
+        "ultimate-clover",
+        "ultimate-panko",
+        "result-ready",
+        "result-later"
+      ],
+      "bytes": 219467,
+      "reviewed": true,
+      "views": 1,
+      "reviewedUTC": "2026-11-18T13:04:02.987650+00:00"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/dual-media-natural-r1-125906/review/reduced-0.jpg",
+      "sha256": "ccdd47001a61b25ac9a4e2975686a825121ababcdc9c06ca34350af181092c34",
+      "dimensions": [
+        1024,
+        576
+      ],
+      "mode": "reduced",
+      "reasons": [
+        "opening",
+        "status",
+        "ultimate-mallow",
+        "ultimate-mochi"
+      ],
+      "bytes": 225981,
+      "reviewed": true,
+      "views": 1,
+      "reviewedUTC": "2026-11-18T13:04:02.987650+00:00"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/dual-media-natural-r1-125906/review/reduced-1.jpg",
+      "sha256": "9c44ffc1ad8df7c072d49b53aeaa8be3b9e24b5230b7e67eed864eb72a6759b7",
+      "dimensions": [
+        1024,
+        576
+      ],
+      "mode": "reduced",
+      "reasons": [
+        "ultimate-clover",
+        "ultimate-panko",
+        "result-ready",
+        "result-later"
+      ],
+      "bytes": 221020,
+      "reviewed": true,
+      "views": 1,
+      "reviewedUTC": "2026-11-18T13:04:02.987650+00:00"
+    }
+  ],
+  "visualReviewed": true,
+  "numericPass": false,
+  "limits": "Two sampled decoder lifecycles on local M3 Pro with recorded host load; seeded fixture, unchanged rules and speed1. DOM measurements and screenshots add overhead. Intervals are descriptive, not normal-laptop performance acceptance. Rectangle overlaps conservatively include transparent bounds. No continuous pixel/alpha/seam/anatomy claim. Initial hidden intro is excluded; its separate R2 failure/corrected evidence remain. Runtime source unpatched; commissioned registry override is explicit in the pinned descriptor.",
+  "observationsFrozenUTC": "2026-11-18T13:04:02.987650+00:00",
+  "visualFindings": [
+    "Four fresh1024x576 sheets viewed once. All four party cats are visible in opening,cast and victory samples in both modes;no broad black video rectangle or missing commissioned actor is apparent at this review scale.",
+    "Mochi HP sits beside the right face/prop edge;Clover HP sits well above Clover and near the lower extent of the upper party row. Both faces remain visible in these sampled opening/ordinary views. Rectangle overlap alone does not establish painted-pixel occlusion.",
+    "Mochi shield and Clover leaf bursts remain conspicuous;sampled bright effects obscure parts of party bodies. These views do not establish all-frame readability or fine-edge/halo acceptance.",
+    "The victory group shows both commissioned cats plus Panko/Mallow. Numeric retained decoder suspension passes for both cats;the pictures alone do not prove decoder lifecycle.",
+    "Clover tail loop remains separately rejected;this sparse natural capture does not evaluate its exact wrap."
+  ],
+  "disposition": "SCOPED PASS rules,dual media progression/identity,boss phase yield and victory suspension;FAIL conservative HP/body rectangle gate;painted-pixel attribution remains OPEN. Overall numericPass stays false.",
+  "rulesAndLifecyclePass": true
+}
