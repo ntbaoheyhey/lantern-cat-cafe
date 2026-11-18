@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Fail-loud offline codec/loop gate. Native placement and total cold bytes are separate gates."""
+"""Fail-loud offline codec/loop gate. Native placement remains separate; byte sizes are report-only."""
 import json,subprocess,hashlib,sys
 from pathlib import Path
 from datetime import datetime,timezone
@@ -14,7 +14,7 @@ for p,expected in zip(files,receipt['files']):check('hash '+p.name,hashlib.sha25
 probe=json.loads(subprocess.check_output(['ffprobe','-v','error','-select_streams','v:0','-show_entries','stream=width,height,nb_frames,r_frame_rate,duration,pix_fmt,color_space,color_transfer','-of','json',str(video)]))['streams'][0]
 check('ten seconds 300 frames 30fps',probe['nb_frames']=='300' and probe['r_frame_rate']=='30/1' and float(probe['duration'])==10,probe)
 check('packed dimensions',probe['width']==w and probe['height']==h*2,[probe['width'],probe['height']])
-check('video intake <=1MB',video.stat().st_size<=1000000,video.stat().st_size)
+video_bytes_report_only=video.stat().st_size  # OWNER INBOX-CXI386 removes byte caps.
 check('explicit BT601 sRGB metadata',probe.get('color_space')=='smpte170m' and probe.get('color_transfer')=='iec61966-2-1',probe)
 source=np.memmap(BASE/'matte-r2/mochi-premul.rgba',np.uint8,'r',shape=(300,h,w,4))
 decoded_path=BASE/'candidate-mochi/decoded.rgb'
@@ -41,6 +41,6 @@ for name,(x0,y0,x1,y1) in regions.items():
   return float(np.abs((a+255-ma[:,:,None])-(b+255-mb[:,:,None])).mean())
  values=[distance(i,i-1) for i in range(1,300)];p95=float(np.percentile(values,95));seam=distance(299,0)
  seams[name]={'seamMAE':seam,'adjacentP95':p95,'ratio':seam/max(1,p95)};check(name+' loop <=1.5x adjacentP95 +1',seam<=p95*1.5+1,seams[name])
-report={'utc':datetime.now(timezone.utc).isoformat(),'kind':'offline-only','cat':'mochi','crf':receipt.get('crf',28),'manifestSha256':hashlib.sha256(manifest_path.read_bytes()).hexdigest(),'checks':checks,'pass':all(c['pass']for c in checks),'nativeAssetAcceptance':False}
+report={'utc':datetime.now(timezone.utc).isoformat(),'kind':'offline-only','cat':'mochi','crf':receipt.get('crf',28),'manifestSha256':hashlib.sha256(manifest_path.read_bytes()).hexdigest(),'checks':checks,'pass':all(c['pass']for c in checks),'nativeAssetAcceptance':False,'videoBytes':video_bytes_report_only,'bytePolicy':'report-only; OWNER INBOX-CXI386'}
 (BASE/f'candidate-mochi/offline-gate-crf{receipt.get("crf",28)}.json').write_text(json.dumps(report,indent=2)+'\n')
 (ROOT/'reports/v5/CXI/evidence/v8-m-mochi-offline-gate.json').write_text(json.dumps(report,indent=2)+'\n');print(json.dumps(report));sys.exit(0 if report['pass'] else 1)

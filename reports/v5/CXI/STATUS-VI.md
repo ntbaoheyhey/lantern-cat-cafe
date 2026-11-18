@@ -38,3 +38,5 @@ Cập nhật 2026-11-18T05:16:45.928309+00:00. Panko đã qua16 kiểm tra tập
 2026-11-18T11:37:04.906806+00:00 — Atlas R3: 6 lượt/672 mẫu/756 bề mặt hiệu ứng trùng khớp; 5.519 test đạt, 11 bỏ qua, 2 lỗi dự kiến. Tải lạnh 9.199.107/9.638.539/9.227.294 byte vẫn vượt8MB. Đã có4 bản video GOP1s/2s thực tế; chất lượng nén đạt nhưng chia đoạn riêng chưa đủ ngân sách. Chưa phát hành; âm thanh và texture R12 không được thay thế.
 
 2026-11-18T11:53:03.364738+00:00: Bản thử chỉ có 9 mèo native đang chạy ở6301;Mochi/Clover chưa bật trong bản phát hành. Wave1/boss đạt8MB,wave3 còn vượt39.216byte. Đã kiểm chứng lại65khung Clover:điểm nối đuôi vẫn nhảy,không do chân/gốc bị dịch;chưa chấp nhận chất lượng viền/halo. Nghiên cứu nén dữ liệu rig không mất số liệu;chưa tích hợp. Bản phát hành vẫn v5-m1.13.
+
+2026-11-18T12:19:33.429998+00:00 — NativeR2 qua5.552kiểm tra(5.539đạt,11bỏqua,2lỗi dự kiến),7bước browser và3phim thật30giây;đòn đầu20,880giây.9ảnh mới đã xem. Chuẩn bị tagv5-m1.14 cho9mèo native;Mochi/Clover commissioned chưa bật. Owner bỏ8MB nên tải7.591.445/8.030.924/7.624.476byte chỉ báo cáo.

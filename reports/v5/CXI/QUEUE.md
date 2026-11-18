@@ -1,7 +1,7 @@
 # CXI V8 — Batch M first
 M-I1 OPEN: Mochi four-plane clip931787B/package1032955B native300frames PASS; source registry empty. Clover817118Bclip/897635Bpackage nativeall300framesPASS;own26decodedcastrows/2views scopedPASS;tail/head/off open;HPnative56rows/0overlap accepted;source registryempty.
 M-I2 OPEN: loader suspension9bcbce1d5+scene00903 imported45f0d8c73;40focused/TSC0;R6 own146sample retained-decoder/victory gatePASS,2freshviews;naturalR3 numericACCEPT35hashes/1059actionrows/28postresult;nativevisibilityOPEN. AtlasR3 dualcat cold9199107/9638539/9227294B FAIL8MB;native effect parity6runs672rows756surfaces exact;fullsuite5519pass/11skip/2expected. Ordinary1x/performance and media performance require verified receipts.
-M-I3 OPEN: release only after byte/quality/performance/journey/film gates; latest green milestone v5-m1.13; R6 untagged,fullsuite5499exit0.
+M-I3 OPEN: release only after quality/performance/journey/film gates;bytes report-only; latest green milestone v5-m1.13; R6 untagged,fullsuite5499exit0.
 SOOT EXCLUDED:3833 protected paths unchanged fromc4bd12552; shared runtime parity retained. Never import retractedPanko d419002a4.
 CXV ACCEPT: all9nativecats scoped motion; FIELD5 R2; Mochi304sample idle/300hashes/equal227px; R4cast290samples/280frames+focusalpha. Do not reopen reviewed views.
 CXV VICTORY: exact6eb22f242 two-file import; ownR5 146samples+2freshviews PASS; fullsuite5471=5458passed+11skipped+2expectedfail,exit0. CXV native140/reduced-restore ACCEPT11verifiedhashes/fullPNGexact.
@@ -15,7 +15,7 @@ AUDIO OPEN:36cue ends fit; full/small6sets296493/156500B hashverified. Listening
 
 Deferred V7 work; Batch M remains priority1
 I-A DONE/REPEAT:v5-m1.13@4e5fe161a atomicpush verified; paused-battle recovery; full5374 exit0.
-I-B OPEN: m1.13cold7667824/8230950/7743499B; 4halfAVIF accepted94340B saving/nativefallback; currentMochi gap wave3975988B.
+I-B CAP CANCELLED byOWNER12:09Z;report-only: m1.13cold7667824/8230950/7743499B; 4halfAVIF accepted94340B saving/nativefallback; currentMochi gap wave3975988B.
 I-C FIRST-HIT DONE priorbuild:20448ms including17700ms reading8cards; HP165→119; freshcandidate verification required.
 I-D IMPLEMENTATION DONE/PUBLIC OWNER-ONLY:truthful receipt,5bytecodechecks,localAnvil516ms; no publictransaction; Vietnamese runbook exact.
 I-E DONE/REFRESH:m1.13 threeactual1x30sfilms/audio1280x720;8images measured/reviewed; newrelease requires freshfilms.
@@ -39,3 +39,9 @@ SUPERSEDED historical: ATLAS CANDIDATE:2272sourcecases/33792draw samples;51focus
 
 CURRENT native-only6301 source0b669/index3e7d27;leaseCXI sinceCXVrelease12:09:20Z;validation underway. Cold7599894/8039216/7629873B,wave3FAIL39216B;dualcatAtlasR3 preserved. No newrelease.
 CloverART R2 numericACCEPT72hashes/180MAE;seamREJECT persists;Mochi/Clover unregistered. Rigdata WIP full-tree dictionary implemented;focused/typecheck/native/freshcold pending;no release.
+
+OWNER OVERRIDE12:09:40Z (INBOX386): no byte cap;bytes report-only for all candidates,never an art/release blocker. Historical FAIL8MB labels are historical measurements only.
+
+NATIVE R2 gatesPASS:sourcec4108923c/indexfe8bdd,5539passed+11skip+2expected;24focused/TSC0/18nativefault cases;7browsersteps,3films,9freshviews. Cold7591445/8030924/7624476B report-only;firsthit20880ms. v5-m1.14 prepared.
+Clover R5head/R6paw numericACCEPT21artifacts/24freshcontrols/3000fractionalexportchecks;freePaw loader+212x260 conversion pending. NativeR1 sixnaturalwins ACCEPT63hashes/48PNGs/270actions;no laneviews reopened.
+AGV R12 byte-only rejection SUPERSEDED;quality UNREVIEWED,noadoption. Audio49+10hashes exact;replacement provenance/timing/gain/listening unresolved.

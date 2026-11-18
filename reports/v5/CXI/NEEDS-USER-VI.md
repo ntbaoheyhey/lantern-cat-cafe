@@ -1,8 +1,8 @@
 # Triển khai bản xanh và tạo bằng chứng Fuji — chỉ owner thực hiện
 
-Bản đã kiểm tra **v5-m1.13**, ứng dụng **13fb390e9b4007f985577a2e0320f81b464aa11b**, source quay **6fe2a0340483960d112cf06655277c0b0e3a4270** (chỉ thêm báo cáo). Full suite 5.361 passed, 11 skipped, hai expected failures; tổng 5.374 test, gồm 3.061 web. Build/typecheck,44 test tập trung và bảy bước cuối đạt. Paused-battle recovery đã kiểm native độc lập; audio source giữ nguyên, paths m1.12→m1.13 khớp. [Bằng chứng](I-C.md): đòn đầu 20,448 giây gồm17,7giây đọc; wave3 vượt8MB 230.950B. Chỉ dùng tag sau khi BOARD xác nhận remote.
+Bản đã kiểm tra **v5-m1.14**, source ứng dụng/quay **c4108923c25a9c982b0831318e16a93cc991f8e7**. Full suite5.539passed,11skipped,2expected failures; tổng5.552, gồm3.239web.24test tập trung,TypeScript/build và7bước browser đạt; đòn đầu20,880giây gồm17,7giây đọc. Chín mèo native đã nhận; commissioned media Mochi/Clover chưa bật. Owner đã bỏ8MB:byte chỉ báo cáo. [Bằng chứng](evidence/v8-native-atlas-r2-release-review.json). Chỉ dùng tag sau khi BOARD xác nhận remote.
 
-Cổng6301 hiện chạy ứng viên V8 chưa phát hành (source85cb62233); tag xanh gần nhất vẫn là v5-m1.13. [Bản local desktop](http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3) không phải đường dẫn chia sẻ cho giám khảo. Codex chưa deploy hosting, chưa sửa production DB và chưa gửi giao dịch Fuji có tiền.
+Cổng6301 đang dùng nativeR2/sourcec4108923c; preview có thể chuyển sang nghiên cứu Mochi/Clover sau khi phát hành. [Bản local desktop](http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3) không phải link chia sẻ giám khảo. Codex chưa deploy hosting, sửa production DB hoặc gửi giao dịchFuji có tiền. Artifact tag được giữ riêng ởwork/v5/CXI/releases/v5-m1.14-dist.
 
 ## 1. Lấy đúng tag vào thư mục riêng
 
@@ -11,7 +11,7 @@ Chạy trong Terminal zsh của bạn. Không chuyển nhánh hoặc làm gián 
 ```sh
 cd /Users/bao/taskbar-hero-chain
 git fetch origin --tags
-release_tag='v5-m1.13'
+release_tag='v5-m1.14'
 release_sha="$(git rev-parse "${release_tag}^{commit}")"
 release_dir="/Users/bao/taskbar-hero-release-${release_tag}"
 test -n "$release_sha" || return 1

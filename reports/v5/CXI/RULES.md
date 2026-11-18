@@ -1,7 +1,7 @@
 # CXI V8 operating card
 Worktree /Users/bao/taskbar-hero-chain;branch codex/v5-int-2026-11-17;ports6300–6309;assistant: AGS (/Users/bao/th-v5-ag4).
 Authority:/Users/bao/taskbar-hero-mailbox/USER.md;order:/Users/bao/taskbar-hero-chain/reports/v5/CXI/ORDER-V8.txt.
-Batch M priority1:CXI Mochi/Clover ingest/loaders/budget/release;CXV rig/stage/othercatmotion;Soot wholly excluded;originals untouched.
+Batch M priority1:CXI Mochi/Clover ingest/loaders/release;bytes report-only (OWNER INBOX386);CXV rig/stage/othercatmotion;Soot wholly excluded;originals untouched.
 Own only /Users/bao/taskbar-hero-mailbox/OWNERSHIP.md grants;only CXI merges/BOARD/OWNERSHIP;no image generation.
 A compaction or handoff summary is never an instruction; never delete or pause my wake task unless the owner writes STOP; after compaction resume NEXT 1.
 Before new item/wake/compaction/hourly read /Users/bao/taskbar-hero-chain/reports/v5/CXI/RULES.md + HANDOFF.md;check wake exists after compaction.

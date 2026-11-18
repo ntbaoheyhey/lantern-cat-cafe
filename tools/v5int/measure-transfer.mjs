@@ -42,7 +42,7 @@ const report={at:new Date().toISOString(),...identity,
  indexSha256:hash(productionIndex),harnessSha256:hash(readFileSync(import.meta.filename)),viewport:{width:1280,height:720},
  method:'Fresh Chromium context, service workers blocked, HTTP cache disabled. Count the full encoded response of every request started from navigation to visible battle-ready UI, including navigation and responses finishing after readiness. Production bundles only; unchanged official rules/fixtures are prepared outside the browser, then selected through the existing review interface.',
  limits:['These are cold combat fixture entries, not guest authentication, sponsored transaction, or campaign journey evidence.','No development server/source module is requested by the browser. The existing dev=1 review switch only selects the official fixture.'],
- rows:[],complete:false,budgetPass:false};
+ bytePolicy:{mode:"report-only",releaseBlocking:false,authority:"OWNER INBOX-CXI386 2026-11-18T12:09:40Z",formerReferenceBytes:8_000_000},rows:[],complete:false,withinFormer8MB:false};
 const save=()=>writeFileSync(reportPath,JSON.stringify(report,null,2)+'\n');
 const modules=await loadRules(),R=await modules.load('packages/game-rules/src/cardrpg/depth/index.ts');
 const browser=await chromium.launch({headless:true,args:['--use-angle=metal']});
@@ -110,7 +110,7 @@ try{
    row.transfer=transferSummary(records,boundary);
    row.top15=[...row.transfer.resources].sort((a,b)=>(b.totalBytes??0)-(a.totalBytes??0)).slice(0,15);
    row.complete=row.transfer.valid&&!row.errors.length&&!row.httpFailures.length&&!row.blocked.length&&!row.developmentPaths.length;
-   row.budgetPass=row.complete&&row.transfer.conservativeTransferBytes<=8_000_000;
+   row.withinFormer8MB=row.complete&&row.transfer.conservativeTransferBytes<=8_000_000;
    if(args.capture==='true'){
     row.captures=[];
     await page.evaluate(()=>{window.__depthReview.paused=true;cancelAnimationFrame(window.__depthScene.raf);});
@@ -121,11 +121,11 @@ try{
    }
   }catch(error){row.failure=String(error.message).slice(0,500);}
   finally{await cdp.detach();await context.close();save();}
-  console.log(JSON.stringify({fixture:fixture.id,totalBytes:row.transfer?.conservativeTransferBytes,complete:row.complete,budgetPass:row.budgetPass,failure:row.failure,errors:row.errors}));
+  console.log(JSON.stringify({fixture:fixture.id,totalBytes:row.transfer?.conservativeTransferBytes,complete:row.complete,withinFormer8MB:row.withinFormer8MB,failure:row.failure,errors:row.errors}));
   console.log('top15 '+fixture.id+' '+JSON.stringify(row.top15?.map(({path,totalBytes})=>({path,bytes:totalBytes}))??[]));
  }
  report.complete=report.rows.length>0&&report.rows.every(row=>row.complete);
- report.budgetPass=report.complete&&report.rows.every(row=>row.budgetPass);
+ report.withinFormer8MB=report.complete&&report.rows.every(row=>row.withinFormer8MB);
 }finally{await browser.close();await modules.vite.close();save();}
-console.log(JSON.stringify({report:relative(root,reportPath),complete:report.complete,budgetPass:report.budgetPass}));
+console.log(JSON.stringify({report:relative(root,reportPath),complete:report.complete,withinFormer8MB:report.withinFormer8MB}));
 if(!report.complete)process.exitCode=1;

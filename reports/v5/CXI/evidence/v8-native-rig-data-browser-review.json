@@ -1,0 +1,155 @@
+{
+  "utc": "2026-11-18T12:17:35.686739+00:00",
+  "sourceCommit": "c4108923c25a9c982b0831318e16a93cc991f8e7",
+  "raw": {
+    "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/rig-data-native-r1/report.json",
+    "sha256": "ba8e5dd4de3913e389bfc0d7e7f988b9a350d38daf36e9e4ee4b2e458486df90"
+  },
+  "runs": [
+    {
+      "engine": "chromium",
+      "version": "156.0.8078.4",
+      "mode": "success",
+      "exactRows": 10,
+      "sharedRequests": 1,
+      "fallbackRequests": 0
+    },
+    {
+      "engine": "chromium",
+      "version": "156.0.8078.4",
+      "mode": "direct",
+      "exactRows": 1,
+      "sharedRequests": 0,
+      "fallbackRequests": 1
+    },
+    {
+      "engine": "chromium",
+      "version": "156.0.8078.4",
+      "mode": "unit-http",
+      "exactRows": 1,
+      "sharedRequests": 1,
+      "fallbackRequests": 1
+    },
+    {
+      "engine": "chromium",
+      "version": "156.0.8078.4",
+      "mode": "unit-integrity",
+      "exactRows": 1,
+      "sharedRequests": 1,
+      "fallbackRequests": 1
+    },
+    {
+      "engine": "chromium",
+      "version": "156.0.8078.4",
+      "mode": "dictionary-http",
+      "exactRows": 1,
+      "sharedRequests": 1,
+      "fallbackRequests": 1
+    },
+    {
+      "engine": "chromium",
+      "version": "156.0.8078.4",
+      "mode": "dictionary-integrity",
+      "exactRows": 1,
+      "sharedRequests": 1,
+      "fallbackRequests": 1
+    },
+    {
+      "engine": "chromium",
+      "version": "156.0.8078.4",
+      "mode": "dictionary-retry",
+      "exactRows": 3,
+      "sharedRequests": 2,
+      "fallbackRequests": 2
+    },
+    {
+      "engine": "chromium",
+      "version": "156.0.8078.4",
+      "mode": "unit-stall",
+      "exactRows": 1,
+      "sharedRequests": 1,
+      "fallbackRequests": 1
+    },
+    {
+      "engine": "chromium",
+      "version": "156.0.8078.4",
+      "mode": "dictionary-stall",
+      "exactRows": 1,
+      "sharedRequests": 1,
+      "fallbackRequests": 1
+    },
+    {
+      "engine": "webkit",
+      "version": "27.2",
+      "mode": "success",
+      "exactRows": 10,
+      "sharedRequests": 1,
+      "fallbackRequests": 0
+    },
+    {
+      "engine": "webkit",
+      "version": "27.2",
+      "mode": "direct",
+      "exactRows": 1,
+      "sharedRequests": 0,
+      "fallbackRequests": 1
+    },
+    {
+      "engine": "webkit",
+      "version": "27.2",
+      "mode": "unit-http",
+      "exactRows": 1,
+      "sharedRequests": 1,
+      "fallbackRequests": 1
+    },
+    {
+      "engine": "webkit",
+      "version": "27.2",
+      "mode": "unit-integrity",
+      "exactRows": 1,
+      "sharedRequests": 1,
+      "fallbackRequests": 1
+    },
+    {
+      "engine": "webkit",
+      "version": "27.2",
+      "mode": "dictionary-http",
+      "exactRows": 1,
+      "sharedRequests": 1,
+      "fallbackRequests": 1
+    },
+    {
+      "engine": "webkit",
+      "version": "27.2",
+      "mode": "dictionary-integrity",
+      "exactRows": 1,
+      "sharedRequests": 1,
+      "fallbackRequests": 1
+    },
+    {
+      "engine": "webkit",
+      "version": "27.2",
+      "mode": "dictionary-retry",
+      "exactRows": 3,
+      "sharedRequests": 2,
+      "fallbackRequests": 2
+    },
+    {
+      "engine": "webkit",
+      "version": "27.2",
+      "mode": "unit-stall",
+      "exactRows": 1,
+      "sharedRequests": 1,
+      "fallbackRequests": 1
+    },
+    {
+      "engine": "webkit",
+      "version": "27.2",
+      "mode": "dictionary-stall",
+      "exactRows": 1,
+      "sharedRequests": 1,
+      "fallbackRequests": 1
+    }
+  ],
+  "decision": "PASS exact trees/noalias,HTTP/SRI/unit+dictionary2sabort recovery,retry;production loader bundled;not game performance."
+}
