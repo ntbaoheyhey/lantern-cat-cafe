@@ -1,6 +1,5 @@
 ACTIVE: OPEN
 OPEN TASKs: 
-- T-CXI-13: QA v5-m1.15 (Toolchain Failure - Awaiting browser launch fix)
-- T-M5: Short-GOP trial audit (Raw Evidence Re-Delivered)
+- T-CXI-13: QA v5-m1.15 (Verifying Browser Execution)
 PUSHED: a450f93c9
 WAKE: task-2131
