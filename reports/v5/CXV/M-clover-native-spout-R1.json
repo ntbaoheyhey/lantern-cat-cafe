@@ -1,0 +1,163 @@
+{
+  "utc": "2026-11-18T10:41:17.818836+00:00",
+  "status": "SCOPED EMISSION PASS; HP LABEL FAIL",
+  "url": "http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+  "sourceCommit": "546ec5252af7e87bde026e8cc51dce8404493b3d",
+  "indexSha256": "0b0a76b72a9adb0cbe9aa144a4f0ffde139c18099b79990c245ac27d518277b9",
+  "build": {
+    "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/clover-spout-q21-r1/build.json",
+    "sha256": "610439a7c85f78a58adb278381e00571e43c2f9cc1b1073232c3bb86b2c0af4d"
+  },
+  "runtimePatch": {
+    "mochi": "/units/mochi/designer-idle-4b74f34091bdc1f1.json",
+    "clover": "/units/clover/designer-idle-9cc154e07830b714.json"
+  },
+  "runtimeSourceSubstitutions": [],
+  "raw": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-native-spout-r2-103912/report.json",
+    "sha256": "3f29b727fe11681d9e2db5dc450ba7c311b6599a8131f04bd927a96c3e42a9f9"
+  },
+  "measurement": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-native-spout-r2-103912/review-measurements.json",
+    "sha256": "b7a4adcf2853ac805c498cac2b0b27e8053b2a900f14b357f83989b65d8dcd55"
+  },
+  "preregistration": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-native-spout-preregistration.json",
+    "sha256": "0fc2ed7f796eabb53c8c3c35169285a42a10a914c6d55cf7a1c94b2d2a151812"
+  },
+  "rows": 50,
+  "actions": 4,
+  "exactRules": true,
+  "sourceFrames": [
+    0,
+    37,
+    75,
+    112,
+    150,
+    187,
+    225,
+    262,
+    299
+  ],
+  "emissionSamples": 10,
+  "maxEmissionError": 0,
+  "maxVisibleGlintPlacementError": 0,
+  "reducedFrameZeroAndMeshStable": true,
+  "paintLightPresent": false,
+  "hpScreenGapMin": 18.406659429819427,
+  "label": {
+    "labelCenterOffsetFromHeadRange": [
+      63.19077034883719,
+      65.74528428562019
+    ],
+    "labelBodyOverlapRows": 50,
+    "labelFaceOverlapRows": 0,
+    "spoutInsideLabelRows": [
+      {
+        "skill": 1,
+        "reduced": false,
+        "ms": null,
+        "sourceFrame": 75
+      },
+      {
+        "skill": 1,
+        "reduced": false,
+        "ms": null,
+        "sourceFrame": 225
+      },
+      {
+        "skill": 1,
+        "reduced": false,
+        "ms": 350,
+        "sourceFrame": null
+      },
+      {
+        "skill": 1,
+        "reduced": false,
+        "ms": 600,
+        "sourceFrame": null
+      },
+      {
+        "skill": 4,
+        "reduced": false,
+        "ms": 1100,
+        "sourceFrame": null
+      },
+      {
+        "skill": 4,
+        "reduced": false,
+        "ms": 2199.9999,
+        "sourceFrame": null
+      },
+      {
+        "skill": 4,
+        "reduced": false,
+        "ms": 2200,
+        "sourceFrame": null
+      }
+    ]
+  },
+  "errors": [],
+  "blockedRequests": [],
+  "sheets": [
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-native-spout-r2-103912/native-sheet-1.jpg",
+      "sha256": "a151a9541e3f48848b6508c60794bdee186c39c17a137c9688fcddd537a58e14",
+      "dimensions": [
+        864,
+        1012
+      ],
+      "captures": [
+        "idle-37-normal",
+        "idle-225-normal"
+      ],
+      "viewed": 1
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-native-spout-r2-103912/native-sheet-2.jpg",
+      "sha256": "1ef113d5d1352fef91a5b74c9c58f9de9db0dd68cc26a1bd162b0381ead617bc",
+      "dimensions": [
+        864,
+        1012
+      ],
+      "captures": [
+        "cast-1-normal",
+        "cast-4-normal"
+      ],
+      "viewed": 1
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-native-spout-r2-103912/native-sheet-3.jpg",
+      "sha256": "8bc715270a77e81a10b293dd7fcf54ffac893b27a74ee107b2af2880693007ea",
+      "dimensions": [
+        864,
+        1012
+      ],
+      "captures": [
+        "idle-37-reduced",
+        "idle-225-reduced"
+      ],
+      "viewed": 1
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-native-spout-r2-103912/native-sheet-4.jpg",
+      "sha256": "7e112ed34e43da2cd897f6a439a8b3f6f9391735e34320e9f2108ea0c0240f11",
+      "dimensions": [
+        864,
+        1012
+      ],
+      "captures": [
+        "cast-1-reduced",
+        "cast-4-reduced"
+      ],
+      "viewed": 1
+    }
+  ],
+  "imagesViewed": 4,
+  "imagesReopened": 0,
+  "priorHarnessFailure": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/clover-native-spout-r1-103818/measurement-limits.json",
+    "issue": "R1 measured hidden legacy plate;HP metrics rejected,unchanged emission proof separate."
+  },
+  "limits": "Actual production candidate at1280x720 with deterministic fixed-time seeks and legal A6 actions; no runtime source substitutions. Proves sampled routing/decoding only. Sparse source controls, art/downsample quality, head/offHand, source loop, budget, native physical visibility and general laptop FPS remain open. Native HP label gate explicitly fails. Full-plane bounds conservatively include transparency; overlap alone is not opaque-pixel evidence. Spout-inside-label is independently observed."
+}

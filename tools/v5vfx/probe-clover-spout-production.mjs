@@ -50,17 +50,19 @@ async function observe(page,fixedTime,metadata){
   const delta=(p,q)=>p&&q?Math.hypot(p.x-q.x,p.y-q.y):null;
   const localSpout=a.sockets.get('vfxOrigin').position,localHp=a.sockets.get('hpAnchor').position;
   const light=entry.craftLight?.edge?.material?.uniforms?.uSource?.value;
-  const canvas=s.renderer.domElement.getBoundingClientRect(),plate=document.querySelector(`[data-actor="${id}"][data-hp-plate]`),rect=plate?.getBoundingClientRect();
+  const canvas=s.renderer.domElement.getBoundingClientRect(),plate=document.querySelector(`.b3-world[data-actor="${id}"]`),rect=plate?.getBoundingClientRect();
   const label=rect?{x:rect.x-canvas.x,y:rect.y-canvas.y,width:rect.width,height:rect.height,hidden:plate.hidden,text:plate.textContent}:null;
   const anchor=s.anchors.find(x=>x.id===id),body=anchor?.body;
+  const overlap=(p,q)=>Math.max(0,Math.min(p.x+p.width,q.x+q.width)-Math.max(p.x,q.x))*Math.max(0,Math.min(p.y+p.height,q.y+q.height)-Math.max(p.y,q.y));
   return{...metadata,fixedTime,url:location.href,source:a.source,media:{...media.state},decoded:window.__cxvMediaAudit?.decoded.at(-1),
    manifest:metadata.includeManifest?media.manifest:undefined,spout,grip,hp,head,localSpout:localSpout.toArray(),localHp:localHp.toArray(),
    renderedSource:actual?{...actual}:null,emissionError:delta(actual,spout),gripDistance:delta(spout,grip),glint:glint?{visible:glint.visible,position:glint.position.toArray(),alpha:glint.material.uniforms.uAlpha.value}:null,
    glintPlacementError:glint?delta({x:glint.position.x,y:glint.position.y},spout):null,paintLightPresent:!!entry.craftLight,lightSource:light?.toArray()??null,
-   sampled:{...s.sampled.get(id)},body,anchor,label,labelMetrics:label?{centerX:label.x+label.width/2,centerOffsetFromHead:label.x+label.width/2-head.x,centerOffsetFromHP:label.x+label.width/2-hp.x,gapAboveFullPlane:top-label.y-label.height,gapAboveBody:body.y-label.y-label.height,spoutInside:spout.x>=label.x&&spout.x<=label.x+label.width&&spout.y>=label.y&&spout.y<=label.y+label.height}:null,labelAudit:{overlaps:s.labelAudit.overlaps,missing:[...s.labelAudit.missing]},
+   sampled:{...s.sampled.get(id)},body,anchor,label,labelMetrics:label?{centerX:label.x+label.width/2,centerOffsetFromHead:label.x+label.width/2-head.x,centerOffsetFromHP:label.x+label.width/2-hp.x,gapAboveFullPlane:top-label.y-label.height,gapAboveBody:body.y-label.y-label.height,bodyOverlapArea:overlap(label,body),faceOverlapArea:overlap(label,anchor.face),spoutInside:spout.x>=label.x&&spout.x<=label.x+label.width&&spout.y>=label.y&&spout.y<=label.y+label.height}:null,labelAudit:{overlaps:s.labelAudit.overlaps,missing:[...s.labelAudit.missing]},
    hpLocalClearance:localHp.y-localTop,hpScreenGapAboveFullPlane:top-hp.y,minTriangleRatio,maxMeshDelta,foot:s.socket(id,'feet'),root:a.root.matrixWorld.toArray()};
  },{fixedTime,metadata});
  assert.equal(row.url,judgeUrl);assert.equal(row.source,'media');assert(row.media.ready&&!row.media.failed);assert(row.minTriangleRatio>0);
+ assert(row.label?.width>0&&row.label?.height>0&&!row.label.hidden,'Actual battle-v3 HUD label must have measurable geometry');
  if(metadata.reduced){assert(Math.abs(row.media.currentTime)<1/60);assert.equal(row.maxMeshDelta,0);}
  if(row.manifest){assert.equal(row.manifest.socketChannels['vfx-origin'],'spout');assert.notEqual(row.manifest.socketChannels['main-hand'],'spout');}
  if(metadata.phase==='action'&&row.glint?.visible){assert(row.emissionError<1e-6);assert(row.glintPlacementError<1e-6);}
