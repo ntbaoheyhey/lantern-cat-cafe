@@ -1,14 +1,14 @@
 # CXI V8 continuation
 ACTIVE:V8 BatchM;assistant:AGS;all9 nativecats LIVE v5-m1.14;Mochi/Clover commissioned media unregistered;art gates open.
-NEXT 1: CXI_CLOVER_STUDY=clover-full-matte-q21-r1 node tools/v5int/build-clover-scene-candidate.mjs clover-full-matte-authored-r5 --authored-head-paw
-NEXT 2: preserve full servedR4/installR5;own decoded head/paw/HP/spout gate plus same-height quality/performance;R12 included nextbuild.
+NEXT 1: inspect clover-full-matte-authored-r5/comparison-own-r1/report.json;assemble1x source/nativefilm and measure before fresh views.
+NEXT 2: grant CXV R5 dualcat ordinary/lifecycle/art lease after ownfilm;prepare nativeR3 R12-only release while commissionedart remains open.
 NEXT 3: AGS T-M4/T-M5 REDO precise evidence;T-CXI13 latesttagQA open;maintain>=2 useful tasks.
-Last pushed255f5b998;green v5-m1.14@254ad41d6;atomicremote/tag95cd80dd verified.
-Live6301 dualcatR4 source854ce6eec/index9e39c7d7;build work/v5/CXI/batch-m/clover-authored-q21-r4/build.json;registry{};nativeR2fullpreserved.
+Last pushed8aef40187;green v5-m1.14@254ad41d6;atomicremote/tag95cd80dd verified.
+Live6301 full-matte R5 source8aef40187/index82f08611;work/v5/CXI/batch-m/clover-full-matte-authored-r5/build.json;registry{};fullR4/m1.14preserved.
 self-wake:cxi-wake ACTIVE every15min;chat01a1e9cc-440b-7233-82aa-9510796d311f tool+TOMLverified12:52Z;neverdelete/pause/edit.
 Last RULES read2026-11-18T12:52:08.533839+00:00;STOPabsent;ORDER-V8 SHA2560feb2f0269ca7292c898c7f203f85a84e55202109d878af948e77cbeec464d08.
-Running:none;2991 complete12:48:48Z bothcontrols600decodedframesPASS;full2792/direct2291exit0;CXIlease afterCXV12:46:45release.
-Mailboxread INBOX-CXI421;USER24;LEARN105;Clovercomparison629hashes numericalACCEPT;AGS>=2openTASKs;0046preserved.
+Running:5642:work/v5/CXI/jobs/v8-clover-r5-comparison-own-r1.log;300frame1xcomparison;4857own gatePASS348rows/696anchors.
+Mailboxread INBOX-CXI424;USER24;LEARN105;Clovercomparison629hashes numericalACCEPT;AGS>=2openTASKs;0046preserved.
 AGS OPEN:T-CXI13QA-m114,T-M5shortGOP,T-M4stagedvideoresearch,T-CXI12officialmaskdraft,T-CXI11realbedrefs,T-CXI5R2provenance/listening;T10rawunverified.
 BatchM boundary:basec4bd12552;Scene1=Mochi1912e17112ca1bc3c6ad3a44da52c8f7813ebfc74137299c477bead781170524;Clover4bbdffe74e33437d9c7dcdc863be0335ac4680bf42cce7dd05db3b0eaaaae150.
 Both sources10s/300frames/30fps/H264yuv420p/noalpha;Mochi2250x1800/18660725B;Clover2300x2800/18722251B;originalsDownloads untouched.
