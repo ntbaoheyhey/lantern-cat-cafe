@@ -1,13 +1,13 @@
 # CXV V8 handoff
-ACTIVE Panko original/candidate parity then bounded timing under freshCXI host lease;footer stable-node R2 prepared,notrun.
+ACTIVE footer stable-node R2 frozen,lease requested;Panko cacheREJECT after3101parityPASS but syntheticgainbelowthreshold.
 Worktree /Users/bao/taskbar-hero-cardrpg-a6;branch codex/v5-vfx-2026-11-17;desktop1280x720.
-NEXT 1: Poll /Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/jobs/panko-offhand-r1-181529.log;if complete verify emptygroup/explicitrelease;retain parity/timing failures and prespecified thresholds.
-NEXT 2: Implement Panko original/candidate offline parity harness;no timing before separate CXI grant;no appsource changed.
+NEXT 1: On freshCXI grant verify R2protocolbaf523b3 and launch run-footer-lifecycle-r2.py;capture32PNGs max,measurebeforeview.
+NEXT 2: If R2passes,node-preservation/empty only;freeze fulltrajectory/fallback/dualmedia checks;no appadoption.
 NEXT 3: AGV Sorrel film/hashACCEPT;inventorystillOPEN;localizedEN/ZH eye sourcesaccepted withrandominterval0..16 limit;new focus lifecycle researchactive.
-Last confirmed pushed770721cdc;GREENv5-m1.15 merged;Mochi-only e66485f9/sourcebf01 diagnostic;source registryempty.
+Last confirmed pushedc35d59a46;GREENv5-m1.15 merged;Mochi-only e66485f9/sourcebf01 diagnostic;source registryempty.
 Order ORDER-V8.txt SHA256 a2b825b3cc7b3e145c95858ead33312bcbeae0af0521f201ded923f3f87efbbd.
 Wake cxv-wake ACTIVE15min app+TOML verified2026-11-18T17:59:38.669032+00:00;preserve unchanged.
-Jobs:Panko PID/PGID83562;log /Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/jobs/panko-offhand-r1-181529.log;out /Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/panko-offhand-r1-181529;hostlease2026-11-18T18:20:00.376624+00:00 AND release;no browser.
+Jobs:none;Panko83562 exit0/groupempty;host explicitrelease 2026-11-18T18:16:43.167954+00:00
 Authored capture work/v5/CXV/batch-m/clover-authored-native-r1-123433:343rows/4legalactions/16PNGs;headdecoded.727542,paw.319577CSSpx.
 AGVactive2:T-M4 Sorrelreport/reviewedimages/sharedtests;T-CXV-FOCUS-LIFECYCLE EN/ZH research;T-M1semantic timingBLOCKED.
 R5head24/24freshheldouts+actualadapterPASS;native343samples maxcontinuous.011724/decoded.727542CSSpx;scopedPASS.

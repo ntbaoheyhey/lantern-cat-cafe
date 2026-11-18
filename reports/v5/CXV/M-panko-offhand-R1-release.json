@@ -1,0 +1,32 @@
+{
+  "utc": "2026-11-18T18:16:43.167954+00:00",
+  "pid": 83562,
+  "pgid": 83562,
+  "groupEmpty": true,
+  "exit": {
+    "steps": [
+      {
+        "tool": "verify-panko-offhand-cache.mjs",
+        "exit": 0,
+        "utc": "2026-11-18T18:15:30.437732+00:00"
+      },
+      {
+        "tool": "bench-panko-offhand-cache.mjs",
+        "exit": 0,
+        "utc": "2026-11-18T18:15:45.737112+00:00"
+      }
+    ],
+    "exit": 0,
+    "completedUTC": "2026-11-18T18:15:45.772167+00:00"
+  },
+  "leasePath": "/Users/bao/taskbar-hero-chain/reports/v5/CXI/evidence/v8-cxv-panko-offhand-r1-lease.json",
+  "leaseUntil": "2026-11-18T18:20:00.376624+00:00",
+  "hostBefore": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/panko-offhand-r1-181529/host-load-before.txt",
+    "sha256": "cdd907db8522876dc4b4009e6114a4597cc358b74ea26d321c4d6f0ab340c177"
+  },
+  "hostAfter": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/panko-offhand-r1-181529/host-load-after.txt",
+    "sha256": "d3838634cb5f44d8669eff8d1bd3806b20f6efdb56b91ba66bb60dc29d8ebb0e"
+  }
+}

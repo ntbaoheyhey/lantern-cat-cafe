@@ -1,0 +1,80 @@
+{
+  "utc": "2026-11-18T18:16:43.167954+00:00",
+  "raw": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/panko-offhand-r1-181529/timing.json",
+    "sha256": "46206becb7c75b57f40ad36adbc9cba2a678673a3ed75cc5fdf77fc7952d8aef"
+  },
+  "preregistration": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v5/CXV/M-panko-offhand-timing-R1-preregistration.json",
+    "sha256": "4fd743c107a61bd7dc479d6c89ec1c429d7a18a7212f0285a52e25636d47df7f"
+  },
+  "groups": [
+    {
+      "group": "panko",
+      "original": [
+        0.131379638671875,
+        0.1328855590820313,
+        0.13226232910156244,
+        0.13160367822265628
+      ],
+      "candidate": [
+        0.13058587646484374,
+        0.12885001611328123,
+        0.12945202636718744,
+        0.12672774218750005
+      ],
+      "originalMedian": 0.13193300366210936,
+      "candidateMedian": 0.12915102124023434,
+      "gainMs": 0.0027819824218750233,
+      "gainPercent": 2.1086326731406007,
+      "pairedGainMs": [
+        0.0007937622070312567,
+        0.004035542968750083,
+        0.002810302734374992,
+        0.004875936035156236
+      ],
+      "fasterPairs": 4
+    },
+    {
+      "group": "seven-drawings",
+      "original": [
+        0.7708383789062501,
+        0.7609232993164063,
+        0.7547406616210939,
+        0.773417521484375
+      ],
+      "candidate": [
+        0.7536408081054686,
+        0.755961669921875,
+        0.7758743286132814,
+        0.7497750854492189
+      ],
+      "originalMedian": 0.7658808391113282,
+      "candidateMedian": 0.7548012390136718,
+      "gainMs": 0.011079600097656406,
+      "gainPercent": 1.4466480334607088,
+      "pairedGainMs": [
+        0.017197570800781437,
+        0.004961629394531375,
+        -0.02113366699218755,
+        0.023642436035156145
+      ],
+      "fasterPairs": 3
+    }
+  ],
+  "coldOriginalMedian": 0.8877500000000005,
+  "coldCandidateMedian": 0.8780210000000004,
+  "coldDeltaMs": -0.009729000000000099,
+  "criteria": {
+    "exactParity": true,
+    "pankoFivePercent": false,
+    "sevenThreePercent": false,
+    "sevenPointZeroFiveMs": false,
+    "threeOfFourPairs": true,
+    "coldWithinOneMs": true
+  },
+  "advanceToNative": false,
+  "disposition": "REJECT escalation/adoption:synthetic full-deformer gains miss frozen relative/absolute thresholds;no browser or GPU tests warranted. Preserve tools and evidence;app unchanged.",
+  "productionAcceptance": false,
+  "interpretation": "Observed4blocks per arm;medians and paired spreads are not confidence intervals. Seven-drawing synthetic work is not full battle FPS."
+}

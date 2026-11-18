@@ -1,0 +1,483 @@
+{
+  "utc": "2026-11-18T18:16:43.167954+00:00",
+  "evidence": [
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/panko-offhand-r1-181529/report.json",
+      "sha256": "bdac39aa55657dc95d5a19f094765a3ed2b6413ae13693e61e7dd7397b0cf8f9"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/panko-offhand-r1-181529/original-source.ts",
+      "sha256": "41b919467bb541b2f53b2a9ee50c21e018baec06a48b2c44d89bb9d82709129b"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/panko-offhand-r1-181529/candidate-source.ts",
+      "sha256": "425a7425511a38f10ceeee0bfcd2fa91fca7c1eb8b34d9efe2512262bc9f0a43"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/panko-offhand-r1-181529/layers.mjs",
+      "sha256": "ce1a411a2d523cee38d92ab8e37676b4648423a7b6ffb3f1a764120ec5ecf876"
+    }
+  ],
+  "source": {
+    "path": "apps/web/src/game/rig/drawing-layer.ts",
+    "sha256": "41b919467bb541b2f53b2a9ee50c21e018baec06a48b2c44d89bb9d82709129b",
+    "candidateSha256": "425a7425511a38f10ceeee0bfcd2fa91fca7c1eb8b34d9efe2512262bc9f0a43"
+  },
+  "preregistration": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v5/CXV/M-panko-offhand-cache-R1-preregistration.json",
+    "sha256": "b28035de67e40ca48b8a2a6fd2db471822365cdc8d3afda6f577073c603a662c"
+  },
+  "fixtures": [
+    {
+      "cat": "panko",
+      "manifestSha256": "7de7d4012829e70c2ad6698418bee84a7147997198223ae65f5f795fe9ace3c2",
+      "samples": 443,
+      "matchingExceptions": 0,
+      "vertices": 1089,
+      "reachedBeforeForced": [
+        "K0",
+        "K4",
+        "K1",
+        "K2",
+        "K5"
+      ],
+      "weights": [
+        {
+          "key": "K0",
+          "originalStride": 9,
+          "candidateStride": 10,
+          "originalBytes": 78408,
+          "candidateBytes": 87120,
+          "deltaBytes": 8712
+        },
+        {
+          "key": "K1",
+          "originalStride": 9,
+          "candidateStride": 10,
+          "originalBytes": 78408,
+          "candidateBytes": 87120,
+          "deltaBytes": 8712
+        },
+        {
+          "key": "K2",
+          "originalStride": 9,
+          "candidateStride": 10,
+          "originalBytes": 78408,
+          "candidateBytes": 87120,
+          "deltaBytes": 8712
+        },
+        {
+          "key": "K4",
+          "originalStride": 9,
+          "candidateStride": 10,
+          "originalBytes": 78408,
+          "candidateBytes": 87120,
+          "deltaBytes": 8712
+        },
+        {
+          "key": "K5",
+          "originalStride": 9,
+          "candidateStride": 10,
+          "originalBytes": 78408,
+          "candidateBytes": 87120,
+          "deltaBytes": 8712
+        }
+      ],
+      "deltaBytes": 43560
+    },
+    {
+      "cat": "mochi",
+      "manifestSha256": "d5f1e844f2e111311466dbd7191a678c7417f391cb9cffb8612f3b5026f385c6",
+      "samples": 443,
+      "matchingExceptions": 3,
+      "vertices": 1089,
+      "reachedBeforeForced": [
+        "K0",
+        "K4",
+        "K1",
+        "K5",
+        "K2"
+      ],
+      "weights": [
+        {
+          "key": "K0",
+          "originalStride": 9,
+          "candidateStride": 9,
+          "originalBytes": 78408,
+          "candidateBytes": 78408,
+          "deltaBytes": 0
+        },
+        {
+          "key": "K1",
+          "originalStride": 9,
+          "candidateStride": 9,
+          "originalBytes": 78408,
+          "candidateBytes": 78408,
+          "deltaBytes": 0
+        },
+        {
+          "key": "K2",
+          "originalStride": 9,
+          "candidateStride": 9,
+          "originalBytes": 78408,
+          "candidateBytes": 78408,
+          "deltaBytes": 0
+        },
+        {
+          "key": "K4",
+          "originalStride": 9,
+          "candidateStride": 9,
+          "originalBytes": 78408,
+          "candidateBytes": 78408,
+          "deltaBytes": 0
+        },
+        {
+          "key": "K5",
+          "originalStride": 9,
+          "candidateStride": 9,
+          "originalBytes": 78408,
+          "candidateBytes": 78408,
+          "deltaBytes": 0
+        }
+      ],
+      "deltaBytes": 0
+    },
+    {
+      "cat": "clover",
+      "manifestSha256": "b2fe784c6b02d5a29d3846fb639455a79871b2d92d93975e372ff4420ed1a87b",
+      "samples": 443,
+      "matchingExceptions": 3,
+      "vertices": 1089,
+      "reachedBeforeForced": [
+        "K0",
+        "K4",
+        "K1",
+        "K5",
+        "K2"
+      ],
+      "weights": [
+        {
+          "key": "K0",
+          "originalStride": 9,
+          "candidateStride": 9,
+          "originalBytes": 78408,
+          "candidateBytes": 78408,
+          "deltaBytes": 0
+        },
+        {
+          "key": "K1",
+          "originalStride": 9,
+          "candidateStride": 9,
+          "originalBytes": 78408,
+          "candidateBytes": 78408,
+          "deltaBytes": 0
+        },
+        {
+          "key": "K2",
+          "originalStride": 9,
+          "candidateStride": 9,
+          "originalBytes": 78408,
+          "candidateBytes": 78408,
+          "deltaBytes": 0
+        },
+        {
+          "key": "K4",
+          "originalStride": 9,
+          "candidateStride": 9,
+          "originalBytes": 78408,
+          "candidateBytes": 78408,
+          "deltaBytes": 0
+        },
+        {
+          "key": "K5",
+          "originalStride": 9,
+          "candidateStride": 9,
+          "originalBytes": 78408,
+          "candidateBytes": 78408,
+          "deltaBytes": 0
+        }
+      ],
+      "deltaBytes": 0
+    },
+    {
+      "cat": "teacup-healer",
+      "manifestSha256": "0b50254a4836f99bfaf9a88b56ac0b2fb35ca2718a78bb2a86bf3a3b6149d5ba",
+      "samples": 443,
+      "matchingExceptions": 0,
+      "vertices": 1089,
+      "reachedBeforeForced": [
+        "K0",
+        "K4",
+        "K1",
+        "K5",
+        "K2"
+      ],
+      "weights": [
+        {
+          "key": "K0",
+          "originalStride": 7,
+          "candidateStride": 7,
+          "originalBytes": 60984,
+          "candidateBytes": 60984,
+          "deltaBytes": 0
+        },
+        {
+          "key": "K1",
+          "originalStride": 7,
+          "candidateStride": 7,
+          "originalBytes": 60984,
+          "candidateBytes": 60984,
+          "deltaBytes": 0
+        },
+        {
+          "key": "K2",
+          "originalStride": 7,
+          "candidateStride": 7,
+          "originalBytes": 60984,
+          "candidateBytes": 60984,
+          "deltaBytes": 0
+        },
+        {
+          "key": "K4",
+          "originalStride": 7,
+          "candidateStride": 7,
+          "originalBytes": 60984,
+          "candidateBytes": 60984,
+          "deltaBytes": 0
+        },
+        {
+          "key": "K5",
+          "originalStride": 7,
+          "candidateStride": 7,
+          "originalBytes": 60984,
+          "candidateBytes": 60984,
+          "deltaBytes": 0
+        }
+      ],
+      "deltaBytes": 0
+    },
+    {
+      "cat": "binding-thread",
+      "manifestSha256": "567028f67291c9295f4965e05e784ee605fe15a9b9f91c5ee1ff77810dae6378",
+      "samples": 443,
+      "matchingExceptions": 0,
+      "vertices": 1089,
+      "reachedBeforeForced": [
+        "K0",
+        "K4",
+        "K1",
+        "K5",
+        "K2"
+      ],
+      "weights": [
+        {
+          "key": "K0",
+          "originalStride": 9,
+          "candidateStride": 9,
+          "originalBytes": 78408,
+          "candidateBytes": 78408,
+          "deltaBytes": 0
+        },
+        {
+          "key": "K1",
+          "originalStride": 9,
+          "candidateStride": 9,
+          "originalBytes": 78408,
+          "candidateBytes": 78408,
+          "deltaBytes": 0
+        },
+        {
+          "key": "K2",
+          "originalStride": 9,
+          "candidateStride": 9,
+          "originalBytes": 78408,
+          "candidateBytes": 78408,
+          "deltaBytes": 0
+        },
+        {
+          "key": "K4",
+          "originalStride": 9,
+          "candidateStride": 9,
+          "originalBytes": 78408,
+          "candidateBytes": 78408,
+          "deltaBytes": 0
+        },
+        {
+          "key": "K5",
+          "originalStride": 9,
+          "candidateStride": 9,
+          "originalBytes": 78408,
+          "candidateBytes": 78408,
+          "deltaBytes": 0
+        }
+      ],
+      "deltaBytes": 0
+    },
+    {
+      "cat": "needle-moth",
+      "manifestSha256": "b3576467fbcce63a7034579c9097aadbab1d58af4bf9c05e8a2ad12e48d270b0",
+      "samples": 443,
+      "matchingExceptions": 0,
+      "vertices": 1089,
+      "reachedBeforeForced": [
+        "K0",
+        "K4",
+        "K1",
+        "K5",
+        "K2"
+      ],
+      "weights": [
+        {
+          "key": "K0",
+          "originalStride": 7,
+          "candidateStride": 7,
+          "originalBytes": 60984,
+          "candidateBytes": 60984,
+          "deltaBytes": 0
+        },
+        {
+          "key": "K1",
+          "originalStride": 7,
+          "candidateStride": 7,
+          "originalBytes": 60984,
+          "candidateBytes": 60984,
+          "deltaBytes": 0
+        },
+        {
+          "key": "K2",
+          "originalStride": 7,
+          "candidateStride": 7,
+          "originalBytes": 60984,
+          "candidateBytes": 60984,
+          "deltaBytes": 0
+        },
+        {
+          "key": "K4",
+          "originalStride": 7,
+          "candidateStride": 7,
+          "originalBytes": 60984,
+          "candidateBytes": 60984,
+          "deltaBytes": 0
+        },
+        {
+          "key": "K5",
+          "originalStride": 7,
+          "candidateStride": 7,
+          "originalBytes": 60984,
+          "candidateBytes": 60984,
+          "deltaBytes": 0
+        }
+      ],
+      "deltaBytes": 0
+    },
+    {
+      "cat": "yarn-giant",
+      "manifestSha256": "0b5eb6b5bf2e5350f056caa20e28ad5322b92664de1526f495e314d38c87b829",
+      "samples": 443,
+      "matchingExceptions": 0,
+      "vertices": 1089,
+      "reachedBeforeForced": [
+        "K0",
+        "K4",
+        "K1",
+        "K5",
+        "K2"
+      ],
+      "weights": [
+        {
+          "key": "K0",
+          "originalStride": 7,
+          "candidateStride": 7,
+          "originalBytes": 60984,
+          "candidateBytes": 60984,
+          "deltaBytes": 0
+        },
+        {
+          "key": "K1",
+          "originalStride": 7,
+          "candidateStride": 7,
+          "originalBytes": 60984,
+          "candidateBytes": 60984,
+          "deltaBytes": 0
+        },
+        {
+          "key": "K2",
+          "originalStride": 7,
+          "candidateStride": 7,
+          "originalBytes": 60984,
+          "candidateBytes": 60984,
+          "deltaBytes": 0
+        },
+        {
+          "key": "K4",
+          "originalStride": 7,
+          "candidateStride": 7,
+          "originalBytes": 60984,
+          "candidateBytes": 60984,
+          "deltaBytes": 0
+        },
+        {
+          "key": "K5",
+          "originalStride": 7,
+          "candidateStride": 7,
+          "originalBytes": 60984,
+          "candidateBytes": 60984,
+          "deltaBytes": 0
+        }
+      ],
+      "deltaBytes": 0
+    }
+  ],
+  "totalSamples": 3101,
+  "missingOffHand": {
+    "pass": true,
+    "weights": [
+      {
+        "key": "K0",
+        "originalStride": 9,
+        "candidateStride": 9,
+        "originalBytes": 78408,
+        "candidateBytes": 78408,
+        "deltaBytes": 0
+      },
+      {
+        "key": "K1",
+        "originalStride": 9,
+        "candidateStride": 9,
+        "originalBytes": 78408,
+        "candidateBytes": 78408,
+        "deltaBytes": 0
+      },
+      {
+        "key": "K2",
+        "originalStride": 9,
+        "candidateStride": 9,
+        "originalBytes": 78408,
+        "candidateBytes": 78408,
+        "deltaBytes": 0
+      },
+      {
+        "key": "K4",
+        "originalStride": 9,
+        "candidateStride": 9,
+        "originalBytes": 78408,
+        "candidateBytes": 78408,
+        "deltaBytes": 0
+      },
+      {
+        "key": "K5",
+        "originalStride": 9,
+        "candidateStride": 9,
+        "originalBytes": 78408,
+        "candidateBytes": 78408,
+        "deltaBytes": 0
+      }
+    ]
+  },
+  "gpuChecked": false,
+  "timingClaim": false,
+  "applicationChanged": false,
+  "productionAcceptance": false,
+  "scope": "Complete original/candidate DrawingLayer offline data;not browser pixels,original art quality,ordinary laptop performance or motion heldouts.",
+  "pass": true
+}
