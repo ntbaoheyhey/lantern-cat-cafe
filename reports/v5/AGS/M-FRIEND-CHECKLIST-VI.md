@@ -1,14 +1,14 @@
-# Friend Delivery Checklist (Draft - Vietnamese)
-Status: Draft (2026-11-18T05:58Z)
+# Bảng Kiểm tra Giao hàng (Bản nháp - Tiếng Việt)
+Trạng thái: Nháp (2026-11-18T13:08Z)
 
-## 1. Specifications
-- **Duration:** 10s total (full idle duration).
-- **Format:** Lossless transparent master (runtime files).
-- **Frame Count:** 300 frames (30fps).
-- **Naming Convention:** <hero>_<action>_<height>.mov (transparent).
-- **Anchors:** Foot origin (0,0).
-- **Events:** Cast event at .25s, Hit event at .55s.
+## 1. Thông số kỹ thuật
+- **Thời lượng:** 10s (toàn bộ thời gian chờ).
+- **Định dạng:** Tệp master trong suốt không mất dữ liệu (runtime files).
+- **Số khung hình:** 300 khung (30fps).
+- **Quy ước đặt tên:** <hero>_<action>_<height>.mov (trong suốt).
+- **Điểm neo:** Gốc chân (0,0).
+- **Sự kiện:** Sự kiện cast tại .25s, Sự kiện hit tại .55s.
 
-## 2. Requirements
-- Provide transparent master for alpha/motion event verification.
-- Opaque derivatives (for conversion trials) must meet height requirements.
+## 2. Yêu cầu
+- Cung cấp master trong suốt để xác minh sự kiện alpha/chuyển động.
+- Các dẫn xuất không trong suốt (cho thử nghiệm chuyển đổi) phải đáp ứng yêu cầu về chiều cao.
