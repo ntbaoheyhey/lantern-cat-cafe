@@ -39,3 +39,10 @@ M-I3 R7 RELEASE GATE:existing native-only runner rejects diagnosticregistry befo
 
 M-I2 CPUSTRESS R1 AUDITED:272artifacts/216served-sourceitems;4wins/47actions each/exact4wayrules+plans. Normal1x/4x p95frame16.7/83.4ms;drops20/2118 and623/3022. Reducedvideo paused. No ordinarylaptop/artacceptance;NEXT isolate observer overhead before appoptimization.
 AGS549-551 REDO:abbreviated/wronghashes,18keyframesomitted,QAimageabsent;2priorityTASKlines reissued. Own30keyframes confirmed.
+
+M-I2 OBSERVER ABBA AUDITED:4normalCPU4runs/rulesexact;p95frame100ms each;no consistent counters-only improvement. Raw288hash receipt;no laptop/runtime acceptance.
+M-I2 SOLVED CLOVER AUDITED:3068traces confirms81newownavoid+117baselinefallbackremoval;283hash/6528paintcounts,15of33 threshold0guardfails/0directhits/allclear threshold1,2,4. Exactzero prereg stays rejected.
+M-I3 MOCHI-ONLY NOTREADY:CXV562scope/563profile request ACK;isolated3payload build verified3795files/291925344B,indexe66485f9;not installed. NativeClover freshpaint/status/association andMochi art/performance remain open;queued5casecontrolstudy first.
+
+M-I2 CONTROLS LEASE:CXI released16:59:17Z after empty groups63482/65692;CXV557 granted until17:07:17Z ANDexplicitrelease. Conditioning170hashaudit next.
+M-I3 PATCH CHECK:zero-context proposal passes --unidiff-zero;not stale-source and not applied. Build review immutable;nativeClover/art/performance gates remain open.
