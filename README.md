@@ -8,7 +8,7 @@ The GIF and silent video were captured from `v5-m2.5`. The video shows the stree
 
 The Lantern Cat Café is the last lit shop on a street tangled by abandoned tasks. Lead Mochi, Clover and Soot through a street patrol and face the Yarn Giant in a cosy browser card RPG. In the configured Avalanche mode, café memories become Relics that players can own on Fuji.
 
-**Latest integrated build:** [v5-m2.9](https://github.com/ntbaoheyhey/taskbar-hero/tree/v5-m2.9), with self-contained release assets and simulation inputs, isolated judge/chain routes, refreshed V9 backend maps and reliable CLI receipt handling. It includes the v5-m2.6 submission media, CC-BY boss music replacement, complete delivered sound credits, V9 audio packaging and faster CI change detection. The [v5-m2.2 recording baseline](https://github.com/ntbaoheyhey/taskbar-hero/tree/v5-m2.2) remains published, with all three ultimate sequences and layered sound playback.
+**Latest integrated build:** [v5-m2.10](https://github.com/ntbaoheyhey/taskbar-hero/tree/v5-m2.10), with working wallet-to-Market navigation and accessible mobile menu controls. The release includes self-contained assets and simulation inputs, the v5-m2.6 submission media, CC-BY boss music replacement and complete delivered sound credits. The [v5-m2.2 recording baseline](https://github.com/ntbaoheyhey/taskbar-hero/tree/v5-m2.2) remains published, with all three ultimate sequences and layered sound playback.
 
 ## Play in three steps
 
@@ -100,9 +100,9 @@ The judge experience uses **Vite, React, TypeScript and Three.js**, with Spine/n
 
 ## Validation and current limits
 
-The integration gate is a production build, TypeScript check, focused tests for changed code and a real browser demo run on port 6301. The latest `v5-m2.9` release tree passed the build, web typecheck, 18 route/demo tests, eight simulation-fixture tests and 124 chain-tool tests. The full m2.7 workspace suite passed 5,579 tests (11 skipped and two expected failures), and m2.8 passed 14 local chain preflight commands, including disposable PostgreSQL and Anvil checks. These local checks do not establish a public Fuji mint or a complete remote CI pass.
+The integration gate is a production build, TypeScript check, focused tests for changed code and a real browser demo run on port 6301. The latest `v5-m2.10` release tree passed the build and web typecheck. Its affected-code checks passed 14 wallet/onboarding unit tests, five audit tests, eight prototype browser tests, twelve production security checks and 33 server/HUD/HTTP-fixture browser checks. All four chain browser scenarios passed through `pnpm chain:test`, each using a fresh local chain/database with real quotas and transactions. The synthetic audit also passed with Anvil deliberately ahead of the server clock. These local checks do not establish a public Fuji mint or a complete remote CI pass.
 
-The latest headless browser run against the release build completed the boss in 21.1 seconds at normal speed with Mochi, Clover and Soot's ultimates. All twelve ultimate sound layers played and all eight base Blender flipbooks loaded. The same run checked Collection against live Fuji RPC, the labelled receipt fixture and the legacy route, with no page errors. This is a local playback observation, not a general hardware benchmark. Remote CI still has chain audit timing and older browser-fixture failures under repair.
+The latest headless browser run against the release build completed the boss in 21.1 seconds at normal speed with Mochi, Clover and Soot's ultimates. All twelve ultimate sound layers played and all eight base Blender flipbooks loaded. The same run checked Collection against live Fuji RPC, the labelled receipt fixture and the legacy route, with no page errors. This is a local playback observation, not a general hardware benchmark. The previous remote CI run passed its Node and contract jobs; three legacy C2 VFX checks remain with the visual lane for compatibility review. Other failures from that run are addressed by this release's local checks; remote confirmation is pending.
 
 ```sh
 pnpm --filter @taskbar-hero/web typecheck
