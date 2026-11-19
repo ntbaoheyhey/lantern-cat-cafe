@@ -26,8 +26,8 @@ test('C2 explanations keep keyboard access and return focus',async({page})=>{
  await expect(page.getByRole('dialog',{name:'Team',exact:true})).toBeVisible();
 });
 
-test('C2 battle controls have separate pointer targets at every supported viewport',async({page})=>{
- for(const viewport of [{width:1280,height:720},{width:1440,height:900},{width:1024,height:600}]){
+for(const viewport of [{width:1280,height:720},{width:1440,height:900},{width:1024,height:600}]){
+ test(`C2 battle controls have separate pointer targets at ${viewport.width}×${viewport.height}`,async({page})=>{
   await page.setViewportSize(viewport);
   await page.goto('/?demo=1&squad=1&cardrpg2=1&a6=1&dev=1');
   await page.waitForFunction(()=>!!window.__depthReview);
@@ -57,5 +57,5 @@ test('C2 battle controls have separate pointer targets at every supported viewpo
   await page.getByRole('button',{name:'More battle options'}).click();
   await page.getByRole('button',{name:'Skip to result'}).click();
   await expect(page.locator('.uv-result')).toBeVisible();
- }
-});
+ });
+}

@@ -5,6 +5,10 @@ import {startLocal,devAccount,walletFor,artifact} from './local.mjs';
 const local=await startLocal({web:false});
 try {
   const {config:c,db,client}=local,U=10n**18n,abi=artifact('SeasonRewards').abi;
+  // Reproduce fast mining / earlier time-travel checks in disposable Anvil.
+  // Admission must use its own pinned block, while finite-budget guards hold.
+  await client.request({method:'evm_increaseTime',params:[60]});
+  await client.request({method:'evm_mine',params:[]});
   await db.query('update chain_tester_budgets set ceiling=$1 where contract=$2',[(40n*U).toString(),c.SeasonRewards.toLowerCase()]);
   const actors=[];
   for(const index of [5,6,7,8,9,10,11,12]){

@@ -11,8 +11,12 @@ await mkdir(out,{recursive:true});
 const browser=await chromium.launch({headless:true,args:['--use-angle=metal','--mute-audio']});
 try {
  const page=await browser.newPage({viewport:{width:1280,height:720}}),errors=[];
- const loaded=new Set();
- page.on('response',response=>{if(response.ok())loaded.add(new URL(response.url()).pathname);});
+ const loaded=new Set(),failedPortraits=[];
+ page.on('response',response=>{
+  const path=new URL(response.url()).pathname;
+  if(response.ok())loaded.add(path);
+  else if(/\/units\/[^/]+\/portrait\.webp$/.test(path))failedPortraits.push(path);
+ });
  page.on('pageerror',e=>errors.push(e.message));
  await page.goto(`${origin}/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3`);
  const play=page.getByRole('button',{name:'Play free',exact:true});
@@ -29,6 +33,10 @@ try {
  await page.waitForFunction(()=>window.__depthReview?.sceneReady===true);
  await page.screenshot({path:resolve(out,'wave.png')});
  await page.getByRole('button',{name:'Face the Yarn Giant',exact:true}).waitFor({timeout:90000});
+ assert.deepEqual(failedPortraits,[],'HUD portraits must not 404');
+ for(const id of ['needle-moth','teacup-healer','button-guard']){
+  assert([...loaded].some(path=>path.includes(`/${id}-`)&&path.endsWith('.webp')),`${id} HUD portrait was not served`);
+ }
  console.log('PASS street wave: three cats, needle-moth + teacup-healer + button-guard.');
  // Observe presentations as they run; do not drive the simulation from the test.
  await page.evaluate(()=>{

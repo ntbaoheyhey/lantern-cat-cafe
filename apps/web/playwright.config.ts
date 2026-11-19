@@ -6,7 +6,7 @@ import { classicPort, v2Port, classicURL, v2URL } from './e2e/support/servers';
 // Use the preinstalled Chromium when present (sandbox); CI installs its own.
 const preinstalled = '/opt/pw-browsers/chromium';
 const executablePath = existsSync(preinstalled) ? preinstalled : undefined;
-const launchOptions = { executablePath, args: ['--no-sandbox'] };
+const launchOptions = { executablePath, args: ['--no-sandbox', '--mute-audio'] };
 
 // ui/** joins stage-layout: both describe the same v2 stage-first UI. A new UI
 // spec inherits v2 automatically; v2-loop keeps its separate gameplay counts.

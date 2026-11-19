@@ -14,6 +14,7 @@ import './battle.css';
 import './hud-details.css';
 import {GameIcon} from '../../../ui/GameIcon';
 import {displayedBossPhase} from '../depth/battle-presentation';
+import {portrait} from '../depth/assets';
 import {battleWave,IntentMark} from './hud-details';
 import {createWorldLabelLayout} from './world-label-dom';
 import {bindWorldStatusSource} from './world-label-status';
@@ -76,7 +77,7 @@ export default function BattleHud({m}:{m:DepthModel}){
     <GameIcon name="boss-seal" size={32}/><Meter hp={boss.hp} max={boss.maxHp} name={boss.name} shield={boss.shield} reduced={m.state.settings.reducedMotion}/>
     <span className="b3-phase-ticks" aria-hidden="true">{(battle.initial.gameplayA6?[.66,.33]:[.5]).map(at=><i key={at} style={{left:`${at*100}%`}}/>)}</span><b>{Math.ceil(100*boss.hp/boss.maxHp)}%</b>
    </div>}
-   <div className="b3-turns" data-tutorial-id="battle-order" aria-label="Upcoming turns">{battle.queue.filter(id=>!battle.acted.includes(id)).slice(0,4).map(id=>{const actor=battle.actors.find(a=>a.id===id)!;return <span key={id} title={actor.name} aria-label={actor.name}><img src={`/units/${actor.catalogId}/portrait.webp`} alt=""/></span>;})}</div>
+   <div className="b3-turns" data-tutorial-id="battle-order" aria-label="Upcoming turns">{battle.queue.filter(id=>!battle.acted.includes(id)).slice(0,4).map(id=>{const actor=battle.actors.find(a=>a.id===id)!;return <span key={id} title={actor.name} aria-label={actor.name}><img src={actor.side==='enemy'?portrait(actor.catalogId):`/units/${actor.catalogId}/portrait.webp`} alt=""/></span>;})}</div>
    <span className="b3-supplies" data-tutorial-id="battle-supplies" title={battle.initial.packedSupply?`Packed ${battle.initial.packedSupply.id}`:'No packed supply'} aria-label={battle.initial.packedSupply?`Packed ${battle.initial.packedSupply.id}`:'No packed supply'}><GameIcon name="potion" size={24}/><b>{battle.initial.packedSupply?1:0}</b></span>
    <span className="b3-top-spacer"/>
    <button aria-label={m.paused?'Resume auto':'Pause auto'} title={m.paused?'Resume':'Pause'} onClick={()=>{m.paused=!m.paused;m.notify(false);}}>{m.paused?'▶':'Ⅱ'}</button>
