@@ -260,6 +260,8 @@ export async function startLocal({web = true, campaignRewards = web, economyV3 =
         outgoing.setHeader('content-type','application/json');outgoing.end(stringify(result));
       }catch(error){
         const failure=modules.chainFailure(error,'local_request_failed');
+        // Unexpected failures surface to the UI as a generic retry; keep the cause in the CI log.
+        if(failure.status>=500&&error?.name!=='AuthError')console.error('[chain-local]',incoming.url,error?.code??'',error?.message??error);
         outgoing.setHeader('content-type','application/json');
         outgoing.writeHead(error?.name==='AuthError'?401:failure.status).end(stringify(failure.body));
       }finally{if(counted)apiRequests--;}

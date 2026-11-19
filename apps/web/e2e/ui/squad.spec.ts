@@ -26,7 +26,9 @@ test('a local fight never writes storage or contacts a game API', async ({ page 
   });
   const requests: string[] = []; page.on('request', r => { if (r.method() !== 'GET' || /\/functions\/|\/api\/|supabase|wallet/i.test(r.url())) requests.push(r.url()); });
   await page.goto(url); await page.getByRole('button', { name: 'Start encounter', exact: true }).click();
-  await expect(page.locator('.sq-hud')).toContainText(/3\.[0-9]s/, { timeout: 10000 });
+  // The run clock follows rendered frames; a loaded CI runner can render far
+  // fewer than 60 fps, so assert that the local fight advanced, not its speed.
+  await expect(page.locator('.sq-hud')).toContainText(/Run time [1-9]\.[0-9]s/, { timeout: 30000 });
   await page.getByRole('button', { name: 'Pause', exact: true }).click();
   expect(await page.evaluate(() => (window as unknown as { squadStorageWrites: string[] }).squadStorageWrites)).toEqual([]);
   expect(requests).toEqual([]);
