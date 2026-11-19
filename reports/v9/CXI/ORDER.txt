@@ -50,3 +50,6 @@ Continue X4 for each new READY; reserve v5-m2.2 recording tag for latest Claude 
 
 STANDING RESUMPTION — 19 Nov 2026
 Explicit owner instruction: resume now; finish pending checks/changes and push, then continue the V9 queue. Handoffs and compactions do not pause this work or require permission. When idle run sleep 600 and re-check. Stop only at V9 DONE or a true owner-only block; do other available work first.
+
+SECOND DELIVERY SOURCE — 19 Nov 2026
+Standing owner rule: Claude cannot write the mailbox. Every DELIVERIES check must fetch origin and read reports/v9/CV/OUTBOX.md from origin/claude/v9-visual. Treat every READY there exactly like a mailbox delivery; never wait for mailbox duplication.

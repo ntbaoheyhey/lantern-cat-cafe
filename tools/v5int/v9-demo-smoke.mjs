@@ -54,6 +54,17 @@ try {
   for(const scene of ['battle','boss'])assert(packs.includes(`v9:${scene}-v9`),`${scene} delivered music was not decoded`);
   console.log('PASS delivered Mochi/Clover video loads and V9 battle/boss music decode. Soot remains on its fallback rig.');
  }
+ if(process.argv.includes('--v9-recording')){
+  const hits=await page.evaluate(()=>window.__thAudio?.hits??[]);
+  for(const cat of ['mochi','clover','soot'])for(const layer of ['riser','transient','body','tail']){
+   const id=`sfx.ult.${cat}.${layer}`;
+   assert(hits.some(hit=>hit.id===id&&hit.result==='played'),`${id} did not play through the delivered director/engine wiring`);
+  }
+  for(const id of ['impact-core','shockwave-ring','smoke-embers','lantern-dome','tea-clover','comet-loop','fire-dome','rune-circle']){
+   for(const ext of ['json','webp'])assert(loaded.has(`/vfx/v9/${id}.${ext}`),`${id}.${ext} was not loaded`);
+  }
+  console.log('PASS recording bundle: all 12 AGS ultimate layers played and all 8 CXV flipbooks loaded.');
+ }
  if(process.argv.includes('--chain-ui')){
   await page.getByRole('button',{name:'Preview receipt fixture',exact:true}).click();
   const fixture=page.getByRole('status',{name:'Fixture receipt — no transaction'});
