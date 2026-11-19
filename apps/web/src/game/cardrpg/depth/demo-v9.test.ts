@@ -6,6 +6,8 @@ import {DepthModel} from './model';
 
 it('limits the judge route to three cats and one street wave, preserving the legacy opt-out',()=>{
   expect(judgeDemoV9('?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3')).toBe(true);
+  expect(judgeDemoV9('?demo=1&squad=1&cardrpg2=1&a6=1')).toBe(false);
+  expect(judgeDemoV9('?demo=1&squad=1&cardrpg2=1&a6=1&dev=1')).toBe(false);
   expect(judgeDemoV9('?demo=1&legacy=1')).toBe(false);
   expect(judgeDemoV9('')).toBe(false);
   const setup=demoSetupV9('wave');

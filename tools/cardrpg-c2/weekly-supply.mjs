@@ -7,7 +7,7 @@ import { root, require } from './runtime.mjs';
 
 export function weeklySupply(summary, tradeRules, mix = { casual: .75, regular: .2, heavy: .05 }) {
  const profiles = Object.keys(mix);
- const calendar = summary.source?.calendar ?? { firstDay: '2026-11-12', startSpanDays: 1 };
+ const calendar = { firstDay: '2026-11-12', startSpanDays: 1, ...summary.source?.calendar };
  if (profiles.some(id => !summary.profiles[id] || !Number.isFinite(mix[id]) || mix[id] < 0)
   || Math.abs(Object.values(mix).reduce((n, x) => n + x, 0) - 1) > 1e-9) throw Error('Invalid active-account mix');
  const rules = new Map(tradeRules.map(r => [r.id, r]));

@@ -6,7 +6,7 @@ import {fileURLToPath} from 'node:url';
 import {resolve} from 'node:path';
 const root=fileURLToPath(new URL('../../',import.meta.url));
 export const C2_INPUT_HASHES=Object.freeze({
-  'WEEKLY-SUPPLY.json':'0c7696edc5ed3f5b51a843829e6280cc490eeb8149bced411f375b86223e91fe',
+  'WEEKLY-SUPPLY.json':'238c837b954b08ba6701f723e46f97bd79380765270c5b557adf22f71cdbfd81',
   'ECONOMY.json':'da13a95c6253fc140b0bb8a51ced7dbf72ed4ca0547714009bdd14279c13fb32',
 });
 const profiles=['casual','regular','heavy'];
@@ -17,7 +17,7 @@ const nonnegative=n=>assert(Number.isFinite(n)&&n>=0,'Invalid source count');
 export function loadC2Inputs(){
   const values={};
   for(const [name,expected] of Object.entries(C2_INPUT_HASHES)){
-    const bytes=readFileSync(resolve(root,'reports/chain/c2-inputs',name));
+    const bytes=readFileSync(resolve(root,'tools/chain/fixtures/c2-inputs',name));
     assert.equal(createHash('sha256').update(bytes).digest('hex'),expected,`Changed C2 evidence: ${name}; review and repin both inputs`);
     values[name]=JSON.parse(bytes);
   }
