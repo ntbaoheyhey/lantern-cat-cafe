@@ -9,6 +9,7 @@
 - Designer ZIPs/MOVs absent at last check; no Soot placeholder. Recheck Downloads and INBOX-CXV.md.
 - Owner confirmed shared source scale: convert final Mochi first, then Clover/Soot without provisional ratios.
 - Safari HEVC mattes checked: Mochi125/Clover75; viewer now repaints on seek even when Safari throttles animation callbacks.
-- Pending: one owner/Claude eye review; CV chat quota resets 17:30 Vietnam; requests routed to INBOX-CV.md, replies via origin CV OUTBOX; final zips on arrival.
+- Pending: one Claude eye review (owner chose waiting); CV quota resets 17:30 Vietnam; use INBOX-CV.md/origin CV OUTBOX; no further screen control; final zips on arrival.
 - Timeboxes: V0 05:59:42–07:59:42 UTC; V1 06:08–12:08 UTC on 2026-11-19; ship working results/gaps at cap.
 - Commit/push owned paths every 30 min/card end; READY posted per item. No V9 DONE CXV posted yet.
+- Compact review ZIP: work/v9/CXV/V9-READY-CXV-f76e8c90a.zip (11 files, 7.70 MiB); no acceptance implied.
