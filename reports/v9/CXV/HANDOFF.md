@@ -1,13 +1,14 @@
 # CXV V9 handoff
-- Branch: codex/v9-tools, base v5-m1.15. V8/Batch M cancelled.
-- Order: reports/v9/CXV/ORDER.txt; only V9 owned paths plus mailbox/work scratch.
-- Started 2026-11-19T05:59:42Z; V0 deadline 07:59:42Z (2 hours).
-- V0 matte corrected/re-exported in 892b51487: tail gaps clear, apron opaque; grey/light clips refreshed.
-- V1 assets DONE: eight atlases/JSON + sheets/3s clips; requesting Claude eye review (one round).
-- V2 built/checked: nine E1/E2/E7 cat variants + screen flash; reports in V2.md, review in blender/variants.html.
-- Old tracked WIP saved/pushed as 6c77897c7; 512 untracked old entries untouched.
-- Pushed 892b51487: revised Mochi/Clover assets + keyer; external correction acceptance pending.
-- Review: work/v9/CXV/vfx/overview.jpg + overview-3s.mp4; browser player on localhost:8390.
-- Owner confirmed final exports share source pixel scale; replace Mochi before other cats.
-- Required: commit/push owned paths every 30 min/card end, READY mailbox, one Claude look.
-- Finish: append UTC V9 DONE CXV SHA summary in mailbox DELIVERIES.md.
+- Worktree /Users/bao/taskbar-hero-cardrpg-a6; branch codex/v9-tools; V8/Batch M cancelled.
+- ORDER.txt remains the original order; only owned V9 paths, mailbox and ignored work scratch.
+- V0 corrected: 892b51487 replaces both mattes; closed gaps clear, dark cloth opaque; all five outputs refreshed.
+- V0 reviews: work/v9/CXV/{mochi,clover}/matte-r2-review.jpg and check-10s.mp4 (seam at 5s).
+- V1 delivered: eight E1-E7 atlas/JSON pairs, per-effect sheets/3s clips; 522b35a42 included in latest branch.
+- V2 delivered/pushed: eb9bdd331, nine cat variants + flash-gradient; tools/v9/blender/variants.html.
+- CXI reports matte merged and V1 integrated; owner/Claude acceptance is still pending.
+- Designer ZIPs/MOVs absent at last check; no Soot placeholder. Recheck Downloads and INBOX-CXV.md.
+- Owner confirmed shared source scale: convert final Mochi first, then Clover/Soot without provisional ratios.
+- Live idle reviewer now uses one video + two canvases; exact frame seeking works without HTTP byte ranges.
+- Pending: one Claude eye review/correction round; final designer conversions on arrival; then final reports/DONE.
+- Timeboxes: V0 05:59:42–07:59:42 UTC; V1 06:08–12:08 UTC on 2026-11-19; ship working results/gaps at cap.
+- Commit/push owned paths every 30 min/card end; READY posted per item. No V9 DONE CXV posted yet.
