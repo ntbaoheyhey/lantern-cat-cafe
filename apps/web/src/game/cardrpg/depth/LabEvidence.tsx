@@ -1,8 +1,8 @@
 import type { DepthModel, Screen } from './model';
 import { SharpnessEvidence } from './SharpnessEvidence';
-import baselineBattle from '../../../../../../reports/cardrpg-big/demo/packaging/baseline.webp?url';
-import sliceBattle from '../../../../../../reports/cardrpg-big/demo/packaging/automatic.webp?url';
-import layoutBounds from '../../../../../../reports/cardrpg-big/layout/1280-bounds.webp?url';
+import baselineBattle from './evidence/baseline.webp?url';
+import sliceBattle from './evidence/automatic.webp?url';
+import layoutBounds from './evidence/1280-bounds.webp?url';
 
 const checklist: Array<{ title: string; screen: Screen; action: string; detail: string }> = [
   { title: 'Effects and motion', screen: 'collection', action: 'Preview a companion', detail: 'Select a cat, then play its skills. The lab gallery also includes enemy actions and ultimates.' },
