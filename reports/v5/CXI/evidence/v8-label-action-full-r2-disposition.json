@@ -1,0 +1,33 @@
+{
+  "utc": "2026-11-18T14:43:16.518346+00:00",
+  "delivery": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v5/CXV/M-action-label-full-R2.json",
+    "sha256": "9823d0573c57c038c07f632ec2a9fc647b5bc42fb7ec92c8ac76c7cf5d901cbb"
+  },
+  "pixelAudit": {
+    "path": "/Users/bao/taskbar-hero-chain/reports/v5/CXI/evidence/v8-label-action-full-r2-paint-review.json",
+    "sha256": "a50cc25d343542faf4c1c046619ebcbf4779197a7e045f2ec9b0c8e13290beff"
+  },
+  "rulesAudit": {
+    "path": "reports/v5/CXI/evidence/v8-label-action-full-r2-rules-review.json",
+    "sha256": "939385c8531e7dfe7f0e740bd67682d1603299465d4f6f10813ac172860b5ed1"
+  },
+  "sourceCommit": "bf01d462ac32233ab11475605d571aea691f96bf",
+  "indexSha256": "eb93ee0dbdfb500c3f9aed80acdb134f027d8093240c86b545807a87dc79ce67",
+  "url": "http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+  "actions": 16,
+  "rulesReplayFromServedGitExact": true,
+  "validContactCases": 14,
+  "invalidContactCases": [
+    "normal-mallow-4-1100",
+    "reduced-mallow-4-1100"
+  ],
+  "acceptedFailureCounts": {
+    "normal-panko-1-350": 1340,
+    "reduced-panko-1-350": 1302
+  },
+  "decision": "REJECT offset-only candidate for production: native Panko body overlaps Mochi label; two Mallow ultimate contact cases lack valid controls.",
+  "next": "Review bounded authored-only native-body guard study and repaired Mallow diagnostic; preserve idle/enlarged-status evidence and Soot/ordinary-label parity.",
+  "productionAcceptance": false,
+  "imagesViewed": 0
+}

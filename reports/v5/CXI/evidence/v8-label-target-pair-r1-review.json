@@ -1,0 +1,1610 @@
+{
+  "utc": "2026-11-18T13:57:23.535783+00:00",
+  "sourceCommit": "8aef40187d03fbc6651d5239e7a93907e973284a",
+  "indexSha256": "82f086119196c891d644defce7a83c9a383d4fb6573ea47476ed0e517a3a0895",
+  "url": "http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+  "viewport": [
+    1280,
+    720
+  ],
+  "inputs": [
+    {
+      "path": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v5/CXV/M-label-target-pair-R1.json",
+      "sha256": "96002cf0058896c2a3570e3af1064c01564dc2bbca785e83192a3fb8b1133ff3"
+    },
+    {
+      "path": "reports/v5/CXI/evidence/v8-label-target-pair-r1-dy0-review.json",
+      "sha256": "ca171eb4ddf5a292240ef143726deb076c3984e36ddd3ea75718960616f8b3f1"
+    },
+    {
+      "path": "reports/v5/CXI/evidence/v8-label-target-pair-r1-dy5-review.json",
+      "sha256": "2c6766aab00a78cd82c6e42cf05486537672ac2a14af94dc01b765261c7c0b7f"
+    }
+  ],
+  "verifiedHashes": 67,
+  "combinedAttributionComparisons": 4160,
+  "pairs": 10,
+  "cases": [
+    {
+      "mode": "normal",
+      "frames": {
+        "mochi": 191,
+        "clover": 0
+      },
+      "cloverShift": 5,
+      "canvasExact": true,
+      "outsideCloverDOMChangedPixels": 427,
+      "outsideCloverFourPixelMarginExact": true,
+      "counts": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "4": 0
+      },
+      "nonzero": [],
+      "mochiBarPrecondition": {
+        "hp": 0,
+        "rage": 81
+      }
+    },
+    {
+      "mode": "normal",
+      "frames": {
+        "mochi": 208,
+        "clover": 17
+      },
+      "cloverShift": 5,
+      "canvasExact": true,
+      "outsideCloverDOMChangedPixels": 427,
+      "outsideCloverFourPixelMarginExact": true,
+      "counts": {
+        "0": 56,
+        "1": 34,
+        "2": 33,
+        "4": 27
+      },
+      "nonzero": [
+        {
+          "label": "mochi",
+          "region": "whole",
+          "cat": "mochi",
+          "threshold": 0,
+          "count": 56,
+          "bbox": [
+            546,
+            247,
+            562,
+            253
+          ],
+          "sampleXY": [
+            [
+              546,
+              247
+            ],
+            [
+              546,
+              248
+            ],
+            [
+              547,
+              248
+            ],
+            [
+              548,
+              248
+            ],
+            [
+              546,
+              249
+            ],
+            [
+              547,
+              249
+            ],
+            [
+              548,
+              249
+            ],
+            [
+              549,
+              249
+            ]
+          ]
+        },
+        {
+          "label": "mochi",
+          "region": "whole",
+          "cat": "mochi",
+          "threshold": 1,
+          "count": 34,
+          "bbox": [
+            546,
+            250,
+            561,
+            253
+          ],
+          "sampleXY": [
+            [
+              549,
+              250
+            ],
+            [
+              550,
+              250
+            ],
+            [
+              551,
+              250
+            ],
+            [
+              552,
+              250
+            ],
+            [
+              553,
+              250
+            ],
+            [
+              554,
+              250
+            ],
+            [
+              546,
+              251
+            ],
+            [
+              547,
+              251
+            ]
+          ]
+        },
+        {
+          "label": "mochi",
+          "region": "whole",
+          "cat": "mochi",
+          "threshold": 2,
+          "count": 33,
+          "bbox": [
+            546,
+            250,
+            561,
+            253
+          ],
+          "sampleXY": [
+            [
+              550,
+              250
+            ],
+            [
+              551,
+              250
+            ],
+            [
+              552,
+              250
+            ],
+            [
+              553,
+              250
+            ],
+            [
+              554,
+              250
+            ],
+            [
+              546,
+              251
+            ],
+            [
+              547,
+              251
+            ],
+            [
+              548,
+              251
+            ]
+          ]
+        },
+        {
+          "label": "mochi",
+          "region": "whole",
+          "cat": "mochi",
+          "threshold": 4,
+          "count": 27,
+          "bbox": [
+            546,
+            251,
+            561,
+            253
+          ],
+          "sampleXY": [
+            [
+              546,
+              251
+            ],
+            [
+              547,
+              251
+            ],
+            [
+              548,
+              251
+            ],
+            [
+              549,
+              251
+            ],
+            [
+              550,
+              251
+            ],
+            [
+              551,
+              251
+            ],
+            [
+              552,
+              251
+            ],
+            [
+              553,
+              251
+            ]
+          ]
+        },
+        {
+          "label": "mochi",
+          "region": "rage",
+          "cat": "mochi",
+          "threshold": 0,
+          "count": 52,
+          "bbox": [
+            546,
+            249,
+            562,
+            253
+          ],
+          "sampleXY": [
+            [
+              546,
+              249
+            ],
+            [
+              547,
+              249
+            ],
+            [
+              548,
+              249
+            ],
+            [
+              549,
+              249
+            ],
+            [
+              550,
+              249
+            ],
+            [
+              551,
+              249
+            ],
+            [
+              559,
+              249
+            ],
+            [
+              546,
+              250
+            ]
+          ]
+        },
+        {
+          "label": "mochi",
+          "region": "rage",
+          "cat": "mochi",
+          "threshold": 1,
+          "count": 34,
+          "bbox": [
+            546,
+            250,
+            561,
+            253
+          ],
+          "sampleXY": [
+            [
+              549,
+              250
+            ],
+            [
+              550,
+              250
+            ],
+            [
+              551,
+              250
+            ],
+            [
+              552,
+              250
+            ],
+            [
+              553,
+              250
+            ],
+            [
+              554,
+              250
+            ],
+            [
+              546,
+              251
+            ],
+            [
+              547,
+              251
+            ]
+          ]
+        },
+        {
+          "label": "mochi",
+          "region": "rage",
+          "cat": "mochi",
+          "threshold": 2,
+          "count": 33,
+          "bbox": [
+            546,
+            250,
+            561,
+            253
+          ],
+          "sampleXY": [
+            [
+              550,
+              250
+            ],
+            [
+              551,
+              250
+            ],
+            [
+              552,
+              250
+            ],
+            [
+              553,
+              250
+            ],
+            [
+              554,
+              250
+            ],
+            [
+              546,
+              251
+            ],
+            [
+              547,
+              251
+            ],
+            [
+              548,
+              251
+            ]
+          ]
+        },
+        {
+          "label": "mochi",
+          "region": "rage",
+          "cat": "mochi",
+          "threshold": 4,
+          "count": 27,
+          "bbox": [
+            546,
+            251,
+            561,
+            253
+          ],
+          "sampleXY": [
+            [
+              546,
+              251
+            ],
+            [
+              547,
+              251
+            ],
+            [
+              548,
+              251
+            ],
+            [
+              549,
+              251
+            ],
+            [
+              550,
+              251
+            ],
+            [
+              551,
+              251
+            ],
+            [
+              552,
+              251
+            ],
+            [
+              553,
+              251
+            ]
+          ]
+        }
+      ],
+      "mochiBarPrecondition": {
+        "hp": 0,
+        "rage": 81
+      }
+    },
+    {
+      "mode": "normal",
+      "frames": {
+        "mochi": 234,
+        "clover": 43
+      },
+      "cloverShift": 5,
+      "canvasExact": true,
+      "outsideCloverDOMChangedPixels": 427,
+      "outsideCloverFourPixelMarginExact": true,
+      "counts": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "4": 0
+      },
+      "nonzero": [],
+      "mochiBarPrecondition": {
+        "hp": 0,
+        "rage": 81
+      }
+    },
+    {
+      "mode": "normal",
+      "frames": {
+        "mochi": 259,
+        "clover": 68
+      },
+      "cloverShift": 5,
+      "canvasExact": true,
+      "outsideCloverDOMChangedPixels": 427,
+      "outsideCloverFourPixelMarginExact": true,
+      "counts": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "4": 0
+      },
+      "nonzero": [],
+      "mochiBarPrecondition": {
+        "hp": 0,
+        "rage": 81
+      }
+    },
+    {
+      "mode": "normal",
+      "frames": {
+        "mochi": 4,
+        "clover": 113
+      },
+      "cloverShift": 5,
+      "canvasExact": true,
+      "outsideCloverDOMChangedPixels": 427,
+      "outsideCloverFourPixelMarginExact": true,
+      "counts": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "4": 0
+      },
+      "nonzero": [],
+      "mochiBarPrecondition": {
+        "hp": 0,
+        "rage": 81
+      }
+    },
+    {
+      "mode": "normal",
+      "frames": {
+        "mochi": 38,
+        "clover": 147
+      },
+      "cloverShift": 5,
+      "canvasExact": true,
+      "outsideCloverDOMChangedPixels": 427,
+      "outsideCloverFourPixelMarginExact": true,
+      "counts": {
+        "0": 340,
+        "1": 281,
+        "2": 262,
+        "4": 251
+      },
+      "nonzero": [
+        {
+          "label": "mochi",
+          "region": "whole",
+          "cat": "mochi",
+          "threshold": 0,
+          "count": 340,
+          "bbox": [
+            546,
+            239,
+            587,
+            253
+          ],
+          "sampleXY": [
+            [
+              546,
+              239
+            ],
+            [
+              548,
+              239
+            ],
+            [
+              549,
+              239
+            ],
+            [
+              550,
+              239
+            ],
+            [
+              551,
+              239
+            ],
+            [
+              552,
+              239
+            ],
+            [
+              546,
+              240
+            ],
+            [
+              547,
+              240
+            ]
+          ]
+        },
+        {
+          "label": "mochi",
+          "region": "whole",
+          "cat": "mochi",
+          "threshold": 1,
+          "count": 281,
+          "bbox": [
+            546,
+            240,
+            586,
+            253
+          ],
+          "sampleXY": [
+            [
+              546,
+              240
+            ],
+            [
+              547,
+              240
+            ],
+            [
+              548,
+              240
+            ],
+            [
+              549,
+              240
+            ],
+            [
+              546,
+              241
+            ],
+            [
+              547,
+              241
+            ],
+            [
+              548,
+              241
+            ],
+            [
+              549,
+              241
+            ]
+          ]
+        },
+        {
+          "label": "mochi",
+          "region": "whole",
+          "cat": "mochi",
+          "threshold": 2,
+          "count": 262,
+          "bbox": [
+            546,
+            242,
+            585,
+            253
+          ],
+          "sampleXY": [
+            [
+              546,
+              242
+            ],
+            [
+              547,
+              242
+            ],
+            [
+              548,
+              242
+            ],
+            [
+              549,
+              242
+            ],
+            [
+              550,
+              242
+            ],
+            [
+              551,
+              242
+            ],
+            [
+              546,
+              243
+            ],
+            [
+              547,
+              243
+            ]
+          ]
+        },
+        {
+          "label": "mochi",
+          "region": "whole",
+          "cat": "mochi",
+          "threshold": 4,
+          "count": 251,
+          "bbox": [
+            546,
+            242,
+            585,
+            253
+          ],
+          "sampleXY": [
+            [
+              546,
+              242
+            ],
+            [
+              547,
+              242
+            ],
+            [
+              548,
+              242
+            ],
+            [
+              549,
+              242
+            ],
+            [
+              550,
+              242
+            ],
+            [
+              546,
+              243
+            ],
+            [
+              547,
+              243
+            ],
+            [
+              548,
+              243
+            ]
+          ]
+        },
+        {
+          "label": "mochi",
+          "region": "hp",
+          "cat": "mochi",
+          "threshold": 0,
+          "count": 129,
+          "bbox": [
+            546,
+            239,
+            570,
+            247
+          ],
+          "sampleXY": [
+            [
+              546,
+              239
+            ],
+            [
+              548,
+              239
+            ],
+            [
+              549,
+              239
+            ],
+            [
+              550,
+              239
+            ],
+            [
+              551,
+              239
+            ],
+            [
+              552,
+              239
+            ],
+            [
+              546,
+              240
+            ],
+            [
+              547,
+              240
+            ]
+          ]
+        },
+        {
+          "label": "mochi",
+          "region": "hp",
+          "cat": "mochi",
+          "threshold": 1,
+          "count": 83,
+          "bbox": [
+            546,
+            240,
+            569,
+            247
+          ],
+          "sampleXY": [
+            [
+              546,
+              240
+            ],
+            [
+              547,
+              240
+            ],
+            [
+              548,
+              240
+            ],
+            [
+              549,
+              240
+            ],
+            [
+              546,
+              241
+            ],
+            [
+              547,
+              241
+            ],
+            [
+              548,
+              241
+            ],
+            [
+              549,
+              241
+            ]
+          ]
+        },
+        {
+          "label": "mochi",
+          "region": "hp",
+          "cat": "mochi",
+          "threshold": 2,
+          "count": 67,
+          "bbox": [
+            546,
+            242,
+            567,
+            247
+          ],
+          "sampleXY": [
+            [
+              546,
+              242
+            ],
+            [
+              547,
+              242
+            ],
+            [
+              548,
+              242
+            ],
+            [
+              549,
+              242
+            ],
+            [
+              550,
+              242
+            ],
+            [
+              551,
+              242
+            ],
+            [
+              546,
+              243
+            ],
+            [
+              547,
+              243
+            ]
+          ]
+        },
+        {
+          "label": "mochi",
+          "region": "hp",
+          "cat": "mochi",
+          "threshold": 4,
+          "count": 61,
+          "bbox": [
+            546,
+            242,
+            567,
+            247
+          ],
+          "sampleXY": [
+            [
+              546,
+              242
+            ],
+            [
+              547,
+              242
+            ],
+            [
+              548,
+              242
+            ],
+            [
+              549,
+              242
+            ],
+            [
+              550,
+              242
+            ],
+            [
+              546,
+              243
+            ],
+            [
+              547,
+              243
+            ],
+            [
+              548,
+              243
+            ]
+          ]
+        },
+        {
+          "label": "mochi",
+          "region": "rage",
+          "cat": "mochi",
+          "threshold": 0,
+          "count": 157,
+          "bbox": [
+            546,
+            249,
+            587,
+            253
+          ],
+          "sampleXY": [
+            [
+              546,
+              249
+            ],
+            [
+              547,
+              249
+            ],
+            [
+              548,
+              249
+            ],
+            [
+              549,
+              249
+            ],
+            [
+              550,
+              249
+            ],
+            [
+              551,
+              249
+            ],
+            [
+              552,
+              249
+            ],
+            [
+              553,
+              249
+            ]
+          ]
+        },
+        {
+          "label": "mochi",
+          "region": "rage",
+          "cat": "mochi",
+          "threshold": 1,
+          "count": 150,
+          "bbox": [
+            546,
+            249,
+            586,
+            253
+          ],
+          "sampleXY": [
+            [
+              546,
+              249
+            ],
+            [
+              547,
+              249
+            ],
+            [
+              548,
+              249
+            ],
+            [
+              549,
+              249
+            ],
+            [
+              550,
+              249
+            ],
+            [
+              551,
+              249
+            ],
+            [
+              552,
+              249
+            ],
+            [
+              553,
+              249
+            ]
+          ]
+        },
+        {
+          "label": "mochi",
+          "region": "rage",
+          "cat": "mochi",
+          "threshold": 2,
+          "count": 148,
+          "bbox": [
+            546,
+            249,
+            585,
+            253
+          ],
+          "sampleXY": [
+            [
+              546,
+              249
+            ],
+            [
+              547,
+              249
+            ],
+            [
+              548,
+              249
+            ],
+            [
+              549,
+              249
+            ],
+            [
+              550,
+              249
+            ],
+            [
+              551,
+              249
+            ],
+            [
+              552,
+              249
+            ],
+            [
+              553,
+              249
+            ]
+          ]
+        },
+        {
+          "label": "mochi",
+          "region": "rage",
+          "cat": "mochi",
+          "threshold": 4,
+          "count": 145,
+          "bbox": [
+            546,
+            249,
+            585,
+            253
+          ],
+          "sampleXY": [
+            [
+              546,
+              249
+            ],
+            [
+              547,
+              249
+            ],
+            [
+              548,
+              249
+            ],
+            [
+              549,
+              249
+            ],
+            [
+              550,
+              249
+            ],
+            [
+              551,
+              249
+            ],
+            [
+              552,
+              249
+            ],
+            [
+              553,
+              249
+            ]
+          ]
+        }
+      ],
+      "mochiBarPrecondition": {
+        "hp": 0,
+        "rage": 81
+      }
+    },
+    {
+      "mode": "normal",
+      "frames": {
+        "mochi": 95,
+        "clover": 204
+      },
+      "cloverShift": 5,
+      "canvasExact": true,
+      "outsideCloverDOMChangedPixels": 427,
+      "outsideCloverFourPixelMarginExact": true,
+      "counts": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "4": 0
+      },
+      "nonzero": [],
+      "mochiBarPrecondition": {
+        "hp": 0,
+        "rage": 81
+      }
+    },
+    {
+      "mode": "normal",
+      "frames": {
+        "mochi": 127,
+        "clover": 236
+      },
+      "cloverShift": 5,
+      "canvasExact": true,
+      "outsideCloverDOMChangedPixels": 427,
+      "outsideCloverFourPixelMarginExact": true,
+      "counts": {
+        "0": 93,
+        "1": 73,
+        "2": 67,
+        "4": 63
+      },
+      "nonzero": [
+        {
+          "label": "mochi",
+          "region": "whole",
+          "cat": "mochi",
+          "threshold": 0,
+          "count": 93,
+          "bbox": [
+            546,
+            245,
+            566,
+            253
+          ],
+          "sampleXY": [
+            [
+              549,
+              245
+            ],
+            [
+              550,
+              245
+            ],
+            [
+              549,
+              246
+            ],
+            [
+              550,
+              246
+            ],
+            [
+              548,
+              247
+            ],
+            [
+              551,
+              247
+            ],
+            [
+              562,
+              247
+            ],
+            [
+              563,
+              247
+            ]
+          ]
+        },
+        {
+          "label": "mochi",
+          "region": "whole",
+          "cat": "mochi",
+          "threshold": 1,
+          "count": 73,
+          "bbox": [
+            546,
+            248,
+            566,
+            253
+          ],
+          "sampleXY": [
+            [
+              549,
+              248
+            ],
+            [
+              550,
+              248
+            ],
+            [
+              551,
+              248
+            ],
+            [
+              552,
+              248
+            ],
+            [
+              546,
+              249
+            ],
+            [
+              547,
+              249
+            ],
+            [
+              548,
+              249
+            ],
+            [
+              549,
+              249
+            ]
+          ]
+        },
+        {
+          "label": "mochi",
+          "region": "whole",
+          "cat": "mochi",
+          "threshold": 2,
+          "count": 67,
+          "bbox": [
+            546,
+            248,
+            566,
+            253
+          ],
+          "sampleXY": [
+            [
+              550,
+              248
+            ],
+            [
+              551,
+              248
+            ],
+            [
+              552,
+              248
+            ],
+            [
+              546,
+              249
+            ],
+            [
+              547,
+              249
+            ],
+            [
+              548,
+              249
+            ],
+            [
+              549,
+              249
+            ],
+            [
+              550,
+              249
+            ]
+          ]
+        },
+        {
+          "label": "mochi",
+          "region": "whole",
+          "cat": "mochi",
+          "threshold": 4,
+          "count": 63,
+          "bbox": [
+            546,
+            248,
+            565,
+            253
+          ],
+          "sampleXY": [
+            [
+              550,
+              248
+            ],
+            [
+              551,
+              248
+            ],
+            [
+              546,
+              249
+            ],
+            [
+              547,
+              249
+            ],
+            [
+              548,
+              249
+            ],
+            [
+              549,
+              249
+            ],
+            [
+              550,
+              249
+            ],
+            [
+              551,
+              249
+            ]
+          ]
+        },
+        {
+          "label": "mochi",
+          "region": "hp",
+          "cat": "mochi",
+          "threshold": 0,
+          "count": 4,
+          "bbox": [
+            549,
+            245,
+            551,
+            247
+          ],
+          "sampleXY": [
+            [
+              549,
+              245
+            ],
+            [
+              550,
+              245
+            ],
+            [
+              549,
+              246
+            ],
+            [
+              550,
+              246
+            ]
+          ]
+        },
+        {
+          "label": "mochi",
+          "region": "rage",
+          "cat": "mochi",
+          "threshold": 0,
+          "count": 74,
+          "bbox": [
+            546,
+            249,
+            566,
+            253
+          ],
+          "sampleXY": [
+            [
+              546,
+              249
+            ],
+            [
+              547,
+              249
+            ],
+            [
+              548,
+              249
+            ],
+            [
+              549,
+              249
+            ],
+            [
+              550,
+              249
+            ],
+            [
+              551,
+              249
+            ],
+            [
+              552,
+              249
+            ],
+            [
+              553,
+              249
+            ]
+          ]
+        },
+        {
+          "label": "mochi",
+          "region": "rage",
+          "cat": "mochi",
+          "threshold": 1,
+          "count": 69,
+          "bbox": [
+            546,
+            249,
+            566,
+            253
+          ],
+          "sampleXY": [
+            [
+              546,
+              249
+            ],
+            [
+              547,
+              249
+            ],
+            [
+              548,
+              249
+            ],
+            [
+              549,
+              249
+            ],
+            [
+              550,
+              249
+            ],
+            [
+              551,
+              249
+            ],
+            [
+              552,
+              249
+            ],
+            [
+              553,
+              249
+            ]
+          ]
+        },
+        {
+          "label": "mochi",
+          "region": "rage",
+          "cat": "mochi",
+          "threshold": 2,
+          "count": 64,
+          "bbox": [
+            546,
+            249,
+            566,
+            253
+          ],
+          "sampleXY": [
+            [
+              546,
+              249
+            ],
+            [
+              547,
+              249
+            ],
+            [
+              548,
+              249
+            ],
+            [
+              549,
+              249
+            ],
+            [
+              550,
+              249
+            ],
+            [
+              551,
+              249
+            ],
+            [
+              552,
+              249
+            ],
+            [
+              553,
+              249
+            ]
+          ]
+        },
+        {
+          "label": "mochi",
+          "region": "rage",
+          "cat": "mochi",
+          "threshold": 4,
+          "count": 61,
+          "bbox": [
+            546,
+            249,
+            565,
+            253
+          ],
+          "sampleXY": [
+            [
+              546,
+              249
+            ],
+            [
+              547,
+              249
+            ],
+            [
+              548,
+              249
+            ],
+            [
+              549,
+              249
+            ],
+            [
+              550,
+              249
+            ],
+            [
+              551,
+              249
+            ],
+            [
+              552,
+              249
+            ],
+            [
+              553,
+              249
+            ]
+          ]
+        }
+      ],
+      "mochiBarPrecondition": {
+        "hp": 0,
+        "rage": 81
+      }
+    },
+    {
+      "mode": "normal",
+      "frames": {
+        "mochi": 180,
+        "clover": 289
+      },
+      "cloverShift": 5,
+      "canvasExact": true,
+      "outsideCloverDOMChangedPixels": 427,
+      "outsideCloverFourPixelMarginExact": true,
+      "counts": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "4": 0
+      },
+      "nonzero": [],
+      "mochiBarPrecondition": {
+        "hp": 0,
+        "rage": 81
+      }
+    },
+    {
+      "mode": "reduced",
+      "frames": {
+        "mochi": 0,
+        "clover": 0
+      },
+      "cloverShift": 5,
+      "canvasExact": true,
+      "outsideCloverDOMChangedPixels": 427,
+      "outsideCloverFourPixelMarginExact": true,
+      "counts": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "4": 0
+      },
+      "nonzero": [],
+      "mochiBarPrecondition": {
+        "hp": 0,
+        "rage": 81
+      }
+    }
+  ],
+  "cloverSampledClear": true,
+  "overallClear": false,
+  "productionAcceptance": false,
+  "imagesViewed": 0,
+  "limits": [
+    "Paired post-conceal paused diagnostics; eight new idle poses, one fitted pose, reduced F0.",
+    "427 changed pixels per pair lie outside exact Clover DOM bounds; all are within the delivered 4px margin.",
+    "Per-page callback observation/display times and decoder durations differ; not timing equivalence.",
+    "No all-frame, cast, native-body paint, or ordinary-gameplay clearance.",
+    "Initial rage discontinuities, rectangle failures, source matte and seam gates retained."
+  ]
+}

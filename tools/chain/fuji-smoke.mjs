@@ -1,7 +1,7 @@
 // User-run only on public Fuji. --dry-run uses a fresh disposable localhost chain.
 import assert from 'node:assert/strict';
 import {createRequire} from 'node:module';
-import {readFileSync,writeFileSync} from 'node:fs';
+import {readFileSync,writeFileSync,mkdirSync} from 'node:fs';
 import {pathToFileURL} from 'node:url';
 import {resolve} from 'node:path';
 import {root,startLocal,devAccount,localApi,localOrigin,artifact} from './local.mjs';
@@ -76,6 +76,7 @@ try{
  passed=true;console.log(`PASS: ${dry?'Anvil dry-run':'public Fuji'} judge loop, ${receipts.length} confirmed transactions.`);
 }catch(error){failure=safeFailure(error);console.error(`FAIL at ${stage}. ${JSON.stringify(failure)} No secret values logged.`);process.exitCode=1;}
 finally{
+ mkdirSync(resolve(root,'reports/chain'),{recursive:true});
  const path=resolve(root,`reports/chain/FUJI-SMOKE${dry?'-DRY-RUN':''}.md`);
  writeFileSync(path,`# ${dry?'Anvil dry-run — NOT public Fuji':'Public Fuji smoke'}\n\n${passed?'PASS':'FAIL'} · ${new Date().toISOString()} · chain 43113 · Testnet — no real value.\n\n${dry?'All hashes below belong to disposable localhost state; they are not Snowtrace evidence.':'All links below are public Fuji receipts.'}\n\nLast stage: ${stage}.\n${failure?`\nFailure: ${JSON.stringify(failure)}\n`:''}\n| Step | Transaction |\n|---|---|\n${receipts.map(r=>`| ${r.label} | ${dry?'`'+r.hash+'`':`[${r.hash}](https://testnet.snowtrace.io/tx/${r.hash})`} |`).join('\n')}\n`);
  await local?.stop();

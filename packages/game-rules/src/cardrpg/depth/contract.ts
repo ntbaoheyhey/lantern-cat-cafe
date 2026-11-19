@@ -51,6 +51,8 @@ export interface Battle {
   boons: Record<string, number>; procRounds: Record<string, number>; mutator: string; initial: BattleSetup;
 }
 export interface BattleSetup {
+  /** Fixed three-cat recording; legacy campaign formation remains four cats. */
+  demoV9?: boolean;
   challengeLevel?: number;
   packedSupply?: PackedSupplyV4;
   formationC2?: boolean; gameplayA6?: boolean; skillsV5?: boolean; gameplayV4?: boolean; plan?: StandingPlan;

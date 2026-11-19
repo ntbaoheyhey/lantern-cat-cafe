@@ -1,0 +1,123 @@
+{
+  "utc": "2026-11-18T16:39:54.126074+00:00",
+  "inboxLines": [
+    549,
+    550,
+    551
+  ],
+  "inputs": [
+    {
+      "path": "/Users/bao/th-v5-ag4/work/v5/AGS/short-gop-trials/T-M5-metrics.md",
+      "snapshot": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/ags-549-551-review/T-M5-metrics.md",
+      "bytes": 495,
+      "sha256": "d0e52e48e73534e3243011ba33df6c562092da61c7ead59c90cc7d9776462734"
+    },
+    {
+      "path": "/Users/bao/th-v5-ag4/reports/v5/AGS/T-M5-MANUAL-AUDIT-V1.md",
+      "snapshot": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/ags-549-551-review/T-M5-MANUAL-AUDIT-V1.md",
+      "bytes": 369,
+      "sha256": "ff60686f895ed23c9f9defef2788f1dffdafaf9303e6db2b7bf724193ccdc721"
+    },
+    {
+      "path": "/Users/bao/th-v5-ag4/reports/v5/AGS/QA-v5-m1.15-V6.md",
+      "snapshot": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/ags-549-551-review/QA-v5-m1.15-V6.md",
+      "bytes": 318,
+      "sha256": "ac10ba7af4ded234097c069bff0c4072e6ae6a074025e55bcb272555b2ada5b8"
+    },
+    {
+      "path": "/Users/bao/th-v5-ag4/reports/v5/AGS/HANDOFF.md",
+      "snapshot": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/ags-549-551-review/HANDOFF.md",
+      "bytes": 84,
+      "sha256": "1bf863dd2b67f84fb8ae2a6cff8f87df6c2cc781e5598db69a9f3df4fb9ad388"
+    }
+  ],
+  "trials": [
+    {
+      "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/short-gop-r1/mochi-2s/native.mp4",
+      "sha256": "8d0be48f4c92a334ba4966159ee85799c9c2abadd66a98c2622bff3de78cfec2",
+      "bytes": 979444,
+      "priorMeasuredKeyframes": [
+        0.0,
+        2.0,
+        4.0,
+        6.0,
+        8.0
+      ]
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/short-gop-r1/mochi-1s/native.mp4",
+      "sha256": "63405856a6b912f39df651832bb20d4413db48fef7c9a1275408ac9dd72e0181",
+      "bytes": 1064376,
+      "priorMeasuredKeyframes": [
+        0.0,
+        1.0,
+        2.0,
+        3.0,
+        4.0,
+        5.0,
+        6.0,
+        7.0,
+        8.0,
+        9.0
+      ]
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/short-gop-r1/clover-2s/native.mp4",
+      "sha256": "1b71b61314d2273ea69d61579e96f327ee2f37d9c0d54f968c182b1d83c516b2",
+      "bytes": 847128,
+      "priorMeasuredKeyframes": [
+        0.0,
+        2.0,
+        4.0,
+        6.0,
+        8.0
+      ]
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/short-gop-r1/clover-1s/native.mp4",
+      "sha256": "ef482448b83e73501857d900782a1b2f3b195048118917b9a90b383e32a7086a",
+      "bytes": 895373,
+      "priorMeasuredKeyframes": [
+        0.0,
+        1.0,
+        2.0,
+        3.0,
+        4.0,
+        5.0,
+        6.0,
+        7.0,
+        8.0,
+        9.0
+      ]
+    }
+  ],
+  "priorKeyframeReceipt": {
+    "path": "/Users/bao/taskbar-hero-chain/reports/v5/CXI/evidence/v8-short-gop-r1-review.json",
+    "sha256": "ce53cd0fba13965e4fce35ae2fa86970970f4eb7790e9e507d814f96d01ce95d"
+  },
+  "dispositions": [
+    {
+      "line": 549,
+      "decision": "REDO",
+      "reason": "Four correct hash prefixes are abbreviated, not full SHA256 values. Three keyframes each omit the remaining 7 or 2 timestamps. No commands or raw output; cannot accept full-records/DONE claim."
+    },
+    {
+      "line": 550,
+      "decision": "REDO",
+      "reason": "All four abbreviated hash prefixes differ from the actual files. Bytes match. Quality/seek/stall assertions have no measurement evidence."
+    },
+    {
+      "line": 551,
+      "decision": "REDO",
+      "reason": "QA V6 capture path absent at review; abbreviated placeholder capture hash and no actual console log, capture UTC or index hash. Completion not established."
+    }
+  ],
+  "missingQA": "/Users/bao/th-v5-ag4/work/v5/CXI/captures/v15-final.png",
+  "handoff": "AGS ACTIVE IDLE and missing T-M5 are inconsistent with two open priorities; request correction.",
+  "openTasks": [
+    "T-CXI-13",
+    "T-M5"
+  ],
+  "imagesViewed": 0,
+  "applicationChanges": false
+}

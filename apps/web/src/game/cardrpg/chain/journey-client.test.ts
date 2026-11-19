@@ -35,3 +35,10 @@ it('refuses a reward for a different wallet',async()=>{
  await expect(journeyClient(config,runtime,'token',address).mintFirstReward()).rejects.toThrow('Trial reward unavailable');
  expect(post).toHaveBeenCalledTimes(1);expect(runtime.write).not.toHaveBeenCalled();
 });
+it('requests a boss voucher and mints only the single boss Relic entitlement',async()=>{
+ post.mockResolvedValueOnce({vouchers:[voucher,{...voucher,relicId:'3',source:'judge-boss'}],battle:{won:true}}).mockResolvedValueOnce({status:'confirmed',txHash:hash});
+ await journeyClient(config,runtime,'token',address).mintBossReward();
+ expect(post).toHaveBeenNthCalledWith(1,'chain-judge','token',{action:'finale'});
+ expect(runtime.write).toHaveBeenCalledTimes(1);
+ expect(runtime.write).toHaveBeenCalledWith(expect.objectContaining({args:[expect.objectContaining({relicId:3n}),voucher.signature]}));
+});

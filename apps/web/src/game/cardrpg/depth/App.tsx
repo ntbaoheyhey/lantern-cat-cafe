@@ -3,7 +3,9 @@ import {Coach} from '../shell/Coach';
 import {chainFlags,shipJourneyEnabled} from '../chain/flags';
 const DemoJourney=lazy(()=>import('../shell/DemoJourney'));
 const ChainRoom=lazy(()=>import('../chain/ChainRoom').then(m=>({default:m.ChainRoom})));
-import {gameplayA6} from '../gate';
+import {gameplayA6,judgeDemoV9} from '../gate';
+import {DEMO_CREW_V9} from '@taskbar-hero/game-rules/src/cardrpg/depth/demo-v9';
+const JudgeDemoV9=lazy(()=>import('../shell/JudgeDemoV9'));
 import {OpeningA6} from '../ui-v3/OpeningA6';
 import {uiV3Enabled} from '../ui-v3/flag';
 import { BattleSkillsV5 } from './SkillsV5';
@@ -51,9 +53,10 @@ const navigation: [Screen, string, string][] = [
 ];
 export default function DepthApp({ offline = false, gameplayV4 = false, skillsV5 = false }: { offline?: boolean; gameplayV4?: boolean; skillsV5?: boolean }) {
   const a6 = gameplayA6();
+  const judgeDemo = judgeDemoV9();
   const uiV3 = uiV3Enabled() || a6;
   const lookV2 = useSyncExternalStore(subscribeLookV2, isLookV2, () => false);
-  const [m] = useState(() => (()=>{const model=new DepthModel(offline, gameplayV4 || a6, skillsV5 || a6, a6, a6);model.state.economyV3=chainFlags().economyV3;return model;})());
+  const [m] = useState(() => (()=>{const model=new DepthModel(offline||judgeDemo, gameplayV4 || a6, skillsV5 || a6, a6, a6);model.state.economyV3=chainFlags().economyV3;if(judgeDemo){model.state.team=[...DEMO_CREW_V9];model.state.rows={mochi:'front',clover:'rear',soot:'rear'};}return model;})());
   useSyncExternalStore(m.subscribe, m.snapshot);
   const reviewTools = showReviewTools(activeGameplayV4(m.state));
   const app = useRef<HTMLDivElement>(null);
@@ -79,7 +82,7 @@ export default function DepthApp({ offline = false, gameplayV4 = false, skillsV5
     // A6 is an explicit opt-in; its illustrated DOM and B's puppets share one art direction.
     const previousArt=window.__LOOK_ART__;
     if(a6){window.__LOOK_ART__='v3';setLookV2(true);}
-    if (offline || import.meta.env.DEV || new URLSearchParams(location.search).get('demo') === '1' && new URLSearchParams(location.search).get('dev') === '1') window.__depthReview = m;
+    if (offline || judgeDemo || import.meta.env.DEV || new URLSearchParams(location.search).get('demo') === '1' && new URLSearchParams(location.search).get('dev') === '1') window.__depthReview = m;
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       m.state.settings.reducedMotion = true;
       m.notify(false);
@@ -96,8 +99,8 @@ export default function DepthApp({ offline = false, gameplayV4 = false, skillsV5
         {m.screen === 'collection' && <Collection m={m} />}{m.screen === 'inventory' && <Inventory m={m} />}{m.screen === 'gacha' && <Invitations m={m} />}
         {m.screen === 'codex' && <Codex v4={activeGameplayV4(m.state)} skillsV5={!!m.state.skillsV5} a6={activeGameplayA6(m.state)} />}{m.screen === 'relics' && (chainFlags().chainLoop ? <ChainRoom/> : <Relics m={m} />)}{m.screen === 'save' && <SaveSettings m={m} />}{m.screen === 'evidence' && <Evidence />}</Suspense>;
   if (uiV3) return <CompanionPreviewProvider m={m}><div ref={app} data-a6={a6} data-look-v2={lookV2} data-battle-active={m.showBattle} style={lookV2 ? rarityStyle : undefined} className={`cr-app dp-app uv-app ${m.state.settings.reducedMotion ? 'dp-reduced-motion' : ''}`}>
-    <Suspense fallback={a6?<OpeningA6 message="Opening the cafe…"/>:<p role="status">Opening the cafe…</p>}>{shipJourneyEnabled()?<DemoJourney m={m}/>:<ShellV3 m={m}>{pageView}</ShellV3>}</Suspense>
-    {!shipJourneyEnabled()&&<><Coach m={m}/><DiscoveryCelebrationV4 m={m}/></>}
+    <Suspense fallback={a6?<OpeningA6 message="Opening the cafe…"/>:<p role="status">Opening the cafe…</p>}>{judgeDemo?<JudgeDemoV9 m={m}/>:shipJourneyEnabled()?<DemoJourney m={m}/>:<ShellV3 m={m}>{pageView}</ShellV3>}</Suspense>
+    {!judgeDemo&&!shipJourneyEnabled()&&<><Coach m={m}/><DiscoveryCelebrationV4 m={m}/></>}
     {m.sceneStarted && <div className="dp-battle-shell"><Suspense fallback={a6?<OpeningA6 message="Preparing the battle…"/>:<p role="status">Preparing the battle…</p>}><BattleView m={m}/></Suspense></div>}
     {m.showBattle && <Suspense fallback={null}><BattleHudV3 m={m}/></Suspense>}
   </div></CompanionPreviewProvider>;

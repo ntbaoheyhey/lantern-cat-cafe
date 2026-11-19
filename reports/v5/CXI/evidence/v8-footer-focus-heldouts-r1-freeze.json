@@ -1,0 +1,99 @@
+{
+  "utc": "2026-11-18T18:21:13.100650+00:00",
+  "classification": "Fresh CXI heldout development cases chosen from source before evaluating these cases;not full production acceptance",
+  "sourceCommit": "bf01d462ac32233ab11475605d571aea691f96bf",
+  "indexSha256": "e66485f99d6c488da1363ba2d2fc739b779dc524e31800874e55b5e167f7daf1",
+  "build": {
+    "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/mochi-only-profile-r1/build.json",
+    "sha256": "f6db611441d33815deddfdfe9aa04b068de567abb6b15adcb493f7d81d203b07"
+  },
+  "url": "http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+  "viewport": [
+    1280,
+    720
+  ],
+  "prototype": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/tools/v5vfx/footer-identity-stable-prototype.mjs",
+    "sha256": "3bea8edc07dada887e578d9df71ea944817e78e58b7111ece3fcc9755b50f09d"
+  },
+  "cases": [
+    {
+      "mode": "normal",
+      "cat": "mochi",
+      "skill": 4,
+      "statusCase": "capacity",
+      "focusStatusId": "bitter",
+      "expectation": "First debuff scald removed;surviving Bitter changes visible position,retain same focused node as original control."
+    },
+    {
+      "mode": "reduced",
+      "cat": "mochi",
+      "skill": 4,
+      "statusCase": "capacity",
+      "focusStatusId": "scald",
+      "expectation": "Focused Burn is cleansed;preserve original focus fallback without calling focus() or retaining removed status."
+    }
+  ],
+  "arms": [
+    "original",
+    "prototype"
+  ],
+  "freshPages": 4,
+  "sampleMs": [
+    0,
+    175,
+    250,
+    350,
+    600,
+    1100,
+    1300,
+    2199,
+    2200
+  ],
+  "captures": "Initial/final screen+canvas,2repeats each,max32PNGs;no image review before numeric measurements. At most2new1024px previews once if controls valid.",
+  "fixture": "Same seeded roster mochi/clover/panko/mallow;initial4capped statuses andshield80 synthetic. Legal ultimate replayed against exact captured rules;not natural reachability.",
+  "observation": "Atomic full before/sync/after snapshot and original control;no focus restoration or global clock freezing. Preserve R1/R2 evidence;no app source edits.",
+  "launchPrerequisites": [
+    "R2 regression accepted in scope after independent audit.",
+    "R2 processgroup empty AND explicit timing release.",
+    "Own lease and frozen harness/dependency hashes before launch."
+  ],
+  "productionAcceptance": false,
+  "toolingFrozenUTC": "2026-11-18T18:24:18.062266+00:00",
+  "originalProtocol": {
+    "path": "/Users/bao/taskbar-hero-chain/reports/v5/CXI/evidence/v8-footer-focus-heldouts-r1-preregistration.json",
+    "sha256": "e607fa46e8de13f64548cdcb37237134c4838df098d69d9c273ee0f8ce38be70"
+  },
+  "prototypeSha256": "3bea8edc07dada887e578d9df71ea944817e78e58b7111ece3fcc9755b50f09d",
+  "harnessSha256": "bfbdc5d1828ab76d4e04fd24827a670d3fb20ff83e2a0dffac79cec0744b11e2",
+  "frozenDependencies": {
+    "/Users/bao/taskbar-hero-cardrpg-a6/tools/v5vfx/verify-fixed-label-layout.mjs": "fa876ea8fa0cdecbc2913642afa548b078d9388c9b5558c9a7f7f30280a198de",
+    "/Users/bao/taskbar-hero-cardrpg-a6/tools/v5vfx/probe-label-staging-idle.mjs": "e2dd1e1716d60a15884dc2024cd720d31a601fc645065f484c6f9748eca67451",
+    "/Users/bao/taskbar-hero-cardrpg-a6/tools/v5vfx/hud-meter-observation.mjs": "16a9e847e7ee3d8aefc4450e88a1c6604ec343913086f3f225b479364e8c8c2a",
+    "/Users/bao/taskbar-hero-cardrpg-a6/tools/v5vfx/verify-label-fullpaint.py": "3473564706058cc24e552a8c85e550522e5b0267d5d83db88f41258015165c55",
+    "/Users/bao/taskbar-hero-cardrpg-a6/tools/v5vfx/verify-lower-label-native.mjs": "dca5d9445e5d74bb9c937cdc7113c07618d99e5751ef4c66e4b98440de38a38b",
+    "/Users/bao/taskbar-hero-cardrpg-a6/tools/v5vfx/probe-action-labels.mjs": "9509b46588b7b919f4fb3f12395b8e47fe271df1869249ecf68561af0e1fdbfd",
+    "/Users/bao/taskbar-hero-cardrpg-a6/tools/v5vfx/action-label-observation.mjs": "b1dbc430109d26455a955248f97b60462dc82059524d93ff44a96fb955410861",
+    "/Users/bao/taskbar-hero-cardrpg-a6/tools/v5vfx/measure-action-labels.py": "ec50fa7383e505d653e02aebef676dcc454866e086a1d1ebc6d6a81ebaac0c0f",
+    "/Users/bao/taskbar-hero-cardrpg-a6/tools/v5vfx/run-mochi-label-controls.py": "96c8fa88fa10bc10b61af9cd4ac67bd9ae6da289e995048c40136e97066c0b9c",
+    "/Users/bao/taskbar-hero-cardrpg-a6/tools/v5vfx/mochi-label-production-fixture.mjs": "1cc672c1e6bc6995de9ed99b179f15c81f18bbb9bd2835a6d30e1f6da7a1e493",
+    "/Users/bao/taskbar-hero-cardrpg-a6/tools/v5vfx/capture-full-battle-production.mjs": "8a472e6f3636ac9f21a2d8c665a56df1d987b056180a755cc9a4ca18beff7605",
+    "/Users/bao/taskbar-hero-cardrpg-a6/tools/v5vfx/measure-media-battle.py": "904f44b3180a1a7631f6f83590f35213aa457cc69cf2c0f6e3aae5ce0aaa0168",
+    "/Users/bao/taskbar-hero-cardrpg-a6/tools/v5vfx/run-media-natural.py": "7d5688b41e13d9dabc68156ca304199d40c08f33eea6e1d6817393221b6095f7",
+    "/Users/bao/taskbar-hero-cardrpg-a6/tools/v5vfx/measure-dual-media-battle.py": "e63c8141fe3158636d537c4a0f68ab35b5dda59de35cd4e14c4108c152ebb598",
+    "/Users/bao/taskbar-hero-cardrpg-a6/tools/v5vfx/verify-media-battle-rules.mjs": "f68694dd543eaf9811e406273b236110cdc79a7c0c051fe45c93d9b3c42be957",
+    "/Users/bao/taskbar-hero-cardrpg-a6/tools/v5vfx/probe-dual-media-labels.mjs": "796e5312b74e5275f8aa4fe7007275e2ab82fe51fb04dba7f8bba245cfacb3cb",
+    "/Users/bao/taskbar-hero-cardrpg-a6/tools/v5vfx/measure-dual-media-labels.py": "e7f408c2a4535b81510ebae596e24eacad26548402c5df831864c8a33e2399c1",
+    "/Users/bao/taskbar-hero-cardrpg-a6/tools/v5vfx/run-footer-lifecycle-r2.py": "e6acefaccb48b987ecf2e542cb28f3ce562067466761364aaae0575fcb9598e8",
+    "/Users/bao/taskbar-hero-cardrpg-a6/tools/v5vfx/footer-identity-stable-prototype.mjs": "3bea8edc07dada887e578d9df71ea944817e78e58b7111ece3fcc9755b50f09d",
+    "/Users/bao/taskbar-hero-cardrpg-a6/tools/v5vfx/probe-footer-lifecycle-r2.mjs": "2d975fae113955fc4d794341e55c4007c08098576382d3402d1271a6fb142c03",
+    "/Users/bao/taskbar-hero-cardrpg-a6/tools/v5vfx/measure-footer-lifecycle-r2.py": "3318bd9eb0dd26245448e834814d4a10a17f3f19c023d3612a82fd089f2cfa2d",
+    "/Users/bao/taskbar-hero-cardrpg-a6/tools/v5vfx/mochi-label-observation.mjs": "6fae63b553cb354fb9282e364b459118a6d2a27a74171d3c9f16a7d3195dbabb",
+    "/Users/bao/taskbar-hero-cardrpg-a6/tools/v5vfx/media-production-fixture.mjs": "cc946d20c0082a183716c90f7f947810b93991501288a39fcdc2e70048805136",
+    "/Users/bao/taskbar-hero-chain/tools/cardrpg-big/a4-load.mjs": "9b6a983ec4d8757f3843ad58c73536bfbc8c1b83adf285c906c579c42cd229d6",
+    "/Users/bao/taskbar-hero-chain/tools/v5int/capture-footer-focus-heldouts.mjs": "bfbdc5d1828ab76d4e04fd24827a670d3fb20ff83e2a0dffac79cec0744b11e2",
+    "/Users/bao/taskbar-hero-chain/tools/v5int/run-footer-focus-heldouts.py": "29c1d7f3655adc4dfae2fa21ca53b55277de7477ab0822fd612a5fe9772075f5"
+  },
+  "leaseUntilUTC": "2026-11-18T18:32:18.062266+00:00",
+  "explicitReleaseRequired": true
+}

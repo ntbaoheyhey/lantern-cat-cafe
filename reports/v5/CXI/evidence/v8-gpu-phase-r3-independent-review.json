@@ -1,0 +1,350 @@
+{
+  "utc": "2026-11-18T13:44:13.965303+00:00",
+  "raw": {
+    "path": "work/v5/CXI/batch-m/gpu-phase-r3-134125/report.json",
+    "sha256": "3e8dc2df0659d5b6fc45d46ed6ce80429dcd2243aa82549045ce98d3a4592afa"
+  },
+  "toolSha256": "93f60c3af70af5b9f90b54d9cbe66a3f45458674efbc92e2d235af9248a97275",
+  "sourceCommit": "8aef40187d03fbc6651d5239e7a93907e973284a",
+  "indexSha256": "82f086119196c891d644defce7a83c9a383d4fb6573ea47476ed0e517a3a0895",
+  "url": "http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+  "viewport": [
+    1280,
+    720
+  ],
+  "verifiedFiles": 653,
+  "verifiedFileDigest": "f9ac1a4b966489846f094958994b06e33047794fffb793b7defa4c0f56976d38",
+  "controls": 8,
+  "nativeReferenceFrames": 600,
+  "globallyUniqueActualMatches": 24,
+  "distinctNativeFrameHashes": {
+    "mochi": 300,
+    "clover": 300
+  },
+  "groups": {
+    "mochi": {
+      "seeking": {
+        "count": 1,
+        "maxAbsoluteFrameError": 124.15099999999998,
+        "callbacksMatch": true
+      },
+      "steady": {
+        "count": 11,
+        "maxAbsoluteFrameError": 0.7620000000000005,
+        "callbacksMatch": true
+      }
+    },
+    "clover": {
+      "seeking": {
+        "count": 1,
+        "maxAbsoluteFrameError": 124.55099999999999,
+        "callbacksMatch": true
+      },
+      "steady": {
+        "count": 11,
+        "maxAbsoluteFrameError": 0.6949999999999932,
+        "callbacksMatch": true
+      }
+    }
+  },
+  "samples": [
+    {
+      "cat": "mochi",
+      "label": "running-0",
+      "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/gpu-phase-r3-134125/running-0.rgba",
+      "sha256": "d63baa2737e1ee143fbc8bb449e791c90794d94a04722fccdf3d8f52b011e98c",
+      "gpuFrame": 161,
+      "callbackFrame": 161,
+      "adapterFrame": 36.849000000000025,
+      "frameError": -124.15099999999998,
+      "seeking": true,
+      "callbackMatchesGPU": true
+    },
+    {
+      "cat": "clover",
+      "label": "running-0",
+      "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/gpu-phase-r3-134125/running-1.rgba",
+      "sha256": "71cb4af19549ffe3673b6195e7f27adc2382ca5ba7904684610b89890dd543d1",
+      "gpuFrame": 270,
+      "callbackFrame": 270,
+      "adapterFrame": 145.449,
+      "frameError": -124.55099999999999,
+      "seeking": true,
+      "callbackMatchesGPU": true
+    },
+    {
+      "cat": "mochi",
+      "label": "running-1",
+      "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/gpu-phase-r3-134125/running-2.rgba",
+      "sha256": "bc39856c16289114e11418a2516ad2fafd4dbca2bf7e0ea1c1e43eeb892573e3",
+      "gpuFrame": 62,
+      "callbackFrame": 62,
+      "adapterFrame": 61.944,
+      "frameError": -0.055999999999983174,
+      "seeking": false,
+      "callbackMatchesGPU": true
+    },
+    {
+      "cat": "clover",
+      "label": "running-1",
+      "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/gpu-phase-r3-134125/running-3.rgba",
+      "sha256": "099791c17e4e60c49d6cb37baf4485eb7ff7acd0fb84f20598cb689af11fb57f",
+      "gpuFrame": 169,
+      "callbackFrame": 169,
+      "adapterFrame": 168.939,
+      "frameError": -0.06100000000000705,
+      "seeking": false,
+      "callbackMatchesGPU": true
+    },
+    {
+      "cat": "mochi",
+      "label": "running-2",
+      "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/gpu-phase-r3-134125/running-4.rgba",
+      "sha256": "c6d8e4a8c70ea0d65c16ad98c84cfcfccdc34856e54e5f6af7069f68a38293b3",
+      "gpuFrame": 88,
+      "callbackFrame": 88,
+      "adapterFrame": 87.918,
+      "frameError": -0.08199999999999363,
+      "seeking": false,
+      "callbackMatchesGPU": true
+    },
+    {
+      "cat": "clover",
+      "label": "running-2",
+      "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/gpu-phase-r3-134125/running-5.rgba",
+      "sha256": "7623b3a42cd786346e75d165793226e14b420633b8426146ee2c96c15a7e8109",
+      "gpuFrame": 195,
+      "callbackFrame": 195,
+      "adapterFrame": 194.907,
+      "frameError": -0.09299999999998931,
+      "seeking": false,
+      "callbackMatchesGPU": true
+    },
+    {
+      "cat": "mochi",
+      "label": "running-3",
+      "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/gpu-phase-r3-134125/running-6.rgba",
+      "sha256": "4479ccfa6ff2f3d656f2df5cd953ad4e20c246ec954c10765c58d638a7e7fbaf",
+      "gpuFrame": 114,
+      "callbackFrame": 114,
+      "adapterFrame": 113.94,
+      "frameError": -0.060000000000002274,
+      "seeking": false,
+      "callbackMatchesGPU": true
+    },
+    {
+      "cat": "clover",
+      "label": "running-3",
+      "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/gpu-phase-r3-134125/running-7.rgba",
+      "sha256": "e7b9f33bc2a59c5c2b29217f89643a64bc7fc8488a602e489915d91c10f10ecc",
+      "gpuFrame": 221,
+      "callbackFrame": 221,
+      "adapterFrame": 220.929,
+      "frameError": -0.07099999999999795,
+      "seeking": false,
+      "callbackMatchesGPU": true
+    },
+    {
+      "cat": "mochi",
+      "label": "running-4",
+      "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/gpu-phase-r3-134125/running-8.rgba",
+      "sha256": "1680fe9c8e65bba751502ea979c23cb7f36b290dff27d0757ed05c199933e600",
+      "gpuFrame": 140,
+      "callbackFrame": 140,
+      "adapterFrame": 139.962,
+      "frameError": -0.038000000000010914,
+      "seeking": false,
+      "callbackMatchesGPU": true
+    },
+    {
+      "cat": "clover",
+      "label": "running-4",
+      "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/gpu-phase-r3-134125/running-9.rgba",
+      "sha256": "c835e81d9dd4a98197ef137ac5a8412d8063b74817fabfa9bb3bb8476d2c9e46",
+      "gpuFrame": 247,
+      "callbackFrame": 247,
+      "adapterFrame": 246.951,
+      "frameError": -0.049000000000006594,
+      "seeking": false,
+      "callbackMatchesGPU": true
+    },
+    {
+      "cat": "mochi",
+      "label": "running-5",
+      "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/gpu-phase-r3-134125/running-10.rgba",
+      "sha256": "5a9a6a79cc5f78f00e37bd81717f60c7bbcecc36035e03d3b982bda25047381a",
+      "gpuFrame": 166,
+      "callbackFrame": 166,
+      "adapterFrame": 165.94199999999998,
+      "frameError": -0.058000000000021146,
+      "seeking": false,
+      "callbackMatchesGPU": true
+    },
+    {
+      "cat": "clover",
+      "label": "running-5",
+      "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/gpu-phase-r3-134125/running-11.rgba",
+      "sha256": "ce795898479325e254d0a2431391e851bf4bcd96c4dc1d81cf68e365543ff1f2",
+      "gpuFrame": 273,
+      "callbackFrame": 273,
+      "adapterFrame": 272.931,
+      "frameError": -0.06900000000001683,
+      "seeking": false,
+      "callbackMatchesGPU": true
+    },
+    {
+      "cat": "mochi",
+      "label": "running-6",
+      "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/gpu-phase-r3-134125/running-12.rgba",
+      "sha256": "77be9ca2d24b20247dc8cebff75f853cd77e4def80fd0972fffeeba45fb0247d",
+      "gpuFrame": 192,
+      "callbackFrame": 192,
+      "adapterFrame": 191.925,
+      "frameError": -0.07499999999998863,
+      "seeking": false,
+      "callbackMatchesGPU": true
+    },
+    {
+      "cat": "clover",
+      "label": "running-6",
+      "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/gpu-phase-r3-134125/running-13.rgba",
+      "sha256": "9d461e6b8f4a560015789f6a4551f55e582ac2e00869f978cc99c95a256f0445",
+      "gpuFrame": 299,
+      "callbackFrame": 299,
+      "adapterFrame": 298.9170000000001,
+      "frameError": -0.08299999999991314,
+      "seeking": false,
+      "callbackMatchesGPU": true
+    },
+    {
+      "cat": "mochi",
+      "label": "running-7",
+      "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/gpu-phase-r3-134125/running-14.rgba",
+      "sha256": "3f77220def3e9d38a47fd23d694b840bac703f2bca1661322cd96a1f3fec29d7",
+      "gpuFrame": 218,
+      "callbackFrame": 218,
+      "adapterFrame": 217.94400000000002,
+      "frameError": -0.055999999999983174,
+      "seeking": false,
+      "callbackMatchesGPU": true
+    },
+    {
+      "cat": "clover",
+      "label": "running-7",
+      "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/gpu-phase-r3-134125/running-15.rgba",
+      "sha256": "a757341137195340212d7150481c188bfed914c169c7b67738e84b5d922ecc48",
+      "gpuFrame": 24,
+      "callbackFrame": 24,
+      "adapterFrame": 24.690000000000012,
+      "frameError": 0.6899999999999977,
+      "seeking": false,
+      "callbackMatchesGPU": true
+    },
+    {
+      "cat": "mochi",
+      "label": "running-8",
+      "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/gpu-phase-r3-134125/running-16.rgba",
+      "sha256": "ee1ee6e3205d22fc344a02cab4a970742bc5a5b35e83da5fb35c3d7ca7a10d2c",
+      "gpuFrame": 244,
+      "callbackFrame": 244,
+      "adapterFrame": 243.92700000000002,
+      "frameError": -0.07299999999997908,
+      "seeking": false,
+      "callbackMatchesGPU": true
+    },
+    {
+      "cat": "clover",
+      "label": "running-8",
+      "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/gpu-phase-r3-134125/running-17.rgba",
+      "sha256": "381eae251ac5517c196a2a394d4d05dd97358e8f502c23619b4218d46c217cfc",
+      "gpuFrame": 50,
+      "callbackFrame": 50,
+      "adapterFrame": 50.672999999999995,
+      "frameError": 0.6730000000000018,
+      "seeking": false,
+      "callbackMatchesGPU": true
+    },
+    {
+      "cat": "mochi",
+      "label": "running-9",
+      "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/gpu-phase-r3-134125/running-18.rgba",
+      "sha256": "13e578d2f575b94702074974bd1b30d80ec8115229e0ec04690bfe5f6cf56f6b",
+      "gpuFrame": 270,
+      "callbackFrame": 270,
+      "adapterFrame": 269.949,
+      "frameError": -0.05099999999998772,
+      "seeking": false,
+      "callbackMatchesGPU": true
+    },
+    {
+      "cat": "clover",
+      "label": "running-9",
+      "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/gpu-phase-r3-134125/running-19.rgba",
+      "sha256": "85fd4af3123052621c64a3373d0f5145fcbcdb682d1736de22b4ff44edc7046d",
+      "gpuFrame": 76,
+      "callbackFrame": 76,
+      "adapterFrame": 76.695,
+      "frameError": 0.6949999999999932,
+      "seeking": false,
+      "callbackMatchesGPU": true
+    },
+    {
+      "cat": "mochi",
+      "label": "running-10",
+      "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/gpu-phase-r3-134125/running-20.rgba",
+      "sha256": "c8bb5b2f899127b466aa354081a2472656632e200240c425f59dd400a3850b9c",
+      "gpuFrame": 296,
+      "callbackFrame": 296,
+      "adapterFrame": 295.923,
+      "frameError": -0.07699999999999818,
+      "seeking": false,
+      "callbackMatchesGPU": true
+    },
+    {
+      "cat": "clover",
+      "label": "running-10",
+      "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/gpu-phase-r3-134125/running-21.rgba",
+      "sha256": "260d7ad7a1c8d45343b1ee9a5696976e9b02665cfe7402abb658c0514b8f7fd4",
+      "gpuFrame": 102,
+      "callbackFrame": 102,
+      "adapterFrame": 102.669,
+      "frameError": 0.6689999999999827,
+      "seeking": false,
+      "callbackMatchesGPU": true
+    },
+    {
+      "cat": "mochi",
+      "label": "running-11",
+      "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/gpu-phase-r3-134125/running-22.rgba",
+      "sha256": "c3a7231cb298c022dd6f0ce20f9ec34e7466a2bfe103597ecb2c12fa467520af",
+      "gpuFrame": 21,
+      "callbackFrame": 21,
+      "adapterFrame": 21.762000000000015,
+      "frameError": 0.7620000000000005,
+      "seeking": false,
+      "callbackMatchesGPU": true
+    },
+    {
+      "cat": "clover",
+      "label": "running-11",
+      "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/gpu-phase-r3-134125/running-23.rgba",
+      "sha256": "60094c4a02fcba482223137b5565949f93be018e723c9516e798926220bff624",
+      "gpuFrame": 128,
+      "callbackFrame": 128,
+      "adapterFrame": 128.694,
+      "frameError": 0.6939999999999884,
+      "seeking": false,
+      "callbackMatchesGPU": true
+    }
+  ],
+  "rulesSha256": "6b3a5b4baebcf6364acc02577a572eb26a0f0279019c5d0f48c66406be285b8b",
+  "diagnosticAccepted": true,
+  "productionAcceptance": false,
+  "imagesViewed": 0,
+  "limits": [
+    "Model remains paused to disable Battle.tsx automatic actions;temporary scene.view wrapper overrides only paused=false for native scene.loop/video playback. Controlled idle,not natural gameplay.",
+    "12controlled draws percat,not an allframe/action temporal guarantee.",
+    "Two seek transients are preserved separately from22steady samples.",
+    "Source anchors/art/loop/performance remain separate;no loaderfix acceptance."
+  ]
+}

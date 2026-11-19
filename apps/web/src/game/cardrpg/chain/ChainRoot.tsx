@@ -1,5 +1,5 @@
 import {GameIcon} from '../../../ui/GameIcon';
-import { lazy, Suspense, useEffect, useRef, useState, type ReactNode } from 'react';
+import { lazy, Suspense, useCallback, useEffect, useRef, useState, type ReactNode } from 'react';
 import { useAccount, useConnect, useSignMessage, useWalletClient } from 'wagmi';
 import { WalletProvider, useAuthContext, useSession } from '../../../wallet/WalletProvider';
 import { buildSiweMessage } from '../../../wallet/siwe';
@@ -31,6 +31,10 @@ export function ChainDock({embedded=false}:{embedded?:boolean}) {
   const [lastHash, setLastHash] = useState('');
   const [room,setRoom]=useState<Tab>();
   const panel=useRef<HTMLDialogElement>(null),walletTrigger=useRef<HTMLElement|null>(null);
+  const openRoom=useCallback((tab:Tab)=>{
+    // Release the native dialog's top layer before opening the market overlay.
+    panel.current?.close?.();setOpen(false);setRoom(tab);
+  },[]);
   const closeWallet=useMenuClose(panel,()=>{panel.current?.close?.();setOpen(false);if(embedded&&walletTrigger.current?.isConnected)walletTrigger.current.focus();});
   useEffect(()=>{
     if(!embedded)return;
@@ -41,9 +45,9 @@ export function ChainDock({embedded=false}:{embedded?:boolean}) {
   useEffect(()=>{if(open){panel.current?.showModal?.();panel.current?.focus();}},[open]);
   useEffect(()=>{
     if (!flags.chainLoop) return;
-    const open=(event:Event)=>{const tab=(event as CustomEvent<unknown>).detail;setRoom(['Judge','Market','Bag','Seal','History','Style','Forge','Campaign',...(flags.economyV3?['Café']:[])].includes(String(tab))?tab as Tab:'Judge');};
+    const open=(event:Event)=>{const tab=(event as CustomEvent<unknown>).detail;openRoom(['Judge','Market','Bag','Seal','History','Style','Forge','Campaign',...(flags.economyV3?['Café']:[])].includes(String(tab))?tab as Tab:'Judge');};
     window.addEventListener('chain:open',open);return()=>window.removeEventListener('chain:open',open);
-  },[flags.chainLoop,flags.economyV3]);
+  },[flags.chainLoop,flags.economyV3,openRoom]);
   const guest = !!session && existingGuestAddress()?.toLowerCase() === session.wallet.toLowerCase();
   const run = async (action: () => Promise<unknown>) => {
     if (actionLock.current) return;
@@ -73,7 +77,7 @@ export function ChainDock({embedded=false}:{embedded?:boolean}) {
         <output data-testid="chain-address" title={session.wallet}>{session.wallet.slice(0, 8)}…{session.wallet.slice(-4)}</output>
         <div data-tutorial-id="wallet-balances" className="b2-wallet-balances">{guest && flags.chainLoop && <section aria-label="AVAX test gas"><PaintedIcon name="wallet" size={52}/><h3>AVAX test gas</h3><GasBalance /></section>}
         {flags.yarnToken&&<section aria-label="YARN"><PaintedIcon name="yarn" size={52}/><h3>YARN</h3><YarnBalance/></section>}</div>
-        {flags.chainLoop&&<button data-tutorial-id="wallet-actions" disabled={busy} onClick={()=>setRoom('Market')}><PaintedIcon name="market" size={64}/> Market</button>}
+        {flags.chainLoop&&<button data-tutorial-id="wallet-actions" disabled={busy} onClick={()=>openRoom('Market')}><PaintedIcon name="market" size={64}/> Market</button>}
         <button disabled={busy} onClick={() => store.clear()}><PaintedIcon name="wallet" size={64}/> Sign out</button>
         {guest && <><button disabled={busy} onClick={() => {setWarning(!warning);setCopied(false);}}><PaintedIcon name="deed" size={64}/> Export key</button>
           {warning && <div role="alert"><p>Anyone with this key controls your guest assets. Keep it private.</p><button disabled={copied || busy} onClick={() => void run(async () => {await copyGuestKey(localStorage, navigator.clipboard);setCopied(true);})}>{copied ? 'Copied' : 'Copy once'}</button></div>}

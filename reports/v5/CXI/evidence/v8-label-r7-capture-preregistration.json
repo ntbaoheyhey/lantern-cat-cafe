@@ -1,0 +1,30 @@
+{
+  "sourceCommit": "bf01d462ac32233ab11475605d571aea691f96bf",
+  "indexSha256": "eb93ee0dbdfb500c3f9aed80acdb134f027d8093240c86b545807a87dc79ce67",
+  "build": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/clover-label-r7/build.json",
+  "url": "http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+  "viewport": [
+    1280,
+    720
+  ],
+  "fixture": "Seed71, Mochi+Clover front/Panko+Sorrel rear, 65%HP; legal basic/ultimate in each motion mode",
+  "cats": [
+    "mochi",
+    "clover"
+  ],
+  "expectedLegalActions": 8,
+  "expectedRows": 52,
+  "sourceSubstitutions": false,
+  "domLabelsChanged": false,
+  "plan": "After explicit CXVrelease, capture fresh dualcast pages with existing action probe; retain decodedPTS/anchors/DOM/HUD, hash and measure allcaptures before <=4views/batch <=1024px.",
+  "limits": [
+    "Model steps and fixed scene time are controlled action samples, not natural gameplay or all-frame coverage.",
+    "Native bodies are included visually but not isolated by this harness.",
+    "Static body rectangles are conservative; rectangle intersections alone cannot certify paint clearance."
+  ],
+  "harness": {
+    "path": "/Users/bao/taskbar-hero-chain/tools/v5int/probe-designer-cast.mjs",
+    "sha256": "eaca45eb33698f6deaf334d8cde03eecac1006ac556609f65036d2fa17ce615b"
+  },
+  "productionAcceptance": false
+}

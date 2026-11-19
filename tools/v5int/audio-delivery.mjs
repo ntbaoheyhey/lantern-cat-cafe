@@ -32,7 +32,7 @@ try{
   if(paths.length<2)continue;
   const files={},sourceHashes={};let sourceBytes=0;
   for(const path of paths){
-   assert(path.startsWith('/audio/v5/')&&!path.includes('..')&&path.endsWith('.opus'));
+   assert(/^\/audio\/(?:v5|v9)\//.test(path)&&!path.includes('..')&&path.endsWith('.opus'));
    assert(!used.has(path),`Overlapping semantic group: ${path}`);used.add(path);
    const bytes=await readFile(resolve(publicRoot,path.slice(1)));
    files[path]=bytes.toString('base64');sourceHashes[path]=hash(bytes).toString('hex');sourceBytes+=bytes.length;

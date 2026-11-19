@@ -1,0 +1,18 @@
+{
+  "utc": "2026-11-18T18:33:03.982033+00:00",
+  "raw": {
+    "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/dual-media-fault-r1/native-r1/report.json",
+    "sha256": "3c3cf32f96cd5ca253f90c252ff185f94548262f9cf1451784636a5c73a5e45d"
+  },
+  "exit": {
+    "exit": 1,
+    "completedUTC": "2026-11-18T18:32:14.641159+00:00"
+  },
+  "processGroupEmpty": 88414,
+  "pass": false,
+  "completedCases": 2,
+  "failure": "AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  assert(run.after.nativeErrors.some(e => e.nativeMediaError && new URL(e.src).pathname === fixture.mediaPath && [3,4].includes(e.code)))\n\n    at file:///Users/bao/taskbar-hero-chain/tools/v5int/probe-designer-media-fault.mjs:43:9",
+  "observed": "normal control passed. Startup corruptMochi52B response produced placeholder,othercat ready. Late noncapture observer saw event but error code absent;nativeMediaError false.",
+  "repairHypothesis": "Register read-only error observer in capture phase before production noncapture cleanup;no fallback or acceptance predicate changes. Fresh native-r2 required.",
+  "productionAcceptance": false
+}

@@ -12,7 +12,7 @@ const make=()=>{
   socketChannels:{'off-hand':'freePaw',head:'head','main-hand':'prop',hip:'hip','vfx-origin':'spout'}};
  manifest.socketTracks!.freePaw![75]=[3,-4];manifest.socketTracks!.freePaw![76]=[7,-8];manifest.socketTracks!.freePaw![299]=[-6,9];
  const geometry=new T.BufferGeometry();geometry.setAttribute('position',new T.Float32BufferAttribute([0,0,0,0,0,0],3));
- const media={manifest,geometry,basePositions:new Float32Array(6),video:{currentTime:75.25/30},sample(){},failure:undefined} as unknown as DesignerIdleMedia;
+ const media={manifest,geometry,basePositions:new Float32Array(6),video:{currentTime:75.25/30},sourceFrame:75.25,sample(){},failure:undefined} as unknown as DesignerIdleMedia;
  const actor={unit:{id:'clover'},sockets:new Map(Object.keys(SPINE_CONFIG.sockets).map(k=>[k,new T.Object3D()]))} as unknown as SpineActor;
  return {manifest,media,actor,geometry,adapter:new DesignerIdleActorMedia(media)};
 };
@@ -36,8 +36,8 @@ it('binds the free paw independently and preserves face, prop, hip and emission 
 });
 it('keeps the seam interpolation and reduced/failure rest position independent',()=>{
  const {media,actor,adapter,geometry}=make();try{
-  media.video.currentTime=299.5/30;adapter.sample(actor,'idle',0,10,false,clock);expectPoint(actor.sockets.get('offHand')!.position,[-66,187,1]);
-  adapter.sample(actor,'idle',0,10,true,clock);expectPoint(actor.sockets.get('offHand')!.position,[-60,196,1]);
+  Object.assign(media,{sourceFrame:299.5});media.video.currentTime=299.5/30;adapter.sample(actor,'idle',0,10,false,clock);expectPoint(actor.sockets.get('offHand')!.position,[-66,187,1]);
+  Object.assign(media,{sourceFrame:0});adapter.sample(actor,'idle',0,10,true,clock);expectPoint(actor.sockets.get('offHand')!.position,[-60,196,1]);
   media.failure='decode';adapter.sample(actor,'idle',0,10,false,clock);expectPoint(actor.sockets.get('offHand')!.position,[-60,196,1]);
  }finally{geometry.dispose();}
 });

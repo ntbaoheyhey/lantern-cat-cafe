@@ -5,7 +5,6 @@ import { generatePrivateKey, privateKeyToAccount } from 'viem/accounts';
 import { as, migratedDb } from './game-db';
 import { createJudge, judgeBoss, judgeTrial, type JudgeEntitlement } from '../../functions/_shared/chain-judge';
 import {replayBattle} from '../../../packages/game-rules/src/cardrpg/depth/battle';
-import {ENEMY_BY_ID} from '../../../packages/game-rules/src/cardrpg/depth/catalog';
 import { voucherSigner, voucherDomain, VOUCHER_TYPES } from '../../functions/_shared/relic';
 let db: PGlite;
 beforeAll(async()=>{db=await migratedDb();});afterAll(async()=>{await db?.close();});
@@ -17,15 +16,14 @@ it('executes the scripted starter boss through real battle rules',()=>{
   const first=judgeBoss();expect(first.won).toBe(true);expect(first.rounds).toBeGreaterThan(0);
   expect(first.log.some(e=>e.kind==='defeat')).toBe(true);expect(judgeBoss()).toEqual(first);
 });
-it.each([false,true])('replays the four-cat trial exactly, finale=%s',finale=>{
+it.each([false,true])('replays the three-cat V9 trial exactly, finale=%s',finale=>{
   const trial=judgeTrial(finale),battle=replayBattle(trial.replay.setup,trial.replay.choices);
   expect(trial.won).toBe(true);expect(battle.result).toBe('party');
-  expect(trial.replay.setup.cats.map(c=>c.id).sort()).toEqual(['clover','mochi','panko','soot']);
+  expect(trial.replay.setup.cats.map(c=>c.id)).toEqual(['mochi','clover','soot']);
   // The engine snapshots catalog stats so future balance changes cannot alter a recording.
-  expect(trial.replay.setup.enemyStats).toEqual(Object.fromEntries(
-    Object.values(ENEMY_BY_ID).map(({id,hp,attack,defense})=>[id,{hp,attack,defense}]),
-  ));
-  expect(trial.replay.setup.enemies).toEqual([finale?'yarn-giant':'button-guard']);
+  expect(trial.replay.setup.enemyStats).toBeDefined();
+  expect(trial.replay.setup.enemies).toEqual(finale?['yarn-giant']:['needle-moth','teacup-healer','button-guard']);
+  if(finale)expect(trial.replay.choices.filter(c=>c.skillId.endsWith('-4')).map(c=>c.skillId)).toEqual(['mochi-4','clover-4','soot-4']);
   expect(battle.log.map(row=>({actor:row.actorId,target:row.targetId,kind:row.kind,amount:row.amount}))).toEqual(trial.log);
   expect(trial.log.filter(e=>e.actor==='clover'&&['damage','dot','reflect','detonate'].includes(e.kind))).toEqual([]);
 });

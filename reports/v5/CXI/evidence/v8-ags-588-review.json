@@ -1,0 +1,50 @@
+{
+  "utc": "2026-11-18T17:38:29.859484+00:00",
+  "mailboxLines": [
+    588,
+    590
+  ],
+  "artifacts": [
+    {
+      "path": "/Users/bao/th-v5-ag4/reports/v5/AGS/M-CPU-PROFILING-SOURCES.md",
+      "sha256": "b96b420e890a111e53c8c584df178c252eceff60f5fafe0d0940950aa563ae9f",
+      "bytes": 386
+    },
+    {
+      "path": "/Users/bao/th-v5-ag4/reports/v5/AGS/M-CPU-PROFILING-EXPERIMENT.md",
+      "sha256": "df02506d61e44881f05a9d4424eae4151a6a4d1f6a63dc304cebdafb68ad2b71",
+      "bytes": 374
+    },
+    {
+      "path": "/Users/bao/th-v5-ag4/reports/v5/AGS/HANDOFF.md",
+      "sha256": "778cacd21131e49847f82428b7b869841ab6581655fda00f0b243b43213f520d",
+      "bytes": 281
+    }
+  ],
+  "missingRequestedReport": "/Users/bao/th-v5-ag4/reports/v5/AGS/M-CPU-PROFILING.md",
+  "sourceVerification": [
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/Performance_API",
+      "result": "Verified official API overview; no delivered CPU-sampling experiment"
+    },
+    {
+      "url": "https://developer.chrome.com/docs/devtools/performance/",
+      "result": "Verified official runtime profiling tutorial; no delivered findings or trace"
+    },
+    {
+      "url": "https://www.infoq.cn/article/webgl-performance-optimization-guide",
+      "result": "Search connector could not access this URL; existence/content not established, not counted as verified Chinese primary evidence"
+    }
+  ],
+  "accepted": [
+    "Two official English source links exist",
+    "HANDOFF now explicitly preserves T-CXI-13/T-M5/T-CXI-14/T-CXI-15 OPEN"
+  ],
+  "rejected": [
+    "No actual experiment, raw profile/trace, command output, browser/build identity or measured numbers",
+    "Three verified primary EN+ZH sources not established",
+    "Generic method text does not complete the assigned study"
+  ],
+  "decision": "PARTIAL ACCEPT source links and restored task tracking; REDO T-CXI-15 evidence",
+  "productionAcceptance": false
+}

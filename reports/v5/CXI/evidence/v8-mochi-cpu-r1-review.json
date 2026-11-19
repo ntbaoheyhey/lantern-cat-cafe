@@ -1,0 +1,1977 @@
+{
+  "utc": "2026-11-18T17:43:27.384734+00:00",
+  "sourceCommit": "bf01d462ac32233ab11475605d571aea691f96bf",
+  "indexSha256": "e66485f99d6c488da1363ba2d2fc739b779dc524e31800874e55b5e167f7daf1",
+  "url": "http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+  "preregistration": {
+    "path": "/Users/bao/taskbar-hero-chain/reports/v5/CXI/evidence/v8-mochi-cpu-r1-preregistration.json",
+    "sha256": "a8df0a2ab42cd4422cf68069ff29ff7c0f77fc8b58556054ea6d3daddba8b55d"
+  },
+  "identityRules": {
+    "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/mochi-cpu-r1/identity-rules-r2.json",
+    "sha256": "381c2764d299e8211db8b5d5d5df3a35777c50266aa2b36e97e8f201519881a2"
+  },
+  "fourWayParity": true,
+  "sourceAndServedItemsVerified": 202,
+  "hashedArtifacts": 260,
+  "runs": [
+    {
+      "name": "01-off",
+      "sampling": "off",
+      "actions": 55,
+      "ultimates": 21,
+      "ruleReplay": {
+        "mode": "normal",
+        "actions": 55,
+        "observedActions": 55,
+        "comparisons": {
+          "log": true,
+          "actors": true,
+          "queue": true,
+          "round": true,
+          "result": true
+        },
+        "fullBattleExact": true,
+        "replaySha256": "eb62df711d59f409a29e8a14aa793a1a3b5c642e29acca635ee73fa33f671af5",
+        "observedSha256": "eb62df711d59f409a29e8a14aa793a1a3b5c642e29acca635ee73fa33f671af5"
+      },
+      "metricsWindowMs": 83671.12799998722,
+      "metricsMs": {
+        "LayoutDuration": 1124.34,
+        "RecalcStyleDuration": 19319.79,
+        "DevToolsCommandDuration": 365.758,
+        "ScriptDuration": 48223.123999999996,
+        "V8CompileDuration": 0,
+        "TaskDuration": 83315.93,
+        "TaskOtherDuration": 14282.918,
+        "ThreadTime": 83402.117,
+        "ProcessTime": 93711.65999999999
+      },
+      "layoutCount": 4437,
+      "recalcStyleCount": 9145,
+      "frameMsWithoutCapture": {
+        "count": 2951,
+        "min": 16.5,
+        "median": 33.299999999995634,
+        "p95": 49.90000000000873,
+        "p99": 83.19999999999709,
+        "max": 216.5999999999999
+      },
+      "renderCpuMsWithoutCapture": {
+        "count": 2951,
+        "min": 11.700000002980232,
+        "median": 17.899999991059303,
+        "p95": 22.900000005960464,
+        "p99": 59.8999999910593,
+        "max": 179.8999999910593
+      },
+      "wallMs": 83675.39999999106,
+      "dropped": 688,
+      "total": 2713,
+      "dropFraction": 0.2535938075930704,
+      "callbacks": 2317,
+      "missedCallbacks": 184,
+      "wraps": 9,
+      "waitingEvents": 11,
+      "runtimeErrors": 0,
+      "playback": {
+        "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/mochi-cpu-r1/01-off/playback-audit-r2.json",
+        "sha256": "47af15b8f004a79c666f022c0f82bee830de7a15ac00512c6d31407e41065a7f"
+      }
+    },
+    {
+      "name": "02-on",
+      "sampling": "on",
+      "actions": 55,
+      "ultimates": 21,
+      "ruleReplay": {
+        "mode": "normal",
+        "actions": 55,
+        "observedActions": 55,
+        "comparisons": {
+          "log": true,
+          "actors": true,
+          "queue": true,
+          "round": true,
+          "result": true
+        },
+        "fullBattleExact": true,
+        "replaySha256": "eb62df711d59f409a29e8a14aa793a1a3b5c642e29acca635ee73fa33f671af5",
+        "observedSha256": "eb62df711d59f409a29e8a14aa793a1a3b5c642e29acca635ee73fa33f671af5"
+      },
+      "metricsWindowMs": 83894.26000000094,
+      "metricsMs": {
+        "LayoutDuration": 1146.116,
+        "RecalcStyleDuration": 19376.877,
+        "DevToolsCommandDuration": 364.07500000000005,
+        "ScriptDuration": 48415.581000000006,
+        "V8CompileDuration": 0,
+        "TaskDuration": 83523.43500000001,
+        "TaskOtherDuration": 14220.786,
+        "ThreadTime": 83603.14799999999,
+        "ProcessTime": 95197.266
+      },
+      "layoutCount": 4332,
+      "recalcStyleCount": 8908,
+      "cpuProfile": {
+        "raw": {
+          "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/mochi-cpu-r1/02-on/normal/cpu.cpuprofile",
+          "sha256": "a8c994cea696cca49f38ed4f91bf19dd984c43c454911f60f203573f1ff52c4f"
+        },
+        "summary": {
+          "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/mochi-cpu-r1/02-on/cpu-summary-r2.json",
+          "sha256": "cda460b850e0b67dee08539af74bef815cb543e7cefd0f5aa771ea559f61b565"
+        },
+        "aggregation": "raw-counts-only",
+        "negativeTimeDeltas": [
+          {
+            "index": 15337,
+            "nodeId": 1608,
+            "deltaUs": -1
+          },
+          {
+            "index": 39570,
+            "nodeId": 78,
+            "deltaUs": -1
+          },
+          {
+            "index": 44400,
+            "nodeId": 311,
+            "deltaUs": -1
+          }
+        ],
+        "precedingDeltaEstimateEnabled": false,
+        "nodes": 3280,
+        "samples": 58776,
+        "durationMs": 84353.635,
+        "deltaSumMs": 84352.558,
+        "unassignedTailMs": 1.077,
+        "firstDeltaMs": 450.753,
+        "maxDeltaMs": 450.753,
+        "rawHitCountMismatches": [
+          2,
+          342,
+          564,
+          2474,
+          654,
+          1265,
+          13,
+          1079,
+          41,
+          1364,
+          2198,
+          673,
+          1116,
+          590,
+          839,
+          1397,
+          235,
+          1869,
+          2334,
+          2048,
+          2805,
+          2804,
+          1033,
+          2876,
+          2877,
+          2757,
+          2806,
+          242,
+          445,
+          748,
+          443,
+          1240,
+          3165,
+          64,
+          66,
+          244,
+          246,
+          248,
+          250,
+          252,
+          254,
+          256,
+          258,
+          260,
+          262,
+          264,
+          266,
+          268,
+          270,
+          447,
+          449,
+          3166,
+          3190,
+          3192,
+          3194,
+          3196,
+          3198,
+          3200,
+          3201,
+          3203,
+          3204,
+          455,
+          457,
+          459,
+          461,
+          463,
+          464,
+          466,
+          469,
+          471,
+          473,
+          475,
+          1392,
+          2812,
+          2813,
+          3259,
+          3261,
+          844,
+          846,
+          848,
+          850,
+          3240,
+          3243,
+          3250,
+          3238,
+          1125,
+          1157,
+          2809,
+          2811,
+          3207,
+          3209,
+          3211,
+          3213,
+          3215,
+          3217,
+          3219,
+          3222,
+          3225,
+          3227,
+          3229,
+          3231,
+          3233,
+          3235,
+          3237,
+          67,
+          69,
+          71,
+          72,
+          754,
+          755,
+          814,
+          78,
+          79,
+          867,
+          573,
+          952,
+          76,
+          85,
+          384,
+          385,
+          888,
+          1983,
+          395,
+          396,
+          304,
+          391,
+          1263,
+          1612,
+          86,
+          87,
+          88,
+          397,
+          495,
+          543,
+          1587,
+          1629,
+          122,
+          124,
+          350,
+          351,
+          1523,
+          311,
+          312,
+          629,
+          2652,
+          92,
+          95,
+          96,
+          97,
+          128,
+          320,
+          376,
+          574,
+          110,
+          111,
+          370,
+          1071,
+          3086,
+          1513,
+          98,
+          414,
+          1008,
+          739,
+          2057,
+          1097,
+          1340,
+          1693,
+          2153,
+          2814,
+          112,
+          1738,
+          328,
+          744,
+          1030,
+          280,
+          281,
+          1887,
+          345,
+          731,
+          2168,
+          927,
+          1111,
+          2404,
+          288,
+          418,
+          1264,
+          364,
+          488,
+          489,
+          1604,
+          1605,
+          1606,
+          1607,
+          1608,
+          1610,
+          2097,
+          520,
+          3136,
+          599,
+          603,
+          707,
+          734,
+          783,
+          788,
+          818,
+          947,
+          1656,
+          2726,
+          1099,
+          1104,
+          1209,
+          1585,
+          1208,
+          1214,
+          1215,
+          1283,
+          1357,
+          1358,
+          1359,
+          1673,
+          1709,
+          1758,
+          3085,
+          1885,
+          1886,
+          2006,
+          2164,
+          274,
+          3076,
+          1356,
+          139,
+          612,
+          2827,
+          2750,
+          2752,
+          2828,
+          3092,
+          2754,
+          1878,
+          776,
+          1476,
+          1479,
+          1481,
+          1482,
+          1483,
+          1486,
+          1506,
+          1490,
+          2775,
+          2782,
+          3272
+        ],
+        "limits": [
+          "Hit-share and preceding-delta durations are sampling estimates, not measured exclusive CPU.",
+          "Count-only mode withholds preceding-delta attribution; signed totals are bookkeeping, not durations.",
+          "Inclusive ancestors overlap; do not sum their times.",
+          "Raw program/idle/GC samples retained; no sorting,clamping,DevTools display repair or source-map inference."
+        ],
+        "topSelf": [
+          {
+            "id": 2,
+            "functionName": "(program)",
+            "scriptId": "0",
+            "url": "",
+            "lineNumber": -1,
+            "columnNumber": -1,
+            "samples": 11937,
+            "sampleShare": 0.20309309922417312,
+            "uniformIntervalEstimateMs": 17131.64116297468,
+            "rawSignedDeltaMs": 17668.004,
+            "precedingDeltaEstimateMs": null
+          },
+          {
+            "id": 69,
+            "functionName": "render",
+            "scriptId": "115",
+            "url": "http://127.0.0.1:6301/assets/Battle-fVaUXWiC.js",
+            "lineNumber": 236,
+            "columnNumber": 13635,
+            "samples": 11341,
+            "sampleShare": 0.192952905948006,
+            "uniformIntervalEstimateMs": 16276.279000527427,
+            "rawSignedDeltaMs": 16352.999,
+            "precedingDeltaEstimateMs": null
+          },
+          {
+            "id": 85,
+            "functionName": "point",
+            "scriptId": "130",
+            "url": "http://127.0.0.1:6301/assets/assets-d-lRL14X.js",
+            "lineNumber": 34,
+            "columnNumber": 4626,
+            "samples": 5567,
+            "sampleShare": 0.09471553014835987,
+            "uniformIntervalEstimateMs": 7989.599258966245,
+            "rawSignedDeltaMs": 8030.451,
+            "precedingDeltaEstimateMs": null
+          },
+          {
+            "id": 88,
+            "functionName": "u",
+            "scriptId": "123",
+            "url": "http://127.0.0.1:6301/assets/card-v4-presentation-BdTOX96F.js",
+            "lineNumber": 0,
+            "columnNumber": 3741,
+            "samples": 2132,
+            "sampleShare": 0.0362733088335375,
+            "uniformIntervalEstimateMs": 3059.7854535864976,
+            "rawSignedDeltaMs": 3043.677,
+            "precedingDeltaEstimateMs": null
+          },
+          {
+            "id": 304,
+            "functionName": "",
+            "scriptId": "130",
+            "url": "http://127.0.0.1:6301/assets/assets-d-lRL14X.js",
+            "lineNumber": 34,
+            "columnNumber": 26701,
+            "samples": 2047,
+            "sampleShare": 0.03482714032938614,
+            "uniformIntervalEstimateMs": 2937.7958834388187,
+            "rawSignedDeltaMs": 2940.448,
+            "precedingDeltaEstimateMs": null
+          },
+          {
+            "id": 667,
+            "functionName": "getBoundingClientRect",
+            "scriptId": "0",
+            "url": "",
+            "lineNumber": -1,
+            "columnNumber": -1,
+            "samples": 1220,
+            "sampleShare": 0.02075677147134885,
+            "uniformIntervalEstimateMs": 1750.909124472574,
+            "rawSignedDeltaMs": 1784.751,
+            "precedingDeltaEstimateMs": null
+          },
+          {
+            "id": 76,
+            "functionName": "sample",
+            "scriptId": "130",
+            "url": "http://127.0.0.1:6301/assets/assets-d-lRL14X.js",
+            "lineNumber": 34,
+            "columnNumber": 2424,
+            "samples": 1047,
+            "sampleShare": 0.017813393221723154,
+            "uniformIntervalEstimateMs": 1502.624469936709,
+            "rawSignedDeltaMs": 1496.315,
+            "precedingDeltaEstimateMs": null
+          },
+          {
+            "id": 79,
+            "functionName": "updateNativeVertices",
+            "scriptId": "130",
+            "url": "http://127.0.0.1:6301/assets/assets-d-lRL14X.js",
+            "lineNumber": 34,
+            "columnNumber": 16771,
+            "samples": 665,
+            "sampleShare": 0.011314141826595889,
+            "uniformIntervalEstimateMs": 954.3889899789028,
+            "rawSignedDeltaMs": 833.391,
+            "precedingDeltaEstimateMs": null
+          },
+          {
+            "id": 342,
+            "functionName": "G",
+            "scriptId": "121",
+            "url": "http://127.0.0.1:6301/assets/player-PLdZ8L9j.js",
+            "lineNumber": 1,
+            "columnNumber": 1331,
+            "samples": 657,
+            "sampleShare": 0.011178031849734586,
+            "uniformIntervalEstimateMs": 942.9076186708861,
+            "rawSignedDeltaMs": 936.43,
+            "precedingDeltaEstimateMs": null
+          },
+          {
+            "id": 359,
+            "functionName": "texImage2D",
+            "scriptId": "0",
+            "url": "",
+            "lineNumber": -1,
+            "columnNumber": -1,
+            "samples": 613,
+            "sampleShare": 0.010429426976997414,
+            "uniformIntervalEstimateMs": 879.7600764767933,
+            "rawSignedDeltaMs": 897.467,
+            "precedingDeltaEstimateMs": null
+          },
+          {
+            "id": 518,
+            "functionName": "offset",
+            "scriptId": "130",
+            "url": "http://127.0.0.1:6301/assets/assets-d-lRL14X.js",
+            "lineNumber": 34,
+            "columnNumber": 862,
+            "samples": 596,
+            "sampleShare": 0.010140193276167143,
+            "uniformIntervalEstimateMs": 855.3621624472574,
+            "rawSignedDeltaMs": 846.631,
+            "precedingDeltaEstimateMs": null
+          },
+          {
+            "id": 1597,
+            "functionName": "getBoundingClientRect",
+            "scriptId": "0",
+            "url": "",
+            "lineNumber": -1,
+            "columnNumber": -1,
+            "samples": 514,
+            "sampleShare": 0.008745066013338777,
+            "uniformIntervalEstimateMs": 737.6781065400844,
+            "rawSignedDeltaMs": 735.575,
+            "precedingDeltaEstimateMs": null
+          }
+        ],
+        "topInclusive": [
+          {
+            "id": 1,
+            "functionName": "(root)",
+            "scriptId": "0",
+            "url": "",
+            "lineNumber": -1,
+            "columnNumber": -1,
+            "samples": 58776,
+            "sampleShare": 1,
+            "uniformIntervalEstimateMs": 84353.635,
+            "rawSignedDeltaMs": 84352.558,
+            "precedingDeltaEstimateMs": null
+          },
+          {
+            "id": 67,
+            "functionName": "loop",
+            "scriptId": "115",
+            "url": "http://127.0.0.1:6301/assets/Battle-fVaUXWiC.js",
+            "lineNumber": 236,
+            "columnNumber": 12798,
+            "samples": 39431,
+            "sampleShare": 0.6708690622022594,
+            "uniformIntervalEstimateMs": 56590.24400580169,
+            "rawSignedDeltaMs": 56144.398,
+            "precedingDeltaEstimateMs": null
+          },
+          {
+            "id": 68,
+            "functionName": "s.render",
+            "scriptId": "169",
+            "url": "",
+            "lineNumber": 4,
+            "columnNumber": 20,
+            "samples": 38890,
+            "sampleShare": 0.6616646250170137,
+            "uniformIntervalEstimateMs": 55813.81627109704,
+            "rawSignedDeltaMs": 55367.936,
+            "precedingDeltaEstimateMs": null
+          },
+          {
+            "id": 69,
+            "functionName": "render",
+            "scriptId": "115",
+            "url": "http://127.0.0.1:6301/assets/Battle-fVaUXWiC.js",
+            "lineNumber": 236,
+            "columnNumber": 13635,
+            "samples": 38415,
+            "sampleShare": 0.6535830951408739,
+            "uniformIntervalEstimateMs": 55132.10984968355,
+            "rawSignedDeltaMs": 54705.499,
+            "precedingDeltaEstimateMs": null
+          },
+          {
+            "id": 2,
+            "functionName": "(program)",
+            "scriptId": "0",
+            "url": "",
+            "lineNumber": -1,
+            "columnNumber": -1,
+            "samples": 11937,
+            "sampleShare": 0.20309309922417312,
+            "uniformIntervalEstimateMs": 17131.64116297468,
+            "rawSignedDeltaMs": 17668.004,
+            "precedingDeltaEstimateMs": null
+          },
+          {
+            "id": 75,
+            "functionName": "deform",
+            "scriptId": "131",
+            "url": "http://127.0.0.1:6301/assets/drawn-poses-DMXNj4S8.js",
+            "lineNumber": 0,
+            "columnNumber": 2078,
+            "samples": 7767,
+            "sampleShare": 0.13214577378521847,
+            "uniformIntervalEstimateMs": 11146.976368670887,
+            "rawSignedDeltaMs": 11152.745,
+            "precedingDeltaEstimateMs": null
+          },
+          {
+            "id": 76,
+            "functionName": "sample",
+            "scriptId": "130",
+            "url": "http://127.0.0.1:6301/assets/assets-d-lRL14X.js",
+            "lineNumber": 34,
+            "columnNumber": 2424,
+            "samples": 7552,
+            "sampleShare": 0.12848781815707092,
+            "uniformIntervalEstimateMs": 10838.414514767932,
+            "rawSignedDeltaMs": 10851.277,
+            "precedingDeltaEstimateMs": null
+          },
+          {
+            "id": 85,
+            "functionName": "point",
+            "scriptId": "130",
+            "url": "http://127.0.0.1:6301/assets/assets-d-lRL14X.js",
+            "lineNumber": 34,
+            "columnNumber": 4626,
+            "samples": 6184,
+            "sampleShare": 0.10521301211378795,
+            "uniformIntervalEstimateMs": 8875.100021097047,
+            "rawSignedDeltaMs": 8905.599,
+            "precedingDeltaEstimateMs": null
+          },
+          {
+            "id": 3,
+            "functionName": "i",
+            "scriptId": "135",
+            "url": "http://127.0.0.1:6301/assets/BattleHudV3-DSnAC2Gc.js",
+            "lineNumber": 1,
+            "columnNumber": 15213,
+            "samples": 3795,
+            "sampleShare": 0.06456717027358105,
+            "uniformIntervalEstimateMs": 5446.4755142405065,
+            "rawSignedDeltaMs": 5494.851,
+            "precedingDeltaEstimateMs": null
+          },
+          {
+            "id": 86,
+            "functionName": "projectAnchors",
+            "scriptId": "115",
+            "url": "http://127.0.0.1:6301/assets/Battle-fVaUXWiC.js",
+            "lineNumber": 236,
+            "columnNumber": 34859,
+            "samples": 3188,
+            "sampleShare": 0.05423982577922962,
+            "uniformIntervalEstimateMs": 4575.326466244725,
+            "rawSignedDeltaMs": 4574.929,
+            "precedingDeltaEstimateMs": null
+          },
+          {
+            "id": 80,
+            "functionName": "Zr",
+            "scriptId": "115",
+            "url": "http://127.0.0.1:6301/assets/Battle-fVaUXWiC.js",
+            "lineNumber": 168,
+            "columnNumber": 35005,
+            "samples": 2982,
+            "sampleShare": 0.050734993875051045,
+            "uniformIntervalEstimateMs": 4279.681155063291,
+            "rawSignedDeltaMs": 4274.343,
+            "precedingDeltaEstimateMs": null
+          },
+          {
+            "id": 91,
+            "functionName": "render",
+            "scriptId": "115",
+            "url": "http://127.0.0.1:6301/assets/Battle-fVaUXWiC.js",
+            "lineNumber": 167,
+            "columnNumber": 4311,
+            "samples": 2772,
+            "sampleShare": 0.04716210698244181,
+            "uniformIntervalEstimateMs": 3978.295158227848,
+            "rawSignedDeltaMs": 3879.247,
+            "precedingDeltaEstimateMs": null
+          }
+        ],
+        "specialNodes": [
+          {
+            "id": 2,
+            "functionName": "(program)",
+            "scriptId": "0",
+            "url": "",
+            "lineNumber": -1,
+            "columnNumber": -1,
+            "samples": 11937,
+            "sampleShare": 0.20309309922417312,
+            "uniformIntervalEstimateMs": 17131.64116297468,
+            "rawSignedDeltaMs": 17668.004,
+            "precedingDeltaEstimateMs": null
+          },
+          {
+            "id": 120,
+            "functionName": "(garbage collector)",
+            "scriptId": "0",
+            "url": "",
+            "lineNumber": -1,
+            "columnNumber": -1,
+            "samples": 492,
+            "sampleShare": 0.008370763576970192,
+            "uniformIntervalEstimateMs": 706.104335443038,
+            "rawSignedDeltaMs": 719.851,
+            "precedingDeltaEstimateMs": null
+          },
+          {
+            "id": 130,
+            "functionName": "(idle)",
+            "scriptId": "0",
+            "url": "",
+            "lineNumber": -1,
+            "columnNumber": -1,
+            "samples": 194,
+            "sampleShare": 0.00330066693888662,
+            "uniformIntervalEstimateMs": 278.4232542194093,
+            "rawSignedDeltaMs": 279.032,
+            "precedingDeltaEstimateMs": null
+          }
+        ],
+        "byUrl": {
+          "(no URL; includes native/program/idle/GC)": {
+            "samples": 19204,
+            "uniformIntervalEstimateMs": 27561.031824894493
+          },
+          "http://127.0.0.1:6301/assets/Battle-fVaUXWiC.js": {
+            "samples": 14950,
+            "uniformIntervalEstimateMs": 21455.812631856497
+          },
+          "http://127.0.0.1:6301/assets/assets-d-lRL14X.js": {
+            "samples": 11970,
+            "uniformIntervalEstimateMs": 17179.001819620193
+          },
+          "http://127.0.0.1:6301/assets/card-v4-presentation-BdTOX96F.js": {
+            "samples": 2502,
+            "uniformIntervalEstimateMs": 3590.7988765822797
+          },
+          "http://127.0.0.1:6301/assets/three.module-CJYpitt8.js": {
+            "samples": 2427,
+            "uniformIntervalEstimateMs": 3483.16102056964
+          },
+          "http://127.0.0.1:6301/assets/three.core-BVJVU-xV.js": {
+            "samples": 2315,
+            "uniformIntervalEstimateMs": 3322.4218222574113
+          },
+          "http://127.0.0.1:6301/assets/player-PLdZ8L9j.js": {
+            "samples": 1330,
+            "uniformIntervalEstimateMs": 1908.7779799578043
+          },
+          "http://127.0.0.1:6301/assets/cardrpg-C8IIZI7d.js": {
+            "samples": 1242,
+            "uniformIntervalEstimateMs": 1782.4828955696105
+          },
+          "http://127.0.0.1:6301/assets/BattleHudV3-DSnAC2Gc.js": {
+            "samples": 906,
+            "uniformIntervalEstimateMs": 1300.265300632911
+          },
+          "http://127.0.0.1:6301/assets/react-W5ZNnHZt.js": {
+            "samples": 515,
+            "uniformIntervalEstimateMs": 739.1132779535811
+          },
+          "http://127.0.0.1:6301/assets/controls-DZdtGntM.js": {
+            "samples": 198,
+            "uniformIntervalEstimateMs": 284.16393987341814
+          },
+          "http://127.0.0.1:6301/assets/layout-c2-D3MCEm5P.js": {
+            "samples": 159,
+            "uniformIntervalEstimateMs": 228.19225474683546
+          },
+          "http://127.0.0.1:6301/assets/engine-CTTgfY4O.js": {
+            "samples": 150,
+            "uniformIntervalEstimateMs": 215.27571202531638
+          },
+          "http://127.0.0.1:6301/assets/encounter-CTv_b-BC.js": {
+            "samples": 131,
+            "uniformIntervalEstimateMs": 188.00745516877623
+          },
+          "http://127.0.0.1:6301/assets/web3-BXuhzNNJ.js": {
+            "samples": 115,
+            "uniformIntervalEstimateMs": 165.0447125527424
+          },
+          "http://127.0.0.1:6301/assets/depth-CPNo5lMp.js": {
+            "samples": 113,
+            "uniformIntervalEstimateMs": 162.1743697257383
+          },
+          "http://127.0.0.1:6301/assets/events-BF4hjAu_.js": {
+            "samples": 93,
+            "uniformIntervalEstimateMs": 133.47094145569616
+          },
+          "http://127.0.0.1:6301/assets/drawn-poses-DMXNj4S8.js": {
+            "samples": 87,
+            "uniformIntervalEstimateMs": 124.85991297468352
+          },
+          "http://127.0.0.1:6301/assets/entry-Dj5-zNpM.js": {
+            "samples": 66,
+            "uniformIntervalEstimateMs": 94.72131329113921
+          },
+          "http://127.0.0.1:6301/assets/battle-presentation-D7nwSsLz.js": {
+            "samples": 63,
+            "uniformIntervalEstimateMs": 90.41579905063288
+          },
+          "http://127.0.0.1:6301/assets/core-DTaTrRcr.js": {
+            "samples": 49,
+            "uniformIntervalEstimateMs": 70.32339926160338
+          },
+          "http://127.0.0.1:6301/assets/skill-timeline-rfT4hKUI.js": {
+            "samples": 29,
+            "uniformIntervalEstimateMs": 41.61997099156119
+          },
+          "http://127.0.0.1:6301/assets/designer-idle-body-CZIXPJ_Q.js": {
+            "samples": 25,
+            "uniformIntervalEstimateMs": 35.87928533755275
+          },
+          "http://127.0.0.1:6301/assets/effects-DLrMSFx3.js": {
+            "samples": 19,
+            "uniformIntervalEstimateMs": 27.268256856540088
+          },
+          "http://127.0.0.1:6301/assets/number-badges-CfUWjpIv.js": {
+            "samples": 19,
+            "uniformIntervalEstimateMs": 27.268256856540088
+          },
+          "http://127.0.0.1:6301/assets/scene-actors-Bl38N2Pi.js": {
+            "samples": 18,
+            "uniformIntervalEstimateMs": 25.833085443037977
+          },
+          "http://127.0.0.1:6301/assets/ShellV3-B247X0EX.js": {
+            "samples": 16,
+            "uniformIntervalEstimateMs": 22.962742616033765
+          },
+          "http://127.0.0.1:6301/assets/Entrance-CAHiLr2l.js": {
+            "samples": 9,
+            "uniformIntervalEstimateMs": 12.916542721518988
+          },
+          "http://127.0.0.1:6301/assets/badges-a6-CGbpTXVn.js": {
+            "samples": 9,
+            "uniformIntervalEstimateMs": 12.916542721518988
+          },
+          "http://127.0.0.1:6301/assets/indexed-logs-DXSto3KM.js": {
+            "samples": 5,
+            "uniformIntervalEstimateMs": 7.175857067510549
+          },
+          "http://127.0.0.1:6301/assets/art-a6-DwXb3-LL.js": {
+            "samples": 5,
+            "uniformIntervalEstimateMs": 7.175857067510549
+          },
+          "http://127.0.0.1:6301/assets/catalog-CCkxkSXu.js": {
+            "samples": 5,
+            "uniformIntervalEstimateMs": 7.175857067510549
+          },
+          "http://127.0.0.1:6301/assets/look-readable-assets-CXnRRuXT.js": {
+            "samples": 4,
+            "uniformIntervalEstimateMs": 5.740685654008439
+          },
+          "http://127.0.0.1:6301/assets/CompanionPreview-C14MTzrH.js": {
+            "samples": 4,
+            "uniformIntervalEstimateMs": 5.740685654008439
+          },
+          "http://127.0.0.1:6301/assets/onboarding-DFGR8AMe.js": {
+            "samples": 4,
+            "uniformIntervalEstimateMs": 5.740685654008439
+          },
+          "http://127.0.0.1:6301/assets/callouts-B0pP9Thw.js": {
+            "samples": 4,
+            "uniformIntervalEstimateMs": 5.740685654008439
+          },
+          "http://127.0.0.1:6301/assets/native-modal-CkJobd2u.js": {
+            "samples": 3,
+            "uniformIntervalEstimateMs": 4.30551424050633
+          },
+          "http://127.0.0.1:6301/assets/Icon-Ddb6J6Vv.js": {
+            "samples": 2,
+            "uniformIntervalEstimateMs": 2.8703428270042197
+          },
+          "http://127.0.0.1:6301/assets/GameIcon-BcMk_1R7.js": {
+            "samples": 2,
+            "uniformIntervalEstimateMs": 2.8703428270042197
+          },
+          "http://127.0.0.1:6301/assets/rng-D90-h8Om.js": {
+            "samples": 2,
+            "uniformIntervalEstimateMs": 2.8703428270042197
+          },
+          "http://127.0.0.1:6301/assets/scene-7FDamrYp.js": {
+            "samples": 1,
+            "uniformIntervalEstimateMs": 1.4351714135021099
+          },
+          "http://127.0.0.1:6301/assets/look-art-slQevEPM.js": {
+            "samples": 1,
+            "uniformIntervalEstimateMs": 1.4351714135021099
+          },
+          "http://127.0.0.1:6301/assets/flags-CtQK1WAi.js": {
+            "samples": 1,
+            "uniformIntervalEstimateMs": 1.4351714135021099
+          },
+          "http://127.0.0.1:6301/assets/card-staging-DGu7Bxa9.js": {
+            "samples": 1,
+            "uniformIntervalEstimateMs": 1.4351714135021099
+          },
+          "http://127.0.0.1:6301/assets/JourneyV4-CU0ZYbWQ.js": {
+            "samples": 1,
+            "uniformIntervalEstimateMs": 1.4351714135021099
+          },
+          "http://127.0.0.1:6301/assets/meta-presentation-CKv9XlkX.js": {
+            "samples": 1,
+            "uniformIntervalEstimateMs": 1.4351714135021099
+          },
+          "http://127.0.0.1:6301/assets/motion-b2-DrhItGHn.js": {
+            "samples": 1,
+            "uniformIntervalEstimateMs": 1.4351714135021099
+          }
+        }
+      },
+      "frameMsWithoutCapture": {
+        "count": 2872,
+        "min": 16.5,
+        "median": 33.29999999999927,
+        "p95": 50,
+        "p99": 83.39999999999964,
+        "max": 233.29999999999973
+      },
+      "renderCpuMsWithoutCapture": {
+        "count": 2872,
+        "min": 10.899999991059303,
+        "median": 18.200000002980232,
+        "p95": 23.899999991059303,
+        "p99": 61.29999999701977,
+        "max": 191.29999999701977
+      },
+      "wallMs": 83986.59999999404,
+      "dropped": 649,
+      "total": 2703,
+      "dropFraction": 0.2401035886052534,
+      "callbacks": 2311,
+      "missedCallbacks": 189,
+      "wraps": 9,
+      "waitingEvents": 11,
+      "runtimeErrors": 0,
+      "playback": {
+        "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/mochi-cpu-r1/02-on/playback-audit-r2.json",
+        "sha256": "271a17e6d3fb99333ed8b4f1fbe1588d03cfe302a45a4213d8f7eaa059b7f33f"
+      }
+    },
+    {
+      "name": "03-on",
+      "sampling": "on",
+      "actions": 55,
+      "ultimates": 21,
+      "ruleReplay": {
+        "mode": "normal",
+        "actions": 55,
+        "observedActions": 55,
+        "comparisons": {
+          "log": true,
+          "actors": true,
+          "queue": true,
+          "round": true,
+          "result": true
+        },
+        "fullBattleExact": true,
+        "replaySha256": "eb62df711d59f409a29e8a14aa793a1a3b5c642e29acca635ee73fa33f671af5",
+        "observedSha256": "eb62df711d59f409a29e8a14aa793a1a3b5c642e29acca635ee73fa33f671af5"
+      },
+      "metricsWindowMs": 84131.48700000602,
+      "metricsMs": {
+        "LayoutDuration": 1093.5710000000001,
+        "RecalcStyleDuration": 19303.94,
+        "DevToolsCommandDuration": 367.50000000000006,
+        "ScriptDuration": 48874.86,
+        "V8CompileDuration": 0,
+        "TaskDuration": 83798.50300000001,
+        "TaskOtherDuration": 14158.632000000001,
+        "ThreadTime": 83874.044,
+        "ProcessTime": 95235.37299999999
+      },
+      "layoutCount": 4322,
+      "recalcStyleCount": 8903,
+      "cpuProfile": {
+        "raw": {
+          "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/mochi-cpu-r1/03-on/normal/cpu.cpuprofile",
+          "sha256": "14a0190368b705c5bd9da78eeb310bd208d9ad1bf341f55cbd5f5e3e410c21a9"
+        },
+        "summary": {
+          "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/mochi-cpu-r1/03-on/cpu-summary-r2.json",
+          "sha256": "da6922db4aadb908ded24c1ee5fb9420dc40b6d34222a7b984d5d4b8417bebc1"
+        },
+        "aggregation": "raw-counts-only",
+        "negativeTimeDeltas": [
+          {
+            "index": 40001,
+            "nodeId": 170,
+            "deltaUs": -1
+          },
+          {
+            "index": 47735,
+            "nodeId": 340,
+            "deltaUs": -1
+          }
+        ],
+        "precedingDeltaEstimateEnabled": false,
+        "nodes": 3305,
+        "samples": 59447,
+        "durationMs": 84571.659,
+        "deltaSumMs": 84571.531,
+        "unassignedTailMs": 0.128,
+        "firstDeltaMs": 429.821,
+        "maxDeltaMs": 429.821,
+        "rawHitCountMismatches": [
+          2,
+          355,
+          677,
+          863,
+          505,
+          1425,
+          14,
+          221,
+          463,
+          1066,
+          1342,
+          2231,
+          2640,
+          1346,
+          460,
+          904,
+          2149,
+          571,
+          2820,
+          752,
+          874,
+          2161,
+          2819,
+          3040,
+          531,
+          2633,
+          2896,
+          2897,
+          2821,
+          2369,
+          247,
+          472,
+          1792,
+          51,
+          470,
+          3175,
+          57,
+          59,
+          61,
+          63,
+          65,
+          67,
+          69,
+          71,
+          73,
+          75,
+          77,
+          79,
+          81,
+          83,
+          85,
+          87,
+          89,
+          91,
+          3176,
+          3186,
+          3188,
+          3190,
+          3192,
+          3194,
+          3196,
+          3197,
+          3199,
+          3200,
+          99,
+          101,
+          103,
+          105,
+          107,
+          108,
+          110,
+          113,
+          115,
+          117,
+          119,
+          1414,
+          1967,
+          2828,
+          2829,
+          3263,
+          3265,
+          3240,
+          3242,
+          3244,
+          3247,
+          3249,
+          3252,
+          3259,
+          3239,
+          1362,
+          1607,
+          2823,
+          2825,
+          3208,
+          3210,
+          3212,
+          3214,
+          3216,
+          3218,
+          3220,
+          3223,
+          3226,
+          3228,
+          3230,
+          3232,
+          3234,
+          3236,
+          3238,
+          121,
+          123,
+          125,
+          129,
+          141,
+          434,
+          510,
+          524,
+          866,
+          1844,
+          435,
+          136,
+          137,
+          1316,
+          1701,
+          140,
+          154,
+          1883,
+          579,
+          252,
+          253,
+          788,
+          789,
+          977,
+          401,
+          499,
+          426,
+          146,
+          340,
+          526,
+          602,
+          603,
+          604,
+          861,
+          379,
+          383,
+          1270,
+          149,
+          273,
+          2520,
+          541,
+          853,
+          1548,
+          2262,
+          2247,
+          2335,
+          2374,
+          159,
+          160,
+          405,
+          169,
+          632,
+          184,
+          928,
+          2283,
+          166,
+          180,
+          186,
+          266,
+          346,
+          423,
+          425,
+          269,
+          393,
+          394,
+          395,
+          626,
+          3091,
+          1238,
+          374,
+          1845,
+          260,
+          285,
+          1976,
+          363,
+          920,
+          909,
+          1113,
+          983,
+          1496,
+          1690,
+          1691,
+          1692,
+          1693,
+          1696,
+          2041,
+          274,
+          454,
+          1181,
+          337,
+          339,
+          1975,
+          384,
+          2831,
+          3150,
+          428,
+          1156,
+          2934,
+          429,
+          490,
+          517,
+          545,
+          551,
+          580,
+          583,
+          2166,
+          2219,
+          637,
+          757,
+          761,
+          762,
+          1626,
+          852,
+          886,
+          1063,
+          1334,
+          1335,
+          1155,
+          1158,
+          1330,
+          1671,
+          1810,
+          1825,
+          1974,
+          1977,
+          1984,
+          3090,
+          2308,
+          2323,
+          1332,
+          1333,
+          480,
+          3161,
+          2835,
+          2759,
+          2761,
+          2836,
+          1961,
+          2763,
+          3100,
+          747,
+          295,
+          609,
+          1558,
+          1561,
+          1563,
+          1564,
+          1565,
+          1568,
+          1589,
+          1572,
+          2790,
+          2797,
+          3274
+        ],
+        "limits": [
+          "Hit-share and preceding-delta durations are sampling estimates, not measured exclusive CPU.",
+          "Count-only mode withholds preceding-delta attribution; signed totals are bookkeeping, not durations.",
+          "Inclusive ancestors overlap; do not sum their times.",
+          "Raw program/idle/GC samples retained; no sorting,clamping,DevTools display repair or source-map inference."
+        ],
+        "topSelf": [
+          {
+            "id": 2,
+            "functionName": "(program)",
+            "scriptId": "0",
+            "url": "",
+            "lineNumber": -1,
+            "columnNumber": -1,
+            "samples": 11924,
+            "sampleShare": 0.20058203105287062,
+            "uniformIntervalEstimateMs": 16963.555131730784,
+            "rawSignedDeltaMs": 17498.063,
+            "precedingDeltaEstimateMs": null
+          },
+          {
+            "id": 125,
+            "functionName": "render",
+            "scriptId": "121",
+            "url": "http://127.0.0.1:6301/assets/Battle-fVaUXWiC.js",
+            "lineNumber": 236,
+            "columnNumber": 13635,
+            "samples": 11342,
+            "sampleShare": 0.19079179773579827,
+            "uniformIntervalEstimateMs": 16135.578858108902,
+            "rawSignedDeltaMs": 16204.792,
+            "precedingDeltaEstimateMs": null
+          },
+          {
+            "id": 141,
+            "functionName": "point",
+            "scriptId": "130",
+            "url": "http://127.0.0.1:6301/assets/assets-d-lRL14X.js",
+            "lineNumber": 34,
+            "columnNumber": 4626,
+            "samples": 5687,
+            "sampleShare": 0.09566504617558498,
+            "uniformIntervalEstimateMs": 8090.5516633808265,
+            "rawSignedDeltaMs": 8070.004,
+            "precedingDeltaEstimateMs": null
+          },
+          {
+            "id": 136,
+            "functionName": "",
+            "scriptId": "130",
+            "url": "http://127.0.0.1:6301/assets/assets-d-lRL14X.js",
+            "lineNumber": 34,
+            "columnNumber": 26701,
+            "samples": 2219,
+            "sampleShare": 0.03732736723467963,
+            "uniformIntervalEstimateMs": 3156.837373139099,
+            "rawSignedDeltaMs": 3183.915,
+            "precedingDeltaEstimateMs": null
+          },
+          {
+            "id": 632,
+            "functionName": "u",
+            "scriptId": "123",
+            "url": "http://127.0.0.1:6301/assets/card-v4-presentation-BdTOX96F.js",
+            "lineNumber": 0,
+            "columnNumber": 3741,
+            "samples": 2090,
+            "sampleShare": 0.035157367066462566,
+            "uniformIntervalEstimateMs": 2973.3168588827025,
+            "rawSignedDeltaMs": 2958.059,
+            "precedingDeltaEstimateMs": null
+          },
+          {
+            "id": 498,
+            "functionName": "getBoundingClientRect",
+            "scriptId": "0",
+            "url": "",
+            "lineNumber": -1,
+            "columnNumber": -1,
+            "samples": 1277,
+            "sampleShare": 0.02148131949467593,
+            "uniformIntervalEstimateMs": 1816.710827173785,
+            "rawSignedDeltaMs": 1854.684,
+            "precedingDeltaEstimateMs": null
+          },
+          {
+            "id": 129,
+            "functionName": "sample",
+            "scriptId": "130",
+            "url": "http://127.0.0.1:6301/assets/assets-d-lRL14X.js",
+            "lineNumber": 34,
+            "columnNumber": 2424,
+            "samples": 967,
+            "sampleShare": 0.016266590408262824,
+            "uniformIntervalEstimateMs": 1375.6925371002744,
+            "rawSignedDeltaMs": 1387.844,
+            "precedingDeltaEstimateMs": null
+          },
+          {
+            "id": 154,
+            "functionName": "updateNativeVertices",
+            "scriptId": "130",
+            "url": "http://127.0.0.1:6301/assets/assets-d-lRL14X.js",
+            "lineNumber": 34,
+            "columnNumber": 16771,
+            "samples": 707,
+            "sampleShare": 0.011892946658367959,
+            "uniformIntervalEstimateMs": 1005.8062292966845,
+            "rawSignedDeltaMs": 873.55,
+            "precedingDeltaEstimateMs": null
+          },
+          {
+            "id": 355,
+            "functionName": "G",
+            "scriptId": "120",
+            "url": "http://127.0.0.1:6301/assets/player-PLdZ8L9j.js",
+            "lineNumber": 1,
+            "columnNumber": 1331,
+            "samples": 655,
+            "sampleShare": 0.011018217908388986,
+            "uniformIntervalEstimateMs": 931.8289677359666,
+            "rawSignedDeltaMs": 928.221,
+            "precedingDeltaEstimateMs": null
+          },
+          {
+            "id": 397,
+            "functionName": "texImage2D",
+            "scriptId": "0",
+            "url": "",
+            "lineNumber": -1,
+            "columnNumber": -1,
+            "samples": 641,
+            "sampleShare": 0.010782714014163877,
+            "uniformIntervalEstimateMs": 911.9120127003886,
+            "rawSignedDeltaMs": 914.454,
+            "precedingDeltaEstimateMs": null
+          },
+          {
+            "id": 282,
+            "functionName": "offset",
+            "scriptId": "130",
+            "url": "http://127.0.0.1:6301/assets/assets-d-lRL14X.js",
+            "lineNumber": 34,
+            "columnNumber": 862,
+            "samples": 540,
+            "sampleShare": 0.009083721634397026,
+            "uniformIntervalEstimateMs": 768.2254085151479,
+            "rawSignedDeltaMs": 771.17,
+            "precedingDeltaEstimateMs": null
+          },
+          {
+            "id": 1683,
+            "functionName": "getBoundingClientRect",
+            "scriptId": "0",
+            "url": "",
+            "lineNumber": -1,
+            "columnNumber": -1,
+            "samples": 529,
+            "sampleShare": 0.008898682860363013,
+            "uniformIntervalEstimateMs": 752.5763724157654,
+            "rawSignedDeltaMs": 742.348,
+            "precedingDeltaEstimateMs": null
+          }
+        ],
+        "topInclusive": [
+          {
+            "id": 1,
+            "functionName": "(root)",
+            "scriptId": "0",
+            "url": "",
+            "lineNumber": -1,
+            "columnNumber": -1,
+            "samples": 59447,
+            "sampleShare": 1,
+            "uniformIntervalEstimateMs": 84571.659,
+            "rawSignedDeltaMs": 84571.531,
+            "precedingDeltaEstimateMs": null
+          },
+          {
+            "id": 123,
+            "functionName": "loop",
+            "scriptId": "121",
+            "url": "http://127.0.0.1:6301/assets/Battle-fVaUXWiC.js",
+            "lineNumber": 236,
+            "columnNumber": 12798,
+            "samples": 40029,
+            "sampleShare": 0.6733560987097751,
+            "uniformIntervalEstimateMs": 56946.84236565344,
+            "rawSignedDeltaMs": 56481.867,
+            "precedingDeltaEstimateMs": null
+          },
+          {
+            "id": 124,
+            "functionName": "s.render",
+            "scriptId": "169",
+            "url": "",
+            "lineNumber": 4,
+            "columnNumber": 20,
+            "samples": 39522,
+            "sampleShare": 0.6648274933974802,
+            "uniformIntervalEstimateMs": 56225.56406543645,
+            "rawSignedDeltaMs": 55778.947,
+            "precedingDeltaEstimateMs": null
+          },
+          {
+            "id": 125,
+            "functionName": "render",
+            "scriptId": "121",
+            "url": "http://127.0.0.1:6301/assets/Battle-fVaUXWiC.js",
+            "lineNumber": 236,
+            "columnNumber": 13635,
+            "samples": 39089,
+            "sampleShare": 0.6575436943832321,
+            "uniformIntervalEstimateMs": 55609.56109897892,
+            "rawSignedDeltaMs": 55162.629,
+            "precedingDeltaEstimateMs": null
+          },
+          {
+            "id": 2,
+            "functionName": "(program)",
+            "scriptId": "0",
+            "url": "",
+            "lineNumber": -1,
+            "columnNumber": -1,
+            "samples": 11924,
+            "sampleShare": 0.20058203105287062,
+            "uniformIntervalEstimateMs": 16963.555131730784,
+            "rawSignedDeltaMs": 17498.063,
+            "precedingDeltaEstimateMs": null
+          },
+          {
+            "id": 128,
+            "functionName": "deform",
+            "scriptId": "132",
+            "url": "http://127.0.0.1:6301/assets/drawn-poses-DMXNj4S8.js",
+            "lineNumber": 0,
+            "columnNumber": 2078,
+            "samples": 7763,
+            "sampleShare": 0.13058690934782244,
+            "uniformIntervalEstimateMs": 11043.951567227952,
+            "rawSignedDeltaMs": 11035.142,
+            "precedingDeltaEstimateMs": null
+          },
+          {
+            "id": 129,
+            "functionName": "sample",
+            "scriptId": "130",
+            "url": "http://127.0.0.1:6301/assets/assets-d-lRL14X.js",
+            "lineNumber": 34,
+            "columnNumber": 2424,
+            "samples": 7556,
+            "sampleShare": 0.12710481605463692,
+            "uniformIntervalEstimateMs": 10749.46516063048,
+            "rawSignedDeltaMs": 10739.418,
+            "precedingDeltaEstimateMs": null
+          },
+          {
+            "id": 141,
+            "functionName": "point",
+            "scriptId": "130",
+            "url": "http://127.0.0.1:6301/assets/assets-d-lRL14X.js",
+            "lineNumber": 34,
+            "columnNumber": 4626,
+            "samples": 6260,
+            "sampleShare": 0.10530388413208404,
+            "uniformIntervalEstimateMs": 8905.724180194124,
+            "rawSignedDeltaMs": 8889.565,
+            "precedingDeltaEstimateMs": null
+          },
+          {
+            "id": 3,
+            "functionName": "i",
+            "scriptId": "135",
+            "url": "http://127.0.0.1:6301/assets/BattleHudV3-DSnAC2Gc.js",
+            "lineNumber": 1,
+            "columnNumber": 15213,
+            "samples": 3894,
+            "sampleShare": 0.06550372600804077,
+            "uniformIntervalEstimateMs": 5539.758779181455,
+            "rawSignedDeltaMs": 5587.327,
+            "precedingDeltaEstimateMs": null
+          },
+          {
+            "id": 159,
+            "functionName": "projectAnchors",
+            "scriptId": "121",
+            "url": "http://127.0.0.1:6301/assets/Battle-fVaUXWiC.js",
+            "lineNumber": 236,
+            "columnNumber": 34859,
+            "samples": 3205,
+            "sampleShare": 0.053913570070819386,
+            "uniformIntervalEstimateMs": 4559.560063501943,
+            "rawSignedDeltaMs": 4521.119,
+            "precedingDeltaEstimateMs": null
+          },
+          {
+            "id": 131,
+            "functionName": "Zr",
+            "scriptId": "121",
+            "url": "http://127.0.0.1:6301/assets/Battle-fVaUXWiC.js",
+            "lineNumber": 168,
+            "columnNumber": 35005,
+            "samples": 3140,
+            "sampleShare": 0.052820159133345666,
+            "uniformIntervalEstimateMs": 4467.088486551045,
+            "rawSignedDeltaMs": 4495.988,
+            "precedingDeltaEstimateMs": null
+          },
+          {
+            "id": 165,
+            "functionName": "render",
+            "scriptId": "121",
+            "url": "http://127.0.0.1:6301/assets/Battle-fVaUXWiC.js",
+            "lineNumber": 167,
+            "columnNumber": 4311,
+            "samples": 2817,
+            "sampleShare": 0.04738674785943782,
+            "uniformIntervalEstimateMs": 4007.5758810873554,
+            "rawSignedDeltaMs": 3854.177,
+            "precedingDeltaEstimateMs": null
+          }
+        ],
+        "specialNodes": [
+          {
+            "id": 2,
+            "functionName": "(program)",
+            "scriptId": "0",
+            "url": "",
+            "lineNumber": -1,
+            "columnNumber": -1,
+            "samples": 11924,
+            "sampleShare": 0.20058203105287062,
+            "uniformIntervalEstimateMs": 16963.555131730784,
+            "rawSignedDeltaMs": 17498.063,
+            "precedingDeltaEstimateMs": null
+          },
+          {
+            "id": 168,
+            "functionName": "(garbage collector)",
+            "scriptId": "0",
+            "url": "",
+            "lineNumber": -1,
+            "columnNumber": -1,
+            "samples": 474,
+            "sampleShare": 0.007973488990192946,
+            "uniformIntervalEstimateMs": 674.3311919188521,
+            "rawSignedDeltaMs": 690.246,
+            "precedingDeltaEstimateMs": null
+          },
+          {
+            "id": 373,
+            "functionName": "(idle)",
+            "scriptId": "0",
+            "url": "",
+            "lineNumber": -1,
+            "columnNumber": -1,
+            "samples": 197,
+            "sampleShare": 0.0033138762258818778,
+            "uniformIntervalEstimateMs": 280.2600101434891,
+            "rawSignedDeltaMs": 282.25,
+            "precedingDeltaEstimateMs": null
+          }
+        ],
+        "byUrl": {
+          "(no URL; includes native/program/idle/GC)": {
+            "samples": 19234,
+            "uniformIntervalEstimateMs": 27363.050939593264
+          },
+          "http://127.0.0.1:6301/assets/Battle-fVaUXWiC.js": {
+            "samples": 14965,
+            "uniformIntervalEstimateMs": 21289.802293387445
+          },
+          "http://127.0.0.1:6301/assets/assets-d-lRL14X.js": {
+            "samples": 12363,
+            "uniformIntervalEstimateMs": 17588.093936060737
+          },
+          "http://127.0.0.1:6301/assets/three.module-CJYpitt8.js": {
+            "samples": 2569,
+            "uniformIntervalEstimateMs": 3654.7612490285364
+          },
+          "http://127.0.0.1:6301/assets/card-v4-presentation-BdTOX96F.js": {
+            "samples": 2452,
+            "uniformIntervalEstimateMs": 3488.3124105169313
+          },
+          "http://127.0.0.1:6301/assets/three.core-BVJVU-xV.js": {
+            "samples": 2413,
+            "uniformIntervalEstimateMs": 3432.829464346374
+          },
+          "http://127.0.0.1:6301/assets/player-PLdZ8L9j.js": {
+            "samples": 1378,
+            "uniformIntervalEstimateMs": 1960.397431359027
+          },
+          "http://127.0.0.1:6301/assets/cardrpg-C8IIZI7d.js": {
+            "samples": 1271,
+            "uniformIntervalEstimateMs": 1808.174989301408
+          },
+          "http://127.0.0.1:6301/assets/BattleHudV3-DSnAC2Gc.js": {
+            "samples": 928,
+            "uniformIntervalEstimateMs": 1320.209590929737
+          },
+          "http://127.0.0.1:6301/assets/react-W5ZNnHZt.js": {
+            "samples": 510,
+            "uniformIntervalEstimateMs": 725.5462191532029
+          },
+          "http://127.0.0.1:6301/assets/controls-DZdtGntM.js": {
+            "samples": 202,
+            "uniformIntervalEstimateMs": 287.3732083704811
+          },
+          "http://127.0.0.1:6301/assets/layout-c2-D3MCEm5P.js": {
+            "samples": 159,
+            "uniformIntervalEstimateMs": 226.19970361834908
+          },
+          "http://127.0.0.1:6301/assets/engine-CTTgfY4O.js": {
+            "samples": 149,
+            "uniformIntervalEstimateMs": 211.97330716436483
+          },
+          "http://127.0.0.1:6301/assets/encounter-CTv_b-BC.js": {
+            "samples": 142,
+            "uniformIntervalEstimateMs": 202.01482964657586
+          },
+          "http://127.0.0.1:6301/assets/web3-BXuhzNNJ.js": {
+            "samples": 116,
+            "uniformIntervalEstimateMs": 165.02619886621676
+          },
+          "http://127.0.0.1:6301/assets/depth-CPNo5lMp.js": {
+            "samples": 96,
+            "uniformIntervalEstimateMs": 136.57340595824846
+          },
+          "http://127.0.0.1:6301/assets/drawn-poses-DMXNj4S8.js": {
+            "samples": 75,
+            "uniformIntervalEstimateMs": 106.69797340488165
+          },
+          "http://127.0.0.1:6301/assets/events-BF4hjAu_.js": {
+            "samples": 70,
+            "uniformIntervalEstimateMs": 99.58477517788955
+          },
+          "http://127.0.0.1:6301/assets/entry-Dj5-zNpM.js": {
+            "samples": 69,
+            "uniformIntervalEstimateMs": 98.16213553249106
+          },
+          "http://127.0.0.1:6301/assets/battle-presentation-D7nwSsLz.js": {
+            "samples": 64,
+            "uniformIntervalEstimateMs": 91.04893730549898
+          },
+          "http://127.0.0.1:6301/assets/core-DTaTrRcr.js": {
+            "samples": 59,
+            "uniformIntervalEstimateMs": 83.9357390785069
+          },
+          "http://127.0.0.1:6301/assets/skill-timeline-rfT4hKUI.js": {
+            "samples": 29,
+            "uniformIntervalEstimateMs": 41.25654971655423
+          },
+          "http://127.0.0.1:6301/assets/designer-idle-body-CZIXPJ_Q.js": {
+            "samples": 28,
+            "uniformIntervalEstimateMs": 39.83391007115581
+          },
+          "http://127.0.0.1:6301/assets/ShellV3-B247X0EX.js": {
+            "samples": 17,
+            "uniformIntervalEstimateMs": 24.18487397177318
+          },
+          "http://127.0.0.1:6301/assets/number-badges-CfUWjpIv.js": {
+            "samples": 15,
+            "uniformIntervalEstimateMs": 21.339594680976337
+          },
+          "http://127.0.0.1:6301/assets/scene-actors-Bl38N2Pi.js": {
+            "samples": 14,
+            "uniformIntervalEstimateMs": 19.916955035577914
+          },
+          "http://127.0.0.1:6301/assets/badges-a6-CGbpTXVn.js": {
+            "samples": 11,
+            "uniformIntervalEstimateMs": 15.649036099382645
+          },
+          "http://127.0.0.1:6301/assets/effects-DLrMSFx3.js": {
+            "samples": 10,
+            "uniformIntervalEstimateMs": 14.226396453984222
+          },
+          "http://127.0.0.1:6301/assets/look-readable-assets-CXnRRuXT.js": {
+            "samples": 4,
+            "uniformIntervalEstimateMs": 5.690558581593689
+          },
+          "http://127.0.0.1:6301/assets/rng-D90-h8Om.js": {
+            "samples": 4,
+            "uniformIntervalEstimateMs": 5.690558581593688
+          },
+          "http://127.0.0.1:6301/assets/callouts-B0pP9Thw.js": {
+            "samples": 4,
+            "uniformIntervalEstimateMs": 5.690558581593688
+          },
+          "http://127.0.0.1:6301/assets/meta-presentation-CKv9XlkX.js": {
+            "samples": 3,
+            "uniformIntervalEstimateMs": 4.267918936195267
+          },
+          "http://127.0.0.1:6301/assets/Entrance-CAHiLr2l.js": {
+            "samples": 3,
+            "uniformIntervalEstimateMs": 4.267918936195267
+          },
+          "http://127.0.0.1:6301/assets/native-modal-CkJobd2u.js": {
+            "samples": 3,
+            "uniformIntervalEstimateMs": 4.267918936195266
+          },
+          "http://127.0.0.1:6301/assets/onboarding-DFGR8AMe.js": {
+            "samples": 3,
+            "uniformIntervalEstimateMs": 4.267918936195266
+          },
+          "http://127.0.0.1:6301/assets/flags-CtQK1WAi.js": {
+            "samples": 2,
+            "uniformIntervalEstimateMs": 2.845279290796844
+          },
+          "http://127.0.0.1:6301/assets/Icon-Ddb6J6Vv.js": {
+            "samples": 2,
+            "uniformIntervalEstimateMs": 2.845279290796844
+          },
+          "http://127.0.0.1:6301/assets/indexed-logs-DXSto3KM.js": {
+            "samples": 2,
+            "uniformIntervalEstimateMs": 2.845279290796844
+          },
+          "http://127.0.0.1:6301/assets/GameIcon-BcMk_1R7.js": {
+            "samples": 2,
+            "uniformIntervalEstimateMs": 2.845279290796844
+          },
+          "http://127.0.0.1:6301/assets/catalog-CCkxkSXu.js": {
+            "samples": 1,
+            "uniformIntervalEstimateMs": 1.422639645398422
+          },
+          "http://127.0.0.1:6301/assets/card-effect-data-K9x-Kj66.js": {
+            "samples": 1,
+            "uniformIntervalEstimateMs": 1.422639645398422
+          },
+          "http://127.0.0.1:6301/assets/scene-7FDamrYp.js": {
+            "samples": 1,
+            "uniformIntervalEstimateMs": 1.422639645398422
+          },
+          "http://127.0.0.1:6301/assets/CompanionPreview-C14MTzrH.js": {
+            "samples": 1,
+            "uniformIntervalEstimateMs": 1.422639645398422
+          },
+          "http://127.0.0.1:6301/assets/rolldown-runtime-XKyaHtl9.js": {
+            "samples": 1,
+            "uniformIntervalEstimateMs": 1.422639645398422
+          },
+          "http://127.0.0.1:6301/assets/CountUpA6-BHTEV0Z6.js": {
+            "samples": 1,
+            "uniformIntervalEstimateMs": 1.422639645398422
+          },
+          "http://127.0.0.1:6301/assets/motion-b2-DrhItGHn.js": {
+            "samples": 1,
+            "uniformIntervalEstimateMs": 1.422639645398422
+          }
+        }
+      },
+      "frameMsWithoutCapture": {
+        "count": 2872,
+        "min": 16.5,
+        "median": 33.29999999999927,
+        "p95": 50,
+        "p99": 83.30000000000018,
+        "max": 200
+      },
+      "renderCpuMsWithoutCapture": {
+        "count": 2872,
+        "min": 11.700000002980232,
+        "median": 18.30000001192093,
+        "p95": 23.799999997019768,
+        "p99": 62.20000000298023,
+        "max": 171.5
+      },
+      "wallMs": 84230.10000000894,
+      "dropped": 668,
+      "total": 2798,
+      "dropFraction": 0.23874195854181557,
+      "callbacks": 2305,
+      "missedCallbacks": 206,
+      "wraps": 8,
+      "waitingEvents": 11,
+      "runtimeErrors": 0,
+      "playback": {
+        "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/mochi-cpu-r1/03-on/playback-audit-r2.json",
+        "sha256": "50afd8d22ef135c09e25178e32921456cdbaaf1742fa087228522aed15ce7dc7"
+      }
+    },
+    {
+      "name": "04-off",
+      "sampling": "off",
+      "actions": 55,
+      "ultimates": 21,
+      "ruleReplay": {
+        "mode": "normal",
+        "actions": 55,
+        "observedActions": 55,
+        "comparisons": {
+          "log": true,
+          "actors": true,
+          "queue": true,
+          "round": true,
+          "result": true
+        },
+        "fullBattleExact": true,
+        "replaySha256": "eb62df711d59f409a29e8a14aa793a1a3b5c642e29acca635ee73fa33f671af5",
+        "observedSha256": "eb62df711d59f409a29e8a14aa793a1a3b5c642e29acca635ee73fa33f671af5"
+      },
+      "metricsWindowMs": 83855.79200001666,
+      "metricsMs": {
+        "LayoutDuration": 1112.419,
+        "RecalcStyleDuration": 19488.286000000004,
+        "DevToolsCommandDuration": 348.86400000000003,
+        "ScriptDuration": 48259.155999999995,
+        "V8CompileDuration": 0,
+        "TaskDuration": 83517.639,
+        "TaskOtherDuration": 14308.913999999999,
+        "ThreadTime": 83585.63799999999,
+        "ProcessTime": 94015.225
+      },
+      "layoutCount": 4440,
+      "recalcStyleCount": 9141,
+      "frameMsWithoutCapture": {
+        "count": 2950,
+        "min": 16.5,
+        "median": 33.299999999995634,
+        "p95": 50,
+        "p99": 66.70000000000073,
+        "max": 200
+      },
+      "renderCpuMsWithoutCapture": {
+        "count": 2950,
+        "min": 4.4000000059604645,
+        "median": 17.799999997019768,
+        "p95": 23.5,
+        "p99": 59.20000000298023,
+        "max": 168.20000000298023
+      },
+      "wallMs": 83851.29999999702,
+      "dropped": 684,
+      "total": 2796,
+      "dropFraction": 0.2446351931330472,
+      "callbacks": 2313,
+      "missedCallbacks": 192,
+      "wraps": 9,
+      "waitingEvents": 11,
+      "runtimeErrors": 0,
+      "playback": {
+        "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/mochi-cpu-r1/04-off/playback-audit-r2.json",
+        "sha256": "1ce1f47d022535b56a533b4dba600cd6055f00e2a08d20b2e2466c8fd39b38ec"
+      }
+    }
+  ],
+  "imagesViewed": 0,
+  "productionAcceptance": false,
+  "priorFailure": {
+    "path": "/Users/bao/taskbar-hero-chain/reports/v5/CXI/evidence/v8-mochi-cpu-r1-audit-failure.json",
+    "failedHelperSha256": "ff90acb601dc96540cf7f64813c6f05de6ae49c7cca4c41641294fc491f3892f"
+  },
+  "decision": "ACCEPT exact identity/rules and descriptive raw sample counts only; signed-delta time attribution withheld",
+  "limits": [
+    "Fresh Mochi-only/nativeClover population,do not pool prior Sorrel/R7timing.",
+    "CPU4 hostrelative,profiling perturbs observations;fourarms descriptiveonly.",
+    "No appsource/registrychange orart/label/releaseacceptance.",
+    "Four arms are descriptive; no calibrated overhead estimate.",
+    "Sampling durations are estimates; inclusive ancestors overlap.",
+    "CDP timeTicks duration metrics differ from ThreadTime and ProcessTime; do not sum TaskDuration with its parts.",
+    "Generated URL/line/column identify samples; original source attribution requires a separate verified mapping."
+  ]
+}

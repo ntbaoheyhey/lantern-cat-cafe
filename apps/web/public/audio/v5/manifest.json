@@ -5621,9 +5621,9 @@
     ]
   },
   "ambience.battle.bed": {
-    "opus": "/audio/v5/ambience-battle-bed.opus",
-    "m4a": "/audio/v5/ambience-battle-bed.m4a",
-    "durationSeconds": 12,
+    "opus": "/audio/v9/battle-v9.opus",
+    "m4a": "/audio/v9/battle-v9.m4a",
+    "durationSeconds": 60,
     "bus": "bgm",
     "loop": true,
     "runtimeCueId": "ambience.battle.bed",
@@ -7604,9 +7604,9 @@
     ]
   },
   "ambience.battle.intense": {
-    "opus": "/audio/v5/ambience-battle-intense.opus",
-    "m4a": "/audio/v5/ambience-battle-intense.m4a",
-    "durationSeconds": 10,
+    "opus": "/audio/v9/boss-v9.opus",
+    "m4a": "/audio/v9/boss-v9.m4a",
+    "durationSeconds": 60,
     "bus": "bgm",
     "loop": true,
     "runtimeCueId": "ambience.battle.intense",
@@ -25068,15 +25068,18 @@
     ]
   },
   "music.battle": {
-    "opus": "/audio/v5/legacy/score-battle.opus",
-    "m4a": "/audio/v5/legacy/score-battle.m4a",
-    "durationSeconds": 32,
+    "opus": "/audio/v9/battle-v9.opus",
+    "m4a": "/audio/v9/battle-v9.m4a",
+    "durationSeconds": 60,
     "gainDb": 0,
     "bus": "music",
     "runtimeCueId": "music.battle",
     "loop": true,
     "aliases": [
-      "score-battle"
+      "score-battle",
+      "bgm.battle",
+      "ambience.battle",
+      "ambience.battle.bed"
     ]
   },
   "score-battle": {
@@ -25104,6 +25107,249 @@
       "ambience.battle-prep",
       "ambience.season-supply",
       "ambience.stage-select"
+    ]
+  },
+  "music.boss": {
+    "opus": "/audio/v9/boss-v9.opus",
+    "m4a": "/audio/v9/boss-v9.m4a",
+    "durationSeconds": 60,
+    "gainDb": 0,
+    "bus": "music",
+    "runtimeCueId": "music.boss",
+    "loop": true,
+    "aliases": [
+      "bgm.boss",
+      "ambience.boss",
+      "music.battle.intense",
+      "bgm.battle.climax",
+      "ambience.battle.urgency"
+    ]
+  },
+  "bgm.battle": {
+    "opus": "/audio/v9/battle-v9.opus",
+    "m4a": "/audio/v9/battle-v9.m4a",
+    "durationSeconds": 60,
+    "gainDb": 0,
+    "bus": "music",
+    "runtimeCueId": "music.battle",
+    "loop": true,
+    "aliases": [
+      "score-battle",
+      "bgm.battle",
+      "ambience.battle",
+      "ambience.battle.bed"
+    ]
+  },
+  "ambience.battle": {
+    "opus": "/audio/v9/battle-v9.opus",
+    "m4a": "/audio/v9/battle-v9.m4a",
+    "durationSeconds": 60,
+    "gainDb": 0,
+    "bus": "music",
+    "runtimeCueId": "music.battle",
+    "loop": true,
+    "aliases": [
+      "score-battle",
+      "bgm.battle",
+      "ambience.battle",
+      "ambience.battle.bed"
+    ]
+  },
+  "bgm.boss": {
+    "opus": "/audio/v9/boss-v9.opus",
+    "m4a": "/audio/v9/boss-v9.m4a",
+    "durationSeconds": 60,
+    "gainDb": 0,
+    "bus": "music",
+    "runtimeCueId": "music.boss",
+    "loop": true,
+    "aliases": [
+      "bgm.boss",
+      "ambience.boss",
+      "music.battle.intense",
+      "bgm.battle.climax",
+      "ambience.battle.urgency"
+    ]
+  },
+  "ambience.boss": {
+    "opus": "/audio/v9/boss-v9.opus",
+    "m4a": "/audio/v9/boss-v9.m4a",
+    "durationSeconds": 60,
+    "gainDb": 0,
+    "bus": "music",
+    "runtimeCueId": "music.boss",
+    "loop": true,
+    "aliases": [
+      "bgm.boss",
+      "ambience.boss",
+      "music.battle.intense",
+      "bgm.battle.climax",
+      "ambience.battle.urgency"
+    ]
+  },
+  "sfx.ult.mochi.riser": {
+    "opus": "/audio/v9/sfx-ult-mochi-riser.opus",
+    "m4a": "/audio/v9/sfx-ult-mochi-riser.m4a",
+    "durationSeconds": 0.174,
+    "gainDb": 0,
+    "bus": "sfx",
+    "runtimeCueId": "sfx.ult.mochi.riser",
+    "aliases": [
+      "sfx-ult-mochi-riser"
+    ]
+  },
+  "sfx.ult.mochi.transient": {
+    "opus": "/audio/v9/sfx-ult-mochi-transient.opus",
+    "m4a": "/audio/v9/sfx-ult-mochi-transient.m4a",
+    "durationSeconds": 0.382,
+    "gainDb": 0,
+    "bus": "sfx",
+    "runtimeCueId": "sfx.ult.mochi.transient",
+    "aliases": [
+      "sfx-ult-mochi-transient"
+    ]
+  },
+  "sfx.ult.mochi.body": {
+    "opus": "/audio/v9/sfx-ult-mochi-body.opus",
+    "m4a": "/audio/v9/sfx-ult-mochi-body.m4a",
+    "durationSeconds": 0.944,
+    "gainDb": 0,
+    "bus": "sfx",
+    "runtimeCueId": "sfx.ult.mochi.body",
+    "aliases": [
+      "sfx-ult-mochi-body"
+    ]
+  },
+  "sfx.ult.mochi.tail": {
+    "opus": "/audio/v9/sfx-ult-mochi-tail.opus",
+    "m4a": "/audio/v9/sfx-ult-mochi-tail.m4a",
+    "durationSeconds": 1.487,
+    "gainDb": 0,
+    "bus": "sfx",
+    "runtimeCueId": "sfx.ult.mochi.tail",
+    "aliases": [
+      "sfx-ult-mochi-tail"
+    ]
+  },
+  "sfx.ult.clover.riser": {
+    "opus": "/audio/v9/sfx-ult-clover-riser.opus",
+    "m4a": "/audio/v9/sfx-ult-clover-riser.m4a",
+    "durationSeconds": 0.339,
+    "gainDb": 0,
+    "bus": "sfx",
+    "runtimeCueId": "sfx.ult.clover.riser",
+    "aliases": [
+      "sfx-ult-clover-riser"
+    ]
+  },
+  "sfx.ult.clover.transient": {
+    "opus": "/audio/v9/sfx-ult-clover-transient.opus",
+    "m4a": "/audio/v9/sfx-ult-clover-transient.m4a",
+    "durationSeconds": 0.339,
+    "gainDb": 0,
+    "bus": "sfx",
+    "runtimeCueId": "sfx.ult.clover.transient",
+    "aliases": [
+      "sfx-ult-clover-transient"
+    ]
+  },
+  "sfx.ult.clover.body": {
+    "opus": "/audio/v9/sfx-ult-clover-body.opus",
+    "m4a": "/audio/v9/sfx-ult-clover-body.m4a",
+    "durationSeconds": 0.32,
+    "gainDb": 0,
+    "bus": "sfx",
+    "runtimeCueId": "sfx.ult.clover.body",
+    "aliases": [
+      "sfx-ult-clover-body"
+    ]
+  },
+  "sfx.ult.clover.tail": {
+    "opus": "/audio/v9/sfx-ult-clover-tail.opus",
+    "m4a": "/audio/v9/sfx-ult-clover-tail.m4a",
+    "durationSeconds": 0.391,
+    "gainDb": 0,
+    "bus": "sfx",
+    "runtimeCueId": "sfx.ult.clover.tail",
+    "aliases": [
+      "sfx-ult-clover-tail"
+    ]
+  },
+  "sfx.ult.soot.riser": {
+    "opus": "/audio/v9/sfx-ult-soot-riser.opus",
+    "m4a": "/audio/v9/sfx-ult-soot-riser.m4a",
+    "durationSeconds": 0.278,
+    "gainDb": 0,
+    "bus": "sfx",
+    "runtimeCueId": "sfx.ult.soot.riser",
+    "aliases": [
+      "sfx-ult-soot-riser"
+    ]
+  },
+  "sfx.ult.soot.transient": {
+    "opus": "/audio/v9/sfx-ult-soot-transient.opus",
+    "m4a": "/audio/v9/sfx-ult-soot-transient.m4a",
+    "durationSeconds": 0.15,
+    "gainDb": 0,
+    "bus": "sfx",
+    "runtimeCueId": "sfx.ult.soot.transient",
+    "aliases": [
+      "sfx-ult-soot-transient"
+    ]
+  },
+  "sfx.ult.soot.body": {
+    "opus": "/audio/v9/sfx-ult-soot-body.opus",
+    "m4a": "/audio/v9/sfx-ult-soot-body.m4a",
+    "durationSeconds": 0.48,
+    "gainDb": 0,
+    "bus": "sfx",
+    "runtimeCueId": "sfx.ult.soot.body",
+    "aliases": [
+      "sfx-ult-soot-body"
+    ]
+  },
+  "sfx.ult.soot.tail": {
+    "opus": "/audio/v9/sfx-ult-soot-tail.opus",
+    "m4a": "/audio/v9/sfx-ult-soot-tail.m4a",
+    "durationSeconds": 0.937,
+    "gainDb": 0,
+    "bus": "sfx",
+    "runtimeCueId": "sfx.ult.soot.tail",
+    "aliases": [
+      "sfx-ult-soot-tail"
+    ]
+  },
+  "sfx.shared.hitstop-thud": {
+    "opus": "/audio/v9/sfx-shared-hitstop-thud.opus",
+    "m4a": "/audio/v9/sfx-shared-hitstop-thud.m4a",
+    "durationSeconds": 0.357,
+    "gainDb": 0,
+    "bus": "sfx",
+    "runtimeCueId": "sfx.shared.hitstop-thud",
+    "aliases": [
+      "sfx-shared-hitstop-thud"
+    ]
+  },
+  "sfx.shared.heal-chime": {
+    "opus": "/audio/v9/sfx-shared-heal-chime.opus",
+    "m4a": "/audio/v9/sfx-shared-heal-chime.m4a",
+    "durationSeconds": 0.704,
+    "gainDb": 0,
+    "bus": "sfx",
+    "runtimeCueId": "sfx.shared.heal-chime",
+    "aliases": [
+      "sfx-shared-heal-chime"
+    ]
+  },
+  "sfx.shared.relic-mint": {
+    "opus": "/audio/v9/sfx-shared-relic-mint.opus",
+    "m4a": "/audio/v9/sfx-shared-relic-mint.m4a",
+    "durationSeconds": 0.907,
+    "gainDb": 0,
+    "bus": "sfx",
+    "runtimeCueId": "sfx.shared.relic-mint",
+    "aliases": [
+      "sfx-shared-relic-mint"
     ]
   }
 }

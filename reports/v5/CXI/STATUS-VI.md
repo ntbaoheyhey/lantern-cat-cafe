@@ -1,5 +1,5 @@
 # V8 Batch M
-Hiện tại 2026-11-18T12:35:56.994370+00:00: chín mèo native đã phát hành ởv5-m1.14. Bản thử Mochi/Clover R4 đạt348mẫu/696so sánh đầu-tay/4hành động, HP không chồng hình và10nguồn hiệu ứng đúng;4ảnh mới đã xem. Chưa phát hành media vì matte/halo và vòng đuôi còn mở. Dung lượng chỉ báo cáo; các dòng lịch sử có giới hạn8MB đã bị thay thế bởi lệnh owner12:09:40Z.
+Hiện tại 2026-11-18T18:12:39.060455+00:00:bản xanh vẫn v5-m1.15,chín mèo native;preview6301 chỉMochi sourcebf01/indexe66485f9,productionregistry{}. Baseline normal1× hai trận55action/21ultimate khớp;RAFp95 16,8/16,7ms chỉ trên AppleM3Pro. Footer lifecycle mới32ảnh/64trạngthái/16cặp/4action đã kiểmtoán:No effects và24giátrị đúng,nhưngfocus bị mất ở350/600/800ms trong prototype;đối chứng giữ6/6. Giữ nguyên lỗi,đã trả CXV sửa;chưa nhận media hoặc nhãn vào production.
 
 2026-11-18T05:47:08.972148+00:00 — Panko đã kiểm tra trên bản production: chân và gốc không trôi trong vòng10giây ở cả hai chế độ; skill350ms khớp mốc.55,ult1100ms khớp1.1. Phim so sánh cùng chiều cao/tốc độ và5ảnh mới đã duyệt. Chưa phát hành vì còn ngân sách tải/hiệu năng. Mallow nhập có giới hạn,16test+typecheck đạt;2464ca so sánh mã dùng chung khớp,3833đường dẫn bảo vệ không đổi.
 
@@ -46,3 +46,27 @@ Hiện tại 2026-11-18T12:35:56.994370+00:00: chín mèo native đã phát hàn
 2026-11-18T13:00:45.058553+00:00 — Clover R5 giữ nguyên matte318×390: 696 kiểm tra mốc mặt/tay và10nguồn hiệu ứng đạt;4ảnh sân đấu mới đã xem. Phim đối chiếu300khung/10giây/30fps cao227px hoàn thành;2ảnh đối chiếu đã xem. Nối đuôi vẫn lỗi: MAE 11.158 so với trung vị lân cận 2.248; chưa phát hành media.
 
 2026-11-18T13:09:01.623723+00:00 — NativeR3 đạt7cổng browser mới, đòn đầu21,163giây,3phim30giây và6ảnh mới xem một lần. Chuẩn bị v5-m1.15 với landingR12; bộ5.556kiểm tra được kế thừa vì mã ứng dụng chỉ khác texture đã duyệt. Media Mochi/Clover vẫn chưa phát hành;59hash âm thanh và3.833đường dẫn bảo vệ không đổi.
+
+2026-11-18T13:12:32.940502+00:00 — Đã xác minh phát hành v5-m1.15 trên nhánh và tag từ xa (59f5f3c57): 9 mèo native, landing R12 đã duyệt. Hai media commissioned chưa được bật; khôi phục bản thử R5 để đo phần nhãn HP thực sự che hình. Wake vẫn hoạt động mỗi15phút.
+
+2026-11-18T13:19:51.102134+00:00 — Kiểm tra độc lập log trậnR5: video Mochi bỏ15/2430khung,Clover19/2431khung;không được tuyên bố zero-drop. Mỗi video có8lần nối vòng. Chưa xác nhận hiệu năng laptop phổ thông;đang tách thời gian video thực tế khỏi pha socket trước khi đề xuất sửa loader.
+
+2026-11-18T13:31:23.896989+00:00 — Đã tính độc lập R6:274hash,70trạng thái,1040phép đếm khớp. Ở1/5pha,32pixel Mochi chạm nhãn khiên Clover (7pixel ở ngưỡngRGB>4);thanh HP/rage và nhãn của chính mèo không bị che trong5pha. Đây chỉ là phép đo tạm dừng sauẩn/hiện nhãn;chưa gỡ lỗi seam/matte hay duyệt media vào bảnphát hành.
+
+2026-11-18T13:45:44.320467+00:00 — Phép đo GPU có kiểm soát đã qua: 8 đối chứng, 600 khung tham chiếu native, 24 khung đang chạy nhận dạng duy nhất; 653 tệp được băm lại. CXV tái dựng đúng 168 socket. Pha socket hiện chạy theo currentTime nên có thể lệch lớn trong lúc seek; đang chuẩn bị sửa theo khung đã giải mã. Chưa chứng nhận gameplay tự nhiên, hiệu năng, seam hay chất lượng alpha; media vẫn chưa bật.
+
+2026-11-18T13:59:40.271008+00:00 — Bản thử phaseR6 sửa thời điểm socket theo khung hình video đã giải mã. 3.247 kiểm thử web đạt; 24/24 mẫu GPU khớp chính xác với socket, kể cả khi seek; 600 khung tham chiếu kiểm tra độc lập. Đang kiểm tra vòng đời trình duyệt và hành động hợp lệ. Chưa đưa Mochi/Clover vào bản phát hành vì viền/halo/điểm nối vòng và nhãn vẫn chưa đạt. v5-m1.15 vẫn là bản xanh.
+
+2026-11-18T14:08:00.189344+00:00 — R7 đã cài,3.250web đạt;nhãn mới đang kiểm tra browser theo leaseCXV. Bản phát hành vẫnv5-m1.15;Mochi/Clover chưa đăng ký vì cổng art còn mở.
+
+2026-11-18T14:16:12.501064+00:00 — R7:8skill hợp lệ/52mốc đạt,12ảnh mới đo và4ảnh xem một lần. Nhãn vẫn chạm17pixel tại pose giữ riêng;status stress208/69/74pixel. Khôngpháthành media;native9vẫnv5-m1.15.
+
+2026-11-18T17:22:53.556032+00:00: Đã kiểm tra 300 khung Mochi và xem 3 ảnh mới đúng một lần: hình dáng khớp ở cùng chiều cao227px, không còn banner che. Chỉ chấp nhận bằng chứng so sánh; chưa chấp nhận viền/halo, nhãn hay hiệu năng laptop. Kiểm tra độc lập200ảnh/6400trạng thái: cả20đối chứng màu vẫn thất bại; phương án hạ nhãn xung đột Clover86/88mẫu, không áp dụng. AGS có30mốc PTS đúng nhưng QA và nghiên cứu chưa đủ. Bản xanh vẫn v5-m1.15.
+
+2026-11-18T17:45:49.949503+00:00 — Đã kiểm chứng 4 trận tự chạy cùng bản Mochi: mỗi trận55 lượt hành động, luật/kế hoạch/kết quả trùng khớp;261 tệp băm và118.223 mẫu CPU. Giữ nguyên5 khoảng thời gian âm1µs; chỉ dùng tỷ lệ mẫu để tìm điểm cần khảo sát,không suy ra thời gian CPU chính xác hay máy tính phổ thông. Bản phát hành xanh vẫn v5-m1.15;Mochi/Clover đặt hàng chưa phát hành.
+
+2026-11-18T17:57:04.341926+00:00 — Hai trận Mochi-only không giảm tốc CPU đã kiểm chứng237 tệp:55 hành động/21 ultimate mỗi trận,luật và kế hoạch trùng khớp. p95 khung hình16,8/16,7ms;video bỏ11/2425 và6/2424 khung. Chỉ là số đo trên M3 Pro,không chứng nhận laptop phổ thông. Đã nhả timing;CXV thử footer riêng,không nhập mã. Bản xanh vẫn v5-m1.15.
+
+2026-11-18T18:05:43.697097+00:00 — Thử nhóm HP/trạng thái có tên Mochi ở footer:kiểm chứng120ảnh/240trạng thái/4hành động của CXV;thêm2ảnh mới tự chụp và xem một lần cho thấy tên rõ,không đè thân/control tại hai mốc. Đối chứng phục hồi còn sai1015/409/1010/943pixel;nhánh không hiệu ứng,fallback,cả chuỗi chuyển động chưa đủ. Chưa nhập prototype hay phát hành media;v5-m1.15 vẫn bản xanh.
+
+2026-11-18T18:35:03.047050+00:00 — Khôi phục đúngR7 hai media,3.809tệp/294.424.887byte. Thử10trường hợp decoder:8lỗi MediaError4 thật,placeholder lúc khởi tạo và poster sau khi đã phát đều đúng;10hành động luật khớp,5cặp normal/reduced khớp. Kiểm chứng230băm;không xem ảnh,không chấp nhận art/hiệu năng. Lỗi observerR1 và footer1100ms được giữ nguyên. v5-m1.15 vẫn là bản xanh.

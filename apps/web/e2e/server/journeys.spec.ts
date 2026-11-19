@@ -119,8 +119,8 @@ test('hide/return makes one claim and keeps SyncStatus in the header', async ({ 
 
 test('two tabs claim the same interval at once with no double reward', async ({ page, context, request }) => {
   const session = await load(page, request), second = await context.newPage();
-  await second.clock.install(); await second.clock.pauseAt(await second.evaluate(() => Date.now()));
-  await second.goto('/'); await expect(second.locator('header [data-sync-status="live"]')).toBeVisible();
+  await second.clock.install({time: new Date(0)}); await second.clock.pauseAt(new Date());
+  await second.goto('/?legacy=1'); await expect(second.locator('header [data-sync-status="live"]')).toBeVisible();
   await visibility(page, 'hidden'); await visibility(second, 'hidden'); await advance(request, session, 600);
   const before = await inspect(request, session);
   let waiting = 0, release!: () => void;

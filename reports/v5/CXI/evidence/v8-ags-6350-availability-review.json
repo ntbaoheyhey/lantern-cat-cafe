@@ -1,0 +1,18 @@
+{
+  "utc": "2026-11-18T18:36:05.403445+00:00",
+  "expectedRelease": "v5-m1.15",
+  "expectedSource": "b9b6f172824a7daa4ba95836081cade7c472ffb6",
+  "expectedIndexSha256": "fedad6e26829f235b1a6dcda2cfc30aa7d4a90f17df9f8ab7f925352a32d265b",
+  "observations": [
+    {
+      "url": "http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+      "status": 200,
+      "indexSha256": "eb93ee0dbdfb500c3f9aed80acdb134f027d8093240c86b545807a87dc79ce67"
+    },
+    {
+      "url": "http://127.0.0.1:6350/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+      "error": "<urlopen error [Errno 61] Connection refused>"
+    }
+  ],
+  "disposition": "6350unavailable;6301diagnostic cannot establish m1.15QA regression. No browser launched."
+}

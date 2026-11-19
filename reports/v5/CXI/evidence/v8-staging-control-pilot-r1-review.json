@@ -1,0 +1,54 @@
+{
+  "utc": "2026-11-18T15:56:25.872688+00:00",
+  "raw": {
+    "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/staging-control-pilot-r1/report.json",
+    "sha256": "dc09b4243d1d692189ccae6223416799f0cf3a0f742ef48b597bbe49d9111756"
+  },
+  "sourceCommit": "bf01d462ac32233ab11475605d571aea691f96bf",
+  "indexSha256": "eb93ee0dbdfb500c3f9aed80acdb134f027d8093240c86b545807a87dc79ce67",
+  "url": "http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+  "receipts": [
+    {
+      "path": "/Users/bao/taskbar-hero-chain/reports/v5/CXI/evidence/v8-staging-control-pilot-r1-rules-review.json",
+      "sha256": "b7d47ade334dc83a702e28ad9bc1761bad0d8a3d328faa45a5454c0b4cc7d484",
+      "bytes": 1341
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-chain/reports/v5/CXI/evidence/v8-staging-control-pilot-r1-layout-review.json",
+      "sha256": "154e5e2f079fec4db059b5af81980c7b940eae1ddac003b4200d8f299cbc9cca",
+      "bytes": 1962
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-chain/reports/v5/CXI/evidence/v8-staging-control-pilot-r1-paint-review.json",
+      "sha256": "d861697e15100f8c7b9e9c4869c27c6469852f0c7fe97aa446e66e6e30046c8c",
+      "bytes": 55575
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-chain/reports/v5/CXI/evidence/v8-staging-control-pilot-r1-margin-review.json",
+      "sha256": "0f1c41b960b695b5bc6fe5956736d6f6731ec4ad3dfdc60cad576208545abcb9",
+      "bytes": 13220
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-chain/reports/v5/CXI/evidence/v8-staging-control-pilot-r1-meter-review.json",
+      "sha256": "709bc74d7a220ee562368dc276b82793bc4995a445a1010368a0eb9993f78710",
+      "bytes": 3511
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-chain/reports/v5/CXI/evidence/v8-staging-control-pilot-r1-release.json",
+      "sha256": "a048ce1f63ec808bcd5f69db6265de6565b7e6d0c4363a60b1d3ed4e9a2606dd",
+      "bytes": 592
+    }
+  ],
+  "controlValidCases": 10,
+  "preconditionRestoredDifferences": 0,
+  "geometryRows": 57,
+  "stateSnapshots": 180,
+  "exactDomCounts": 320,
+  "exactDomClear": true,
+  "displayedFrameChecks": 494,
+  "marginComparisons": 960,
+  "fullPaintClear": false,
+  "disposition": "Scoped capture-method pilot accepted: natural HUD convergence and all 10 full-image controls. Original full-run failure preserved; known Clover shadow failure retained. No full16 replacement, source adoption or release.",
+  "productionAcceptance": false,
+  "imagesViewed": 0
+}

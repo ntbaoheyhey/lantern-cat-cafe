@@ -35,6 +35,8 @@ Small Opus files travel in immutable, integrity-checked packages only when every
 
 Drawn characters reuse weights derived from fixed artwork coordinates while sampling motion and sockets each frame. When drawings hide the native meshes, bones remain live and native vertex work is deferred until a bounds query or restoration needs it. Exact geometry and pixel comparisons cover these changes; CPU stress results remain scoped measurements, not a fixed frame-rate guarantee.
 
+Batch M adds idle and cast motion for nine native cats. The commissioned-media loader supports a single H.264 stream carrying color and alpha data planes, source-derived poster fallback, decoded-frame readiness and explicit suspension after battle. Its production registry remains empty in v5-m1.15; Mochi/Clover video studies use pinned local overrides and are excluded from the release.
+
 Motion uses seeded, seekable sampling, with per-hero breathing/gestures and planted feet. Contact holds and reduced-motion behavior are preserved. Visual comparison uses the current production capture; an old development screenshot is not evidence for a new tag.
 
 ## Authentication, funding and recovery

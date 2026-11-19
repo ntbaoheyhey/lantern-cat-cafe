@@ -1,0 +1,17 @@
+{
+  "utc": "2026-11-18T17:00:31.362868+00:00",
+  "patch": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v5/CXV/M-mochi-label-top-proposal-R1.patch",
+  "sha256": "bd738de4fe2b220279dbbd1e18b9c71551153f06b1a2df8ff51e8b179e70e44e",
+  "defaultCheck": {
+    "exitCode": 1,
+    "stderr": "error: patch failed: apps/web/src/game/cardrpg/spine/scene.ts:48\nerror: apps/web/src/game/cardrpg/spine/scene.ts: patch does not apply\nerror: patch failed: apps/web/src/game/cardrpg/battle-v3/world-label-dom.ts:3\nerror: apps/web/src/game/cardrpg/battle-v3/world-label-dom.ts: patch does not apply\n"
+  },
+  "unidiffZeroCheck": {
+    "exitCode": 0,
+    "stderr": ""
+  },
+  "cause": "Proposal has zero context. Default git apply requires context; --unidiff-zero explicitly permits this format. All four removed lines match current R7 application source. No stale-source finding.",
+  "applied": false,
+  "productionAcceptance": false,
+  "gates": "CXV stage ownership, focused native/shared parity and fresh Mochi-only label/body paint remain required."
+}

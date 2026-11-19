@@ -12,6 +12,7 @@ export function savedReceiptProofs(config:ChainConfig,wallet:Address):ReceiptPro
  try{const rows=JSON.parse(localStorage.getItem(key(config,wallet))??'[]');return Array.isArray(rows)?rows.filter((r):r is ReceiptProof=>!!r&&/^0x[\da-f]{64}$/i.test(r.hash)&&typeof r.wallet==='string'&&r.wallet.toLowerCase()===wallet.toLowerCase()&&typeof r.action==='string'&&typeof r.feeAvax==='string'&&typeof r.payer==='string'&&Number.isFinite(r.confirmedAt)):[];}catch{return [];}
 }
 export function publishReceiptProof(config:ChainConfig,proof:ReceiptProof):void {
+ if(typeof window==='undefined')return;
  const rows=savedReceiptProofs(config,proof.wallet),prior=rows.find(r=>r.hash===proof.hash);
  const value=prior?{...proof,confirmationMs:prior.confirmationMs??proof.confirmationMs,confirmedAt:prior.confirmedAt,action:proof.action==='Transaction'?prior.action:proof.action,gasSource:prior.gasSource==='cafe'?'cafe':proof.gasSource}:proof;
  try{localStorage.setItem(key(config,proof.wallet),JSON.stringify([...rows.filter(r=>r.hash!==value.hash),value]));}catch{/* The current receipt remains visible when storage is unavailable. */}

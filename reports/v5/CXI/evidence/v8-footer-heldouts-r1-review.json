@@ -1,0 +1,99 @@
+{
+  "utc": "2026-11-18T18:05:43.697097+00:00",
+  "sourceCommit": "bf01d462ac32233ab11475605d571aea691f96bf",
+  "indexSha256": "e66485f99d6c488da1363ba2d2fc739b779dc524e31800874e55b5e167f7daf1",
+  "url": "http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+  "viewport": [
+    1280,
+    720
+  ],
+  "raw": {
+    "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/footer-heldouts-r1/report.json",
+    "sha256": "a86fab010573972012ff1cbd1689b4b7af4c972929c09f8e16c1c09fe41779b6"
+  },
+  "measurement": {
+    "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/footer-heldouts-r1/measurement.json",
+    "sha256": "9d596e775ae7de9a5a91400ddc6d086ade78b7605bd051a5add65e6d35f8d53b"
+  },
+  "views": [
+    {
+      "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/footer-heldouts-r1/ordinary-normal-mochi-1-325-preview.png",
+      "sha256": "7c4603796d5a11f69ec8d4f05bdf0b9fa8d51a8b71167d05d4c732ed432e1ad7",
+      "dimensions": [
+        1024,
+        576
+      ],
+      "raw": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/footer-heldouts-r1/ordinary-normal-mochi-1-325/candidate-screen0.png",
+      "captureUTC": "2026-11-18T18:03:50.092Z",
+      "case": "ordinary-normal-mochi-1-325",
+      "badgeCount": 1,
+      "decodedFrame": 46,
+      "body": {
+        "x": 335.69267059366183,
+        "y": 176.0088748426316,
+        "width": 291.34712673852727,
+        "height": 230.20199999999994
+      },
+      "measured": true,
+      "viewed": true,
+      "views": 1,
+      "reviewedUTC": "2026-11-18T18:05:43.697097+00:00"
+    },
+    {
+      "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/footer-heldouts-r1/capacity-reduced-panko-1-200-preview.png",
+      "sha256": "85c4f826127d1b461dcf76195b3d06aa8f4ff1971c66f5931940a4985d080c95",
+      "dimensions": [
+        1024,
+        576
+      ],
+      "raw": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/footer-heldouts-r1/capacity-reduced-panko-1-200/candidate-screen0.png",
+      "captureUTC": "2026-11-18T18:03:56.045Z",
+      "case": "capacity-reduced-panko-1-200",
+      "badgeCount": 5,
+      "decodedFrame": 0,
+      "body": {
+        "x": 337.1656294533051,
+        "y": 169.2000008188987,
+        "width": 272.8687508977014,
+        "height": 226.79999881795854
+      },
+      "measured": true,
+      "viewed": true,
+      "views": 1,
+      "reviewedUTC": "2026-11-18T18:05:43.697097+00:00"
+    }
+  ],
+  "rules": {
+    "path": "/Users/bao/taskbar-hero-chain/reports/v5/CXI/evidence/v8-footer-heldouts-r1-rules.json",
+    "sha256": "50a7b0ef2a8885365d89825dc708fb52e3494d239c18984e6684be903153603b"
+  },
+  "numerical": {
+    "imageHashes": 24,
+    "fullStateSnapshots": 48,
+    "repeatPairs": 16,
+    "rawCanvasPairs": 2,
+    "independentLegalActions": 2
+  },
+  "findings": [
+    "The always-visible Mochi name makes the footer group identifiable in both fresh heldout full-scene views.",
+    "At325ms normal Mochi cast and200ms reduced Panko cast, the footer is visibly separate from speed and portrait controls, with no conspicuous body obstruction.",
+    "The capacity view retains shield, three individual status badges and the original +1 overflow marker; numerical audit preserves all original titles and stack text.",
+    "Mochi shows a continuous silhouette and visible lantern in the sampled reduced pose; these are two static presentation observations, not full-cycle edge/halo acceptance."
+  ],
+  "scopedVisualAcceptance": [
+    "Name legibility and group identification in these2heldouts",
+    "Visible separation from existing controls and bodies in these2heldouts"
+  ],
+  "open": [
+    "Zero-effects branch, dynamic updates, fallback/disposal, dual media and full trajectory",
+    "Four peer restoration comparisons remain1015/409/1010/943changedpixels",
+    "Full paint/hover/keyboard behavior beyond existing fixed-state numeric checks",
+    "All-frame art/seam and ordinary-laptop performance"
+  ],
+  "productionAcceptance": false,
+  "captureTimeTool": {
+    "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/footer-heldouts-r1/capture-footer-heldouts-frozen.mjs",
+    "sha256": "64e61a1bfa253364a908d12ad903883eeb370726350b71f297ce5a741878ba37"
+  },
+  "postCaptureSafetyFix": "Capture completed with STOP absent; future source guard corrected from peer STOP-CXV to own STOP-CXI. Capture-time bytes preserved."
+}

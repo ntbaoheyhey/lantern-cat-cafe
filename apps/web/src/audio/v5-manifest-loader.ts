@@ -6,7 +6,7 @@ interface Delivery {
  sourcePack?:string;start?:number;duration?:number;
 }
 const path=(value:unknown,extension:string):value is string=>typeof value==='string'
- &&value.startsWith('/audio/v5/')&&!value.includes('..')&&new RegExp(`^[\\w/.-]+\\.${extension}$`).test(value);
+ &&/^\/audio\/(?:v5|v9)\//.test(value)&&!value.includes('..')&&new RegExp(`^[\\w/.-]+\\.${extension}$`).test(value);
 function valid(value:unknown):value is Delivery {
  if(!value||typeof value!=='object')return false;
  const d=value as Delivery;
@@ -39,7 +39,7 @@ export function applyV5Audio(base:AudioManifest,input:unknown):AudioManifest {
   if(d&&packs[id])packs[id]={...packs[id],opus:d.opus,m4a:d.m4a,preferredFormat:'opus'};
  }
  const packFor=(d:Delivery)=>{
-  const key=`v5:${d.opus.slice('/audio/v5/'.length,-5)}`;
+  const key=d.opus.slice('/audio/'.length,-5).replace('/',':');
   packs[key]={opus:d.opus,m4a:d.m4a,preferredFormat:'opus'};
   return key;
  };

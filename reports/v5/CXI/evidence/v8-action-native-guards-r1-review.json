@@ -1,0 +1,239 @@
+{
+  "utc": "2026-11-18T14:45:44.951Z",
+  "delivery": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v5/CXV/M-action-native-guards-R1.json",
+    "sha256": "325ef16ebf0773dd6747eb7641639fa9106db348c9c964c9678bcc5b338d9b2a"
+  },
+  "sourceCommit": "bf01d462ac32233ab11475605d571aea691f96bf",
+  "indexSha256": "eb93ee0dbdfb500c3f9aed80acdb134f027d8093240c86b545807a87dc79ce67",
+  "url": "http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+  "toolSha256": "d95e981f9f1c70db6f527566939699b8508e6eb9f5626deea898d0d21a581a28",
+  "layoutSource": {
+    "path": "apps/web/src/game/cardrpg/battle-v3/world-label-layout.ts",
+    "sha256": "e11e0464b2169b5d17f5a835f6c44ffb0656fa1989d325b59d2135e098c4fb2a"
+  },
+  "verifiedInputs": {
+    "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/action-label-full-r2-143611/report.json": "5b2fe00edec843e1c1e1f09295eb91da69ff66d07c21895c740bad97d67d309c",
+    "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/action-label-full-r2-143611/analysis.json": "09922a0ef65fc235ad036330de6828cf70d6fec3f7fc02455bb3f9a17537d3da",
+    "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/action-native-guards-r1/rows.json": "07ea92e35d36af209fa3f46f18cc331b013eb2f7aca54d6e079a8298ed8d6f7e",
+    "/Users/bao/taskbar-hero-cardrpg-a6/reports/v5/CXV/M-action-native-guards-R1-preregistration.json": "026513934f5b0b0b923490a715a9153445ecb394a6e5f0a98720d0ccaee6261d"
+  },
+  "samples": 136,
+  "labelComparisons": 272,
+  "baselineFailedRows": [
+    {
+      "key": "state-51",
+      "mode": "normal",
+      "cat": "mallow",
+      "skill": 1,
+      "ms": 800,
+      "pixel": false,
+      "baselineError": 0.2328184847778516,
+      "ordinaryUnchanged": true
+    },
+    {
+      "key": "state-61",
+      "mode": "reduced",
+      "cat": "mochi",
+      "skill": 1,
+      "ms": 175,
+      "pixel": false,
+      "baselineError": 0.2988703329889546,
+      "ordinaryUnchanged": true
+    },
+    {
+      "key": "state-69",
+      "mode": "reduced",
+      "cat": "mochi",
+      "skill": 4,
+      "ms": 250,
+      "pixel": false,
+      "baselineError": 0.11322540555056548,
+      "ordinaryUnchanged": true
+    },
+    {
+      "key": "state-71",
+      "mode": "reduced",
+      "cat": "mochi",
+      "skill": 4,
+      "ms": 600,
+      "pixel": false,
+      "baselineError": 0.48283743314755156,
+      "ordinaryUnchanged": true
+    },
+    {
+      "key": "state-73",
+      "mode": "reduced",
+      "cat": "mochi",
+      "skill": 4,
+      "ms": 2199.9999,
+      "pixel": false,
+      "baselineError": 1.672728817181195,
+      "ordinaryUnchanged": true
+    },
+    {
+      "key": "state-75",
+      "mode": "reduced",
+      "cat": "clover",
+      "skill": 1,
+      "ms": 0,
+      "pixel": false,
+      "baselineError": 1.371764241960534,
+      "ordinaryUnchanged": true
+    },
+    {
+      "key": "state-80",
+      "mode": "reduced",
+      "cat": "clover",
+      "skill": 1,
+      "ms": 799.9999,
+      "pixel": false,
+      "baselineError": 0.5115015122878503,
+      "ordinaryUnchanged": true
+    },
+    {
+      "key": "state-83",
+      "mode": "reduced",
+      "cat": "clover",
+      "skill": 4,
+      "ms": 175,
+      "pixel": false,
+      "baselineError": 0.2988703329889546,
+      "ordinaryUnchanged": true
+    },
+    {
+      "key": "state-84",
+      "mode": "reduced",
+      "cat": "clover",
+      "skill": 4,
+      "ms": 250,
+      "pixel": false,
+      "baselineError": 0.11322540555056548,
+      "ordinaryUnchanged": true
+    },
+    {
+      "key": "state-85",
+      "mode": "reduced",
+      "cat": "clover",
+      "skill": 4,
+      "ms": 350,
+      "pixel": false,
+      "baselineError": 0.13538369671653072,
+      "ordinaryUnchanged": true
+    },
+    {
+      "key": "state-86",
+      "mode": "reduced",
+      "cat": "clover",
+      "skill": 4,
+      "ms": 600,
+      "pixel": false,
+      "baselineError": 0.48283743314755156,
+      "ordinaryUnchanged": true
+    },
+    {
+      "key": "state-88",
+      "mode": "reduced",
+      "cat": "clover",
+      "skill": 4,
+      "ms": 2199.9999,
+      "pixel": false,
+      "baselineError": 1.672728817181195,
+      "ordinaryUnchanged": true
+    },
+    {
+      "key": "state-95",
+      "mode": "reduced",
+      "cat": "panko",
+      "skill": 1,
+      "ms": 799.9999,
+      "pixel": false,
+      "baselineError": 128.3848888110782,
+      "ordinaryUnchanged": true
+    },
+    {
+      "key": "state-96",
+      "mode": "reduced",
+      "cat": "panko",
+      "skill": 1,
+      "ms": 800,
+      "pixel": false,
+      "baselineError": 0.25829893443184915,
+      "ordinaryUnchanged": true
+    },
+    {
+      "key": "state-99",
+      "mode": "reduced",
+      "cat": "panko",
+      "skill": 4,
+      "ms": 250,
+      "pixel": false,
+      "baselineError": 0.11322540555056548,
+      "ordinaryUnchanged": true
+    },
+    {
+      "key": "state-107",
+      "mode": "reduced",
+      "cat": "mallow",
+      "skill": 1,
+      "ms": 250,
+      "pixel": false,
+      "baselineError": 0.11322540555056548,
+      "ordinaryUnchanged": true
+    },
+    {
+      "key": "state-109",
+      "mode": "reduced",
+      "cat": "mallow",
+      "skill": 1,
+      "ms": 600,
+      "pixel": false,
+      "baselineError": 39.78869938372918,
+      "ordinaryUnchanged": true
+    },
+    {
+      "key": "state-110",
+      "mode": "reduced",
+      "cat": "mallow",
+      "skill": 1,
+      "ms": 799.9999,
+      "pixel": false,
+      "baselineError": 1.545434020632655,
+      "ordinaryUnchanged": true
+    },
+    {
+      "key": "state-114",
+      "mode": "reduced",
+      "cat": "mallow",
+      "skill": 4,
+      "ms": 250,
+      "pixel": false,
+      "baselineError": 0.11322540555056548,
+      "ordinaryUnchanged": true
+    },
+    {
+      "key": "state-115",
+      "mode": "reduced",
+      "cat": "mallow",
+      "skill": 4,
+      "ms": 350,
+      "pixel": false,
+      "baselineError": 0.13538369671653072,
+      "ordinaryUnchanged": true
+    }
+  ],
+  "pixelBaselinesReproduced": true,
+  "maxBaselineErrorCSSpx": 128.3848888110782,
+  "maxDisplacementCSSpx": 165.72303725170357,
+  "associationRiskCount": 4,
+  "ordinaryUnchanged": true,
+  "candidateGeometryClear": true,
+  "decision": "REJECT source adoption: motion rectangle guard can detach labels substantially;20 noncontact baseline rows are not reproduced.",
+  "productionAcceptance": false,
+  "imagesViewed": 0,
+  "limits": [
+    "Independent reuse of exact served layout implementation verifies the reported offline proposal, not a new application candidate.",
+    "Six-pixel native guard expansion is fixed; body rectangles and frozen layouts do not establish actual painted or all-frame clearance.",
+    "Fourteen contact attributions are valid; two Mallow ultimate controls remain invalid. No screenshot was viewed."
+  ]
+}

@@ -1,8 +1,8 @@
 # Triển khai bản xanh và tạo bằng chứng Fuji — chỉ owner thực hiện
 
-Bản đã kiểm tra **v5-m1.14**, source ứng dụng/quay **c4108923c25a9c982b0831318e16a93cc991f8e7**. Full suite5.539passed,11skipped,2expected failures; tổng5.552, gồm3.239web.24test tập trung,TypeScript/build và7bước browser đạt; đòn đầu20,880giây gồm17,7giây đọc. Chín mèo native đã nhận; commissioned media Mochi/Clover chưa bật. Owner đã bỏ8MB:byte chỉ báo cáo. [Bằng chứng](evidence/v8-native-atlas-r2-release-review.json). Chỉ dùng tag sau khi BOARD xác nhận remote.
+Bản đã kiểm tra và xác minh từ xa **v5-m1.15**, release **59f5f3c57ff05df85f5a835da65bf28c136403f3**, source ứng dụng/quay **b9b6f172824a7daa4ba95836081cade7c472ffb6**. Bộ5.556kiểm tra kế thừa(5.543đạt,11bỏqua,2lỗi dự kiến;3.243web) với cùng mã ứng dụng trừ texture landing đã duyệt;7cổng browser mới đạt. Đòn đầu21,163giây gồm17,7giây đọc. Chín mèo native đã nhận;media Mochi/Clover chưa bật. Byte chỉ báo cáo. [Bằng chứng](evidence/v8-native-r3-release-review.json), [tag từ xa](evidence/v8-m115-publication.json).
 
-Cổng6301 đang dùng bản thử Mochi/Clover R4, source854ce6eec/index9e39c7d7; bản này chưa được phát hành vì viền/halo và vòng đuôi còn mở. [Bản local desktop](http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3) không phải link chia sẻ giám khảo. Codex chưa deploy hosting, sửa production DB hoặc gửi giao dịchFuji có tiền. Artifact tag được giữ riêng ởwork/v5/CXI/releases/v5-m1.14-dist.
+Cổng6301 hiện đã khôi phục đúng artifact R7 hai media để thử lỗi decoder thật: sourcebf01d462ac32233ab11475605d571aea691f96bf/indexeb93ee0dbdfb500c3f9aed80acdb134f027d8093240c86b545807a87dc79ce67;registry production vẫn{}. Bản chỉMochi được giữ nguyên. Focus mới khớp18/18 mẫu nhưng kiểm tra scene nghiêm ngặt lỗi ở1100ms vì thêm CSSanimation;chưa áp dụng footer. Viền/halo,nối đuôi và art chưa đạt nên media chưa phát hành. [Bản local desktop](http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3) không phải link chia sẻ giám khảo. Artifact xanh giữ tại /Users/bao/taskbar-hero-chain/work/v5/CXI/releases/v5-m1.15-dist;hosting,DB vàFuji có tiền do chủ dự án thực hiện.
 
 ## 1. Lấy đúng tag vào thư mục riêng
 
@@ -11,7 +11,7 @@ Chạy trong Terminal zsh của bạn. Không chuyển nhánh hoặc làm gián 
 ```sh
 cd /Users/bao/taskbar-hero-chain
 git fetch origin --tags
-release_tag='v5-m1.14'
+release_tag='v5-m1.15'
 release_sha="$(git rev-parse "${release_tag}^{commit}")"
 release_dir="/Users/bao/taskbar-hero-release-${release_tag}"
 test -n "$release_sha" || return 1
@@ -100,3 +100,11 @@ Receipt ở I-C đến từ hành trình practice qua UI thường và ghi rõ l
 Cập nhật kỹ thuật Clover 2026-11-18T09:53:09.423465+00:00: nếu người thiết kế đã có mô hình và công cụ xuất, có thể xin mask theo Part/ArtMesh cho đuôi,váy xanh,váy lót sáng và tay,giữ cùng300frame/30fps/canvas; mask theo alpha hoặc thang xám chỉ mô tả phần đang nhìn thấy,không tự khôi phục đuôi bị che. Tốt nhất là sửa nối vòng trong mô hình rồi xuất RGBA. Tài liệu chính thức: https://docs.live2d.com/en/cubism-editor-manual/cubism-ae-plugin-mask/ và https://docs.live2d.com/zh-CHS/cubism-editor-manual/cubism-ae-plugin-mask/ . Đây vẫn là bản nháp; nhóm chưa liên hệ,mua/cài AE hay chấp thuận điều khoản.
 
 2026-11-18T13:01:23.560889+00:00 — Bản thử Clover mới giữ matte318×390, video1.502.465byte/cảgói1.627.378byte; dung lượng không chặn. Phim so sánh tại227px cho thấy mốc/khung đúng, nhưng nối đuôi vẫn sai khoảng4,96lần trung vị các cặp kề gần điểm nối. Việc xin bản sửa vòng hoặc lớp đuôi/váy/alpha riêng vẫn là gợi ý dành cho chủ dự án, chưa gửi.
+
+## Batch M: lời nhắn ngắn cho bản xuất sửa vòng (chưa gửi)
+
+Mình cần bản idle Mochi và Clover có alpha thật, ưu tiên chuỗi PNG RGBA hoặc bản master ProRes 4444 bạn đã xuất được. Giữ chuyển động 10 giây/30 fps, cùng canvas và mốc chân; ghi rõ kích thước canvas, phần thân, alpha straight hay premultiplied, và phiên bản xuất. Riêng Clover, nhờ kiểm tra đuôi/váy chạy qua điểm nối vòng cả vị trí lẫn hướng/tốc độ, không bật hoặc chồng hai nét. Bản 300 frame là các mẫu 0–299; không thêm bản sao frame đầu vào cuối. Gửi kèm một bản xem nối hai vòng trên nền sáng và nền tối để thấy viền/ánh đèn. Nếu đã bake vật lý, ghi riêng FPS vật lý và FPS cảnh; 30 fps video không có nghĩa vật lý phải 30 Hz. Nhóm sẽ tự giảm kích thước cho game.
+
+Đây là dự thảo cho chủ dự án chọn gửi; chưa liên hệ người thiết kế. Hai bản gốc vẫn là18.660.725 và18.722.251byte. Khuyến nghị yêu cầu nguồn có alpha/sửa vòng dựa trên lỗi seam đã đo, không phải kết luận người thiết kế xuất sai. Bộ PNG có thể lớn hơn MP4; chưa có bản xuất mới để báo dung lượng thực.
+
+Căn cứ đã kiểm tra: Cubism có cách bake tính hai lượt và lựa chọn FPS vật lý hoặc FPS cảnh; hai lựa chọn ảnh hưởng kết quả. [Bake vật lý](https://docs.live2d.com/en/cubism-editor-manual/physics-operation-bake/), [FPS vật lý](https://docs.live2d.com/en/cubism-editor-manual/physics-operation/). Tài liệu Trung văn mô tả lặp key quanh biên cảnh để chỉnh đường cong nối tự nhiên; đây là việc ở mô hình nguồn, không phải phép làm mờ MP4. [Chỉnh vòng lặp](https://docs.live2d.com/zh-CHS/cubism-editor-manual/loop-editing-support/).

@@ -17,6 +17,8 @@ h1,h2,h3,.t-title,.uv-patrol,.uv-dock button {font-family:var(--font-display)!im
 .th-audio {position:fixed;top:12px;right:12px;z-index:6000;display:flex;gap:4px;color:#ffe1a1}
 /* The legacy battle toolbar occupies the top 82px, including its More button. */
 body:has(.uv-battle-hud) .th-audio {top:88px}
+/* The scaled cafe HUD cannot reserve full-size audio controls on narrow screens. */
+@media(max-width:800px){body:has(.uv-shell) .th-audio {top:88px}}
 .th-audio button,.th-audio summary {display:grid;place-items:center;border:1px solid #bd8e52;background:#261a35;color:inherit;border-radius:12px;min-width:38px;min-height:38px;cursor:pointer}
 .th-audio details[open] {padding:8px;background:#261a35;border:1px solid #bd8e52;border-radius:12px}.th-audio label{display:flex;justify-content:space-between;gap:12px}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto}}

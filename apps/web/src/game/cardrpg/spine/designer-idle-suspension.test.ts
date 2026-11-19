@@ -11,9 +11,9 @@ class Video extends EventTarget {
  load=vi.fn();remove=vi.fn();removeAttribute=vi.fn();
  requestVideoFrameCallback=(callback:VideoFrameRequestCallback)=>{const id=++this.nextCallback;this.callbacks.set(id,callback);return id;};
  cancelVideoFrameCallback=(id:number)=>{this.callbacks.delete(id);};
- presentFrame(){
+ presentFrame(mediaTime=this.currentTime){
   const pending=[...this.callbacks];this.callbacks.clear();
-  for(const [,callback]of pending)callback(0,{} as VideoFrameCallbackMetadata);
+  for(const [,callback]of pending)callback(0,{mediaTime} as VideoFrameCallbackMetadata);
  }
 }
 const mediaInstances:DesignerIdleMedia[]=[];
@@ -91,4 +91,30 @@ it('keeps reduced motion static after resuming and ignores post-disposal resumes
  media.sample(clock(7),true);expect(video.currentTime).toBe(0);expect(video.paused).toBe(true);
  media.dispose();const calls=video.play.mock.calls.length;media.setSuspended(false);media.sample(clock(),false);
  expect(video.play).toHaveBeenCalledTimes(calls);expect(media.state.disposed).toBe(true);
+});
+
+it('keeps the presented phase until a callback even when seeked arrives first',async()=>{
+ const media=await prepared(),frames:number[]=[];media.onFrame=()=>frames.push(media.sourceFrame);
+ video.currentTime=4;video.presentFrame(2.5);expect(media.sourceFrame).toBe(75);
+ media.sample({...clock(8),paused:true,fixedTime:true},false);
+ video.dispatchEvent(new Event('seeked'));
+ expect(video.currentTime).toBe(8);expect(media.sourceFrame).toBe(75);expect(frames).toEqual([75]);
+ video.presentFrame(8);expect(media.sourceFrame).toBe(240);expect(frames).toEqual([75,240]);
+});
+
+it('retains decoded phase through reduced-motion seeking, suspension and loop wrap',async()=>{
+ const media=await prepared();video.currentTime=9.98;video.presentFrame(9.966667);
+ expect(media.sourceFrame).toBe(299);media.sample(clock(7),true);
+ expect(video.currentTime).toBe(0);expect(media.sourceFrame).toBe(299);
+ video.presentFrame(0);expect(media.sourceFrame).toBe(0);
+ media.setSuspended(true);video.currentTime=4;video.presentFrame(4);expect(media.sourceFrame).toBe(0);
+ media.setSuspended(false);video.presentFrame(4);expect(media.sourceFrame).toBe(120);
+ video.presentFrame(10);expect(media.sourceFrame).toBe(0);
+});
+
+it('keeps an explicit clock fallback when native frame callbacks are unavailable',async()=>{
+ Reflect.deleteProperty(video,'requestVideoFrameCallback');
+ const media=create();video.dispatchEvent(new Event('loadeddata'));video.currentTime=2.5;
+ video.dispatchEvent(new Event('seeked'));expect(await media.ready).toBe(true);
+ expect(media.state).toMatchObject({sourceFrame:75,presentedTime:2.5,presentationClock:'clock-fallback'});
 });

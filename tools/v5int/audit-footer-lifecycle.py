@@ -1,0 +1,226 @@
+"""Audit recorded footer lifecycle evidence without a browser or image viewing."""
+from pathlib import Path
+from datetime import datetime, timezone
+import hashlib
+import json
+import math
+import subprocess
+import sys
+import argparse
+
+sys.path.insert(0, '/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/python')
+import cv2
+import numpy as np
+cv2.setNumThreads(1)
+root = Path(__file__).resolve().parents[2]
+parser = argparse.ArgumentParser()
+parser.add_argument('base', type=Path)
+parser.add_argument('output', type=Path)
+parser.add_argument('--revision', choices=['r1', 'r2', 'heldouts'], default='r1')
+args = parser.parse_args()
+base, output = args.base, args.output
+assert not output.exists(), 'Preserve earlier evidence'
+hashes = {}
+
+
+def read(path, expected=None):
+    path = Path(path).resolve()
+    data = path.read_bytes()
+    digest = hashlib.sha256(data).hexdigest()
+    assert expected is None or digest == expected, str(path)
+    hashes[str(path)] = digest
+    return data
+
+
+def load(path, expected=None):
+    return json.loads(read(path, expected))
+
+
+def delta(a, b):
+    assert a.shape == b.shape
+    y, x = np.nonzero(np.any(a != b, axis=2))
+    return dict(pixels=int(x.size), bbox=None if not x.size else
+                [int(x.min()), int(y.min()), int(x.max()+1), int(y.max()+1)])
+
+
+def world(snapshot):
+    return [n for n in snapshot['information']['nodes'] if n['class'] == 'b3-world']
+
+
+def values(node):
+    return dict(meters=node['meters'], badges=[{k: v for k, v in b.items() if k != 'focus'} for b in node['badges']])
+
+
+def contains(a, b):
+    return a['left'] <= b['left'] and a['top'] <= b['top'] and a['right'] >= b['right'] and a['bottom'] >= b['bottom']
+
+
+raw = load(base/'report.json')
+pre = load(raw['preregistration']['path'], raw['preregistration']['sha256'])
+artifact = load(base/'artifact-verification.json')
+assert load(base/'exit.json')['exit'] == 0
+assert raw['pass'] and raw['finishedUTC'] and not raw['errors']
+assert raw['viewport'] == [1280, 720] and raw['fixture']['mediaCats'] == ['mochi']
+assert len(raw['runs']) == pre['freshPages'] == 4
+for k in ['url', 'sourceCommit', 'indexSha256']:
+    assert raw[k] == pre[k] == artifact[k]
+for item in load(base/'harness-provenance.json'):
+    read(base/item['name'], item['sha256'])
+capture_name = {'r1': 'probe-footer-lifecycle.mjs', 'r2': 'probe-footer-lifecycle-r2.mjs',
+                'heldouts': 'capture-footer-focus-heldouts.mjs'}[args.revision]
+prototype_name = 'footer-identity-prototype.mjs' if args.revision == 'r1' else 'footer-identity-stable-prototype.mjs'
+read(base/capture_name, raw['harnessSha256'])
+assert raw['harnessSha256'] == pre['harnessSha256']
+read(base/prototype_name, pre['prototypeSha256'])
+assert raw['prototypeSha256'] == pre['prototypeSha256']
+build = load(artifact['build']['path'], artifact['build']['sha256'])
+assert raw['fixture']['buildSha256'] == artifact['build']['sha256']
+dist = Path(build['dist'])
+read(dist/'index.html', raw['indexSha256'])
+for item in artifact['sourceFiles']:
+    data = subprocess.check_output(['git', 'show', raw['sourceCommit']+':'+item['path']], cwd=root)
+    assert hashlib.sha256(data).hexdigest() == item['sha256'], item['path']
+for item in artifact['artifacts']:
+    assert len(read(dist/item['path'], item['sha256'])) == item['bytes']
+for item in artifact['mediaFiles']:
+    assert len(read(dist/item['url'].lstrip('/'), item['sha256'])) == item['bytes']
+assert artifact['runtimePatchSha256'] == hashlib.sha256(b'').hexdigest()
+
+images, results = {}, []
+picture_count = state_count = repeat_count = 0
+for run in raw['runs']:
+    assert not run['errors'] and not run['blockedRequests']
+    assert any(all(run[k] == c[k] for k in ['mode', 'cat', 'skill', 'statusCase']) for c in pre['cases'])
+    if args.revision == 'heldouts':
+        assert run['key'] == run['mode']+'-'+run['focusStatusId']+'-'+run['arm']
+    else:
+        assert run['key'] == run['statusCase']+'-'+run['arm']
+    assert run['statusCase'] in ['empty', 'capacity'] and run['arm'] in pre['arms']
+    assert [p['phase'] for p in run['captures']] == ['initial', 'final']
+    phases = []
+    for phase in run['captures']:
+        captures = phase['captures']
+        assert [s['variant'] for s in captures] == ['screen0', 'canvas0', 'screen1', 'canvas1']
+        reference, frames, states = captures[0]['before'], {}, []
+        media = reference['scene']['media']['mochi']
+        video = media['state']
+        assert video['ready'] and not video['seeking'] and not video['disposed'] and not video.get('failure')
+        assert media['rootVisible'] and media['planeVisible'] and reference['scene']['paused']
+        assert abs(video['currentTime']-video['desired']) <= 1/60
+        assert round(media['decoded']['mediaTime']*30) == video['sourceFrame']
+        for shot in captures:
+            data = read(shot['path'], shot['sha256'])
+            frame = cv2.imdecode(np.frombuffer(data, dtype=np.uint8), cv2.IMREAD_UNCHANGED)
+            assert list(frame.shape[1::-1]) == shot['dimensions'] == [1280, 720]
+            frames[shot['variant']] = frame
+            picture_count += 1
+            for when in ['before', 'after']:
+                states.append(shot[when] == reference)
+                state_count += 1
+        repeats = [dict(a=a, b=b, **delta(frames[a], frames[b])) for a, b in
+                   [('screen0', 'screen1'), ('canvas0', 'canvas1')]]
+        repeat_count += len(repeats)
+        phases.append(dict(phase=phase['phase'], stateComparisons=states, repeatComparisons=repeats,
+                           statePass=all(states), repeatPass=all(p['pixels'] == 0 for p in repeats)))
+        case_key = run['mode']+'-'+run['focusStatusId'] if args.revision == 'heldouts' else run['statusCase']
+        images[(case_key, run['arm'], phase['phase'])] = frames
+    planned_times = [run['action']['duration'] if x == 'duration' else x for x in pre['sampleMs']]
+    assert [r['ms'] for r in run['rows']] == [t for t in planned_times if t <= run['action']['duration']]
+    rows = []
+    for row in run['rows']:
+        before, after = row['before'], row['after']
+        native = next(n for n in world(after) if n['actor'] == 'mochi')
+        panels = [n for n in after['information']['nodes'] if n['class'] == 'b3-cxv-identity']
+        prototype = run['arm'] == 'prototype'
+        target = panels[0] if prototype and panels else native
+        title = run.get('focusTitle')
+        survives = bool(title) and any(b['title'] == title for b in target['badges'])
+        focused = any(b['title'] == title and b['focus'] for b in target['badges'])
+        geometry = []
+        for panel in after['panels']:
+            box = panel['rect']
+            contained = all(not r['width'] or not r['height'] or contains(box, r)
+                            for child in panel['children'] for r in [child['rect'], *child['textRects']])
+            geometry.append(dict(name=panel['name'], size=[box['width'], box['height']], childrenContained=contained))
+        rows.append(dict(ms=row['ms'], sceneUnchanged=before['scene'] == after['scene'],
+                         worldUnchanged=world(before) == world(after),
+                         footerControlsUnchanged=before['information']['controls'] == after['information']['controls'],
+                         valuesExact=not prototype or len(panels) == 1 and values(native) == values(panels[0]),
+                         panelsExpected=len(panels) == (1 if prototype else 0),
+                         focusTitle=title, focusTargetSurvives=survives,
+                         focusRetained=focused if survives else None, focus=after['information']['focus'], geometry=geometry))
+        if args.revision != 'r1':
+            rows[-1]['focusNodeRetained'] = bool(focused and after['information']['focus']['sameNode'] and
+                                               after['information']['focus']['originalConnected']) if survives else None
+            rows[-1]['focusRetained'] = rows[-1]['focusNodeRetained']
+            rows[-1]['emptyLabelCorrect'] = not prototype or target['noEffects'] == ('No effects' if not native['badges'] else None)
+    initial_world = next(n for n in world(run['initial']) if n['actor'] == 'mochi')
+    initial_panels = [n for n in run['initial']['information']['nodes'] if n['class'] == 'b3-cxv-identity']
+    empty = None
+    if run['statusCase'] == 'empty':
+        empty = not initial_world['badges'] and (run['arm'] == 'original' or
+                 len(initial_panels) == 1 and initial_panels[0]['noEffects'] == 'No effects' and not initial_panels[0]['badges'])
+    if run['statusCase'] == 'capacity':
+        assert run['initial']['information']['focus']['sameNode']
+        assert run['initial']['information']['focus']['title'] == run['focusTitle']
+    results.append(dict(key=run['key'], phases=phases, rows=rows, emptyInitialCorrect=empty,
+                        allRepeatStatePass=all(p['statePass'] and p['repeatPass'] for p in phases),
+                        allTransferPass=all(all(row[k] for k in ['sceneUnchanged', 'worldUnchanged',
+                                                               'footerControlsUnchanged', 'valuesExact', 'panelsExpected']) for row in rows),
+                        survivingFocusPass=all(row['focusRetained'] for row in rows if row['focusTargetSurvives'])))
+    if args.revision != 'r1':
+        results[-1]['survivingFocusPass'] = all(row['focusNodeRetained'] for row in rows if row['focusTargetSurvives'])
+        results[-1]['allTransferPass'] = results[-1]['allTransferPass'] and all(row['emptyLabelCorrect'] for row in rows)
+cross = []
+case_keys = [c['mode']+'-'+c['focusStatusId'] for c in pre['cases']] if args.revision == 'heldouts' else ['empty', 'capacity']
+for status in case_keys:
+    for phase in ['initial', 'final']:
+        a, b = [images[(status, arm, phase)] for arm in ['original', 'prototype']]
+        cross.append(dict(statusCase=status, phase=phase, rawCanvas=delta(a['canvas0'], b['canvas0']),
+                          screen=delta(a['screen0'], b['screen0'])))
+peer_path = base/'footer-lifecycle-measurement.json'
+peer_checked = False
+if peer_path.exists():
+    peer = load(peer_path)
+    assert peer['crossArm'] == cross
+    assert len(results) == len(peer['runs'])
+    for own, claim in zip(results, peer['runs']):
+        for k in ['key', 'phases', 'emptyInitialCorrect', 'allRepeatStatePass', 'allTransferPass', 'survivingFocusPass']:
+            assert own[k] == claim[k], (own['key'], k)
+        assert len(own['rows']) == len(claim['rows'])
+        for own_row, claim_row in zip(own['rows'], claim['rows']):
+            assert {k: own_row[k] for k in claim_row} == claim_row
+    peer_checked = True
+focus_gate = 'focusRetained' if args.revision == 'r1' else 'focusNodeRetained'
+failures = [dict(case=r['key'], ms=row['ms'], focus=row['focus']) for r in results
+            for row in r['rows'] if row['focusTargetSurvives'] and not row[focus_gate]]
+regression_pass = not failures and all(r['allTransferPass'] and r['allRepeatStatePass'] and
+                                      r['emptyInitialCorrect'] is not False for r in results)
+focus_pairs = []
+if args.revision == 'heldouts':
+    for condition in pre['cases']:
+        pair = [r for r in raw['runs'] if r['mode'] == condition['mode'] and r['focusStatusId'] == condition['focusStatusId']]
+        assert len(pair) == 2 and [r['arm'] for r in pair] == ['original', 'prototype']
+        a, b = pair
+        comparisons = [dict(ms=x['ms'], exact=x['after']['information']['focus'] == y['after']['information']['focus'])
+                       for x, y in zip(a['rows'], b['rows'])]
+        actor = next(x for x in a['action']['actual']['actors'] if x['catalogId'] == 'mochi')
+        final_statuses = [s['id'] for s in actor['statuses']]
+        assert 'scald' not in final_statuses and 'bitter' in final_statuses
+        focus_pairs.append(dict(mode=condition['mode'], focusStatusId=condition['focusStatusId'],
+                                finalStatuses=final_statuses, comparisons=comparisons))
+    regression_pass = regression_pass and all(c['exact'] for p in focus_pairs for c in p['comparisons'])
+result = dict(utc=datetime.now(timezone.utc).isoformat(), sourceCommit=raw['sourceCommit'], indexSha256=raw['indexSha256'],
+              url=raw['url'], captureUTC=raw['utc'], finishedUTC=raw['finishedUTC'],
+              pngs=picture_count, fullStateComparisons=state_count, repeatPairs=repeat_count,
+              sourceAndArtifactItems=sum(len(artifact[k]) for k in ['sourceFiles', 'artifacts', 'mediaFiles']),
+              runs=results, crossArm=cross, survivingFocusFailures=failures, peerNumbersExact=peer_checked,
+              hashes=hashes, toolSha256=hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
+              imagesViewed=0, productionAcceptance=False, revision=args.revision,
+              regressionPass=regression_pass, focusPairs=focus_pairs,
+              disposition='REJECT lifecycle: prototype loses surviving status focus' if failures else
+                          'Scoped numeric regression acceptance only' if regression_pass else 'REJECT strict transfer or capture controls',
+              limits=['Manual sync development pilot, normal Mochi only; not native integration or natural reachability.',
+                      'Rules replay is separate. Full paint restoration, fallback, dual media, art and performance remain open.'])
+output.write_text(json.dumps(result, indent=2)+'\n')
+print(json.dumps({k: result[k] for k in ['pngs', 'fullStateComparisons', 'repeatPairs', 'sourceAndArtifactItems', 'peerNumbersExact', 'disposition']}))

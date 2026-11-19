@@ -1,0 +1,26 @@
+<!doctype html>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>V9 effect review</title>
+<style>
+body{font:15px system-ui;background:#18161d;color:#eee9df;margin:24px}h1{font-size:24px}button,select{font:inherit;padding:8px;background:#302b38;color:inherit;border:1px solid #62586d;border-radius:6px;margin-right:8px}.grid{display:grid;grid-template-columns:repeat(auto-fit,280px);gap:18px;margin-top:24px}article{border:1px solid #443b4c;padding:12px;border-radius:8px;background:#211d27}h2{font-size:17px;margin:0 0 9px}canvas{display:block;width:256px;height:256px;background:black}p{color:#bfb6c8;line-height:1.5}small{display:block;color:#c8c0ce;margin-top:8px}.toolbar{position:sticky;top:0;padding:12px 0;background:#18161de8}.error{color:#ffc4a4}
+</style>
+<h1>V9 effect review · 256 px</h1>
+<p>Original Blender emission and particle motion. One-shots repeat after a short gap; comet and rune loops run continuously.</p>
+<p><a href="variants.html" style="color:#e4cbff">Review cat colours and the full-screen flash</a></p>
+<div class="toolbar"><button id="pause">Pause</button><button id="restart">Restart all</button><label>Background <select id="background"><option value="#000000">Black</option><option value="#4c4952">Mid grey</option><option value="#d9cdb7">Light café</option></select></label><label>Speed <select id="speed"><option value="1">1×</option><option value=".25">¼×</option></select></label></div>
+<main class="grid"></main>
+<script type="module">
+const names=['impact-core','shockwave-ring','smoke-embers','lantern-dome','tea-clover','comet-loop','fire-dome','rune-circle'];
+const grid=document.querySelector('.grid'),background=document.querySelector('#background'),speed=document.querySelector('#speed'),items=[];
+for(const name of names){
+ const article=document.createElement('article');article.innerHTML=`<h2>${name}</h2><canvas width="256" height="256"></canvas><small>Loading…</small>`;grid.append(article);
+ try{const base=new URL('../../../apps/web/public/vfx/v9/',location.href),r=await fetch(new URL(name+'.json',base));if(!r.ok)throw Error('Not rendered yet');const meta=await r.json(),image=new Image();image.src=new URL(name+'.webp',base);await image.decode();items.push({name,meta,image,ctx:article.querySelector('canvas').getContext('2d')});article.querySelector('small').textContent=`${meta.frames} frames · 30 fps · ${meta.blend}${meta.loop?' · loop':''}`;}
+ catch(e){article.querySelector('small').className='error';article.querySelector('small').textContent=e.message;}
+}
+let elapsed=0,previous=performance.now(),paused=false;
+document.querySelector('#pause').onclick=e=>{paused=!paused;e.target.textContent=paused?'Play':'Pause';};document.querySelector('#restart').onclick=()=>{elapsed=0;};
+function tick(now){const delta=(now-previous)/1000;previous=now;if(!paused)elapsed+=delta*Number(speed.value);
+ for(const {meta:m,image,ctx} of items){ctx.globalCompositeOperation='source-over';ctx.fillStyle=background.value;ctx.fillRect(0,0,256,256);const frame=Math.floor(elapsed*m.fps)%(m.frames+(m.loop?0:12));if(frame>=m.frames)continue;ctx.globalCompositeOperation=m.blend==='additive'?'lighter':'source-over';ctx.drawImage(image,(frame%m.cols)*m.cell[0],Math.floor(frame/m.cols)*m.cell[1],...m.cell,0,0,256,256);}
+ requestAnimationFrame(tick);
+}requestAnimationFrame(tick);
+</script>

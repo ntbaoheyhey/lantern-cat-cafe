@@ -98,6 +98,7 @@ export class DesignerIdleMedia {
  private playbackGeneration=0;
  private desired=0;private frozenAt:number|undefined;private lastSeek=-Infinity;private callback:number|undefined;
  private animationFrame:number|undefined;private fallbackFrameTime=-1;private queuedSeek:number|undefined;
+ private presentedTime=0;private presentationClock:'poster'|'callback'|'clock-fallback'='poster';
  private timer:ReturnType<typeof setTimeout>|undefined;
  private finish:((ok:boolean)=>void)|undefined;
  private readonly canvases=new Set<HTMLCanvasElement>();
@@ -176,18 +177,30 @@ export class DesignerIdleMedia {
  }
  private watchFrames(){
   if(this.disposed||this.failure||this.suspended||this.callback!==undefined||this.animationFrame!==undefined)return;
-  const decoded=()=>{
-   if(this.disposed||this.failure||this.suspended)return;
-   if(!this.firstFrame)this.acceptFrame();
-   else{this.videoTexture.needsUpdate=true;this.onFrame();}
-   this.watchFrames();
-  };
-  if(this.video.requestVideoFrameCallback)this.callback=this.video.requestVideoFrameCallback(()=>{this.callback=undefined;decoded();});
+  if(this.video.requestVideoFrameCallback)this.callback=this.video.requestVideoFrameCallback((_now,metadata)=>{
+   this.callback=undefined;
+   this.decodedFrame(metadata.mediaTime,'callback');this.watchFrames();
+  });
   else this.animationFrame=requestAnimationFrame(()=>{
    this.animationFrame=undefined;
-   if(this.video.readyState>=2&&this.video.currentTime!==this.fallbackFrameTime){this.fallbackFrameTime=this.video.currentTime;decoded();}
-   else this.watchFrames();
+   if(this.video.readyState>=2&&this.video.currentTime!==this.fallbackFrameTime){this.fallbackFrameTime=this.video.currentTime;this.decodedFrame(this.video.currentTime,'clock-fallback');}
+   this.watchFrames();
   });
+ }
+ private decodedFrame(time:number,source:'callback'|'clock-fallback'){
+  if(this.disposed||this.failure||this.suspended||!Number.isFinite(time))return;
+  // currentTime may already name a seek target while the texture still holds its
+  // previous frame. Publish the presented phase before invalidating the scene.
+  this.presentedTime=time;this.presentationClock=source;
+  if(!this.firstFrame)this.acceptFrame();
+  else{this.videoTexture.needsUpdate=true;this.onFrame();}
+ }
+ get sourceFrame(){
+  if(!this.firstFrame||this.failure)return 0;
+  const frame=designerPhase(this.presentedTime)*this.manifest.fps;
+  // These clips have a verified 300-frame CFR timeline. Callback PTS precision
+  // must not interpolate two authored sockets for one discrete decoded frame.
+  return this.presentationClock==='callback'?Math.round(frame)%this.manifest.frames:frame;
  }
  private acceptFrame(){
   if(this.disposed||this.failure)return;
@@ -209,7 +222,9 @@ export class DesignerIdleMedia {
   if(this.disposed||this.failure||this.suspended)return;
   const queued=this.queuedSeek;this.queuedSeek=undefined;
   if(queued!==undefined&&designerDrift(this.video.currentTime,queued)>(this.playing?.2:1/60)){this.video.currentTime=queued;return;}
-  this.videoTexture.needsUpdate=true;this.onFrame();
+  // seeked can precede the native frame callback. That callback owns both the
+  // texture invalidation and its socket phase; the clock fallback is explicit.
+  if(!this.video.requestVideoFrameCallback&&this.video.readyState>=2)this.decodedFrame(this.video.currentTime,'clock-fallback');
  };
  private fail(reason:string){
   if(this.disposed||this.failure)return;this.failure=reason;this.video.pause();this.playing=false;this.material.map=this.posterTexture;this.packed.value=0;
@@ -236,7 +251,7 @@ export class DesignerIdleMedia {
   if(!running){this.playbackGeneration++;this.video.pause();this.playing=false;}
   else if(!this.playing||this.video.paused){this.playing=true;this.playVideo();}
  }
- get state(){return {ready:this.firstFrame&&!this.failure&&!this.disposed,failure:this.failure,desired:this.desired,currentTime:this.video.currentTime,seeking:this.video.seeking,paused:this.video.paused,suspended:this.suspended,disposed:this.disposed};}
+ get state(){return {ready:this.firstFrame&&!this.failure&&!this.disposed,failure:this.failure,desired:this.desired,currentTime:this.video.currentTime,presentedTime:this.presentedTime,presentationClock:this.failure?'poster':this.presentationClock,sourceFrame:this.sourceFrame,seeking:this.video.seeking,paused:this.video.paused,suspended:this.suspended,disposed:this.disposed};}
  dispose(){
   if(this.disposed)return;this.disposed=true;
   if(this.timer)clearTimeout(this.timer);

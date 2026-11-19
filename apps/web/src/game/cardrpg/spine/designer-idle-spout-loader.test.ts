@@ -11,7 +11,7 @@ const make=()=>{
   socketTracks:{spout:Array.from({length:300},()=>[0,0]),prop:Array.from({length:300},()=>[11,-13]),lantern:Array.from({length:300},()=>[-17,19])},socketChannels:{'vfx-origin':'spout','main-hand':'prop'}};
  manifest.socketTracks!.spout![299]=[-6,9];manifest.socketTracks!.spout![75]=[3,-4];manifest.socketTracks!.spout![76]=[7,-8];
  const geometry=new T.BufferGeometry();geometry.setAttribute('position',new T.Float32BufferAttribute([0,0,0,0,0,0],3));
- const media={manifest,geometry,basePositions:new Float32Array(6),video:{currentTime:75.25/30},sample(){},failure:undefined} as unknown as DesignerIdleMedia;
+ const media={manifest,geometry,basePositions:new Float32Array(6),video:{currentTime:75.25/30},sourceFrame:75.25,sample(){},failure:undefined} as unknown as DesignerIdleMedia;
  const actor={unit:{id:'clover'},sockets:new Map(Object.keys(SPINE_CONFIG.sockets).map(k=>[k,new T.Object3D()]))} as unknown as SpineActor;
  return {manifest,media,actor,geometry,adapter:new DesignerIdleActorMedia(media)};
 };
@@ -32,11 +32,11 @@ it('keeps the Clover emission lip separate from held prop and lantern at fractio
 });
 it('interpolates the spout over the last-to-first frame and returns to frame zero for reduced or failed media',()=>{
  const {media,actor,adapter,geometry}=make();try{
-  media.video.currentTime=299.5/30;adapter.sample(actor,'idle',0,10,false,clock);
+  Object.assign(media,{sourceFrame:299.5});media.video.currentTime=299.5/30;adapter.sample(actor,'idle',0,10,false,clock);
   expectPoint(actor.sockets.get('vfxOrigin')!.position,expected([308.583711,142.216]));
-  media.video.currentTime=10;adapter.sample(actor,'idle',0,10,false,clock);
+  Object.assign(media,{sourceFrame:0});media.video.currentTime=10;adapter.sample(actor,'idle',0,10,false,clock);
   expectPoint(actor.sockets.get('vfxOrigin')!.position,expected([311.583711,137.716]));
-  media.video.currentTime=75.25/30;adapter.sample(actor,'skill',.31,1,true,clock);
+  media.video.currentTime=75.25/30;Object.assign(media,{sourceFrame:0});adapter.sample(actor,'skill',.31,1,true,clock);
   expectPoint(actor.sockets.get('vfxOrigin')!.position,expected([311.583711,137.716]));
   media.failure='decode';adapter.sample(actor,'idle',0,10,false,clock);
   expectPoint(actor.sockets.get('vfxOrigin')!.position,expected([311.583711,137.716]));

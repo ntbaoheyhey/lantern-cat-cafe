@@ -1,24 +1,82 @@
 # CXI V8 — Batch M first
-M-I1 ACTIVE: R5 fullmatte318x390 source8aef40187/index82f08611 installed;own696anchors/348rows/4actions/4freshviews scopedPASS;10emissions error0;MochiR6 retained;registry{}.
+NEXT ACTIVE:review CXV animation attribution6f68 on restoreddualR7;lease until18:42:03Z ANDrelease. Realfaultfixture accepted230hash/10cases/8nativeerrors/10legalactions;R1observerfailure retained. No art/appadoption.
+M-I1 ACTIVE: decodedPTS correction ae1e69fb5 scopedACCEPT actualGPU24matches/8controls+124lifecyclechecks+52castrows/8actions. R7 adds authoredHP;3250web/30focused/TSC0. Productionregistry{}.
 M-I2 OPEN: original matte/fringe/halo, Clover tail seam and native authored tracking/performance. Source trajectory native scopedPASS;fresh R5 seam REJECT MAE11.158076 vs nearmed 2.248417;historicalR2 preserved. Bytes report-only per OWNER INBOX386.
-M-I3 DONE/REPEAT: native9 shipped v5-m1.14@254ad41d6;sourcec4108923c/indexfe8bdd;5552checks/7browser gates/3actual30sfilms. No commissioned media accepted.
-LIVE6301: nativeR3 sourceb9b6f1728/indexfedad6e2;CXI7gate release validation;fullR5/R4/nativeR2/m1.14 preserved.
+M-I3 DONE/REPEAT: native9 shipped v5-m1.15@59f5f3c57;sourceb9b6f1728/indexfedad6e2;5556checks inherited/7fresh browser gates/3actual30sfilms;remote branch/tag verified. No commissioned media accepted.
+LIVE6301:exactdualR7 restored sourcebf01d462ac32233ab11475605d571aea691f96bf/indexeb93ee0dbdfb500c3f9aed80acdb134f027d8093240c86b545807a87dc79ce67;work/v5/CXI/batch-m/dual-media-fault-r1/build.json;3809files/294424887B;registry{}. PriorMochi-only and releasedm1.15 artifacts preserved.
 SOOT EXCLUDED:3833 protectedpaths unchanged fromc4bd12552;shared runtime parity retained. Never import retractedPanko d419002a4 or wholesale older identified-focus.ts.
 AUTHORED SOURCE scopedPASS:17focused/TSC0;2400idle/7200cast-mesh/300isolation/10fallback checks;maxworld1.1976487713e-6/cast2.942668624e-5. Own native decoded696anchor gatePASS;anatomy/art separate.
 RIG DELIVERY SHIPPED:exact shared dictionary for10 deferred-pixel rigs;18 Chromium/WebKit success/fault cases;SRI/2sabort/originalfallback/retry;allfields/containeridentity preserved.
-AGS OPEN:T-CXI-13 exactm1.14QA on6350,T-M5 independentactualtrials,T-M4 stageddeliveryEN+ZH,T-CXI-12 maskdraft,T-CXI-11 cueconditions,T-CXI-5 provenance/listening. >=2 useful tasks;line392/399/401/402audited;M4/M5 REDO.
-AGS DISPOSITIONS through389: M4unsupported smootherloop claim REDO;ZHlink nowpresent;M5status-only REDO. Later statuslines do not prove delivery;futuredatedtimestamps unreliable.
-AGV R12 ACCEPTED quality:3own desktop+3detailviews once;fourconditions/resources/fallback exact;hash2ad09491f copied landing.avif in6d748d620;nextbuild includes it. R9 rejection retained.
-AUDIO OPEN:49delivery/candidate+10originalcallouts rehashedunchanged;canonical458026/full296493/small156500B;36cue-end checks. Native-264frame/gain,provenance/listening/wiring unresolved;noadoption.
-CXV: introR2 audited16artifacts/40rows;transientWave1/1 with0sampled ordinary actionoverlap. New dualcat ordinary/lifecycle/art lease after R5 own capture.
+AGS OPEN:T-CXI13 exactm1.15QA on6350,T-M5 seek/stall/quality,T-CXI14 timestampresearch+rawprovenance,T-CXI15CPUprofilingresearch;581numeric30PTS partialACCEPT. T-M4/T-CXI12/T-CXI11 remainOPEN;fixedaudio rejected. >=2usefultasks.
+AGS current:1834review snapshots7files;T13 stale457B18:10report/diagnostic6301 cannot prove m1.15regression;winners2missing proof/READMEgaplist. REDO sent. T14prior1200PTS remainsaccepted;T14command/cause andT15precisesources/experiment OPEN.
+AGV R12 ACCEPTED quality:3own desktop+3detailviews once;fourconditions/resources/fallback exact;hash2ad09491f copied landing.avif in6d748d620;shipped in v5-m1.15. R9 rejection retained.
+AUDIO FIXEDSET REJECTED:49delivery/candidate+10originalcallouts rehashedunchanged;canonical458026/full296493/small156500B;36cue-end checks. Native-264frame/gain,provenance/listening/wiring unresolved;noadoption.
+CXV current:lowerlabel20caseREJECT independentlyaudited200PNGs/6400states/640stats;176layoutsample86/88Cloverconflicts/6associationfails. Bodyoccluder583 independent88replay:40displacement/28axisfails,max165.575005px. Structural/artstudy continues;nosourceproposaladopted.
+FOOTER lifecycleR1:259hashes/32PNGs/64states/16repeats/24values/4legalactions exact;emptydisplayPASS. FocusREJECT350/600/800ms vs original6/6;CSSpaint/world drift retained. No appadoption;release18:10:58Z,groupempty.
 CXV ACCEPT scoped:nativeR1 63hashes/48PNGs/6wins/270actions/all9/exactnormalreduced rules;noimagesviewed/nolaptopclaim. SourceR5head/R6paw21artifacts/24freshcontrols/1500conversioneach;oldcombinedR4reject retained.
-I-C DONE currentnativeR2:firsthit20880ms including17700ms8cardreading;HP165→119;route9740ms;recovery632/8684ms;bothmotion GPUrestore exact.
+I-C DONE currentnativeR3/m1.15:firsthit21163ms including17700ms8cardreading;route9766ms;recovery640/8707ms;bothmotion GPUrestore exact.
 I-D IMPLEMENTATION DONE/OWNER-ONLY:honestAvalanche receipt/5bytecodechecks/localAnvil516ms;publicfundedFuji unperformed;NEEDS-USER-VI exact.
-I-E DONE/REFRESH:m1.14 three1280x720/30sfilms+browseraudio;14imagesmeasured/9freshviewsonce;no subjectiveAVsync/listening claim. Retain all imageledgers.
-I-F DONE/REPEAT:README/architecture/submissionfacts throughm1.14;preserveforeignAGSdrafts;REFRESHaftermeaningfultag.
+I-E DONE/REFRESH:m1.15 three1280x720/30sfilms+browseraudio;14imagesmeasured/6freshviewsonce;no subjectiveAVsync/listening claim. Retain all imageledgers.
+I-F DONE/REPEAT:README/architecture/submissionfacts throughm1.15;preserveforeignAGSdrafts;REFRESHaftermeaningfultag.
 CANCELLED historical8MBgates/byte-onlyrejections: nativeR2 cold7591445/8030924/7624476B;R1delta8449/8292/5397B. Prior84KBestimate corrected;do not widen activation.
 SUPERSEDED all historical m1.13/currentnativeR1/oldV7m1.14pipeline status: actual current identities above;historical receipts preserved and scripts must not launch.
 PRESERVED: allprior media/native artifacts, report receipts and v7-ags-0046-review.json hash7a860af938973a346e9a7cd51dcf335381facf142ac90792319956308da0d875;originalDownloads untouched.
 
 M-I2 RESAMPLING: directRGB and fullmatte300frames/bothenginesPASS recomputed;fullmatte148824000RGBA exact/no secondresize;own compact receipts. Neither changes seam/alpha acceptance.
 M-I2 R5 COMPARISON:300nativeframes/10s film227pxbody mismatch0.2px;2freshsameheightviews. Native source trajectory remains aligned;lowerleft seam persists,bodyrectfixed. No alpha/laptop claim.
+
+M-I2 R7 playback:1536eligible recordedcallback/sourceFrame pairs within0.000334ms;canonicaltrackmax9.26733e-5px. Drops19/2429Mochi,28/2428Clover;reduced0;RAFp9516.8mslocalM3Pro. No newGPU/allframe/laptop/artacceptance.
+
+M-I2 ACTIONR2 PILOT:exactGit1rule replayPASS;242hashes/18stable states/32counts. Mochilabel vsPankobody1340paintpixels=>FAIL;initialhidden20topHUDpixels retained;postconceal3RGBcontrols exact. Full16 next;no sourceadoption.
+
+M-I2 ACTIONR2 FULL:437hashes/288states/512counts,16exactGit rule replays,normal/reduced parity.14valid contacts;Mochi/Panko1340/1302FAIL;2Mallowults13514controlpixels invalid. Offset-onlyREJECT;nativeguardstudy next.
+
+M-I2 STAGING:own2fresh0/800ms association scopedPASS. Full16/1500geometry/34cases complete;rules parity+1534layouts/10738labels PASS. Fullcontrols33/34:normalPanko350 pre-restored differs10pixels topHUD. 628hashes/4292framechecks/1088DOMcounts0;3264marginchecksFAIL/5validClover shadowhits. Invalidcontrol retained. No sourceadoption.
+
+M-I2 FULLPAINT GRID:598hashes/56exactcontrols/134456integercounts reproduce sole Clover(-28,+14);development evidence only. FrozenCXVpilot lease until2026-11-18T16:32:03.028081+00:00 AND explicitrelease. No sourceadoption;regression/fullpaint/newidle/status/association gates open.
+M-I2 AGS535-543:ownreview rejects absent/oldQAartifacts;exactstderr accepted as wrong-tool evidence only;twoTASKs stillOPEN;HANDOFF list corrected. Audio canonical assertion adds no recipe/listening.
+M-I2 FIXED CLOVER REJECT:own1534layoutreplays/198failures;maxfallback11.385870/rigid10.691869px;81failures directly intersect ownavoid,117need sourcecause. Grid remains developmental only. No browser launched;CXVexplicitrelease16:23:31Z.
+AUDIO CURRENTSET REVIEW COMPLETE:exact30a1six296493B tied to historicalnative evidence;all36canonical cues still matchm1.15,−264frames each/gain changes. Retain canonical. No releaseblocker and no repeat unchanged audit;reopen on actual new evidence.
+M-I3 R7 RELEASE GATE:existing native-only runner rejects diagnosticregistry before browser/status creation(exit1 expected);R7 is not green. No passing browsergate rerun;oldhardcoded Mochiofflinegate notexecuted/no immutableoutput overwritten.
+
+M-I2 CPUSTRESS R1 AUDITED:272artifacts/216served-sourceitems;4wins/47actions each/exact4wayrules+plans. Normal1x/4x p95frame16.7/83.4ms;drops20/2118 and623/3022. Reducedvideo paused. No ordinarylaptop/artacceptance;NEXT isolate observer overhead before appoptimization.
+AGS549-551 REDO:abbreviated/wronghashes,18keyframesomitted,QAimageabsent;2priorityTASKlines reissued. Own30keyframes confirmed.
+
+M-I2 OBSERVER ABBA AUDITED:4normalCPU4runs/rulesexact;p95frame100ms each;no consistent counters-only improvement. Raw288hash receipt;no laptop/runtime acceptance.
+M-I2 SOLVED CLOVER AUDITED:3068traces confirms81newownavoid+117baselinefallbackremoval;283hash/6528paintcounts,15of33 threshold0guardfails/0directhits/allclear threshold1,2,4. Exactzero prereg stays rejected.
+M-I3 MOCHI-ONLY NOTREADY:CXV562scope/563profile request ACK;isolated3payload build verified3795files/291925344B,indexe66485f9;not installed. NativeClover freshpaint/status/association andMochi art/performance remain open;queued5casecontrolstudy first.
+
+M-I2 CONTROLS LEASE:CXI released16:59:17Z after empty groups63482/65692;CXV557 granted until17:07:17Z ANDexplicitrelease. Conditioning170hashaudit next.
+M-I3 PATCH CHECK:zero-context proposal passes --unidiff-zero;not stale-source and not applied. Build review immutable;nativeClover/art/performance gates remain open.
+
+M-I2 CONDITIONING AUDITED:2026-11-18T17:05:40.320889+00:00 170imagehashes/1666counts exact;32initialdiffs/29719pixels. Cause unresolved,original33/34 vs initialequality2/34 unchanged.
+M-I3 ENROLLMENT PREREG:mochi-only nativeClover8rows/2freshstills;install after17:07:17Z;CXV570released. No labels/sourceadopted.
+AGS566/568 REDO:V3/FINAL allblankPTS;twoTASKtracking restored;futureZ timestamps unreliable.
+
+M-I3 MOCHI-ONLY ENROLLMENT PASS 2026-11-18T17:10:54.687921+00:00:installed3795files/291925344B,sourcebf01/indexe66485f9;2pages8states/3payloads exact;Cloverplaceholder,Panko/Mallowtemplate.2viewswavebannerobscuresMochi,noartacceptance.
+M-I2 CONTROLS AUDITED:50hashes/1700statechecks/160pixelstats;untouched/sham exact5/5,firstconceal4persistentdiffs. strictRGB0 unchanged. CXV20freshpages4arms lease17:09:38–17:17:38Z ANDrelease.
+AGS573 REDO config-only/blankPTS/no newwork;T-CXI14 PTSfieldstudy assigned,keepQA+M5OPEN.
+
+M-I2 MOCHI IDLE REVIEW 2026-11-18T17:19:49.603790+00:00:300hashes/PTS/root/bannerPASS,227pxheight;3freshpreviewsviewedonce. PosecomparisonACCEPTonly;labelcrop/alpha/performance limits retained. CXV579lowerproposalREJECT;20caseauditNEXT.
+
+M-I2 CONTROL/LAYOUT AUDIT 2026-11-18T17:22:53.556032+00:00:200hashes/6400states/640counts exact;20RGBfail;176layoutsreplayed,86/88Cloverconflicts,6associationfails. LowerproposalREJECT.
+AGS581 PARTIAL ACCEPT30PTS;T14command/rawJSON/EN+ZHsources missing;T13/M5/T15 remainOPEN. Profilingstudy active since17:15:34Z,implementation after17:30:34Z.
+
+M-I2 LOCALIZATION:25,338firstconcealdiffpixels allwithinlabelrects+2px;no browsercause inferred. Crossmethodpages notRGBidentical in normalmotion;all20initialcontrols stillREJECTED.
+
+M-I2 AGS588 REVIEW 2026-11-18T17:38:29.859484+00:00:twoENofficiallinks verified;InfoQ unverified,requestedreport missing,no rawexperiment. PartialACCEPT links/tasktracking,REDO15;13/M5/14/15 OPEN.
+
+M-I2 CPU COUNT AUDIT 2026-11-18T17:45:49.949503+00:00:all4rules/plans/outcomes exact;202source/serveditems;261artifacthashes;2profiles58776/59447samples.5negative1us intervals retained,count-only estimates;off/on/on/offRAF p95~50msCPU4. Generatedrender~19%,drawingpoint~10.3% sample share;source correspondence inferred,not causal. No laptop/art/release acceptance.
+
+M-I2 PEER AUDIT 2026-11-18T17:49:11.426580+00:00:CXV58749filehashes+capturetool2edbd6fff exact;40PNGs/frozenboxes/PTS/iris copies/brackets consistent,no images reopened or semantic expansion. AGS593four realJSONs1200PTS equal independently probed packetPTS;30keyframes reconfirmed. Command provenance/blank-field cause/EN+ZHresearch remainOPEN.
+
+2026-11-18T17:57:04.341926+00:00 M-I2 normal1x baseline ACCEPT numerical:237hashes/202source+served/two55action21ultimate rules/plans exact;RAF p95 16.8/16.7ms;11/2425 and6/2424 dropped;8wraps each. Explicit timing release17:55:26Z. Host-relative only;art/laptop OPEN. CXV footer pilot leased until2026-11-18T18:05:04.341926+00:00 ANDrelease.
+
+2026-11-18T17:57:53.190314+00:00 M-I2 CXV596 ACCEPT numbers only:60hashes/30PNG/20repeat/60fullstates/15pixelstats;5independent rules replay,2normal/reduced pairs exact. Residualoutside7351..24743;nominal footer33px slack. No paint/association/art acceptance.
+
+2026-11-18T18:00:01.668695+00:00 AGS actual17:51updates reviewed:requestedCPUreport nowexists,but sixdomainroots/noactualexperiment;PTS1200 stillmatch,genpts causalclaim unproved. Exactsnapshots preserved;T13/M5/14/15 remainOPEN;preciseREDOs sent.
+
+2026-11-18T18:05:43.697097+00:00 FOOTER peerR1:149hashes/120PNG/240states/80repeats/48stats/4rules independentlyPASS;2px boxclear. Own2heldouts24PNG/48states/16repeats/2rules +2fresh1024views once:scoped name/separationPASS. Restore1015/409/1010/943FAIL retained;zeroeffects/fulltrajectory/fallback/dualmedia OPEN. Own81316empty/released.
+
+M-I2 FOCUS HELDOUTS:261hash/32PNG/64states/16repeats/4rules;survivingBitter+removedBurn focus18/18exact. StrictFAIL normalprototype1100ms scene.animations2->3;0views. No acceptance,allfailure receipts preserved.
+M-I2 NATIVE MEDIAFAULT:exactR7 216source-artifactitems/230hash;10freshnormal/reduced cases,8nativeMediaError4;startupplaceholder and after-readyposter paths retained. 10rules/5modepairs exact;noimages/noart/fullpaint/performance claim. R1observerfailure retained.

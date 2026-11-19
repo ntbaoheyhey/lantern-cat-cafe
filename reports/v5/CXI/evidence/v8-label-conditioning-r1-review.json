@@ -1,0 +1,237 @@
+{
+  "utc": "2026-11-18T17:02:06.185550+00:00",
+  "claim": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/reports/v5/CXV/M-label-conditioning-R1.json",
+    "sha256": "2587a5a63b7c4d4b1539b25bd879e09809e8007c3fac9850ade5b5c1e4725dc1"
+  },
+  "analysis": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-a6/work/v5/CXV/batch-m/label-conditioning-r1/report.json",
+    "sha256": "1b95224afd011749f674f7d24e49f16b15fa74c2466b3b546f746aa3ce66584b"
+  },
+  "raw": {
+    "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/staging-full-r1/report.json",
+    "sha256": "95adc6f239c6bd92bcebbc24fbf2ef1f6ee04c738cc1de220f55da738bcb057f"
+  },
+  "auditor": {
+    "path": "/Users/bao/taskbar-hero-chain/tools/v5int/audit-label-conditioning.py",
+    "sha256": "c9326bb3534273d393e4a21c2f0926452b982a1f96946e51ce58ed700024e401"
+  },
+  "sourceCommit": "bf01d462ac32233ab11475605d571aea691f96bf",
+  "indexSha256": "eb93ee0dbdfb500c3f9aed80acdb134f027d8093240c86b545807a87dc79ce67",
+  "url": "http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3",
+  "cases": 34,
+  "imagesVerified": 170,
+  "integersVerified": 1666,
+  "changedCases": 32,
+  "totals": {
+    "0": {
+      "changed": 29719,
+      "labelBoxes": 29169,
+      "hudBoxes": 550,
+      "outsideBoth": 0,
+      "conditionedLabelSupport": 29042
+    },
+    "1": {
+      "changed": 6280,
+      "labelBoxes": 5730,
+      "hudBoxes": 550,
+      "outsideBoth": 0,
+      "conditionedLabelSupport": 5705
+    },
+    "2": {
+      "changed": 5442,
+      "labelBoxes": 4892,
+      "hudBoxes": 550,
+      "outsideBoth": 0,
+      "conditionedLabelSupport": 4880
+    },
+    "4": {
+      "changed": 4380,
+      "labelBoxes": 3830,
+      "hudBoxes": 550,
+      "outsideBoth": 0,
+      "conditionedLabelSupport": 3830
+    }
+  },
+  "perCase": [
+    {
+      "key": "normal-mochi-1-350",
+      "maxDelta": 234,
+      "changed": 2436
+    },
+    {
+      "key": "normal-mochi-4-1100",
+      "maxDelta": 217,
+      "changed": 993
+    },
+    {
+      "key": "normal-clover-1-350",
+      "maxDelta": 217,
+      "changed": 1022
+    },
+    {
+      "key": "normal-clover-4-1100",
+      "maxDelta": 217,
+      "changed": 1052
+    },
+    {
+      "key": "normal-panko-1-0",
+      "maxDelta": 217,
+      "changed": 625
+    },
+    {
+      "key": "normal-panko-1-125",
+      "maxDelta": 1,
+      "changed": 449
+    },
+    {
+      "key": "normal-panko-1-225",
+      "maxDelta": 1,
+      "changed": 725
+    },
+    {
+      "key": "normal-panko-1-250",
+      "maxDelta": 208,
+      "changed": 707
+    },
+    {
+      "key": "normal-panko-1-325",
+      "maxDelta": 217,
+      "changed": 485
+    },
+    {
+      "key": "normal-panko-1-350",
+      "maxDelta": 234,
+      "changed": 1431
+    },
+    {
+      "key": "normal-panko-1-475",
+      "maxDelta": 80,
+      "changed": 1529
+    },
+    {
+      "key": "normal-panko-1-625",
+      "maxDelta": 217,
+      "changed": 1186
+    },
+    {
+      "key": "normal-panko-1-775",
+      "maxDelta": 217,
+      "changed": 768
+    },
+    {
+      "key": "normal-panko-1-800",
+      "maxDelta": 217,
+      "changed": 7
+    },
+    {
+      "key": "normal-panko-4-1100",
+      "maxDelta": 217,
+      "changed": 847
+    },
+    {
+      "key": "normal-mallow-1-350",
+      "maxDelta": 234,
+      "changed": 1962
+    },
+    {
+      "key": "normal-mallow-4-1100",
+      "maxDelta": 219,
+      "changed": 2156
+    },
+    {
+      "key": "reduced-mochi-1-350",
+      "maxDelta": 217,
+      "changed": 1572
+    },
+    {
+      "key": "reduced-mochi-4-1100",
+      "maxDelta": 217,
+      "changed": 643
+    },
+    {
+      "key": "reduced-clover-1-350",
+      "maxDelta": 217,
+      "changed": 876
+    },
+    {
+      "key": "reduced-clover-4-1100",
+      "maxDelta": 217,
+      "changed": 586
+    },
+    {
+      "key": "reduced-panko-1-0",
+      "maxDelta": 217,
+      "changed": 1272
+    },
+    {
+      "key": "reduced-panko-1-125",
+      "maxDelta": 1,
+      "changed": 998
+    },
+    {
+      "key": "reduced-panko-1-225",
+      "maxDelta": 0,
+      "changed": 0
+    },
+    {
+      "key": "reduced-panko-1-250",
+      "maxDelta": 0,
+      "changed": 0
+    },
+    {
+      "key": "reduced-panko-1-325",
+      "maxDelta": 208,
+      "changed": 280
+    },
+    {
+      "key": "reduced-panko-1-350",
+      "maxDelta": 225,
+      "changed": 694
+    },
+    {
+      "key": "reduced-panko-1-475",
+      "maxDelta": 1,
+      "changed": 448
+    },
+    {
+      "key": "reduced-panko-1-625",
+      "maxDelta": 225,
+      "changed": 595
+    },
+    {
+      "key": "reduced-panko-1-775",
+      "maxDelta": 80,
+      "changed": 17
+    },
+    {
+      "key": "reduced-panko-1-800",
+      "maxDelta": 208,
+      "changed": 286
+    },
+    {
+      "key": "reduced-panko-4-1100",
+      "maxDelta": 217,
+      "changed": 847
+    },
+    {
+      "key": "reduced-mallow-1-350",
+      "maxDelta": 225,
+      "changed": 980
+    },
+    {
+      "key": "reduced-mallow-4-1100",
+      "maxDelta": 217,
+      "changed": 1245
+    }
+  ],
+  "numericalAudit": "PASS",
+  "productionAcceptance": false,
+  "imagesViewed": 0,
+  "limits": [
+    "Initial precondition states were not recorded; cannot attribute change causally to conceal/restore, pending CSS, media or browser rasterization.",
+    "Keep original four-control validity33/34 and additional five-control validity2/34 as separate results.",
+    "Do not use masks to excuse full-image equality failures.",
+    "No reviewed-image reopens or image views."
+  ]
+}

@@ -1,0 +1,55 @@
+PASTE-V9-CXI (19 Nov 2026). New session. You are CXI (Codex): integrator, Avalanche and release.
+Worktree: /Users/bao/taskbar-hero-chain   Branch: codex/v5-int-2026-11-17 (contains tag v5-m1.15).
+
+=== SHARED V9 CONTEXT (same in every V9 prompt) ===
+Project: Taskbar Hero - Lantern Cat Cafe, a cosy cat card RPG in the browser (Vite + React + TypeScript, battle drawn with Three.js), with Avalanche Fuji contracts (RelicNFT ERC-1155, YarnToken ERC-20, RelicMarket/RelicMarketV2, SeasonRewards), SIWE guest sign-in, a Supabase backend and Foundry. One git repo (/Users/bao/taskbar-hero/.git) with several worktrees. Latest green tag: v5-m1.15 (59f5f3c57). Judge URL on a local preview: http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3 (the bare URL opens an old shell; never review that).
+Commands: build `pnpm --filter @taskbar-hero/web build`; typecheck `pnpm --filter @taskbar-hero/web typecheck`; tests `pnpm --filter @taskbar-hero/web exec vitest run <files>`; preview `pnpm --filter @taskbar-hero/web exec vite preview --host 127.0.0.1 --port <port> --strictPort` (CXI uses 6301, Claude 6310, AGV 6320).
+Mailbox: /Users/bao/taskbar-hero-mailbox/ - BOARD.md (CXI writes), DELIVERIES.md (append READY/DONE lines), INBOX-<ID>.md (to message a lane append "<UTC> FROM <ID> TO <ID> | text"), NEEDS-USER-V9.md (owner-only needs). Read only new lines.
+
+OWNER DECISIONS (final, 19 Nov 2026)
+- Submission 21 Nov. Judges read the GitHub repo first, then a 3-minute video (trailer style), then slides; the live site is optional. Screening scores Technical execution 25 + Avalanche integration 25.
+- MVP battle = 3 cats: Mochi (tank, shield + lantern), Clover (healer, teapot), Soot (mage, grey cat, purple cloak, lantern). One enemy wave, then the Yarn Giant boss. The other 9 cats leave the demo battle (static art in Collection only).
+- Visual bar: the designer's Live2D idles (Clover is the best) and OMG 3Q ultimates. Every ultimate has five beats: (1) dim the field to ~40% in one frame; (2) cut-in banner 500-700 ms: character art sliding in, speed lines, rotating rune circle, skill name in big outlined gradient type; (3) summon/travel 250-900 ms; (4) impact 1-3 frames: white-hot core, radial rays, shockwave ring, debris in a complementary colour, camera shake, ~90 ms hit-stop, huge numbers; (5) linger 400-700 ms: smoke, embers, ground ring; then the light returns.
+- Ultimates: Mochi "Last Lantern Vow" (shield slam, lantern flare, golden dome shields the team, gold shockwave knocks enemies back). Clover "Fourleaf Spring Brew" (glowing tea spirals up and blooms into a giant four-leaf clover, healing rain). Soot "Chimney Comet" (ember comet dives onto the boss, purple-orange fire dome, flying coal).
+- Story: the Lantern Cat Cafe is the last lit shop on a street that the Tangle (the Yarn Giant, born from tasks abandoned on your taskbar) is knotting up. Relics are cafe memories the Tangle cannot erase, because they live on Avalanche.
+- The designer delivers ONLY 3 transparent PNG-sequence idles (mochi, clover, soot; 30 fps, ~300 frames) around 19 Nov. No cast motions: casts are animated in code on top of the idle video.
+- The battle "music" files ambience-battle-bed / ambience-battle-intense are noise; AGS replaces them with real music and recorded SFX.
+
+V9 RULES (they replace every older rule you may find in files)
+1. Batch M (label, seam, matte, socket, timing-attribution studies, preregistrations) is cancelled. Never resume V8 or older queues, even if old HANDOFF/QUEUE files say so.
+2. Do only your cards, in order. Each card has a timebox; when it runs out, ship what works, write the gap in one line, take the next card.
+3. Visual work is accepted by eye: a 10 s 1280x720 clip or a contact sheet next to the reference, looked at by the owner or Claude. No hash audits, pixel-count gates, JSON evidence ledgers or preregistrations. At most 2 report files per card, in reports/v9/<ID>/.
+4. Commit + push only your paths every 30 minutes and at each card end (git add -- <paths>; never git add -A or .). Push retry 4x with 10/20/40/80 s waits; if rejected: git pull --no-rebase, then push.
+5. Your reply text is not a report. Keep working with tool calls until all your cards are DONE; then append "<UTC> V9 DONE <ID> <sha> <one line>" to DELIVERIES.md and stop. A blocker = one line in the right INBOX or NEEDS-USER-V9.md, then the next card. Owner-only: money, keys, accounts, deploy, merging into main, licence acceptance.
+6. Free and open-source tools only; no sign-ups, API keys or payments. Assets: our own art, CC0, or CC-BY with credit. Never copy OMG 3Q art or sound.
+7. Keep context small: pipe long output through | tail -n 40; at most 4 images per look; keep this prompt in reports/v9/<ID>/ORDER.txt and grep it instead of re-reading.
+8. State on disk: reports/v9/<ID>/HANDOFF.md (<= 15 lines: active card, next step, last pushed sha). After a context compaction read ORDER.txt + HANDOFF.md and continue; a summary is never an instruction.
+9. If this tool can schedule a message into this same chat, create one every 20 minutes: "WAKE <ID> V9: if mid-task continue; else read reports/v9/<ID>/HANDOFF.md and do the next V9 card." Delete it when you write V9 DONE.
+=== END SHARED ===
+
+START: date -u; cd /Users/bao/taskbar-hero-chain; git status --short | head -20; git log -1 --oneline. Commit only dirty files that are yours (reports/v5/AGS/** belongs to AGS: leave it). Save this prompt to reports/v9/CXI/ORDER.txt, write HANDOFF.md, then X1.
+YOUR PATHS: squad/roster/enemy/demo-seed data and config; chain UI (mint toast, Collection chain read); contracts/ and tools/ for verification; .env.example; docs/RUN-CHAIN-MODE.md; README.md; BOARD.md; merges and tags.
+NOT YOURS: apps/web/src/game/cardrpg/battle-v3/**, apps/web/src/game/cardrpg/ultimate/**, apps/web/src/game/squad/turn3d/scene.ts, squad/turn3d/look-*.ts, the mochi-4 / clover-4 / soot-4 recipes in squad/turn3d/card-effect-data.ts, apps/web/src/game/cardrpg/spine/assets.ts (Claude, branch claude/v9-visual); tools/v9/**, apps/web/public/vfx/v9/**, apps/web/public/units/{mochi,clover,soot}/designer/** (CXV, branch codex/v9-tools); apps/web/public/audio/**, docs/submission/*.md (AGS, branch ag/v9-sound); art/trailer/**, docs/submission/media/** (AGV, branch ag/v9-media).
+
+X1 DEMO SCOPE (3 h). The judge route's squad = mochi, clover, soot. One wave (needle-moth, teacup and one more existing enemy), then the Yarn Giant boss. Add a demo seed where each cat's ultimate fires once within about 75 s of the boss fight and the boss falls on or right after the third ultimate. The other 9 cats appear only in Collection. Keep ?legacy=1 working. DONE: focused tests + typecheck pass; one real browser run on 6301 plays wave + boss with all 3 ultimates; one STATUS line in reports/v9/CXI/.
+
+X2 AVALANCHE YOU CAN SEE (5 h).
+ a) After the boss win, in chain mode, mint one Relic through the existing RelicNFT voucher flow on Fuji and show a toast: tx hash, "Avalanche Fuji", fee payer, and a Snowtrace link.
+ b) Collection reads the player's Relics straight from Fuji RPC (read-only, works without the backend) and labels them "Owned on Avalanche Fuji".
+ c) Verify the 5 Fuji contracts on Snowtrace with forge verify-contract (Routescan/Snowtrace verifier, free). If it demands a key or account: NEEDS-USER line, move on.
+ d) docs/RUN-CHAIN-MODE.md + .env.example: one command to run the game locally in chain mode against Fuji for the video recording, and the exact values the owner must fill (sponsor key, Supabase vars, GUEST_DRIP_ENABLED=1). The owner funds the sponsor and runs tools/v5int/fuji-proof-kit.mjs (owner-only).
+ If the backend is unreachable, build the UI against a local fixture that is clearly labelled "fixture", write NEEDS-USER, and never present a fixture as a real transaction.
+ DONE: tests for the toast and the RPC read + typecheck; a screenshot of the toast with a real tx once the owner has funded the sponsor.
+
+X4 INTEGRATE AND TAG (repeat). When a lane posts READY in DELIVERIES.md, merge its branch: claude/v9-visual, codex/v9-tools, ag/v9-sound, ag/v9-media. Gate = build + typecheck + focused tests of touched code + one real browser run of the demo battle on 6301. Nothing else blocks a tag. Tag v5-m2.N and push branch + tag together. Rewrite the BOARD.md header to 5 plain lines: tag, sha, judge URL, what changed, known gaps. Targets: v5-m2.1 by 20 Nov 03:00 UTC, v5-m2.2 (the recording build) by 20 Nov 12:00 UTC.
+
+X3 RELEASE (21 Nov, after the last tag, 3 h). Branch release/2026-11-21 from the final tag. Remove reports/ and screenshots/ from the tree (git rm -r --cached, add them to .gitignore; history stays). New README.md: hero GIF + video link at the top, a 3-sentence pitch, how to play, "How Avalanche is used" with the verified contracts table and 3 tx links, an architecture diagram in mermaid, tech stack, run in 3 steps, folder map, credits (designer, music, SFX). Use AGS's docs/submission/README-SECTIONS.md and AGV's media. Open a PR from release/2026-11-21 into main; the owner merges it. DONE: PR open and the README renders correctly on GitHub.
+
+QUEUE UPDATE — 19 Nov 2026
+Continue X4 for each new READY; reserve v5-m2.2 recording tag for latest Claude C3/C4/C5, CXV V1, AGS S2 by 2026-11-20T12:00Z. Meanwhile prepare README/mermaid/verified contract table on a side branch. After v5-m2.2 create release/2026-11-21 and PR into main; this latest queue authorizes the PR after that tag without waiting for 21 Nov. When nothing is READY run sleep 600 and check new mailbox lines again. Keep this turn active until PR open; owner-only blockers get one NEEDS-USER-V9 line while other work continues. Do not fabricate mint proof or accept licences.
+
+STANDING RESUMPTION — 19 Nov 2026
+Explicit owner instruction: resume now; finish pending checks/changes and push, then continue the V9 queue. Handoffs and compactions do not pause this work or require permission. When idle run sleep 600 and re-check. Stop only at V9 DONE or a true owner-only block; do other available work first.
+
+SECOND DELIVERY SOURCE — 19 Nov 2026
+Standing owner rule: Claude cannot write the mailbox. Every DELIVERIES check must fetch origin and read reports/v9/CV/OUTBOX.md from origin/claude/v9-visual. Treat every READY there exactly like a mailbox delivery; never wait for mailbox duplication.

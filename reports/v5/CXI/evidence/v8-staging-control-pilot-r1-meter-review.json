@@ -1,0 +1,129 @@
+{
+  "utc": "2026-11-18T15:52:56.420165+00:00",
+  "raw": {
+    "path": "/Users/bao/taskbar-hero-chain/work/v5/CXI/batch-m/staging-control-pilot-r1/report.json",
+    "sha256": "dc09b4243d1d692189ccae6223416799f0cf3a0f742ef48b597bbe49d9111756"
+  },
+  "helper": {
+    "path": "/Users/bao/taskbar-hero-chain/tools/v5int/hud-meter-observation.mjs",
+    "sha256": "16a9e847e7ee3d8aefc4450e88a1c6604ec343913086f3f225b479364e8c8c2a"
+  },
+  "cases": 10,
+  "rows": [
+    {
+      "key": "normal-panko-1-0",
+      "elapsedMs": 29.599999994039536,
+      "observations": 3,
+      "meters": 5,
+      "initialUnsettled": [],
+      "initialFiniteAnimations": 0,
+      "lastThreeConverged": true
+    },
+    {
+      "key": "normal-panko-1-125",
+      "elapsedMs": 30.900000005960464,
+      "observations": 3,
+      "meters": 5,
+      "initialUnsettled": [],
+      "initialFiniteAnimations": 0,
+      "lastThreeConverged": true
+    },
+    {
+      "key": "normal-panko-1-225",
+      "elapsedMs": 32.29999999701977,
+      "observations": 3,
+      "meters": 5,
+      "initialUnsettled": [],
+      "initialFiniteAnimations": 0,
+      "lastThreeConverged": true
+    },
+    {
+      "key": "normal-panko-1-250",
+      "elapsedMs": 30.30000001192093,
+      "observations": 3,
+      "meters": 5,
+      "initialUnsettled": [],
+      "initialFiniteAnimations": 0,
+      "lastThreeConverged": true
+    },
+    {
+      "key": "normal-panko-1-325",
+      "elapsedMs": 30.700000002980232,
+      "observations": 3,
+      "meters": 5,
+      "initialUnsettled": [],
+      "initialFiniteAnimations": 0,
+      "lastThreeConverged": true
+    },
+    {
+      "key": "normal-panko-1-350",
+      "elapsedMs": 395.79999999701977,
+      "observations": 25,
+      "meters": 5,
+      "initialUnsettled": [
+        {
+          "name": "Yarn Giant HP",
+          "rect": {
+            "x": 433,
+            "y": 15.5,
+            "width": 409,
+            "height": 12,
+            "top": 15.5,
+            "right": 842,
+            "bottom": 27.5,
+            "left": 433
+          },
+          "trailInline": 65.0215,
+          "fillInline": 61.3019,
+          "trailWidth": 264.625,
+          "fillWidth": 249.484375
+        }
+      ],
+      "initialFiniteAnimations": 0,
+      "lastThreeConverged": true
+    },
+    {
+      "key": "normal-panko-1-475",
+      "elapsedMs": 28.80000001192093,
+      "observations": 3,
+      "meters": 5,
+      "initialUnsettled": [],
+      "initialFiniteAnimations": 0,
+      "lastThreeConverged": true
+    },
+    {
+      "key": "normal-panko-1-625",
+      "elapsedMs": 32.400000005960464,
+      "observations": 3,
+      "meters": 5,
+      "initialUnsettled": [],
+      "initialFiniteAnimations": 0,
+      "lastThreeConverged": true
+    },
+    {
+      "key": "normal-panko-1-775",
+      "elapsedMs": 30.200000002980232,
+      "observations": 3,
+      "meters": 5,
+      "initialUnsettled": [],
+      "initialFiniteAnimations": 0,
+      "lastThreeConverged": true
+    },
+    {
+      "key": "normal-panko-1-800",
+      "elapsedMs": 31.200000002980232,
+      "observations": 3,
+      "meters": 5,
+      "initialUnsettled": [],
+      "initialFiniteAnimations": 0,
+      "lastThreeConverged": true
+    }
+  ],
+  "observationConditionsReproduced": true,
+  "causalityProven": false,
+  "productionAcceptance": false,
+  "limits": [
+    "Observed helper metadata; no before/after browser experiment isolating a single cause.",
+    "No styles, timers or product code were modified. Full earlier regression remains invalid in one case."
+  ]
+}

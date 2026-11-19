@@ -1,0 +1,53 @@
+{
+  "utc": "2026-11-18T13:17:31.714191+00:00",
+  "inboxThrough": 438,
+  "files": [
+    {
+      "path": "/Users/bao/th-v5-ag4/reports/v5/AGS/T-M5-AUDIT-R1.md",
+      "bytes": 194,
+      "sha256": "ca0ba5b2e4b9ce571e692287d5ff0f2f2961ce705eceaeca910d106827e004b4"
+    },
+    {
+      "path": "/Users/bao/th-v5-ag4/reports/v5/AGS/T-M5-TRIAL-REPORT.md",
+      "bytes": 196,
+      "sha256": "98716f4276d9b4c457696476e73b281aacfeeb7b91fc33eabfb4342b45690726"
+    },
+    {
+      "path": "/Users/bao/th-v5-ag4/reports/v5/AGS/T-M5-AUDIT-FINAL-REDO.md",
+      "bytes": 119,
+      "sha256": "ba7e83f3eb83abf061f5927a4afd1082b3203edca13d05e674901c40836f6be7"
+    },
+    {
+      "path": "/Users/bao/th-v5-ag4/reports/v5/AGS/T-M5-FINAL-STATUS.md",
+      "bytes": 245,
+      "sha256": "ba0fd365aa2a9b10578bfbc58a0ec1314c1647abba198072052ac3b9cfbcf231"
+    },
+    {
+      "path": "/Users/bao/th-v5-ag4/reports/v5/AGS/T-M5-AUDIT-FINAL.md",
+      "bytes": 229,
+      "sha256": "9623f973ff64120d9594916955881b006c1f9f5c0ee78696295d178acf8a03cc"
+    },
+    {
+      "path": "/Users/bao/th-v5-ag4/reports/v5/AGS/M-STAGED-VIDEO-DELIVERY.md",
+      "bytes": 809,
+      "sha256": "c6fc88aaeaad6594585993efb65130fb8dc2827a3dabbbe9a5ccece9123cb371"
+    },
+    {
+      "path": "/Users/bao/th-v5-ag4/reports/v5/AGS/M-STAGED-VIDEO-DELIVERY-FINAL.md",
+      "bytes": 191,
+      "sha256": "898657e2683339c716f3ad0f7a680bb86a9af5ee6fbe763098df707107be3914"
+    }
+  ],
+  "m115QaExists": true,
+  "observations": [
+    "AGS line434 OPEN T-M5 acknowledged;trial report path already supplied and readable;no new independent numerical audit.",
+    "AGS line437 QA started acknowledged,not DONE/accepted;future-dated timestamps are not capture evidence.",
+    "M4 primary note still asserts smoother MSE looping before qualifying it speculative;final note correctly says unmeasured;original conflict remains.",
+    "Prior redos remain in force;no new asset import or task closure."
+  ],
+  "openUsefulTasks": [
+    "T-CXI-13",
+    "T-M5",
+    "T-M4"
+  ]
+}
