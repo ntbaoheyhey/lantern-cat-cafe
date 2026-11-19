@@ -20,7 +20,8 @@ export const test = base.extend<{ buildGuard: void }>({
       // These projects exercise the established StageLayout/classic screens.
       // The unqualified URL now opens the V9 judge journey.
       const target = new URL(args[0], baseURL);
-      target.searchParams.set('legacy', '1');
+      // Standalone HTML/HTTP fixtures keep their exact request URL.
+      if (target.pathname === '/') target.searchParams.set('legacy', '1');
       const response = await goto(target.href, args[1]);
       // The arena and art-pilot developer previews intentionally render outside StageLayout.
       // Its project and origin are still checked above. Check the first normal page.

@@ -67,7 +67,7 @@ export async function loadModules() {
     return {...economy,...economyAdapter,...economyStoreModule,...db,...auth,...drip,...relic,...judge,...items,...cosmeticsModule,...source,...campaign,...campaignService,...campaignManifest,...campaignRewards,...campaignClaim,...routine,...rewards,...testerBudget,...budgetRegister,...chainHttp,...trade,...move,...runtime,...forgeClient,close:()=>loader.close()};
   } catch(error){await loader.close();throw error;}
 }
-export async function startLocal({web = true, campaignRewards = web} = {}) {
+export async function startLocal({web = true, campaignRewards = web, economyV3 = true} = {}) {
   mkdirSync(resolve(root,'work/chain'),{recursive:true});
   // Release checkouts omit reports; local checks create their own evidence output.
   mkdirSync(resolve(root,'reports/chain'),{recursive:true});
@@ -264,7 +264,9 @@ export async function startLocal({web = true, campaignRewards = web} = {}) {
     writeFileSync(resolve(root,'apps/web/public/chain-local.json'),stringify(config));
     writeFileSync(resolve(root,'work/chain/local-addresses.json'),stringify(config));
     if(web){
-      Object.assign(process.env,{VITE_CHAIN_DEMO:'1',VITE_V3_START_BLOCK:'0',VITE_CHAIN_MODE:'local',VITE_YARN_COSMETICS:'1',VITE_RELIC_FORGE:'1',VITE_CHAIN_CAMPAIGN:'1',VITE_CHAIN_CAMPAIGN_REWARDS:campaignRewards?'1':'0',VITE_SUPABASE_URL:localApi,VITE_FUJI_RPC_URL:localRpc,VITE_ALLOW_MOCK_AUTH:'0'});
+      // The optional legacy chain suite exercises Seal and campaign rewards;
+      // the current demo uses Café instead. Select that fixture explicitly.
+      Object.assign(process.env,{VITE_CHAIN_DEMO:economyV3?'1':'0',VITE_ECONOMY_V3:economyV3?'1':'0',VITE_GUEST_WALLET:'1',VITE_CHAIN_LOOP:'1',VITE_ITEM_TRADING:'1',VITE_YARN_TOKEN:'1',VITE_V3_START_BLOCK:'0',VITE_CHAIN_MODE:'local',VITE_YARN_COSMETICS:'1',VITE_RELIC_FORGE:'1',VITE_CHAIN_CAMPAIGN:'1',VITE_CHAIN_CAMPAIGN_REWARDS:campaignRewards?'1':'0',VITE_SUPABASE_URL:localApi,VITE_FUJI_RPC_URL:localRpc,VITE_ALLOW_MOCK_AUTH:'0'});
       const {createServer}=await import(pathToFileURL(webRequire.resolve('vite')));
       const vite=await createServer({root:resolve(root,'apps/web'),envDir:false,server:{host:'127.0.0.1',port:ports.web,strictPort:true}});
       await vite.listen();handles.push(()=>vite.close());
@@ -273,7 +275,7 @@ export async function startLocal({web = true, campaignRewards = web} = {}) {
   }catch(error){await stop();throw error;}
 }
 if(process.argv[1]&&resolve(process.argv[1])===fileURLToPath(import.meta.url)){
-  const runtime=await startLocal({web:!process.argv.includes('--no-web')});
+  const runtime=await startLocal({web:!process.argv.includes('--no-web'),economyV3:!process.argv.includes('--legacy-economy')});
   console.log(`Local Fuji ready: ${localOrigin}/?demo=1&squad=1&cardrpg2=1&a6=1`);
   for(const signal of ['SIGINT','SIGTERM'])process.once(signal,async()=>{await runtime.stop();process.exit(0);});
 }

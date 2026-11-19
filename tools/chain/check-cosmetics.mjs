@@ -9,13 +9,19 @@ const {decodeEventLog}=createRequire(new URL('../../apps/web/package.json',impor
 const r=await startLocal({web:false});
 try{
  const {config:c,client,db,cosmetics}=r,owner=devAccount(5),other=devAccount(6),U=10n**18n;
- const opening=await client.getBlock(),start=Number(opening.timestamp),purchases=[];
+ // Enrollment is a server-clock event. Anvil can mine ahead of wall time, so
+ // scan from genesis instead of treating its latest block as enrollment time.
+ const opening=await client.getBlock({blockNumber:0n}),start=Math.floor(Date.now()/1000),purchases=[];
+ assert(Number(opening.timestamp)<=start,'Local genesis must predate enrollment');
  const read=(fn,args=[])=>client.readContract({address:c.YarnToken,abi:artifact('YarnToken').abi,functionName:fn,args});
  const send=async(account,fn,args)=>{
   const hash=await walletFor(account).writeContract({address:c.YarnToken,abi:artifact('YarnToken').abi,functionName:fn,args});
   assert.equal((await client.waitForTransactionReceipt({hash})).status,'success');return hash;
  };
  const purchase=async(order,hash)=>{
+  // Keep the actual SQL timestamp and mine the payment after the reservation.
+  const latest=await client.getBlock({blockTag:'latest'});
+  await client.request({method:'evm_setNextBlockTimestamp',params:[Math.max(Number(latest.timestamp)+1,Math.ceil(Date.parse(order.created_at)/1000))]});
   const txHash=await send(owner,'seal',[hash,BigInt(order.cost)]);
   const receipt=await client.getTransactionReceipt({hash:txHash});
   const payment=receipt.logs.flatMap(log=>{
@@ -60,7 +66,9 @@ try{
  assert.equal(await read('totalSupply'),supplyBefore-12n*U);
  assert.equal(await read('balanceOf',[owner.address]),8n*U);
  assert.equal((await cosmetics(p,owner.address,{action:'equip',sku:'none'})).active,null);
- await client.request({method:'evm_increaseTime',params:[1]});await client.request({method:'evm_mine',params:[]});
+ const latest=await client.getBlock({blockTag:'latest'});
+ await client.request({method:'evm_setNextBlockTimestamp',params:[Math.max(Number(latest.timestamp)+1,Math.floor(Date.now()/1000)+1)]});
+ await client.request({method:'evm_mine',params:[]});
  const snapshot=await client.getBlock({blockTag:'latest'}),end=Number(snapshot.timestamp);
  const input={version:1,chainId:43113,token:c.YarnToken,mode:'synthetic',start,end,asOf:end,
   provenance:'Disposable Anvil43113: decoded SealPaid logs, matching SQL orders and totalSupply; scripted subjects, not human evidence.',

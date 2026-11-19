@@ -4,7 +4,7 @@ export default defineConfig({
   timeout: 90_000, expect: {timeout: 15_000},
   use: {actionTimeout: 15_000,baseURL: 'http://127.0.0.1:5980', viewport: {width: 1280,height: 900}, trace: 'retain-on-failure'},
   webServer: {
-    command: 'node ../../tools/chain/local.mjs',
+    command: 'node ../../tools/chain/local.mjs --legacy-economy',
     url: 'http://127.0.0.1:5980', reuseExistingServer: false, timeout: 120_000,
   },
 });
