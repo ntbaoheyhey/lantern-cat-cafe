@@ -1,13 +1,13 @@
-ACTIVE: Fix every PR446 CI check, tag next m2.N with CV7615bfae5 + CXV8e70d86c1 + HUD fix; ready only after all checks green. No screen control.
-HEAD: local d4ca8d26f merges Claude pushback/lunges and complete CXV media; not yet pushed. Latest tag m2.12 57eb80b9a.
-RELEASE: /Users/bao/taskbar-hero-release-prep release/2026-11-21 dded6aed9; PR446 OPEN/draft. Preserve ignored reports/screenshots.
-FIXES: local enemy HUD uses existing bundled portraits; harness tester budget pins each request to Anvil block clock; production validation unchanged.
-REPRO: Anvil+60s failed old reservation; patched seal-trial + budget proof pass; 19 server unit checks pass.
-BROWSER: split controls viewports into independent checks; current-pipeline paints tested separately from explicit legacy flash component.
-CHECKS: web typecheck +40 focused unit tests pass; focused e2e70025 and isolated chain71887 running.
-MEDIA: complete CXV Mochi/Clover WebM+MOV/poster/cutin/meta restored from8e70d86c1; Clover frame1. Soot missing.
-POLL:84/649/14 at16:37:21UTC,CV7615bfae5; fetch+read both delivery sources each check.
-NEXT:finish tests,commit own paths,merge release,build/gate on6301,tag m2.13,push,follow CI green,gh pr ready446.
-OWNER:only backend/secrets/funding/fresh mint + main merge/public deploy; Vercel currently pending, old quota claim removed.
-PRESERVE:AGS3modified+QA2untracked;generated reports/chain changes are ours. Preview27584/PID66039 serves release6301.
-EXIT:user superseded PR-open exit; no permission needed after handoff,continue until allchecks green and PRready or trueowner-only block.
+ACTIVE: PR446 CI must pass before gh pr ready446; resume without permission. No screen control.
+TAG: v5-m2.13 e5c1ec57e07e950b76d8056bb6fc611569a420e7; atomic push in progress with integration/release. m2.2 deadline already met.
+RELEASE: /Users/bao/taskbar-hero-release-prep release/2026-11-21 4debac543; PR446 OPEN/draft, reports/screenshots untracked.
+MERGED: CV7615bfae5 Mochi pushback/Clover-Soot6-7%lunges; CXV8e70d86c1 completefive-file media +44d6436c9 review handoff.
+MEDIA: Mochi/Clover WebM+HEVC-alpha MOV/poster/cutin/meta from complete CXV set; Cloverframe1. Soot stillmissing.
+FIX: enemy HUD uses bundled portraits; local testerbudget pins each request to block clock/balance;productionguards unchanged.
+PROOF: Anvil+60s reproduced olderror; sealtrial/budget proofs+19serverunit tests pass. 40webunit tests/typecheck pass.
+BROWSER:33screen wordbudget+keyboard+3viewport+3VFX checks pass;4isolated chain scenarios pass. VFX uses configured liveplan/realactivepipeline.
+GATE: releasebuild/typecheck,muted6301/1280x720/1x wave+boss21.1s,3portraits/ults,12S2/8VFX,fixture/liveRPC/legacy,noerrors.
+POLL:86/651/14 at16:43:35UTC,CV7615bfae5; fetch+read bothsources eachcheck.
+NEXT:verifyorigin tag/branches;updateBOARD/PR;follow remoteCI,fix failures;ready onlyafterallchecks green;idle sleep600/recheck.
+OWNER:backend/secrets/funding/freshmint +mainmerge/publicdeploy;Vercelpending,oldquota claimremoved.
+PRESERVE:AGS3modified+QA2untracked;preview27584/PID66039 servesrelease6301. No fullV9DONE untilcurrentworkdone.
