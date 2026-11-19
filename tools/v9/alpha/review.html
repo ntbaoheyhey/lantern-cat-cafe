@@ -35,13 +35,17 @@ video.onplaying=()=>{pause.textContent='Pause';status.textContent=delivery?.plac
 video.onpause=()=>{pause.textContent='Resume';};
 document.querySelector('#replay').onclick=()=>{if(!delivery)return;video.currentTime=Math.max(0,video.duration-1);video.play().catch(()=>{});};
 pause.onclick=()=>{if(video.paused)video.play().catch(()=>{});else video.pause();};
-function seek(value){if(!delivery)return;const n=Math.max(1,Math.min(delivery.frames,Number(value)||1));video.pause();video.currentTime=(n-1)/delivery.fps;scrub.value=frameNumber.value=n;}
-scrub.oninput=e=>seek(e.target.value);frameNumber.oninput=e=>seek(e.target.value);
+function seek(value,commit=true){if(!delivery||(!commit&&value===''))return;const n=Math.max(1,Math.min(delivery.frames,Number(value)||1));video.pause();video.currentTime=(n-1)/delivery.fps;scrub.value=n;if(commit)frameNumber.value=n;}
+scrub.oninput=e=>seek(e.target.value);frameNumber.oninput=e=>seek(e.target.value,false);frameNumber.onchange=e=>seek(e.target.value);
 function draw(){
  if(delivery&&video.readyState>=2){
   for(const canvas of canvases){const ctx=canvas.getContext('2d');ctx.clearRect(0,0,canvas.width,canvas.height);ctx.drawImage(video,0,0,canvas.width,canvas.height);}
   const n=Math.min(delivery.frames,Math.floor(video.currentTime*delivery.fps+.01)+1);if(document.activeElement!==scrub)scrub.value=n;if(document.activeElement!==frameNumber)frameNumber.value=n;
  }
- requestAnimationFrame(draw);
-}requestAnimationFrame(draw);load();
+}
+// Safari can throttle animation callbacks while its window is occluded. A
+// completed seek must still repaint both panels and their exact frame number.
+video.addEventListener('loadeddata',draw);video.addEventListener('seeked',draw);
+function animate(){draw();requestAnimationFrame(animate);}
+requestAnimationFrame(animate);load();
 </script>
