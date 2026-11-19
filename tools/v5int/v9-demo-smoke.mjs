@@ -8,7 +8,7 @@ const {chromium}=require('@playwright/test');
 const origin=process.env.DEMO_ORIGIN??'http://127.0.0.1:6301';
 const out=resolve(process.env.DEMO_OUTPUT??'work/v9/CXI/browser');
 await mkdir(out,{recursive:true});
-const browser=await chromium.launch({headless:true,args:['--use-angle=metal']});
+const browser=await chromium.launch({headless:true,args:['--use-angle=metal','--mute-audio']});
 try {
  const page=await browser.newPage({viewport:{width:1280,height:720}}),errors=[];
  const loaded=new Set();
