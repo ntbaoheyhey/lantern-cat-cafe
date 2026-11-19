@@ -1,0 +1,13 @@
+# CXV V9 handoff
+- Branch: codex/v9-tools, base v5-m1.15. V8/Batch M cancelled.
+- Order: reports/v9/CXV/ORDER.txt; only V9 owned paths plus mailbox/work scratch.
+- Started 2026-11-19T05:59:42Z; V0 deadline 07:59:42Z (2 hours).
+- V0 delivery complete: converter + Mochi/Clover placeholders; designer zips/Soot absent.
+- V1 NEXT: 8 Blender atlases, sheets and 3s clips, 6-hour timebox after V0 push.
+- V2 optional: cat tints and screen flash.
+- Old tracked WIP saved/pushed as 6c77897c7; 512 untracked old entries untouched.
+- Pushed 0e56f29d5: converter + Mochi; READY posted to Claude. Clover encoding.
+- Environment: ffmpeg; Python venv work/v9/CXV/.venv with Pillow/numpy/scipy.
+- Owner confirmed final exports share source pixel scale; replace Mochi before other cats.
+- Required: commit/push owned paths every 30 min/card end, READY mailbox, one Claude look.
+- Finish: append UTC V9 DONE CXV SHA summary in mailbox DELIVERIES.md.

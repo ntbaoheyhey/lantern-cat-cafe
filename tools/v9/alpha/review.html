@@ -1,0 +1,28 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>V9 idle review</title>
+<style>
+  body{font:16px system-ui;background:#26252b;color:#fff;margin:24px} button,select{font:inherit;padding:8px;margin:4px}
+  .pair{display:flex;gap:16px;margin:16px 0}.panel{width:45vw;max-width:600px;text-align:center;color:#24222a;padding:12px}
+  video{width:100%;height:60vh;object-fit:contain} pre{white-space:pre-wrap} a{color:#d4c1ff}
+</style>
+<h1>Designer idle review</h1>
+<p>Compare the edges on grey and cream. Replay at the cycle boundary to check feet and loop motion.</p>
+<label>Cat <select id="cat"><option>mochi</option><option>clover</option><option>soot</option></select></label>
+<label>Format <select id="format"><option value="webm">VP9 alpha</option><option value="mov">HEVC alpha (Safari)</option></select></label>
+<button id="replay">Play across loop seam</button><button id="pause">Pause / resume</button>
+<div class="pair"><div class="panel" style="background:#808080">Mid grey<video muted loop playsinline></video></div><div class="panel" style="background:#f4f0e8">Light cream<video muted loop playsinline></video></div></div>
+<pre id="meta"></pre>
+<script type="module">
+const cat=document.querySelector('#cat'),format=document.querySelector('#format'),videos=[...document.querySelectorAll('video')],meta=document.querySelector('#meta');
+async function load(){
+ const base=new URL(`../../../apps/web/public/units/${cat.value}/designer/`,location.href);
+ try{const r=await fetch(new URL('meta.json',base));if(!r.ok)throw Error('No designer delivery for this cat yet');const m=await r.json();meta.textContent=JSON.stringify(m,null,2);
+ for(const v of videos){v.src=new URL(`idle.${format.value}`,base);v.poster=new URL('poster.webp',base);v.onloadedmetadata=()=>{v.currentTime=Math.max(0,v.duration-1);v.play().catch(()=>{});};}}
+ catch(e){meta.textContent=e.message;for(const v of videos){v.pause();v.removeAttribute('src');v.removeAttribute('poster');v.load();}}
+}
+cat.onchange=format.onchange=load;
+document.querySelector('#replay').onclick=()=>videos.forEach(v=>{v.currentTime=Math.max(0,v.duration-1);v.play().catch(()=>{});});
+document.querySelector('#pause').onclick=()=>videos.forEach(v=>v.paused?v.play().catch(()=>{}):v.pause());
+load();
+</script>
