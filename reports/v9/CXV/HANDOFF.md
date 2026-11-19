@@ -1,15 +1,15 @@
 # CXV V9 handoff
 - Worktree /Users/bao/taskbar-hero-cardrpg-a6; branch codex/v9-tools; V8/Batch M cancelled.
-- ORDER.txt remains the original order; only owned V9 paths, mailbox and ignored work scratch.
-- V0 corrected: 892b51487 replaces both mattes; closed gaps clear, dark cloth opaque; all five outputs refreshed.
-- V0 reviews: work/v9/CXV/{mochi,clover}/matte-r2-review.jpg and check-10s.mp4 (seam at 5s).
-- V1 delivered: eight E1-E7 atlas/JSON pairs, per-effect sheets/3s clips; 522b35a42 included in latest branch.
-- V2 delivered/pushed: eb9bdd331, nine cat variants + flash-gradient; tools/v9/blender/variants.html.
-- CXI reports V0/V1/V2 integrated in v5-m2.3; owner/Claude art acceptance is still pending.
-- Designer ZIPs/MOVs absent at last check; no Soot placeholder. Recheck Downloads and INBOX-CXV.md.
-- Final shared-scale ZIP smoke passed (40:30:45 -> 720:540:810); convert real Mochi first, then Clover/Soot without provisional ratios.
-- Safari HEVC mattes checked: Mochi125/Clover75; viewer now repaints on seek even when Safari throttles animation callbacks.
-- Pending: one Claude eye review (owner chose waiting); CV quota resets 17:30 Vietnam; use INBOX-CV.md/origin CV OUTBOX; no further screen control; final zips on arrival.
-- Timeboxes: V0 05:59:42–07:59:42 UTC; V1 06:08–12:08 UTC on 2026-11-19; ship working results/gaps at cap.
-- Commit/push owned paths every 30 min/card end; READY posted per item. No V9 DONE CXV posted yet.
-- Compact review ZIP: work/v9/CXV/V9-READY-CXV-f76e8c90a.zip (11 files, 7.70 MiB); no acceptance implied.
+- ORDER.txt is the original order; only owned V9 paths, mailbox, ignored scratch; one report per card.
+- V0 now uses final designer Mochi+Clover PNGs (300 each); both public deliveries have placeholder:false.
+- Mochi910×778, height720, feetY749; Clover828×994, height919, feetY957; common sourceScale0.9795918367346939.
+- Border-only RGBA cleanup preserves native soft alpha/enclosed darks; full-resolution cut-ins Mochi36/Clover1.
+- Reviews: work/v9/CXV/{mochi,clover}/designer-matte-review.jpg, check-10s.mp4, check-sheet.jpg; designer-native-review.jpg.
+- VP9/HEVC10s/30fps; native Apple first-frame alpha0–255; grey/light contact sheets inspected without screen control.
+- Owner clarified Soot has not been sent; watch Downloads and convert it using final Mochi scale on arrival.
+- V1 complete: eight E1-E7 atlas/JSON pairs, sheets/3s clips; 522b35a42 included in branch.
+- V2 complete: eb9bdd331, nine cat variants + screen flash; no remaining export items or new correction notes.
+- Pending Claude eye review via INBOX-CV.md or origin/claude/v9-visual:reports/v9/CV/OUTBOX.md; no screen control.
+- Old watcher ended; waiting uses sleep600 and rechecks feeds/new Soot sources; never duplicate a live watcher.
+- Commit/push owned paths at card end; READY after push. Original timeboxes expired with delivery; no V9 DONE CXV yet.
+- Current review ZIP: work/v9/CXV/V9-READY-CXV-designer.zip; older f76e8c90a ZIP holds superseded placeholders.
