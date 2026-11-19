@@ -13,9 +13,9 @@ const sound=(cat:UltCat)=>({cutin:`sfx.ult.${cat}.cutin`,cast:`sfx.ult.${cat}.ca
 export const ULT_RECIPES:Record<UltCat,UltRecipe>={
  mochi:{cat:'mochi',name:'Last Lantern Vow',setPiece:'lantern-dome',lunge:.09,aim:'enemies',
   palette:{core:'#fff6d6',glow:'#ffc457',accent:'#ff9a2e',deep:'#5a2f08',text:['#fff7d1','#ffd36b','#e88a1c']},sound:sound('mochi')},
- clover:{cat:'clover',name:'Fourleaf Spring Brew',setPiece:'tea-clover',lunge:.035,aim:'team',
+ clover:{cat:'clover',name:'Fourleaf Spring Brew',setPiece:'tea-clover',lunge:.06,aim:'team',
   palette:{core:'#fffbe8',glow:'#8fe08a',accent:'#f4d774',deep:'#1f4a24',text:['#fbfff0','#bdf0a2','#5fbf62']},sound:sound('clover')},
- soot:{cat:'soot',name:'Chimney Comet',setPiece:'chimney-comet',lunge:.05,aim:'enemies',
+ soot:{cat:'soot',name:'Chimney Comet',setPiece:'chimney-comet',lunge:.07,aim:'enemies',
   palette:{core:'#fff1dc',glow:'#ff8a3c',accent:'#b06cff',deep:'#2a1240',text:['#fff0e0','#ffb067','#b46cff']},sound:sound('soot')},
 };
 export function ultRecipe(asset:string|undefined):UltRecipe|undefined{return asset?ULT_RECIPES[asset as UltCat]:undefined;}

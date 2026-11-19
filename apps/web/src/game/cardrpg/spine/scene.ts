@@ -44,6 +44,7 @@ import {PaintLight} from '../vfx-craft/paint-light';
 import {PaintDeath} from '../vfx-craft/paint-death';
 import {bossArrival,BOSS_LANDING_MS} from './boss-arrival';
 import {UltimateDirector} from '../ultimate/director';
+import {knockback} from '../ultimate/timeline';
 import {DesignerVideoActorMedia} from './designer-video';
 
 interface DisplayActor {actor:SpineActor;craftPose?:DrawnPoses;craftLight?:PaintLight;craftDeath?:PaintDeath;asset:string;entered:number;hurtAt:number;koAt:number;phaseAt:number;phase:number;lane:number;entranceDone:boolean;shadow:T.Mesh<T.PlaneGeometry,T.MeshBasicMaterial>;ring:T.Mesh<T.RingGeometry,T.MeshBasicMaterial>;hit:T.Mesh<T.RingGeometry,T.MeshBasicMaterial>}
@@ -442,6 +443,8 @@ export class SpineScene {
     hitInMs:drawingDamage&&frame?frame.plan.beats[2]!.start-frame.elapsed:undefined,
    });
    if(arrival.phase!=='idle'){rootPose.x+=arrival.x;rootPose.y+=arrival.y;rootPose.sx*=arrival.sx;rootPose.sy*=arrival.sy;if(rootPose.phase==='idle')rootPose.phase=arrival.phase;}
+   // V9: Last Lantern Vow's gold shockwave knocks every living enemy back.
+   if(ultLive&&ultLive.recipe.cat==='mochi'&&caster&&unit.side!==caster.side&&unit.hp>0&&!iced){const push=knockback(ultLive.at,!!view.reducedMotion);if(push){reaction={...reaction,x:reaction.x+(unit.side==='enemy'?1:-1)*push*height*.045};}}
    const dx=rootPose.x+reaction.x,dy=rootPose.y+reaction.y,sx=rootPose.sx*reaction.sx,sy=rootPose.sy*reaction.sy,angle=rootPose.angle+reaction.angle;
    // Pivot the complete cut-out around its measured feet; sockets and labels follow.
    const facing=spriteFacing(actor.unit.nativeFacing,unit.side),footX=(actor.bounds.x+actor.bounds.width/2)*position.scale*facing,footY=core.world.y*position.scale;

@@ -78,6 +78,15 @@ export function shakeOffset(at:number,trauma:number,max=18){
  return {x:max*t2*(Math.sin(s*71.3)*.6+Math.sin(s*137.9+1.3)*.4),y:max*.7*t2*(Math.sin(s*83.1+2.1)*.6+Math.sin(s*151.7)*.4),angle:.012*t2*Math.sin(s*59.7+.7)};
 }
 
+/** Mochi's gold shockwave shoves enemies back: 0..1 push, out by +120 ms, home by +700 ms. */
+export function knockback(at:number,reduced=false){
+ if(reduced)return 0;const age=at-ULT_TIMING.impact;
+ if(age<0||age>=700)return 0;
+ if(age<120)return easeOutCubic(age/120);
+ if(age<350)return 1;
+ return 1-easeInOut((age-350)/350);
+}
+
 export type UltBeat='dim'|'cutin'|'squash'|'lunge'|'impact'|'linger'|'undim';
 export const ULT_BEATS:readonly {beat:UltBeat;t:number}[]=[
  {beat:'dim',t:0},{beat:'cutin',t:0},{beat:'squash',t:ULT_TIMING.squash},{beat:'lunge',t:ULT_TIMING.lunge},

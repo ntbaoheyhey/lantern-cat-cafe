@@ -163,11 +163,16 @@ export async function startLocal({web = true, campaignRewards = web, economyV3 =
         reserve:(p,w,s,t)=>chainOne('select public.chain_cosmetic_reserve($1,$2,$3,$4) r',[p,w,s,t]),
         finalize:(p,w,i)=>chainOne('select public.chain_cosmetic_finalize($1,$2,$3) r',[p,w,i]),
         equip:(p,w,s)=>chainOne('select public.chain_cosmetic_equip($1,$2,$3) r',[p,w,s])}});
-    const reserveTester=modules.createTesterBudgetReservation({contract:SeasonRewards,snapshot:async()=>{
+    const reserveTester=async request=>{
+      // Anvil can mine ahead of wall time. Pin each request's clock and balance
+      // to its own block; production still validates against the real clock.
       const block=await client.getBlock({blockTag:'latest'});
       const balance=await client.readContract({address:YarnToken,abi:artifact('YarnToken').abi,functionName:'balanceOf',args:[SeasonRewards],blockNumber:block.number});
-      return {chainId:43113,contract:SeasonRewards,block:block.number,blockHash:block.hash,timestamp:block.timestamp,balance};
-    },reserve:row=>chainOne('select public.chain_tester_reserve($1::jsonb) r',[JSON.stringify(row)])});
+      const snapshot={chainId:43113,contract:SeasonRewards,block:block.number,blockHash:block.hash,timestamp:block.timestamp,balance};
+      return modules.createTesterBudgetReservation({contract:SeasonRewards,snapshot:async()=>snapshot,
+        now:()=>Number(block.timestamp)*1000,
+        reserve:row=>chainOne('select public.chain_tester_reserve($1::jsonb) r',[JSON.stringify(row)])})(request);
+    };
     const reward=modules.createTesterReward({key:signerKey,contract:SeasonRewards,reserve:reserveTester,reservationRequired:true,
       eligible:async(player,wallet)=>!!await one('select exists(select 1 from public.chain_judge_passes where player_id=$1 and wallet=$2) r',[player,wallet]),
       season:()=>client.readContract({address:SeasonRewards,abi:artifact('SeasonRewards').abi,functionName:'currentSeason'}),

@@ -62,3 +62,11 @@ describe('V9 emission atlases',()=>{
   expect(d[11]).toBe(64);expect(d[8]).toBe(255);
  });
 });
+
+import {knockback} from './timeline';
+describe('V9 Mochi knockback',()=>{
+ it('pushes enemies on the impact and returns them home',()=>{
+  expect(knockback(ULT_TIMING.impact-1)).toBe(0);expect(knockback(ULT_TIMING.impact+200)).toBe(1);
+  expect(knockback(ULT_TIMING.impact+700)).toBe(0);expect(knockback(ULT_TIMING.impact+200,true)).toBe(0);
+ });
+});
