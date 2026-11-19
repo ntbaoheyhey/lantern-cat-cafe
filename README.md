@@ -17,7 +17,7 @@ Use Node 24 and pnpm 10.28.0. The local demo needs no account, wallet setup or t
 1. Clone the release branch and install its dependencies:
 
    ```sh
-   git clone --branch release/2026-11-21 https://github.com/ntbaoheyhey/taskbar-hero.git
+   git clone --depth 1 --branch release/2026-11-21 https://github.com/ntbaoheyhey/taskbar-hero.git
    cd taskbar-hero
    pnpm install --frozen-lockfile
    ```
