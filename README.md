@@ -8,7 +8,7 @@ The GIF and video images were captured from `v5-m2.5`; the 51-second recording n
 
 The Lantern Cat Café is the last lit shop on a street tangled by abandoned tasks. Lead Mochi, Clover and Soot through a street patrol and face the Yarn Giant in a cosy browser card RPG. In the configured Avalanche mode, café memories become Relics that players can own on Fuji.
 
-**Latest integrated build:** [v5-m2.12](https://github.com/ntbaoheyhey/taskbar-hero/tree/v5-m2.12), with final designer WebM idles for Mochi/Clover, a soundtrack demo recording, working wallet-to-Market navigation and accessible mobile menu controls. The release includes self-contained assets and simulation inputs, the v5-m2.6 submission media, CC-BY boss music replacement and complete delivered sound credits. The [v5-m2.2 recording baseline](https://github.com/ntbaoheyhey/taskbar-hero/tree/v5-m2.2) remains published, with all three ultimate sequences and layered sound playback.
+**Latest integrated build:** [v5-m2.13](https://github.com/ntbaoheyhey/taskbar-hero/tree/v5-m2.13), with Mochi’s enemy push-back, Clover/Soot lunges, complete designer WebM and Safari HEVC-alpha exports for Mochi/Clover, and working enemy HUD portraits. The [v5-m2.2 recording baseline](https://github.com/ntbaoheyhey/taskbar-hero/tree/v5-m2.2) remains published before the recording deadline, with all three ultimate sequences and layered sound playback.
 
 ## Play in three steps
 
@@ -100,9 +100,9 @@ The judge experience uses **Vite, React, TypeScript and Three.js**, with Spine/n
 
 ## Validation and current limits
 
-The integration gate is a production build, TypeScript check, focused tests for changed code and a real browser demo run on port 6301. The latest `v5-m2.12` release tree passed the build, web typecheck and ten designer-video/media tests. The campaign reward proof from `v5-m2.11` passed both with normal time and with Anvil deliberately 60 seconds ahead, preserving expiry, single-reservation renewal and replay rejection. Gameplay code is unchanged from `v5-m2.10`, whose checks passed 14 wallet/onboarding unit tests, five audit tests, eight prototype browser tests, twelve production security checks, 33 server/HUD/HTTP-fixture checks and all four isolated chain browser scenarios. These local checks do not establish a public Fuji mint or a complete remote CI pass.
+The integration gate is a production build, TypeScript check, focused tests for changed code and a muted browser demo run on port 6301. The v5-m2.13 changes passed 40 focused web unit tests, 19 server budget tests, the 33-screen word-budget audit, keyboard access, three independent viewport checks, three effect/contact checks and all four isolated chain browser scenarios. The real Anvil seal-price and tester-budget proofs pass, including a deliberately advanced chain clock; production freshness, finite-budget and replay guards remain enabled.
 
-The latest muted headless browser gate passed the street wave and boss at normal speed, all three ultimates, twelve sound layers, eight base Blender flipbooks, live Fuji Collection, the labelled receipt fixture and the legacy route, with no page errors. Chromium output is muted during the run while audio playback diagnostics remain active. The latest completed remote CI run passed Node and contracts, with 429 browser tests passing and six failing: three legacy C2 effect checks, two C2 text/control checks and one prototype timing check. Its campaign clock failure is repaired here; remote confirmation is pending. These results do not constitute visual acceptance.
+The browser gate exercises the street wave and boss at normal speed, all three ultimates, twelve sound layers, eight base Blender flipbooks, all three enemy HUD portraits, live Fuji Collection, the labelled receipt fixture and the legacy route. Chromium output is muted while audio playback diagnostics remain active. [PR #446](https://github.com/ntbaoheyhey/taskbar-hero/pull/446) reports the current remote CI results. These local checks do not establish a fresh public Fuji mint or Safari device playback.
 
 ```sh
 pnpm --filter @taskbar-hero/web typecheck
@@ -112,7 +112,7 @@ node tools/v5int/v9-demo-smoke.mjs --chain-ui --v9-deliveries --v9-recording
 
 Build the fixture mode with the launch command above before using the `--chain-ui` smoke option. Run contract tests separately with Foundry after initializing the repository submodules.
 
-The three ultimates and their sound layers are integrated. The hero GIF, a demo recording with music and six 1920×1080 screenshots are available. Mochi/Clover now use final designer PNG-sequence conversions at a shared source scale; Claude reported clean edges in the delivered judge run. Safari HEVC-alpha exports remain pending, so Safari uses the older rigs. Soot designer files are still missing. Overall visual acceptance and V2 effect wiring remain with the owner and visual lane. A configured/deployed Supabase backend, funded sponsor and fresh real-mint screenshot remain owner work.
+The three ultimates and their sound layers are integrated. The hero GIF, a demo recording with music and six 1920×1080 screenshots are available. Mochi/Clover now use final designer PNG-sequence conversions at a shared source scale; Claude reported clean edges in the delivered judge run. Safari HEVC-alpha MOVs are included alongside the WebMs; the automated browser gate runs Chromium. Soot designer files are still missing, so Soot uses its existing rig. The final three-minute trailer and visual-lane V2 effect wiring remain separate follow-ups. A configured/deployed Supabase backend, funded sponsor and fresh real-mint screenshot remain owner work.
 
 ## Submission screenshots
 
@@ -122,7 +122,7 @@ These stills were captured from `v5-m2.5`, before the final Mochi/Clover idles. 
 
 ## Credits
 
-- **Character art and idle animation:** original project art and commissioned designer work for Mochi, Clover and Soot. Final Mochi/Clover WebMs are converted from the designer’s transparent PNG sequences; Soot and Safari HEVC-alpha exports remain pending.
+- **Character art and idle animation:** original project art and commissioned designer work for Mochi, Clover and Soot. Final Mochi/Clover WebMs and HEVC-alpha MOVs are converted from the designer’s transparent PNG sequences; Soot designer files remain pending.
 - **V9 effects:** original Blender geometry, shaders and animation authored for the project; no OMG 3Q art or sound is included.
 - **Battle music:** “RPG - To Arms! Battle Music 1” by HitCtrl, [source](https://opengameart.org/content/rpg-to-arms-battle-music-1), CC-BY 3.0; transcoded for browser playback.
 - **Boss music:** “Volatile Reaction” by Kevin MacLeod (incompetech.com), [source](https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1400039), licensed under [Creative Commons Attribution 4.0](https://creativecommons.org/licenses/by/4.0/). Cropped and transcoded for browser playback.
