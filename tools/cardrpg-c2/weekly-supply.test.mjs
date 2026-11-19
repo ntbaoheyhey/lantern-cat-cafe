@@ -33,4 +33,6 @@ test('calendar-stratified supply discloses its actual window without claiming in
  const single = weeklySupply({ profiles, source: { calendar: { firstDay: '2026-12-03', startSpanDays: 1 } } }, [], { casual: 1 });
  assert.match(single.correlation, /same 2026-12-03 start date/);
  assert.match(single.correlation, /between-date uncertainty are not measured/);
+ const historical = weeklySupply({ profiles, source: { calendar: { firstDay: '2026-12-03' } } }, [], { casual: 1 });
+ assert.equal(historical.correlation, single.correlation);
 });
