@@ -9,7 +9,7 @@ README: 5 verified contracts + mermaid + historical mint/list/buy receipts; upda
 SECOND DELIVERY SOURCE: fetch each poll; read origin/claude/v9-visual:reports/v9/CV/OUTBOX.md as DELIVERIES.
 CURSORS: DELIVERIES68, INBOX-CXI635, CV OUTBOX11 at80ba86f84; matte892b51487, Claude80ba86f84 and V2eb9bdd331 merged.
 WAIT: sleep600 session32727 then poll script checks DELIVERIES68/INBOX635 and origin CV OUTBOX11; no pending gate.
-OWNER: fresh real Fuji mint and boss OGA-BY decision/replacement in NEEDS-USER; S2 provenance requested from AGS.
+OWNER: real Fuji mint, boss OGA-BY decision/replacement, Vercel build-rate-limit in NEEDS-USER; S2 provenance requested from AGS.
 MEDIA: AGV306d362ca G1 plates lacks READY; AGV notified tags2.2/2.3 and release branch; hero GIF/trailer still needed.
-X3 DONE requires PR open + GitHub README render; use GitHub connector, then attach_artifact; owner merges main.
+RENDER PASS: GitHub README+Mermaid visible atdce5da8bc; PR still needs AGV media. Create via GitHub connector then attach_artifact; owner merges.
 V8/BatchM cancelled; unrelated AGS dirt untouched; no new automation/subagents; do not move published tags.
