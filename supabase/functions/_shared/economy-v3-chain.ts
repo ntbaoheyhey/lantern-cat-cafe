@@ -4,7 +4,7 @@ import {relicNftAbi,yarnTokenAbi,seasonRewardsAbi} from '../../../packages/chain
 import {voucherSigner} from './relic.ts';
 import {CLAIM_TYPES,claimDomain} from './chain-rewards.ts';
 import {ECONOMY_DEAD,economyIntentHash,EconomyError,type EconomyChain} from './economy-v3.ts';
-import {emissionHeadroomWei} from '../../../packages/game-rules/src/cardrpg/economy-v3.ts';
+import {emissionHeadroomWei} from '../../../packages/chain/src/economy-guard.ts';
 export function economyChain({client,nft,token,rewards,key}:{client:PublicClient;nft:Address;token:Address;rewards:Address;key:Hex}):EconomyChain{
  const signer=privateKeyToAccount(key),mint=voucherSigner(key,nft);
  const checked=async()=>{if(await client.getChainId()!==43113)throw new Error('wrong_chain');};
