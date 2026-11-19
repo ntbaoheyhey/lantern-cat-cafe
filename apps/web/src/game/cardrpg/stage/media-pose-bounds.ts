@@ -59,6 +59,8 @@ export function measuredMediaWorldBounds(mesh:T.Mesh,manifest:Manifest):OpaqueWo
 
 export function actorOpaqueWorldBounds(asset:string,actor:{root:T.Object3D}):OpaqueWorldBounds|undefined {
  if(!hasDesignerIdleBody(asset,actor))return opaqueWorldBounds(actor.root);
+ const video=(actor as {designerMedia?:{opaqueWorld?:(root:T.Object3D)=>OpaqueWorldBounds}}).designerMedia;
+ if(video?.opaqueWorld)return video.opaqueWorld(actor.root);
  const media=(actor as MediaActor).designerMedia?.media;
  return media?measuredMediaWorldBounds(media.plane,media.manifest):undefined;
 }

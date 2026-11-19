@@ -17,7 +17,8 @@ import {nativeRigDelivery} from './native-rig-loader';
 import {deferredRigFactory} from './deferred-atlas-loader';
 import {loadNativeRigData} from './native-rig-data-loader';
 import {loadV5Textures} from './v5-texture-loader';
-import {loadDesignerIdleActor,type DesignerIdleActorMedia} from './designer-idle-actor-loader';
+import type {DesignerIdleActorMedia} from './designer-idle-actor-loader';
+import {loadDesignerVideoActor,DESIGNER_VIDEO_IDS,type DesignerVideoActorMedia} from './designer-video';
 const files=import.meta.glob('../../../../../../assets/cardrpg-look/{spine,vfx-designer}/**/*.{json,skel,atlas,png}',{eager:true,query:'?url',import:'default'}) as Record<string,string>;
 const urls=new Map(Object.entries(files).map(([path,url])=>[path.slice(path.indexOf('assets/')),url]));
 const deliveryUrls=new Map(losslessAtlases.map(page=>[page.request,page.url]));
@@ -86,7 +87,7 @@ export class SpineActor {
  readonly root=new T.Group();readonly cursor=new SpineEventCursor();readonly sockets=new Map<SpineSocket,T.Object3D>();
  readonly boneRefs=new Map<SpineSocket,CutoutBone>();readonly clips=new Map<string,ClipData>();
  readonly bounds={x:0,y:0,width:0,height:0};source:'designer'|'template'|'placeholder'|'sequence'|'puppet'|'media'='puppet';
- designerIdle?:boolean;designerMedia?:DesignerIdleActorMedia;
+ designerIdle?:boolean;designerMedia?:DesignerIdleActorMedia|DesignerVideoActorMedia;
  opaqueWorld:OpaqueWorldBounds|undefined;
  faceRegion?:{x:number;y:number;width:number;height:number};
  private poseBounds={x:0,y:0,width:0,height:0};private boundsOffset=new T.Vector2();private boundsSize=new T.Vector2();private boundsVertices:number[]=[];
@@ -121,12 +122,14 @@ export class SpineActor {
  }
  dispose(){this.designerMedia?.dispose();this.mesh?.dispose();if(this.puppet)this.puppet.traverse(node=>{if(node instanceof T.Mesh){node.geometry.dispose();const ms=Array.isArray(node.material)?node.material:[node.material];ms.forEach(m=>{(m as T.MeshBasicMaterial).map?.dispose();m.dispose();});}});this.plane?.geometry.dispose();this.plane?.material.dispose();this.root.removeFromParent();}
 }
+/** V9 designer idles are on unless ?designerVideo=0 asks for the older rigs. */
+export function designerVideoEnabled(search=typeof location==='undefined'?'':location.search){return new URLSearchParams(search).get('designerVideo')!=='0';}
 function measuredActor(actor:SpineActor){Object.assign(actor.bounds,opaqueBounds(actor.unit.id,actor.source,actor.bounds));actor.opaqueWorld=opaqueWorldBounds(actor.root);return actor;}
 export async function loadSpineActor(id:string,preference?:'placeholder'|'designer'|'sequence'|'puppet',options:{deferNativePixels?:boolean}={}):Promise<SpineActor>{
  const unit=SPINE_UNIT_BY_ID.get(id);if(!unit)throw Error(`Unknown unit ${id}`);const actor=new SpineActor(unit),errors:string[]=[];
  // Craft encounter preparation awaits approved effects; standalone rig previews keep their own loading contract.
  if(options.deferNativePixels)await loadV5Textures(id);
- if(!preference&&(id==='mochi'||id==='clover'))try{if(await loadDesignerIdleActor(actor))return actor;}catch(error){errors.push(String(error));}
+ if(!preference&&DESIGNER_VIDEO_IDS.has(id)&&designerVideoEnabled())try{if(await loadDesignerVideoActor(actor))return actor;}catch(error){errors.push(String(error));}
  const designer=unit.designer,sequence=unit.sequence;
  if(!preference&&!designer&&!sequence&&!designerIds.has(id)&&templateIds.has(id))try{
   const data=await loadNativeRig(id,options.deferNativePixels);actor.mesh=data.create();actor.root.add(actor.mesh);actor.source='template';Object.assign(actor.bounds,data.bounds);
