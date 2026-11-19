@@ -1,28 +1,51 @@
 <!doctype html>
-<meta charset="utf-8">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>V9 idle review</title>
 <style>
-  body{font:16px system-ui;background:#26252b;color:#fff;margin:24px} button,select{font:inherit;padding:8px;margin:4px}
-  .pair{display:flex;gap:16px;margin:16px 0}.panel{width:45vw;max-width:600px;text-align:center;color:#24222a;padding:12px}
-  video{width:100%;height:60vh;object-fit:contain} pre{white-space:pre-wrap} a{color:#d4c1ff}
+body{font:16px system-ui;background:#26252b;color:#fff;margin:24px}h1{font-size:26px}button,select{font:inherit;padding:8px;margin:4px}.pair{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:16px;margin:16px 0;max-width:1220px}.panel{text-align:center;color:#24222a;padding:12px}.panel canvas{display:block;width:100%;height:auto;margin-top:12px}pre{white-space:pre-wrap;font-size:12px}a{color:#d4c1ff}.timeline{display:flex;align-items:center;gap:10px;max-width:1220px;margin:12px 0}input[type=range]{flex:1;min-width:100px}#player{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}#status{color:#ded3eb}
 </style>
 <h1>Designer idle review</h1>
-<p>Compare the edges on grey and cream. Replay at the cycle boundary to check feet and loop motion.</p>
-<label>Cat <select id="cat"><option>mochi</option><option>clover</option><option>soot</option></select></label>
-<label>Format <select id="format"><option value="webm">VP9 alpha</option><option value="mov">HEVC alpha (Safari)</option></select></label>
-<button id="replay">Play across loop seam</button><button id="pause">Pause / resume</button>
-<div class="pair"><div class="panel" style="background:#808080">Mid grey<video muted loop playsinline></video></div><div class="panel" style="background:#f4f0e8">Light cream<video muted loop playsinline></video></div></div>
-<pre id="meta"></pre>
+<p>Both backgrounds show the same decoded frame. Scrub to inspect the matte, or replay across the loop seam.</p>
+<label for="cat">Cat</label><select id="cat"><option>mochi</option><option>clover</option><option>soot</option></select>
+<label for="format">Format</label><select id="format"><option value="webm">VP9 alpha</option><option value="mov">HEVC alpha (Safari)</option></select>
+<button id="replay">Play across loop seam</button><button id="pause">Pause</button>
+<div class="timeline"><label for="frame">Frame</label><input id="frame" type="range" min="1" max="300" value="1" step="1"><input id="frameNumber" aria-label="Exact frame" type="number" min="1" max="300" value="1" style="width:65px"><output id="position">/ 300</output></div>
+<p id="status">Loading…</p>
+<video id="player" muted loop playsinline aria-hidden="true"></video>
+<div class="pair"><div class="panel" style="background:#808080">Mid grey<canvas></canvas></div><div class="panel" style="background:#f4f0e8">Light cream<canvas></canvas></div></div>
+<details><summary>Delivery metadata</summary><pre id="meta"></pre></details>
 <script type="module">
-const cat=document.querySelector('#cat'),format=document.querySelector('#format'),videos=[...document.querySelectorAll('video')],meta=document.querySelector('#meta');
+const cat=document.querySelector('#cat'),format=document.querySelector('#format'),video=document.querySelector('#player'),canvases=[...document.querySelectorAll('canvas')],meta=document.querySelector('#meta'),scrub=document.querySelector('#frame'),position=document.querySelector('#position'),status=document.querySelector('#status'),pause=document.querySelector('#pause');
+const frameNumber=document.querySelector('#frameNumber');let delivery=null,version=0,blobURL=null;
 async function load(){
+ const current=++version;delivery=null;video.pause();status.textContent='Loading…';if(blobURL){URL.revokeObjectURL(blobURL);blobURL=null;}
  const base=new URL(`../../../apps/web/public/units/${cat.value}/designer/`,location.href);
- try{const r=await fetch(new URL('meta.json',base));if(!r.ok)throw Error('No designer delivery for this cat yet');const m=await r.json();meta.textContent=JSON.stringify(m,null,2);
- for(const v of videos){v.src=new URL(`idle.${format.value}`,base);v.poster=new URL('poster.webp',base);v.onloadedmetadata=()=>{v.currentTime=Math.max(0,v.duration-1);v.play().catch(()=>{});};}}
- catch(e){meta.textContent=e.message;for(const v of videos){v.pause();v.removeAttribute('src');v.removeAttribute('poster');v.load();}}
+ try{const r=await fetch(new URL('meta.json',base),{cache:'no-store'});if(!r.ok)throw Error('No designer delivery for this cat yet');const m=await r.json();if(current!==version)return;delivery=m;meta.textContent=JSON.stringify(m,null,2);scrub.max=frameNumber.max=m.frames;position.textContent=`/ ${m.frames}`;
+  for(const canvas of canvases){canvas.width=m.width;canvas.height=m.height;}
+  // The simple local review server has no byte ranges. A complete Blob enables
+  // exact seeking without relying on HTTP Range support or a second decoder.
+  status.textContent='Loading complete video for frame review…';const response=await fetch(new URL(`idle.${format.value}`,base),{cache:'no-store'});if(!response.ok)throw Error('Video is unavailable');const blob=await response.blob();if(current!==version)return;
+  video.onloadeddata=()=>{if(current!==version)return;video.currentTime=Math.max(0,video.duration-1);video.play().catch(e=>{status.textContent=e.message;});};
+  blobURL=URL.createObjectURL(blob);video.src=blobURL;
+ }catch(e){if(current!==version)return;status.textContent=e.message;meta.textContent='';video.removeAttribute('src');video.load();for(const c of canvases)c.getContext('2d').clearRect(0,0,c.width,c.height);}
 }
 cat.onchange=format.onchange=load;
-document.querySelector('#replay').onclick=()=>videos.forEach(v=>{v.currentTime=Math.max(0,v.duration-1);v.play().catch(()=>{});});
-document.querySelector('#pause').onclick=()=>videos.forEach(v=>v.paused?v.play().catch(()=>{}):v.pause());
-load();
+video.onerror=()=>{status.textContent='This browser could not decode the selected format. HEVC alpha requires Safari/native Apple decoding.';};
+video.onplaying=()=>{pause.textContent='Pause';status.textContent=delivery?.placeholder?'Temporary MP4 stand-in · 30 fps':'Designer alpha · 30 fps';};
+video.onpause=()=>{pause.textContent='Resume';};
+document.querySelector('#replay').onclick=()=>{if(!delivery)return;video.currentTime=Math.max(0,video.duration-1);video.play().catch(()=>{});};
+pause.onclick=()=>{if(video.paused)video.play().catch(()=>{});else video.pause();};
+function seek(value,commit=true){if(!delivery||(!commit&&value===''))return;const n=Math.max(1,Math.min(delivery.frames,Number(value)||1));video.pause();video.currentTime=(n-1)/delivery.fps;scrub.value=n;if(commit)frameNumber.value=n;}
+scrub.oninput=e=>seek(e.target.value);frameNumber.oninput=e=>seek(e.target.value,false);frameNumber.onchange=e=>seek(e.target.value);
+function draw(){
+ if(delivery&&video.readyState>=2){
+  for(const canvas of canvases){const ctx=canvas.getContext('2d');ctx.clearRect(0,0,canvas.width,canvas.height);ctx.drawImage(video,0,0,canvas.width,canvas.height);}
+  const n=Math.min(delivery.frames,Math.floor(video.currentTime*delivery.fps+.01)+1);if(document.activeElement!==scrub)scrub.value=n;if(document.activeElement!==frameNumber)frameNumber.value=n;
+ }
+}
+// Safari can throttle animation callbacks while its window is occluded. A
+// completed seek must still repaint both panels and their exact frame number.
+video.addEventListener('loadeddata',draw);video.addEventListener('seeked',draw);
+function animate(){draw();requestAnimationFrame(animate);}
+requestAnimationFrame(animate);load();
 </script>

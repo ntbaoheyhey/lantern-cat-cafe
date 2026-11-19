@@ -5,7 +5,7 @@
 
 The Lantern Cat Café is the last lit shop on a street tangled by abandoned tasks. Lead Mochi, Clover and Soot through a street patrol and face the Yarn Giant in a cosy browser card RPG. In the configured Avalanche mode, café memories become Relics that players can own on Fuji.
 
-**Latest integrated build:** [v5-m2.3](https://github.com/ntbaoheyhey/taskbar-hero/tree/v5-m2.3), with corrected temporary character mattes and Blender-effect playback. The [v5-m2.2 recording baseline](https://github.com/ntbaoheyhey/taskbar-hero/tree/v5-m2.2) remains published, with all three ultimate sequences and layered sound playback.
+**Latest integrated build:** [v5-m2.5](https://github.com/ntbaoheyhey/taskbar-hero/tree/v5-m2.5), with corrected temporary character mattes, Blender-effect playback and the Safari-compatible idle reviewer. The [v5-m2.2 recording baseline](https://github.com/ntbaoheyhey/taskbar-hero/tree/v5-m2.2) remains published, with all three ultimate sequences and layered sound playback.
 
 ## Play in three steps
 
@@ -97,7 +97,7 @@ The judge experience uses **Vite, React, TypeScript and Three.js**, with Spine/n
 
 ## Validation and current limits
 
-The integration gate is a production build, TypeScript check, focused tests for changed code and a real browser demo run on port 6301. The `v5-m2.2` recording baseline passed 152 focused tests; the `v5-m2.3` matte/effects update passed 27 affected tests. The latest browser run completed the boss in 21.2 seconds at normal speed with Mochi, Clover and Soot's ultimates. All twelve ultimate sound layers played and all eight Blender flipbooks loaded. The same run checked Collection against live Fuji RPC, the labelled receipt fixture and the legacy route, with no page errors. This is a local playback observation, not a general hardware benchmark.
+The integration gate is a production build, TypeScript check, focused tests for changed code and a real browser demo run on port 6301. The `v5-m2.2` recording baseline passed 152 focused tests; the `v5-m2.3` matte/effects update passed 27 affected tests, and the `v5-m2.5` reviewer update passed 10 affected tests. The latest browser run completed the boss in 20.8 seconds at normal speed with Mochi, Clover and Soot's ultimates. All twelve ultimate sound layers played and all eight Blender flipbooks loaded. The same run checked Collection against live Fuji RPC, the labelled receipt fixture and the legacy route, with no page errors. This is a local playback observation, not a general hardware benchmark.
 
 ```sh
 pnpm --filter @taskbar-hero/web typecheck
@@ -114,6 +114,6 @@ The three ultimates and their sound layers are integrated. Recording media and f
 - **Character art and idle animation:** original project art and commissioned designer work for Mochi, Clover and Soot. Temporary Mochi/Clover conversions remain labelled as stand-ins until the final exports arrive.
 - **V9 effects:** original Blender geometry, shaders and animation authored for the project; no OMG 3Q art or sound is included.
 - **Battle music:** “RPG - To Arms! Battle Music 1” by HitCtrl, [source](https://opengameart.org/content/rpg-to-arms-battle-music-1), CC-BY 3.0; transcoded for browser playback.
-- **Boss music:** “Boss Battle - Emotional Uplifting Metal Rock” by ISAo, [source](https://opengameart.org/content/boss-battle-emotional-uplifting-metal-rock), credited by the delivered manifest as OGA-BY 3.0; owner licence decision or an allowed replacement is pending.
+- **Boss music:** “Boss Battle - Emotional Uplifting Metal Rock” by ISAo, [source](https://opengameart.org/content/boss-battle-emotional-uplifting-metal-rock), the publisher lists OGA-BY 3.0 and requests the credit “SOUND AIRYLUVS by ISAo” ([artist](https://airyluvs.com/)). Owner licence decision or an allowed replacement is pending.
 - **Music and sound attribution:** [submission credits](docs/submission/CREDITS.md), [V9 music licences](apps/web/public/audio/v9/LICENSES.json), [existing audio provenance](apps/web/public/audio/LICENSES.json) and [project credits](docs/credits-v4.md). The twelve S2 ultimate layers are wired into playback; their complete source attribution is still requested from the sound lane.
 - **Art provenance:** [project asset record](docs/art/PROVENANCE.md). Project code is [MIT licensed](LICENSE); media and dependencies retain their stated licences.
