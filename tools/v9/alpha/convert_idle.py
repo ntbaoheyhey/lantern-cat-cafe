@@ -11,6 +11,7 @@ import zipfile
 
 import numpy as np
 from PIL import Image
+from scipy import ndimage
 
 ROOT = Path(__file__).resolve().parents[3]
 FPS = 30
@@ -76,6 +77,22 @@ def blend_rgba(a, b, weight):
     return Image.fromarray(np.uint8(np.clip(np.concatenate((rgb, alpha), 2) * 255, 0, 255)))
 
 
+def clean_border_black(im):
+    """Remove only exterior neutral black; retain supplied subject/edge alpha."""
+    rgba = np.array(im.convert('RGBA'))
+    rgb = rgba[..., :3]
+    high, low = rgb.max(axis=2), rgb.min(axis=2)
+    black = (high <= 12) & ((high.astype(np.int16) - low) <= 7)
+    traversable = black | (rgba[..., 3] == 0)
+    seeds = np.zeros(black.shape, dtype=bool)
+    seeds[[0, -1], :] = traversable[[0, -1], :]
+    seeds[:, [0, -1]] = traversable[:, [0, -1]]
+    exterior = ndimage.binary_propagation(seeds, structure=np.ones((3, 3), bool),
+                                         mask=traversable)
+    rgba[exterior & black] = 0
+    return Image.fromarray(rgba)
+
+
 def face_score(im, box):
     # A useful default for three-quarter idles: choose the most symmetric head,
     # including RGB facial features. Art direction can override with --cutin N.
@@ -93,12 +110,29 @@ def main():
     parser.add_argument('--cutin', type=int, help='1-based full-resolution source frame')
     parser.add_argument('--height-ratio', type=float, help='Explicit ratio to Mochi when sources are not at a shared scale')
     parser.add_argument('--placeholder', action='store_true', help='Label a black-key stand-in; never final designer art')
+    parser.add_argument('--key-border-black', action='store_true',
+                        help='Clean border-connected neutral black while retaining existing designer alpha')
     args = parser.parse_args()
     if args.height_ratio is not None and args.height_ratio <= 0:
         parser.error('--height-ratio must be positive')
     scratch = ROOT / 'work/v9/CXV' / args.cat
     scratch.mkdir(parents=True, exist_ok=True)
     frames = unpack(args.source.resolve(), scratch)
+    if args.key_border_black:
+        cleaned = scratch / 'border-keyed'
+        cleaned.mkdir(exist_ok=True)
+        result = []
+        for index, path in enumerate(frames, 1):
+            with Image.open(path) as raw:
+                if 'A' not in raw.getbands() and 'transparency' not in raw.info:
+                    raise ValueError(f'{path.name}: designer cleanup requires existing alpha')
+                im = clean_border_black(raw)
+            target = cleaned / f'{index:04d}.png'
+            im.save(target, compress_level=2)
+            result.append(target)
+            if index % 60 == 0:
+                print(f'{args.cat}: border-only alpha cleanup {index}/{len(frames)}', flush=True)
+        frames = result
     if args.cutin is not None and not 1 <= args.cutin <= len(frames):
         parser.error(f'--cutin must be 1..{len(frames)}')
     bounds, source_size, best = None, None, (math.inf, 1)
@@ -194,7 +228,9 @@ def main():
                 cutinSelection='explicit' if args.cutin else 'head-symmetry-heuristic',
                 loopDifferenceBefore=round(before, 4), loopDifferenceAfter=round(after, 4),
                 loopCrossfadeFrames=min(6, len(frames)-1) if crossfade else 0,
-                alpha='straight', marginPx=margin)
+                alpha='straight', marginPx=margin,
+                alphaProcessing='designer-alpha-border-cleanup' if args.key_border_black
+                                else 'temporary-black-key' if args.placeholder else 'designer-alpha')
     (stage / 'meta.json').write_text(json.dumps(meta, indent=2) + '\n')
     out.mkdir(parents=True, exist_ok=True)
     for name in ['idle.webm', 'idle.mov', 'poster.webp', 'cutin.png', 'meta.json']:
