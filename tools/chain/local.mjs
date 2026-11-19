@@ -268,6 +268,12 @@ export async function startLocal({web = true, campaignRewards = web, economyV3 =
     });
     await new Promise((r,j)=>{server.once('error',j);server.listen(ports.api,'127.0.0.1',r);});handles.push(()=>new Promise(r=>server.close(r)));
     mkdirSync(resolve(root,'apps/web/public'),{recursive:true});
+    // Anvil keeps block timestamps strictly increasing, so the burst of deploy and
+    // seed blocks above runs ahead of the wall clock on a fast machine. Reward
+    // quotes refuse a chain head more than 5 s in the future (routine_snapshot),
+    // so let real time catch up before the fixture opens.
+    for(let head=Number((await client.getBlock()).timestamp);head>Math.floor(Date.now()/1000);head=Number((await client.getBlock()).timestamp))
+      await new Promise(r=>setTimeout(r,250));
     writeFileSync(resolve(root,'apps/web/public/chain-local.json'),stringify(config));
     writeFileSync(resolve(root,'work/chain/local-addresses.json'),stringify(config));
     if(web){
