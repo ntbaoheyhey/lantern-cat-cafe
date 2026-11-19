@@ -1,14 +1,14 @@
-ACTIVE: X3 remote CI confirmation after publishing v5-m2.10; no screen control.
-TAG: v5-m2.10 860327ba0f6b6446b6920da451211e06d1b83adc; origin branch+peeled tag verified; m2.2 immutable.
-RELEASE:63716ae058963d8bb444c6eec3b2cea4b22109bc pushed; runtime/CI paths identical to tag; reports/screenshots untracked.
-PR446 OPEN/draft: https://github.com/ntbaoheyhey/taskbar-hero/pull/446; body m2.10 updated; owner merges.
-GATE:release build/typecheck PASS; headless6301 boss21.1s,3ults,12S2/8VFX,fixture/liveRPC/legacy,no errors;preview27584 remains.
-TESTS:14wallet/Entrance+5audit units;8prototype+12CSP+33server/HUD/fixture browser;official pnpm chain:test4/4 fresh scenarios,0retries.
-CLOCK:Anvil+60s failed before fix,passed after;normal audit passes;assertions unchanged.Wallet-to-Market/mobile menu repaired.
-CAUTION:direct four-spec single-chain Playwright hit actual daily drip quota(1/4);official CI runner isolates specs and passed4/4.
-CI:previous44500988411 changes/contracts/Node passed;27e2e failures=24locally-fixed fixtures+3legacy C2draw checks;CV notified.
-NEXT:read new CI for63716ae05,verify GitHub README+PR;dual-source delivery check;owner-only gaps remain.
-EVIDENCE:work/v9/CXI/m210-local-evidence preserved13generated outputs;restored only those;release reports stay ignored.
-PRESERVE:unrelated reports/v5/AGS submission3+QA2;runtime edits committed.No visual-owned source edits.
-POLL:79/646/11 at10:16:23UTC,CV80ba86f84;fetch+read origin CV OUTBOX alongside mailbox every delivery check.
-OWNER:backend/funding/fresh mint,Vercel quota,main merge;final exports/visual acceptance,V2wiring/final trailer also remain.No V9DONE.
+ACTIVE: X3 release PR446 open; current queue exit condition met. Standing V9 resumption needs no permission; no screen control.
+TAG: v5-m2.12 57eb80b9a06c3c7484e8406d13f47879e7cdadc6; origin branch/peeled tag verified. m2.11 e88b54889 also published.
+RELEASE:dded6aed9a46d26f3dd177771191c14747b7fd54 pushed; runtime/media/CI paths identical to m2.12; reports/screenshots untracked.
+PR446: https://github.com/ntbaoheyhey/taskbar-hero/pull/446 OPEN/draft; judge README/Mermaid/5verified contracts/18links updated.
+READY:AGV5b280a9f2 soundtrack recording + CV HEAD pinned ce02915ea final designer Mochi/Clover merged. Soot absent;Safari MOV removed.
+GATE:release build/typecheck+10designer-video/media tests pass;muted headless6301/1280x720/1x boss21.3s,3ults,12S2/8VFX,fixture/liveRPC/legacy,noerrors.
+MEDIA:final WebMs10s/30fps/alpha/shared source scale;recording51s stereoAAC music,-20dBmean/-3.8dBmax;images remain fromm2.5.
+m2.11:campaign audit max(chain+1,wall+1),old Anvil+60s reproduction failed,new+normal passed preserving expiry/renewal/replay;browser explicitly muted.
+CI:completed m2.10 run44504441849 Node/contracts pass,429browser pass/6fail(3C2draws,2C2text/control,1prototype timing);chainclock repaired,newCI pending.
+POLL:80/647/13 at16:15:13UTC,CVce02915ea;no newREADY. Every check must fetch+read origin CV OUTBOX with mailbox;HEAD pins on receipt.
+NEXT:merge any futureREADY,gate/tag nextm2.N,updateexisting PR446;idle sleep600/recheck only while queue active before its exit condition.
+ROUTED:INBOX-CXV requests exact-source SafariHEVC exports;CV knows legacyC2draw failures;no revival of cancelled BatchM/V8 queues.
+PRESERVE:unrelated AGS submission3 modified+QA2untracked;own runtime committed;preview27584 still6301. No visible browser/native UI used.
+OWNER:backend/funding/fresh Fuji mint,Vercel quota,main merge;also pendingSoot/Safari,overallvisualacceptance,V2wiring,3mintrailer.No fullV9DONE.
