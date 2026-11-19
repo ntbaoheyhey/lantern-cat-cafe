@@ -1,15 +1,15 @@
-ACTIVE: X3 release media/README/PR; X4 continues for any new READY; standing permission after handoff/compaction.
-STANDING: handoff/compaction is not a pause; no permission needed; stop at V9 DONE/true owner-only block.
-RECORDING TAG: v5-m2.2 d89b61ab3ddd73659f45158d1abe5835b9445b81, origin independently verified 19 Nov.
-LATEST TAG/PUSH: v5-m2.3 8f1e51a66acc086dfdb638da1a4a0bcb92223f3f, origin verified; BOARD updated.
-GATE: build/typecheck; 152 focused tests; real 6301 browser 1280x720/1x boss20.4s, 12 S2 layers, 8 V1 flipbooks, fixture/RPC/legacy pass.
-RELEASE: release/2026-11-21 dce5da8bc carries tag2.3; sparse /Users/bao/taskbar-hero-release-prep; README+cleanup done, media pending.
-CLEANUP DONE: 86,870 report/screenshot paths untracked/ignored on release only; 10 README links resolve; integration AGS dirt intact.
-README: 5 verified contracts + mermaid + historical mint/list/buy receipts; update to recording tag; needs delivered AGV media.
-SECOND DELIVERY SOURCE: fetch each poll; read origin/claude/v9-visual:reports/v9/CV/OUTBOX.md as DELIVERIES.
-CURSORS: DELIVERIES68, INBOX-CXI635, CV OUTBOX11 at80ba86f84; matte892b51487, Claude80ba86f84 and V2eb9bdd331 merged.
-WAIT: sleep600 session32727 then poll script checks DELIVERIES68/INBOX635 and origin CV OUTBOX11; no pending gate.
-OWNER: real Fuji mint, boss OGA-BY decision/replacement, Vercel build-rate-limit in NEEDS-USER; S2 provenance requested from AGS.
-MEDIA: AGV306d362ca G1 plates lacks READY; AGV notified tags2.2/2.3 and release branch; hero GIF/trailer still needed.
-RENDER PASS: GitHub README+Mermaid visible atdce5da8bc; PR still needs AGV media. Create via GitHub connector then attach_artifact; owner merges.
-V8/BatchM cancelled; unrelated AGS dirt untouched; no new automation/subagents; do not move published tags.
+ACTIVE: X4 v5-m2.4 gate after READY CXV334fe2a4b merged at e97a9742d; X3 release follows.
+STANDING: handoffs/compactions do not pause; no permission needed; continue until PR open or true owner-only block.
+LAST PUSH: integration aac2e0d06; recording v5-m2.2 d89b61ab3 and latest v5-m2.3 8f1e51a66 are published, immutable.
+GATE m24: recovered build/typecheck/10 focused tests PASS; decoded-review inline JS syntax already passed; real6301 smoke running.
+GATE OUTPUT: work/v9/CXI/x4-m24-*.log; browser screenshots work/v9/CXI/browser-m24.
+NEXT: finish browser; commit named CXI state; atomic non-thin branch+v5-m2.4 push; verify origin; BOARD5 lines; merge tag into release.
+RELEASE: release/2026-11-21 dce5da8bc; sparse /Users/bao/taskbar-hero-release-prep; README+cleanup done, media pending.
+CLEANUP: reports/screenshots untracked/ignored on release; preserve report deletions in later tag merges; integration AGS dirt intact.
+README: 5 verified contracts, Mermaid, verified historical12Nov mint/list/buy receipts; GitHub render passed at dce5da8bc.
+DELIVERY POLL: fetch origin each time and read CV OUTBOX as second DELIVERIES; script work/v9/CXI/poll-deliveries.py.
+CURSORS: DELIVERIES68, INBOX-CXI639, CV OUTBOX11 at80ba86f84; no sleep running; last checked19Nov07:19UTC.
+MEDIA: AGV306d362ca G1 plates only; hero GIF/trailer absent; Soot/final designer exports absent; V2 runtime pending CV.
+OWNER: fresh Fuji mint/deploy/funding, boss OGA-BY decision/replacement and Vercel quota recorded in NEEDS-USER-V9.md.
+RELEASE END: integrate media/credits; create PR via GitHub connector then immediately attach_artifact; owner merges main.
+V8/BatchM cancelled; no new automation/subagents; do not stage unrelated AGS dirt or move published tags.
