@@ -3,10 +3,10 @@ ACTIVE:V8 BatchM;assistant:AGS;native9 LIVE v5-m1.15;Mochi/Clover commissioned m
 NEXT 1: Checkpoint restoreddualR7/nativefault receipts;review CXV animation attribution6f68 when delivered;preserve strict1100ms failure.
 NEXT 2: Supply native React lifecycle/fallback acceptance using verified realfaultfixture;no app adoption before art/fullpaint/performance.
 NEXT 3: Use verified CPU sample-site receipt for scoped performance hypothesis;no appchange or commissionedmedia release until art/labels/performance green.
-Last pusheda44c63cd3 confirmed;green v5-m1.15@59f5f3c57;tag226cc4425/peeled59f5f3c57 verified.
+Last pushedc10d3f28a confirmed;green v5-m1.15@59f5f3c57;tag226cc4425/peeled59f5f3c57 verified.
 Live6301 restoreddualR7 sourcebf01d462/indexeb93ee0d;work/v5/CXI/batch-m/dual-media-fault-r1/build.json;registry{};exactR7fullinventory.
 self-wake:cxi-wake ACTIVE every15min;chat01a1e9cc-440b-7233-82aa-9510796d311f tool+TOMLverified18:26Z;neverdelete/pause/edit.
-Last RULES read2026-11-18T18:27:30.394051+00:00;STOPabsent;ORDER-V8 SHA2560feb2f0269ca7292c898c7f203f85a84e55202109d878af948e77cbeec464d08.
+Last RULES read2026-11-18T18:36:05.403445+00:00;STOPabsent;ORDER-V8 SHA2560feb2f0269ca7292c898c7f203f85a84e55202109d878af948e77cbeec464d08.
 Running:ownnone;88414/88718empty+released2026-11-18T18:35:03.047050+00:00;CXV animationlease6f68 until2026-11-18T18:42:03.107416+00:00 ANDrelease;PIDpending.
 Mailboxread INBOX-CXI625;USER24;LEARN120. NEXTBUILD620satisfied dualdescriptor+faultfixture;CXVanimation granted;oldtrajectoryungranted.
 AGS OPEN:T-CXI13desktopQA,T-M5trialaudit,T-CXI14PTSfieldstudy,T-CXI15CPUresearch,T-M4videoresearch,T-CXI12mask,T-CXI11bed;fixedsixREJECTED.
