@@ -26,9 +26,11 @@ export interface FxFrame {
  /** Spiral of steam from a to b with progress 0..1. */
  swirl?:{ax:number;ay:number;bx:number;by:number;u:number;alpha:number};
  palette:FxColor;
+ /** Hit sparks: x, y, radius, life 0..1, colour. */
+ sparks?:{x:number;y:number;r:number;life:number;power:number;color:[number,number,number];seed:number}[];
 }
 
-const MAX_TRAIL=20,MAX_BURST=6,MAX_RING=4,MAX_POOL=6,MAX_COL=6;
+const MAX_TRAIL=20,MAX_BURST=6,MAX_RING=4,MAX_POOL=6,MAX_COL=6,MAX_SPARK=8;
 
 const VERT=`#version 300 es
 in vec2 p;void main(){gl_Position=vec4(p,0.,1.);}`;
@@ -45,6 +47,7 @@ uniform int uPoolN;uniform vec4 uPool[${MAX_POOL}];
 uniform vec4 uDome;uniform vec2 uDomeS;
 uniform int uColN;uniform vec4 uCol[${MAX_COL}];uniform float uColA[${MAX_COL}];
 uniform vec4 uSwirl;uniform vec2 uSwirlS;
+uniform int uSparkN;uniform vec4 uSpark[${MAX_SPARK}];uniform vec4 uSparkC[${MAX_SPARK}];
 
 float h21(vec2 p){p=fract(p*vec2(123.34,456.21));p+=dot(p,p+45.32);return fract(p.x*p.y);}
 float vnoise(vec2 p){vec2 i=floor(p),f=fract(p);vec2 u=f*f*f*(f*(f*6.-15.)+10.);
@@ -159,6 +162,16 @@ void main(){
   float haze=exp(-pow(side/(40.*k),2.))*inside*.18;
   col+=(uGlow*.85+uCore*.45)*ribbon*uSwirlS.y+uGlow*haze*uSwirlS.y;
  }
+ // Hit sparks: a hot core, a four-to-six point light star, a thin expanding ring.
+ for(int i=0;i<${MAX_SPARK};i++){if(i>=uSparkN)break;
+  vec4 s=uSpark[i];vec3 sc=uSparkC[i].rgb;float pw=uSparkC[i].w;float life=s.w;
+  vec2 d=(p-s.xy)/s.z;float r=length(d);float ang=atan(d.y,d.x)+float(i)*1.3;
+  float grow=1.-pow(1.-min(life*2.4,1.),3.);float fade=pow(1.-life,1.6);
+  float star=pow(abs(cos(ang*2.)),16.)*exp(-r/(1.3*grow+.05))*1.4+pow(abs(cos(ang*2.+.785)),30.)*exp(-r/(.7*grow+.05))*.8;
+  float core=exp(-r*r*7./(grow+.15));
+  float ring=exp(-pow((r-grow*.9)/.05,2.))*(1.-life);
+  col+=(vec3(1.)*core*1.6+mix(sc,vec3(1.),.4)*star*1.5+sc*ring*1.1+sc*exp(-r*1.8)*.55)*fade*pw;
+ }
  col+=vec3(1.,.93,.82)*uFlash;
  // Premultiplied output: emission adds light; smoke darkens a little.
  float lum=max(col.r,max(col.g,col.b));
@@ -222,6 +235,9 @@ export class UltimateGlLayer {
   cols.forEach((c,i)=>{cu.set([c.x*s,c.y*s,c.w*s,c.h*s],i*4);ca[i]=c.alpha;});
   gl.uniform1i(this.u('uColN'),cols.length);gl.uniform4fv(this.u('uCol'),cu);gl.uniform1fv(this.u('uColA'),ca);
   const w=f.swirl;gl.uniform4f(this.u('uSwirl'),(w?.ax??0)*s,(w?.ay??0)*s,(w?.bx??1)*s,(w?.by??1)*s);gl.uniform2f(this.u('uSwirlS'),w?.u??0,w?.alpha??0);
+  const sparks=(f.sparks??[]).slice(0,MAX_SPARK),su=new Float32Array(MAX_SPARK*4),sc=new Float32Array(MAX_SPARK*4);
+  sparks.forEach((q,i)=>{su.set([q.x*s,q.y*s,q.r*s,q.life],i*4);sc.set([...q.color,q.power],i*4);});
+  gl.uniform1i(this.u('uSparkN'),sparks.length);gl.uniform4fv(this.u('uSpark'),su);gl.uniform4fv(this.u('uSparkC'),sc);
   gl.disable(gl.BLEND);gl.drawArrays(gl.TRIANGLES,0,3);
   this.cleared=false;this.audit.draws++;
  }
