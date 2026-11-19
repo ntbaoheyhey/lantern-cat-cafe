@@ -36,15 +36,7 @@ export class BossPhase {
   const ratio=Math.min(devicePixelRatio||1,view.quality==='low'?1:2),w=Math.round(width*ratio),h=Math.round(height*ratio);
   if(this.canvas.width!==w||this.canvas.height!==h){this.canvas.width=w;this.canvas.height=h;}
   const c=this.c;c.setTransform(ratio,0,0,ratio,0,0);c.clearRect(0,0,width,height);
-  for(const [id,phase] of live){
-   const b=bounds(id);if(!b)continue;const pulse=view.reducedMotion?0:Math.sin(time*4)*.05;
-   c.save();c.translate(b.x+b.width/2,b.y+b.height*.88);c.scale(1,.28);
-   c.strokeStyle=phase>=3?'#ff734f':'#d994ef';c.lineWidth=3;c.globalAlpha=.75;
-   for(let i=0;i<3;i++){c.beginPath();c.ellipse(0,0,b.width*(.46+i*.06+pulse),b.width*(.46+i*.06+pulse),0,0,Math.PI*2);c.stroke();}
-   c.restore();
-   if(!view.reducedMotion){c.save();c.strokeStyle=phase>=3?'#ffb06b':'#e3b6f2';c.lineWidth=2;
-    for(let i=0;i<18;i++){const p=(time*.7+i/18)%1,x=b.x+b.width*(.05+i%7/7*.9),y=b.y+b.height*(1-p);c.globalAlpha=Math.sin(p*Math.PI)*.65;c.beginPath();c.moveTo(x,y+12);c.lineTo(x+Math.sin(i+time)*6,y-10);c.stroke();}c.restore();}
-  }
+  // V10: the enraged aura is drawn as light by the scene; this canvas keeps only the phase banner.
   if(!visible)return;
   const enter=clamp(age/.18),slide=view.reducedMotion?0:(1-enter)*width*.18;
   c.save();c.globalAlpha=opacity;c.translate(slide,0);

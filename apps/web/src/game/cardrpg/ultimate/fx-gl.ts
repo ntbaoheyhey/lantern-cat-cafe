@@ -28,9 +28,11 @@ export interface FxFrame {
  palette:FxColor;
  /** Hit sparks: x, y, radius, life 0..1, colour. */
  sparks?:{x:number;y:number;r:number;life:number;power:number;color:[number,number,number];seed:number}[];
+ /** Steady licking flames: base x,y, width, height, alpha. */
+ flames?:{x:number;y:number;w:number;h:number;alpha:number}[];
 }
 
-const MAX_TRAIL=20,MAX_BURST=6,MAX_RING=4,MAX_POOL=6,MAX_COL=6,MAX_SPARK=8;
+const MAX_TRAIL=20,MAX_BURST=6,MAX_RING=4,MAX_POOL=6,MAX_COL=6,MAX_SPARK=8,MAX_FLAME=6;
 
 const VERT=`#version 300 es
 in vec2 p;void main(){gl_Position=vec4(p,0.,1.);}`;
@@ -47,6 +49,7 @@ uniform int uPoolN;uniform vec4 uPool[${MAX_POOL}];
 uniform vec4 uDome;uniform vec2 uDomeS;
 uniform int uColN;uniform vec4 uCol[${MAX_COL}];uniform float uColA[${MAX_COL}];
 uniform vec4 uSwirl;uniform vec2 uSwirlS;
+uniform int uFlameN;uniform vec4 uFlame[${MAX_FLAME}];uniform float uFlameA[${MAX_FLAME}];
 uniform int uSparkN;uniform vec4 uSpark[${MAX_SPARK}];uniform vec4 uSparkC[${MAX_SPARK}];
 
 float h21(vec2 p){p=fract(p*vec2(123.34,456.21));p+=dot(p,p+45.32);return fract(p.x*p.y);}
@@ -162,6 +165,18 @@ void main(){
   float haze=exp(-pow(side/(40.*k),2.))*inside*.18;
   col+=(uGlow*.85+uCore*.45)*ribbon*uSwirlS.y+uGlow*haze*uSwirlS.y;
  }
+ // Steady flames: classic upward-scrolling noise fire inside a teardrop.
+ for(int i=0;i<${MAX_FLAME};i++){if(i>=uFlameN)break;
+  vec4 fl=uFlame[i];vec2 q=(p-fl.xy)/fl.zw;q.y=-q.y;
+  if(q.y>-.1&&q.y<1.3&&abs(q.x)<1.){
+   float n=fbm(vec2(q.x*3.2+float(i)*9.,q.y*2.4-uT*3.4));float n2=fbm(vec2(q.x*6.,q.y*5.-uT*6.)+n);
+   float width=.55*(1.-q.y*.7)+.08;
+   float x=q.x+(n-.5)*.7*q.y+sin(q.y*5.-uT*7.+float(i))*.08*q.y;
+   float shape=1.-abs(x)/width-q.y*.75+(n2-.5)*1.3*q.y+(n-.5)*.5-max(-q.y,0.)*8.;
+   float a=smoothstep(0.,.45,shape)*smoothstep(-.1,.05,q.y);
+   col+=ramp(clamp(shape*.75+.05,0.,1.))*a*uFlameA[i];
+  }
+ }
  // Hit sparks: a hot core, a four-to-six point light star, a thin expanding ring.
  for(int i=0;i<${MAX_SPARK};i++){if(i>=uSparkN)break;
   vec4 s=uSpark[i];vec3 sc=uSparkC[i].rgb;float pw=uSparkC[i].w;float life=s.w;
@@ -235,6 +250,9 @@ export class UltimateGlLayer {
   cols.forEach((c,i)=>{cu.set([c.x*s,c.y*s,c.w*s,c.h*s],i*4);ca[i]=c.alpha;});
   gl.uniform1i(this.u('uColN'),cols.length);gl.uniform4fv(this.u('uCol'),cu);gl.uniform1fv(this.u('uColA'),ca);
   const w=f.swirl;gl.uniform4f(this.u('uSwirl'),(w?.ax??0)*s,(w?.ay??0)*s,(w?.bx??1)*s,(w?.by??1)*s);gl.uniform2f(this.u('uSwirlS'),w?.u??0,w?.alpha??0);
+  const flames=(f.flames??[]).slice(0,MAX_FLAME),fu=new Float32Array(MAX_FLAME*4),fa=new Float32Array(MAX_FLAME);
+  flames.forEach((q,i)=>{fu.set([q.x*s,q.y*s,q.w*s,q.h*s],i*4);fa[i]=q.alpha;});
+  gl.uniform1i(this.u('uFlameN'),flames.length);gl.uniform4fv(this.u('uFlame'),fu);gl.uniform1fv(this.u('uFlameA'),fa);
   const sparks=(f.sparks??[]).slice(0,MAX_SPARK),su=new Float32Array(MAX_SPARK*4),sc=new Float32Array(MAX_SPARK*4);
   sparks.forEach((q,i)=>{su.set([q.x*s,q.y*s,q.r*s,q.life],i*4);sc.set([...q.color,q.power],i*4);});
   gl.uniform1i(this.u('uSparkN'),sparks.length);gl.uniform4fv(this.u('uSpark'),su);gl.uniform4fv(this.u('uSparkC'),sc);

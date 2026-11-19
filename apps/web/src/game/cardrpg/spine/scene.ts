@@ -46,7 +46,8 @@ import {bossArrival,BOSS_LANDING_MS} from './boss-arrival';
 import {UltimateDirector} from '../ultimate/director';
 import {knockback} from '../ultimate/timeline';
 import {paintGrade} from '../../rig/atlas-color';
-import {enemyIdleLife,ENEMY_GRADE,IDENTITY_GRADE,hitColor} from './enemy-life';
+import {enemyIdleLife,ENEMY_GRADE,ENRAGED_GRADE,IDENTITY_GRADE,hitColor} from './enemy-life';
+const ENRAGED_TINT=new T.Color(.94,.7,.78);
 import {UltimateGlLayer,fxPalette} from '../ultimate/fx-gl';
 import {DesignerVideoActorMedia} from './designer-video';
 
@@ -328,8 +329,8 @@ export class SpineScene {
    if(unit.hp>0)entry.koAt=-1;
    else if(entry.koAt<0)entry.koAt=time;
    const deathAge=unit.hp<=0?time-entry.koAt:0;
-   const grade=unit.side==='enemy'&&!actor.mesh?.livingCat?ENEMY_GRADE:IDENTITY_GRADE;
-   actor.root.traverse(node=>{if(node instanceof T.Mesh){const material=node.material as T.MeshBasicMaterial;paintGrade(material)?.value.set(grade[0],grade[1]);material.color.setRGB(...tint);if(unit.id!==plan?.actorId)material.color.multiplyScalar(focusLight);if(healed.includes(unit.id))material.color.multiplyScalar(healBright);material.opacity=unit.hp<=0&&!entry.craftDeath?Math.max(0,1-deathAge/.6):1;}});
+   const enraged=boss&&unit.hp>0&&(view.bossPhases?.[unit.id]??1)>1,grade=unit.side==='enemy'&&!actor.mesh?.livingCat?(enraged?ENRAGED_GRADE:ENEMY_GRADE):IDENTITY_GRADE;
+   actor.root.traverse(node=>{if(node instanceof T.Mesh){const material=node.material as T.MeshBasicMaterial;paintGrade(material)?.value.set(grade[0],grade[1]);material.color.setRGB(...tint);if(enraged)material.color.multiply(ENRAGED_TINT);if(unit.id!==plan?.actorId)material.color.multiplyScalar(focusLight);if(healed.includes(unit.id))material.color.multiplyScalar(healBright);material.opacity=unit.hp<=0&&!entry.craftDeath?Math.max(0,1-deathAge/.6):1;}});
    actor.root.visible=unit.hp>0||deathAge<.6;
    actor.root.rotation.z=0;actor.root.position.set(position.x,position.y,0);actor.root.scale.set(spriteFacing(actor.unit.nativeFacing,unit.side)*position.scale,position.scale,1);
    // Small formation actors stay readable in front of the broad Yarn cutout.
@@ -581,7 +582,7 @@ export class SpineScene {
    !view.formationC2&&plan?.ultimate&&bannerEntry?this.focusBanner.place(plan,this.bounds(bannerEntry),width,height,this.cinematicRects):undefined,
    view.formationC2&&bannerActor&&bannerEntry?{id:bannerActor.id,name:bannerActor.name,portrait:`/units/${bannerEntry.asset}/portrait.webp`,anchors:this.anchors}:undefined);
   this.bossPhase.render(view,time,width,height,id=>{const entry=this.actors.get(id);return entry?this.bounds(entry):undefined;});
-  this.renderHitLights(time,width,height);
+  this.renderHitLights(time,width,height,view);
   this.audio.render(view);
   for(const id of this.groundContacts.keys())if(!this.actors.has(id)){this.groundContacts.delete(id);this.bodyBoxes.delete(id);}
   for(const [id,e]of this.actors){
@@ -630,11 +631,27 @@ export class SpineScene {
   }
   return{x:left,y:top,width:right-left,height:bottom-top};
  }
- private renderHitLights(time:number,width:number,height:number){
+ private renderHitLights(time:number,width:number,height:number,view:SceneView){
+  if(!this.hitLights)return;
   this.hits=this.hits.filter(h=>time-h.at>=0&&time-h.at<.42&&this.actors.has(h.id));
-  if(!this.hitLights)return;if(!this.hits.length||this.ult5?.active){this.hitLights.clear();return;}
-  const k=height/720,sparks=this.hits.slice(-8).map((h,i)=>{const b=this.bounds(this.actors.get(h.id)!);return {x:b.x+b.width/2,y:b.y+b.height*.42,r:Math.min(b.height*.5,150*k),life:(time-h.at)/.42,power:h.power,color:h.color,seed:i};});
-  this.hitLights.draw({w:width,h:height,time,flash:0,bursts:[],rings:[],columns:[],pools:sparks.map(q=>({x:q.x,y:q.y+q.r*.9,r:q.r*1.2,power:.5*(1-q.life)})),sparks,palette:fxPalette({core:'#fff6e0',glow:'#ffc070',accent:'#ff9a50',deep:'#3a2010'})});
+  const k=height/720,reduced=!!view.reducedMotion,ult=!!this.ult5?.active;
+  const sparks=ult?[]:this.hits.slice(-8).map((h,i)=>{const b=this.bounds(this.actors.get(h.id)!);return {x:b.x+b.width/2,y:b.y+b.height*.42,r:Math.min(b.height*.5,150*k),life:(time-h.at)/.42,power:h.power,color:h.color,seed:i};});
+  // V10: an enraged boss (phase 2+) burns with a rising aura; the phase change itself erupts.
+  const columns:{x:number;y:number;w:number;h:number;alpha:number}[]=[],pools:{x:number;y:number;r:number;power:number}[]=[],bursts:{x:number;y:number;r:number;life:number;power:number}[]=[],rings:{x:number;y:number;r:number;life:number;power:number}[]=[],flames:{x:number;y:number;w:number;h:number;alpha:number}[]=[];
+  let flash=0;
+  for(const unit of view.actors){
+   const entry=this.actors.get(unit.id);if(!entry||unit.side!=='enemy'||unit.hp<=0||entry.actor.unit.tier!=='boss'||entry.phase<2)continue;
+   const b=this.bounds(entry),feet=b.y+b.height*.97,cx=b.x+b.width/2,pulse=reduced?0:Math.sin(time*3.1)*.12;
+   if(!ult){
+    pools.push({x:cx,y:feet+10*k,r:b.width*.6,power:.35+pulse});
+    // Flames lick up around its feet.
+    if(unit.id!==view.frame?.plan.actorId)for(let i=0;i<4;i++){const flick=reduced?1:.8+.2*Math.sin(time*6.3+i*2.1);flames.push({x:cx+(i-1.5)*b.width*.24,y:feet+12*k,w:b.width*(i%2?.2:.24),h:b.height*(i%2?.3:.4)*flick,alpha:.7});}
+   }
+   const age=time-entry.phaseAt;
+   if(age>=0&&age<1.3&&!reduced){bursts.push({x:cx,y:feet,r:b.height*.62,life:age/1.3,power:1});rings.push({x:cx,y:feet,r:b.width*1.3,life:Math.min(1,age/1),power:1});if(age<.14)flash=.22*(1-age/.14);}
+  }
+  if(!sparks.length&&!columns.length&&!bursts.length&&!flames.length&&!pools.length){this.hitLights.clear();return;}
+  this.hitLights.draw({w:width,h:height,time,flash,bursts,rings,columns,pools,sparks,flames,palette:fxPalette({core:'#ffd9a8',glow:'#ff5a3c',accent:'#c04cff',deep:'#3a0c22'})});
  }
  private projectAnchors(view:SceneView){
   this.anchors.length=0;const labels:LabelInput[]=[],text:LabelInput[]=[],bodies:Rect[]=[];

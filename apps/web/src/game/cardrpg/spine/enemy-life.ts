@@ -9,6 +9,8 @@ export interface EnemyLife {y:number;sx:number;sy:number;angle:number}
 /** Saturation and contrast for painted enemies; cats keep their designer colours. */
 export const ENEMY_GRADE:readonly [number,number]=[1.22,1.1];
 export const IDENTITY_GRADE:readonly [number,number]=[1,1];
+/** Phase 2+ boss: hotter and harder so the change of phase reads at a glance. */
+export const ENRAGED_GRADE:readonly [number,number]=[1.15,1.28];
 
 type Profile={bob:number;bobHz:number;breath:number;breathHz:number;rock:number;rockHz:number};
 const PROFILES:Record<string,Profile>={
