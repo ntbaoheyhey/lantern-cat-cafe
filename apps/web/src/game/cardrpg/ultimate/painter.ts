@@ -8,6 +8,7 @@
 import {ULT_TIMING,cutinState,easeOutBack,easeOutCubic,easeInOut} from './timeline';
 import type {UltRecipe} from './recipes';
 import {FlipbookSet,type FlipbookId} from './flipbooks';
+import {UltimateGlLayer,fxPalette,type FxFrame} from './fx-gl';
 
 export interface Box {x:number;y:number;width:number;height:number}
 export interface Point {x:number;y:number}
@@ -28,11 +29,12 @@ export class UltimatePainter {
  private c:CanvasRenderingContext2D;private particles:Particle[]=[];private random=rng(9);
  private spawnClock=new Map<string,number>();private ratio=1;
  readonly flipbooks=new FlipbookSet();
+ readonly gl:UltimateGlLayer;
  readonly audit={particles:0,cutin:false,setPiece:'',beats:[] as string[]};
  constructor(host:HTMLElement){
   this.canvas.className='v9-ult-canvas';this.canvas.setAttribute('aria-hidden','true');
   Object.assign(this.canvas.style,{position:'absolute',inset:'0',width:'100%',height:'100%',pointerEvents:'none',zIndex:'40'});
-  this.c=this.canvas.getContext('2d')!;host.appendChild(this.canvas);
+  this.c=this.canvas.getContext('2d')!;this.gl=new UltimateGlLayer(host);host.appendChild(this.canvas);
   // Radii from eased curves can dip a hair below zero; clamp them for the 2D API.
   const c=this.c as CanvasRenderingContext2D|null;
   if(c?.createRadialGradient&&c.arc&&c.ellipse){
@@ -43,7 +45,7 @@ export class UltimatePainter {
   }
  }
  reset(seed:number){this.particles.length=0;this.random=rng(seed);this.spawnClock.clear();this.audit.beats.length=0;}
- clear(){if(this.canvas.width>1&&typeof this.c?.setTransform==='function'){this.c.setTransform(1,0,0,1,0,0);this.c.clearRect(0,0,this.canvas.width,this.canvas.height);}this.audit.particles=0;this.audit.cutin=false;this.audit.setPiece='';}
+ clear(){this.gl.clear();if(this.canvas.width>1&&typeof this.c?.setTransform==='function'){this.c.setTransform(1,0,0,1,0,0);this.c.clearRect(0,0,this.canvas.width,this.canvas.height);}this.audit.particles=0;this.audit.cutin=false;this.audit.setPiece='';}
  private size(w:number,h:number){
   const ratio=Math.min(globalThis.devicePixelRatio||1,2);
   if(this.canvas.width!==Math.round(w*ratio)||this.canvas.height!==Math.round(h*ratio)||ratio!==this.ratio){this.ratio=ratio;this.canvas.width=Math.round(w*ratio);this.canvas.height=Math.round(h*ratio);}
@@ -54,13 +56,13 @@ export class UltimatePainter {
   this.audit.beats.push(name);if(f.reduced&&name!=='impact')return;
   const k=f.h/720,r=this.random,p=f.recipe.palette,P=f.impact;
   if(name==='impact'){
-   const count=f.reduced?6:22;
-   for(let i=0;i<count;i++){const a=-Math.PI*(.08+.84*r()),s=(380+620*r())*k;this.add({x:P.x,y:P.y,vx:Math.cos(a)*s,vy:Math.sin(a)*s,g:2200*k,drag:.6,life:.55+.35*r(),size:(5+9*r())*k,grow:0,rot:r()*TAU,vr:(r()-.5)*18,color:i%3?p.deep:p.accent,alpha:1,kind:'shard',add:false});}
+   const count=f.recipe.setPiece==='tea-clover'?0:f.reduced?6:26;
+   for(let i=0;i<count;i++){const a=-Math.PI*(.08+.84*r()),s=(380+620*r())*k;this.add({x:P.x,y:P.y,vx:Math.cos(a)*s,vy:Math.sin(a)*s,g:1600*k,drag:.6,life:.6+.5*r(),size:(1.8+2.4*r())*k,grow:0,rot:r()*TAU,vr:0,color:i%3?p.glow:p.accent,alpha:1,kind:'shard',add:true});}
    for(let i=0;i<(f.reduced?8:34);i++){const a=r()*TAU,s=(200+900*r())*k;this.add({x:P.x,y:P.y,vx:Math.cos(a)*s,vy:Math.sin(a)*s*.7-200*k,g:600*k,drag:2.2,life:.35+.4*r(),size:(2+3*r())*k,grow:0,rot:a,vr:0,color:i%2?p.core:p.glow,alpha:1,kind:'spark',add:true});}
-   if(f.recipe.setPiece==='chimney-comet')for(let i=0;i<16;i++){const a=-Math.PI*(.15+.7*r()),s=(500+700*r())*k;this.add({x:P.x,y:P.y,vx:Math.cos(a)*s,vy:Math.sin(a)*s,g:1900*k,drag:.3,life:.8+.4*r(),size:(6+7*r())*k,grow:0,rot:r()*TAU,vr:(r()-.5)*10,color:'#1c1018',alpha:1,kind:'coal',add:false});}
+   if(f.recipe.setPiece==='chimney-comet')for(let i=0;i<10;i++){const a=-Math.PI*(.15+.7*r()),s=(500+700*r())*k;this.add({x:P.x,y:P.y,vx:Math.cos(a)*s,vy:Math.sin(a)*s,g:1900*k,drag:.3,life:.8+.4*r(),size:(3+3.5*r())*k,grow:0,rot:r()*TAU,vr:(r()-.5)*10,color:'#3a2026',alpha:1,kind:'coal',add:false});}
   }
   if(name==='linger'){
-   for(let i=0;i<(f.reduced?3:11);i++){const a=r()*TAU,d=(20+90*r())*k;this.add({x:P.x+Math.cos(a)*d,y:P.y+Math.sin(a)*d*.4,vx:Math.cos(a)*40*k,vy:-(30+50*r())*k,g:0,drag:.4,life:.9+.4*r(),size:(28+30*r())*k,grow:60*k,rot:r()*TAU,vr:(r()-.5)*.6,color:f.recipe.setPiece==='chimney-comet'?'#3a2440':'#5b4636',alpha:.32,kind:'smoke',add:false});}
+   for(let i=0;i<(f.reduced?3:11);i++){const a=r()*TAU,d=(20+90*r())*k;this.add({x:P.x+Math.cos(a)*d,y:P.y+Math.sin(a)*d*.4,vx:Math.cos(a)*40*k,vy:-(30+50*r())*k,g:0,drag:.4,life:.9+.4*r(),size:(28+30*r())*k,grow:60*k,rot:r()*TAU,vr:(r()-.5)*.6,color:f.recipe.setPiece==='chimney-comet'?'#5a4a66':'#6b5a48',alpha:.2,kind:'smoke',add:false});}
    for(let i=0;i<(f.reduced?0:26);i++){const a=r()*TAU,d=(10+120*r())*k;this.add({x:P.x+Math.cos(a)*d,y:P.y+Math.sin(a)*d*.35,vx:(r()-.5)*60*k,vy:-(60+140*r())*k,g:-40*k,drag:.5,life:.8+.7*r(),size:(1.6+2.4*r())*k,grow:0,rot:r()*TAU,vr:2+4*r(),color:i%2?p.glow:p.accent,alpha:1,kind:'ember',add:true});}
   }
  }
@@ -72,15 +74,15 @@ export class UltimatePainter {
   while(acc>=1){make();acc-=1;}this.spawnClock.set(key,acc);
  }
  paint(f:UltPaintFrame){
-  this.size(f.w,f.h);const c=this.c,k=f.h/720,dt=f.dt/1000;
+  this.size(f.w,f.h);const k=f.h/720,dt=f.dt/1000;
   this.audit.setPiece=f.recipe.setPiece;
-  // Set pieces under the shared beats.
-  if(f.recipe.setPiece==='lantern-dome')this.lanternDome(f,k);
-  if(f.recipe.setPiece==='tea-clover')this.teaClover(f,k);
-  if(f.recipe.setPiece==='chimney-comet')this.chimneyComet(f,k);
-  this.impactCore(f,k);this.shockRing(f,k);
-  const smokeAge=f.at-ULT_TIMING.impact-150;
-  if(smokeAge>=0&&smokeAge<800)this.flipbooks.drawAt(c,'smoke-embers',f.impact.x,f.impact.y-60*k,440*k,smokeAge/800);
+  const fx:FxFrame={w:f.w,h:f.h,time:f.at/1000,flash:0,bursts:[],rings:[],pools:[],columns:[],palette:fxPalette(f.recipe.palette)};
+  if(f.recipe.setPiece==='lantern-dome')this.lanternDome(f,k,fx);
+  if(f.recipe.setPiece==='tea-clover')this.teaClover(f,k,fx);
+  if(f.recipe.setPiece==='chimney-comet')this.chimneyComet(f,k,fx);
+  this.sharedImpact(f,k,fx);
+  const live=fx.flash>0||fx.bursts.length||fx.rings.length||fx.pools.length||fx.columns.length||fx.comet||fx.dome||fx.swirl;
+  if(live)this.gl.draw(fx);else this.gl.clear();
   // Particles.
   for(const p of this.particles){
    p.age+=dt;p.vx*=Math.exp(-p.drag*dt);p.vy=p.vy*Math.exp(-p.drag*dt)+p.g*dt;p.x+=p.vx*dt;p.y+=p.vy*dt;p.rot+=p.vr*dt;p.size+=p.grow*dt;
@@ -90,150 +92,133 @@ export class UltimatePainter {
   this.banner(f,k);
  }
  private particle(p:Particle){
-  const c=this.c,u=p.age/p.life,a=p.alpha*(p.kind==='smoke'?Math.sin(Math.PI*clamp(u))*1:1-u*u);
+  const c=this.c,u=p.age/p.life,a=p.alpha*(p.kind==='smoke'?Math.sin(Math.PI*clamp(u)):1-u*u);
   c.save();c.globalCompositeOperation=p.add?'lighter':'source-over';c.globalAlpha=clamp(a);c.translate(p.x,p.y);c.rotate(p.rot);
-  if(p.kind==='shard'){c.fillStyle=p.color;c.beginPath();c.moveTo(-p.size,-p.size*.4);c.lineTo(p.size*.9,-p.size*.2);c.lineTo(p.size*.3,p.size*.6);c.closePath();c.fill();}
+  if(p.kind==='shard'||p.kind==='ember'||p.kind==='star'){
+   // Glowing mote: hot centre plus a soft halo, never a hard polygon.
+   const s=p.size*(p.kind==='star'?1.6:1),g=c.createRadialGradient(0,0,0,0,0,s*3);
+   g.addColorStop(0,'#fffaf0');g.addColorStop(.18,p.color);g.addColorStop(1,p.color+'00');c.fillStyle=g;c.beginPath();c.arc(0,0,s*3,0,TAU);c.fill();
+  }
   else if(p.kind==='smoke'){const g=c.createRadialGradient(0,0,0,0,0,p.size);g.addColorStop(0,p.color);g.addColorStop(1,p.color+'00');c.fillStyle=g;c.beginPath();c.arc(0,0,p.size,0,TAU);c.fill();}
-  else if(p.kind==='coal'){const g=c.createRadialGradient(0,0,0,0,0,p.size*2.2);g.addColorStop(0,'#ffb05088');g.addColorStop(1,'#ff6a0000');c.fillStyle=g;c.beginPath();c.arc(0,0,p.size*2.2,0,TAU);c.fill();c.fillStyle=p.color;c.beginPath();c.moveTo(-p.size,0);c.lineTo(-p.size*.3,-p.size*.8);c.lineTo(p.size*.8,-p.size*.4);c.lineTo(p.size*.6,p.size*.7);c.closePath();c.fill();c.fillStyle='#ff8a3c';c.fillRect(-p.size*.3,-p.size*.2,p.size*.5,p.size*.3);}
-  else if(p.kind==='drop'){c.fillStyle=p.color;c.beginPath();c.ellipse(0,0,p.size*.35,p.size,0,0,TAU);c.fill();}
-  else if(p.kind==='petal'){c.fillStyle=p.color;c.beginPath();c.ellipse(0,0,p.size,p.size*.45,0,0,TAU);c.fill();}
+  else if(p.kind==='coal'){
+   // A chunk of chimney coal: dark body, molten edge, small heat halo.
+   const g=c.createRadialGradient(0,0,0,0,0,p.size*2.4);g.addColorStop(0,'#ffb05066');g.addColorStop(1,'#ff6a0000');c.fillStyle=g;c.beginPath();c.arc(0,0,p.size*2.4,0,TAU);c.fill();
+   c.fillStyle=p.color;c.beginPath();c.moveTo(-p.size,-p.size*.1);c.quadraticCurveTo(-p.size*.6,-p.size*.9,p.size*.3,-p.size*.7);c.quadraticCurveTo(p.size*1.1,-p.size*.2,p.size*.6,p.size*.6);c.quadraticCurveTo(-p.size*.2,p.size*.9,-p.size,-p.size*.1);c.fill();
+   c.globalCompositeOperation='lighter';c.strokeStyle='#ff9a4acc';c.lineWidth=p.size*.22;c.stroke();
+  }
+  else if(p.kind==='drop'){const g=c.createRadialGradient(0,0,0,0,0,p.size*1.6);g.addColorStop(0,'#fbfff0');g.addColorStop(.3,p.color);g.addColorStop(1,p.color+'00');c.fillStyle=g;c.scale(.45,1);c.beginPath();c.arc(0,0,p.size*1.6,0,TAU);c.fill();}
+  else if(p.kind==='petal'){
+   // Four-leaf clover petal: two lobes and a vein, lit from above.
+   const s=p.size;const g=c.createLinearGradient(0,-s,0,s);g.addColorStop(0,'#f4ffe2');g.addColorStop(1,p.color);c.fillStyle=g;
+   c.beginPath();c.moveTo(0,s*.7);c.bezierCurveTo(-s*1.1,s*.1,-s*.9,-s*.9,0,-s*.35);c.bezierCurveTo(s*.9,-s*.9,s*1.1,s*.1,0,s*.7);c.fill();
+  }
   else if(p.kind==='trail'){const g=c.createRadialGradient(0,0,0,0,0,p.size);g.addColorStop(0,p.color);g.addColorStop(1,'#00000000');c.fillStyle=g;c.beginPath();c.arc(0,0,p.size,0,TAU);c.fill();}
-  else{const s=p.size*(p.kind==='star'?2.2:1);c.fillStyle=p.color;c.beginPath();if(p.kind==='spark'){c.ellipse(0,0,s*2.6,s*.55,0,0,TAU);}else c.arc(0,0,s,0,TAU);c.fill();}
+  else if(p.kind==='spark'){
+   // Streak aligned with its velocity, hot white head.
+   const sp=Math.hypot(p.vx,p.vy),len=Math.min(p.size*9,p.size*1.5+sp*.035);c.rotate(Math.atan2(p.vy,p.vx)-p.rot);
+   const g=c.createLinearGradient(-len,0,p.size,0);g.addColorStop(0,p.color+'00');g.addColorStop(.7,p.color);g.addColorStop(1,'#ffffff');
+   c.fillStyle=g;c.beginPath();c.ellipse(-len*.4,0,len*.7,p.size*.45,0,0,TAU);c.fill();
+  }
+  else{const s=p.size;c.fillStyle=p.color;c.beginPath();c.arc(0,0,s,0,TAU);c.fill();}
   c.restore();
  }
- /** E1: white-hot core flash with rotating spikes. */
- private impactCore(f:UltPaintFrame,k:number){
-  const age=f.at-ULT_TIMING.impact;if(age<0||age>300)return;
-  const c=this.c,u=age/300,P=f.impact,p=f.recipe.palette;
-  if(this.flipbooks.drawAt(c,'impact-core',P.x,P.y,400*k,age/400))return;
-  const r=(60+190*easeOutCubic(u))*k*(f.recipe.setPiece==='lantern-dome'?1.15:1);
-  c.save();c.globalCompositeOperation='lighter';c.globalAlpha=1-u;
-  const g=c.createRadialGradient(P.x,P.y,0,P.x,P.y,r);g.addColorStop(0,'#ffffff');g.addColorStop(.25,p.core);g.addColorStop(.6,p.glow+'99');g.addColorStop(1,p.glow+'00');
-  c.fillStyle=g;c.beginPath();c.arc(P.x,P.y,r,0,TAU);c.fill();
-  if(!f.reduced){c.fillStyle=p.core;c.translate(P.x,P.y);c.rotate(u*.6);for(let i=0;i<10;i++){const len=r*(i%2?1.5:2.3)*(1-u*.4);c.rotate(TAU/10);c.beginPath();c.moveTo(0,-r*.06);c.lineTo(len,0);c.lineTo(0,r*.06);c.fill();}}
-  c.restore();
+ /** Shared impact light: a short warm flash, a floor heat ring and light spill. */
+ private sharedImpact(f:UltPaintFrame,k:number,fx:FxFrame){
+  const age=f.at-ULT_TIMING.impact;if(age<0||age>900)return;
+  const heal=f.recipe.setPiece==='tea-clover',big=f.recipe.setPiece==='lantern-dome';
+  if(!f.reduced&&age<140)fx.flash=(heal?.1:.2)*(1-age/140)**2;
+  if(!heal)fx.rings.push({x:f.impact.x,y:this.floorY(f),r:(big?520:400)*k,life:clamp(age/760),power:f.reduced?.5:1});
+  if(!heal&&age>110&&!f.reduced)fx.rings.push({x:f.impact.x,y:this.floorY(f),r:(big?380:300)*k,life:clamp((age-110)/700),power:.6});
+  fx.pools.push({x:f.impact.x,y:this.floorY(f),r:(heal?200:300)*k,power:1.1*Math.max(0,1-age/900)**1.5});
  }
- /** E2: ground shockwave rings. */
- private shockRing(f:UltPaintFrame,k:number){
-  const p=f.recipe.palette,P=f.impact,c=this.c,ringAge=f.at-ULT_TIMING.impact;
-  if(ringAge>=0&&ringAge<560&&this.flipbooks.drawAt(c,'shockwave-ring',P.x,P.y,(f.recipe.setPiece==='lantern-dome'?1100:800)*k,ringAge/560,{sy:.34}))return;
-  for(const delay of f.reduced?[0]:[0,90]){
-   const age=f.at-ULT_TIMING.impact-delay;if(age<0||age>560)continue;
-   const u=age/560,rx=(30+(f.recipe.setPiece==='lantern-dome'?520:380)*easeOutCubic(u))*k,ry=rx*.3;
-   c.save();c.globalCompositeOperation='lighter';c.globalAlpha=(1-u)*(delay?.6:1);c.strokeStyle=p.glow;c.lineWidth=(16*(1-u)+2)*k;
-   c.beginPath();c.ellipse(P.x,P.y+(f.recipe.setPiece==='tea-clover'?0:6*k),rx,ry,0,0,TAU);c.stroke();
-   c.globalAlpha*=.6;c.strokeStyle=p.core;c.lineWidth=(5*(1-u)+1)*k;c.stroke();c.restore();
-  }
+ private floorY(f:UltPaintFrame){
+  if(f.recipe.setPiece==='chimney-comet'&&f.target)return f.target.y+f.target.height*.95;
+  if(f.recipe.setPiece==='tea-clover')return Math.max(...(f.team.length?f.team:[f.caster.box]).map(b=>b.y+b.height))-6*f.h/720;
+  return f.impact.y;
  }
- /** Mochi: lantern flare, then a golden dome over the team. */
- private lanternDome(f:UltPaintFrame,k:number){
-  const c=this.c,p=f.recipe.palette,at=f.at,H=f.caster.hand;
-  if(at>=ULT_TIMING.squash&&at<ULT_TIMING.impact+250){
-   const charge=clamp((at-ULT_TIMING.squash)/(ULT_TIMING.impact-ULT_TIMING.squash)),burst=at>ULT_TIMING.impact?1-(at-ULT_TIMING.impact)/250:0;
-   const r=(26+70*charge*charge+120*burst)*k;
-   c.save();c.globalCompositeOperation='lighter';c.globalAlpha=.55+.45*Math.max(charge,burst);
-   const g=c.createRadialGradient(H.x,H.y,0,H.x,H.y,r);g.addColorStop(0,'#fffef0');g.addColorStop(.3,p.glow+'cc');g.addColorStop(1,p.glow+'00');c.fillStyle=g;c.beginPath();c.arc(H.x,H.y,r,0,TAU);c.fill();
-   c.strokeStyle=p.core;c.lineWidth=2*k;c.translate(H.x,H.y);for(let i=0;i<4;i++){c.rotate(Math.PI/4+at*.002);c.beginPath();c.moveTo(-r*1.6,0);c.lineTo(r*1.6,0);c.stroke();}
-   c.restore();
-   this.emit('flare',f,ULT_TIMING.squash,ULT_TIMING.impact,40,()=>{const a=this.random()*TAU,d=(60+40*this.random())*k;this.add({x:H.x+Math.cos(a)*d,y:H.y+Math.sin(a)*d,vx:-Math.cos(a)*d*2.4,vy:-Math.sin(a)*d*2.4,g:0,drag:1,life:.38,size:2.2*k,grow:0,rot:a,vr:0,color:p.core,alpha:1,kind:'spark',add:true});});
-  }
+ /** Glow gathering at the caster's hand before the cast. */
+ private charge(f:UltPaintFrame,k:number,fx:FxFrame,color:string){
+  const at=f.at,H=f.caster.hand,T=ULT_TIMING;
+  if(at<T.cutinOut||at>=T.impact)return;
+  const u=clamp((at-T.cutinOut)/(T.impact-T.cutinOut));
+  fx.pools.push({x:H.x,y:H.y,r:(60+90*u)*k,power:.5+.9*u});
+  this.emit('charge',f,T.cutinOut,T.impact-80,60,()=>{const a=this.random()*TAU,d=(70+60*this.random())*k;this.add({x:H.x+Math.cos(a)*d,y:H.y+Math.sin(a)*d,vx:-Math.cos(a)*d*2.6,vy:-Math.sin(a)*d*2.6,g:0,drag:.8,life:.36,size:2*k,grow:0,rot:a,vr:0,color,alpha:1,kind:'spark',add:true});});
+ }
+ /** Mochi: the lantern flares, the shield slams, a paper-lantern ward rises over the team. */
+ private lanternDome(f:UltPaintFrame,k:number,fx:FxFrame){
+  const p=f.recipe.palette,at=f.at;
+  this.charge(f,k,fx,p.glow);
   const age=at-ULT_TIMING.impact;if(age<0||age>1050||!f.team.length)return;
   const left=Math.min(...f.team.map(b=>b.x))-30*k,right=Math.max(...f.team.map(b=>b.x+b.width))+30*k,ground=Math.max(...f.team.map(b=>b.y+b.height))+6*k,top=Math.min(...f.team.map(b=>b.y))-30*k;
-  // Keep the crown on screen and the dome low enough to read as a ward, not a wall.
-  const cx=(left+right)/2,rx=(right-left)/2*.92,ry=Math.max(40*k,Math.min((ground-top)*.82,ground-f.h*.08));
-  const grow=f.reduced?1:easeOutBack(clamp(age/260),1.4),fade=age>780?1-(age-780)/270:1,s=clamp(grow,0,1.2);
-  this.audit.setPiece='lantern-dome';
-  if(this.flipbooks.drawAt(c,'lantern-dome',cx,ground-ry*.45,Math.max(rx*2,ry*2)*1.15,age/1050,{alpha:clamp(fade)}))return;
-  c.save();c.globalAlpha=clamp(fade);c.translate(cx,ground);c.scale(s,s);
-  c.globalCompositeOperation='lighter';
-  const g=c.createRadialGradient(0,-ry*.15,ry*.2,0,-ry*.15,Math.max(rx,ry));g.addColorStop(0,p.glow+'10');g.addColorStop(.75,p.glow+'2c');g.addColorStop(1,p.core+'88');
-  c.fillStyle=g;c.beginPath();c.ellipse(0,0,rx,ry,0,Math.PI,TAU);c.closePath();c.fill();
-  c.strokeStyle=p.core;c.lineWidth=4*k;c.shadowColor=p.glow;c.shadowBlur=18*k;c.beginPath();c.ellipse(0,0,rx,ry,0,Math.PI,TAU);c.stroke();c.shadowBlur=0;
-  // Lattice arcs on the dome.
-  c.globalAlpha=clamp(fade)*.22;c.lineWidth=1.4*k;c.strokeStyle=p.glow;
-  for(let i=1;i<5;i++){c.beginPath();c.ellipse(0,0,rx*i/5,ry,0,Math.PI,TAU);c.stroke();}
-  for(let i=1;i<4;i++){c.beginPath();c.ellipse(0,0,rx,ry*i/4,0,Math.PI,TAU);c.stroke();}
-  // Base ring on the floor.
-  c.globalAlpha=clamp(fade)*.8;c.lineWidth=3*k;c.strokeStyle=p.core;c.beginPath();c.ellipse(0,0,rx,rx*.16,0,0,TAU);c.stroke();
-  c.restore();
-  this.emit('dome',f,ULT_TIMING.impact,ULT_TIMING.impact+800,30,()=>{const a=Math.PI+this.random()*Math.PI;this.add({x:cx+Math.cos(a)*rx,y:ground+Math.sin(a)*ry,vx:0,vy:-30*k,g:0,drag:0,life:.6,size:2.6*k,grow:0,rot:0,vr:0,color:p.core,alpha:1,kind:'star',add:true});});
+  const cx=(left+right)/2,rx=(right-left)/2*.95,ry=Math.max(40*k,Math.min((ground-top)*.86,ground-f.h*.06));
+  const grow=f.reduced?1:easeOutBack(clamp(age/300),1.3),fade=age>760?1-(age-760)/290:Math.min(1,age/90);
+  fx.dome={x:cx,y:ground,rx,ry,grow:Math.max(.05,grow),alpha:clamp(fade)};
+  for(const b of f.team)fx.pools.push({x:b.x+b.width/2,y:b.y+b.height,r:b.width*.8,power:.7*clamp(fade)});
+  // Burst of warm light where the shield hits the floor.
+  fx.bursts.push({x:f.impact.x,y:f.impact.y,r:120*k,life:clamp(age/650),power:.75});
+  this.emit('dome',f,ULT_TIMING.impact+80,ULT_TIMING.impact+850,40,()=>{const a=Math.PI+this.random()*Math.PI,s=Math.max(.05,grow);this.add({x:cx+Math.cos(a)*rx*s,y:ground+Math.sin(a)*ry*s,vx:(this.random()-.5)*20*k,vy:-(40+50*this.random())*k,g:-20*k,drag:.3,life:.9,size:2.2*k,grow:0,rot:0,vr:0,color:p.glow,alpha:1,kind:'ember',add:true});});
  }
- /** Clover: tea spiral rises, blooms into a four-leaf clover, then healing rain. */
- private teaClover(f:UltPaintFrame,k:number){
-  const c=this.c,p=f.recipe.palette,at=f.at,H=f.caster.hand,C=f.impact;
-  this.emit('tea',f,ULT_TIMING.squash,ULT_TIMING.impact+60,70,()=>{
-   const u=this.random(),spin=this.random()*TAU;
-   // Particles carry their own spiral path towards C.
-   const sx=H.x,sy=H.y,dur=.5;
-   this.add({x:sx,y:sy,vx:(C.x-sx)/dur+Math.cos(spin)*90*k,vy:(C.y-sy)/dur+Math.sin(spin)*50*k,g:0,drag:.2,life:dur*(.8+.4*u),size:(3+4*u)*k,grow:2*k,rot:spin,vr:9,color:u>.5?'#d9b46a':p.glow,alpha:.9,kind:'tea',add:true});
-  });
-  const age=at-(ULT_TIMING.impact-120);
+ /** Clover: tea steam spirals up, a four-leaf clover blooms, healing light rises on every ally. */
+ private teaClover(f:UltPaintFrame,k:number,fx:FxFrame){
+  const c=this.c,p=f.recipe.palette,at=f.at,H=f.caster.hand,C=f.impact,T=ULT_TIMING;
+  this.charge(f,k,fx,p.glow);
+  if(at>=T.squash&&at<T.impact+260){
+   const u=clamp((at-T.squash)/(T.impact-T.squash)),out=at>T.impact?1-(at-T.impact)/260:1;
+   fx.swirl={ax:H.x,ay:H.y,bx:C.x,by:C.y,u:easeOutCubic(u),alpha:clamp(out)*1.1};
+  }
+  const age=at-(T.impact-120);
   if(age>=0&&age<1000){
-   const grow=f.reduced?1:easeOutBack(clamp(age/320),1.6),fade=age>760?1-(age-760)/240:1,R=120*k*grow;
-   this.audit.setPiece='tea-clover';
-   if(!this.flipbooks.drawAt(c,'tea-clover',C.x,C.y+40*k,420*k,age/1000,{alpha:clamp(fade)})){
-   c.save();c.translate(C.x,C.y);c.rotate(age*.0009+(1-clamp(age/320))*-.8);c.globalAlpha=clamp(fade);
-   c.globalCompositeOperation='lighter';const glow=c.createRadialGradient(0,0,0,0,0,R*1.7);glow.addColorStop(0,p.accent+'aa');glow.addColorStop(1,p.glow+'00');c.fillStyle=glow;c.beginPath();c.arc(0,0,R*1.7,0,TAU);c.fill();
-   c.globalCompositeOperation='source-over';
-   for(let i=0;i<4;i++){c.save();c.rotate(i*Math.PI/2);this.heartLeaf(R,p.glow,p.deep);c.restore();}
-   c.fillStyle=p.accent;c.beginPath();c.arc(0,0,R*.12,0,TAU);c.fill();
+   const fade=age>760?1-(age-760)/240:1,R=92*k;this.audit.setPiece='tea-clover';
+   fx.pools.push({x:C.x,y:C.y,r:160*k,power:.9*clamp(fade)});
+   c.save();c.translate(C.x,C.y);c.rotate(age*.0007-(1-clamp(age/420))*.6);c.globalAlpha=clamp(fade);
+   // Leaves unfold one after another.
+   for(let i=0;i<4;i++){const g=f.reduced?1:easeOutBack(clamp((age-i*55)/300),1.7);if(g<=0)continue;c.save();c.rotate(i*Math.PI/2);c.scale(g,g);this.heartLeaf(R,p.glow,p.deep);c.restore();}
+   c.globalCompositeOperation='lighter';const core=c.createRadialGradient(0,0,0,0,0,R*.5);core.addColorStop(0,'#fffde8');core.addColorStop(.4,p.accent+'aa');core.addColorStop(1,p.accent+'00');c.fillStyle=core;c.beginPath();c.arc(0,0,R*.5,0,TAU);c.fill();
    c.restore();
-   }
   }
-  // Healing rain over every ally.
-  this.emit('rain',f,ULT_TIMING.impact+40,ULT_TIMING.impact+850,90,()=>{
+  if(at>T.impact&&at<T.impact+1000)for(const b of f.team){
+   const u=clamp((at-T.impact-80)/880);if(u<=0)continue;
+   fx.columns.push({x:b.x+b.width/2,y:b.y+b.height,w:b.width*.62,h:b.height*1.25,alpha:Math.sin(u*Math.PI)*1.1});
+   fx.pools.push({x:b.x+b.width/2,y:b.y+b.height,r:b.width*.75,power:Math.sin(u*Math.PI)*.8});
+  }
+  // Leaves and drops drift down over every ally.
+  this.emit('rain',f,T.impact+40,T.impact+850,70,()=>{
    const b=f.team[Math.floor(this.random()*f.team.length)];if(!b)return;
-   const x=b.x+b.width*(.1+.8*this.random()),petal=this.random()<.35;
-   this.add({x,y:Math.min(C.y,b.y)-20*k*this.random(),vx:(this.random()-.5)*30*k,vy:(260+160*this.random())*k,g:300*k,drag:0,life:Math.max(.25,(b.y+b.height*.7-C.y)/(420*k)),size:(petal?7:6)*k,grow:0,rot:petal?this.random()*TAU:0,vr:petal?4:0,color:petal?'#f7f2c8':p.glow,alpha:.95,kind:petal?'petal':'drop',add:!petal});
+   const x=b.x+b.width*(.1+.8*this.random()),petal=this.random()<.5;
+   this.add({x,y:b.y-30*k*this.random(),vx:(this.random()-.5)*40*k,vy:(petal?90:240)*k*(1+this.random()*.5),g:(petal?40:300)*k,drag:petal?1.2:0,life:petal?1.1:Math.max(.25,b.height*.7/(300*k)),size:(petal?7:5)*k,grow:0,rot:this.random()*TAU,vr:petal?(this.random()-.5)*6:0,color:petal?'#7fd477':p.glow,alpha:.95,kind:petal?'petal':'drop',add:!petal});
   });
-  if(at>ULT_TIMING.impact&&at<ULT_TIMING.impact+900)for(const b of f.team){
-   const u=clamp((at-ULT_TIMING.impact-150)/650);if(u<=0)continue;
-   c.save();c.globalCompositeOperation='lighter';c.globalAlpha=Math.sin(u*Math.PI)*.55;const cx=b.x+b.width/2,cy=b.y+b.height*.55;
-   const g=c.createRadialGradient(cx,cy,0,cx,cy,b.width*.6);g.addColorStop(0,p.glow+'aa');g.addColorStop(1,p.glow+'00');c.fillStyle=g;c.beginPath();c.arc(cx,cy,b.width*.6,0,TAU);c.fill();c.restore();
-  }
  }
  private heartLeaf(R:number,fill:string,deep:string){
   const c=this.c;c.beginPath();c.moveTo(0,0);
   c.bezierCurveTo(-R*.15,-R*.35,-R*.75,-R*.55,-R*.55,-R*.95);c.bezierCurveTo(-R*.4,-R*1.2,-R*.08,-R*1.1,0,-R*.82);
   c.bezierCurveTo(R*.08,-R*1.1,R*.4,-R*1.2,R*.55,-R*.95);c.bezierCurveTo(R*.75,-R*.55,R*.15,-R*.35,0,0);c.closePath();
-  const g=c.createLinearGradient(0,0,0,-R);g.addColorStop(0,deep);g.addColorStop(.35,fill);g.addColorStop(1,'#e9ffd6');c.fillStyle=g;c.fill();
-  c.strokeStyle='#f8ffe8';c.lineWidth=R*.04;c.stroke();c.strokeStyle=deep+'aa';c.lineWidth=R*.025;c.beginPath();c.moveTo(0,-R*.05);c.lineTo(0,-R*.8);c.stroke();
+  // Translucent, back-lit leaf: soft glow behind, a light gradient body, a pale vein.
+  c.save();c.globalCompositeOperation='lighter';c.shadowColor=fill;c.shadowBlur=R*.35;c.fillStyle=fill+'55';c.fill();c.restore();
+  const g=c.createLinearGradient(0,0,0,-R);g.addColorStop(0,deep+'cc');g.addColorStop(.45,fill+'bb');g.addColorStop(1,'#f2ffdc99');c.fillStyle=g;c.fill();
+  c.strokeStyle='#fbfff0aa';c.lineWidth=R*.025;c.stroke();c.strokeStyle='#f6ffe6aa';c.lineWidth=R*.02;c.beginPath();c.moveTo(0,-R*.05);c.quadraticCurveTo(-R*.04,-R*.45,0,-R*.8);c.stroke();
  }
- /** Soot: comet dives onto the target, fire dome and flying coal. */
- private chimneyComet(f:UltPaintFrame,k:number){
-  const c=this.c,p=f.recipe.palette,at=f.at,T=ULT_TIMING,P=f.impact;
-  // Launched up the chimney above Soot, it arcs over the whole field onto the target.
-  const start={x:f.caster.box.x+f.caster.box.width*.5,y:-80*k},ctrl={x:(start.x+P.x)/2,y:-f.h*.28};
-  const pos=(u:number)=>({x:(1-u)**2*start.x+2*(1-u)*u*ctrl.x+u*u*P.x,y:(1-u)**2*start.y+2*(1-u)*u*ctrl.y+u*u*P.y});
+ /** Soot: the lantern spits a comet up the chimney; it arcs over the field and erupts on the target. */
+ private chimneyComet(f:UltPaintFrame,k:number,fx:FxFrame){
+  const p=f.recipe.palette,at=f.at,T=ULT_TIMING,P=f.impact,H=f.caster.hand;
+  this.charge(f,k,fx,p.glow);
+  const start={x:H.x,y:H.y},ctrl={x:(H.x+P.x)/2,y:-f.h*.42},end={x:P.x,y:P.y};
+  const pos=(u:number)=>({x:(1-u)**2*start.x+2*(1-u)*u*ctrl.x+u*u*end.x,y:(1-u)**2*start.y+2*(1-u)*u*ctrl.y+u*u*end.y});
   if(at>=T.squash&&at<T.impact){
-   const u=easeInOut((at-T.squash)/(T.impact-T.squash))**1.4,h=pos(u),r=(24+20*u)*k;this.audit.setPiece='chimney-comet';
-   // Tail.
-   c.save();c.globalCompositeOperation='lighter';
-   for(let i=12;i>=0;i--){const q=pos(Math.max(0,u-i*.025)),t=i/12;const g=c.createRadialGradient(q.x,q.y,0,q.x,q.y,r*(1.6-t));g.addColorStop(0,(t<.4?p.glow:p.accent)+'cc');g.addColorStop(1,p.accent+'00');c.globalAlpha=(1-t)*.8;c.fillStyle=g;c.beginPath();c.arc(q.x,q.y,r*(1.6-t),0,TAU);c.fill();}
-   c.globalAlpha=1;
-   const q=pos(Math.max(0,u-.02));if(this.flipbooks.drawAt(c,'comet-loop',h.x,h.y,230*k,at/1000,{rotate:Math.atan2(h.y-q.y,h.x-q.x)})){c.restore();}else{
-   const head=c.createRadialGradient(h.x,h.y,0,h.x,h.y,r*1.4);head.addColorStop(0,'#ffffff');head.addColorStop(.35,p.core);head.addColorStop(1,p.glow+'00');c.fillStyle=head;c.beginPath();c.arc(h.x,h.y,r*1.4,0,TAU);c.fill();
-   c.restore();}
-   this.emit('tail',f,T.squash,T.impact,90,()=>{this.add({x:h.x,y:h.y,vx:(this.random()-.5)*120*k,vy:(this.random()-.5)*120*k,g:200*k,drag:1.4,life:.35+.25*this.random(),size:(6+8*this.random())*k,grow:-4*k,rot:0,vr:0,color:this.random()<.5?p.glow:p.accent,alpha:.9,kind:'trail',add:true});});
-   // Chimney soot puffs at the caster when it launches.
-   if(at<T.squash+160){const s=(at-T.squash)/160;c.save();c.globalAlpha=(1-s)*.5;c.fillStyle='#2a1b30';c.beginPath();c.arc(f.caster.hand.x,f.caster.hand.y-30*k*s,(18+30*s)*k,0,TAU);c.fill();c.restore();}
+   const u=easeInOut((at-T.squash)/(T.impact-T.squash)),h=pos(u);this.audit.setPiece='chimney-comet';
+   const trail:[number,number][]=[];for(let i=0;i<20;i++){const q=pos(Math.max(0,u-i*.03));trail.push([q.x,q.y]);}
+   fx.comet={x:h.x,y:h.y,r:(30+22*u)*k,power:1,trail};
+   fx.pools.push({x:h.x,y:Math.min(f.h*.92,P.y+f.h*.18),r:(120+160*u)*k,power:.25+.6*u*u});
+   this.emit('tail',f,T.squash,T.impact,110,()=>{const a=this.random()*TAU,s=(60+140*this.random())*k;this.add({x:h.x,y:h.y,vx:Math.cos(a)*s,vy:Math.sin(a)*s+60*k,g:500*k,drag:1.2,life:.4+.4*this.random(),size:(1.6+2.2*this.random())*k,grow:0,rot:a,vr:0,color:this.random()<.6?p.glow:p.accent,alpha:1,kind:'ember',add:true});});
+   this.emit('puff',f,T.squash,T.squash+220,40,()=>{this.add({x:H.x+(this.random()-.5)*20*k,y:H.y-10*k,vx:(this.random()-.5)*40*k,vy:-(60+80*this.random())*k,g:0,drag:.6,life:.8,size:(16+14*this.random())*k,grow:50*k,rot:0,vr:0,color:'#6a5878',alpha:.22,kind:'smoke',add:false});});
   }
-  const age=at-T.impact;if(age<0||age>760)return;
-  const grow=f.reduced?1:easeOutBack(clamp(age/200),1.2),fade=age>480?1-(age-480)/280:1,R=190*k*grow;
-  this.audit.setPiece='chimney-comet';
-  const dome=this.flipbooks.drawAt(c,'fire-dome',P.x,P.y-R*.3,460*k,age/760,{alpha:clamp(fade)});
-  if(!dome){
-  c.save();c.globalCompositeOperation='lighter';c.globalAlpha=clamp(fade);
-  const g=c.createRadialGradient(P.x,P.y,R*.05,P.x,P.y-R*.2,R);g.addColorStop(0,'#fff6e4');g.addColorStop(.25,p.glow);g.addColorStop(.7,p.accent+'aa');g.addColorStop(1,p.accent+'00');
-  c.fillStyle=g;c.beginPath();c.ellipse(P.x,P.y,R*1.05,R,0,Math.PI,TAU);c.closePath();c.fill();
-  // Flicker tongues.
-  c.fillStyle=p.glow+'cc';for(let i=0;i<9;i++){const a=Math.PI+(i+.5)*Math.PI/9,fl=.75+.25*Math.sin(age*.03+i*1.7);c.beginPath();c.moveTo(P.x+Math.cos(a)*R*.55,P.y+Math.sin(a)*R*.55);c.quadraticCurveTo(P.x+Math.cos(a)*R*1.0,P.y+Math.sin(a)*R*1.0-12*k,P.x+Math.cos(a)*R*1.12*fl,P.y+Math.sin(a)*R*1.18*fl);c.quadraticCurveTo(P.x+Math.cos(a+.12)*R*.9,P.y+Math.sin(a+.12)*R*.9,P.x+Math.cos(a+.18)*R*.55,P.y+Math.sin(a+.18)*R*.55);c.fill();}
-  c.restore();
-  }
-  // Every other enemy takes a smaller burst a beat later.
+  const age=at-T.impact;if(age<0||age>1100)return;this.audit.setPiece='chimney-comet';
+  const t=f.target,foot=t?t.y+t.height*.95:P.y+90*k,size=t?Math.max(t.height*.62,150*k):190*k;
+  fx.bursts.push({x:P.x,y:foot,r:size,life:clamp(age/1000),power:f.reduced?.6:1.15});
+  // Every other enemy takes a smaller eruption a beat later.
   for(const [i,b] of f.enemies.entries()){
-   const a2=age-60-i*45;if(a2<0||a2>320)continue;const u=a2/320,cx=b.x+b.width/2,cy=b.y+b.height*.55,r=(30+90*easeOutCubic(u))*k;
-   c.save();c.globalCompositeOperation='lighter';c.globalAlpha=1-u;const g2=c.createRadialGradient(cx,cy,0,cx,cy,r);g2.addColorStop(0,p.core);g2.addColorStop(.4,p.glow+'aa');g2.addColorStop(1,p.accent+'00');c.fillStyle=g2;c.beginPath();c.arc(cx,cy,r,0,TAU);c.fill();c.restore();
+   if(t&&b.x===t.x&&b.y===t.y)continue;const a2=age-90-i*60;if(a2<0)continue;
+   fx.bursts.push({x:b.x+b.width/2,y:b.y+b.height*.95,r:Math.max(b.height*.45,110*k),life:clamp(a2/850),power:.8});
+   fx.pools.push({x:b.x+b.width/2,y:b.y+b.height*.95,r:b.width*.9,power:.8*Math.max(0,1-a2/850)});
   }
  }
  /** Cut-in: slanted band, portrait crop over the E7 rune circle, speed lines, outlined gradient name. */
@@ -250,7 +235,7 @@ export class UltimatePainter {
   for(let i=0;i<26;i++){const y=top+bh*r(),len=w*(.15+.35*r()),x=((r()*w*1.4+(f.reduced?0:f.at*(2.4+r())*k))%(w*1.4))-w*.2;c.globalAlpha=s.alpha*(.15+.35*r());c.fillStyle=i%3?p.core:p.glow;c.fillRect(w-x,y,len,(1+2.5*r())*k);}
   c.globalCompositeOperation='source-over';c.globalAlpha=s.alpha;
   // E7 rune circle behind the portrait.
-  const pcx=w*.27,pcy=top+bh*.5,pr=bh*.62;if(!this.flipbooks.drawAt(c,'rune-circle',pcx,pcy,pr*2.3,f.reduced?0:f.at/1000))this.runeCircle(pcx,pcy,pr,f.at,p.glow,p.core,f.reduced);
+  const pcx=w*.27,pcy=top+bh*.5,pr=bh*.62;this.runeCircle(pcx,pcy,pr,f.at,p.glow,p.core,f.reduced);
   // Portrait (head and shoulders).
   if(f.cutin&&f.cutinCrop&&f.cutin.complete&&f.cutin.naturalWidth){
    const cr=f.cutinCrop,dh=bh*1.35,dw=dh*cr.width/cr.height,dx=pcx-dw/2,dy=top+bh-dh+bh*.08;
@@ -269,14 +254,16 @@ export class UltimatePainter {
   c.font=`700 ${Math.round(18*k)}px "Baloo 2", "Trebuchet MS", sans-serif`;c.fillStyle=p.core;c.globalAlpha=s.alpha*.9;c.fillText('ULTIMATE',x+4*k,y-size*.72);
   c.restore();
  }
+ /** Warm lantern halo behind the portrait: soft light and slow rays, no sci-fi rings. */
  private runeCircle(x:number,y:number,r:number,at:number,glow:string,core:string,reduced:boolean){
-  const c=this.c,spin=reduced?0:at*.0016;
-  c.save();c.translate(x,y);c.globalCompositeOperation='lighter';c.strokeStyle=glow;c.lineWidth=2;
-  c.globalAlpha*=.8;c.beginPath();c.arc(0,0,r,0,TAU);c.stroke();c.beginPath();c.arc(0,0,r*.82,0,TAU);c.stroke();
-  c.rotate(spin);for(let i=0;i<6;i++){c.rotate(TAU/6);c.beginPath();c.moveTo(r*.82,0);c.lineTo(r*.82*Math.cos(TAU/3),r*.82*Math.sin(TAU/3));c.stroke();}
-  c.rotate(-spin*2);c.fillStyle=core;for(let i=0;i<16;i++){c.rotate(TAU/16);c.fillRect(r*.88,-1.5,r*.07,3);}
+  const c=this.c,spin=reduced?0:at*.0004;
+  c.save();c.translate(x,y);c.globalCompositeOperation='lighter';
+  const g=c.createRadialGradient(0,0,0,0,0,r*1.15);g.addColorStop(0,core+'cc');g.addColorStop(.35,glow+'77');g.addColorStop(1,glow+'00');
+  c.fillStyle=g;c.beginPath();c.arc(0,0,r*1.15,0,TAU);c.fill();
+  c.rotate(spin);
+  for(let i=0;i<12;i++){c.rotate(TAU/12);const rg=c.createLinearGradient(0,0,r*1.4,0);rg.addColorStop(0,core+'55');rg.addColorStop(1,core+'00');c.fillStyle=rg;c.beginPath();c.moveTo(0,0);c.lineTo(r*1.4,-r*.07);c.lineTo(r*1.4,r*.07);c.closePath();c.fill();}
   c.restore();
  }
- dispose(){this.flipbooks.dispose();this.canvas.remove();this.particles.length=0;}
+ dispose(){this.flipbooks.dispose();this.gl.dispose();this.canvas.remove();this.particles.length=0;}
 }
 export type {FlipbookId};
