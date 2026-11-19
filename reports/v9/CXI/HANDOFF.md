@@ -1,15 +1,15 @@
-ACTIVE: draft release PR446 OPEN; finishing existing sleep600/session99065 dual-source poll, then closeout.
-STANDING: handoff/compaction is not a pause; no permission needed; stop at PR open or true owner-only block after other work.
-PUBLISHED: v5-m2.5 eb00ea836fa441754515aa52886eda7b456aff29; integration d1bfdbfa7; immutable recording v5-m2.2 remains.
-GATE m25: fixture build/typecheck/10 focused tests/reviewer JS PASS; real6301 boss20.8s,12 S2/8 VFX,fixture/RPC/legacy,no page errors.
-EVIDENCE: work/v9/CXI/x4-m25-*.log and browser-m25/; m24 also published and passed.
-RELEASE: release/2026-11-21 4615483ad pushed; sparse /Users/bao/taskbar-hero-release-prep; runtime matches tested tag.
-CLEANUP: reports/screenshots untracked/ignored on release; preserve deletions in tag merges; integration AGS dirt untouched.
-README: 5 verified contracts, Mermaid, historical12Nov mint/list/buy receipts; tag/test data updated; AGV hero GIF/trailer pending.
-POLL: each check fetches origin and reads CV OUTBOX as second DELIVERIES; work/v9/CXI/poll-deliveries.py 70 641 11.
-CURSORS: DELIVERIES70, INBOX-CXI641, CV OUTBOX11 at80ba86f84; last check19Nov07:24:59UTC.
-NEXT: finish session99065 then inspect new deliveries; integrate READY; update PR/BOARD; owner merges. NO SCREEN CONTROL.
-MEDIA: AGV local d5fcc0b50 G2 capture, no READY; local HANDOFF said wait2.2; notified tag exists and partial G3 may ship.
-OWNER: fresh Fuji mint/config/deploy/funding, boss OGA-BY decision/replacement and Vercel quota in NEEDS-USER-V9.md.
-PR OPEN/ATTACHED: https://github.com/ntbaoheyhey/taskbar-hero/pull/446 draft, head4615483ad → main; README render verified.
-V8/BatchM cancelled; no automation/subagents; no owner art acceptance claimed; do not move published tags.
+STATE: draft release PR446 OPEN and attached; no unmerged READY as of19Nov08:53:49UTC; no pending processes.
+OWNER REQUEST: stop screen control; use Git/CLI only. Standing V9 resumption authorization remains; no handoff permission gate.
+LATEST TAG: v5-m2.5 eb00ea836fa441754515aa52886eda7b456aff29 origin verified; v5-m2.2 recording baseline immutable.
+INTEGRATION: last verified pushed7ebb90594; this report-only closeout follows, preserve unrelated AGS dirt.
+GATE: fixture build/typecheck/10 focused tests/reviewer JS pass;6301 boss20.8s,3 ults,12 S2/8 VFX,fixture/RPC/legacy,no errors.
+RELEASE: release/2026-11-21 4615483ad066d4843c518c2283919550289ef837; runtime matches tested tag; sparse release-prep worktree.
+PR: https://github.com/ntbaoheyhey/taskbar-hero/pull/446 draft→main, mergeable; owner merges; do not mark full V9 DONE.
+README: GitHub+Mermaid rendered,9 relative links resolve;5 verified Fuji contracts + historical12Nov mint/list/buy receipts.
+CLEANUP: reports/screenshots untracked+ignored on release; keep deletions in future tag merges; preserve local files/history.
+POLL: python3 work/v9/CXI/poll-deliveries.py 70 643 11; always fetch origin CV OUTBOX as second DELIVERIES.
+NEXT READY: merge exact delivered commit; gate; next unused v5-m2.N tag; BOARD5 lines; carry tag into release/PR.
+GAPS: AGV hero GIF/trailer; S2 attribution; final designer/Soot exports,owner/Claude eye acceptance,V2 runtime.
+OWNER BLOCKS: fresh mint backend/deploy/funding; boss OGA-BY decision or allowed replacement; Vercel quota,see NEEDS-USER-V9.
+CI: GitHub run44479786567 cancelled at checkout/downstream skipped;2 Vercel build-rate-limit failures; local gate green.
+V8/BatchM cancelled; no automation/subagents; no screen control,licence acceptance,funding,deploy or main merge.
