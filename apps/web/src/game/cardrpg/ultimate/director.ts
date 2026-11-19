@@ -64,7 +64,8 @@ export class UltimateDirector {
   const pool=r.aim==='team'?anchors.team.filter(b=>Math.abs(b.x+b.width/2-cx)>4):anchors.targets.length?anchors.targets:anchors.enemies;
   const tx=pool.length?pool.reduce((s,b)=>s+b.x+b.width/2,0)/pool.length:cx+width;
   const dir=Math.sign(tx-cx)||1,max=r.lunge*width;
-  this.reach=dir*Math.min(max,Math.max(max*.4,Math.abs(tx-cx)*.45));
+  // Brief: a 6-10% lunge toward the target, never past it.
+  this.reach=dir*Math.min(max,Math.max(width*.06,Math.abs(tx-cx)*.45),Math.max(width*.03,Math.abs(tx-cx)-c.width*.3));
  }
  get lungeReach(){return this.reach;}
  /** Hit-stop deadline in performance.now() ms; the scene freezes poses until then. */
