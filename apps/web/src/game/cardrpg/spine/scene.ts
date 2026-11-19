@@ -190,7 +190,7 @@ export class SpineScene {
     const entry={actor,craftPose,craftLight,craftDeath,asset,entered:this.time+lane*PAINT.entranceStagger,hurtAt:-100,koAt:-1,phaseAt:-100,phase:view.bossPhases?.[unit.id]??1,lane,entranceDone:false,shadow,ring,hit};this.actors.set(unit.id,entry);
     this.syncMediaSuspension(this.view());
     actor.onCue=cue=>this.onCue(unit.id,cue);
-    if(asset==='mochi'||asset==='clover')actor.onMediaFrame=()=>this.invalidate();
+    if(asset==='mochi'||asset==='clover'||asset==='soot')actor.onMediaFrame=()=>this.invalidate();
     this.scene.add(actor.root,shadow,ring,hit);
     this.invalidate();
    }).catch(error=>{
@@ -352,7 +352,7 @@ export class SpineScene {
    if(iced&&unit.hp>0&&previous){name=previous.name;key=previous.key;at=previous.at;}
    else if(frozen&&previous&&previous.name===name&&previous.key===key)at=previous.at;
    if(actor.mesh&&!frozen){actor.mesh.proceduralTime=worldTime+phaseOffset;if(actor.mesh.livingCat)actor.mesh.livingReducedMotion=!!view.reducedMotion;}
-   if(entry.asset==='mochi'||entry.asset==='clover')actor.sample(name,key,at,delta,this.camera,view.reducedMotion,
+   if(entry.asset==='mochi'||entry.asset==='clover'||entry.asset==='soot')actor.sample(name,key,at,delta,this.camera,view.reducedMotion,
     {worldTime:worldTime+phaseOffset,paused:!!view.paused,fixedTime:view.fixedTime!==undefined,frozen,playbackRate:view.playbackSpeed??1});
    else actor.sample(name,key,at,delta,this.camera,view.reducedMotion);
    const drawingDamage=unit.hp>0&&frame?.plan.events.some(e=>e.type==='damage'&&e.amount>0&&e.targetIds.includes(unit.id));
