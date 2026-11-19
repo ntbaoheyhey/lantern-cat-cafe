@@ -8,7 +8,7 @@ The GIF and silent video were captured from `v5-m2.5`. The video shows the stree
 
 The Lantern Cat Café is the last lit shop on a street tangled by abandoned tasks. Lead Mochi, Clover and Soot through a street patrol and face the Yarn Giant in a cosy browser card RPG. In the configured Avalanche mode, café memories become Relics that players can own on Fuji.
 
-**Latest integrated build:** [v5-m2.8](https://github.com/ntbaoheyhey/taskbar-hero/tree/v5-m2.8), with self-contained release assets, refreshed V9 backend maps and reliable CLI receipt handling. It includes the v5-m2.6 submission media, CC-BY boss music replacement, complete delivered sound credits, V9 audio packaging and faster CI change detection. The [v5-m2.2 recording baseline](https://github.com/ntbaoheyhey/taskbar-hero/tree/v5-m2.2) remains published, with all three ultimate sequences and layered sound playback.
+**Latest integrated build:** [v5-m2.9](https://github.com/ntbaoheyhey/taskbar-hero/tree/v5-m2.9), with self-contained release assets and simulation inputs, isolated judge/chain routes, refreshed V9 backend maps and reliable CLI receipt handling. It includes the v5-m2.6 submission media, CC-BY boss music replacement, complete delivered sound credits, V9 audio packaging and faster CI change detection. The [v5-m2.2 recording baseline](https://github.com/ntbaoheyhey/taskbar-hero/tree/v5-m2.2) remains published, with all three ultimate sequences and layered sound playback.
 
 ## Play in three steps
 
@@ -28,7 +28,7 @@ Use Node 24 and pnpm 10.28.0. The local demo needs no account, wallet setup or t
    node tools/v5int/run-chain-mode.mjs --fixture
    ```
 
-3. Open [Lantern Cat Café on port 6301](http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3). Choose **Play free → Guard the café → Face the Yarn Giant**. Keep the complete URL: the bare URL opens an older shell.
+3. Open [Lantern Cat Café on port 6301](http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3). Choose **Play free → Guard the café → Face the Yarn Giant**. The complete URL selects the judge journey explicitly.
 
 The three cats fight automatically at 1× speed. Mochi protects the team, Clover heals, and Soot delivers the final boss ultimate. The seeded journey has one street wave followed by the Yarn Giant; all twelve cats appear in Collection, while only the three demo cats enter these battles. **Play again** repeats the journey, and `&legacy=1` keeps the earlier game available.
 
@@ -100,7 +100,9 @@ The judge experience uses **Vite, React, TypeScript and Three.js**, with Spine/n
 
 ## Validation and current limits
 
-The integration gate is a production build, TypeScript check, focused tests for changed code and a real browser demo run on port 6301. The `v5-m2.2` recording baseline passed 152 focused tests; the `v5-m2.3` matte/effects update passed 27 affected tests, the `v5-m2.5` reviewer update passed 10 affected tests, and `v5-m2.6` passed 101 focused audio/demo tests. The `v5-m2.7` release tree passed its production build, workspace typecheck/lint, 11 affected UI/demo tests and five import-map generator tests; all 25 Edge Function maps resolve and regenerate without changes. CI change detection was also checked using real shallow Git clones for docs-only, web and manual-run cases. The full m2.7 workspace suite passed 5,579 tests (11 skipped and two expected failures); m2.8 adds nine focused receipt/move tests, 33 campaign tests and 14 passing local chain preflight commands. The latest headless browser run against the release build completed the boss in 21.0 seconds at normal speed with Mochi, Clover and Soot's ultimates. All twelve ultimate sound layers played and all eight Blender flipbooks loaded. The same run checked Collection against live Fuji RPC, the labelled receipt fixture and the legacy route, with no page errors. This is a local playback observation, not a general hardware benchmark.
+The integration gate is a production build, TypeScript check, focused tests for changed code and a real browser demo run on port 6301. The latest `v5-m2.9` release tree passed the build, web typecheck, 18 route/demo tests, eight simulation-fixture tests and 124 chain-tool tests. The full m2.7 workspace suite passed 5,579 tests (11 skipped and two expected failures), and m2.8 passed 14 local chain preflight commands, including disposable PostgreSQL and Anvil checks. These local checks do not establish a public Fuji mint or a complete remote CI pass.
+
+The latest headless browser run against the release build completed the boss in 21.1 seconds at normal speed with Mochi, Clover and Soot's ultimates. All twelve ultimate sound layers played and all eight base Blender flipbooks loaded. The same run checked Collection against live Fuji RPC, the labelled receipt fixture and the legacy route, with no page errors. This is a local playback observation, not a general hardware benchmark. Remote CI still has chain audit timing and older browser-fixture failures under repair.
 
 ```sh
 pnpm --filter @taskbar-hero/web typecheck
