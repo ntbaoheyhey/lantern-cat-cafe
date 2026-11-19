@@ -18,11 +18,16 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 0
+          # The release removes many historical media files. Fetching every
+          # branch and tag exhausted this job before it could classify changes.
+          fetch-depth: 1
       - id: f
         env:
           BASE: ${{ github.event.pull_request.base.sha || github.event.before }}
         run: |
+          if [ -n "$BASE" ] && [ "$BASE" != "0000000000000000000000000000000000000000" ] && ! git cat-file -e "$BASE^{commit}" 2>/dev/null; then
+            git fetch --no-tags --depth=1 origin "$BASE"
+          fi
           if [ -z "$BASE" ] || [ "$BASE" = "0000000000000000000000000000000000000000" ] || ! git cat-file -e "$BASE^{commit}" 2>/dev/null; then
             files=$(git ls-files)
           else
