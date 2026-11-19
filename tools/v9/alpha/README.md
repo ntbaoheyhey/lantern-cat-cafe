@@ -19,6 +19,8 @@ The loop diagnostic compares premultiplied RGBA over the visible union and print
 
 Temporary MP4s require `make-placeholder.py`, which keys exterior black, retains enclosed dark eyes/clothes, and unpremultiplies keyed edges. Pass `--placeholder` to label them. Independently framed stand-ins can use `--height-ratio`; this must not silently calibrate final files. Convert final Mochi before replacing final Clover/Soot. There is no Soot placeholder.
 
+For a live browser review, serve the repository root (`python3 -m http.server 8390`) and open `/tools/v9/alpha/review.html`. The page provides synchronized grey/light videos and a replay-across-seam control. Select HEVC in Safari to inspect the native Apple rendition.
+
 ```sh
 work/v9/CXV/.venv/bin/python tools/v9/alpha/make-placeholder.py ~/Downloads/Scene1.mp4 work/v9/CXV/mochi/placeholder
 tools/v9/alpha/convert-idle.sh work/v9/CXV/mochi/placeholder mochi --placeholder --cutin 1
