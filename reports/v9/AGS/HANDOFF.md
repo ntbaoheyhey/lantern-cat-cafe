@@ -6,5 +6,5 @@
 - S2 Manifest: sfx.ult.<cat>.<layer> and sfx.shared.<name> mapped in manifest.json.
 - S3 Submission: README-SECTIONS.md, TRAILER-SCRIPT.md, SLIDES-OUTLINE.md written to spec.
 - Licensing: Full attribution in LICENSES.json and CREDITS.md.
-- Commit: ag/v9-sound@5aca3a438 pushed to origin.
-- Cron Task: Cancelled upon completion.
+- Commit: ag/v9-sound@308521d79 pushed to origin.
+- Cron Task ID: a5c1a38b-4837-47a4-8b54-763e11e01862/task-352 (active 15-min watchdog)
