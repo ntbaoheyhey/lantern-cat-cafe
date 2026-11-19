@@ -2,11 +2,11 @@
 - Branch: codex/v9-tools, base v5-m1.15. V8/Batch M cancelled.
 - Order: reports/v9/CXV/ORDER.txt; only V9 owned paths plus mailbox/work scratch.
 - Started 2026-11-19T05:59:42Z; V0 deadline 07:59:42Z (2 hours).
-- V0 delivery complete: converter + Mochi/Clover placeholders; designer zips/Soot absent.
+- V0 correction active: border/temporal black key fixes closed tail gaps and translucent apron; re-export both cats.
 - V1 assets DONE: eight atlases/JSON + sheets/3s clips; requesting Claude eye review (one round).
 - V2 optional: cat tints and screen flash.
 - Old tracked WIP saved/pushed as 6c77897c7; 512 untracked old entries untouched.
-- Pushed 00b232a27: V0 both cats + checks; READY to Claude/CXI, visual acceptance pending.
+- Pushed 522b35a42: V0 + V1 assets; Claude reported matte defects at Mochi 75/125/175; acceptance pending.
 - Review: work/v9/CXV/vfx/overview.jpg + overview-3s.mp4; browser player on localhost:8390.
 - Owner confirmed final exports share source pixel scale; replace Mochi before other cats.
 - Required: commit/push owned paths every 30 min/card end, READY mailbox, one Claude look.
