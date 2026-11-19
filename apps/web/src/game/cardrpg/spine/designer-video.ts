@@ -73,7 +73,12 @@ export class DesignerVideoMedia {
   this.ready=new Promise<boolean>(resolve=>{
    const timer=setTimeout(()=>{this.failure='Designer video timeout';resolve(false);},8000);
    video.addEventListener('loadeddata',()=>{clearTimeout(timer);resolve(true);},{once:true});
-   video.addEventListener('error',()=>{clearTimeout(timer);this.failure='Designer video failed '+(video.error?.code??'');resolve(false);},{once:true});
+   const failed=()=>{
+    // A cat delivered without an HEVC-alpha export (Soot) still plays its WebM.
+    if(video.src.endsWith('.mov')){video.src=`${folder}idle.webm`;video.addEventListener('error',failed,{once:true});return;}
+    clearTimeout(timer);this.failure='Designer video failed '+(video.error?.code??'');resolve(false);
+   };
+   video.addEventListener('error',failed,{once:true});
   });
   this.watchFrames();
   void video.play().catch(()=>{/* autoplay is retried on sample */});

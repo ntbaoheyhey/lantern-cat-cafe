@@ -1,5 +1,7 @@
 # Judge walkthrough — DRAFT, local candidate and live baseline
 
+> **Archived (v2, early November 2026).** This page describes the earlier v2 build and is kept for history only. The current judge path, Fuji contracts (including the fixed-supply ERC-20 YARN) and demo steps are in the [README](../README.md).
+
 Use [the live frontend](https://taskbarhero-eight.vercel.app) on desktop. This guide separates local guest progress, authenticated server state and Fuji transactions. It is not a completed timed demo or submission. Integrated candidate `1eefc3e` is not deployed; live baseline remains `340f88b`. Use the [current release evidence](release-status.md) and [90-second candidate shot list](submission/shot-list-90-second.md) to label the source being demonstrated.
 
 ## Guest inspection
