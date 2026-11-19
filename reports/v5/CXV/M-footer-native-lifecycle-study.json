@@ -20,5 +20,7 @@
     "apps/web/src/game/cardrpg/battle-v3/battle.css": "0b7f0e39a2da0dcedff15a849a46deb9ce23519c402ab7fb2da381217e3d5c16"
   },
   "implementationNotBeforeUTC": "2026-11-18T18:39:10.174915+00:00",
-  "applicationDiffEmpty": true
+  "applicationDiffEmpty": true,
+  "baselineDifference": "Local BattleHud has a prior guard avoiding unchanged total-damage text replacement compared with pinnedbf01. Native proposal must be a minimal source transform against explicit pinned input,never a whole-file transfer.",
+  "nativeDesign": "Reuse Meter/Rage/Badges in React in the same visual-state render;existing HUD paint loop updates ready/failure visibility,not values. No new perpetual loop. Keep original world reservations;observe actual native fallback and lifecycle before adoption."
 }
