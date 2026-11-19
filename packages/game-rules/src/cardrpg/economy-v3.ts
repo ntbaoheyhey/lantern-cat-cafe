@@ -20,6 +20,23 @@ export const ECONOMY_V3={
  tailoring:{"legendary":{"fish":100,"threads":300,"essence":45,"materials":160,"seals":7}},
  craft:{"rebateBp":9500,"weeklySpoolCap":5},
 } as const;
+/** Burn-backed emission guard (server policy on top of the deployed SeasonRewards controller).
+ * A Spool withdrawal is signed only while, for the current 13-week contract season,
+ * emittedInSeason + amount <= launchAllowance + backingBp/10000 * burnedInSeason.
+ * Both totals are public reads on Fuji, so anyone can audit the rule. Spool that
+ * cannot be withdrawn yet stays spendable 1:1 in game; nothing is lost. */
+export const EMISSION_GUARD={launchAllowance:2000,backingBp:9000} as const;
+/** YARN (whole-token units, may be fractional) still claimable this contract season. */
+export function emissionHeadroom(emitted:number,burned:number,guard:{launchAllowance:number;backingBp:number}=EMISSION_GUARD){
+ if(![emitted,burned].every(v=>Number.isFinite(v)&&v>=0))throw new Error('Invalid emission totals');
+ return Math.max(0,guard.launchAllowance+burned*guard.backingBp/10000-emitted);
+}
+/** Integer-wei form used by the server before it signs a SeasonRewards claim. */
+export function emissionHeadroomWei(emitted:bigint,burned:bigint){
+ if(emitted<0n||burned<0n)throw new Error('Invalid emission totals');
+ const room=BigInt(EMISSION_GUARD.launchAllowance)*10n**18n+burned*BigInt(EMISSION_GUARD.backingBp)/10000n-emitted;
+ return room>0n?room:0n;
+}
 export function v3Season(now=Date.now()){const {epoch,days}=ECONOMY_V3.season,length=days*86400000,number=Math.max(1,Math.floor((now-epoch)/length)+1),ends=epoch+number*length;return {number,ends,days:Math.min(days,Math.max(0,Math.ceil((ends-now)/86400000)))};}
 export function withdrawalQuote(gross:bigint){if(gross<=0n)throw new Error('Positive Spool amount required');const retained=gross*BigInt(ECONOMY_V3.spool.feeBp)/10000n;return {gross,retained,net:gross-retained,burned:0n};}
 /** Largest gross withdrawal whose rounded net fits the public weekly cap. */
