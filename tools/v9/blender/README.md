@@ -41,3 +41,11 @@ For Three.js, set the color texture to sRGB and disable mipmaps to avoid adjacen
 Run `python3 -m http.server 8390` at the repository root and open `/tools/v9/blender/review.html` for simultaneous 256 px atlas playback, background switching, pause, quarter speed and restart. This viewer uses the delivered WebP/JSON, rather than only the Blender source PNGs.
 
 `work/v9/CXV/.venv/bin/python tools/v9/blender/make-overview.py` builds a two-row overview sheet and a synchronized 3-second clip directly from the delivered atlases. The one-shot previews include a quiet gap so the start/end motion can be judged without a hard replay cut.
+
+## V2 cat variants and screen flash
+
+Run `work/v9/CXV/.venv/bin/python tools/v9/blender/build-variants.py` after rendering the neutral effects. It derives nine lossless atlases from the delivered Blender originals: `{impact-core,shockwave-ring,rune-circle}-{mochi,clover,soot}.webp` and matching JSON. Mochi uses `#ffbd4c`, Clover `#74e69e`, and Soot `#b873ff`. Colouring happens in linear light; the impact peak remains white. These colours are baked in, so use a white material tint. Frames, timing, looping, dimensions and anchors match the neutral parent. JSON additionally records `variantOf`, `cat` and `tintSRGB`.
+
+`flash-gradient.webp` is a single 1024×1024 straight-RGBA white radial veil for a full-screen overlay. Stretch its UVs to the viewport and animate its material opacity in code. Its JSON marks `screenSpace: true`, `frames: 1`, and normal blending; it is not a 512 px world-space effect cell. White RGB is preserved even in its low-alpha corners, avoiding a dark fade.
+
+Reviews: `work/v9/CXV/vfx/variants/overview.jpg`, `preview-3s.mp4`, and `flash-gradient-review.jpg`. The live `/tools/v9/blender/variants.html` page loads all nine delivered pairs, filters by cat, changes background/speed, and previews the flash on demand.
