@@ -8,6 +8,6 @@ PROOF: Anvil+60s reproduced olderror; sealtrial/budget proofs+19serverunit tests
 BROWSER:33screen wordbudget+keyboard+3viewport+3VFX checks pass;4isolated chain scenarios pass. VFX uses configured liveplan/realactivepipeline.
 GATE: releasebuild/typecheck,muted6301/1280x720/1x wave+boss21.1s,3portraits/ults,12S2/8VFX,fixture/liveRPC/legacy,noerrors.
 POLL:86/651/14 at16:43:35UTC,CV7615bfae5; fetch+read bothsources eachcheck.
-NEXT:BOARD/PR updated;follow remoteCI,fix failures;ready onlyafterallchecks green;idle sleep600/recheck.
-OWNER:backend/secrets/funding/freshmint +mainmerge/publicdeploy;Vercelpending,oldquota claimremoved.
+NEXT:BOARD/PR updated;CI44569603161 running on4debac543,fix failures;ready onlyafterallchecks green;idle sleep600/recheck.
+OWNER:bothVercelchecks fail build-rate-limit on4debac543;recordedNEEDS-USER;backend/secrets/funding/freshmint +mainmerge/publicdeploy.
 PRESERVE:AGS3modified+QA2untracked;preview27584/PID66039 servesrelease6301. No fullV9DONE untilcurrentworkdone.
