@@ -7,7 +7,7 @@
 - V2 delivered/pushed: eb9bdd331, nine cat variants + flash-gradient; tools/v9/blender/variants.html.
 - CXI reports V0/V1/V2 integrated in v5-m2.3; owner/Claude art acceptance is still pending.
 - Designer ZIPs/MOVs absent at last check; no Soot placeholder. Recheck Downloads and INBOX-CXV.md.
-- Owner confirmed shared source scale: convert final Mochi first, then Clover/Soot without provisional ratios.
+- Final shared-scale ZIP smoke passed (40:30:45 -> 720:540:810); convert real Mochi first, then Clover/Soot without provisional ratios.
 - Safari HEVC mattes checked: Mochi125/Clover75; viewer now repaints on seek even when Safari throttles animation callbacks.
 - Pending: one Claude eye review (owner chose waiting); CV quota resets 17:30 Vietnam; use INBOX-CV.md/origin CV OUTBOX; no further screen control; final zips on arrival.
 - Timeboxes: V0 05:59:42–07:59:42 UTC; V1 06:08–12:08 UTC on 2026-11-19; ship working results/gaps at cap.
