@@ -112,7 +112,7 @@ export class DesignerVideoMedia {
 }
 
 /** Socket heights as fractions of the opaque body, measured on the three idles. */
-const SOCKETS:Record<string,[number,number]>={feet:[0,0],chest:[0,.5],head:[0,.77],hpAnchor:[0,1.1],vfxOrigin:[0,.52],mainHand:[.24,.5],offHand:[-.2,.48]};
+const SOCKETS:Record<string,[number,number]>={feet:[0,0],chest:[0,.5],head:[0,.77],hpAnchor:[.36,.9],vfxOrigin:[0,.52],mainHand:[.24,.5],offHand:[-.2,.48]};
 
 export class DesignerVideoActorMedia {
  readonly designerVideo=true;
