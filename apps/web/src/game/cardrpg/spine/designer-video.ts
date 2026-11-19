@@ -15,6 +15,9 @@ import type {OpaqueWorldBounds} from './../stage/opaque-pose-bounds';
 export const DESIGNER_VIDEO_IDS=new Set(['mochi','clover','soot']);
 /** Body height in actor units; the C2 layout rescales every actor to its seat. */
 export const DESIGNER_BODY_UNITS=512;
+/** Seats are equal height; Mochi's broad fur and big head read ~8% larger than
+ * slender Clover at the same height, so its drawn body is trimmed to match. */
+export const DESIGNER_DISPLAY_SCALE:Record<string,number>={mochi:.92,clover:1,soot:1};
 
 export interface DesignerVideoMeta {
  fps:number;frames:number;width:number;height:number;feetY:number;heightPx:number;
@@ -137,9 +140,14 @@ export async function loadDesignerVideoActor(actor:SpineActor,root=''):Promise<b
  const meta=validateDesignerVideoMeta(await response.json());
  const media=new DesignerVideoMedia(meta,folder,folder+'poster.webp');
  if(!await media.ready){const failure=media.failure;media.dispose();throw Error(failure??'Designer video unavailable');}
- const body=designerBodyRect(meta),adapter=new DesignerVideoActorMedia(media,body);
+ const full=designerBodyRect(meta),display=DESIGNER_DISPLAY_SCALE[id]??1;
+ // Layout seats the full body box; the drawing and its opaque box shrink about the feet.
+ media.plane.scale.setScalar(display);media.plane.position.multiplyScalar(display);
+ // The seat normaliser clamps the opaque box to +-1.5% of the seat, so the box it
+ // measures stays the full one; sockets and the hp bar follow the drawn body.
+ const body={x:full.x*display,y:0,width:full.width*display,height:full.height*display},adapter=new DesignerVideoActorMedia(media,full);
  actor.designerMedia=adapter;actor.designerIdle=true;actor.source='media';actor.root.add(media.plane);media.onFrame=()=>actor.onMediaFrame?.();
- Object.assign(actor.bounds,{x:body.x,y:body.y,width:body.width,height:body.height});
+ Object.assign(actor.bounds,{x:full.x,y:full.y,width:full.width,height:full.height});
  actor.faceRegion=unitFace(id,actor.bounds);
  for(const [socket,[fx,fy]] of Object.entries(SOCKETS))actor.sockets.get(socket as SpineSocket)?.position.set(fx*body.height,fy*body.height,1);
  for(const name of actor.unit.animations){

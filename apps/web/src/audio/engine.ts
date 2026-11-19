@@ -7,6 +7,7 @@ import {installUiFeedback} from './feedback';
 import {rangedPacksForRoster} from './ranged-packs';
 import {loadV5AudioManifest} from './v5-manifest-loader';
 import {PackedAudioLoader} from './packed-audio-loader';
+import {ULT_DUCK,V9_ULT_CATS,V9_ULT_LAYERS,layersForBeat,v9LayerPaths,hitPitch,groupsToEvict,legacyUltCat,type V9UltLayer} from './ultimate-mix';
 
 const KEY='tbh-audio-v3';
 const defaults:Record<Bus,number>={master:.7,music:.55,ambience:.3,sfx:.8,voice:.7,ui:.6};
@@ -58,11 +59,14 @@ export class AudioEngine implements AudioBridge {
  private bedTokens={music:0,ambience:0}; private bedIds={music:'',ambience:''}; private paused=false; private rate=1;
  private speechCutDb=0;
  private ducked=false;
+ // V9 C5: a music-only duck for ultimates, per-hit pitch spread, AGS ult layers.
+ private ultDuck?:GainNode;private hitRates=new Map<number,number>();private v9Layers=new Map<string,AudioBuffer>();private v9Ready=new Set<string>();private v9Loading=false;
  private musicScopes:{key:symbol;id:string}[]=[];private musicScopeBase='';
  private preferences={...defaults}; muted=false;
  readonly hits:AudioHit[]=[];
  constructor(private random:()=>number=Math.random,private readonly assetBase='/audio/',private readonly delivery?:(m:AudioManifest,url:(path:string)=>string)=>Promise<AudioManifest>,private readonly packaged?:PackedAudioLoader){
   this.pools=new VariantPools(random);
+  if(typeof window!=='undefined')window.addEventListener('th:ult-beat',this.onUltBeat);
   try{const p=JSON.parse(localStorage.getItem(KEY)??'null');for(const b of BUS_NAMES)if(Number.isFinite(p?.[b]))this.preferences[b]=Math.max(0,Math.min(1,p[b]));this.muted=p?.muted===true;}catch{/* storage optional */}
  }
  get ready(){return this.ctx?.state==='running';}
@@ -83,7 +87,7 @@ export class AudioEngine implements AudioBridge {
    this.speechSpace=this.ctx.createBiquadFilter();this.speechSpace.type='lowshelf';this.speechSpace.frequency.value=1200;this.speechSpace.gain.value=0;
    this.speechSpace.connect(this.duck);
    // LEARN/S5-implementation.md: keep the calibrated bed separate from saved sliders.
-   this.musicBed=this.ctx.createGain();this.musicBed.connect(this.speechSpace);
+   this.musicBed=this.ctx.createGain();this.ultDuck=this.ctx.createGain();this.musicBed.connect(this.ultDuck).connect(this.speechSpace);
    for(const name of BUS_NAMES.slice(1)){
     const output=name==='music'?this.musicBed:this.buses.get('master')!;
     if(name==='voice'||name==='sfx'||name==='music'){
@@ -211,6 +215,7 @@ export class AudioEngine implements AudioBridge {
  private releaseDuck(){this.makeSpeechSpace();if(!this.ctx||!this.duck||!this.ducked||[...this.active].some(p=>p.ducking))return;this.ducked=false;const p=this.duck.gain,now=this.ctx.currentTime;p.cancelScheduledValues(now);p.setValueAtTime(p.value,now);p.linearRampToValueAtTime(1,now+.4);}
  play(id:string,opts:CueOptions={}){
   const now=Date.now();
+  const v9Cat=legacyUltCat(id);if(v9Cat&&this.v9Ready.has(v9Cat)){this.record(id,'v9-layers');return;}
   if(id.startsWith('voice.')){
    this.lastVoiceRequested=now;
    // A can send its explicit request just after the cast fallback. One take
@@ -329,13 +334,45 @@ export class AudioEngine implements AudioBridge {
   }
  }
  private start(id:string,buffer:AudioBuffer,s:Sample,priority:number,baseRate:number,volume:number,delay:number,eq:LayerEq,group:number,at=this.ctx!.currentTime,ducking=false){
-  const rate=baseRate*(s.bus==='sfx'?this.rate:1);
+  if(s.bus==='sfx'){const same=[...this.active].filter(p=>p.id===id&&p.group!==group).map(p=>p.group);for(const g of groupsToEvict(same))for(const p of this.active)if(p.group===g)this.end(p,true);}
+  let spread=1;if(id.startsWith('hit.')){spread=this.hitRates.get(group)??hitPitch(this.random);this.hitRates.set(group,spread);if(this.hitRates.size>64)this.hitRates.delete(this.hitRates.keys().next().value!);}
+  const rate=baseRate*spread*(s.bus==='sfx'?this.rate:1);
   const {source,gain,filter,begin}=sourceGraph(this.ctx!,this.buses.get(s.bus)!,id,buffer,s,rate,volume*dbGain(s.gainDb??0),delay,eq,at);
   const p:Playing={id,source,gain,filter,bus:s.bus,priority,group,baseRate,ended:false,ducking:ducking||s.bus==='voice'||id.startsWith('ult.')};this.active.add(p);
   source.onended=()=>this.end(p,false);
   begin();
   if(p.ducking)this.duckMusic();
   return p;
+ }
+ private onUltBeat=(event:Event)=>{
+  const detail=(event as CustomEvent<{beat?:string;cat?:string}>).detail;if(!detail?.cat||!this.ctx||this.paused)return;
+  if(detail.beat==='cutin')this.duckForUltimate();
+  for(const layer of layersForBeat(detail.beat??''))this.playV9Layer(detail.cat,layer);
+ };
+ /** -6 dB on the music bed for 1.5 s, independent of the voice duck. */
+ duckForUltimate(){
+  if(!this.ctx||!this.ultDuck)return;const g=this.ultDuck.gain,now=this.ctx.currentTime,low=dbGain(ULT_DUCK.db);
+  g.cancelScheduledValues(now);g.setValueAtTime(g.value,now);g.linearRampToValueAtTime(low,now+ULT_DUCK.attack);
+  g.setValueAtTime(low,now+ULT_DUCK.attack+ULT_DUCK.hold);g.linearRampToValueAtTime(1,now+ULT_DUCK.attack+ULT_DUCK.hold+ULT_DUCK.release);
+ }
+ private async loadV9Layers(){
+  if(this.v9Loading||!this.ctx)return;this.v9Loading=true;
+  await Promise.all(V9_ULT_CATS.map(async cat=>{
+   let all=true;
+   for(const layer of V9_ULT_LAYERS){
+    let buffer:AudioBuffer|undefined;
+    for(const path of v9LayerPaths(cat,layer)){try{const r=await fetch(this.assetUrl('/audio/'+path));if(!r.ok)continue;buffer=await this.ctx!.decodeAudioData(await r.arrayBuffer());break;}catch{/* next format */}}
+    if(buffer)this.v9Layers.set(`${cat}/${layer}`,buffer);else all=false;
+   }
+   if(all)this.v9Ready.add(cat);
+  }));
+ }
+ private playV9Layer(cat:string,layer:V9UltLayer){
+  const buffer=this.v9Layers.get(`${cat}/${layer}`),id=`sfx.ult.${cat}.${layer}`;
+  if(!buffer||!this.ctx){this.record(id,'missing');return;}
+  if(!this.admit('sfx',1,9)){this.record(id,'limit');return;}
+  const s={bus:'sfx',pack:'v9',start:0,duration:buffer.duration} as Sample;
+  this.start(id,buffer,s,9,1,layer==='body'?dbGain(-2):1,0,'flat',++this.group,this.ctx.currentTime,false);this.record(id,'played');
  }
  private end(p:Playing,stop:boolean){
   if(p.ended)return;p.ended=true;if(stop)p.source.stop();p.source.disconnect();p.gain.disconnect();p.filter?.disconnect();this.active.delete(p);
@@ -347,7 +384,7 @@ export class AudioEngine implements AudioBridge {
   for(const p of this.active)if(!id||p.id===id||(id==='music.boss'&&p.id==='music.boss.dawn'))this.end(p,true);
   for(const bus of ['music','ambience'] as const)if(!id||id===this.bedIds[bus]){this.bedIds[bus]='';this.bedTokens[bus]++;}this.setSceneTone();this.releaseDuck();
  }
- music(id:string){this.musicScopes=[];this.bed('music',id);const scene=id.replace(/^music\./,'');if(scene==='home'||scene==='battle'||scene==='boss')void this.preload(scene);}
+ music(id:string){this.musicScopes=[];this.bed('music',id);const scene=id.replace(/^music\./,'');if(scene==='home'||scene==='battle'||scene==='boss')void this.preload(scene);if(scene==='battle'||scene==='boss')void this.loadV9Layers();}
  /** Dialog scores restore the underlying scene; later navigation wins. */
  musicScope(id:string){
   if(!this.musicScopes.length)this.musicScopeBase=this.bedIds.music;

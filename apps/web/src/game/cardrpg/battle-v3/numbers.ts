@@ -75,7 +75,8 @@ export class BattleNumbers {
       const key=`${frame.plan.id}:${row.id}:${labelIndex}:${i}`,offset=numberOffset(frame.plan.duration-contact,0,i,pieces.length);
       if(this.shown.has(key)||frame.elapsed<contact+offset)return;this.shown.add(key);
       const text=label.type==='fizzle'?'×':(label.type==='heal'?'+':label.type==='shield'?'◇':'−')+amount;
-      const digitHeight=(dot?28:label.critical?46:label.type==='fizzle'?28:36)*scale;
+      // V9: ultimate numbers land huge (the shared motion supplies the overshoot).
+      const digitHeight=(dot?28:label.critical?46:label.type==='fizzle'?28:36)*scale*(frame.plan.ultimate&&!dot&&label.type!=='fizzle'?1.55:1);
       this.addBurst({key,id:row.id,text,x:a.body?a.body.x+a.body.width/2:a.x,
        y:(a.body?a.body.y+a.body.height:a.footY)-18*scale,at:this.now-(frame.elapsed-contact-offset),height:digitHeight,
        color:label.type==='heal'?'#55eb9b':label.type==='shield'?'#83ddff':label.type==='fizzle'?'#c1bfd1':label.critical?'#ff903e':'#ffc86a',critical:!!label.critical,kind:dot?'dot':label.type});
