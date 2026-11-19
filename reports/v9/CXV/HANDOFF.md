@@ -9,7 +9,7 @@
 - Owner clarified Soot has not been sent; watch Downloads and convert it using final Mochi scale on arrival.
 - V1 complete: eight E1-E7 atlas/JSON pairs, sheets/3s clips; 522b35a42 included in branch.
 - V2 complete: eb9bdd331, nine cat variants + screen flash; no remaining export items or new correction notes.
-- Pending Claude eye review via INBOX-CV.md or origin/claude/v9-visual:reports/v9/CV/OUTBOX.md; no screen control.
-- Old watcher ended; waiting uses sleep600 and rechecks feeds/new Soot sources; never duplicate a live watcher.
+- Owner confirms Claude review done; prior wait closed. Integrated v5-m2.12/CV still omit MOVs and use Clover233; CXV complete set is ready.
+- Watcher21317/PID97455 alive; designer-watch.log; sleep600. Preview PID68036/127.0.0.1:8390 passed HTTP200. No duplicate/restart needed.
 - Commit/push owned paths at card end; READY after push. Original timeboxes expired with delivery; no V9 DONE CXV yet.
 - Current review ZIP: work/v9/CXV/V9-READY-CXV-designer.zip; older f76e8c90a ZIP holds superseded placeholders.
