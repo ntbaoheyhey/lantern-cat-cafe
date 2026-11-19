@@ -47,3 +47,6 @@ X3 RELEASE (21 Nov, after the last tag, 3 h). Branch release/2026-11-21 from the
 
 QUEUE UPDATE — 19 Nov 2026
 Continue X4 for each new READY; reserve v5-m2.2 recording tag for latest Claude C3/C4/C5, CXV V1, AGS S2 by 2026-11-20T12:00Z. Meanwhile prepare README/mermaid/verified contract table on a side branch. After v5-m2.2 create release/2026-11-21 and PR into main; this latest queue authorizes the PR after that tag without waiting for 21 Nov. When nothing is READY run sleep 600 and check new mailbox lines again. Keep this turn active until PR open; owner-only blockers get one NEEDS-USER-V9 line while other work continues. Do not fabricate mint proof or accept licences.
+
+STANDING RESUMPTION — 19 Nov 2026
+Explicit owner instruction: resume now; finish pending checks/changes and push, then continue the V9 queue. Handoffs and compactions do not pause this work or require permission. When idle run sleep 600 and re-check. Stop only at V9 DONE or a true owner-only block; do other available work first.
