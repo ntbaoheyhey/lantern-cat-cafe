@@ -6,6 +6,21 @@ import {resolveDesign,type AudioManifest,type Sample} from './cues';
 const read=(path:string)=>JSON.parse(readFileSync(resolve(import.meta.dirname,'../../public/audio',path),'utf8'));
 afterEach(()=>vi.unstubAllGlobals());
 describe('V5 audio delivery',()=>{
+ it('loads the delivered V9 battle and boss music as full loops',()=>{
+  const next=applyV5Audio(read('manifest.json'),read('v5/manifest.json'));
+  for(const scene of ['battle','boss']){
+   const cue=resolveDesign(`music.${scene}`,next)!;
+   const sample=cue.layers[0]!.variants[0]!;
+   expect(sample).toMatchObject({pack:`v9:${scene}-v9`,start:0,duration:60,bus:'music',loop:true});
+   expect(next.packs[sample.pack]).toMatchObject({opus:`/audio/v9/${scene}-v9.opus`,m4a:`/audio/v9/${scene}-v9.m4a`});
+  }
+ });
+ it('rejects traversal and undelivered versions for music paths',()=>{
+  const base=read('manifest.json'),music=read('v5/manifest.json')['music.battle'];
+  for(const opus of ['/audio/v9/../battle.opus','/audio/v8/battle.opus']){
+   expect(applyV5Audio(base,{'music.battle':{...music,opus}})).toBe(base);
+  }
+ });
  it('replaces every delivered B2 layer without changing its cue timing, mixing or variant identity',()=>{
   const base=read('manifest.json') as AudioManifest,next=applyV5Audio(base,read('v5/manifest.json'));
   const seen=new Set<string>();

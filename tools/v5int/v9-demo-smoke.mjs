@@ -11,6 +11,8 @@ await mkdir(out,{recursive:true});
 const browser=await chromium.launch({headless:true,args:['--use-angle=metal']});
 try {
  const page=await browser.newPage({viewport:{width:1280,height:720}}),errors=[];
+ const loaded=new Set();
+ page.on('response',response=>{if(response.ok())loaded.add(new URL(response.url()).pathname);});
  page.on('pageerror',e=>errors.push(e.message));
  await page.goto(`${origin}/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3`);
  const play=page.getByRole('button',{name:'Play free',exact:true});
@@ -46,6 +48,12 @@ try {
  assert(elapsed<75000,`Boss playback exceeded 75s: ${elapsed}ms`);
  await page.screenshot({path:resolve(out,'victory.png')});
  console.log(`PASS boss in ${(elapsed/1000).toFixed(1)}s: Mochi → Clover → Soot; victory.`);
+ if(process.argv.includes('--v9-deliveries')){
+  for(const id of ['mochi','clover'])assert(loaded.has(`/units/${id}/designer/idle.webm`),`${id} delivered idle was not loaded`);
+  const packs=await page.evaluate(()=>window.__thAudio?.diagnostics.packs??[]);
+  for(const scene of ['battle','boss'])assert(packs.includes(`v9:${scene}-v9`),`${scene} delivered music was not decoded`);
+  console.log('PASS delivered Mochi/Clover video loads and V9 battle/boss music decode. Soot remains on its fallback rig.');
+ }
  if(process.argv.includes('--chain-ui')){
   await page.getByRole('button',{name:'Preview receipt fixture',exact:true}).click();
   const fixture=page.getByRole('status',{name:'Fixture receipt — no transaction'});
