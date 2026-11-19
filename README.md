@@ -54,13 +54,13 @@ All addresses below are on **Avalanche Fuji, chain ID 43113**, from the [version
 
 ### Three real Fuji transactions
 
-These successful **deployment transactions** were read back from Fuji RPC on 19 November 2026 and matched to the registry addresses. They establish deployment history; the fresh sponsored reward-mint recording remains owner-dependent.
+These successful **historical gameplay transactions from 12 November 2026** were read back from Fuji RPC on 19 November. The destination contracts, decoded methods and receipt events confirm minting, listing and buying Relic #3. They show the existing on-chain flow; the fresh V9 sponsored reward-mint recording remains owner-dependent.
 
 | Transaction | Receipt | Block |
 | --- | --- | ---: |
-| Deploy YarnToken | [0x42cdaae9…c3a049](https://testnet.snowtrace.io/tx/0x42cdaae9a91984232225e6b9a57ce22447cae526703ad17eadc6e0ce8bc3a049) | 60,931,271 |
-| Deploy RelicMarketV2 | [0x71467887…7207ef](https://testnet.snowtrace.io/tx/0x71467887c6e95a167e1a3cf4bf6f56c82eb3e4c7e69f5ded4e1aa49bcb7207ef) | 60,931,272 |
-| Deploy SeasonRewards | [0x341ca448…167d9](https://testnet.snowtrace.io/tx/0x341ca4480e2e0bb39386d0eac3426c49a44c34d8144332dbdc4c14af569167d9) | 60,931,272 |
+| Mint Moon Collar, Relic #3 | [0x1cd4a1fb…261b8](https://testnet.snowtrace.io/tx/0x1cd4a1fb0fbe78a95893608b0435b9b720e9191c5287137f64696a519c9261b8) | 60,934,447 |
+| List Relic #3 for 0.001 AVAX | [0x899ed5c5…83636](https://testnet.snowtrace.io/tx/0x899ed5c516b2909764f34143b6568711a8f94e61cccd1b6b551e0878e3b83636) | 60,934,457 |
+| Buy that listing | [0x9662228f…7fddd](https://testnet.snowtrace.io/tx/0x9662228f168bd5080907f49bd3a01d735f91b620d5468c7778a362b74ec7fddd) | 60,934,461 |
 
 ## Architecture
 
