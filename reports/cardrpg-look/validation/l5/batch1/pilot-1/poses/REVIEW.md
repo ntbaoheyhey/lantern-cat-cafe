@@ -1,9 +1,0 @@
-# First runtime pilot — Panko clearance failure
-
-Personally inspected all four Panko six-pose sheets (24 actual runtime frames), and the full-resolution panko-4-36 image. The serving plate crosses the left cheek/whiskers at panko-2 36–54% and panko-4 36%; the raised paddle also approaches the right cheek. This pilot is rejected for clearance. Earlier transform trajectory PASS is still valid but is not a visual collision PASS.
-
-Other visible limitations: banded/faceted cap shading, straight apron hem, and sparse shoulder cloth when both arms lift. Keep original artifact d34263ae and all samples. Correct only Panko's lookV2 hand arcs, preserving classic tracks, root displacement and skill duration; capture all four corrected skills on a new immutable artifact. Mallow/Cinnamon review is still pending while the original coordinator completes them.
-
-Mallow follow-up: personally viewed all four six-pose sheets and full-resolution mallow-1-18. The whisk handle visibly crosses the right muzzle/cheek at18%; it was hard to see on the small sheet. Reject Mallow's original hand path too. Fit the right arm outward for this Look model and recapture all four skills. Hat/face framing remains inside the canvas; the model and portrait source do not need a geometry rerender for this runtime-only correction.
-
-Cinnamon follow-up: personally viewed skills1–3 sheets and full-resolution skill3/18% and skill2/36%. The flask overlaps the right cheek in skill3/18%, despite looking harmless at contact-sheet size. Reject the old right-hand path; fit the Look flask outward and resample all four skills. At skill2/36% the spoon is close to the whiskers, without the same obvious fur/flask intersection. Remaining observations: flat scarf band, broad flask specular, angular tail bend, straight apron hem and rigid satchel cord. Keep this artifact and images as failure evidence.

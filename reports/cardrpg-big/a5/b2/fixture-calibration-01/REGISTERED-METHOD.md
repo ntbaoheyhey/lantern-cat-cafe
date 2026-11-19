@@ -1,7 +1,0 @@
-# Common matched-power fixture calibration diagnostic01
-
-Registered before sampling. The retained A4 TRAIN fixture audit shows every set at100% in five nonboss scenes, while its three boss-only set means span11.4–43.07%. The same starter role kit wins7.4/0.4/81% across the three bosses. Set and cat aggregates therefore do not describe comparable challenge difficulty; changing combat to fix that mismatch alone is not justified.
-
-Diagnostic only: original A4 battle/pacing rules plus the already published noncombat A5 code. Reference is the exact original level6 epic Mochi/Soot/Clover role kit, default rows/skills/plan. All eight original enemy lineups are retained. Multiply ONLY the fixed scenario enemy HP and attack by each registered factor, defense unchanged. The same scale would apply to every set/team, never depend on their power or outcomes. TRAIN1–500 only; preserve every outcome and first-seed replay. No acceptance, source adoption, new gate or hidden selector.
-
-This coarse15-factor grid brackets the target reference55–60% for later evidence-based calibration. It does not accept a factor or redefine the gate; interpolation and full mixed builds require a separately registered follow-up. Original definitions/results remain mandatory beside any proposed revised results. New crew elite diversity remains separate. Shared lock110second slices/7second handoffs, no browser or model workers.

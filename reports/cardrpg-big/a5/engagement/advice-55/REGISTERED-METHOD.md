@@ -1,5 +1,0 @@
-# Advice55 — late earned first-chapter diagnostic, before samples
-
-Use original Home03 earned checkpoint at41.665active minutes and its recorded last boss40.01minutes. Verify current team/gear-derived stats/standing plan exactly match that original boss. Public abandonRun settles the current incomplete route; no grants, injected levels or reward-cap changes. Invoke unchanged recommendBuildV4 (fixedTRAIN1–10) once, record its offered label, available public transaction and actual cost. Validate its forecast counts on those10seeds then compare unchanged versus applied build on separate TRAIN51–100, preserving enemies, carried missing HP, boons, upgrades and band. All paired outcomes and regressions retained.
-
-This diagnoses whether an available visible change can help the current stuck account. It is not a new earned route, human behavior, causal cadence improvement or fresh acceptance. No production or worker change. Original Home03 expressly ignores Result advice and remains unchanged; any future advice-following journey must be registered before its first sample.

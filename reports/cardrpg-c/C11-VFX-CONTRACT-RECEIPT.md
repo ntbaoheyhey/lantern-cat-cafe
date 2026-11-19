@@ -1,9 +1,0 @@
-# C11 — make VFX intake match browser asset loading
-
-Six malformed exports previously passed validation: PNG bytes renamed to a non-PNG extension, a frame path containing an internal `.` segment, unsupported skeleton/atlas/page extensions, and an effect clip with a non-finite duration. The saved before/after diagnostic now records six FIX verdicts. The browser asset map publishes canonical paths with lowercase `.json`, `.skel`, `.atlas`, `.png` extensions; intake now enforces that contract before installation.
-
-Six regressions install a usable effect, attempt the bad replacement, and verify the accepted registry and source descriptor bytes remain unchanged. Shared safeRead rejects `.`/`..`/empty path segments. The existing 49-test intake/placeholder run and workspace typecheck/lint are retained, all passing; all25placeholders remain valid. No accepted checks were rerun on resumption.
-
-DESIGNER-SPEC now points to VFX-EXPORT-SPEC, with complete `effect.json` schemas for PNG frames and Spine. The older instruction incorrectly requested sequence.json for optional VFX. Documented cue/socket routing, portable skill IDs, centered bounds, alpha, filename rules, immutable installation and visual acceptance. No actual designer export was installed; source inbox remains empty.
-
-Reviewed four retained source/offline captures at1280×720/1440×900 from the active-format checkpoint: character feet, shield ring, label rows, face clearance and party/enemy framing remain visible. This is a tooling/documentation change; browser runtime/art and the29,226,105-byte offline demo are unchanged. No new timing/gameplay/score claim; score7.79 unchanged. Compact evidence is checks/c11-vfx-contract-*; large captures remain in /tmp. Continue C8/C11 with actual designer-effect rendering geometry and lifecycle.

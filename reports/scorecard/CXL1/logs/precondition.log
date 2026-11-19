@@ -1,9 +1,0 @@
-$ sh -c 'git rev-parse HEAD; git rev-parse origin/main; git ls-tree origin/main packages/game-rules/src/v2/codex; test -z "$(git ls-tree origin/main packages/game-rules/src/v2/codex)"; git config user.name; git config user.email; node --version; pnpm --version'
-1fb25edf4c54ada0d161e3c1dd16a4c4550aafba
-1fb25edf4c54ada0d161e3c1dd16a4c4550aafba
-ntbaoheyhey
-108352255+ntbaoheyhey@users.noreply.github.com
-v24.22.2
-10.28.0
-
-EXIT: 0

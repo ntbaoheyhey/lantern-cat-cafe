@@ -1,6 +1,0 @@
-{
-  "at": "2026-11-08T21:41:09.650167+00:00",
-  "reason": "Let existing Equipment41 source/build jobs run after the original active Home lease. Freeze only between leases with no child; no rerun, elapsed-time or sample change. Resume after checks or ten-minute watchdog.",
-  "pid": 79723,
-  "supersededReason": "Guard included persistent Chromium as an active work child, so it never paused anything. Replacement waits for the original lease92515 to exit and excludes persistent browser children."
-}

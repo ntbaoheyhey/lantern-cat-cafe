@@ -1,3 +1,0 @@
-# R2 plates — personally viewed
-
-All four256×320 plates viewed on dark and light backdrops. Common pearl, rare leaves, epic flower and legendary sunburst now distinguish the silhouettes. Top emblems and bottom counts read at delivery size; alpha center and border checks pass in packing.json. Five remaining limitations: side rails stay mostly straight (x10–24/y50–290); corner beads remain a shared motif (four20px corner regions); pale common edge is subtle on cream; legendary bottom count is small (x110–145/y300–313); baked foil has no animated glint. None needs a misleading bloom overlay; accept this as original static lighting-plate art, self-grade7/10, pending actual browser card composition.

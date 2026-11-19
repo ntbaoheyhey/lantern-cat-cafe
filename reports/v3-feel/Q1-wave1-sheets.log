@@ -1,6 +1,0 @@
-Traceback (most recent call last):
-  File "/Users/bao/taskbar-hero-cardrpg-a6/scripts/v3feel/review-sheets.py", line 27, in <module>
-    sheet.paste(Image.open(io.BytesIO(frame)),(x,y))
-  File "/Users/bao/taskbar-hero-cardrpg-a6/tools/.venv/lib/python3.9/site-packages/PIL/Image.py", line 3580, in open
-    raise UnidentifiedImageError(msg)
-PIL.UnidentifiedImageError: cannot identify image file <_io.BytesIO object at 0x10c787a40>

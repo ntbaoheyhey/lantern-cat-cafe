@@ -1,9 +1,0 @@
-
-> @taskbar-hero/web@0.0.0 typecheck /Users/bao/taskbar-hero-chain/apps/web
-> tsc --noEmit
-
-src/game/cardrpg/shell/SuppliesB2.tsx(22,18): error TS2322: Type 'string | undefined' is not assignable to type 'string'.
-  Type 'undefined' is not assignable to type 'string'.
-/Users/bao/taskbar-hero-chain/apps/web:
- ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @taskbar-hero/web@0.0.0 typecheck: `tsc --noEmit`
-Exit status 2

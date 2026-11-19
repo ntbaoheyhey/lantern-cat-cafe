@@ -1,6 +1,0 @@
-PASS: boss evidence rolls back with its campaign; eight competing wins record one fact. Eight season closes return one immutable snapshot; missing-lock negative control exposes conflicting closes.
-PASS: eight expired-voucher retries share one append-only validity window and the original nonce/liability. Removing its lock exposes duplicate inserts. No budget is recycled.
-PASS: eight campaign sessions propose revision0; one commits and seven fail stale. Removing the state row lock accepts multiple stale transitions.
-PASS: four gifts and four new routine budgets contend for one40-YARN pool; total commitments stay within40. Removing shared locks oversubscribes the mixed pool.
-PASS: eight concurrent judge requests authorize exactly two20-YARN grants within40; eight retries add zero allocations; missing-lock gift control oversubscribes. No key or signature used.
-PASS: PostgreSQL17, eight real sessions contend for3 YARN: exactly two1.5 reservations, six budget denials, total3. Missing-lock negative control oversubscribes as expected. Eight simultaneous source retries all return one inventory ID and one receipt. Disposable container removed; no public signing/deployment.

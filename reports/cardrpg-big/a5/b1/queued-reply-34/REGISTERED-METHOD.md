@@ -1,7 +1,0 @@
-# Queued-reply34 — isolate the bounded-preview correction
-
-Original33 is not the intended queued-only forecast in every case. Read-only observer reproduced a counterexample: Bellsteel chapter2/seed1, round15; Mochi sentinel falls while Soot lives, so finishAction advances to16 and ticks statuses. The original source, probe,90saved-input outcomes and all in-flight matrix samples remain retained. Initial legality/replay/OFF checks were insufficient to prove the projection boundary. No adoption is permitted for33.
-
-Before sampling34, retain all surviving party IDs at the end of the private enemy-response queue. If any ally survives, an ally remains queued and no round tick occurs; if all fall, the battle result ends the preview. This changes only the private queue guard; it does not assume those allies take actions. Compare34 with both current22/current29 controls and original33, including every negative pair. Same1,321TRAIN1–50 cells and90same-band earned inputs. No gate, fixture, weight, stats or production edit.
-
-A source-bound observer must assert no projected round transition through all six full automatic examples and all18original prefixes before matrices. The candidate still uses full projected utility; its effect on healthy-turn choices is not claimed to be a minimal emergency policy. Original33 already misses heavy first-win ceiling and available advice;34 must be independently measured and cannot inherit a pass. No acceptance sampling. Original timing/source/adoption constraints remain.

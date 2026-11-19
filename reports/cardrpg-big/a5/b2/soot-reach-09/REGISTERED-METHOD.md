@@ -1,9 +1,0 @@
-# Soot reach09 — prospective TRAIN kit experiment
-
-Registered before sampling. Scent06a is rejected: Black cup usage rises but Soot loses1.1955pp across22000paired battles, worsening seven scenes. Increasing the evaluator's future-mark score is not a solution. Source inspection also shows Black cup cannot target an unmarked rear foe behind a surviving front foe, although its stated job is opening access for the team.
-
-Two candidates retain the original automatic policy, all original stats/gear/crew/scenes/weights/budgets and guard-only fatal-reflection fix. `reach` permits Black cup to choose any living foe inV4; all damage/status rules unchanged. `reach-seed` adds one Crumb after a successful Scent application, using the existing resistance roll and cap. This adds a setup action for Soot's detonation identity and is explicitly a kit revision, not a plain bug fix. Neither changes raw stats or boosts an arbitrary skill score. OFF branches remain unchanged. No new UI or production adoption yet.
-
-Each runs the same1840common-fixture cells ×TRAIN1–50, with all outcomes and first-seed full replay parity. Use the commonfixture04 control, report all cats/sets/crew and negative paired results. Reject if Soot's overall rate does not improve; even an improvement alone does not authorize adoption without original B1/full500, day7, source/unit/browser and OFF checks. Black cup use is descriptive, not a target. Keep predeclared scenes and numeric gates; no recalibration or fresh20001–20500 sampling.110s shared-lock windows/7s handoffs.
-
-The execution sources are immutable temp copies of the archived guarded source, with original policy restored byte-exact. Each variant archives all44 registered input files and verifies their hashes before every slice. Source-changing trial files stay outside production.

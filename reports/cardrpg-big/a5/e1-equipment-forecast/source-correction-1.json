@@ -1,9 +1,0 @@
-{
-  "at": "2026-11-08T21:18:06.102579+00:00",
-  "reason": "Original focused test caught a UI false difference when equipGear deletes and reinserts an already-equipped slot. Equipment order changes the serialized key despite identical stats and set membership. The UI recognizes an unchanged owned slot after public-command validation; no combat, source forecast key, fixtures, acceptance or original diagnostic change.",
-  "paths": {
-    "/tmp/cardrpg-a5-equipment-forecast-41/source/equipment-forecast.ts": "0941b4b5073c4e8173682e9595da9cfd851f25db34f88336f99b50bb2350cd1c"
-  },
-  "original": "equipment-forecast-attempt-1.ts.txt",
-  "failedLog": "unit-attempt-1.log"
-}

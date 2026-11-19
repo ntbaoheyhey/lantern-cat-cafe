@@ -1,9 +1,0 @@
-# C11 — dispose pending designer effects without leaking a renderer
-
-Two browser baselines (1280×720/1440×900) closed a DesignerVfx owner while its skeleton response was held. On release each created a new live WebGL context after disposal. Three failing regressions also exposed decoding the rest of a disposed PNG sequence and retaining old meshes after a successful pool replacement.
-
-Preparation now checks ownership after each awaited skeleton/frame and before starting another effect; disposed owners create no players or renderer. Successful replacement releases the old pool only after the new one is ready. Failed preparation retains the usable pool. Disposal is idempotent and clears renderer ownership and counters. Shared accepted skeleton data remains cached; cast playback keeps its eight preallocated players. No character/gameplay/registry/source edit.
-
-13 focused tests pass, including the three regressions, asset cache/format and VFX registry tests. Workspace typecheck/lint and whitespace pass. Four final browser cases pass: both late-load scenarios create zero contexts, and both fresh pools render visible pixels, ignore the wrong cue, hold frozen time, expire, restart and reuse the same players. The browser serves the existing C2 parser fixture in memory through an unused asset URL; no designer delivery is installed. Its brown rectangle is a functional fixture, not art acceptance. Both screenshots inspected: the fixture is centered at the cat feet, with faces/labels clear.
-
-Offline demo rebuilt to29,226,225bytes. Two smoke cases/ten public changes/two Pause–Play controls pass with no errors/HTTP/overflow/ghost actors. Both offline captures inspected, four final views total. Compact evidence in checks/c11-vfx-lifecycle-*; large captures under /tmp/cardrpg-c-vfx-lifecycle-*. Evidence119.31MB, score7.79 unchanged; no new gameplay or frame-time claim. Inbox empty; continue C8/C11 with designer-effect coordinate sizing.

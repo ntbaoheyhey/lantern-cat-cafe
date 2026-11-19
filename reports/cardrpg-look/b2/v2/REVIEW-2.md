@@ -1,6 +1,0 @@
-# V2 second review — full 1280 wave and 1024 boss personally viewed
-Five observations: (820–1110,380–510) plum opponents now retain surface seams; (790–1120,460–560) dusty rose mat separates sides; (835,525) copper cup remains small but reads as spill; (1000–1170,340–390) Sock plate still sits near cuff; (460–650,225–250 at1024) slim phase ribbon leaves faces clear.
-Worst three from round1 are improved: body value, mat separation, muted cup. Plate size is addressed by V4. No claim of photometric gate passage: linear luminance contrast is only0.009–0.039 versus required0.18; visible hue/eye separation is stronger but does not satisfy that metric.
-Self-grades for six shots:7.8/7.5/6/7.8/8/6. The greenhouse and earned copy remain V5/V4 work. Boss feels substantially larger; regular duplicates are identifiable as cups and a sock. Original meshes retained; no new external art.
-
-Thirteen-unit roster sheet personally viewed: button/sock/cup/spool/thread/pillow/moths/crumb/kettle/crown silhouettes readable. Rain Spool differs from Spool Ram through steel-blue face/arched housing. Yarn/Pantry get distinctive large props; same family tint deliberately marks hostility. The cushion silhouette is less literal than cup/sock; photometric contrast miss remains.

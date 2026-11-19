@@ -1,7 +1,0 @@
-import {spawn} from 'node:child_process';import {open,readFile,readdir} from 'node:fs/promises';import {createHash} from 'node:crypto';import {setTimeout as delay} from 'node:timers/promises';import assert from 'node:assert/strict';
-const out='reports/cardrpg-big/a5/b2/common-fixture-04';
-// Resume only the exact registered scripts; never rewrite a method after sampling.
-const reg=JSON.parse(await readFile(out+'/REGISTERED-METHOD.json'));
-for(const s of reg.scripts)assert.equal(s.sha256,createHash('sha256').update(await readFile(s.path)).digest('hex'));
-let code,slice=1+Math.max(0,...(await readdir(out)).map(f=>Number(f.match(/^slice-(\d+)\.log$/)?.[1]??0)));do{const fd=await open(`${out}/slice-${slice++}.log`,'wx');try{code=await new Promise((done,reject)=>{const p=spawn(process.execPath,['tools/cardrpg-big/with-timing-lock.mjs','A5 common matched fixture TRAIN',process.execPath,'tools/cardrpg-big/a5-common-fixture.mjs'],{env:{...process.env,A5_COMMON_OUT:out,BIG_RULES_ROOT:reg.sourceRoot},stdio:['ignore',fd.fd,fd.fd]});p.on('error',reject);p.on('close',done);});}finally{await fd.close();}console.log(JSON.stringify({slice:slice-1,code}));if(code===75)await delay(7000);}while(code===75);
-if(code===0){const p=spawn(process.execPath,['tools/cardrpg-big/a5-common-fixture-summary.mjs',out],{stdio:'inherit'});code=await new Promise(done=>p.on('close',done));}process.exitCode=code??1;

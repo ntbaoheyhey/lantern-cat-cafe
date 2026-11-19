@@ -1,9 +1,0 @@
-All three scratch source files and all inspected tests, including the HUD diagnostic, restored byte-for-byte before deletion.
-lsof -nP -iTCP:4310 -iTCP:4311 -iTCP:4312 -iTCP:4313 -sTCP:LISTEN: exit 1 (no listeners).
-git status --short reports/:
- M reports/fxrb.md
-?? reports/scorecard/
-
-git diff --exit-code -- apps/web packages supabase pnpm-lock.yaml pnpm-workspace.yaml .github: exit 0; no changes to current reused source, tests or protected configuration.
-Removed only the .fxrb-scratch directory within the provided FXRB worktree; linked dependencies were not followed. No scratch copies remain.
-exit_code: 0

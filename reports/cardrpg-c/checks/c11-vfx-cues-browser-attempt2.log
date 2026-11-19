@@ -1,8 +1,0 @@
-file:///Users/bao/taskbar-hero-cardrpg-a6/tools/cardrpg-c/vfx-cue-review.mjs:45
-    if(!contact.active||!contact.paintedPixels||contact.opaque||!contact.frozen||reduced&&(contact.zoom!==1||contact.offsets.some(x=>x!==0)))throw Error('Contact paint '+JSON.stringify({id,width,speed,reduced,contact}));
-                                                                                                                                                   ^
-
-Error: Contact paint {"id":"mochi-1","width":1280,"speed":1,"reduced":false,"contact":{"at":899.9999999999993,"last":883.3333333333327,"draws":27,"peak":9,"active":9,"paintedPixels":2527,"opaque":0,"protectedPoints":11600,"frozen":false,"impacts":0,"zoom":1,"offsets":[0,0,0],"contact":[{"glyph":"door","source":"mochi","target":"foe-0-button-guard","socket":"vfxOrigin"},{"glyph":"ring","source":"mochi","target":"foe-0-button-guard","socket":"vfxOrigin"},{"glyph":"ring","source":"mochi","target":"foe-0-button-guard","socket":"vfxOrigin"},{"glyph":"thread","source":"mochi","target":"foe-0-button-guard","socket":"vfxOrigin"},{"glyph":"thread","source":"mochi","target":"foe-0-button-guard","socket":"vfxOrigin"},{"glyph":"thread","source":"mochi","target":"foe-0-button-guard","socket":"vfxOrigin"},{"glyph":"thread","source":"mochi","target":"foe-0-button-guard","socket":"vfxOrigin"},{"glyph":"thread","source":"mochi","target":"foe-0-button-guard","socket":"vfxOrigin"}]}}
-    at file:///Users/bao/taskbar-hero-cardrpg-a6/tools/cardrpg-c/vfx-cue-review.mjs:45:148
-
-Node.js v24.22.2

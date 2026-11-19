@@ -1,2 +1,0 @@
-# Delivery UI iteration
-Attempt1 reached the gallery after the 1024/1280 starter HUD, same-battle before/after toggles and v2 receipt flow. It timed out on exact label Preview speed at1280. The select relied on a wrapping label whose text also included option captions; the standalone demo now supplies explicit aria-label="Preview speed". Added preview screenshot/text evidence to the existing UI probe. No apps/web or game-rules source changed after the passing five-gate V6 source suite. Rebuild and UI check validate the offline-only change; no repeated E2E was started.

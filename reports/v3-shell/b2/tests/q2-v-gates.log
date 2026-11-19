@@ -1,8 +1,0 @@
-PASS V.coverage: measured 25/25; required 100% playable, elite and boss active skills + ultimates from rules
-PASS V.variants: measured 50/50; required >= 2 takes per ultimate line
-FAIL V.ultAccuracy: measured 32/50; required recogniser word accuracy >= 0.7
-FAIL V.skillAccuracy: measured 59/62; required recogniser word accuracy >= 0.5
-FAIL V.distinct: measured 10/12; required S4 distinctness holds for callouts
-PASS V.battle: measured 0; required 0 missing ultimate callouts; music ducks; >= 180s
-PASS V.levels: measured 212/212; required -16 LUFS +/- 1, peak <= -1 dBTP
-PASS V.lines: measured 2815; required nonempty reports/v3-shell/b2/VOICE-CALLOUTS.md

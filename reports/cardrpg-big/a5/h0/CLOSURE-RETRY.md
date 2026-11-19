@@ -1,1 +1,0 @@
-Original aggregation completed once. Contact attempt1 used the system python3, which lacks Pillow. Retry only the failed contact step with the already installed A4 evidence environment /tmp/cardrpg-a4-tools/bin/python (Pillow11.3.0). Preserve original failure. No new dependency, gameplay edit, journey restart or resampling. Scope and OFF had not started.

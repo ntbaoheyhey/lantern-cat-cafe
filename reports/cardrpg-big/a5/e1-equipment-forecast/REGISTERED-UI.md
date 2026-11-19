@@ -1,7 +1,0 @@
-# Equipment boss rehearsal41 — prospective UI prototype
-
-Production remains994d84056; this protocol tests an isolated overlay. Before and after use the public equipGear command on a copy of the whole account, so the donor loses the item even if the recipient is benched. Named boss, shared band, full health and no route rewards are explicit on screen. Existing20seed forecasts display qualitative bands only. The static utility-score gate remains open.
-
-Test keyboard selection, changing boss/band, unchanged account during preview, exact transaction after Equip, cache across navigation, stale cancellation and worker failures. Three desktop widths × two looks × ON/OFF; threshold, transfer and active-route fixtures are synthetic UI edges, not earned accounts or balance outcomes. Forecasts must equal the source fixture, zero horizontal overflow and scoped contrast≥4.5. Measure uncachedCPU1 elapsed against400ms and retain CPU4 observations; no discarded samples.
-
-First run the staged focused unit cases; retain original failures before correction. Build isolatedON/OFF artifacts only after those checks pass. No production runtime adoption is automatic; full source gates and source/OFF/baseline audit follow any eventual adoption. Full384contextual40 result still required before any correlation claim, and overlap isTRAIN evidence only. Both original60minute elapsed and384cell diagnostic jobs remain unchanged.

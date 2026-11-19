@@ -1,9 +1,0 @@
-# C11 — Show actual crew casts and HP hits
-
-Key moments previously treated a selected ultimate as cast even when lethal Bleed stopped its action, and called a fully absorbed zero-HP contact the biggest hit. A6 now reads actual crew ultimate.cast receipts (ignoring enemy casts); the legacy log reader skips its explicit cancelled-action receipt. A later actual cast remains discoverable. Both report layouts say First crew ultimate, and biggest hit requires positive recorded HP loss. No combat or replay record is rewritten.
-
-Three regression cases failed before the correction; all17focused web tests across summary/Auto-next and workspace typecheck/lint PASS. The added rules-driven cases cover cancelled current/legacy choices, later actual cast, enemy-first cast, Daze downgrade and shield-only contact. Browser28cases at both sizes/motion settings PASS with zero page errors; current modal and legacy inline reports show the proper facts without changing the account/battle. Native Home/End, focus and return tested in the modal. Initial browser harness passed five cases before expecting a modal in the old inline layout; corrected harness assertion, not product behavior. Its failed log remains alongside the final receipt.
-
-All10final screenshots inspected at full size: text, scroll-region focus outline and controls fit1280x720/1440x900. Two representative images retained; raw captures and complete battle-event fixture records remain at /tmp/cardrpg-c-result-moments. Compact checked-case receipt records its full raw SHA256. Reproduce with tools/cardrpg-c/result-moments-review.mjs. Older JSON whitespace compacted with semantic equality/backups/hashes to respect120MB; no balance seed or raw account replayed.
-
-Designer inbox empty; final0/25, demo30,018,753bytes and weighted7.79 unchanged. No full-E2E/performance/progression claim on this change. Continue C8/C11.

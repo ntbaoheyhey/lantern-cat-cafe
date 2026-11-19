@@ -1,7 +1,0 @@
-# Graded pressure budget diagnostic02
-
-Registered before sampling. TRAIN1–50 original384fourth-slot/210tier-band-farm/64set/663team-crew cases, unchangedcaseweights/gear/AI/enemy stats. Fresh20001–20500 unused. graded01 continuesunchanged; its equipped output alreadycomplete: graded-basic46misses/worst32pp,graded-wide9misses/worst18pp but119afterarms>=95%. The widegrading without compensation materially lowers late-fightpressure; do not call its smallerpairedgains balanceclosure.
-
-New causal correction preserves the reference1front/2rear three-rounddirectpower budget continuously: with m=missingHPfraction, targetcycle375+350m; signaturefront100 and eachrear100max(0,2m-1); eachbasic=(targetcycle-signaturetotal)/2=137.5+175m-100max(0,2m-1). Atfull/half/zeroHP the totalcycle is375/550/725, with no phase jump and the sameuniformHPmean550 as the old375/725step. Basicspeak225 at50%HP andfinish212.5. This arithmetic is a reference budget, not damageequality under changingHP, armor, cover, status/death or differentformations. Phase still declares patternutility; intentcommitsallpowersbeforeactorsact.
-
-One variant graded-budget; independently retained from graded01. Same384/210/64/663fullTRAIN matrix andallnegative/saturated outcomes. No singletemplate-specific reduction. Newcoordinator110sCPU/7shandoff whileBreportedcomplete; no sourceadoption or gatesmoved. Migration/guide/intentdisplay required beforeanyproductionadoption, as in graded01.

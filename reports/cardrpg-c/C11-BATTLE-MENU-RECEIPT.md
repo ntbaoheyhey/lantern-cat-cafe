@@ -1,9 +1,0 @@
-# C11 — Battle menu geometry
-
-The original right-hand menu covered enemy HP plates in 14 of 16 normal/boss idle cases. The inherited two-column patch cleared faces and HP in 96 checks, but the expanded cue audit found it hiding shield/Warm labels and some ultimate banners. A single horizontal row now uses the upper-left wall at720p and the space beside the rage row at900p; the sound recovery sentence occupies one compact second row. Legacy presentation is unchanged.
-
-Final96browser cases PASS:1280×720/1440×900, both motion settings, normal foes and all three bosses, idle/ultimate/contact, ordinary/blocked sound. Tested visible bodies, HP plates, crew cards, rage row, floating labels and available cut-ins;44px controls, viewport/content fit, keyboard opening/Escape focus return and exact battle/account/pause preservation. Zero page errors. Inspected all24final captures in six sheets plus two full-size views; two representative shots retained. Earlier16grid captures were inspected too. Intermediate diagnostics and final raw values are retained in checks/c11-battle-menu.json; larger captures stay under /tmp/cardrpg-c-battle-menu-*.
-
-Web suite2367/2367 PASS (the pnpm argument separator expanded the requested focused run to all260files). Final workspace typecheck/lint, harness syntax and diff check PASS. CSS only; no additional implementation-mirroring test. These are isolated presentation fixtures, not balance or account acceptance runs, and no new fullE2E claim.
-
-Known next issue: the renderer already omits Mochi's ultimate card in these720p boss fixtures because it reserves future number lanes before contact. The menu audit checks available cards and does not claim every ultimate is visible. Review that layout separately. Designer inbox empty; final exports0/25. Demo30,018,753bytes and score7.79 retained; evidence below120MB.

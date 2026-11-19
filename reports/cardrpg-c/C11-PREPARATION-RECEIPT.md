@@ -1,9 +1,0 @@
-# C11 — packed supply preparation
-
-Preparation names the reserved supply and its carrier in all three formation tools. Saved and suggested crews that remove that cat, and direct replacements of that cat, are disabled before the rules reject them. Other cats, rows and plans remain editable when the encounter allows it. Rejected commands retain the tool and its rules explanation. Existing command guards, inventory, seed and enemies are unchanged.
-
-Baseline browser records show six enabled invalid choices at the two sizes; suggested/replacement tools also closed on failure. Final verification: 50 browser checks including 20 keyboard applications, four packed items, legal swaps, no-supply controls, campaign/Tower, later-node and committed locks; two separate rejected-command browser cases; ten Formation tests and workspace typecheck/lint PASS. Read-only previews preserve the entire save and successful applications match the public command. Row/plan changes retain the carrier and encounter in the component regression. No browser errors, overflow or broken visible images.
-
-Inspected all 30 final captures plus both error views. Two stacked notices initially put the 900p suggestion-card outline against the dialog edge; a compact portrait rule fixes this, verified at both sizes. Retain two corrected committed views; full diagnostic captures, initial harness failures and contact sheets remain outside git in /tmp/cardrpg-c-preparation-*. Reproduce with tools/cardrpg-c/preparation-supply-review.mjs and preparation-error-review.mjs. Existing successful checks were preserved at resume; only the browser sweep was repeated for the new spacing change.
-
-No additional acceptance seeds, combat tuning, designer files or static-demo inputs changed. Demo 29,226,665 bytes; weighted score 7.79 unchanged. Designer inbox still contains only README. Continue C8/C11 with the packing controls before Prepare.

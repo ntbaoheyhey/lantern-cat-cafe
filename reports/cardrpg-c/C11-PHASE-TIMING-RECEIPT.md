@@ -1,9 +1,0 @@
-# C11 — Boss phases follow their damage beat
-
-Burn can cross a boss threshold after an action has finished. The intermediate action snapshot previously exposed the new phase and helpers while holding the old HP. It now rewinds only deferred phase events and summons until the round-status beat; direct hits still show their phase at contact. Two thresholds across one action/round retain the action phase. Authoritative rules/account state is unchanged. More uses the compact wall row when phase-three helpers fill the rage row at either height.
-
-Inherited final browser report: 144 cases PASS, zero page errors, covering all three bosses, phases two/three, direct hit/Burn, speeds ×1/×2/×3, 1280×720/1440×900, normal/reduced motion. Checks include anticipation/contact/round timing, helper visibility, cue/menu/body/HP/number separation, keyboard open/Escape focus, cue expiry and unchanged resolved battle/account. No accepted checks were replayed after resume. All 32 final captures inspected in six contact sheets plus full-size 720p/900p Burn views; four representatives retained. Raw report/captures remain /tmp/cardrpg-c-phase-timing-final3; compact complete report is checks/c11-phase-timing.json.
-
-Focused 42 tests across four files, fixture checks, workspace typecheck and lint PASS (preserved logs). These fixtures are presentation checks, not new balance, progression, performance or full-E2E evidence. Earlier failed harness/typecheck attempts remain in /tmp; the final run completed.
-
-Visual follow-up: the old top-centre instruction strip can sit behind the enemy rage row during round-status. Phase card itself is clear. Keep this as the next C11 repair rather than declaring all battle text collision-free. Designer inbox still empty; no new PSD beyond accepted Mochi/Clover; final designer exports 0/25. Demo 30,018,753 bytes and weighted score 7.79 unchanged. Raw account runs and all three balance rounds preserved.

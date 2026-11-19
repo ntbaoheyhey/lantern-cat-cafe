@@ -1,8 +1,0 @@
-{
-  "at": "2026-11-16T21:26:45.066628+00:00",
-  "pass": false,
-  "kind": "Independent-review harness schema error",
-  "error": "KeyError: commitList",
-  "boundary": "Original scope stores commitListSha256; its list is the separate history-batches-1/commits.txt.gz file. No scan or acceptance result was changed.",
-  "nextMethod": "Use the original frozen list path and validate its existing hash before set comparison."
-}

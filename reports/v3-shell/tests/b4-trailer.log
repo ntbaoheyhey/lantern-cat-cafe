@@ -1,35 +1,0 @@
-Recorded local gameplay, 15 seconds.
-ffmpeg version 9.0.2 Copyright (c) 2000-2026 the FFmpeg developers
-  built with Apple clang version 21.0.0 (clang-2100.3.34.2)
-  configuration: --prefix=/opt/homebrew/Cellar/ffmpeg/9.0.2_1 --enable-shared --enable-pthreads --enable-version3 --cc=clang --host-cflags= --host-ldflags= --enable-ffplay --enable-gpl --enable-libsvtav1 --enable-libopus --enable-libx264 --enable-libmp3lame --enable-libdav1d --enable-libvmaf --enable-libvpx --enable-libx265 --enable-openssl --enable-videotoolbox --enable-audiotoolbox --enable-neon
-  libavutil      61.  1.102 / 61.  1.102
-  libavcodec     63.  1.102 / 63.  1.102
-  libavformat    63.  1.102 / 63.  1.102
-  libavdevice    63.  1.102 / 63.  1.102
-  libavfilter    12.  1.102 / 12.  1.102
-  libswscale     10.  1.102 / 10.  1.102
-  libswresample   7.  1.102 /  7.  1.102
-Input #0, matroska,webm, from '/tmp/v3b-trailer-source.webm':
-  Metadata:
-    creation_time   : 2026-11-12T23:25:51.527000Z
-    ENCODER         : Lavf61.1.100
-  Duration: 00:00:15.60, start: 0.000000, bitrate: 1410 kb/s
-  Stream #0:0(eng): Video: vp9 (Profile 0), yuv420p(tv, progressive), 1280x720, SAR 1:1 DAR 16:9, 25 fps, 25 tbr, 1k tbn (default)
-    Metadata:
-      ENCODER         : Lavc61.3.100 libvpx-vp9
-      DURATION        : 00:00:15.600000000
-Stream mapping:
-  Stream #0:0 -> #0:0 (vp9 (native) -> vp9 (libvpx-vp9))
-Press [q] to stop, [?] for help
-[libvpx-vp9 @ 0x77b6c4ca80] v1.17.0
-Output #0, webm, to 'apps/web/public/art/v3-shell/battle-preview.webm':
-  Metadata:
-    encoder         : Lavf63.1.102
-  Stream #0:0(eng): Video: vp9, yuv420p(tv, progressive), 1280x720 [SAR 1:1 DAR 16:9], q=2-31, 650 kb/s, 25 fps, 1k tbn (default)
-    Metadata:
-      encoder         : Lavc63.1.102 libvpx-vp9
-      DURATION        : 00:00:15.600000000
-    Side data:
-      CPB properties: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: N/A
-frame=   15 fps=0.0 q=35.0 size=       0KiB time=00:00:00.60 bitrate=   6.6kbits/s speed=1.19x elapsed=0:00:00.50    frame=   33 fps= 33 q=32.0 size=       0KiB time=00:00:01.32 bitrate=   3.0kbits/s speed=1.31x elapsed=0:00:01.01    frame=   49 fps= 32 q=38.0 size=       0KiB time=00:00:01.96 bitrate=   2.0kbits/s speed=1.29x elapsed=0:00:01.51    frame=   67 fps= 33 q=18.0 size=       0KiB time=00:00:02.68 bitrate=   1.5kbits/s speed=1.33x elapsed=0:00:02.02    frame=   84 fps= 33 q=6.0 size=       0KiB time=00:00:03.36 bitrate=   1.2kbits/s speed=1.33x elapsed=0:00:02.52    frame=  100 fps= 33 q=4.0 size=       0KiB time=00:00:04.00 bitrate=   1.0kbits/s speed=1.32x elapsed=0:00:03.02    frame=  116 fps= 33 q=4.0 size=       0KiB time=00:00:04.64 bitrate=   0.8kbits/s speed=1.32x elapsed=0:00:03.52    frame=  135 fps= 33 q=4.0 size=     256KiB time=00:00:05.40 bitrate= 388.4kbits/s speed=1.34x elapsed=0:00:04.03    frame=  157 fps= 35 q=4.0 size=     256KiB time=00:00:06.28 bitrate= 333.9kbits/s speed=1.38x elapsed=0:00:04.53    frame=  181 fps= 36 q=4.0 size=     256KiB time=00:00:07.24 bitrate= 289.7kbits/s speed=1.44x elapsed=0:00:05.04    frame=  208 fps= 38 q=4.0 size=     256KiB time=00:00:08.32 bitrate= 252.1kbits/s speed= 1.5x elapsed=0:00:05.54    frame=  226 fps= 37 q=4.0 size=     256KiB time=00:00:09.04 bitrate= 232.0kbits/s speed= 1.5x elapsed=0:00:06.04    [out#0/webm @ 0x77b7038240] video:731KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 0.308592%
-frame=  250 fps= 39 q=5.0 Lsize=     733KiB time=00:00:10.00 bitrate= 600.7kbits/s speed=1.57x elapsed=0:00:06.35    

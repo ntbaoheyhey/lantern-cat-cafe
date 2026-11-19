@@ -1,9 +1,0 @@
-# C11 — Ultimate space before contact
-
-At720p, Mochi’s ultimate banner disappeared against bosses because the renderer reserved its future shield/Warm text lanes before those labels were visible. Cinematic placement now protects actor bodies and HP immediately, and adds the number/status lanes at contact. The reserved lanes remain available to the number renderer and VFX. The More menu temporarily hides only overlapping ultimate/phase cards; closing it restores an unexpired cue without changing combat or pause.
-
-Preserved inherited92browser cases PASS: all12cat ultimates against Yarn Giant, plus Mochi against ordinary foes/all3bosses at×1/×2/×3, both1280×720/1440×900 and both motion settings. Every pre-contact ultimate was available and visible, with no body/HP/number/menu overlap. Keyboard opening/Escape focus return, menu coexistence at900p, contact disappearance and exact account/battle/plan/pause preservation passed; zero page errors. Max sampled draw count117 is a fixture observation, not a performance benchmark. All28final captures inspected in six sheets plus a full720p view; four representative captures retained. No accepted browser checks replayed.
-
-Inherited tests initially failed only on nonexistent DepthModel.dispose in their cleanup, also caught by typecheck. Removed that call; focused32tests across4files, workspace typecheck/lint PASS. Two new lifecycle cases cover menu overlap and separation for ultimate/phase, restoration and expiry. These are isolated presentation fixtures, not new balance/recovery/fullE2E evidence. Report: checks/c11-cutin-space.json; raw intermediate captures remain /tmp/cardrpg-c-cutin-space-final.
-
-Designer inbox empty; final exports0/25. Existing demo30,018,753bytes and self-score7.79 retained. Continuous C8/C11 remains open; next inspect real boss phase cues and contact timing. Sources, three balance rounds and accepted account runs remain untouched.

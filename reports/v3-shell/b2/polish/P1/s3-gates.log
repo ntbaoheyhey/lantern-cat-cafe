@@ -1,8 +1,0 @@
-PASS S3.hitLayers: measured 106/106; required each battle hit >= 3 layers
-PASS S3.hitVariants: measured 106/106; required each hit layer >= 4 variants
-PASS S3.uiVariants: measured 58/58; required each UI cue >= 2 variants
-PASS S3.repeats: measured 0; required 0 consecutive identical variants in >= 180s auto battle
-PASS S3.sfxConcurrency: measured 14; required <= 14 sfx including layers
-PASS S3.voiceConcurrency: measured 1; required <= 1 voice
-PASS S3.bytes: measured 15958952; required <= 16000000 bytes incl. callouts
-PASS S3.cpu: measured 4.524575153654773; required < 8% added main-thread time, 180s paired traces

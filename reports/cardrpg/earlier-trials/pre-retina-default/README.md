@@ -1,2 +1,0 @@
-Historical complete candidate 79cdc7b9 / 016ba419 before choosing native-resolution Medium as the DPR2 default. All source-stamped receipts and textures are retained. Default High at DPR2 had five p99 misses in24 stress casts; the three-size full DPR1 suite passed except strict16.7ms p95. It is not final delivery evidence.
-REFERENCE: docs/cardrpg/index.html; reports/cardrpg/retina-diagnostic/; reports/cardrpg/earlier-trials/pre-retina-default/build.json.

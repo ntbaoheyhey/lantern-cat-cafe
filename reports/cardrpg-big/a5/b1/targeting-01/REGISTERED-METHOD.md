@@ -1,9 +1,0 @@
-# B1 targeting diagnostic 01
-
-TRAIN 1–50 only; original31 residual cells plus both subsequently discovered worst cells (33 unique cases). Fifty matched pairs per case, equal weighting, all attempts and outcomes retained. No acceptance20001–20500 sampling, new seeds, source artwork or production change.
-
-Evidence: expanded02 worst trace loses Mochi at238HP to316HP damage on round6, while the prior actor state has Soot558HP and Clover458HP. Main-only adds42pp, full piece56pp, set4 alone0pp. Smoothing health utility and adding response valuation did not remove the cliff (61/384 and30/384 fourth-slot misses). Initial target selection excludes the rear entirely when any front cat lives; one frontline cat's HP therefore carries a disproportionate survival burden. This is a new causal hypothesis, not a conclusion.
-
-Control = original A4 automatic policy and boss stats with already-tested queued phase latching. Two variants change only non-signature boss targeting: each living front cat receives4 or2 tickets, each rear cat1. Use the existing single seeded target draw, and honour the selected living target at execution. Preserve signature targets/power, shelter,10%rear cover, all gear stats/sets, cat kits, AI, encounter stats and original RNG consumption. OFF retains exactly the original path. The target remains visible in the existing intent before any party action.
-
-Record paired wins, action counts, death rounds and replay parity. A4 outcomes reuse the same first50 seeds/case from the original500-seed receipt. This diagnostic does not establish tiers, all-piece bounds, cats, crews, niche leadership or forecast accuracy; broader original fixtures are required before adoption. Any future player copy/schema work follows only a supported candidate. Native shared lock,110s CPU slices and120s handoffs while B is active.

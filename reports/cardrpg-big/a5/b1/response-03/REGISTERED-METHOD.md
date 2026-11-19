@@ -1,7 +1,0 @@
-# Visible-threat response TRAIN diagnostic03
-
-Registered before any sample. All original384fourth-slot,210tier/band/farm,64set and663team/crew cases, TRAIN1–50 only, unchanged fixture/caseweights. Fresh20001–20500 remainsunused. Keep all completed graded01/02 receipts: gradedbudget59piece misses, worst28pp, cats34.74–75.41%, selectedcrew54pp. No candidate adopted.
-
-Root diagnostic: the existing automatic policy values only its own immediate action, despite a visible committed enemy intent. The earlier response pilots made the old phase-step encounters nearly certain wins; they were rejected. Here combine the separately registered continuously conserved gradedbudget with the same bounded next-enemy-response evaluation. Two declared weights .30/.50 preserve all catalog stats, gear, utility scores, targets and encounters. No manual input or player/auto bonus. The queued enemy-only preview omits other allies and does not mutate the real battle. This is a causal hypothesis, not a gate change or evidence of balance yet.
-
-Reuse the exact graded02 control; do not rerun or replace it. Run equipped first, then tiers/sets/teams, all50 seeds and all saturations/negative gains. Native shared lock110s slices/7s handoffs while B reports complete; if B resumes, restore120s handoffs. All failed attempts retained. Bare2304cases, elite diversity, display calibration, TRAIN500 and earnedday7 remain required before acceptance. Production adoption needs AI immutability/intent migration tests and guidecopy. No new dependencies/Bsource edits.

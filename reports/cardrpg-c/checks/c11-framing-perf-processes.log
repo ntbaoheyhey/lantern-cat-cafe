@@ -1,2 +1,0 @@
- 6104       00:00   0.6 /bin/zsh -lc ps -axo pid,etime,pcpu,command | rg -i 'iopaint|lama|sam|realesrgan|framing' > reports/cardrpg-c/checks/c11-framing-perf-processes.log\012nice -n 10 node tools/cardrpg-c/vfx-final-check.mjs --tag=c11-framing-perf > reports/cardrpg-c/checks/c11-framing-performance.log 2>&1
- 6114       00:00   0.0 rg -i iopaint|lama|sam|realesrgan|framing

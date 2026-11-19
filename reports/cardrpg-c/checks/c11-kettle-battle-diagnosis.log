@@ -1,9 +1,0 @@
-{"show":true,"watch":true,"screen":"map","ready":true,"error":"","plan":"enemy:kettle-knight:basic","battle":[["mochi","mochi"],["soot","soot"],["clover","clover"],["foe-0-kettle-knight","kettle-knight"],["foe-1-binding-thread","binding-thread"]],"scene":false,"text":"Practice table\nWave 1/1 · Round 1\n♛ Kettle Knight\n2321/2321 · Phase 1\n◆\n◆\n◆\nAuto-next\n×1\nResume auto\nSkip · 3★ needed\n?\n⋯\nKettle Knight\nBinding Thread\nLv. 1\n★\nMochi\n595/595 HP\nRage 35/100\nLv. 1\n★\nSoot\n462/462 HP\nRage 35/100\nLv. 1\n★\nClover\n386/386 HP\nRage 35/100"}
-file:///private/tmp/cardrpg-c-kettle-diagnose.mjs:27
-   await page.waitForTimeout(1000);console.log(JSON.stringify(await page.evaluate(()=>{const m=window.__depthReview,s=window.__depthScene;return{show:m.showBattle,watch:m.watching,screen:m.screen,ready:m.sceneReady,error:m.sceneError,plan:m.plan?.presentationId,battle:m.battle?.actors.map(a=>[a.id,a.catalogId]),scene:!!s,sceneReady:s?.ready,loaded:s&&[...s.actors].map(([id,e])=>[id,e.asset]),pending:s&&[...s.pending],failed:s&&[...s.failed],text:document.body.innerText.slice(0,2000)};})));await sharp(await page.screenshot()).webp({quality:88}).toFile('/tmp/cardrpg-c-kettle-diagnose.webp');throw Error('Diagnosis complete');
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          ^
-
-Error: Diagnosis complete
-    at file:///private/tmp/cardrpg-c-kettle-diagnose.mjs:27:603
-
-Node.js v24.22.2

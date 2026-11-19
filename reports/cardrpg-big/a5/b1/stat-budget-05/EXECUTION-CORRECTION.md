@@ -1,5 +1,0 @@
-# Stat-budget05 execution correction — same registered source/cases/seeds
-
-Original attempt1 results are INVALID FOR CANDIDATE INFERENCE. Vite resolves /tmp to /private/tmp on this host. The previous transform compared uncanonicalized /tmp paths to canonical module IDs, silently applying none of the three overlays. Both variants therefore measured identical A4 combat. Retain all raw receipts; they neither reject nor accept the registered stat budgets. Earlier pilots using /Users source roots are not invalidated by this specific path mismatch; no blanket historical validation is inferred.
-
-This correction keeps the original immutable source snapshot, overlays, cases, weights and TRAIN seeds1–50. It canonicalizes the source root and requires each executable transform to run exactly once (contract.ts is type-only). Every slice records the applied module paths and asserts a gear contribution against the registered numeric formula before simulating. Corrected results go to a separate directory. No acceptance seeds, production combat change or gate movement.

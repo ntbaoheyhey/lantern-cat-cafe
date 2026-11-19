@@ -1,9 +1,0 @@
-# C11 — Reach the final battle note
-
-The old 300px notes scroller sat inside the report scroller. At both sizes, End scrolled the inner box while the outer viewport hid the final entries and focused disclosure. The shared outcome panel now leaves scrolling to its enclosing page/report; report scroll padding preserves the disclosure outline. Practice and turning-point cards have a visible gap.
-
-Twenty browser cases PASS at1280x720/1440x900 with both motion settings: a295-entry22-round fixture, loss, practice, replay and legacy inline reports. Verify exact event text/order, final-entry visibility, Space/End/Home, disclosure focus/collapse, page reset, modal focus wrap/Escape and unchanged account/battle. Zero page errors.20focused tests plus workspace typecheck/lint PASS. No rules changed and no balance/acceptance seeds repeated.
-
-All26final captures inspected through eight contact sheets, plus two full-size captures. Last entries, disclosure focus and fixed modal controls fit both sizes. Two representatives retained; complete raw report/captures and two failed harness attempts remain in /tmp/cardrpg-c-result-notes. First attempt wrongly assumed practice had>10events; second assumed collapsing practice must reset scroll to0 despite its second card. Corrected fixture assertions; the product repair passed unchanged. Long fixture explicitly clears old starting HP to exercise295entries. See checks/c11-result-notes.json for the exact raw SHA256 and checked-case receipt, and tools/cardrpg-c/result-notes-review.mjs.
-
-Evidence is below120MB after byte-identical archival of two completed VFX cue JSONs; hashes/extraction equality and original paths are in EVIDENCE-ARCHIVE.md. Final designer0/25, empty inbox, demo30,018,753bytes and weighted7.79 unchanged. No new full-E2E/performance/gameplay claim. Continue C8/C11, next readable plan names in tactical notes.

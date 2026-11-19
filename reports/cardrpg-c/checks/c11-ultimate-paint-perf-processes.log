@@ -1,1 +1,0 @@
-15642       00:01   0.0 /bin/zsh -lc ps -Ao pid,etime,%cpu,command | rg '([i]opaint|[r]ealesrgan|[l]ama|[s]am[ _-]|[n]ode tools/cardrpg-c|[t]sc --noEmit)' > reports/cardrpg-c/checks/c11-ultimate-paint-perf-processes.log; nice -n 10 node tools/cardrpg-c/vfx-final-check.mjs --tag=c11-ultimate-paint-perf > reports/cardrpg-c/checks/c11-ultimate-paint-performance.log 2>&1

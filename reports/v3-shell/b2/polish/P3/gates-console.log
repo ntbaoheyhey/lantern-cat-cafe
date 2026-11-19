@@ -1,7 +1,0 @@
-PASS P3.chapters: measured=["scene-night","scene-rain","scene-workshop"]; required=three distinct audible chapter beds
-PASS P3.dawn: measured=[0.01429138146340847,0.22006219625473022,0.41999998688697815]; required=audible boss layer rises through thirty seconds
-PASS P3.cleanup: measured=["music.home","ambience.home","ui.click"]; required=dawn removed on leaving boss
-PASS P3.errors: measured=0; required=zero browser errors
-PASS P3.provenance: measured=2; required=both encoded dawn files have matching original-synthesis provenance
-PASS P3.budget: measured=16380501; required=<=16777216 bytes
-PASS P3.reel: measured="reports/v3-shell/b2/polish/P3/SCENE-REEL.mp3"; required=hashed actual scene output

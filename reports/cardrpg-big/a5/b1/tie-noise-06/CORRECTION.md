@@ -1,1 +1,0 @@
-Attempt1 failed before sampling because transitive source files were missing. SOURCE-COMPLETION.json records exact added hashes. The checkpoint writer also referenced an undefined transforms variable; changed it to the already-executed appliedTransforms receipt. All original logs, matrix and hashes retained. No numeric fixture, overlay or seed change.

@@ -1,2 +1,0 @@
-# V5 static display grid
-TRAIN1–500, all384 fourth-slot cells, unchanged positive HP/attack/defense and nonnegative utility grid from A5 calibration36. Reconstruct every500-seed displayed share exactly before ranking320 candidates. No new battles or acceptance seeds. A candidate must satisfy Spearman≥0.6 in all three chapters and maximum share≤10%, including+12. Display changes may not alter rawPowerV4 or actual gear budgets. All old A5 failures remain rejected; V5 is a new measured outcome vector, not a claim that the old fit improved.

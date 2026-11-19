@@ -1,9 +1,0 @@
-# Queued-reply33 — prospective TRAIN policy experiment
-
-Fatal-choice32 shows an available change prevents first death in3/6selected traces, and changes loss to win in4/6; these are different sets of examples. In Bellsteel chapter2, Mochi attacks on round6 while Defend survives and wins. The current auto evaluates its own action before queued enemy responses. Test that concrete omission instead of another stat/pressure adjustment.
-
-After each legal own action, privately evaluate only the still-queued enemy actions, holding future ally actions absent. A living party sentinel prevents premature end-of-round status ticks. Existing engine targeting, Hush, reflection, shields, links, RNG state and victory resolution are used. No recursion, new random draw in the live battle or future-round knowledge. This is deliberately conservative: it can overvalue protection when an unacted ally could heal, which must remain visible in regressions. Existing plan/kill/heal preferences remain; no tuning weights are introduced.
-
-Register all1,321originalTRAIN1–50 cells before sampling, reusing exact current22 balance controls, plus all90earned saved inputs with current29 same-band retry policy/control. These are old inputs, not a new45day cohort. Every cell runs; preserve worse outcomes and saturation. No boss pattern26, pressure transfer27, cap25 or other rejected arm is combined. No stat/kit/fixture/gate change. Fresh20001–20500 unused.
-
-Semantic checks precede matrices: source hashes, legal/deterministic/immutable selection, OFF full-event equality, queued-only behavior and full automatic replay. A regression of any progression gate blocks isolated adoption; a lower piece count with saturated wins is not balance closure. Wider500TRAIN, fresh earned cohorts, six source gates/OFF8250 and real-browser forecast CPU follow only a supported pilot. Native single coordinator,110s leases/7s handoffs, no model helpers or B changes.

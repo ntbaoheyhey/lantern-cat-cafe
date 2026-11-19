@@ -1,7 +1,0 @@
-# Pressure strata42 — read-only interpretation of existing TRAIN receipts
-
-Before calculating any conditional results, register five fixed equal-width intervals of the original pressure draw u: [0,.2), [.2,.4), [.4,.6), [.6,.8), [.8,1]. Retain all384 fourth-slot cells and all500 existing paired outcomes for BOTH original spread30 and spread50 candidates. Reconstruct only the original independent RNG draw; run zero new battles and do not alter production, fixtures or acceptance seeds.
-
-Question: did random encounter difficulty disperse a survival threshold across a wide population while retaining a larger item effect inside similar-pressure encounters? Report conditional paired gains, improved/worsened counts, marginal Wilson95 intervals, paired normal95 intervals and saturation in every cell/bin. Sum back to the exact unconditional original counts. No new threshold or acceptance definition is introduced: values above12pp are descriptive diagnostics, with smaller bin sizes and multiple comparisons explicit. Retain all zero and negative effects.
-
-This does not prove a fixed-pressure causal effect: each stratum contains different existing seeds and rolled items. It can expose heterogeneity; it cannot establish that any candidate is fair, close a balance gate or authorize adoption. The original 500-seed aggregates and their previous screening decisions stay unchanged. These old candidate sources precede current Hush/pacing changes and must never be described as current production.

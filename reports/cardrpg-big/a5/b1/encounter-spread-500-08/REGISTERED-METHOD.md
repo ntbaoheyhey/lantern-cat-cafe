@@ -1,7 +1,0 @@
-# Encounter pressure: full TRAIN precision extension08
-
-Registered before any new suffix seed is evaluated. This extends BOTH prior spread07 variants to TRAIN1–500 on the SAME384 fourth-slot cells. Reuse and assert every first50 outcome; sample only51–500. No changed rule, fixture, scope, outcome threshold, new random reroll or acceptance block.
-
-The original07 pilot rejected both variants under its prespecified <=16pp expansion rule. Keep that rejection and all raw results. The rule is revised ONLY for this precision diagnostic: the maximum of384 estimates based on50 pairs is a noisy screen, not evidence that their true effects exceed12pp. The observed overall means are3.75/3.526pp, maxima20/20pp, and no saturated arms. At a10% discordance probability even one50-pair standard error is about4.24pp. Extending the same samples distinguishes persistent cliffs from small-sample noise. No wider tiers/teams/sets run is authorized by this registration, and the actual <=12pp requirement remains unchanged.
-
-Both candidates still have a predictability cost: seeded boss attack varies by±30%/±50%. This extension neither adopts that design nor calls the larger randomness fair. Any later adoption requires visible committed enemy stats, old-save/replay handling, TRAIN and fresh acceptance, source tests, earned progression and player-facing review. TRAIN20001–20500 remains unused. Run native shared-lock110second slices/7second handoffs; preserve failures.

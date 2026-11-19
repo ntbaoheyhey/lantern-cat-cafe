@@ -1,8 +1,0 @@
-{
-  "at": "2026-11-09T03:50:58.593144+00:00",
-  "reason": "Prior cancellation killed the queued wrapper only; series treated clean shutdown as code0 and requeued its original uncorrected job. Stop coordinator and queued descendant before any acquisition; preserve original registration/logs. Corrected design2b is already complete.",
-  "processes": [
-    "43481 48706 node tools/cardrpg-big/skills-v5/series.mjs /tmp/cardrpg-v5a-design2-plan.json",
-    "46994     1 /opt/homebrew/Cellar/node@24/24.22.2/bin/node tools/cardrpg-big/with-timing-lock.mjs V5A S5 design2 policy and diversity TRAIN /opt/homebrew/Cellar/node@24/24.22.2/bin/node tools/cardrpg-big/skills-v5/design-metrics-v2.mjs"
-  ]
-}
