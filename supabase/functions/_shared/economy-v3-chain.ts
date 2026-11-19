@@ -4,6 +4,7 @@ import {relicNftAbi,yarnTokenAbi,seasonRewardsAbi} from '../../../packages/chain
 import {voucherSigner} from './relic.ts';
 import {CLAIM_TYPES,claimDomain} from './chain-rewards.ts';
 import {ECONOMY_DEAD,economyIntentHash,EconomyError,type EconomyChain} from './economy-v3.ts';
+import {emissionHeadroomWei} from '../../../packages/game-rules/src/cardrpg/economy-v3.ts';
 export function economyChain({client,nft,token,rewards,key}:{client:PublicClient;nft:Address;token:Address;rewards:Address;key:Hex}):EconomyChain{
  const signer=privateKeyToAccount(key),mint=voucherSigner(key,nft);
  const checked=async()=>{if(await client.getChainId()!==43113)throw new Error('wrong_chain');};
@@ -31,6 +32,12 @@ export function economyChain({client,nft,token,rewards,key}:{client:PublicClient
    if(actualToken.toLowerCase()!==token.toLowerCase())throw new Error('reward_token');
    const used=await client.readContract({address:rewards,abi:seasonRewardsAbi,functionName:'routineClaimedInWeek',args:[wallet,week],blockNumber});
    if(net>cap-used)throw new EconomyError('Controller weekly allowance is too low.');if(balance<net)throw new EconomyError('Reward pool needs funding.');
+   // Burn-backed guard: season emission may not outrun public burns (EMISSION_GUARD).
+   const season=await client.readContract({address:rewards,abi:seasonRewardsAbi,functionName:'currentSeason',blockNumber});
+   const [emitted,burned]=await Promise.all([
+    client.readContract({address:rewards,abi:seasonRewardsAbi,functionName:'emittedInSeason',args:[season],blockNumber}),
+    client.readContract({address:rewards,abi:seasonRewardsAbi,functionName:'burnedInSeason',args:[season],blockNumber})]);
+   if(net>emissionHeadroomWei(emitted,burned))throw new EconomyError('Season rewards are paced to YARN burns. Your Spool stays safe; try after more burns or next season.');
   },
   season:()=>client.readContract({address:rewards,abi:seasonRewardsAbi,functionName:'currentSeason'}),
   mint:async fields=>{await checked();return mint.sign(fields);},

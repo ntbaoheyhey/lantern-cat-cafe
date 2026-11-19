@@ -65,6 +65,20 @@ These successful **historical gameplay transactions from 12 November 2026** were
 | List Relic #3 for 0.001 AVAX | [0x899ed5c5…83636](https://testnet.snowtrace.io/tx/0x899ed5c516b2909764f34143b6568711a8f94e61cccd1b6b551e0878e3b83636) | 60,934,457 |
 | Buy that listing | [0x9662228f…7fddd](https://testnet.snowtrace.io/tx/0x9662228f168bd5080907f49bd3a01d735f91b620d5468c7778a362b74ec7fddd) | 60,934,461 |
 
+## Game economy and YARN
+
+Play earns bound rewards; power never needs the token. **YARN** (fixed 1B ERC-20 on Fuji, no mint) buys ownership: sealing gear into tradable NFTs, fusing three Epics into a Legendary NFT, café cosmetics and market trades, and each of those burns YARN on-chain. Weekly rewards leave the game as YARN only while season emission stays within a small launch allowance plus 90% of public burns, checked against Fuji before every claim is signed.
+
+| | |
+| --- | --- |
+| Drop, gacha, fusion and enhancement odds | published in [docs/ECONOMY.md](docs/ECONOMY.md), generated from the live rule table |
+| Fees | seal 13% of reference (burned); market 5% = 2% burned + 3% treasury |
+| Allocation | players 35%, team 15%, treasury 12%, investors 12%, ecosystem 10%, early testers 6%, liquidity 5%, advisors 3%, partners 2% |
+| 52-week simulation | burned / claimed **2.85×** balanced, **1.14×** at half demand; inflation capped if demand collapses ([report](docs/economy/SIM-REPORT.md)) |
+| Studio revenue | 3% of every market sale plus capped treasury YARN sales; no paid randomness, no sold power |
+
+Re-run the model with `node tools/economy/sim.mjs`.
+
 ## Architecture
 
 ```mermaid
