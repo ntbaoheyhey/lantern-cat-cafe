@@ -3,11 +3,11 @@
 - Order: reports/v9/CXV/ORDER.txt; only V9 owned paths plus mailbox/work scratch.
 - Started 2026-11-19T05:59:42Z; V0 deadline 07:59:42Z (2 hours).
 - V0 delivery complete: converter + Mochi/Clover placeholders; designer zips/Soot absent.
-- V1 NEXT: 8 Blender atlases, sheets and 3s clips, 6-hour timebox after V0 push.
+- V1 assets DONE: eight atlases/JSON + sheets/3s clips; requesting Claude eye review (one round).
 - V2 optional: cat tints and screen flash.
 - Old tracked WIP saved/pushed as 6c77897c7; 512 untracked old entries untouched.
-- Pushed 0e56f29d5: converter + Mochi; READY posted to Claude. Clover encoding.
-- Environment: ffmpeg; Python venv work/v9/CXV/.venv with Pillow/numpy/scipy.
+- Pushed 00b232a27: V0 both cats + checks; READY to Claude/CXI, visual acceptance pending.
+- Review: work/v9/CXV/vfx/overview.jpg + overview-3s.mp4; browser player on localhost:8390.
 - Owner confirmed final exports share source pixel scale; replace Mochi before other cats.
 - Required: commit/push owned paths every 30 min/card end, READY mailbox, one Claude look.
 - Finish: append UTC V9 DONE CXV SHA summary in mailbox DELIVERIES.md.
