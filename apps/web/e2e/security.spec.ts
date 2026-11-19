@@ -34,7 +34,7 @@ for (const mode of ['classic', 'v2']) for (const [width, height, colorScheme] of
     });
     await page.setViewportSize({ width, height });
     await page.emulateMedia({ colorScheme });
-    const response = await page.goto(`${mode === 'classic' ? classicURL : v2URL}/`);
+    const response = await page.goto(`${mode === 'classic' ? classicURL : v2URL}/?legacy=1`);
     expect(response?.headers()['content-security-policy']).toBe(headers['Content-Security-Policy']);
     if (mode === 'v2') {
       await page.getByTestId('class-picker-choose-button').click();
