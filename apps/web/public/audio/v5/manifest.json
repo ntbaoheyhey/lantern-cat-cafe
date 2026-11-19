@@ -5621,9 +5621,9 @@
     ]
   },
   "ambience.battle.bed": {
-    "opus": "/audio/v5/ambience-battle-bed.opus",
-    "m4a": "/audio/v5/ambience-battle-bed.m4a",
-    "durationSeconds": 12,
+    "opus": "/audio/v9/battle-v9.opus",
+    "m4a": "/audio/v9/battle-v9.m4a",
+    "durationSeconds": 60,
     "bus": "bgm",
     "loop": true,
     "runtimeCueId": "ambience.battle.bed",
@@ -25068,9 +25068,9 @@
     ]
   },
   "music.battle": {
-    "opus": "/audio/v5/legacy/score-battle.opus",
-    "m4a": "/audio/v5/legacy/score-battle.m4a",
-    "durationSeconds": 32,
+    "opus": "/audio/v9/battle-v9.opus",
+    "m4a": "/audio/v9/battle-v9.m4a",
+    "durationSeconds": 60,
     "gainDb": 0,
     "bus": "music",
     "runtimeCueId": "music.battle",
@@ -25104,6 +25104,18 @@
       "ambience.battle-prep",
       "ambience.season-supply",
       "ambience.stage-select"
+    ]
+  },
+  "music.boss": {
+    "opus": "/audio/v9/boss-v9.opus",
+    "m4a": "/audio/v9/boss-v9.m4a",
+    "durationSeconds": 60,
+    "gainDb": 0,
+    "bus": "music",
+    "runtimeCueId": "music.boss",
+    "loop": true,
+    "aliases": [
+      "bgm.boss"
     ]
   }
 }
