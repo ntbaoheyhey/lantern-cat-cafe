@@ -250,7 +250,7 @@ export class UltimatePainter {
   for(let i=0;i<26;i++){const y=top+bh*r(),len=w*(.15+.35*r()),x=((r()*w*1.4+(f.reduced?0:f.at*(2.4+r())*k))%(w*1.4))-w*.2;c.globalAlpha=s.alpha*(.15+.35*r());c.fillStyle=i%3?p.core:p.glow;c.fillRect(w-x,y,len,(1+2.5*r())*k);}
   c.globalCompositeOperation='source-over';c.globalAlpha=s.alpha;
   // E7 rune circle behind the portrait.
-  const pcx=w*.27,pcy=top+bh*.5,pr=bh*.62;this.runeCircle(pcx,pcy,pr,f.at,p.glow,p.core,f.reduced);
+  const pcx=w*.27,pcy=top+bh*.5,pr=bh*.62;if(!this.flipbooks.drawAt(c,'rune-circle',pcx,pcy,pr*2.3,f.reduced?0:f.at/1000))this.runeCircle(pcx,pcy,pr,f.at,p.glow,p.core,f.reduced);
   // Portrait (head and shoulders).
   if(f.cutin&&f.cutinCrop&&f.cutin.complete&&f.cutin.naturalWidth){
    const cr=f.cutinCrop,dh=bh*1.35,dw=dh*cr.width/cr.height,dx=pcx-dw/2,dy=top+bh-dh+bh*.08;

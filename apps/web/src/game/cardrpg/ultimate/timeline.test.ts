@@ -53,3 +53,12 @@ describe('V9 ultimate recipes and flipbooks',()=>{
   expect(flipbookCell(13,12,4,512,true).frame).toBe(1);
  });
 });
+
+import {emissionPixels} from './flipbooks';
+describe('V9 emission atlases',()=>{
+ it('turns black into transparent and keeps bright emission opaque',()=>{
+  const d=emissionPixels(new Uint8ClampedArray([0,0,0,255, 255,128,0,255, 64,32,0,255]));
+  expect(d[3]).toBe(0);expect([...d.slice(4,8)]).toEqual([255,128,0,255]);
+  expect(d[11]).toBe(64);expect(d[8]).toBe(255);
+ });
+});

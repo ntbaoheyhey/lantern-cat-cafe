@@ -5,7 +5,7 @@
 
 The Lantern Cat Café is the last lit shop on a street tangled by abandoned tasks. Lead Mochi, Clover and Soot through a street patrol and face the Yarn Giant in a cosy browser card RPG. In the configured Avalanche mode, café memories become Relics that players can own on Fuji.
 
-**Recording build:** [v5-m2.2](https://github.com/ntbaoheyhey/taskbar-hero/tree/v5-m2.2), published 19 November 2026 with the three ultimate sequences, Blender effects and layered sound playback.
+**Latest integrated build:** [v5-m2.3](https://github.com/ntbaoheyhey/taskbar-hero/tree/v5-m2.3), with corrected temporary character mattes and Blender-effect playback. The [v5-m2.2 recording baseline](https://github.com/ntbaoheyhey/taskbar-hero/tree/v5-m2.2) remains published, with all three ultimate sequences and layered sound playback.
 
 ## Play in three steps
 
@@ -97,7 +97,7 @@ The judge experience uses **Vite, React, TypeScript and Three.js**, with Spine/n
 
 ## Validation and current limits
 
-The integration gate is a production build, TypeScript check, focused tests for changed code and a real browser demo run on port 6301. The `v5-m2.2` gate passed 152 focused tests; its browser run completed the boss in 20.4 seconds at normal speed with Mochi, Clover and Soot's ultimates. All twelve ultimate sound layers played and all eight Blender flipbooks loaded. The same run checked Collection against live Fuji RPC, the labelled receipt fixture and the legacy route, with no page errors. This is a local playback observation, not a general hardware benchmark.
+The integration gate is a production build, TypeScript check, focused tests for changed code and a real browser demo run on port 6301. The `v5-m2.2` recording baseline passed 152 focused tests; the `v5-m2.3` matte/effects update passed 27 affected tests. The latest browser run completed the boss in 21.2 seconds at normal speed with Mochi, Clover and Soot's ultimates. All twelve ultimate sound layers played and all eight Blender flipbooks loaded. The same run checked Collection against live Fuji RPC, the labelled receipt fixture and the legacy route, with no page errors. This is a local playback observation, not a general hardware benchmark.
 
 ```sh
 pnpm --filter @taskbar-hero/web typecheck
@@ -107,7 +107,7 @@ node tools/v5int/v9-demo-smoke.mjs --chain-ui --v9-deliveries --v9-recording
 
 Build the fixture mode with the launch command above before using the `--chain-ui` smoke option. Run contract tests separately with Foundry after initializing the repository submodules.
 
-The three ultimates and their sound layers are integrated. Recording media and final designer exports are pending; Soot still uses its fallback rig, and temporary Mochi/Clover video mattes have visible defects. Visual acceptance remains with the owner and visual lane. A configured/deployed Supabase backend, funded sponsor and fresh real-mint screenshot remain owner work. The boss music's delivered licence is listed below and needs the owner decision recorded for the release.
+The three ultimates and their sound layers are integrated. Recording media and final designer exports are pending; Soot still uses its fallback rig, while Mochi/Clover use corrected temporary videos pending the final designer exports. Visual acceptance remains with the owner and visual lane. A configured/deployed Supabase backend, funded sponsor and fresh real-mint screenshot remain owner work. The boss music's delivered licence is listed below and needs the owner decision recorded for the release.
 
 ## Credits
 
