@@ -16,7 +16,8 @@
 import {writeFileSync, mkdirSync} from 'node:fs';
 import {dirname, resolve} from 'node:path';
 import {fileURLToPath} from 'node:url';
-import {ECONOMY_V3 as E, EMISSION_GUARD as G, emissionHeadroom} from '../../packages/game-rules/src/cardrpg/economy-v3.ts';
+import {ECONOMY_V3 as E} from '../../packages/game-rules/src/cardrpg/economy-v3.ts';
+import {EMISSION_GUARD as G, emissionHeadroom} from '../../packages/chain/src/economy-guard.ts';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '../..');
 

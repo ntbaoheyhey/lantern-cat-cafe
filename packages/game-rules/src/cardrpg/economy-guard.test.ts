@@ -1,5 +1,6 @@
 import {describe,expect,it} from 'vitest';
-import {EMISSION_GUARD as G,emissionHeadroom,emissionHeadroomWei,ECONOMY_V3 as E} from './economy-v3';
+import {ECONOMY_V3 as E} from './economy-v3';
+import {EMISSION_GUARD as G,emissionHeadroom,emissionHeadroomWei} from '../../../chain/src/economy-guard';
 import {ECONOMY_SINKS} from './economy-sinks-v3';
 // @ts-expect-error plain ESM tool without type declarations
 import {SINKS,gachaEffective,simulate} from '../../../../tools/economy/sim.mjs';

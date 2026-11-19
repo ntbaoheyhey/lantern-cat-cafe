@@ -122,7 +122,7 @@ Fuji note: the genesis supply sits with a distributor wallet; vesting is a publi
 |---|---|---|
 | Per-wallet cap | `SeasonRewards` (deployed) | ≤ 12 YARN routine + one 20 YARN tester grant per wallet per week; Spool net ≤ 6/week, one withdrawal per 7 days, Deed + level 15 + 7-day account age |
 | Auto-cut controller | `SeasonRewards` (deployed) | if burn / emission < 0.8 in a 13-week season, next season's cap × min(0.8, ratio / 0.8) — no keeper, no admin |
-| **Burn-backed guard** (new) | server, before signing a claim | `emittedInSeason + amount ≤ 2,000 + 90% × burnedInSeason`, both public reads on Fuji ([`EMISSION_GUARD`](../packages/game-rules/src/cardrpg/economy-v3.ts), [`capacity()`](../supabase/functions/_shared/economy-v3-chain.ts)) |
+| **Burn-backed guard** (new) | server, before signing a claim | `emittedInSeason + amount ≤ 2,000 + 90% × burnedInSeason`, both public reads on Fuji ([`EMISSION_GUARD`](../packages/chain/src/economy-guard.ts), [`capacity()`](../supabase/functions/_shared/economy-v3-chain.ts)) |
 
 The withdrawal fee (25%) is never paid out: it stays in the reward pool. Spool that is waiting on the guard stays
 spendable 1:1 in game, so no player loses earned value. Anyone can audit the guard from Snowtrace reads.
