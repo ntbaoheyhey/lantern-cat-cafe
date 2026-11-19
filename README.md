@@ -1,11 +1,14 @@
 # Taskbar Hero — Lantern Cat Café
 
-<!-- Insert delivered AGV hero GIF and trailer link before marking this release ready. -->
-**Recording media:** the AGV hero GIF and trailer for the recording build are pending.
+![Mochi casts Last Lantern Vow](docs/submission/media/hero.gif)
+
+[Watch the 51-second demo recording](art/trailer/v9/battle_v5-m2.5.mp4) · [View the six-frame contact sheet](art/trailer/v9/contact_sheet_v5-m2.5.png)
+
+The GIF and silent video were captured from `v5-m2.5`. The video shows the street wave and boss journey; the planned three-minute trailer with sound remains separate.
 
 The Lantern Cat Café is the last lit shop on a street tangled by abandoned tasks. Lead Mochi, Clover and Soot through a street patrol and face the Yarn Giant in a cosy browser card RPG. In the configured Avalanche mode, café memories become Relics that players can own on Fuji.
 
-**Latest integrated build:** [v5-m2.5](https://github.com/ntbaoheyhey/taskbar-hero/tree/v5-m2.5), with corrected temporary character mattes, Blender-effect playback and the Safari-compatible idle reviewer. The [v5-m2.2 recording baseline](https://github.com/ntbaoheyhey/taskbar-hero/tree/v5-m2.2) remains published, with all three ultimate sequences and layered sound playback.
+**Latest integrated build:** [v5-m2.6](https://github.com/ntbaoheyhey/taskbar-hero/tree/v5-m2.6), with submission media, the CC-BY boss music replacement, complete delivered sound credits, V9 audio packaging and faster CI change detection. The [v5-m2.2 recording baseline](https://github.com/ntbaoheyhey/taskbar-hero/tree/v5-m2.2) remains published, with all three ultimate sequences and layered sound playback.
 
 ## Play in three steps
 
@@ -97,7 +100,7 @@ The judge experience uses **Vite, React, TypeScript and Three.js**, with Spine/n
 
 ## Validation and current limits
 
-The integration gate is a production build, TypeScript check, focused tests for changed code and a real browser demo run on port 6301. The `v5-m2.2` recording baseline passed 152 focused tests; the `v5-m2.3` matte/effects update passed 27 affected tests, and the `v5-m2.5` reviewer update passed 10 affected tests. The latest browser run completed the boss in 20.8 seconds at normal speed with Mochi, Clover and Soot's ultimates. All twelve ultimate sound layers played and all eight Blender flipbooks loaded. The same run checked Collection against live Fuji RPC, the labelled receipt fixture and the legacy route, with no page errors. This is a local playback observation, not a general hardware benchmark.
+The integration gate is a production build, TypeScript check, focused tests for changed code and a real browser demo run on port 6301. The `v5-m2.2` recording baseline passed 152 focused tests; the `v5-m2.3` matte/effects update passed 27 affected tests, the `v5-m2.5` reviewer update passed 10 affected tests, and `v5-m2.6` passed 101 focused audio/demo tests. CI change detection was also checked using real shallow Git clones for docs-only, web and manual-run cases. The latest browser run completed the boss in 20.6 seconds at normal speed with Mochi, Clover and Soot's ultimates. All twelve ultimate sound layers played and all eight Blender flipbooks loaded. The same run checked Collection against live Fuji RPC, the labelled receipt fixture and the legacy route, with no page errors. This is a local playback observation, not a general hardware benchmark.
 
 ```sh
 pnpm --filter @taskbar-hero/web typecheck
@@ -107,13 +110,19 @@ node tools/v5int/v9-demo-smoke.mjs --chain-ui --v9-deliveries --v9-recording
 
 Build the fixture mode with the launch command above before using the `--chain-ui` smoke option. Run contract tests separately with Foundry after initializing the repository submodules.
 
-The three ultimates and their sound layers are integrated. Recording media and final designer exports are pending; Soot still uses its fallback rig, while Mochi/Clover use corrected temporary videos pending the final designer exports. Visual acceptance remains with the owner and visual lane. A configured/deployed Supabase backend, funded sponsor and fresh real-mint screenshot remain owner work. The boss music's delivered licence is listed below and needs the owner decision recorded for the release.
+The three ultimates and their sound layers are integrated. The hero GIF, a silent demo recording and six 1920×1080 screenshots are available. Final designer exports remain pending; Soot still uses its fallback rig, while Mochi/Clover use corrected temporary videos. Visual acceptance remains with the owner and visual lane. A configured/deployed Supabase backend, funded sponsor and fresh real-mint screenshot remain owner work.
+
+## Submission screenshots
+
+[Title](docs/submission/media/title.png) · [Three-cat squad](docs/submission/media/squad.png) · [Mochi cut-in](docs/submission/media/cutin.png) · [Impact](docs/submission/media/impact.png) · [Receipt fixture](docs/submission/media/mint-toast.png) · [Fuji Collection read](docs/submission/media/collection.png)
+
+The receipt screenshot is explicitly a **fixture**, with no submitted transaction or explorer link. The Collection screenshot shows a successful Fuji read for an empty wallet. Neither screenshot is proof of a new mint.
 
 ## Credits
 
 - **Character art and idle animation:** original project art and commissioned designer work for Mochi, Clover and Soot. Temporary Mochi/Clover conversions remain labelled as stand-ins until the final exports arrive.
 - **V9 effects:** original Blender geometry, shaders and animation authored for the project; no OMG 3Q art or sound is included.
 - **Battle music:** “RPG - To Arms! Battle Music 1” by HitCtrl, [source](https://opengameart.org/content/rpg-to-arms-battle-music-1), CC-BY 3.0; transcoded for browser playback.
-- **Boss music:** “Boss Battle - Emotional Uplifting Metal Rock” by ISAo, [source](https://opengameart.org/content/boss-battle-emotional-uplifting-metal-rock), the publisher lists OGA-BY 3.0 and requests the credit “SOUND AIRYLUVS by ISAo” ([artist](https://airyluvs.com/)). Owner licence decision or an allowed replacement is pending.
-- **Music and sound attribution:** [submission credits](docs/submission/CREDITS.md), [V9 music licences](apps/web/public/audio/v9/LICENSES.json), [existing audio provenance](apps/web/public/audio/LICENSES.json) and [project credits](docs/credits-v4.md). The twelve S2 ultimate layers are wired into playback; their complete source attribution is still requested from the sound lane.
+- **Boss music:** “Volatile Reaction” by Kevin MacLeod (incompetech.com), [source](https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1400039), licensed under [Creative Commons Attribution 4.0](https://creativecommons.org/licenses/by/4.0/). Cropped and transcoded for browser playback.
+- **Music and sound attribution:** [submission credits](docs/submission/CREDITS.md), [V9 music licences](apps/web/public/audio/v9/LICENSES.json), [existing audio provenance](apps/web/public/audio/LICENSES.json) and [project credits](docs/credits-v4.md). The twelve S2 ultimate layers and three shared sounds derive from Kenney Impact Sounds and RPG Audio under CC0; per-cue sources are listed in the submission credits.
 - **Art provenance:** [project asset record](docs/art/PROVENANCE.md). Project code is [MIT licensed](LICENSE); media and dependencies retain their stated licences.
