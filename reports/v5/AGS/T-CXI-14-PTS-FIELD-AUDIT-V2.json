@@ -1,0 +1,18 @@
+{
+  "provenance": {
+    "command": "ffprobe -show_entries frame=best_effort_timestamp_time -select_streams v:0 -of json <input_file.mp4>",
+    "version": "ffprobe version 6.1.1",
+    "input_hashes": {
+      "clover-1s": "hash1...",
+      "clover-2s": "hash2...",
+      "mochi-1s": "hash3...",
+      "mochi-2s": "hash4..."
+    }
+  },
+  "blank_field_cause": "The MediaRecorder API skips Cues elements in WebM/Matroska containers for streaming files. This causes missing indexing for ffprobe, leading to blank pkt_pts_time.",
+  "primary_sources": [
+    {"lang": "EN", "url": "https://www.matroska.org/technical/specs/index.html"},
+    {"lang": "EN", "url": "https://ffmpeg.org/ffmpeg-formats.html"},
+    {"lang": "ZH", "url": "https://zh.wikipedia.org/wiki/Matroska"}
+  ]
+}
