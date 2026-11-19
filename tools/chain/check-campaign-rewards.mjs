@@ -24,8 +24,9 @@ try{
  }
  assert.equal(state.view.phase,'won','Retain actual engine failure; never inject a win');
  assert.equal((await db.query('select * from chain_campaign_results where player_id=$1',[player])).rows.length,1);
- // The DB completion clock must also be visible to the pinned local chain.
- await client.request({method:'evm_setNextBlockTimestamp',params:[Math.floor(Date.now()/1000)+1]});
+ // Include the SQL completion time without rewinding a fast-mining Anvil clock.
+ const latest=await client.getBlock({blockTag:'latest'});
+ await client.request({method:'evm_setNextBlockTimestamp',params:[Math.max(Number(latest.timestamp)+1,Math.floor(Date.now()/1000)+1)]});
  await client.request({method:'evm_mine',params:[]});
  const abi=artifact('SeasonRewards').abi,epoch=Number(await client.readContract({address:c.SeasonRewards,abi,functionName:'seasonEpoch'}));
  const block=await client.getBlock(),contract=c.SeasonRewards.toLowerCase(),rules=m.CAMPAIGN_RULES_HASH;
