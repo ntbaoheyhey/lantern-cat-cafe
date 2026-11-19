@@ -1,10 +1,10 @@
-ACTIVE: NONE
-NEXT 1: NONE
+ACTIVE: T-CXV-FOCUS-LIFECYCLE
+NEXT 1: T-CXV-FOCUS-LIFECYCLE
 NEXT 2: NONE
 Running PIDs: None
-TASKs: NONE
+TASKs: T-CXV-FOCUS-LIFECYCLE (NEW: keyboard focus study)
 Blocked: B4 (Video generation failed: tools only support static images)
-Last Pushed SHA: a9dba69ab
+Last Pushed SHA: f223d2815
 Wake Task ID: task-6
 RULES Re-read: 2026-11-18T05:25:00Z
 Order SHA: 21b1ad7f73a9945b13853af9d3ba294c7f4824763117993a32677a92d0a67d21
