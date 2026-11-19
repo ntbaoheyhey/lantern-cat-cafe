@@ -402,7 +402,8 @@ export class SpineScene {
    // the old complete-card lean on top would undo that contact and deform the face.
    if(entry.craftPose&&!iced&&['attack','skill','ult','idle','hurt','ko'].includes(name))rootPose=neutralPose();
    // V9: the frozen designer frame is cast in code (squash, lunge, hold, step back).
-   if(ultLive?.pose&&unit.id===plan?.actorId&&hasDesignerIdleBody(entry.asset,actor)&&!iced&&unit.hp>0){const p=ultLive.pose;rootPose={...neutralPose(),x:p.x,y:p.y,sx:p.sx,sy:p.sy,angle:p.angle,phase:p.phase==='lunge'?'travel':p.phase==='hold'?'strike':p.phase==='back'?'return':'anticipation'};}
+   // Rigged bodies (Soot until its video lands) take the same root lunge over their own ult clip.
+   if(ultLive?.pose&&unit.id===plan?.actorId&&!iced&&unit.hp>0){const p=ultLive.pose;rootPose={...neutralPose(),x:p.x,y:p.y,sx:p.sx,sy:p.sy,angle:p.angle,phase:p.phase==='lunge'?'travel':p.phase==='hold'?'strike':p.phase==='back'?'return':'anticipation'};}
    if(['mochi','panko','yarn-giant'].includes(entry.asset)&&entry.craftPose&&frame&&unit.id===plan?.actorId&&(!plan.ultimate||entry.asset==='yarn-giant')&&unit.hp>0&&!iced&&!view.model&&!chargeEvent(plan)&&!isSupportCast(plan)&&targetId&&this.actors.has(targetId)){
     const m=entry.craftPose.drawing.set.manifest,b=m.poses[plan.ultimate?'K5':'K2']!.opaqueBounds!,direction=unit.side==='enemy'?-1:1;
     const face=spriteFacing(actor.unit.nativeFacing,unit.side),scale=home.point.core/m.opaqueHeight;
