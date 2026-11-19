@@ -244,7 +244,8 @@ function enemyActor(id: string, index: number, chapter: number, tutorial = false
   return { ...actorBase(), id:`foe-${index}-${id}`,catalogId:id,name:e.name,side:'enemy',role:e.role,combatClass:e.combatClass,row:e.row,flavour:e.flavour,hp:Math.round(stats.hp*scale),maxHp:Math.round(stats.hp*scale),attack:Math.round(stats.attack*scale*(tutorial ? 1 : [2.7, 1.95, 1.6][chapter - 1]!)),defense:stats.defense,initiative:5-index%3,effectHit:0,effectResist:e.tier==='boss'?1200:500,breakCap:e.breakCap,skills:[] };
 }
 export function createBattle(setup: BattleSetup): Battle {
-  if(setup.formationC2&&(!setup.gameplayA6||!validRowsC2(setup.cats.map(c=>c.id),Object.fromEntries(setup.cats.map(c=>[c.id,c.row])))))throw Error('C2 requires four cats, two in each row, and Gameplay A6');
+  const demoFormation=setup.demoV9&&setup.cats.length===3&&['mochi','clover','soot'].every((id,i)=>setup.cats[i]?.id===id&&setup.cats[i]?.row===(i===0?'front':'rear'));
+  if(setup.formationC2&&(!setup.gameplayA6||!(demoFormation||validRowsC2(setup.cats.map(c=>c.id),Object.fromEntries(setup.cats.map(c=>[c.id,c.row]))))))throw Error('C2 requires a valid formation and Gameplay A6');
   if(setup.gameplayA6&&(!setup.skillsV5||!setup.gameplayV4))throw Error('Gameplay A6 requires Skills V5');
   if(setup.skillsV5&&!setup.gameplayV4)throw Error('Skills V5 requires automatic Gameplay V4');
   const initial = clone(setup);
