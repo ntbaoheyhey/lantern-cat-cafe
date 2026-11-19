@@ -3,8 +3,7 @@ import { keccak256, toBytes, type Address, type Hex } from 'viem';
 import { battleCats, createDepthAccount } from '../../../packages/game-rules/src/cardrpg/depth/state.ts';
 import { createBattle } from '../../../packages/game-rules/src/cardrpg/depth/battle.ts';
 import { playBattle } from '../../../packages/game-rules/src/cardrpg/depth/policies.ts';
-import {setGameplayA6} from '../../../packages/game-rules/src/cardrpg/depth/gameplay-a6.ts';
-import {setFormationC2} from '../../../packages/game-rules/src/cardrpg/depth/formation-c2.ts';
+import {demoSetupV9} from '../../../packages/game-rules/src/cardrpg/depth/demo-v9.ts';
 import { type VoucherSigner } from './relic.ts';
 
 export interface JudgeEntitlement { id: string; relic_id: number; rarity_index: number; source: string }
@@ -24,12 +23,9 @@ export function judgeBoss() {
   };
 }
 /** Public scripted trial, not a campaign save or future loot projection.
- * Uses catalog stats and current four-cat rules; LEARN/S3.md measures its replay.
- */
+ * The browser and server use the same three-cat V9 recording setup. */
 export function judgeTrial(finale=false) {
-  const state=setFormationC2(setGameplayA6(createDepthAccount(43113,0),true));
-  const battle=playBattle(createBattle({seed:43113,chapter:1,cats:battleCats(state),
-    enemies:[finale?'yarn-giant':'button-guard'],gameplayV4:true,skillsV5:true,gameplayA6:true,formationC2:true}), 'auto');
+  const battle=playBattle(createBattle(demoSetupV9(finale?'boss':'wave')), 'auto');
   return {won:battle.result==='party',rounds:battle.round,
     replay:{setup:battle.initial,choices:battle.choices},
     log:battle.log.map(row=>({actor:row.actorId,target:row.targetId,kind:row.kind,amount:row.amount})),

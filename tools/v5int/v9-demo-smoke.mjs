@@ -46,6 +46,19 @@ try {
  assert(elapsed<75000,`Boss playback exceeded 75s: ${elapsed}ms`);
  await page.screenshot({path:resolve(out,'victory.png')});
  console.log(`PASS boss in ${(elapsed/1000).toFixed(1)}s: Mochi → Clover → Soot; victory.`);
+ if(process.argv.includes('--chain-ui')){
+  await page.getByRole('button',{name:'Preview receipt fixture',exact:true}).click();
+  const fixture=page.getByRole('status',{name:'Fixture receipt — no transaction'});
+  await fixture.waitFor();assert.equal(await fixture.locator('a').count(),0);
+  await page.screenshot({path:resolve(out,'receipt-fixture.png')});
+  await page.getByRole('button',{name:'Dismiss receipt',exact:true}).click();
+  await page.getByRole('button',{name:'Collection',exact:true}).click();
+  await page.getByLabel('Wallet address',{exact:true}).fill('0x0000000000000000000000000000000000000001');
+  await page.getByRole('button',{name:'Read Fuji Relics',exact:true}).click();
+  await page.getByText('Owned on Avalanche Fuji',{exact:true}).waitFor({timeout:90000});
+  assert(await page.getByText('No Relics in this wallet.',{exact:true}).isVisible());
+  console.log('PASS labelled receipt fixture (no explorer link) and live Fuji RPC Collection without backend.');
+ }
  await page.goto(`${origin}/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&legacy=1`);
  const begin=page.getByRole('button',{name:'Start playing',exact:true});
  await begin.or(page.getByRole('heading',{name:'Taskbar Hero',exact:true})).waitFor({timeout:30000});

@@ -1,4 +1,4 @@
-import {useEffect,useState} from 'react';
+import {lazy,Suspense,useEffect,useState} from 'react';
 import {CAT_BY_ID} from '@taskbar-hero/game-rules/src/cardrpg/depth/catalog';
 import {DEMO_CREW_V9,DEMO_WAVE_V9,demoRecordingV9,type DemoEncounterV9} from '@taskbar-hero/game-rules/src/cardrpg/depth/demo-v9';
 import type {DepthModel} from '../depth/model';
@@ -10,6 +10,8 @@ import {audioEngine} from '../../../audio/engine';
 import {ambienceScene,soundScene} from '../../../audio/scene';
 import './demo-journey.css';
 import './judge-demo-v9.css';
+const JudgeRewardV9=lazy(()=>import('../chain/JudgeRewardV9').then(m=>({default:m.JudgeRewardV9})));
+const JudgeRelicCollection=lazy(()=>import('../chain/JudgeRewardV9').then(m=>({default:m.JudgeRelicCollection})));
 
 type Phase='intro'|'wave'|'boss-ready'|'boss'|'won';
 export default function JudgeDemoV9({m}:{m:DepthModel}) {
@@ -45,6 +47,8 @@ export default function JudgeDemoV9({m}:{m:DepthModel}) {
       <div className="ship-crew">{DEMO_CREW_V9.map(id=><figure key={id}><img {...artPropsA6(id)} alt=""/><figcaption>{CAT_BY_ID[id]!.name}<CombatClassBadge combatClass={CAT_BY_ID[id]!.combatClass}/></figcaption></figure>)}</div>
       <PaintedButton icon="quest" onClick={()=>start(phase==='boss-ready'?'boss':'wave')}>{phase==='boss-ready'?'Face the Yarn Giant':phase==='won'?'Play again':'Guard the café'}</PaintedButton>
     </section>}
+    {collection&&<Suspense fallback={<p role="status">Opening Relics…</p>}><JudgeRelicCollection/></Suspense>}
+    {phase==='won'&&!collection&&<Suspense fallback={<p role="status">Opening reward…</p>}><JudgeRewardV9/></Suspense>}
     {error&&<p role="alert">{error}</p>}
   </main>;
 }

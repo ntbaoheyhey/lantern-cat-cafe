@@ -18,7 +18,13 @@ describe('receipt details',()=>{
  });
  it('links a public Fuji receipt to its own hash and keeps unavailable timing explicit',()=>{
   render(<ReceiptToast/>);publish({...proof,local:false,confirmationMs:null,gasSource:'wallet'});
-  expect(screen.getByRole('link',{name:'View on Fuji explorer'}).getAttribute('href')).toBe(`https://testnet.snowtrace.io/tx/${proof.hash}`);
+  expect(screen.getByRole('link',{name:'View on Fuji explorer · Snowtrace'}).getAttribute('href')).toBe(`https://testnet.snowtrace.io/tx/${proof.hash}`);
   expect(screen.getByText('Timing unavailable')).toBeTruthy();expect(screen.getByText('Gas funding: wallet')).toBeTruthy();
+ });
+ it('labels a fixture visibly, provides no explorer link and never stores it as a receipt',()=>{
+  localStorage.clear();render(<ReceiptToast fixture/>);
+  expect(screen.getByRole('status',{name:'Fixture receipt — no transaction'})).toBeTruthy();
+  expect(screen.getByText('Avalanche Fuji · fixture, not submitted')).toBeTruthy();
+  expect(screen.queryByRole('link')).toBeNull();expect(localStorage.length).toBe(0);
  });
 });
