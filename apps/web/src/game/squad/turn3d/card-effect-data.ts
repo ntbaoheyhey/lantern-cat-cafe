@@ -95,7 +95,7 @@ export const CARD_EFFECT_RECIPES: Record<string, CardEffectRecipe> = {
     layer('bow', 'rise', 'target', { start: .56, size: .8, height: .25, offset: [.65, 0, 0], accent: true }),
     layer('seam', 'sweep', 'target', { start: .49, size: .6, count: 3, ground: true, height: .07, spread: 1.2 }),
   ]),
-  'mochi-4': recipe('Last light shelter', '#f6c46a', '#fff4cf', 'holy', 'wide', 'friendly', [
+  'mochi-4': recipe('Last Lantern Vow', '#f6c46a', '#fff4cf', 'holy', 'wide', 'friendly', [
     layer('window', 'orbit', 'caster', { start: .06, end: .48, size: .4, count: 3, spread: .85, height: .3 }),
     layer('roof', 'rise', 'all-targets', { start: .36, end: .95, size: 1.2, height: .4, offset: [0, 0, -.45] }),
     layer('lantern', 'hold', 'all-targets', { start: .45, size: .45, height: .4, offset: [.65, 0, 0] }),
@@ -122,7 +122,7 @@ export const CARD_EFFECT_RECIPES: Record<string, CardEffectRecipe> = {
     layer('flame', 'rise', 'target', { start: .53, count: 4, size: .55, spread: .85, height: .4 }),
     layer('comet', 'burst', 'target', { start: .52, count: 6, size: .25, spread: 1.3, accent: true }),
   ], { shake: .9, durations: [630, 230, 105, 270, 340] }),
-  'soot-4': recipe('Midnight service', '#b396eb', '#ffe5ad', 'moon', 'left', 'hostile', [
+  'soot-4': recipe('Chimney Comet', '#b396eb', '#ffe5ad', 'moon', 'left', 'hostile', [
     layer('tray', 'rise', 'caster', { start: .04, end: .49, size: 1.25, height: .4, offset: [-.6, 0, 0] }),
     layer('star', 'orbit', 'caster', { start: .10, end: .52, count: 5, size: .25, spread: 1.0, height: .4, accent: true }),
     layer('lantern', 'fall', 'all-targets', { start: .35, end: .78, count: 3, size: .58, spread: .95, height: 1.1 }),
@@ -149,7 +149,7 @@ export const CARD_EFFECT_RECIPES: Record<string, CardEffectRecipe> = {
     layer('droplet', 'burst', 'all-targets', { start: .50, count: 6, size: .24, spread: .9, accent: true }),
     layer('petal', 'rise', 'all-targets', { start: .64, count: 4, size: .25, spread: .7, height: .3 }),
   ]),
-  'clover-4': recipe('Greenhouse morning', '#91c990', '#fff0b6', 'garden', 'rise', 'friendly', [
+  'clover-4': recipe('Fourleaf Spring Brew', '#91c990', '#fff0b6', 'garden', 'rise', 'friendly', [
     layer('stem', 'rise', 'caster', { start: .05, end: .48, count: 3, size: .7, spread: .8, height: .18 }),
     layer('greenhouse', 'rise', 'all-targets', { start: .34, size: 1.4, height: .35, offset: [0, 0, -.5] }),
     layer('sprout', 'rise', 'all-targets', { start: .47, count: 4, size: .6, spread: .8, height: .13 }),

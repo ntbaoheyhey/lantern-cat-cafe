@@ -43,6 +43,8 @@ import {paintedTargets} from './vfx-registry';
 import {PaintLight} from '../vfx-craft/paint-light';
 import {PaintDeath} from '../vfx-craft/paint-death';
 import {bossArrival,BOSS_LANDING_MS} from './boss-arrival';
+import {UltimateDirector} from '../ultimate/director';
+import {DesignerVideoActorMedia} from './designer-video';
 
 interface DisplayActor {actor:SpineActor;craftPose?:DrawnPoses;craftLight?:PaintLight;craftDeath?:PaintDeath;asset:string;entered:number;hurtAt:number;koAt:number;phaseAt:number;phase:number;lane:number;entranceDone:boolean;shadow:T.Mesh<T.PlaneGeometry,T.MeshBasicMaterial>;ring:T.Mesh<T.RingGeometry,T.MeshBasicMaterial>;hit:T.Mesh<T.RingGeometry,T.MeshBasicMaterial>}
 interface SceneAnchor extends Anchor {labelTarget?:{x:number;y:number;avoid:Rect}}
@@ -70,6 +72,8 @@ export class SpineScene {
  private battleKey:unknown;private ultStartedAt=-100;private ultEndedAt=-100;private phaseNoticeAt=-100;private phaseNoticeArrival=false;
  private hitstopUntil=0;private sampled=new Map<string,{name:string;key:unknown;at:number}>();
  private casterFocus=new CasterFocus();
+ /** V9 five-beat ultimates for the MVP cats (cut-in, cast, impact, linger). */
+ private ult5!:UltimateDirector;
  /** Q3.B authoring only. Normal builds retain the accepted scene until review. */
  private craftEffects=new CraftEncounter(this.scene);
  private get craft(){return this.craftEffects.effects.lantern;}
@@ -122,6 +126,8 @@ export class SpineScene {
   this.renderer.domElement.addEventListener('webglcontextlost',this.lost);this.renderer.domElement.addEventListener('webglcontextrestored',this.restored);this.renderer.domElement.addEventListener('pointerup',this.pick);host.appendChild(this.renderer.domElement);
   this.effects=new PaintedVfx(host,(id,socket)=>this.socket(id,socket),id=>this.pixelsPerUnit(id));this.numbers=new PuppetNumbers(host);this.bodyFx=new BodyFx(host);this.bossPhase=new BossPhase(host);this.camera.position.set(0,0,100);this.scene.add(this.stage.root,this.trails.root,this.casterFocus.root);this.postFx=new BattlePostFx(this.renderer,this.scene,this.camera);this.cinema=new CinematicPlayer(host);
   this.weather=new BattleWeather(host);
+  this.ult5=new UltimateDirector(host,this.scene);
+  this.ult5.onBeat=(beat,recipe)=>{if(typeof window!=='undefined')window.dispatchEvent(new CustomEvent('th:ult-beat',{detail:{beat,cat:recipe.cat,cue:beat==='cutin'?recipe.sound.cutin:beat==='squash'?recipe.sound.cast:beat==='impact'?recipe.sound.impact:beat==='linger'?recipe.sound.linger:undefined}}));};
   const canvas=document.createElement('canvas');canvas.width=128;canvas.height=64;const c=canvas.getContext('2d')!;c.scale(1,.5);
   const glow=c.createRadialGradient(64,64,1,64,64,64);glow.addColorStop(0,'#49333a70');glow.addColorStop(.55,'#49333a38');glow.addColorStop(1,'#49333a00');c.fillStyle=glow;c.fillRect(0,0,128,128);this.shadowTexture=new T.CanvasTexture(canvas);this.shadowTexture.colorSpace=T.SRGBColorSpace;
   this.resize=new ResizeObserver(()=>this.invalidate());this.resize.observe(host);document.addEventListener('visibilitychange',this.visibility);
@@ -208,7 +214,7 @@ export class SpineScene {
   !this.effects.overrides.effects.has(plan.presentationId??plan.skillId)&&isCraftOwner(this.actors.get(plan.actorId)?.asset??'');}
  private onCue(actorId:string,cue:SpineCue){
   const view=this.currentView??this.view(),frame=view.frame,actor=this.actors.get(actorId)?.actor;if(!frame||actorId!==frame.plan.actorId||!actor)return;
-  if(!this.craftHandles(frame.plan))this.effects.cue(cue,frame,this.renderTime,view.playbackSpeed??1,view.actors,actor.cues());
+  if(!this.craftHandles(frame.plan)&&!this.ult5?.active)this.effects.cue(cue,frame,this.renderTime,view.playbackSpeed??1,view.actors,actor.cues());
   this.eventAudit.push({actorId,name:cue.name,fallback:cue.fallback,skillId:frame.plan.skillId,elapsed:frame.elapsed});if(this.eventAudit.length>240)this.eventAudit.shift();
   if(cue.name==='ult-start'){this.ultimate=true;this.ultStartedAt=this.renderTime;this.ultEndedAt=-100;this.cinematic.actorId=actorId;}
   if(cue.name==='ult-end'){this.ultimate=false;this.ultEndedAt=this.renderTime;}
@@ -253,7 +259,13 @@ export class SpineScene {
   if(frame&&!this.actors.has(frame.plan.actorId)&&frame.elapsed>=frame.plan.beats[2]!.start)this.firstHit=true;
   this.camera.left=-this.worldWidth/2;this.camera.right=this.worldWidth/2;this.camera.top=PAINT.worldHeight;this.camera.bottom=0;this.camera.zoom=1;this.camera.position.x=0;this.camera.position.y=0;
   this.camera.rotation.z=0;this.camera.updateProjectionMatrix();this.camera.updateMatrixWorld();
-  const focusDim=sequence?.dim??0,focusLight=new T.Color().setRGB(1-focusDim,1-focusDim,1-focusDim,T.SRGBColorSpace).r;
+  const ultEntry=plan?this.actors.get(plan.actorId):undefined;
+  const ultMedia=ultEntry?.actor.designerMedia instanceof DesignerVideoActorMedia?ultEntry.actor.designerMedia.media:undefined;
+  const ult5=frame&&plan&&ultEntry&&this.ult5.owns(!!plan.ultimate,ultEntry.asset)&&!view.model
+   ?this.ult5.begin({planId:`${(plan as {id?:unknown}).id??plan.skillId}:${plan.actorId}`,asset:ultEntry.asset,elapsed:frame.elapsed,reduced:!!view.reducedMotion,paused:!!view.paused,width,height},ultMedia):this.ult5.begin(null,undefined);
+  const ultLive=ult5&&!ult5.done?ult5:null;
+  if(ultLive)this.hitstopUntil=Math.max(this.hitstopUntil,this.ult5.hitstopDeadline);
+  const focusDim=ultLive?ultLive.dim:sequence?.dim??0,focusLight=new T.Color().setRGB(1-focusDim,1-focusDim,1-focusDim,T.SRGBColorSpace).r;
   const activeEnemies=view.actors.filter(u=>u.side==='enemy'&&u.hp>0);
   if(activeEnemies.length>4)this.c2Capacity=6;
   if(view.formationC2)for(const unit of activeEnemies){
@@ -389,6 +401,8 @@ export class SpineScene {
    // The pilot gesture already moves the trunk around planted feet. Applying
    // the old complete-card lean on top would undo that contact and deform the face.
    if(entry.craftPose&&!iced&&['attack','skill','ult','idle','hurt','ko'].includes(name))rootPose=neutralPose();
+   // V9: the frozen designer frame is cast in code (squash, lunge, hold, step back).
+   if(ultLive?.pose&&unit.id===plan?.actorId&&hasDesignerIdleBody(entry.asset,actor)&&!iced&&unit.hp>0){const p=ultLive.pose;rootPose={...neutralPose(),x:p.x,y:p.y,sx:p.sx,sy:p.sy,angle:p.angle,phase:p.phase==='lunge'?'travel':p.phase==='hold'?'strike':p.phase==='back'?'return':'anticipation'};}
    if(['mochi','panko','yarn-giant'].includes(entry.asset)&&entry.craftPose&&frame&&unit.id===plan?.actorId&&(!plan.ultimate||entry.asset==='yarn-giant')&&unit.hp>0&&!iced&&!view.model&&!chargeEvent(plan)&&!isSupportCast(plan)&&targetId&&this.actors.has(targetId)){
     const m=entry.craftPose.drawing.set.manifest,b=m.poses[plan.ultimate?'K5':'K2']!.opaqueBounds!,direction=unit.side==='enemy'?-1:1;
     const face=spriteFacing(actor.unit.nativeFacing,unit.side),scale=home.point.core/m.opaqueHeight;
@@ -475,6 +489,9 @@ export class SpineScene {
    this.camera.position.y=shakeY/shakeNorm*shake*px;
    this.firstHit=frame.elapsed>=frame.plan.beats[2]!.start;
   }
+  if(ultLive&&(ultLive.shake.x||ultLive.shake.y)){
+   const px=this.worldWidth/width;this.camera.position.x+=ultLive.shake.x*px;this.camera.position.y+=ultLive.shake.y*px;this.camera.rotation.z+=ultLive.shake.angle;
+  }
   this.camera.updateProjectionMatrix();this.camera.updateMatrixWorld();
   this.stage.update(this.worldWidth,PAINT.worldHeight,0,1-focusLight,view.formationC2);
   const focusActor=plan?this.actors.get(plan.actorId):undefined;
@@ -488,7 +505,8 @@ export class SpineScene {
   this.cinematic.phaseVisible=time-this.phaseNoticeAt<PAINT.phaseSeconds&&!this.cinematic.ultimateVisible;
   this.cinematic.phaseBox=this.cinematic.phaseVisible?cinematicBox(width,height,protectedRects,this.phaseNoticeArrival?'arrival':true):null;
   this.cinematic.phaseVisible&&=!!this.cinematic.phaseBox;
-  if(this.craftHandles(plan)&&frame&&plan){
+  // V9 ultimates replace the older crafted/painted recipes for the MVP cats.
+  if(!ultLive&&this.craftHandles(plan)&&frame&&plan){
    const casterAsset=this.actors.get(plan.actorId)?.asset,shield=casterAsset==='mochi',oven=casterAsset==='panko',thread=casterAsset==='binding-thread',needle=casterAsset==='needle-moth',yarn=casterAsset==='yarn-giant';
    const art=healingCast?(casterAsset==='teacup-healer'?this.craftTea!:this.craftHeal!):shield?this.craftShield!:oven?this.craftOven!:thread?this.craftThread!:needle?this.craftNeedle!:yarn?this.craftYarn!:(plan.ultimate?this.craft!:this.craftBasic!);
    for(const other of [this.craft,this.craftBasic,this.craftShield,this.craftHeal,this.craftOven,this.craftThread,this.craftTea,this.craftNeedle,this.craftYarn])if(other!==art)other?.hide();
@@ -545,7 +563,7 @@ export class SpineScene {
   this.postFx.render(plan,frame?.elapsed??0,delta,view.quality??'high',view.reducedMotion,plan?this.actors.get(plan.actorId)?.actor.root:undefined,plan?this.actors.get(plan.targetIds[0]??plan.actorId)?.actor.root.position:undefined);
   if(this.restoringContext)this.finishContextRecovery();
   const bannerActor=plan?.ultimate?view.actors.find(a=>a.id===plan.actorId):undefined,bannerEntry=bannerActor?this.actors.get(bannerActor.id):undefined;
-  this.cinema.render(frame,view.paused,view.playbackSpeed??1,view.reducedMotion,view.fixedTime!==undefined,view.battleKey,
+  this.cinema.render(ultLive?null:frame,view.paused,view.playbackSpeed??1,view.reducedMotion,view.fixedTime!==undefined,view.battleKey,
    !view.formationC2&&plan?.ultimate&&bannerEntry?this.focusBanner.place(plan,this.bounds(bannerEntry),width,height,this.cinematicRects):undefined,
    view.formationC2&&bannerActor&&bannerEntry?{id:bannerActor.id,name:bannerActor.name,portrait:`/units/${bannerEntry.asset}/portrait.webp`,anchors:this.anchors}:undefined);
   this.bossPhase.render(view,time,width,height,id=>{const entry=this.actors.get(id);return entry?this.bounds(entry):undefined;});
@@ -562,6 +580,16 @@ export class SpineScene {
   }
   this.bodyFx.render(view,time,width,height,this.bodyBoxes,this.groundContacts);this.stats.frames++;const info=this.renderer.info;Object.assign(this.stats,{calls:info.render.calls,triangles:info.render.triangles,geometries:info.memory.geometries,textures:info.memory.textures});
   this.numbers.setAnchors(this.anchors);this.numbers.render(frame,view.cardPresentation,this.width,this.height,view.reducedMotion,true,view.fixedTime);
+  if(ultLive&&plan&&ultEntry){
+   const alive=(side:'party'|'enemy')=>view.actors.filter(a=>a.side===side&&a.hp>0).flatMap(a=>{const e=this.actors.get(a.id);return e?[this.bounds(e)]:[];});
+   const casterSide=view.actors.find(a=>a.id===plan.actorId)?.side??'party',foeSide=casterSide==='party'?'enemy':'party';
+   const anchors={caster:{origin:this.socket(plan.actorId,'vfxOrigin')??{x:0,y:0},hand:this.socket(plan.actorId,'mainHand')??{x:0,y:0},box:this.bounds(ultEntry)},
+    targets:plan.targetIds.filter(id=>view.actors.some(a=>a.id===id&&a.side===foeSide&&a.hp>0)).flatMap(id=>{const e=this.actors.get(id);return e?[this.bounds(e)]:[];}),
+    team:alive(casterSide),enemies:alive(foeSide)};
+   if(!this.ult5.lungeReach)this.ult5.aim(anchors,width);
+   // Presentation only: a painter fault must never stop the battle clock.
+   try{this.ult5.paint(ultLive.at,anchors,width,height,!!view.reducedMotion,!!view.paused,ultEntry.actor.root);}catch(error){console.warn('V9 ultimate paint',error);this.ult5.end();}
+  }
  }
  private screen(vector:T.Vector3){vector.project(this.camera);return{x:(vector.x*.5+.5)*this.width,y:(.5-vector.y*.5)*this.height};}
  private bounds(entry:DisplayActor,b=entry.actor.bounds):Rect{
@@ -625,5 +653,5 @@ export class SpineScene {
  sizeAudit(){return{width:this.width,height:this.height,modelToStage:1,units:[...this.actors].filter(([,entry])=>entry.actor.root.visible).map(([id,entry])=>{const box=this.bounds(entry),coreBox=this.bounds(entry,unitCore(entry.asset,entry.actor.bounds).world),faceBox=this.faceBounds(entry);return{id,asset:entry.asset,side:entry.actor.unit.side,kind:entry.actor.unit.tier,height:entry.actor.bounds.height,footprint:entry.actor.bounds.width,box,coreBox,faceBox,drawOrder:entry.actor.root.children[0]?.renderOrder??0,ratio:box.height/this.height,source:entry.actor.source,fallback:entry.actor.source==='puppet'};})};}
  audit(){return{camera:{scale:this.camera.zoom,x:this.camera.position.x,y:this.camera.position.y,rotation:this.camera.rotation.z,worldWidth:this.worldWidth,worldHeight:PAINT.worldHeight},focus:{brightness:1-(this.currentView?.frame?sequenceAt(this.currentView.frame.plan,this.currentView.frame.elapsed)?.dim??0:0),outline:this.casterFocus.root.visible},renderer:'taskbar-cutout',orthographic:true,zoom:this.camera.zoom,stage:this.stage.audit(),cache:spineCacheStats(),events:this.eventAudit,motion:this.motionAudit,labels:this.labelAudit,stats:this.stats,vfx:this.effects.stats,cinematic:this.cinematic,sequence:this.cinema.audit,bossPhase:this.bossPhase.audit,weather:this.weather.audit,units:this.sizeAudit().units};}
  private releaseActor(entry:DisplayActor){entry.craftDeath?.dispose();entry.craftLight?.dispose();entry.actor.dispose();for(const mesh of [entry.shadow,entry.ring,entry.hit]){mesh.material.dispose();mesh.removeFromParent();}}
- dispose(){if(this.disposed)return;this.disposed=true;cancelAnimationFrame(this.raf);this.resize.disconnect();document.removeEventListener('visibilitychange',this.visibility);this.renderer.domElement.removeEventListener('webglcontextlost',this.lost);this.renderer.domElement.removeEventListener('webglcontextrestored',this.restored);this.renderer.domElement.removeEventListener('pointerup',this.pick);for(const entry of this.actors.values())this.releaseActor(entry);this.actors.clear();this.pending.clear();this.failed.clear();this.lanes.clear();this.sampled.clear();this.ready=false;this.stage.dispose();this.shadowTexture.dispose();this.geometry.dispose();this.ringGeometry.dispose();this.effects.dispose();this.numbers.dispose();this.bodyFx.dispose();this.bossPhase.dispose();this.weather.dispose();this.trails.dispose();this.casterFocus.dispose();this.homes.clear();this.cinema.dispose();this.craftEffects.dispose();this.postFx.dispose();this.renderer.dispose();this.renderer.forceContextLoss();this.renderer.domElement.remove();}
+ dispose(){if(this.disposed)return;this.disposed=true;this.ult5?.dispose();cancelAnimationFrame(this.raf);this.resize.disconnect();document.removeEventListener('visibilitychange',this.visibility);this.renderer.domElement.removeEventListener('webglcontextlost',this.lost);this.renderer.domElement.removeEventListener('webglcontextrestored',this.restored);this.renderer.domElement.removeEventListener('pointerup',this.pick);for(const entry of this.actors.values())this.releaseActor(entry);this.actors.clear();this.pending.clear();this.failed.clear();this.lanes.clear();this.sampled.clear();this.ready=false;this.stage.dispose();this.shadowTexture.dispose();this.geometry.dispose();this.ringGeometry.dispose();this.effects.dispose();this.numbers.dispose();this.bodyFx.dispose();this.bossPhase.dispose();this.weather.dispose();this.trails.dispose();this.casterFocus.dispose();this.homes.clear();this.cinema.dispose();this.craftEffects.dispose();this.postFx.dispose();this.renderer.dispose();this.renderer.forceContextLoss();this.renderer.domElement.remove();}
 }
