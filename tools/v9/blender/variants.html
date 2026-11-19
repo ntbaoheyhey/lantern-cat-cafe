@@ -1,0 +1,37 @@
+<!doctype html>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>V9 colour and flash review</title>
+<style>
+body{font:15px system-ui;background:#18161d;color:#eee9df;margin:24px}h1{font-size:24px}p{color:#c6bdce;line-height:1.5}a{color:#e4cbff}button,select{font:inherit;padding:8px;background:#302b38;color:inherit;border:1px solid #62586d;border-radius:6px;margin:4px}.grid{display:grid;grid-template-columns:repeat(auto-fit,280px);gap:18px;margin-top:24px}article{border:1px solid #443b4c;padding:12px;border-radius:8px;background:#211d27}h2{font-size:16px;margin:0 0 9px}canvas{display:block;width:256px;height:256px;background:black}small{display:block;color:#c8c0ce;margin-top:8px}.toolbar{position:sticky;top:0;padding:12px 0;background:#18161df5;z-index:1}.error{color:#ffc4a4}#flash{position:fixed;inset:0;width:100vw;height:100vh;pointer-events:none;opacity:0;z-index:10}article[hidden]{display:none}
+</style>
+<h1>V9 cat colours · 256 px</h1>
+<p>Gold for Mochi, green for Clover, violet for Soot. Impact keeps a white-hot core. <a href="review.html">View the eight base effects</a>.</p>
+<div class="toolbar">
+ <button id="pause">Pause</button><button id="restart">Restart all</button>
+ <label for="palette">Cat</label><select id="palette"><option value="all">All cats</option><option value="mochi">Mochi</option><option value="clover">Clover</option><option value="soot">Soot</option></select>
+ <label for="background">Background</label><select id="background"><option value="#000000">Black</option><option value="#4c4952">Mid grey</option><option value="#d9cdb7">Light cafe</option></select>
+ <label for="speed">Speed</label><select id="speed"><option value="1">1×</option><option value=".25">¼×</option></select>
+ <button id="flashButton">Preview screen flash</button>
+</div>
+<main class="grid"></main>
+<img id="flash" alt="" src="../../../apps/web/public/vfx/v9/flash-gradient.webp">
+<script type="module">
+const cats=['mochi','clover','soot'],effects=['impact-core','shockwave-ring','rune-circle'];
+const grid=document.querySelector('.grid'),background=document.querySelector('#background'),speed=document.querySelector('#speed'),palette=document.querySelector('#palette'),items=[];
+const base=new URL('../../../apps/web/public/vfx/v9/',location.href);
+await Promise.all(cats.flatMap(cat=>effects.map(async effect=>{
+ const name=`${effect}-${cat}`,article=document.createElement('article');article.dataset.cat=cat;
+ article.innerHTML=`<h2>${cat} · ${effect}</h2><canvas width="256" height="256"></canvas><small>Loading…</small>`;grid.append(article);
+ try{const r=await fetch(new URL(name+'.json',base));if(!r.ok)throw Error('Variant is unavailable');const meta=await r.json(),image=new Image();image.src=new URL(name+'.webp',base);await image.decode();items.push({article,meta,image,ctx:article.querySelector('canvas').getContext('2d')});article.querySelector('small').textContent=`${meta.frames} frames · 30 fps · ${meta.tintSRGB}${meta.loop?' · loop':''}`;}
+ catch(e){article.querySelector('small').className='error';article.querySelector('small').textContent=e.message;}
+})));
+let elapsed=0,previous=performance.now(),paused=false;
+document.querySelector('#pause').onclick=e=>{paused=!paused;e.target.textContent=paused?'Play':'Pause';};
+document.querySelector('#restart').onclick=()=>{elapsed=0;};
+palette.onchange=()=>{for(const {article} of items)article.hidden=palette.value!=='all'&&palette.value!==article.dataset.cat;};
+document.querySelector('#flashButton').onclick=()=>{const flash=document.querySelector('#flash');for(const a of flash.getAnimations())a.cancel();flash.animate([{opacity:.65},{opacity:0}],{duration:180,easing:'ease-out'});};
+function tick(now){const delta=(now-previous)/1000;previous=now;if(!paused)elapsed+=delta*Number(speed.value);
+ for(const {article,meta:m,image,ctx} of items){if(article.hidden)continue;ctx.globalCompositeOperation='source-over';ctx.fillStyle=background.value;ctx.fillRect(0,0,256,256);const frame=Math.floor(elapsed*m.fps)%(m.frames+(m.loop?0:12));if(frame>=m.frames)continue;ctx.globalCompositeOperation='lighter';ctx.drawImage(image,(frame%m.cols)*512,Math.floor(frame/m.cols)*512,512,512,0,0,256,256);}
+ requestAnimationFrame(tick);
+}requestAnimationFrame(tick);
+</script>

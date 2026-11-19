@@ -4,7 +4,7 @@
 - Started 2026-11-19T05:59:42Z; V0 deadline 07:59:42Z (2 hours).
 - V0 matte corrected/re-exported in 892b51487: tail gaps clear, apron opaque; grey/light clips refreshed.
 - V1 assets DONE: eight atlases/JSON + sheets/3s clips; requesting Claude eye review (one round).
-- V2 optional: cat tints and screen flash.
+- V2 built/checked: nine E1/E2/E7 cat variants + screen flash; reports in V2.md, review in blender/variants.html.
 - Old tracked WIP saved/pushed as 6c77897c7; 512 untracked old entries untouched.
 - Pushed 892b51487: revised Mochi/Clover assets + keyer; external correction acceptance pending.
 - Review: work/v9/CXV/vfx/overview.jpg + overview-3s.mp4; browser player on localhost:8390.
