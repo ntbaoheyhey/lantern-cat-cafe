@@ -1,15 +1,15 @@
-ACTIVE: V9 X4 loop + X3 prep; standing permission to continue after handoff/compaction, no reconfirmation.
-NEXT: check new READY, merge and gate; idle means sleep 600 then re-check, not a final status.
-DEADLINE: v5-m2.2 recording by 2026-11-20T12:00Z with C3/C4/C5 + V1 + S2; then release PR.
-LAST PUSHED TAG: v5-m2.1 4544b21f25ac8a6fe24a5a1b27224f1d8e27e7f7; origin independently confirmed.
-LAST PUSHED INT: e91785600; Help inventory and generator tempdir independent of reports tree.
-V1: CXV 522b35a42 already merged; build/typecheck/14 tests/browser passed, boss20.6s.
-RECOVERED: wait50282 no new lines; Help56944 4 tests pass; receipts77973 all 3 historic gameplay tx verified.
-X3 FIXES: adjacent Help JSON fixture and OS tempdir generator; Help4/generator3 tests and web typecheck pass.
-PREP: codex/v9-release-prep d07d81eea pushed; sparse worktree /Users/bao/taskbar-hero-release-prep, README only.
-README: 5 verified contracts, rendered mermaid; 12 Nov mint/list/buy receipts RPC+ABI+events verified, labelled historical.
-WAITING: Claude C3/C4/C5 READY (remote065f9573e not READY); AGS S2 mapping; AGV media; final designer exports.
-OWNER: fresh funded Fuji mint proof and boss OGA-BY decision/replacement already in NEEDS-USER; no acceptance/deploy.
-MAILBOX CURSORS: DELIVERIES61; INBOX-CXI629; BOARD stays 5 lines v5-m2.1 until recording tag.
-BRANCH: codex/v5-int-2026-11-17; /Users/bao/taskbar-hero-chain; 6301 preview previously PID9255.
-V8/BatchM cancelled; unrelated AGS dirt untouched; after recording tag release/2026-11-21, cleanup, README/media, PR.
+ACTIVE: X3 release from pushed v5-m2.2; continue X4 for any new READY while preparing release.
+STANDING: handoff/compaction is not a pause; no permission needed; stop at V9 DONE/true owner-only block.
+RECORDING TAG: v5-m2.2 d89b61ab3ddd73659f45158d1abe5835b9445b81, origin independently verified 19 Nov.
+LATEST CODE PUSH: d89b61ab3; merge e84aa0897 includes READY CV b2e6ff2de (C3/C4/C5), V1 and S2.
+GATE: build/typecheck; 152 focused tests; real 6301 browser 1280x720/1x boss20.4s, 12 S2 layers, 8 V1 flipbooks, fixture/RPC/legacy pass.
+NEXT: release/2026-11-21 from tag; use /Users/bao/taskbar-hero-release-prep sparse worktree and README draft d07d81eea.
+CLEANUP: git rm --cached reports/ screenshots/ on release branch only; ignore both; keep history and integration AGS dirt.
+README: 5 verified contracts + mermaid + historical mint/list/buy receipts; update to recording tag; needs delivered AGV media.
+SECOND DELIVERY SOURCE: fetch each poll; read origin/claude/v9-visual:reports/v9/CV/OUTBOX.md as DELIVERIES.
+CURSORS: DELIVERIES62, INBOX-CXI629, CV OUTBOX10 at7c03d2f7b; all READY throughb2e6ff2de integrated.
+WAIT: old sleep600 session49920 still outstanding (started before OUTBOX rule); inspect once, then use new cursors + origin OUTBOX on every poll.
+OWNER: fresh real Fuji mint and boss OGA-BY decision/replacement in NEEDS-USER; S2 provenance requested from AGS.
+MEDIA: AGV306d362ca G1 plates lacks READY; AGV inbox notified recording tag is available for G3 hero/trailer.
+X3 DONE requires PR open + GitHub README render; use GitHub connector, then attach_artifact; owner merges main.
+V8/BatchM cancelled; unrelated AGS dirt untouched; no new automation/subagents; do not move published tags.
