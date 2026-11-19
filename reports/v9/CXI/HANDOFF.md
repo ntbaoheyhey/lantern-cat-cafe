@@ -1,14 +1,14 @@
-ACTIVE: X3 CI repair for next immutable tag m2.10; no screen control, continue authorized V9.
-LATEST: v5-m2.9 d468ba1de origin verified; integration1fb8929f7 pushed; m2.2 immutable.
-RELEASE:6c2cbb364 pushed; README/PR446 body now m2.9; GitHub HTML+18 links verified; preview27584 on6301.
-PR446 OPEN/draft/mergeable: https://github.com/ntbaoheyhey/taskbar-hero/pull/446; owner merges.
-DIRTY OWN: ChainRoot closes native wallet before Market; chain e2e onboarding/SVG labels/portal dialogs; security+squad explicit legacy;check-cosmetics clock.
-CLOCK: forced Anvil+60s reproduced old audit failure; fixed fixture passes both skewed and normal runs;5 audit unit tests pass; audit assertions unchanged.
-TESTS:14 wallet/Entrance unit pass;web typecheck pass;8 prototype browser+12 production CSP browser pass;guest login passes real auth twice/key containment.
-RUNNING: chain browser90600=/tmp/taskbar-v9-chain-browser-portals.log (fresh4 specs after portal fixes); earlier mixed/stale runs failed,do not count.
-CI44500988411 at6c2cbb364:changes/contracts passed,chain-e2e old clock failure,node/full e2e running; latest status poll3083.
-NEXT: resolve remaining chain browser failures;complete gate build/typecheck/focused+headless6301,commit explicit paths,tag m2.10/push,carry into release and refresh docs.
-OWN GENERATED:reports/chain/COSMETIC-PILOT-LOCAL*.json and shots changed by tests;preserve useful evidence under work then restore only own generated paths.
-PRESERVE unrelated AGS dirty submission/QA files;no add-A.No edits to Claude/CXV visual paths.
-POLL:79/646/11 at10:00UTC;fetch origin and read CV OUTBOX every delivery check,CV80ba86f84,no new READY.
-OWNER:backend/funding/fresh mint,Vercel quota,main merge;final exports/visual acceptance,V2 wiring/final trailer remain.Never claim full V9 DONE.
+ACTIVE: X3 remote CI confirmation after publishing v5-m2.10; no screen control.
+TAG: v5-m2.10 860327ba0f6b6446b6920da451211e06d1b83adc; origin branch+peeled tag verified; m2.2 immutable.
+RELEASE:63716ae058963d8bb444c6eec3b2cea4b22109bc pushed; runtime/CI paths identical to tag; reports/screenshots untracked.
+PR446 OPEN/draft: https://github.com/ntbaoheyhey/taskbar-hero/pull/446; body m2.10 updated; owner merges.
+GATE:release build/typecheck PASS; headless6301 boss21.1s,3ults,12S2/8VFX,fixture/liveRPC/legacy,no errors;preview27584 remains.
+TESTS:14wallet/Entrance+5audit units;8prototype+12CSP+33server/HUD/fixture browser;official pnpm chain:test4/4 fresh scenarios,0retries.
+CLOCK:Anvil+60s failed before fix,passed after;normal audit passes;assertions unchanged.Wallet-to-Market/mobile menu repaired.
+CAUTION:direct four-spec single-chain Playwright hit actual daily drip quota(1/4);official CI runner isolates specs and passed4/4.
+CI:previous44500988411 changes/contracts/Node passed;27e2e failures=24locally-fixed fixtures+3legacy C2draw checks;CV notified.
+NEXT:read new CI for63716ae05,verify GitHub README+PR;dual-source delivery check;owner-only gaps remain.
+EVIDENCE:work/v9/CXI/m210-local-evidence preserved13generated outputs;restored only those;release reports stay ignored.
+PRESERVE:unrelated reports/v5/AGS submission3+QA2;runtime edits committed.No visual-owned source edits.
+POLL:79/646/11 at10:16:23UTC,CV80ba86f84;fetch+read origin CV OUTBOX alongside mailbox every delivery check.
+OWNER:backend/funding/fresh mint,Vercel quota,main merge;final exports/visual acceptance,V2wiring/final trailer also remain.No V9DONE.
