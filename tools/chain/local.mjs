@@ -69,6 +69,8 @@ export async function loadModules() {
 }
 export async function startLocal({web = true, campaignRewards = web} = {}) {
   mkdirSync(resolve(root,'work/chain'),{recursive:true});
+  // Release checkouts omit reports; local checks create their own evidence output.
+  mkdirSync(resolve(root,'reports/chain'),{recursive:true});
   const handles = [];
   let anvil, stopping;
   const stop = () => {
