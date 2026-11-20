@@ -44,9 +44,12 @@ function value(b: Battle): number {
   return b.v4 ? party - foes*1.1 : party - foes*1.1 + pressure + b.energy*3;
 }
 /** One-action lookahead keeps playback cheap and makes every decision reproducible. */
-function automatic(b: Battle): Choice {
-  const choices = legalChoices(b);
-  const charged = b.initial.gameplayA6 ? choices.filter(choice => skillById(choice.skillId,true)?.type==='ultimate') : [];
+function automatic(b: Battle, mode: 'any' | 'hold' | 'ultimate' = 'any'): Choice {
+  const legal = legalChoices(b);
+  const isUlt = (choice: Choice) => skillById(choice.skillId,true)?.type==='ultimate';
+  const pool = mode==='hold' ? legal.filter(c => !isUlt(c)) : mode==='ultimate' ? legal.filter(isUlt) : legal;
+  const choices = pool.length ? pool : legal;
+  const charged = b.initial.gameplayA6 && mode==='any' ? choices.filter(isUlt) : [];
   const scored = (charged.length?charged:choices).map(choice => {
     const preview = previewCopy(b);
     act(preview, choice);
@@ -74,6 +77,16 @@ function ordinary(b: Battle, policy: 'auto' | 'greedy'): Choice {
     const power=(choice:Choice)=>skillById(choice.skillId)!.effects.reduce((n,e)=>n+(['hit','chain','execute'].includes(e.kind)?e.power??0:0),0);
     return power(c)-power(a);
   })[0]??choices[0]!;
+}
+/** Best ordinary action while the player holds every ultimate for manual timing. */
+export function chooseHeldAction(b: Battle): Choice {
+  if(!legalChoices(b).length)throw Error('No legal party action');
+  return automatic(b, 'hold');
+}
+/** Best target for an ultimate the player asked for; null when it is not castable this turn. */
+export function chooseUltimateAction(b: Battle): Choice | null {
+  if(!legalChoices(b).some(c=>skillById(c.skillId,true)?.type==='ultimate'))return null;
+  return automatic(b, 'ultimate');
 }
 export function chooseAction(b: Battle, policy: Policy): Choice {
   const choices=legalChoices(b);

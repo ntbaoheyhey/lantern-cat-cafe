@@ -11,8 +11,8 @@ function fixture(){
  const m={state:account,battle,canAct:true,act,step:()=>act()} as unknown as DepthModel;
  return {m,battle,act};
 }
-it('retains every combat result under default Auto for a seeded full battle',()=>{
- const {m,battle}=fixture(),expected=structuredClone(battle);
+it('retains every combat result under Auto for a seeded full battle',()=>{
+ const {m,battle}=fixture(),expected=structuredClone(battle);battleControls(m).auto=true;
  R.playBattle(expected,'auto');
  for(let i=0;i<2000&&!battle.result;i++)battleStep(m);
  expect(battle).toEqual(expected);
@@ -24,4 +24,8 @@ it('queues a manual ultimate until that actor owns a legal turn',()=>{
  battleStep(m);expect(controls.queued.has(cat.id)).toBe(true);
  battle.queue=[cat.id];battleStep(m);
  expect(act.mock.calls.at(-1)?.[0]?.skillId).toBe('soot-4');expect(controls.queued.has(cat.id)).toBe(false);
+});
+it('defaults campaign battles to player-timed ultimates',()=>{
+ localStorage.removeItem('lantern-auto-ultimates');
+ const {m}=fixture();expect(battleControls(m).auto).toBe(false);
 });

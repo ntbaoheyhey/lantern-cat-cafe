@@ -69,3 +69,13 @@
 .b3-focus-identified{display:grid;grid-template-columns:36px minmax(0,1fr);column-gap:10px;text-align:left;align-items:center}
 .b3-focus-identified>img{width:36px;height:36px;box-sizing:border-box;object-fit:contain;border-radius:8px;border:1px solid var(--element);background:#1b1824}
 .b3-focus-copy{display:flex;flex-direction:column;gap:2px;min-width:0}
+/* Player-timed ultimates: a ready portrait must read as a button from across the room. */
+.b3-hud button.b3-portrait[data-ready=true][data-manual=true]{animation:b3-ready-manual .9s ease-in-out infinite;border-color:#fff1b8!important;cursor:pointer}
+.b3-hud button.b3-portrait[data-queued=true]{animation:none;border-color:#ffc85e!important;box-shadow:0 0 0 3px #ffc85e,0 0 22px 6px #ffc85e99;transform:translateY(-6px)}
+@keyframes b3-ready-manual{0%,100%{box-shadow:0 0 0 2px #fff1b8,0 0 14px 4px #ffd36b88;transform:translateY(-2px)}50%{box-shadow:0 0 0 4px #fff1b8,0 0 30px 12px #ffd36bcc;transform:translateY(-8px) scale(1.04)}}
+.b3-tap{position:absolute;top:-18px;left:50%;transform:translateX(-50%);padding:1px 8px;border-radius:9px;background:#ffd36b;color:#3a2614;font:800 11px/16px system-ui,sans-serif;letter-spacing:.08em;box-shadow:0 2px 6px #0008;pointer-events:none}
+.b3-hud .b3-queued{top:-18px;left:50%;right:auto;transform:translateX(-50%);padding:1px 6px;border-radius:9px;white-space:nowrap;font:700 10px/16px system-ui,sans-serif}
+.b3-ult-hint{position:absolute;bottom:104px;left:50%;transform:translateX(-50%);width:min(520px,80vw);margin:0;padding:10px 14px;border-radius:12px;background:#2a1f31ee;border:1px solid #ffd36b;color:#fff6e0;font-size:14px;line-height:1.35;text-align:center;box-shadow:0 6px 20px #000a;pointer-events:none;animation:b3-hint-in .35s ease-out}
+.b3-ult-hint b{color:#ffd36b}
+@keyframes b3-hint-in{from{opacity:0;transform:translate(-50%,8px)}to{opacity:1;transform:translate(-50%,0)}}
+@media (prefers-reduced-motion:reduce){.b3-hud button.b3-portrait[data-ready=true][data-manual=true]{animation:none;box-shadow:0 0 0 4px #fff1b8,0 0 24px 8px #ffd36bcc}}
