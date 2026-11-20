@@ -1,0 +1,1 @@
+- Created the managed worktree from fresh origin/main (1710e1bc4). ~/th-astra points to it. Disk had 265 GiB available. Node v24.22.2 and pnpm 10.28.0.
