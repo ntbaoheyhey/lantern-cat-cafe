@@ -17,6 +17,10 @@ export const DESIGNER_VIDEO_IDS=new Set(['mochi','clover','soot']);
 export const DESIGNER_BODY_UNITS=512;
 /** Seats are equal height; Mochi's broad fur and big head read ~8% larger than
  * slender Clover at the same height, so its drawn body is trimmed to match. */
+/** Ultimate cast poses slow the idle to this fraction instead of pausing it. */
+export const DESIGNER_HOLD_RATE=.25;
+/** Lowest rate Chromium and WebKit both play without muting the decoder. */
+const DESIGNER_MIN_RATE=.0625;
 export const DESIGNER_DISPLAY_SCALE:Record<string,number>={mochi:.92,clover:1,soot:1};
 
 export interface DesignerVideoMeta {
@@ -89,24 +93,31 @@ export class DesignerVideoMedia {
  }
  /** Frame index of the loop that is on screen now. */
  get frame(){return Math.floor(this.video.currentTime*this.meta.fps)%this.meta.frames;}
- /** Freeze on the current frame (or seek to one) for a code-driven cast pose. */
+ /** Slow the loop (or seek to a frame) for a code-driven cast pose. The body keeps
+  * breathing at a quarter speed: a paused video reads as a still image for the
+  * two seconds of an ultimate, and restarting it costs a decoder hitch. */
  hold(frame?:number){
-  this.held=true;this.video.pause();
+  this.held=true;this.applyRate();
   if(frame!==undefined&&Number.isFinite(frame))this.video.currentTime=Math.max(0,Math.min(this.meta.frames-1,frame))/this.meta.fps;
  }
- release(){if(!this.held)return;this.held=false;this.sync(false);}
+ release(){if(!this.held)return;this.held=false;this.applyRate();this.sync(false);}
  get isHeld(){return this.held;}
  setSuspended(suspended:boolean){this.suspended=suspended;this.sync(false);}
  private sync(stopped:boolean){
   const v=this.video;
   if(this.disposed)return;
-  if(this.suspended||this.held||stopped){if(!v.paused)v.pause();return;}
+  if(this.suspended||stopped){if(!v.paused)v.pause();return;}
   if(v.paused)void v.play().catch(()=>{});
  }
+ private clockRate=1;
+ private applyRate(){
+  const rate=Math.max(DESIGNER_MIN_RATE,Math.min(4,this.clockRate*(this.held?DESIGNER_HOLD_RATE:1)));
+  if(Math.abs(this.video.playbackRate-rate)>.01)this.video.playbackRate=rate;
+ }
  sample(clock:DesignerMediaSampleContext,reduced:boolean){
-  // Reduced motion keeps the authored first frame; hit-stop and pause stop the loop.
-  if(reduced&&!this.held){if(!this.video.paused)this.video.pause();if(this.video.currentTime>.05)this.video.currentTime=0;return;}
-  const rate=Math.max(.25,Math.min(4,clock.playbackRate??1));if(Math.abs(this.video.playbackRate-rate)>.01)this.video.playbackRate=rate;
+  // Reduced motion keeps the authored first frame; game pause and ice stop the loop.
+  if(reduced){if(!this.video.paused)this.video.pause();if(!this.held&&this.video.currentTime>.05)this.video.currentTime=0;return;}
+  this.clockRate=Math.max(.25,Math.min(4,clock.playbackRate??1));this.applyRate();
   this.sync(clock.paused||clock.frozen);
  }
  dispose(){
