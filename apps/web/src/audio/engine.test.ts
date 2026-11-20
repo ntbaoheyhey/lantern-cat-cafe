@@ -228,15 +228,15 @@ describe('layered playback admission and variants',()=>{
   const fetcher=vi.fn(async(url:string)=>url.startsWith('/audio-delivery/')?{ok:true,json:async()=>read(url.slice(1))}
    :url.endsWith('.json')?{ok:true,json:async()=>url.includes('/v5/')?delivery:manifest}:{ok:true,arrayBuffer:async()=>new ArrayBuffer(8)});
   vi.stubGlobal('fetch',fetcher);
-  const original=new AudioEngine(()=>0,'/audio/',loadV5AudioManifest);await original.unlock();await original.preloadVoices(['party-mochi']);
+  const original=new AudioEngine(()=>0,'/audio/',loadV5AudioManifest);await original.unlock();await original.preloadVoices(['party-panko']);
   const expected=original.diagnostics.packs;expect(expected).toHaveLength(11);fetcher.mockClear();
   const packed=new AudioEngine(()=>0,'/audio/',loadV5AudioManifest,new PackedAudioLoader());
-  await packed.unlock();await packed.preloadVoices(['party-mochi']);
+  await packed.unlock();await packed.preloadVoices(['party-panko']);
   expect(packed.diagnostics.packs).toEqual(expected);
   const urls=fetcher.mock.calls.map(([url])=>url);
-  expect(urls.filter(url=>url.startsWith('/audio-delivery/'))).toEqual([expect.stringMatching(/^\/audio-delivery\/voice-mochi\.[a-f0-9]+\.json$/)]);
-  expect(urls.some(url=>url.endsWith('.opus')||url.endsWith('.m4a')||url.includes('soot'))).toBe(false);
-  const requests=fetcher.mock.calls.length;packed.play('voice.mochi.hit');
+  expect(urls.filter(url=>url.startsWith('/audio-delivery/'))).toEqual([expect.stringMatching(/^\/audio-delivery\/voice-panko\.[a-f0-9]+\.json$/)]);
+  expect(urls.some(url=>url.endsWith('.opus')||url.endsWith('.m4a')||url.includes('mochi'))).toBe(false);
+  const requests=fetcher.mock.calls.length;packed.play('voice.panko.hit');
   expect(Context.latest.sources).toHaveLength(1);expect(Context.latest.sources[0]!.start).toHaveBeenCalledOnce();
   expect(fetcher.mock.calls).toHaveLength(requests);expect(packed.hits.at(-1)?.result).toBe('played');
  });
