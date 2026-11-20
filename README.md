@@ -2,13 +2,13 @@
 
 ![Mochi casts Last Lantern Vow](docs/submission/media/hero.gif)
 
-[Watch the 51-second demo recording](art/trailer/v9/battle_v5-m2.5.mp4) · [View the six-frame contact sheet](art/trailer/v9/contact_sheet_v5-m2.5.png)
+[Watch the 58-second v5-m2.14 run](docs/demo-v5-m2.14/demo.mp4) · [Step-by-step walkthrough](docs/demo-v5-m2.14/index.html) · [Earlier 51-second recording with music](art/trailer/v9/battle_v5-m2.5.mp4) · [Six-frame contact sheet](art/trailer/v9/contact_sheet_v5-m2.5.png)
 
-The GIF and video images were captured from `v5-m2.5`; the 51-second recording now includes the licensed wave and boss music. These images predate the final Mochi/Clover idles in the current build. The planned three-minute trailer remains separate.
+The v5-m2.14 run and walkthrough show the current build: all three designer idles, battle VFX v10, the Yarn Giant, the receipt fixture and a live Fuji read. It is silent and recorded frame by frame at true game speed. The GIF and the 51-second recording with licensed wave and boss music were captured from `v5-m2.5`. The planned three-minute trailer remains separate.
 
 The Lantern Cat Café is the last lit shop on a street tangled by abandoned tasks. Lead Mochi, Clover and Soot through a street patrol and face the Yarn Giant in a cosy browser card RPG. In the configured Avalanche mode, café memories become Relics that players can own on Fuji.
 
-**Latest integrated build:** [v5-m2.13](https://github.com/ntbaoheyhey/taskbar-hero/tree/v5-m2.13), with Mochi’s enemy push-back, Clover/Soot lunges, complete designer WebM and Safari HEVC-alpha exports for Mochi/Clover, and working enemy HUD portraits. The [v5-m2.2 recording baseline](https://github.com/ntbaoheyhey/taskbar-hero/tree/v5-m2.2) remains published before the recording deadline, with all three ultimate sequences and layered sound playback.
+**Latest integrated build:** [v5-m2.14](https://github.com/ntbaoheyhey/taskbar-hero/tree/v5-m2.14), the recording build: designer idles for Mochi, Clover and Soot, battle VFX v10, the fixed-supply YARN economy and its 52-week simulation ([ECONOMY.md](docs/ECONOMY.md)), and the live Fuji end-to-end proof. The [v5-m2.2 recording baseline](https://github.com/ntbaoheyhey/taskbar-hero/tree/v5-m2.2) remains published before the recording deadline.
 
 ## Play in three steps
 
@@ -126,7 +126,7 @@ node tools/v5int/v9-demo-smoke.mjs --chain-ui --v9-deliveries --v9-recording
 
 Build the fixture mode with the launch command above before using the `--chain-ui` smoke option. Run contract tests separately with Foundry after initializing the repository submodules.
 
-The three ultimates and their sound layers are integrated. The hero GIF, a demo recording with music and six 1920×1080 screenshots are available. Mochi/Clover now use final designer PNG-sequence conversions at a shared source scale; Claude reported clean edges in the delivered judge run. Safari HEVC-alpha MOVs are included alongside the WebMs; the automated browser gate runs Chromium. Soot designer files are still missing, so Soot uses its existing rig. The final three-minute trailer and visual-lane V2 effect wiring remain separate follow-ups. A configured/deployed Supabase backend, funded sponsor and fresh real-mint screenshot remain owner work.
+The three ultimates and their sound layers are integrated. The hero GIF, a demo recording with music and six 1920×1080 screenshots are available. Mochi/Clover now use final designer PNG-sequence conversions at a shared source scale; Claude reported clean edges in the delivered judge run. Safari HEVC-alpha MOVs are included alongside the WebMs; the automated browser gate runs Chromium. Soot now uses its designer WebM idle; it has no HEVC-alpha export yet, so Safari plays the WebM. The final three-minute trailer remains a separate follow-up. A configured/deployed Supabase backend, funded sponsor and fresh real-mint screenshot remain owner work.
 
 ## Submission screenshots
 
