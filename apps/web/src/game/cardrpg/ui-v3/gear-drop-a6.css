@@ -21,3 +21,6 @@
 .uv-app[data-a6=true] .c2-result .a6-result-receipt:has(.a6-gear-drops) .a6-result-tickets {margin:0 0 4px!important}
 .uv-app[data-a6=true] .c2-result .a6-result-receipt:has(.a6-gear-drops) {align-content:start;gap:4px}
 .a6-drop-chance small {flex-basis:auto}
+.a6-gear-drop-cat {width:30px;height:30px;border-radius:50%;object-fit:cover;border:2px solid var(--rarity);margin-left:4px;background:#0005}
+.a6-gear-drops {position:relative}
+.a6-drop-chance {position:absolute;right:-6px;top:-10px;margin:0}
