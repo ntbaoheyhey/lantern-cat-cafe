@@ -76,7 +76,8 @@ export function pendingBeat(m:DepthModel,seen:string[]):StoryBeat|null{
  }
  const node=run.nodes.find(n=>n.id===run.current);
  if(node?.kind==='boss')return want(`ch${ch}-boss`);
- if(!run.visited.length&&!run.current)return want(`ch${ch}-intro`);
+ // Fight from the café starts the run and enters the first node in one step.
+ if(!run.visited.length)return want(`ch${ch}-intro`);
  return want('opening');
 }
 
