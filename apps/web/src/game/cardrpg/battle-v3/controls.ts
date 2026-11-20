@@ -4,7 +4,12 @@ import {judgeDemoV9} from '../gate';
 import {configureSequence,type CinematicMode,type SequencePlan} from './sequence';
 import type {EffectPlan} from '../../squad/turn3d/effects';
 export type {CinematicMode} from './sequence';
-const sessions=new WeakMap<DepthModel,{auto:boolean;queued:Set<string>;cinematics:CinematicMode;seen:Map<string,number>}>();
+const sessions=new WeakMap<DepthModel,{auto:boolean;queued:Set<string>;cinematics:CinematicMode;seen:Map<string,number>;waited:Map<string,number>}>();
+/** A ready ultimate nobody taps still fires on its own after this many held turns,
+ * so a player who never notices TAP is not locked out of the game's main power
+ * (simulated: never casting clears 0/8 seeds of chapter 1; with this grace the
+ * campaign clears exactly as often as full auto). Tapping casts sooner. */
+export const ULTIMATE_GRACE_TURNS=2;
 const AUTO_KEY='lantern-auto-ultimates';
 /** Player-timed ultimates are the default decision in campaign play. The judge
  * recording route keeps automatic casting so its seeded replay stays identical. */
@@ -18,7 +23,7 @@ export function setAutoUltimates(m:DepthModel,auto:boolean){
 }
 export function battleControls(m:DepthModel){
  let value=sessions.get(m);
- if(!value){value={auto:autoUltimatePreference(),queued:new Set(),cinematics:'full',seen:new Map()};sessions.set(m,value);}
+ if(!value){value={auto:autoUltimatePreference(),queued:new Set(),cinematics:'full',seen:new Map(),waited:new Map()};sessions.set(m,value);}
  return value;
 }
 export function prepareBattleSequence(m:DepthModel,plan:EffectPlan){
@@ -41,7 +46,8 @@ export function battleStep(m:DepthModel){
  const b=m.battle;if(!b||!m.canAct)return;
  const actor=R.currentActor(b);if(!actor||actor.side==='enemy'){m.step();return;}
  const controls=battleControls(m);
- const ultimate=controls.queued.has(actor.id)?R.chooseUltimateAction(b):null;
- if(ultimate){controls.queued.delete(actor.id);m.act(ultimate);return;}
+ const ready=R.chooseUltimateAction(b),waited=controls.waited.get(actor.id)??0;
+ if(ready&&(controls.queued.has(actor.id)||waited>=ULTIMATE_GRACE_TURNS)){controls.queued.delete(actor.id);controls.waited.delete(actor.id);m.act(ready);return;}
+ if(ready)controls.waited.set(actor.id,waited+1);else controls.waited.delete(actor.id);
  m.act(R.chooseHeldAction(b));
 }

@@ -1,7 +1,7 @@
 import {expect,it,vi} from 'vitest';
 import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
 import type {DepthModel} from '../depth/model';
-import {battleControls,battleStep} from './controls';
+import {battleControls,battleStep,ULTIMATE_GRACE_TURNS} from './controls';
 function fixture(){
  const account=R.setFormationC2(R.setGameplayA6(R.createDepthAccount(71),true));
  for(const c of account.account.cards){c.level=6;account.skills[c.cardId]=R.CAT_BY_ID[c.cardId]!.skills.map(s=>s.id);}
@@ -28,4 +28,11 @@ it('queues a manual ultimate until that actor owns a legal turn',()=>{
 it('defaults campaign battles to player-timed ultimates',()=>{
  localStorage.removeItem('lantern-auto-ultimates');
  const {m}=fixture();expect(battleControls(m).auto).toBe(false);
+});
+it('fires an untapped ready ultimate by itself after the grace turns',()=>{
+ const {m,battle,act}=fixture(),controls=battleControls(m);controls.auto=false;
+ const cat=battle.actors.find(a=>a.catalogId==='soot')!;
+ const turn=()=>{cat.charge=100;battle.queue=[cat.id];battle.acted=[];battleStep(m);return act.mock.calls.at(-1)?.[0]?.skillId;};
+ for(let i=0;i<ULTIMATE_GRACE_TURNS;i++)expect(turn()).not.toBe('soot-4');
+ expect(turn()).toBe('soot-4');expect(controls.waited.has(cat.id)).toBe(false);
 });

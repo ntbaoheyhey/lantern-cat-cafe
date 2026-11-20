@@ -99,7 +99,7 @@ export default function BattleHud({m}:{m:DepthModel}){
     const name=threat.label.includes(' · ')?threat.label.split(' · ')[1]:threat.label;
     return <aside className="b3-threat" role="status" key={threat.actorId+battle.round}><b>⚠ {foe.name} is winding up{name&&!/basic/i.test(name)?`: ${name}`:' a heavy strike'}</b><span>{target&&target.side==='party'?`Aimed at ${target.name}. `:''}{threat.counter}</span></aside>;})()}
    {(()=>{if(controls.auto||ultHintDone())return null;const readyCat=party.find(cat=>{const u=R.CAT_BY_ID[cat.catalogId]?.skills.find(s=>s.type==='ultimate');return cat.hp>0&&cat.charge>=100&&cat.skills.includes(u?.id??'')&&!controls.queued.has(cat.id);});
-    return readyCat?<p className="b3-ult-hint" role="status"><b>{readyCat.name}'s ultimate is ready.</b> Tap the glowing portrait to cast it on {readyCat.name}'s next turn. Time it: shields before a boss slam, heals after it.</p>:null;})()}
+    return readyCat?<p className="b3-ult-hint" role="status"><b>{readyCat.name}'s ultimate is ready.</b> Tap the glowing portrait to cast it on {readyCat.name}'s next turn, or it fires by itself soon after. Time it: shields before a boss slam, heals after it.</p>:null;})()}
    <div data-tutorial-id="battle-roles" className="b3-party" aria-label="Crew health and ultimates">{party.map(cat=>{
     const ult=R.CAT_BY_ID[cat.catalogId]?.skills.find(s=>s.type==='ultimate'),ready=cat.hp>0&&cat.charge>=100&&cat.skills.includes(ult?.id??''),queued=controls.queued.has(cat.id);
     const stars=m.state.account.cards.find(c=>c.cardId===cat.catalogId)?.stars??1;

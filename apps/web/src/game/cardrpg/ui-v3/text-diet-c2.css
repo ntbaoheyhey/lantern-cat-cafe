@@ -88,7 +88,8 @@
 .c2-reward-book .a6-login-claim{display:flex;gap:12px;align-items:center}
 .c2-route-toolbar{display:flex;align-items:center;gap:18px;padding:10px 0}
 .c2-route-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px}
-.c2-route-cards>article{display:grid;gap:14px;align-content:start;padding:20px;background:#f4e5ca;border:1px solid #b98f58;border-radius:18px}
+.c2-route-cards>article{display:grid;gap:14px;align-content:start;padding:20px;background:#f4e5ca;color:#3b2817;border:1px solid #b98f58;border-radius:18px}
+.c2-route-cards>article b,.c2-route-cards .c2-route-health span{color:#3b2817;font-weight:800}
 .c2-route-cards h3{font:21px var(--font-display);margin:0}
 .c2-route-health{list-style:none;padding:0;display:grid;gap:8px}
 .c2-route-health li{display:flex;align-items:center;gap:8px;font-size:13px}
