@@ -37,8 +37,11 @@ for unit in dict.fromkeys(r['unit'] for r in rows):
     if first:row['text']=first['text'].replace('[Vow](/vˈW/)','Vow');row['durationMs']=round(first['dur']*1000)
 (PUB/'manifest.json').write_text(json.dumps(manifest,indent=2,ensure_ascii=False)+'\n')
 callouts_path.write_text(json.dumps(callouts,indent=2,ensure_ascii=False)+'\n')
-(ROOT/'scripts/audio/v10/voice-provenance.json').write_text(json.dumps({
- 'tool':'Kokoro-82M v1.0 (hexgrad/Kokoro-82M, Apache-2.0) via kokoro 0.9.4 Python package, voices am_michael/am_fenrir/am_onyx/am_puck/af_heart',
+pp=ROOT/'scripts/audio/v10/voice-provenance.json'
+units={r['unit'] for r in prov}
+if pp.exists():prov=[r for r in json.loads(pp.read_text())['takes'] if r['unit'] not in units]+prov
+pp.write_text(json.dumps({
+ 'tool':'Kokoro-82M v1.0 (hexgrad/Kokoro-82M, Apache-2.0) via kokoro 0.9.4 Python package; voices per unit in lines.json',
  'post':'ffmpeg rubberband pitch, EQ, compressor, short room echo; pyloudnorm to -16 LUFS (-14 for ultimate shouts)',
  'qa':'faster-whisper small.en transcript per take; takes under 0.66 word match re-written or dropped',
  'takes':prov},indent=1,ensure_ascii=False)+'\n')

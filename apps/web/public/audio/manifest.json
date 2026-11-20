@@ -277,6 +277,61 @@
       "opus": "/audio/v9/voice-v10-yarn-giant.opus",
       "m4a": "/audio/v9/voice-v10-yarn-giant.m4a",
       "preferredFormat": "opus"
+    },
+    "v10-voice-rain-spool": {
+      "opus": "/audio/v9/voice-v10-rain-spool.opus",
+      "m4a": "/audio/v9/voice-v10-rain-spool.m4a",
+      "preferredFormat": "opus"
+    },
+    "v10-voice-pantry-crown": {
+      "opus": "/audio/v9/voice-v10-pantry-crown.opus",
+      "m4a": "/audio/v9/voice-v10-pantry-crown.m4a",
+      "preferredFormat": "opus"
+    },
+    "v10-voice-spool-ram": {
+      "opus": "/audio/v9/voice-v10-spool-ram.opus",
+      "m4a": "/audio/v9/voice-v10-spool-ram.m4a",
+      "preferredFormat": "opus"
+    },
+    "v10-voice-kettle-knight": {
+      "opus": "/audio/v9/voice-v10-kettle-knight.opus",
+      "m4a": "/audio/v9/voice-v10-kettle-knight.m4a",
+      "preferredFormat": "opus"
+    },
+    "v10-voice-pollen-scout": {
+      "opus": "/audio/v9/voice-v10-pollen-scout.opus",
+      "m4a": "/audio/v9/voice-v10-pollen-scout.m4a",
+      "preferredFormat": "opus"
+    },
+    "v10-voice-crumb-sentinel": {
+      "opus": "/audio/v9/voice-v10-crumb-sentinel.opus",
+      "m4a": "/audio/v9/voice-v10-crumb-sentinel.m4a",
+      "preferredFormat": "opus"
+    },
+    "v10-sting-victory": {
+      "opus": "/audio/v9/sting-victory.opus",
+      "m4a": "/audio/v9/sting-victory.m4a",
+      "preferredFormat": "opus"
+    },
+    "v10-sting-defeat": {
+      "opus": "/audio/v9/sting-defeat.opus",
+      "m4a": "/audio/v9/sting-defeat.m4a",
+      "preferredFormat": "opus"
+    },
+    "v10-sting-boss-yarn-giant": {
+      "opus": "/audio/v9/sting-boss-yarn-giant.opus",
+      "m4a": "/audio/v9/sting-boss-yarn-giant.m4a",
+      "preferredFormat": "opus"
+    },
+    "v10-sting-boss-rain-spool": {
+      "opus": "/audio/v9/sting-boss-rain-spool.opus",
+      "m4a": "/audio/v9/sting-boss-rain-spool.m4a",
+      "preferredFormat": "opus"
+    },
+    "v10-sting-boss-pantry-crown": {
+      "opus": "/audio/v9/sting-boss-pantry-crown.opus",
+      "m4a": "/audio/v9/sting-boss-pantry-crown.m4a",
+      "preferredFormat": "opus"
     }
   },
   "cues": {
@@ -2502,18 +2557,20 @@
     ],
     "music.victory": [
       {
-        "pack": "jingles",
-        "start": 3.4273922902494336,
-        "duration": 0.3906349206349206,
-        "bus": "music"
+        "pack": "v10-sting-victory",
+        "start": 0,
+        "duration": 4.0,
+        "bus": "music",
+        "variantId": "v10:sting-victory"
       }
     ],
     "music.defeat": [
       {
-        "pack": "jingles",
-        "start": 3.8980272108843543,
-        "duration": 0.408390022675737,
-        "bus": "music"
+        "pack": "v10-sting-defeat",
+        "start": 0,
+        "duration": 3.9,
+        "bus": "music",
+        "variantId": "v10:sting-defeat"
       }
     ],
     "music.reveal": [
@@ -7139,57 +7196,41 @@
     ],
     "voice.spool-ram.skill.enemy:spool-ram:basic": [
       {
-        "pack": "callout-spool-ram",
-        "start": 0,
-        "duration": 1.0310416666666666,
+        "pack": "v10-voice-spool-ram",
+        "start": 2.22954,
+        "duration": 0.87238,
         "bus": "voice",
-        "variantId": "spool-ram-skill-1-1.flac",
+        "variantId": "v10:spool-ram:skill.enemy:spool-ram:basic:1",
         "processedVoice": true
       }
     ],
     "voice.spool-ram.skill.enemy:spool-ram": [
       {
-        "pack": "callout-spool-ram",
-        "start": 1.0510416666666667,
-        "duration": 1.0939166666666666,
+        "pack": "v10-voice-spool-ram",
+        "start": 3.35192,
+        "duration": 1.15621,
         "bus": "voice",
-        "variantId": "spool-ram-skill-2-1.flac",
+        "variantId": "v10:spool-ram:skill.enemy:spool-ram:1",
         "processedVoice": true
       }
     ],
     "voice.spool-ram.ult.charge": [
       {
-        "pack": "callout-spool-ram",
-        "start": 2.1649583333333333,
-        "duration": 0.716875,
+        "pack": "v10-voice-spool-ram",
+        "start": 0.0,
+        "duration": 0.89177,
         "bus": "voice",
-        "variantId": "spool-ram-charge-1.flac",
-        "processedVoice": true
-      },
-      {
-        "pack": "callout-spool-ram",
-        "start": 2.9018333333333333,
-        "duration": 0.7425833333333334,
-        "bus": "voice",
-        "variantId": "spool-ram-charge-2.flac",
+        "variantId": "v10:spool-ram:ult.charge:1",
         "processedVoice": true
       }
     ],
     "voice.spool-ram.ult.release": [
       {
-        "pack": "callout-spool-ram",
-        "start": 3.664416666666667,
-        "duration": 1.296375,
+        "pack": "v10-voice-spool-ram",
+        "start": 1.14177,
+        "duration": 0.83777,
         "bus": "voice",
-        "variantId": "spool-ram-release-1.flac",
-        "processedVoice": true
-      },
-      {
-        "pack": "callout-spool-ram",
-        "start": 4.980791666666667,
-        "duration": 1.2667916666666668,
-        "bus": "voice",
-        "variantId": "spool-ram-release-2.flac",
+        "variantId": "v10:spool-ram:ult.release:1",
         "processedVoice": true
       }
     ],
@@ -7307,57 +7348,41 @@
     ],
     "voice.kettle-knight.skill.enemy:kettle-knight:basic": [
       {
-        "pack": "callout-kettle-knight",
-        "start": 0,
-        "duration": 1.38325,
+        "pack": "v10-voice-kettle-knight",
+        "start": 2.9069,
+        "duration": 0.94494,
         "bus": "voice",
-        "variantId": "kettle-knight-skill-1-1.flac",
+        "variantId": "v10:kettle-knight:skill.enemy:kettle-knight:basic:1",
         "processedVoice": true
       }
     ],
     "voice.kettle-knight.skill.enemy:kettle-knight": [
       {
-        "pack": "callout-kettle-knight",
-        "start": 1.40325,
-        "duration": 1.3959583333333334,
+        "pack": "v10-voice-kettle-knight",
+        "start": 4.10183,
+        "duration": 1.19223,
         "bus": "voice",
-        "variantId": "kettle-knight-skill-2-1.flac",
+        "variantId": "v10:kettle-knight:skill.enemy:kettle-knight:1",
         "processedVoice": true
       }
     ],
     "voice.kettle-knight.ult.charge": [
       {
-        "pack": "callout-kettle-knight",
-        "start": 2.8192083333333335,
-        "duration": 1.6710416666666668,
+        "pack": "v10-voice-kettle-knight",
+        "start": 0.0,
+        "duration": 1.32919,
         "bus": "voice",
-        "variantId": "kettle-knight-charge-1.flac",
-        "processedVoice": true
-      },
-      {
-        "pack": "callout-kettle-knight",
-        "start": 4.51025,
-        "duration": 1.66275,
-        "bus": "voice",
-        "variantId": "kettle-knight-charge-2.flac",
+        "variantId": "v10:kettle-knight:ult.charge:1",
         "processedVoice": true
       }
     ],
     "voice.kettle-knight.ult.release": [
       {
-        "pack": "callout-kettle-knight",
-        "start": 6.193,
-        "duration": 1.43975,
+        "pack": "v10-voice-kettle-knight",
+        "start": 1.57919,
+        "duration": 1.07771,
         "bus": "voice",
-        "variantId": "kettle-knight-release-1.flac",
-        "processedVoice": true
-      },
-      {
-        "pack": "callout-kettle-knight",
-        "start": 7.65275,
-        "duration": 1.6139166666666667,
-        "bus": "voice",
-        "variantId": "kettle-knight-release-2.flac",
+        "variantId": "v10:kettle-knight:ult.release:1",
         "processedVoice": true
       }
     ],
@@ -7531,225 +7556,161 @@
     ],
     "voice.pollen-scout.skill.enemy:pollen-scout:basic": [
       {
-        "pack": "callout-pollen-scout",
-        "start": 0,
-        "duration": 1.3397083333333333,
+        "pack": "v10-voice-pollen-scout",
+        "start": 3.12513,
+        "duration": 0.89954,
         "bus": "voice",
-        "variantId": "pollen-scout-skill-1-1.flac",
+        "variantId": "v10:pollen-scout:skill.enemy:pollen-scout:basic:1",
         "processedVoice": true
       }
     ],
     "voice.pollen-scout.skill.enemy:pollen-scout": [
       {
-        "pack": "callout-pollen-scout",
-        "start": 1.3597083333333333,
-        "duration": 1.732,
+        "pack": "v10-voice-pollen-scout",
+        "start": 4.27467,
+        "duration": 0.92819,
         "bus": "voice",
-        "variantId": "pollen-scout-skill-2-1.flac",
+        "variantId": "v10:pollen-scout:skill.enemy:pollen-scout:1",
         "processedVoice": true
       }
     ],
     "voice.pollen-scout.ult.charge": [
       {
-        "pack": "callout-pollen-scout",
-        "start": 3.1117083333333335,
-        "duration": 0.9604583333333333,
+        "pack": "v10-voice-pollen-scout",
+        "start": 0.0,
+        "duration": 1.45954,
         "bus": "voice",
-        "variantId": "pollen-scout-charge-1.flac",
-        "processedVoice": true
-      },
-      {
-        "pack": "callout-pollen-scout",
-        "start": 4.0921666666666665,
-        "duration": 0.95625,
-        "bus": "voice",
-        "variantId": "pollen-scout-charge-2.flac",
+        "variantId": "v10:pollen-scout:ult.charge:1",
         "processedVoice": true
       }
     ],
     "voice.pollen-scout.ult.release": [
       {
-        "pack": "callout-pollen-scout",
-        "start": 5.068416666666667,
-        "duration": 1.602625,
+        "pack": "v10-voice-pollen-scout",
+        "start": 1.70954,
+        "duration": 1.16558,
         "bus": "voice",
-        "variantId": "pollen-scout-release-1.flac",
-        "processedVoice": true
-      },
-      {
-        "pack": "callout-pollen-scout",
-        "start": 6.691041666666667,
-        "duration": 1.602375,
-        "bus": "voice",
-        "variantId": "pollen-scout-release-2.flac",
+        "variantId": "v10:pollen-scout:ult.release:1",
         "processedVoice": true
       }
     ],
     "voice.rain-spool.skill.enemy:rain-spool:basic": [
       {
-        "pack": "callout-rain-spool",
-        "start": 0,
-        "duration": 1.3610416666666667,
+        "pack": "v10-voice-rain-spool",
+        "start": 3.02733,
+        "duration": 1.04396,
         "bus": "voice",
-        "variantId": "rain-spool-skill-1-1.flac",
+        "variantId": "v10:rain-spool:skill.enemy:rain-spool:basic:1",
         "processedVoice": true
       }
     ],
     "voice.rain-spool.skill.enemy:rain-spool": [
       {
-        "pack": "callout-rain-spool",
-        "start": 1.3810416666666667,
-        "duration": 1.435,
+        "pack": "v10-voice-rain-spool",
+        "start": 4.32129,
+        "duration": 1.38029,
         "bus": "voice",
-        "variantId": "rain-spool-skill-2-1.flac",
+        "variantId": "v10:rain-spool:skill.enemy:rain-spool:1",
         "processedVoice": true
       }
     ],
     "voice.rain-spool.ult.charge": [
       {
-        "pack": "callout-rain-spool",
-        "start": 2.8360416666666666,
-        "duration": 1.1676666666666666,
+        "pack": "v10-voice-rain-spool",
+        "start": 0.0,
+        "duration": 1.42325,
         "bus": "voice",
-        "variantId": "rain-spool-charge-1.flac",
-        "processedVoice": true
-      },
-      {
-        "pack": "callout-rain-spool",
-        "start": 4.023708333333333,
-        "duration": 1.1256666666666666,
-        "bus": "voice",
-        "variantId": "rain-spool-charge-2.flac",
+        "variantId": "v10:rain-spool:ult.charge:1",
         "processedVoice": true
       }
     ],
     "voice.rain-spool.ult.release": [
       {
-        "pack": "callout-rain-spool",
-        "start": 5.169375,
-        "duration": 1.4687083333333333,
+        "pack": "v10-voice-rain-spool",
+        "start": 1.67325,
+        "duration": 1.10408,
         "bus": "voice",
-        "variantId": "rain-spool-release-1.flac",
-        "processedVoice": true
-      },
-      {
-        "pack": "callout-rain-spool",
-        "start": 6.658083333333333,
-        "duration": 1.7203333333333333,
-        "bus": "voice",
-        "variantId": "rain-spool-release-2.flac",
+        "variantId": "v10:rain-spool:ult.release:1",
         "processedVoice": true
       }
     ],
     "voice.crumb-sentinel.skill.enemy:crumb-sentinel:basic": [
       {
-        "pack": "callout-crumb-sentinel",
-        "start": 0,
-        "duration": 1.3384166666666666,
+        "pack": "v10-voice-crumb-sentinel",
+        "start": 2.70029,
+        "duration": 1.09121,
         "bus": "voice",
-        "variantId": "crumb-sentinel-skill-1-1.flac",
+        "variantId": "v10:crumb-sentinel:skill.enemy:crumb-sentinel:basic:1",
         "processedVoice": true
       }
     ],
     "voice.crumb-sentinel.skill.enemy:crumb-sentinel": [
       {
-        "pack": "callout-crumb-sentinel",
-        "start": 1.3584166666666666,
-        "duration": 1.5271666666666666,
+        "pack": "v10-voice-crumb-sentinel",
+        "start": 4.0415,
+        "duration": 1.13942,
         "bus": "voice",
-        "variantId": "crumb-sentinel-skill-2-1.flac",
+        "variantId": "v10:crumb-sentinel:skill.enemy:crumb-sentinel:1",
         "processedVoice": true
       }
     ],
     "voice.crumb-sentinel.ult.charge": [
       {
-        "pack": "callout-crumb-sentinel",
-        "start": 2.9055833333333334,
-        "duration": 1.5769583333333332,
+        "pack": "v10-voice-crumb-sentinel",
+        "start": 0.0,
+        "duration": 1.19806,
         "bus": "voice",
-        "variantId": "crumb-sentinel-charge-1.flac",
-        "processedVoice": true
-      },
-      {
-        "pack": "callout-crumb-sentinel",
-        "start": 4.502541666666667,
-        "duration": 1.582625,
-        "bus": "voice",
-        "variantId": "crumb-sentinel-charge-2.flac",
+        "variantId": "v10:crumb-sentinel:ult.charge:1",
         "processedVoice": true
       }
     ],
     "voice.crumb-sentinel.ult.release": [
       {
-        "pack": "callout-crumb-sentinel",
-        "start": 6.105166666666666,
-        "duration": 1.4309583333333333,
+        "pack": "v10-voice-crumb-sentinel",
+        "start": 1.44806,
+        "duration": 1.00223,
         "bus": "voice",
-        "variantId": "crumb-sentinel-release-1.flac",
-        "processedVoice": true
-      },
-      {
-        "pack": "callout-crumb-sentinel",
-        "start": 7.556125,
-        "duration": 1.3973333333333333,
-        "bus": "voice",
-        "variantId": "crumb-sentinel-release-2.flac",
+        "variantId": "v10:crumb-sentinel:ult.release:1",
         "processedVoice": true
       }
     ],
     "voice.pantry-crown.skill.enemy:pantry-crown:basic": [
       {
-        "pack": "callout-pantry-crown",
-        "start": 0,
-        "duration": 1.4507916666666667,
+        "pack": "v10-voice-pantry-crown",
+        "start": 4.52792,
+        "duration": 1.4311,
         "bus": "voice",
-        "variantId": "pantry-crown-skill-1-1.flac",
+        "variantId": "v10:pantry-crown:skill.enemy:pantry-crown:basic:1",
         "processedVoice": true
       }
     ],
     "voice.pantry-crown.skill.enemy:pantry-crown": [
       {
-        "pack": "callout-pantry-crown",
-        "start": 1.4707916666666667,
-        "duration": 1.455875,
+        "pack": "v10-voice-pantry-crown",
+        "start": 6.20902,
+        "duration": 1.962,
         "bus": "voice",
-        "variantId": "pantry-crown-skill-2-1.flac",
+        "variantId": "v10:pantry-crown:skill.enemy:pantry-crown:1",
         "processedVoice": true
       }
     ],
     "voice.pantry-crown.ult.charge": [
       {
-        "pack": "callout-pantry-crown",
-        "start": 2.9466666666666668,
-        "duration": 1.3670416666666667,
+        "pack": "v10-voice-pantry-crown",
+        "start": 0.0,
+        "duration": 1.94635,
         "bus": "voice",
-        "variantId": "pantry-crown-charge-1.flac",
-        "processedVoice": true
-      },
-      {
-        "pack": "callout-pantry-crown",
-        "start": 4.333708333333333,
-        "duration": 1.438125,
-        "bus": "voice",
-        "variantId": "pantry-crown-charge-2.flac",
+        "variantId": "v10:pantry-crown:ult.charge:1",
         "processedVoice": true
       }
     ],
     "voice.pantry-crown.ult.release": [
       {
-        "pack": "callout-pantry-crown",
-        "start": 5.791833333333333,
-        "duration": 1.3401666666666667,
+        "pack": "v10-voice-pantry-crown",
+        "start": 2.19635,
+        "duration": 2.08156,
         "bus": "voice",
-        "variantId": "pantry-crown-release-1.flac",
-        "processedVoice": true
-      },
-      {
-        "pack": "callout-pantry-crown",
-        "start": 7.152,
-        "duration": 1.3397083333333333,
-        "bus": "voice",
-        "variantId": "pantry-crown-release-2.flac",
+        "variantId": "v10:pantry-crown:ult.release:1",
         "processedVoice": true
       }
     ],
@@ -8301,6 +8262,93 @@
         "bus": "voice",
         "variantId": "v10:yarn-giant:death:1",
         "processedVoice": true
+      }
+    ],
+    "voice.rain-spool.death": [
+      {
+        "pack": "v10-voice-rain-spool",
+        "start": 5.95158,
+        "duration": 1.57308,
+        "bus": "voice",
+        "variantId": "v10:rain-spool:death:1",
+        "processedVoice": true
+      }
+    ],
+    "voice.pantry-crown.death": [
+      {
+        "pack": "v10-voice-pantry-crown",
+        "start": 8.42102,
+        "duration": 2.23958,
+        "bus": "voice",
+        "variantId": "v10:pantry-crown:death:1",
+        "processedVoice": true
+      }
+    ],
+    "voice.spool-ram.death": [
+      {
+        "pack": "v10-voice-spool-ram",
+        "start": 4.75812,
+        "duration": 0.884,
+        "bus": "voice",
+        "variantId": "v10:spool-ram:death:1",
+        "processedVoice": true
+      }
+    ],
+    "voice.kettle-knight.death": [
+      {
+        "pack": "v10-voice-kettle-knight",
+        "start": 5.54406,
+        "duration": 1.29208,
+        "bus": "voice",
+        "variantId": "v10:kettle-knight:death:1",
+        "processedVoice": true
+      }
+    ],
+    "voice.pollen-scout.death": [
+      {
+        "pack": "v10-voice-pollen-scout",
+        "start": 5.45285,
+        "duration": 0.88067,
+        "bus": "voice",
+        "variantId": "v10:pollen-scout:death:1",
+        "processedVoice": true
+      }
+    ],
+    "voice.crumb-sentinel.death": [
+      {
+        "pack": "v10-voice-crumb-sentinel",
+        "start": 5.43092,
+        "duration": 1.12877,
+        "bus": "voice",
+        "variantId": "v10:crumb-sentinel:death:1",
+        "processedVoice": true
+      }
+    ],
+    "ui.boss-intro.yarn-giant": [
+      {
+        "pack": "v10-sting-boss-yarn-giant",
+        "start": 0,
+        "duration": 3.2,
+        "bus": "music",
+        "variantId": "v10:sting-boss-yarn-giant"
+      }
+    ],
+    "ui.boss-intro.rain-spool": [
+      {
+        "pack": "v10-sting-boss-rain-spool",
+        "start": 0,
+        "duration": 3.2,
+        "bus": "music",
+        "variantId": "v10:sting-boss-rain-spool"
+      }
+    ],
+    "ui.boss-intro.pantry-crown": [
+      {
+        "pack": "v10-sting-boss-pantry-crown",
+        "start": 0,
+        "duration": 3.2,
+        "bus": "music",
+        "variantId": "v10:sting-boss-pantry-crown"
       }
     ]
   },

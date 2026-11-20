@@ -29,9 +29,16 @@
   },
   {
     "id": "voice.v10",
-    "title": "V10 hero and Yarn Giant voice lines",
-    "author": "Kokoro-82M v1.0 TTS (hexgrad), voices am_michael, am_fenrir, am_onyx, am_puck, af_heart; lines written for this game",
+    "title": "V10 hero, boss and elite voice lines",
+    "author": "Kokoro-82M v1.0 TTS (hexgrad); voices per unit in scripts/audio/v10/lines.json; lines written for this game",
     "url": "https://huggingface.co/hexgrad/Kokoro-82M",
     "license": "Apache-2.0 model; output owned by the project"
+  },
+  {
+    "id": "music.stings.v10",
+    "title": "V10 victory, defeat and boss-intro stings",
+    "author": "Taskbar Hero team, synthesised in scripts/audio/v10/build_stings.py",
+    "url": "scripts/audio/v10/build_stings.py",
+    "license": "Original work (no samples)"
   }
 ]

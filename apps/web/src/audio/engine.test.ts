@@ -395,7 +395,8 @@ describe('layered playback admission and variants',()=>{
    const e=new AudioEngine();await e.unlock();e.play('voice.mochi.ult.charge');await flush();
    Context.latest.currentTime+=.6;clock.mockReturnValue(1600);e.play('ult.mochi.charge');await flush();
    expect(e.hits.filter(h=>h.id==='voice.mochi.ult.charge'&&h.result==='played')).toHaveLength(1);
-   expect(e.hits.at(-1)?.result).toBe('duplicate');
+   // V10: a line requested within 1.5 s owns the cast; the fallback is not even attempted.
+   expect(e.hits.at(-1)?.result).toBe('cast');
    Context.latest.sources.at(-1)!.onended!();Context.latest.currentTime+=1;clock.mockReturnValue(2600);
    e.play('voice.mochi.ult.charge');await flush();
    expect(e.hits.filter(h=>h.id==='voice.mochi.ult.charge'&&h.result==='played')).toHaveLength(2);

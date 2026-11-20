@@ -230,7 +230,7 @@ export class AudioEngine implements AudioBridge {
   if(fallback)this.record(id,'cast');
   if(fallback)queueMicrotask(()=>{
    // Wait one microtask for A's explicit voice call at the same cast point.
-   if(epoch===this.epoch&&Date.now()-this.lastVoiceRequested>=300)this.play(fallback);
+   if(epoch===this.epoch&&Date.now()-this.lastVoiceRequested>=1500)this.play(fallback);
   });
  }
  private async perform(id:string,opts:CueOptions){
@@ -259,7 +259,7 @@ export class AudioEngine implements AudioBridge {
    if(now-(this.last.get(id)??-Infinity)<(design?.cooldownMs??30)){this.record(id,'cooldown');return;}
    // Required ultimate charge/release lines override ordinary chatter cadence.
    // They still share a single voice source and retain priority over skills.
-   const requiredUltimate=voiceCallout(id)?.kind==='ultimate';
+   const requiredUltimate=voiceCallout(id)?.kind==='ultimate'||/\.(?:death|victory)$/.test(id);
    if(bus==='voice'&&!requiredUltimate&&now-(this.last.get('voice-cadence')??-Infinity)<7000){this.record(id,'cadence');return;}
    if(bus==='ambience'){this.ambience(id);return;}
    const native=this.nativeForge.get(CUE_ALIASES[id]??id);

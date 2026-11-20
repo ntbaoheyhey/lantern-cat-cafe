@@ -1,7 +1,7 @@
-import json,re
+import json,re,sys
 from faster_whisper import WhisperModel
 m=WhisperModel('small.en',device='cpu',compute_type='int8')
-rows=json.load(open('/tmp/v10-voice/rows.json'))
+rows=json.load(open((sys.argv[1] if len(sys.argv)>1 else '/tmp/v10-voice/rows.json')))
 norm=lambda s:re.sub(r"[^a-z ]","",s.lower().replace('café','cafe')).split()
 bad=0
 for r in rows:
@@ -14,4 +14,4 @@ for r in rows:
   flag='' if score>=.66 else '  <-- CHECK'
   if flag:bad+=1
   print(f"{r['unit']:10} {r['event']:28} {score:.2f} | {r['text']} | {got}{flag}",flush=True)
-json.dump(rows,open('/tmp/v10-voice/rows.json','w'),indent=1);print('flagged',bad)
+json.dump(rows,open((sys.argv[1] if len(sys.argv)>1 else '/tmp/v10-voice/rows.json'),'w'),indent=1);print('flagged',bad)
