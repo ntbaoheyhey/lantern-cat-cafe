@@ -37,7 +37,12 @@ export class SquadScene extends Phaser.Scene {
   private pending: BattleEvent[] = [];
   constructor() { super('squad'); }
   get loaded() { return this.ready; }
-  invalidate() { this.lastDraw = -Infinity; if (!document.hidden) this.game.loop.wake(); }
+  invalidate() {
+    this.lastDraw = -Infinity;
+    // The controller can notify before Phaser has booted this scene (a slow CPU, or
+    // a click right after load). Throwing here would stop the controller's frame loop.
+    if (!document.hidden) this.game?.loop.wake();
+  }
   preload() {
     this.load.image('sq-room', squadAsset('cafe-room.png'));
     for (const skill of ['steadfast', 'warmWick', 'lastSip']) this.load.image('sq-icon-' + skill, squadAsset('icon-' + skill + '.png'));
