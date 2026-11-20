@@ -189,7 +189,7 @@ void main(){
   float star=pow(abs(cos(ang*2.)),16.)*exp(-r/(1.3*grow+.05))*1.4+pow(abs(cos(ang*2.+.785)),30.)*exp(-r/(.7*grow+.05))*.8;
   float core=exp(-r*r*7./(grow+.15));
   float ring=exp(-pow((r-grow*.9)/.05,2.))*(1.-life);
-  hit+=(vec3(1.)*core*1.3+mix(sc,vec3(1.),.4)*star*1.5+sc*ring*1.1+sc*exp(-r*2.6)*.18)*fade*pw;
+  hit+=(vec3(1.)*core*.7+mix(sc,vec3(1.),.35)*star*1.1+sc*ring*.9+sc*exp(-r*2.6)*.12)*fade*pw;
  }
  col+=vec3(1.,.93,.82)*uFlash;
  // Premultiplied output: emission adds light; smoke darkens a little.
@@ -198,7 +198,7 @@ void main(){
  vec3 c=col/(1.+lum*.35);// soft shoulder so overlaps glow instead of clipping
  float sm=clamp(smoke,0.,.6)*(1.-a);
  float hl=max(hit.r,max(hit.g,hit.b));
- o=vec4(c+uDeep*.12*sm+hit/(1.+hl*.45),clamp(a+sm+hl*.12,0.,1.));
+ o=vec4(c+uDeep*.12*sm+hit/(1.+hl),clamp(a+sm+hl*.12,0.,1.));
 }`;
 
 function hex(c:string):[number,number,number]{const v=c.replace('#','');const n=parseInt(v.length===3?v.split('').map(x=>x+x).join(''):v.slice(0,6),16);return [(n>>16&255)/255,(n>>8&255)/255,(n&255)/255];}
