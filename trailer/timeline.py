@@ -94,7 +94,7 @@ SHOTS = [
          note="Forge enhance panel, stat goes up."),
     dict(id="s20", t0=b(20, 2), t1=b(22), src="chapters_123", tr="cut",
          text=dict(kind="caption", main="3 chapters · 3 bosses"),
-         note="Chapter arenas / chapter intro story cards: Tangled Cafe, Rooftop Orchard, Midnight Pantry."),
+         note="In-game chapter intro story cards: Tangled Cafe, Rooftop Orchard, Midnight Pantry (1.25 s each)."),
     # ---- ownership / economy
     dict(id="s21", t0=b(22), t1=b(24), src="card:earned", tr="dip_to_dark",
          text=dict(kind="statement", main="Power is earned by playing.", sub="Never bought."),

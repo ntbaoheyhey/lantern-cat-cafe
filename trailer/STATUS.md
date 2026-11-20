@@ -1,7 +1,7 @@
 # Trailer status / continuation notes
 
-Updated 2026-11-20 (late, UTC). Branch `claude/project-thread-5cwqjb`. Game build filmed: main `f8cd3aa`
-(director-confirmed; only PR #464, the chapter-intro story card, may still change — not used in the cut).
+Updated 2026-11-20 23:50 UTC. Branch `claude/project-thread-5cwqjb`. Game build filmed: main `f8cd3aa`, with the route map,
+ult-hint battle (`f_ch1_tap`) and chapter intro cards re-shot on `4699a30` (the v5-m2.17 tree), spec `finalH.json`.
 
 ## Done
 - Structure, 96 BPM grid, 42 shots, 14 VO lines (`timeline.py`).
@@ -34,5 +34,4 @@ Then in `trailer/`: `python3 assemble.py --audio audio/mix_novo.wav --out out/tr
 - The Fuji proof section uses motion-graphic cards of real transactions, not a live in-game seal, because
   the fixture build has no funded sponsor wallet.
 - Reddit reference post could not be opened (blocked from cloud fetch and the desktop browser pane).
-- Chapter montage (s20) uses the chapter story art with small labels; if PR #464 changes the chapter
-  intro card, re-shoot only that if wanted.
+- Chapter montage (s20) is the three in-game intro story cards (re-shot on 4699a30).
