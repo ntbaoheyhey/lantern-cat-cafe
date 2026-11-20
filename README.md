@@ -2,7 +2,7 @@
 
 ![Mochi casts Last Lantern Vow](docs/submission/media/hero.gif)
 
-[Watch the 58-second v5-m2.14 run](docs/demo-v5-m2.14/demo.mp4) · [Step-by-step walkthrough](docs/demo-v5-m2.14/index.html) · [Earlier 51-second recording with music](art/trailer/v9/battle_v5-m2.5.mp4) · [Six-frame contact sheet](art/trailer/v9/contact_sheet_v5-m2.5.png)
+[Watch the 58-second v5-m2.16 run](docs/demo-v5-m2.16/demo.mp4) · [Step-by-step walkthrough](docs/demo-v5-m2.16/index.html) · [v5-m2.14 run](docs/demo-v5-m2.14/index.html) · [Earlier 51-second recording with music](art/trailer/v9/battle_v5-m2.5.mp4) · [Six-frame contact sheet](art/trailer/v9/contact_sheet_v5-m2.5.png)
 
 The v5-m2.14 run and walkthrough show the current build: all three designer idles, battle VFX v10, the Yarn Giant, the receipt fixture and a live Fuji read. It is silent and recorded frame by frame at true game speed. The GIF and the 51-second recording with licensed wave and boss music were captured from `v5-m2.5`. The planned three-minute trailer remains separate.
 
