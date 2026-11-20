@@ -14,7 +14,9 @@ describe('sample cue coverage',()=>{
   expect(Object.keys(voiceProfiles)).toHaveLength(12);expect(new Set(Object.values(voiceProfiles).map(p=>p.source)).size).toBe(12);
   for(const cat of CATS)for(const event of ['select','attack','skill','ult','hit','death','victory']){
    const samples=resolveCue(`voice.${cat}.${event}`,m)!;expect(samples.length).toBeGreaterThanOrEqual(2);
-   expect(samples.every(s=>s.processedVoice&&s.pack===`cat-${cat}`)).toBe(true);
+   // V10 heroes ship recorded Kokoro takes in one pack per unit (scripts/audio/v10).
+   const pack=['mochi','clover','soot'].includes(cat)?`v10-voice-${cat}`:`cat-${cat}`;
+   expect(samples.every(s=>s.processedVoice&&s.pack===pack)).toBe(true);
   }
  });
  it('emits damage/status/death at impact and exposes charge/release to the engine fallback',()=>{

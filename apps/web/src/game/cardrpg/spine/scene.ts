@@ -637,7 +637,7 @@ export class SpineScene {
   if(!this.hitLights)return;
   this.hits=this.hits.filter(h=>time-h.at>=0&&time-h.at<.42&&this.actors.has(h.id));
   const k=height/720,reduced=!!view.reducedMotion,ult=!!this.ult5?.active;
-  const sparks=ult?[]:this.hits.slice(-8).map((h,i)=>{const b=this.bounds(this.actors.get(h.id)!);return {x:b.x+b.width/2,y:b.y+b.height*.42,r:Math.min(b.height*.5,150*k),life:(time-h.at)/.42,power:h.power,color:h.color,seed:i};});
+  const sparks=ult?[]:this.hits.slice(-8).map((h,i)=>{const b=this.bounds(this.actors.get(h.id)!);return {x:b.x+b.width/2,y:b.y+b.height*.42,r:Math.min(b.height*.3,90*k),life:(time-h.at)/.42,power:h.power,color:h.color,seed:i};});
   // V10: an enraged boss (phase 2+) burns with a rising aura; the phase change itself erupts.
   const columns:{x:number;y:number;w:number;h:number;alpha:number}[]=[],pools:{x:number;y:number;r:number;power:number}[]=[],bursts:{x:number;y:number;r:number;life:number;power:number}[]=[],rings:{x:number;y:number;r:number;life:number;power:number}[]=[],flames:{x:number;y:number;w:number;h:number;alpha:number}[]=[];
   let flash=0;
@@ -650,7 +650,8 @@ export class SpineScene {
     if(unit.id!==view.frame?.plan.actorId)for(let i=0;i<4;i++){const flick=reduced?1:.8+.2*Math.sin(time*6.3+i*2.1);flames.push({x:cx+(i-1.5)*b.width*.24,y:feet+12*k,w:b.width*(i%2?.2:.24),h:b.height*(i%2?.3:.4)*flick,alpha:.7});}
    }
    const age=time-entry.phaseAt;
-   if(age>=0&&age<1.3&&!reduced){bursts.push({x:cx,y:feet,r:b.height*.62,life:age/1.3,power:1});rings.push({x:cx,y:feet,r:b.width*1.3,life:Math.min(1,age/1),power:1});if(age<.14)flash=.22*(1-age/.14);}
+   // The eruption never plays under an ally ultimate cut-in: the dimmed screen plus a red blast read as mud.
+   if(age>=0&&age<1.3&&!reduced&&!ult){bursts.push({x:cx,y:feet,r:b.height*.62,life:age/1.3,power:1});rings.push({x:cx,y:feet,r:b.width*1.3,life:Math.min(1,age/1),power:1});if(age<.14)flash=.22*(1-age/.14);}
   }
   if(!sparks.length&&!columns.length&&!bursts.length&&!flames.length&&!pools.length){this.hitLights.clear();return;}
   this.hitLights.draw({w:width,h:height,time,flash,bursts,rings,columns,pools,sparks,flames,palette:fxPalette({core:'#ffd9a8',glow:'#ff5a3c',accent:'#c04cff',deep:'#3a0c22'})});

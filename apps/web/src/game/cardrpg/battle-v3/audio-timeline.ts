@@ -38,9 +38,10 @@ export function audioTimeline(plan:EffectPlan,sequence?:SkillSequence):TimelineC
    ...(flight.length?flight:[{t:0,cue:`move.${role}.whoosh` as AudioCue,role:'movement' as const,element}]),
    {t:impact,cue:hit,role:'impact',element},
   ];
-  const line=voiceTiming(owner,id,'charge');
+  // V10: the cut-in carries the ultimate's name shout (gacha convention); the charge line is the fallback.
+  const line=voiceTiming(owner,id,'release')??voiceTiming(owner,id,'charge');
   return [
-   ...(line?[{t:0,cue:line.cueId as AudioCue,role:'voice' as const,element,voicePhase:'charge' as const}]:[]),
+   ...(line?[{t:0,cue:line.cueId as AudioCue,role:'voice' as const,element,voicePhase:line.phase==='release'?'release' as const:'charge' as const}]:[]),
    {t:600,cue:healer?'kit.magic.charge':`ult.${owner}.charge` as AudioCue,role:'charge',element},
    ...flight,
    {t:impact,cue:hit,role:'impact',element},

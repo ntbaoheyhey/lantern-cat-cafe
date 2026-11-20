@@ -1,0 +1,574 @@
+{
+ "tool": "Kokoro-82M v1.0 (hexgrad/Kokoro-82M, Apache-2.0) via kokoro 0.9.4 Python package, voices am_michael/am_fenrir/am_onyx/am_puck/af_heart",
+ "post": "ffmpeg rubberband pitch, EQ, compressor, short room echo; pyloudnorm to -16 LUFS (-14 for ultimate shouts)",
+ "qa": "faster-whisper small.en transcript per take; takes under 0.66 word match re-written or dropped",
+ "takes": [
+  {
+   "unit": "mochi",
+   "cue": "voice.mochi.ult.charge",
+   "text": "Everyone, get behind me!",
+   "asr": "Everyone get behind me.",
+   "asrScore": 1.0
+  },
+  {
+   "unit": "mochi",
+   "cue": "voice.mochi.ult.charge",
+   "text": "The lantern stays lit!",
+   "asr": "The lantern stays lit.",
+   "asrScore": 1.0
+  },
+  {
+   "unit": "mochi",
+   "cue": "voice.mochi.ult.release",
+   "text": "My Last Lantern Vow!",
+   "asr": "My Last Lantern Val",
+   "asrScore": 0.75
+  },
+  {
+   "unit": "mochi",
+   "cue": "voice.mochi.ult.release",
+   "text": "Last Lantern Vow, hold!",
+   "asr": "Last Lantern Vow hold.",
+   "asrScore": 1.0
+  },
+  {
+   "unit": "mochi",
+   "cue": "voice.mochi.skill.mochi-1",
+   "text": "Knock knock!",
+   "asr": "knock knock",
+   "asrScore": 1.0
+  },
+  {
+   "unit": "mochi",
+   "cue": "voice.mochi.skill.mochi-2",
+   "text": "Welcome in. You're safe here.",
+   "asr": "Welcome in, you're safe here.",
+   "asrScore": 1.0
+  },
+  {
+   "unit": "mochi",
+   "cue": "voice.mochi.skill.mochi-3",
+   "text": "Stay behind me!",
+   "asr": "Stay behind me.",
+   "asrScore": 1.0
+  },
+  {
+   "unit": "mochi",
+   "cue": "voice.mochi.attack",
+   "text": "Back off!",
+   "asr": "Back off.",
+   "asrScore": 1.0
+  },
+  {
+   "unit": "mochi",
+   "cue": "voice.mochi.attack",
+   "text": "Take that!",
+   "asr": "Take that.",
+   "asrScore": 1.0
+  },
+  {
+   "unit": "mochi",
+   "cue": "voice.mochi.attack",
+   "text": "Stand back!",
+   "asr": "Stand back.",
+   "asrScore": 1.0
+  },
+  {
+   "unit": "mochi",
+   "cue": "voice.mochi.attack",
+   "text": "Got it!",
+   "asr": "Got it.",
+   "asrScore": 1.0
+  },
+  {
+   "unit": "mochi",
+   "cue": "voice.mochi.attack",
+   "text": "Out of my café!",
+   "asr": "Out of my cafe.",
+   "asrScore": 1.0
+  },
+  {
+   "unit": "mochi",
+   "cue": "voice.mochi.attack",
+   "text": "Not one step further!",
+   "asr": "Not one step further.",
+   "asrScore": 1.0
+  },
+  {
+   "unit": "mochi",
+   "cue": "voice.mochi.hit",
+   "text": "Ngh!",
+   "asr": "NGH",
+   "asrScore": 1.0
+  },
+  {
+   "unit": "mochi",
+   "cue": "voice.mochi.hit",
+   "text": "Still standing!",
+   "asr": "still standing.",
+   "asrScore": 1.0
+  },
+  {
+   "unit": "mochi",
+   "cue": "voice.mochi.death",
+   "text": "Keep... the light on...",
+   "asr": "Keep the light on.",
+   "asrScore": 1.0
+  },
+  {
+   "unit": "mochi",
+   "cue": "voice.mochi.death",
+   "text": "Sorry, everyone...",
+   "asr": "Sorry, everyone.",
+   "asrScore": 1.0
+  },
+  {
+   "unit": "mochi",
+   "cue": "voice.mochi.victory",
+   "text": "Everyone's home safe.",
+   "asr": "Everyone's home safe.",
+   "asrScore": 1.0
+  },
+  {
+   "unit": "mochi",
+   "cue": "voice.mochi.victory",
+   "text": "Doors stay open. Good work, team.",
+   "asr": "Door stay open. Good work team!",
+   "asrScore": 0.8333333333333334
+  },
+  {
+   "unit": "mochi",
+   "cue": "voice.mochi.select",
+   "text": "I've got the door.",
+   "asr": "I've got the door.",
+   "asrScore": 1.0
+  },
+  {
+   "unit": "mochi",
+   "cue": "voice.mochi.select",
+   "text": "Right here.",
+   "asr": "Right here.",
+   "asrScore": 1.0
+  },
+  {
+   "unit": "mochi",
+   "cue": "voice.mochi.skill",
+   "text": "Stay behind me!",
+   "asr": "Stay behind me.",
+   "asrScore": 1.0
+  },
+  {
+   "unit": "mochi",
+   "cue": "voice.mochi.skill",
+   "text": "Hold the line!",
+   "asr": "Hold the line.",
+   "asrScore": 1.0
+  },
+  {
+   "unit": "mochi",
+   "cue": "voice.mochi.ult",
+   "text": "My Last Lantern Vow!",
+   "asr": "My Last Lantern Vow",
+   "asrScore": 1.0
+  },
+  {
+   "unit": "mochi",
+   "cue": "voice.mochi.ult",
+   "text": "The lantern stays lit!",
+   "asr": "The lantern stays lit.",
+   "asrScore": 1.0
+  },
+  {
+   "unit": "clover",
+   "cue": "voice.clover.ult.charge",
+   "text": "Breathe in, everyone. Tea's ready!",
+   "asr": "Breathe in, everyone. Tease ready.",
+   "asrScore": 0.8
+  },
+  {
+   "unit": "clover",
+   "cue": "voice.clover.ult.charge",
+   "text": "Let it bloom!",
+   "asr": "Let it bloom.",
+   "asrScore": 1.0
+  },
+  {
+   "unit": "clover",
+   "cue": "voice.clover.ult.release",
+   "text": "Fourleaf Spring Brew!",
+   "asr": "Four leaf spring brew.",
+   "asrScore": 0.6666666666666666
+  },
+  {
+   "unit": "clover",
+   "cue": "voice.clover.ult.release",
+   "text": "Fourleaf Spring Brew!!",
+   "asr": "Four leaf spring brew.",
+   "asrScore": 0.6666666666666666
+  },
+  {
+   "unit": "clover",
+   "cue": "voice.clover.skill.clover-1",
+   "text": "Leaf tap!",
+   "asr": "Leaf tap.",
+   "asrScore": 1.0
+  },
+  {
+   "unit": "clover",
+   "cue": "voice.clover.skill.clover-2",
+   "text": "Let it steep!",
+   "asr": "Let it steep.",
+   "asrScore": 1.0
+  },
+  {
+   "unit": "clover",
+   "cue": "voice.clover.skill.clover-3",
+   "text": "Fresh and clear!",
+   "asr": "Fresh and clear.",
+   "asrScore": 1.0
+  },
+  {
+   "unit": "clover",
+   "cue": "voice.clover.attack",
+   "text": "Hey!",
+   "asr": "Hey.",
+   "asrScore": 1.0
+  },
+  {
+   "unit": "clover",
+   "cue": "voice.clover.attack",
+   "text": "Go away!",
+   "asr": "Go away.",
+   "asrScore": 1.0
+  },
+  {
+   "unit": "clover",
+   "cue": "voice.clover.attack",
+   "text": "Here goes!",
+   "asr": "Here goes.",
+   "asrScore": 1.0
+  },
+  {
+   "unit": "clover",
+   "cue": "voice.clover.attack",
+   "text": "Take a sip of this!",
+   "asr": "Take a sip of this.",
+   "asrScore": 1.0
+  },
+  {
+   "unit": "clover",
+   "cue": "voice.clover.attack",
+   "text": "Hiya!",
+   "asr": "higher",
+   "asrScore": 0.0
+  },
+  {
+   "unit": "clover",
+   "cue": "voice.clover.attack",
+   "text": "Over here!",
+   "asr": "Over here.",
+   "asrScore": 1.0
+  },
+  {
+   "unit": "clover",
+   "cue": "voice.clover.hit",
+   "text": "Ow!",
+   "asr": "Ow",
+   "asrScore": 1.0
+  },
+  {
+   "unit": "clover",
+   "cue": "voice.clover.hit",
+   "text": "Eek!",
+   "asr": "Eek",
+   "asrScore": 1.0
+  },
+  {
+   "unit": "clover",
+   "cue": "voice.clover.death",
+   "text": "The tea... went cold...",
+   "asr": "The tea went cold.",
+   "asrScore": 1.0
+  },
+  {
+   "unit": "clover",
+   "cue": "voice.clover.death",
+   "text": "I'm sorry...",
+   "asr": "I'm sorry.",
+   "asrScore": 1.0
+  },
+  {
+   "unit": "clover",
+   "cue": "voice.clover.victory",
+   "text": "Tea's on me, everyone!",
+   "asr": "Tease on me, everyone.",
+   "asrScore": 0.75
+  },
+  {
+   "unit": "clover",
+   "cue": "voice.clover.victory",
+   "text": "All warm and safe. Yay!",
+   "asr": "All warm and safe, yay.",
+   "asrScore": 1.0
+  },
+  {
+   "unit": "clover",
+   "cue": "voice.clover.select",
+   "text": "Kettle's warm!",
+   "asr": "Kettle's warm.",
+   "asrScore": 1.0
+  },
+  {
+   "unit": "clover",
+   "cue": "voice.clover.select",
+   "text": "Need a cup?",
+   "asr": "Need a cup.",
+   "asrScore": 1.0
+  },
+  {
+   "unit": "clover",
+   "cue": "voice.clover.skill",
+   "text": "Let it steep!",
+   "asr": "Let it steep.",
+   "asrScore": 1.0
+  },
+  {
+   "unit": "clover",
+   "cue": "voice.clover.skill",
+   "text": "Fresh and clear!",
+   "asr": "Fresh and clear.",
+   "asrScore": 1.0
+  },
+  {
+   "unit": "clover",
+   "cue": "voice.clover.ult",
+   "text": "Fourleaf Spring Brew!",
+   "asr": "Four leaf spring brew.",
+   "asrScore": 0.6666666666666666
+  },
+  {
+   "unit": "clover",
+   "cue": "voice.clover.ult",
+   "text": "Let it bloom!",
+   "asr": "Let it bloom.",
+   "asrScore": 1.0
+  },
+  {
+   "unit": "soot",
+   "cue": "voice.soot.ult.charge",
+   "text": "Heh. Look up.",
+   "asr": "Hey, look up!",
+   "asrScore": 0.6666666666666666
+  },
+  {
+   "unit": "soot",
+   "cue": "voice.soot.ult.charge",
+   "text": "Mind the sparks!",
+   "asr": "Mind the sparks.",
+   "asrScore": 1.0
+  },
+  {
+   "unit": "soot",
+   "cue": "voice.soot.ult.release",
+   "text": "The Chimney Comet!",
+   "asr": "The chimney comment",
+   "asrScore": 0.6666666666666666
+  },
+  {
+   "unit": "soot",
+   "cue": "voice.soot.skill.soot-1",
+   "text": "Hot cocoa spark!",
+   "asr": "hot cocoa spark",
+   "asrScore": 1.0
+  },
+  {
+   "unit": "soot",
+   "cue": "voice.soot.skill.soot-2",
+   "text": "Found you!",
+   "asr": "Found you!",
+   "asrScore": 1.0
+  },
+  {
+   "unit": "soot",
+   "cue": "voice.soot.skill.soot-3",
+   "text": "Light the wick!",
+   "asr": "Light the wicks.",
+   "asrScore": 0.6666666666666666
+  },
+  {
+   "unit": "soot",
+   "cue": "voice.soot.attack",
+   "text": "Spark!",
+   "asr": "Spark.",
+   "asrScore": 1.0
+  },
+  {
+   "unit": "soot",
+   "cue": "voice.soot.attack",
+   "text": "Gotcha!",
+   "asr": "Gotcha!",
+   "asrScore": 1.0
+  },
+  {
+   "unit": "soot",
+   "cue": "voice.soot.attack",
+   "text": "Burn bright!",
+   "asr": "Burn bright.",
+   "asrScore": 1.0
+  },
+  {
+   "unit": "soot",
+   "cue": "voice.soot.attack",
+   "text": "Boom!",
+   "asr": "BAM",
+   "asrScore": 0.0
+  },
+  {
+   "unit": "soot",
+   "cue": "voice.soot.attack",
+   "text": "Too slow!",
+   "asr": "Too slow.",
+   "asrScore": 1.0
+  },
+  {
+   "unit": "soot",
+   "cue": "voice.soot.attack",
+   "text": "Ka-boom!",
+   "asr": "Ka-Bim",
+   "asrScore": 0.0
+  },
+  {
+   "unit": "soot",
+   "cue": "voice.soot.hit",
+   "text": "Ouch!",
+   "asr": "ouch",
+   "asrScore": 1.0
+  },
+  {
+   "unit": "soot",
+   "cue": "voice.soot.hit",
+   "text": "Hot, hot!",
+   "asr": "hot hot",
+   "asrScore": 1.0
+  },
+  {
+   "unit": "soot",
+   "cue": "voice.soot.death",
+   "text": "Last... ember...",
+   "asr": "Last Ember",
+   "asrScore": 1.0
+  },
+  {
+   "unit": "soot",
+   "cue": "voice.soot.death",
+   "text": "Lights... out...",
+   "asr": "lights out",
+   "asrScore": 1.0
+  },
+  {
+   "unit": "soot",
+   "cue": "voice.soot.victory",
+   "text": "Night served.",
+   "asr": "Night served.",
+   "asrScore": 1.0
+  },
+  {
+   "unit": "soot",
+   "cue": "voice.soot.victory",
+   "text": "Too easy!",
+   "asr": "Too easy!",
+   "asrScore": 1.0
+  },
+  {
+   "unit": "soot",
+   "cue": "voice.soot.select",
+   "text": "After dark, then.",
+   "asr": "After dark then.",
+   "asrScore": 1.0
+  },
+  {
+   "unit": "soot",
+   "cue": "voice.soot.select",
+   "text": "Got a light?",
+   "asr": "Gotta light.",
+   "asrScore": 0.3333333333333333
+  },
+  {
+   "unit": "soot",
+   "cue": "voice.soot.skill",
+   "text": "Light the wick!",
+   "asr": "Light the wicks.",
+   "asrScore": 0.6666666666666666
+  },
+  {
+   "unit": "soot",
+   "cue": "voice.soot.skill",
+   "text": "Found you!",
+   "asr": "Found you!",
+   "asrScore": 1.0
+  },
+  {
+   "unit": "soot",
+   "cue": "voice.soot.ult",
+   "text": "The Chimney Comet!",
+   "asr": "The chimney comet",
+   "asrScore": 1.0
+  },
+  {
+   "unit": "soot",
+   "cue": "voice.soot.ult",
+   "text": "Lights out!",
+   "asr": "Lights out.",
+   "asrScore": 1.0
+  },
+  {
+   "unit": "yarn-giant",
+   "cue": "voice.yarn-giant.ult.charge",
+   "text": "I will unravel you all!",
+   "asr": "I will unravel you all.",
+   "asrScore": 1.0
+  },
+  {
+   "unit": "yarn-giant",
+   "cue": "voice.yarn-giant.ult.charge",
+   "text": "Tangle and break!",
+   "asr": "Tangle and break.",
+   "asrScore": 1.0
+  },
+  {
+   "unit": "yarn-giant",
+   "cue": "voice.yarn-giant.ult.release",
+   "text": "Unravel!",
+   "asr": "Unravel!",
+   "asrScore": 1.0
+  },
+  {
+   "unit": "yarn-giant",
+   "cue": "voice.yarn-giant.ult.release",
+   "text": "Unravel, all of you!",
+   "asr": "Unravel all of you.",
+   "asrScore": 1.0
+  },
+  {
+   "unit": "yarn-giant",
+   "cue": "voice.yarn-giant.skill.enemy:yarn-giant:basic",
+   "text": "Smash!",
+   "asr": "Smash!",
+   "asrScore": 1.0
+  },
+  {
+   "unit": "yarn-giant",
+   "cue": "voice.yarn-giant.skill.enemy:yarn-giant",
+   "text": "You pulled the wrong thread!",
+   "asr": "You pulled the wrong thread.",
+   "asrScore": 1.0
+  },
+  {
+   "unit": "yarn-giant",
+   "cue": "voice.yarn-giant.death",
+   "text": "My threads... come undone...",
+   "asr": "My threats come undone.",
+   "asrScore": 0.75
+  }
+ ]
+}

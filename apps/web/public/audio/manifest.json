@@ -257,6 +257,26 @@
     "v4-ranged-tide": {
       "webm": "/audio/v4-ranged-tide.webm",
       "mp3": "/audio/v4-ranged-tide.mp3"
+    },
+    "v10-voice-mochi": {
+      "opus": "/audio/v9/voice-v10-mochi.opus",
+      "m4a": "/audio/v9/voice-v10-mochi.m4a",
+      "preferredFormat": "opus"
+    },
+    "v10-voice-clover": {
+      "opus": "/audio/v9/voice-v10-clover.opus",
+      "m4a": "/audio/v9/voice-v10-clover.m4a",
+      "preferredFormat": "opus"
+    },
+    "v10-voice-soot": {
+      "opus": "/audio/v9/voice-v10-soot.opus",
+      "m4a": "/audio/v9/voice-v10-soot.m4a",
+      "preferredFormat": "opus"
+    },
+    "v10-voice-yarn-giant": {
+      "opus": "/audio/v9/voice-v10-yarn-giant.opus",
+      "m4a": "/audio/v9/voice-v10-yarn-giant.m4a",
+      "preferredFormat": "opus"
     }
   },
   "cues": {
@@ -2575,159 +2595,159 @@
     ],
     "voice.mochi.select": [
       {
-        "pack": "cat-mochi",
-        "start": 0,
-        "duration": 1.2973333333333332,
+        "pack": "v10-voice-mochi",
+        "start": 27.49027,
+        "duration": 1.09181,
         "bus": "voice",
-        "variantId": "mochi-select-1-1.flac",
+        "variantId": "v10:mochi:select:1",
         "processedVoice": true
       },
       {
-        "pack": "cat-mochi",
-        "start": 1.3773333333333333,
-        "duration": 1.3261666666666667,
+        "pack": "v10-voice-mochi",
+        "start": 28.83208,
+        "duration": 0.7509,
         "bus": "voice",
-        "variantId": "mochi-select-1-2.flac",
+        "variantId": "v10:mochi:select:2",
         "processedVoice": true
       }
     ],
     "voice.mochi.attack": [
       {
-        "pack": "cat-mochi",
-        "start": 2.7835,
-        "duration": 1.2373333333333334,
+        "pack": "v10-voice-mochi",
+        "start": 11.03571,
+        "duration": 0.76331,
         "bus": "voice",
-        "variantId": "mochi-attack-1-1.flac",
+        "variantId": "v10:mochi:attack:1",
         "processedVoice": true
       },
       {
-        "pack": "cat-mochi",
-        "start": 4.100833333333333,
-        "duration": 1.2661666666666667,
+        "pack": "v10-voice-mochi",
+        "start": 12.04902,
+        "duration": 0.78775,
         "bus": "voice",
-        "variantId": "mochi-attack-1-2.flac",
+        "variantId": "v10:mochi:attack:2",
         "processedVoice": true
       },
       {
-        "pack": "cat-mochi",
-        "start": 5.447,
-        "duration": 1.2523333333333333,
+        "pack": "v10-voice-mochi",
+        "start": 13.08677,
+        "duration": 0.9249,
         "bus": "voice",
-        "variantId": "mochi-attack-2-1.flac",
+        "variantId": "v10:mochi:attack:3",
         "processedVoice": true
       },
       {
-        "pack": "cat-mochi",
-        "start": 6.779333333333334,
-        "duration": 1.2811666666666666,
+        "pack": "v10-voice-mochi",
+        "start": 14.26167,
+        "duration": 0.69888,
         "bus": "voice",
-        "variantId": "mochi-attack-2-2.flac",
+        "variantId": "v10:mochi:attack:4",
         "processedVoice": true
       },
       {
-        "pack": "cat-mochi",
-        "start": 8.1405,
-        "duration": 1.053,
+        "pack": "v10-voice-mochi",
+        "start": 15.21054,
+        "duration": 1.14973,
         "bus": "voice",
-        "variantId": "mochi-attack-3-1.flac",
+        "variantId": "v10:mochi:attack:5",
         "processedVoice": true
       },
       {
-        "pack": "cat-mochi",
-        "start": 9.2735,
-        "duration": 1.074625,
+        "pack": "v10-voice-mochi",
+        "start": 16.61027,
+        "duration": 1.36027,
         "bus": "voice",
-        "variantId": "mochi-attack-3-2.flac",
+        "variantId": "v10:mochi:attack:6",
         "processedVoice": true
       }
     ],
     "voice.mochi.skill": [
       {
-        "pack": "cat-mochi",
-        "start": 10.428125,
-        "duration": 1.5116666666666667,
+        "pack": "v10-voice-mochi",
+        "start": 29.83298,
+        "duration": 1.08817,
         "bus": "voice",
-        "variantId": "mochi-skill-1-1.flac",
+        "variantId": "v10:mochi:skill:1",
         "processedVoice": true
       },
       {
-        "pack": "cat-mochi",
-        "start": 12.019791666666666,
-        "duration": 1.5477083333333332,
+        "pack": "v10-voice-mochi",
+        "start": 31.17115,
+        "duration": 0.98894,
         "bus": "voice",
-        "variantId": "mochi-skill-1-2.flac",
+        "variantId": "v10:mochi:skill:2",
         "processedVoice": true
       }
     ],
     "voice.mochi.ult": [
       {
-        "pack": "cat-mochi",
-        "start": 13.6475,
-        "duration": 1.0759166666666666,
+        "pack": "v10-voice-mochi",
+        "start": 32.41008,
+        "duration": 1.39846,
         "bus": "voice",
-        "variantId": "mochi-ult-1-1.flac",
+        "variantId": "v10:mochi:ult:1",
         "processedVoice": true
       },
       {
-        "pack": "cat-mochi",
-        "start": 14.803416666666667,
-        "duration": 1.0997083333333333,
+        "pack": "v10-voice-mochi",
+        "start": 34.05854,
+        "duration": 1.30881,
         "bus": "voice",
-        "variantId": "mochi-ult-1-2.flac",
+        "variantId": "v10:mochi:ult:2",
         "processedVoice": true
       }
     ],
     "voice.mochi.hit": [
       {
-        "pack": "cat-mochi",
-        "start": 15.983125,
-        "duration": 1.5116666666666667,
+        "pack": "v10-voice-mochi",
+        "start": 18.22054,
+        "duration": 0.88258,
         "bus": "voice",
-        "variantId": "mochi-hit-1-1.flac",
+        "variantId": "v10:mochi:hit:1",
         "processedVoice": true
       },
       {
-        "pack": "cat-mochi",
-        "start": 17.574791666666666,
-        "duration": 1.5477083333333332,
+        "pack": "v10-voice-mochi",
+        "start": 19.35312,
+        "duration": 1.0106,
         "bus": "voice",
-        "variantId": "mochi-hit-1-2.flac",
+        "variantId": "v10:mochi:hit:2",
         "processedVoice": true
       }
     ],
     "voice.mochi.death": [
       {
-        "pack": "cat-mochi",
-        "start": 19.2025,
-        "duration": 1.2673333333333334,
+        "pack": "v10-voice-mochi",
+        "start": 20.61373,
+        "duration": 1.27812,
         "bus": "voice",
-        "variantId": "mochi-death-1-1.flac",
+        "variantId": "v10:mochi:death:1",
         "processedVoice": true
       },
       {
-        "pack": "cat-mochi",
-        "start": 20.549833333333332,
-        "duration": 1.2961666666666667,
+        "pack": "v10-voice-mochi",
+        "start": 22.14185,
+        "duration": 1.13258,
         "bus": "voice",
-        "variantId": "mochi-death-1-2.flac",
+        "variantId": "v10:mochi:death:2",
         "processedVoice": true
       }
     ],
     "voice.mochi.victory": [
       {
-        "pack": "cat-mochi",
-        "start": 21.926,
-        "duration": 1.771,
+        "pack": "v10-voice-mochi",
+        "start": 23.52444,
+        "duration": 1.27602,
         "bus": "voice",
-        "variantId": "mochi-victory-1-1.flac",
+        "variantId": "v10:mochi:victory:1",
         "processedVoice": true
       },
       {
-        "pack": "cat-mochi",
-        "start": 23.777,
-        "duration": 1.81425,
+        "pack": "v10-voice-mochi",
+        "start": 25.05046,
+        "duration": 2.18981,
         "bus": "voice",
-        "variantId": "mochi-victory-1-2.flac",
+        "variantId": "v10:mochi:victory:2",
         "processedVoice": true
       }
     ],
@@ -2879,159 +2899,159 @@
     ],
     "voice.soot.select": [
       {
-        "pack": "cat-soot",
-        "start": 0,
-        "duration": 1.1198333333333332,
+        "pack": "v10-voice-soot",
+        "start": 18.70554,
+        "duration": 0.95608,
         "bus": "voice",
-        "variantId": "soot-select-1-1.flac",
+        "variantId": "v10:soot:select:1",
         "processedVoice": true
       },
       {
-        "pack": "cat-soot",
-        "start": 1.1998333333333333,
-        "duration": 1.1438333333333333,
+        "pack": "v10-voice-soot",
+        "start": 19.91162,
+        "duration": 0.74777,
         "bus": "voice",
-        "variantId": "soot-select-1-2.flac",
+        "variantId": "v10:soot:select:2",
         "processedVoice": true
       }
     ],
     "voice.soot.attack": [
       {
-        "pack": "cat-soot",
-        "start": 2.4236666666666666,
-        "duration": 1.1498333333333333,
+        "pack": "v10-voice-soot",
+        "start": 6.84477,
+        "duration": 0.6185,
         "bus": "voice",
-        "variantId": "soot-attack-1-1.flac",
+        "variantId": "v10:soot:attack:1",
         "processedVoice": true
       },
       {
-        "pack": "cat-soot",
-        "start": 3.6535,
-        "duration": 1.1738333333333333,
+        "pack": "v10-voice-soot",
+        "start": 7.71327,
+        "duration": 0.68363,
         "bus": "voice",
-        "variantId": "soot-attack-1-2.flac",
+        "variantId": "v10:soot:attack:2",
         "processedVoice": true
       },
       {
-        "pack": "cat-soot",
-        "start": 4.907333333333334,
-        "duration": 1.1348333333333334,
+        "pack": "v10-voice-soot",
+        "start": 8.6469,
+        "duration": 0.81019,
         "bus": "voice",
-        "variantId": "soot-attack-2-1.flac",
+        "variantId": "v10:soot:attack:3",
         "processedVoice": true
       },
       {
-        "pack": "cat-soot",
-        "start": 6.122166666666667,
-        "duration": 1.1588333333333334,
+        "pack": "v10-voice-soot",
+        "start": 9.70708,
+        "duration": 0.57996,
         "bus": "voice",
-        "variantId": "soot-attack-2-2.flac",
+        "variantId": "v10:soot:attack:4",
         "processedVoice": true
       },
       {
-        "pack": "cat-soot",
-        "start": 7.361,
-        "duration": 0.949875,
+        "pack": "v10-voice-soot",
+        "start": 10.53704,
+        "duration": 0.72075,
         "bus": "voice",
-        "variantId": "soot-attack-3-1.flac",
+        "variantId": "v10:soot:attack:5",
         "processedVoice": true
       },
       {
-        "pack": "cat-soot",
-        "start": 8.390875,
-        "duration": 0.967875,
+        "pack": "v10-voice-soot",
+        "start": 11.50779,
+        "duration": 0.67233,
         "bus": "voice",
-        "variantId": "soot-attack-3-2.flac",
+        "variantId": "v10:soot:attack:6",
         "processedVoice": true
       }
     ],
     "voice.soot.skill": [
       {
-        "pack": "cat-soot",
-        "start": 9.43875,
-        "duration": 1.3647916666666666,
+        "pack": "v10-voice-soot",
+        "start": 20.9094,
+        "duration": 0.7786,
         "bus": "voice",
-        "variantId": "soot-skill-1-1.flac",
+        "variantId": "v10:soot:skill:1",
         "processedVoice": true
       },
       {
-        "pack": "cat-soot",
-        "start": 10.883541666666666,
-        "duration": 1.3947916666666667,
+        "pack": "v10-voice-soot",
+        "start": 21.938,
+        "duration": 0.66435,
         "bus": "voice",
-        "variantId": "soot-skill-1-2.flac",
+        "variantId": "v10:soot:skill:2",
         "processedVoice": true
       }
     ],
     "voice.soot.ult": [
       {
-        "pack": "cat-soot",
-        "start": 12.358333333333333,
-        "duration": 0.9939583333333334,
+        "pack": "v10-voice-soot",
+        "start": 22.85235,
+        "duration": 1.01015,
         "bus": "voice",
-        "variantId": "soot-ult-1-1.flac",
+        "variantId": "v10:soot:ult:1",
         "processedVoice": true
       },
       {
-        "pack": "cat-soot",
-        "start": 13.432291666666666,
-        "duration": 1.01375,
+        "pack": "v10-voice-soot",
+        "start": 24.1125,
+        "duration": 0.74373,
         "bus": "voice",
-        "variantId": "soot-ult-1-2.flac",
+        "variantId": "v10:soot:ult:2",
         "processedVoice": true
       }
     ],
     "voice.soot.hit": [
       {
-        "pack": "cat-soot",
-        "start": 14.526041666666666,
-        "duration": 0.934875,
+        "pack": "v10-voice-soot",
+        "start": 12.43013,
+        "duration": 0.5216,
         "bus": "voice",
-        "variantId": "soot-hit-1-1.flac",
+        "variantId": "v10:soot:hit:1",
         "processedVoice": true
       },
       {
-        "pack": "cat-soot",
-        "start": 15.540916666666666,
-        "duration": 0.952875,
+        "pack": "v10-voice-soot",
+        "start": 13.20173,
+        "duration": 0.7541,
         "bus": "voice",
-        "variantId": "soot-hit-1-2.flac",
+        "variantId": "v10:soot:hit:2",
         "processedVoice": true
       }
     ],
     "voice.soot.death": [
       {
-        "pack": "cat-soot",
-        "start": 16.573791666666665,
-        "duration": 1.1348333333333334,
+        "pack": "v10-voice-soot",
+        "start": 14.20583,
+        "duration": 1.0446,
         "bus": "voice",
-        "variantId": "soot-death-1-1.flac",
+        "variantId": "v10:soot:death:1",
         "processedVoice": true
       },
       {
-        "pack": "cat-soot",
-        "start": 17.788625,
-        "duration": 1.1588333333333334,
+        "pack": "v10-voice-soot",
+        "start": 15.50044,
+        "duration": 0.91983,
         "bus": "voice",
-        "variantId": "soot-death-1-2.flac",
+        "variantId": "v10:soot:death:2",
         "processedVoice": true
       }
     ],
     "voice.soot.victory": [
       {
-        "pack": "cat-soot",
-        "start": 19.027458333333332,
-        "duration": 1.1798333333333333,
+        "pack": "v10-voice-soot",
+        "start": 16.67027,
+        "duration": 0.81292,
         "bus": "voice",
-        "variantId": "soot-victory-1-1.flac",
+        "variantId": "v10:soot:victory:1",
         "processedVoice": true
       },
       {
-        "pack": "cat-soot",
-        "start": 20.28729166666667,
-        "duration": 1.2038333333333333,
+        "pack": "v10-voice-soot",
+        "start": 17.73319,
+        "duration": 0.72235,
         "bus": "voice",
-        "variantId": "soot-victory-1-2.flac",
+        "variantId": "v10:soot:victory:2",
         "processedVoice": true
       }
     ],
@@ -3183,159 +3203,159 @@
     ],
     "voice.clover.select": [
       {
-        "pack": "cat-clover",
-        "start": 0,
-        "duration": 1.5947916666666666,
+        "pack": "v10-voice-clover",
+        "start": 22.76019,
+        "duration": 0.86796,
         "bus": "voice",
-        "variantId": "clover-select-1-1.flac",
+        "variantId": "v10:clover:select:1",
         "processedVoice": true
       },
       {
-        "pack": "cat-clover",
-        "start": 1.6747916666666667,
-        "duration": 1.6347916666666666,
+        "pack": "v10-voice-clover",
+        "start": 23.87815,
+        "duration": 0.7621,
         "bus": "voice",
-        "variantId": "clover-select-1-2.flac",
+        "variantId": "v10:clover:select:2",
         "processedVoice": true
       }
     ],
     "voice.clover.attack": [
       {
-        "pack": "cat-clover",
-        "start": 3.3895833333333334,
-        "duration": 0.8329166666666666,
+        "pack": "v10-voice-clover",
+        "start": 9.42254,
+        "duration": 0.52904,
         "bus": "voice",
-        "variantId": "clover-attack-1-1.flac",
+        "variantId": "v10:clover:attack:1",
         "processedVoice": true
       },
       {
-        "pack": "cat-clover",
-        "start": 4.3025,
-        "duration": 0.8489166666666667,
+        "pack": "v10-voice-clover",
+        "start": 10.20158,
+        "duration": 0.69223,
         "bus": "voice",
-        "variantId": "clover-attack-1-2.flac",
+        "variantId": "v10:clover:attack:2",
         "processedVoice": true
       },
       {
-        "pack": "cat-clover",
-        "start": 5.231416666666667,
-        "duration": 1.096875,
+        "pack": "v10-voice-clover",
+        "start": 11.14381,
+        "duration": 0.79715,
         "bus": "voice",
-        "variantId": "clover-attack-2-1.flac",
+        "variantId": "v10:clover:attack:3",
         "processedVoice": true
       },
       {
-        "pack": "cat-clover",
-        "start": 6.408291666666667,
-        "duration": 1.120875,
+        "pack": "v10-voice-clover",
+        "start": 12.19096,
+        "duration": 1.06115,
         "bus": "voice",
-        "variantId": "clover-attack-2-2.flac",
+        "variantId": "v10:clover:attack:4",
         "processedVoice": true
       },
       {
-        "pack": "cat-clover",
-        "start": 7.609166666666667,
-        "duration": 1.3308333333333333,
+        "pack": "v10-voice-clover",
+        "start": 13.5021,
+        "duration": 0.59404,
         "bus": "voice",
-        "variantId": "clover-attack-3-1.flac",
+        "variantId": "v10:clover:attack:5",
         "processedVoice": true
       },
       {
-        "pack": "cat-clover",
-        "start": 9.02,
-        "duration": 1.3628333333333333,
+        "pack": "v10-voice-clover",
+        "start": 14.34615,
+        "duration": 0.73531,
         "bus": "voice",
-        "variantId": "clover-attack-3-2.flac",
+        "variantId": "v10:clover:attack:6",
         "processedVoice": true
       }
     ],
     "voice.clover.skill": [
       {
-        "pack": "cat-clover",
-        "start": 10.462833333333334,
-        "duration": 1.096875,
+        "pack": "v10-voice-clover",
+        "start": 24.89025,
+        "duration": 0.82835,
         "bus": "voice",
-        "variantId": "clover-skill-1-1.flac",
+        "variantId": "v10:clover:skill:1",
         "processedVoice": true
       },
       {
-        "pack": "cat-clover",
-        "start": 11.639708333333333,
-        "duration": 1.120875,
+        "pack": "v10-voice-clover",
+        "start": 25.9686,
+        "duration": 0.92425,
         "bus": "voice",
-        "variantId": "clover-skill-1-2.flac",
+        "variantId": "v10:clover:skill:2",
         "processedVoice": true
       }
     ],
     "voice.clover.ult": [
       {
-        "pack": "cat-clover",
-        "start": 12.840583333333333,
-        "duration": 1.1256666666666666,
+        "pack": "v10-voice-clover",
+        "start": 27.14285,
+        "duration": 1.20152,
         "bus": "voice",
-        "variantId": "clover-ult-1-1.flac",
+        "variantId": "v10:clover:ult:1",
         "processedVoice": true
       },
       {
-        "pack": "cat-clover",
-        "start": 14.04625,
-        "duration": 1.1520416666666666,
+        "pack": "v10-voice-clover",
+        "start": 28.59438,
+        "duration": 0.84298,
         "bus": "voice",
-        "variantId": "clover-ult-1-2.flac",
+        "variantId": "v10:clover:ult:2",
         "processedVoice": true
       }
     ],
     "voice.clover.hit": [
       {
-        "pack": "cat-clover",
-        "start": 15.278291666666666,
-        "duration": 1.5947916666666666,
+        "pack": "v10-voice-clover",
+        "start": 15.33146,
+        "duration": 0.48675,
         "bus": "voice",
-        "variantId": "clover-hit-1-1.flac",
+        "variantId": "v10:clover:hit:1",
         "processedVoice": true
       },
       {
-        "pack": "cat-clover",
-        "start": 16.953083333333332,
-        "duration": 1.6347916666666666,
+        "pack": "v10-voice-clover",
+        "start": 16.06821,
+        "duration": 0.5176,
         "bus": "voice",
-        "variantId": "clover-hit-1-2.flac",
+        "variantId": "v10:clover:hit:2",
         "processedVoice": true
       }
     ],
     "voice.clover.death": [
       {
-        "pack": "cat-clover",
-        "start": 18.667875,
-        "duration": 1.5947916666666666,
+        "pack": "v10-voice-clover",
+        "start": 16.83581,
+        "duration": 1.32227,
         "bus": "voice",
-        "variantId": "clover-death-1-1.flac",
+        "variantId": "v10:clover:death:1",
         "processedVoice": true
       },
       {
-        "pack": "cat-clover",
-        "start": 20.342666666666666,
-        "duration": 1.6347916666666666,
+        "pack": "v10-voice-clover",
+        "start": 18.40808,
+        "duration": 0.7716,
         "bus": "voice",
-        "variantId": "clover-death-1-2.flac",
+        "variantId": "v10:clover:death:2",
         "processedVoice": true
       }
     ],
     "voice.clover.victory": [
       {
-        "pack": "cat-clover",
-        "start": 22.057458333333333,
-        "duration": 1.5947916666666666,
+        "pack": "v10-voice-clover",
+        "start": 19.42969,
+        "duration": 1.27969,
         "bus": "voice",
-        "variantId": "clover-victory-1-1.flac",
+        "variantId": "v10:clover:victory:1",
         "processedVoice": true
       },
       {
-        "pack": "cat-clover",
-        "start": 23.73225,
-        "duration": 1.6347916666666666,
+        "pack": "v10-voice-clover",
+        "start": 20.95938,
+        "duration": 1.55081,
         "bus": "voice",
-        "variantId": "clover-victory-1-2.flac",
+        "variantId": "v10:clover:victory:2",
         "processedVoice": true
       }
     ],
@@ -6223,199 +6243,191 @@
     ],
     "voice.mochi.skill.mochi-1": [
       {
-        "pack": "callout-mochi",
-        "start": 0,
-        "duration": 1.138125,
+        "pack": "v10-voice-mochi",
+        "start": 6.6934,
+        "duration": 0.87842,
         "bus": "voice",
-        "variantId": "mochi-skill-1-1.flac",
+        "variantId": "v10:mochi:skill.mochi-1:1",
         "processedVoice": true
       }
     ],
     "voice.mochi.skill.mochi-2": [
       {
-        "pack": "callout-mochi",
-        "start": 1.158125,
-        "duration": 1.297,
+        "pack": "v10-voice-mochi",
+        "start": 7.82181,
+        "duration": 1.62417,
         "bus": "voice",
-        "variantId": "mochi-skill-2-1.flac",
+        "variantId": "v10:mochi:skill.mochi-2:1",
         "processedVoice": true
       }
     ],
     "voice.mochi.skill.mochi-3": [
       {
-        "pack": "callout-mochi",
-        "start": 2.475125,
-        "duration": 1.5196666666666667,
+        "pack": "v10-voice-mochi",
+        "start": 9.69598,
+        "duration": 1.08973,
         "bus": "voice",
-        "variantId": "mochi-skill-3-1.flac",
+        "variantId": "v10:mochi:skill.mochi-3:1",
         "processedVoice": true
       }
     ],
     "voice.mochi.ult.charge": [
       {
-        "pack": "callout-mochi",
-        "start": 4.0147916666666665,
-        "duration": 1.1948333333333334,
+        "pack": "v10-voice-mochi",
+        "start": 0.0,
+        "duration": 1.45412,
         "bus": "voice",
-        "variantId": "mochi-charge-1.flac",
+        "variantId": "v10:mochi:ult.charge:1",
         "processedVoice": true
       },
       {
-        "pack": "callout-mochi",
-        "start": 5.229625,
-        "duration": 1.3205416666666667,
+        "pack": "v10-voice-mochi",
+        "start": 1.70412,
+        "duration": 1.30154,
         "bus": "voice",
-        "variantId": "mochi-charge-2.flac",
+        "variantId": "v10:mochi:ult.charge:2",
         "processedVoice": true
       }
     ],
     "voice.mochi.ult.release": [
       {
-        "pack": "callout-mochi",
-        "start": 6.570166666666666,
-        "duration": 1.3420416666666666,
+        "pack": "v10-voice-mochi",
+        "start": 3.25567,
+        "duration": 1.39829,
         "bus": "voice",
-        "variantId": "mochi-release-1.flac",
+        "variantId": "v10:mochi:ult.release:1",
         "processedVoice": true
       },
       {
-        "pack": "callout-mochi",
-        "start": 7.9322083333333335,
-        "duration": 1.4296666666666666,
+        "pack": "v10-voice-mochi",
+        "start": 4.90396,
+        "duration": 1.53944,
         "bus": "voice",
-        "variantId": "mochi-release-2.flac",
+        "variantId": "v10:mochi:ult.release:2",
         "processedVoice": true
       }
     ],
     "voice.soot.skill.soot-1": [
       {
-        "pack": "callout-soot",
-        "start": 0,
-        "duration": 1.34075,
+        "pack": "v10-voice-soot",
+        "start": 3.50275,
+        "duration": 1.1496,
         "bus": "voice",
-        "variantId": "soot-skill-1-1.flac",
+        "variantId": "v10:soot:skill.soot-1:1",
         "processedVoice": true
       }
     ],
     "voice.soot.skill.soot-2": [
       {
-        "pack": "callout-soot",
-        "start": 1.36075,
-        "duration": 1.0677083333333333,
+        "pack": "v10-voice-soot",
+        "start": 4.90235,
+        "duration": 0.66485,
         "bus": "voice",
-        "variantId": "soot-skill-2-1.flac",
+        "variantId": "v10:soot:skill.soot-2:1",
         "processedVoice": true
       }
     ],
     "voice.soot.skill.soot-3": [
       {
-        "pack": "callout-soot",
-        "start": 2.4484583333333334,
-        "duration": 1.1753333333333333,
+        "pack": "v10-voice-soot",
+        "start": 5.81721,
+        "duration": 0.77756,
         "bus": "voice",
-        "variantId": "soot-skill-3-1.flac",
+        "variantId": "v10:soot:skill.soot-3:1",
         "processedVoice": true
       }
     ],
     "voice.soot.ult.charge": [
       {
-        "pack": "callout-soot",
-        "start": 3.6437916666666665,
-        "duration": 1.0426666666666666,
+        "pack": "v10-voice-soot",
+        "start": 0.0,
+        "duration": 0.85117,
         "bus": "voice",
-        "variantId": "soot-charge-1.flac",
+        "variantId": "v10:soot:ult.charge:1",
         "processedVoice": true
       },
       {
-        "pack": "callout-soot",
-        "start": 4.706458333333333,
-        "duration": 1.0369166666666667,
+        "pack": "v10-voice-soot",
+        "start": 1.10117,
+        "duration": 0.89194,
         "bus": "voice",
-        "variantId": "soot-charge-2.flac",
+        "variantId": "v10:soot:ult.charge:2",
         "processedVoice": true
       }
     ],
     "voice.soot.ult.release": [
       {
-        "pack": "callout-soot",
-        "start": 5.763375,
-        "duration": 1.3254583333333334,
+        "pack": "v10-voice-soot",
+        "start": 2.2431,
+        "duration": 1.00965,
         "bus": "voice",
-        "variantId": "soot-release-1.flac",
-        "processedVoice": true
-      },
-      {
-        "pack": "callout-soot",
-        "start": 7.108833333333333,
-        "duration": 1.2921666666666667,
-        "bus": "voice",
-        "variantId": "soot-release-2.flac",
+        "variantId": "v10:soot:ult.release:1",
         "processedVoice": true
       }
     ],
     "voice.clover.skill.clover-1": [
       {
-        "pack": "callout-clover",
-        "start": 0,
-        "duration": 1.0678333333333334,
+        "pack": "v10-voice-clover",
+        "start": 6.16463,
+        "duration": 0.77163,
         "bus": "voice",
-        "variantId": "clover-skill-1-1.flac",
+        "variantId": "v10:clover:skill.clover-1:1",
         "processedVoice": true
       }
     ],
     "voice.clover.skill.clover-2": [
       {
-        "pack": "callout-clover",
-        "start": 1.0878333333333334,
-        "duration": 1.1677083333333333,
+        "pack": "v10-voice-clover",
+        "start": 7.18625,
+        "duration": 0.82098,
         "bus": "voice",
-        "variantId": "clover-skill-2-1.flac",
+        "variantId": "v10:clover:skill.clover-2:1",
         "processedVoice": true
       }
     ],
     "voice.clover.skill.clover-3": [
       {
-        "pack": "callout-clover",
-        "start": 2.275541666666667,
-        "duration": 1.4020833333333333,
+        "pack": "v10-voice-clover",
+        "start": 8.25723,
+        "duration": 0.91531,
         "bus": "voice",
-        "variantId": "clover-skill-3-1.flac",
+        "variantId": "v10:clover:skill.clover-3:1",
         "processedVoice": true
       }
     ],
     "voice.clover.ult.charge": [
       {
-        "pack": "callout-clover",
-        "start": 3.697625,
-        "duration": 1.921375,
+        "pack": "v10-voice-clover",
+        "start": 0.0,
+        "duration": 1.92515,
         "bus": "voice",
-        "variantId": "clover-charge-1.flac",
+        "variantId": "v10:clover:ult.charge:1",
         "processedVoice": true
       },
       {
-        "pack": "callout-clover",
-        "start": 5.639,
-        "duration": 1.9244166666666667,
+        "pack": "v10-voice-clover",
+        "start": 2.17515,
+        "duration": 0.83567,
         "bus": "voice",
-        "variantId": "clover-charge-2.flac",
+        "variantId": "v10:clover:ult.charge:2",
         "processedVoice": true
       }
     ],
     "voice.clover.ult.release": [
       {
-        "pack": "callout-clover",
-        "start": 7.5834166666666665,
-        "duration": 1.2602916666666666,
+        "pack": "v10-voice-clover",
+        "start": 3.26081,
+        "duration": 1.1975,
         "bus": "voice",
-        "variantId": "clover-release-1.flac",
+        "variantId": "v10:clover:ult.release:1",
         "processedVoice": true
       },
       {
-        "pack": "callout-clover",
-        "start": 8.863708333333333,
-        "duration": 1.4629583333333334,
+        "pack": "v10-voice-clover",
+        "start": 4.70831,
+        "duration": 1.20631,
         "bus": "voice",
-        "variantId": "clover-release-2.flac",
+        "variantId": "v10:clover:ult.release:2",
         "processedVoice": true
       }
     ],
@@ -7351,57 +7363,57 @@
     ],
     "voice.yarn-giant.skill.enemy:yarn-giant:basic": [
       {
-        "pack": "callout-yarn-giant",
-        "start": 0,
-        "duration": 1.3024583333333333,
+        "pack": "v10-voice-yarn-giant",
+        "start": 6.64062,
+        "duration": 0.92506,
         "bus": "voice",
-        "variantId": "yarn-giant-skill-1-1.flac",
+        "variantId": "v10:yarn-giant:skill.enemy:yarn-giant:basic:1",
         "processedVoice": true
       }
     ],
     "voice.yarn-giant.skill.enemy:yarn-giant": [
       {
-        "pack": "callout-yarn-giant",
-        "start": 1.3224583333333333,
-        "duration": 1.1417916666666668,
+        "pack": "v10-voice-yarn-giant",
+        "start": 7.81569,
+        "duration": 1.69123,
         "bus": "voice",
-        "variantId": "yarn-giant-skill-2-1.flac",
+        "variantId": "v10:yarn-giant:skill.enemy:yarn-giant:1",
         "processedVoice": true
       }
     ],
     "voice.yarn-giant.ult.charge": [
       {
-        "pack": "callout-yarn-giant",
-        "start": 2.48425,
-        "duration": 1.0299583333333333,
+        "pack": "v10-voice-yarn-giant",
+        "start": 0.0,
+        "duration": 1.66152,
         "bus": "voice",
-        "variantId": "yarn-giant-charge-1.flac",
+        "variantId": "v10:yarn-giant:ult.charge:1",
         "processedVoice": true
       },
       {
-        "pack": "callout-yarn-giant",
-        "start": 3.5342083333333334,
-        "duration": 0.9862916666666667,
+        "pack": "v10-voice-yarn-giant",
+        "start": 1.91152,
+        "duration": 1.35367,
         "bus": "voice",
-        "variantId": "yarn-giant-charge-2.flac",
+        "variantId": "v10:yarn-giant:ult.charge:2",
         "processedVoice": true
       }
     ],
     "voice.yarn-giant.ult.release": [
       {
-        "pack": "callout-yarn-giant",
-        "start": 4.5405,
-        "duration": 1.0809166666666667,
+        "pack": "v10-voice-yarn-giant",
+        "start": 3.51519,
+        "duration": 1.1099,
         "bus": "voice",
-        "variantId": "yarn-giant-release-1.flac",
+        "variantId": "v10:yarn-giant:ult.release:1",
         "processedVoice": true
       },
       {
-        "pack": "callout-yarn-giant",
-        "start": 5.641416666666666,
-        "duration": 1.2130416666666666,
+        "pack": "v10-voice-yarn-giant",
+        "start": 4.87508,
+        "duration": 1.51554,
         "bus": "voice",
-        "variantId": "yarn-giant-release-2.flac",
+        "variantId": "v10:yarn-giant:ult.release:2",
         "processedVoice": true
       }
     ],
@@ -8279,6 +8291,16 @@
         "duration": 24,
         "bus": "ambience",
         "loop": true
+      }
+    ],
+    "voice.yarn-giant.death": [
+      {
+        "pack": "v10-voice-yarn-giant",
+        "start": 9.75692,
+        "duration": 1.85163,
+        "bus": "voice",
+        "variantId": "v10:yarn-giant:death:1",
+        "processedVoice": true
       }
     ]
   },
