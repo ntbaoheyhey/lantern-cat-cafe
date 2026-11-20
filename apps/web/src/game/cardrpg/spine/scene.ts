@@ -1,4 +1,5 @@
 import {CraftEncounter,isCraftOwner} from '../vfx-craft/encounter';
+import {pinCompiledPrograms} from './program-pin';
 import {canNarrowBattleAtlases,prepareBattleAtlases} from './effect-preload-selection';
 import {CasterFocus,FocusBannerAnchor} from '../battle-v3/focus';
 import {BattlePostFx} from '../battle-v3/post-fx';
@@ -578,6 +579,7 @@ export class SpineScene {
   }
   this.stats.particles=this.effects.stats.active;
   this.postFx.render(plan,frame?.elapsed??0,delta,view.quality??'high',view.reducedMotion,plan?this.actors.get(plan.actorId)?.actor.root:undefined,plan?this.actors.get(plan.targetIds[0]??plan.actorId)?.actor.root.position:undefined);
+  pinCompiledPrograms(this.renderer);
   if(this.restoringContext)this.finishContextRecovery();
   const bannerActor=plan?.ultimate?view.actors.find(a=>a.id===plan.actorId):undefined,bannerEntry=bannerActor?this.actors.get(bannerActor.id):undefined;
   this.cinema.render(ultLive?null:frame,view.paused,view.playbackSpeed??1,view.reducedMotion,view.fixedTime!==undefined,view.battleKey,

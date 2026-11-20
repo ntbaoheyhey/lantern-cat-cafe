@@ -11,6 +11,8 @@ export async function openWallet(page: Page) {
 export async function enterGuest(page: Page) {
   await page.goto(chainRoute);
   await page.getByRole('button', {name: 'Play free', exact: true}).click();
+  // A first visit opens with a short story beat; guests can skip it.
+  await page.getByRole('button', {name: 'Skip story', exact: true}).click();
   await openWallet(page);
   await page.getByRole('dialog', {name: 'Tutorial', exact: true}).getByRole('button', {name: 'Skip', exact: true}).click();
   await expect(page.getByTestId('chain-address')).toBeVisible();

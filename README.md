@@ -28,9 +28,11 @@ Use Node 24 and pnpm 10.28.0. The local demo needs no account, wallet setup or t
    node tools/v5int/run-chain-mode.mjs --fixture
    ```
 
-3. Open [Lantern Cat Café on port 6301](http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3). Choose **Play free → Guard the café → Face the Yarn Giant**. The complete URL selects the judge journey explicitly.
+3. Open [Lantern Cat Café on port 6301](http://127.0.0.1:6301/) and choose **Play free**. The bare address opens the full campaign.
 
-The three cats fight automatically at 1× speed. Mochi protects the team, Clover heals, and Soot delivers the final boss ultimate. The seeded journey has one street wave followed by the Yarn Giant; all twelve cats appear in Collection, while only the three demo cats enter these battles. **Play again** repeats the journey, and `&legacy=1` keeps the earlier game available.
+A short story opens the café. Your crew walks three chapters (Tangled Café, Rooftop Orchard, Midnight Pantry), each a seven-stop route of battles, an event, an elite, treasure, a shop, a campfire and a guardian: the Yarn Giant, the Rain Spool and the Pantry Crown. Battles run on their own, but you time the ultimates: when a cat's rage is full its portrait glows, and a tap casts it on that cat's next turn (**Auto** casts them for you). Drops, levels and the Forge make the crew strong enough for the next chapter. Clearing chapter three plays the epilogue. Progress saves in the browser.
+
+The 58-second judge recording remains at [`?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3`](http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3) (**Guard the café → Face the Yarn Giant**), and `&legacy=1` keeps the earlier game available.
 
 The `--fixture` launch shows an explicitly labelled receipt preview after victory: no transaction or ownership is claimed. Collection can still read real Fuji balances for a public wallet address. For the owner-configured backend, sponsored guest funding and a real mint, follow [RUN-CHAIN-MODE.md](docs/RUN-CHAIN-MODE.md) and launch the same command without `--fixture`.
 
