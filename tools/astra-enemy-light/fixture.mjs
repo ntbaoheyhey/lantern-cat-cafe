@@ -30,6 +30,8 @@ export async function openRoute(browser, { off = false, judge = false, dpr = 1 }
   if (!await page.evaluate(() => !!window.__depthReview)) await page.getByRole('button', { name: 'Play free', exact: true }).click();
   await page.waitForFunction(() => !!window.__depthReview, null, { timeout: 90000 });
   await page.evaluate(url => history.replaceState(null, '', url), url);
+  const skip = page.getByRole('button', { name:'Skip story', exact:true });
+  if (await skip.isVisible()) await skip.click();
   page.check = () => assert.deepEqual(faults, []);
   return page;
 }

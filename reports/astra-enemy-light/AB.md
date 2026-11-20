@@ -9,3 +9,7 @@ The relit side won 12 of 12. The strongest cues were the warm-to-cool turn acros
 ## Phase B
 
 The relit side won 12/12. [Choices and one-line reasons](../../docs/astra-enemy-light-2026-11-21/blind-B/result.json).
+
+## Phase C
+
+The relit side won 12/12. [Recorded choices, reasons and reveal](../../docs/astra-enemy-light-2026-11-21/blind-C/result.json).

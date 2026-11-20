@@ -10,7 +10,7 @@ const paths = execFileSync('git',['diff','--name-only','--diff-filter=M',ref,'--
 const original = new Map(paths.map(path => [path,execFileSync('git',['show',ref+':'+path],{cwd:root,encoding:'utf8'})]));
 const server = await createServer({ root:resolve(root,'apps/web'),
   cacheDir:resolve(root,'reports/astra-enemy-light/vite-pristine'),
-  server:{ host:'127.0.0.1',port:6495,strictPort:true,hmr:false },
+  server:{ host:'127.0.0.1',port:Number(process.env.ENEMY_BASE_PORT ?? 6495),strictPort:true,hmr:false },
   plugins:[{ name:'pristine-tracked-sources', enforce:'pre', load(id) {
     return original.get(relative(root,id.split('?')[0])) ?? null;
   }}],

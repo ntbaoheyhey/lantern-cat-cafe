@@ -1,6 +1,6 @@
-Phase C. Phase A and B passed all gates. Draft https://github.com/ntbaoheyhey/taskbar-hero/pull/463.
-Branch codex/astra-enemy-light-2026-11-21. Last pushed 1bfcc7c84. Base 1f7097e5e.
-NEXT 1 Extend PaintDeath on enemy materials and verify native/drawn disappearance and source capture.
-NEXT 2 Capture six moods for each enemy; verify home, phase two, A/B and performance.
-NEXT 3 Run full suite, validate provenance, finalize reports, push and update the same draft.
-B motion and blind review complete, no open B gates. See BLOCKERS.md.
+Phase C shipped as WIP 9f1b9a31e on codex/astra-enemy-light-2026-11-21. Draft https://github.com/ntbaoheyhey/taskbar-hero/pull/463.
+A/B passed all gates. C gallery, death samples and blind choices saved. Integrated current main dfd48e642; scene hook 5 added, 1 removed.
+NEXT 1 Finish integrated full suite, pristine/off comparison, production build, direct judge run and 20s perf pairs.
+NEXT 2 Run final gates, reproduce maps, validate scope/bytes and update the 40-line final report.
+NEXT 3 Publish remaining changes and verify draft body, branch tip, and all evidence URLs.
+Prior full suite 3289/3289. All blind sheets and the C death images already judged. See BLOCKERS.md.
