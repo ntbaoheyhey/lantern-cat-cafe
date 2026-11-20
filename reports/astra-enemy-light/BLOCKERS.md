@@ -11,3 +11,4 @@ No open project blockers at setup.
 - The first implementation push followed the setup push by 22 minutes, two minutes beyond the requested cadence. The WIP is published on the assigned branch.
 - Final integration on dfd48e642: StageLayout.test.tsx timed out at its stock 5000 ms limit in the desktop seven-tabs test with concurrent captures/build. The other 3291 tests passed. Reran only that file, then the full suite in isolation at its original timeout.
 - A later WIP interval also exceeded 20 minutes during final verification. The completed evidence and reports are included in the final push.
+- Publication of 64675f1bc initially returned HTTP 408 ("unexpected disconnect while reading sideband packet"). Verified remote still at 9f1b9a31e, then retried the same non-force push over HTTP/1.1 with a 32 MiB request buffer. GitHub confirmed the branch and open draft at 64675f1bc.

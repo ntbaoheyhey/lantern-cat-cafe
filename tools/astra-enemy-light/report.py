@@ -22,7 +22,7 @@ lines = ["Requested by baoheyhey (Codex order ASTRA ENEMY LIGHT)", "",
          + (" Attacks light the facing surface for 160 ms. The key follows breathing and boss landings sweep the rim." if phase!="A" else "")
          + (" Deaths unwind into a yarn-coloured edge. The gallery contains 78 captures." if phase=="C" else ""),
          "Kill switch `?enemyLight=0`. " + (f"[Draft PR]({pr}). " if pr!="pending" else "")
-         + f"Files under cardrpg include spine/{'{'}enemy-relight.ts, enemy-relight.test.ts, boss-arrival.ts, scene.ts{'}'} and vfx-craft/enemy-{'{'}ground,surface,unravel{'}'}.ts. The scene hook adds five lines and replaces one. The remaining files are 13 unit maps, tools/astra-enemy-light, the evidence directory and reports/astra-enemy-light. [Provenance]({base}{exhibit}/PROVENANCE.md).",
+         + f"Files under cardrpg include spine/{'{'}enemy-relight.ts, enemy-relight.test.ts, boss-arrival.ts, scene.ts{'}'} and vfx-craft/enemy-{'{'}ground,surface,unravel{'}'}.ts. The scene hook diff is +5/−1. The remaining files are 13 unit maps, tools/astra-enemy-light, the evidence directory and reports/astra-enemy-light. [Provenance]({base}{exhibit}/PROVENANCE.md).",
 
          "", "## Before and after", "", "| Enemy | Switch off | Relit | Boss phase 2 |","|---|---|---|---|"]
 for id in ids:
@@ -44,7 +44,7 @@ lines += [f"- Cat regions and exterior light over 2/255 both measured zero chang
           + (" "+state['fullSuite'] if 'fullSuite' in state else ""),
           "", "## Known gaps and reproduction", "",
           f"Height maps were absent. The nine aligned pages contain painted colour and four drawn sets have different UVs. The local mood table covers the six palettes."
-          + (" The captures use the shared stage painting. Resolved issues included install detachment, imaging dependencies, C2 fixture rows, the atlas descriptor, a GLSL identifier, video/mask synchronization, an initial luminance overshoot, production review access, an early long-frame sample and the layout test timeout. One WIP interval reached 22 minutes. Human review is the remaining action." if phase=='C' else '')
+          + (" The captures use the shared stage painting. Resolved issues included install detachment, imaging dependencies, C2 fixture rows, the atlas descriptor, a GLSL identifier, video/mask synchronization, an initial luminance overshoot, production review access, an early long-frame sample and the layout test timeout. Some WIP intervals exceeded 20 minutes. A final HTTP 408 cleared on a non-force retry. Human review is the remaining action." if phase=='C' else '')
           + f" [Blocker details]({base}reports/astra-enemy-light/BLOCKERS.md). [Proposals]({base}reports/astra-enemy-light/PROPOSALS.md).",
           "`pnpm --filter @taskbar-hero/web dev --host 127.0.0.1 --port 6493 --strictPort` then "
           f"`node tools/astra-enemy-light/capture.mjs --dpr=2 --out=reports/astra-enemy-light/phase-{phase}`."
