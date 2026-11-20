@@ -13,6 +13,17 @@ try {
   result.browser = browser.version();
   for (const [i, fixture] of scenarios.entries()) {
     const pair = result.scenarios[fixture.id] = {};
+    // Prime both shader variants and the same legal actions before either timed sample.
+    // GPU driver compilation and first-use VFX decoding otherwise depend on test order.
+    for (const off of [true,false]) {
+      const warm = await openRoute(browser, { off });
+      await setBattle(warm, makeBattle(fixture.enemies, fixture.chapter));
+      await warm.evaluate(async () => {
+        window.__depthReview.paused = false; window.__depthReview.notify(false);
+        await new Promise(resolve => setTimeout(resolve, 24000));
+      });
+      warm.check(); await warm.close();
+    }
     for (const off of i % 2 ? [false,true] : [true,false]) {
       const page = await openRoute(browser, { off });
       await setBattle(page, makeBattle(fixture.enemies, fixture.chapter));
@@ -27,7 +38,7 @@ try {
         let previous, draws = 0, textures = 0;
         await new Promise(resolve => {
           const tick = now => {
-            if (previous !== undefined) samples.push(now - previous);
+            if (previous !== undefined) samples.push(Math.round((now - previous)*10)/10);
             previous = now;
             draws = Math.max(draws, s.renderer.info.render.calls);
             textures = Math.max(textures, s.renderer.info.memory.textures);

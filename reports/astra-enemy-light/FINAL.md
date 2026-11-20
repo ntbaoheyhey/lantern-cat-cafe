@@ -1,0 +1,37 @@
+Requested by baoheyhey (Codex order ASTRA ENEMY LIGHT)
+
+## What changed
+
+13 hostile silhouettes share six arena palettes. Their alpha supplies per-pixel bevels, inside rims and base shade. The existing shadow pass supplies contact and short cast shadows.
+Kill switch `?enemyLight=0`. Files include the enemy lighting module/tests, enemy-only VFX helpers, the marked scene hook, 13 generated maps, capture tools and evidence. [Provenance](https://github.com/ntbaoheyhey/taskbar-hero/blob/codex/astra-enemy-light-2026-11-21/docs/astra-enemy-light-2026-11-21/PROVENANCE.md).
+
+## Before and after
+
+| Enemy | Switch off | Relit | Boss phase 2 |
+|---|---|---|---|
+| button-guard | [Before](https://github.com/ntbaoheyhey/taskbar-hero/blob/codex/astra-enemy-light-2026-11-21/docs/astra-enemy-light-2026-11-21/battle/button-guard-before.webp) | [After](https://github.com/ntbaoheyhey/taskbar-hero/blob/codex/astra-enemy-light-2026-11-21/docs/astra-enemy-light-2026-11-21/battle/button-guard-after.webp) | — |
+| sock-skipper | [Before](https://github.com/ntbaoheyhey/taskbar-hero/blob/codex/astra-enemy-light-2026-11-21/docs/astra-enemy-light-2026-11-21/battle/sock-skipper-before.webp) | [After](https://github.com/ntbaoheyhey/taskbar-hero/blob/codex/astra-enemy-light-2026-11-21/docs/astra-enemy-light-2026-11-21/battle/sock-skipper-after.webp) | — |
+| spool-ram | [Before](https://github.com/ntbaoheyhey/taskbar-hero/blob/codex/astra-enemy-light-2026-11-21/docs/astra-enemy-light-2026-11-21/battle/spool-ram-before.webp) | [After](https://github.com/ntbaoheyhey/taskbar-hero/blob/codex/astra-enemy-light-2026-11-21/docs/astra-enemy-light-2026-11-21/battle/spool-ram-after.webp) | — |
+| needle-moth | [Before](https://github.com/ntbaoheyhey/taskbar-hero/blob/codex/astra-enemy-light-2026-11-21/docs/astra-enemy-light-2026-11-21/battle/needle-moth-before.webp) | [After](https://github.com/ntbaoheyhey/taskbar-hero/blob/codex/astra-enemy-light-2026-11-21/docs/astra-enemy-light-2026-11-21/battle/needle-moth-after.webp) | — |
+| teacup-healer | [Before](https://github.com/ntbaoheyhey/taskbar-hero/blob/codex/astra-enemy-light-2026-11-21/docs/astra-enemy-light-2026-11-21/battle/teacup-healer-before.webp) | [After](https://github.com/ntbaoheyhey/taskbar-hero/blob/codex/astra-enemy-light-2026-11-21/docs/astra-enemy-light-2026-11-21/battle/teacup-healer-after.webp) | — |
+| kettle-knight | [Before](https://github.com/ntbaoheyhey/taskbar-hero/blob/codex/astra-enemy-light-2026-11-21/docs/astra-enemy-light-2026-11-21/battle/kettle-knight-before.webp) | [After](https://github.com/ntbaoheyhey/taskbar-hero/blob/codex/astra-enemy-light-2026-11-21/docs/astra-enemy-light-2026-11-21/battle/kettle-knight-after.webp) | — |
+| yarn-giant | [Before](https://github.com/ntbaoheyhey/taskbar-hero/blob/codex/astra-enemy-light-2026-11-21/docs/astra-enemy-light-2026-11-21/battle/yarn-giant-before.webp) | [After](https://github.com/ntbaoheyhey/taskbar-hero/blob/codex/astra-enemy-light-2026-11-21/docs/astra-enemy-light-2026-11-21/battle/yarn-giant-after.webp) | [Off](https://github.com/ntbaoheyhey/taskbar-hero/blob/codex/astra-enemy-light-2026-11-21/docs/astra-enemy-light-2026-11-21/battle/yarn-giant-phase2-before.webp) / [On](https://github.com/ntbaoheyhey/taskbar-hero/blob/codex/astra-enemy-light-2026-11-21/docs/astra-enemy-light-2026-11-21/battle/yarn-giant-phase2-after.webp) |
+| binding-thread | [Before](https://github.com/ntbaoheyhey/taskbar-hero/blob/codex/astra-enemy-light-2026-11-21/docs/astra-enemy-light-2026-11-21/battle/binding-thread-before.webp) | [After](https://github.com/ntbaoheyhey/taskbar-hero/blob/codex/astra-enemy-light-2026-11-21/docs/astra-enemy-light-2026-11-21/battle/binding-thread-after.webp) | — |
+| practice-cushion | [Before](https://github.com/ntbaoheyhey/taskbar-hero/blob/codex/astra-enemy-light-2026-11-21/docs/astra-enemy-light-2026-11-21/battle/practice-cushion-before.webp) | [After](https://github.com/ntbaoheyhey/taskbar-hero/blob/codex/astra-enemy-light-2026-11-21/docs/astra-enemy-light-2026-11-21/battle/practice-cushion-after.webp) | — |
+| pollen-scout | [Before](https://github.com/ntbaoheyhey/taskbar-hero/blob/codex/astra-enemy-light-2026-11-21/docs/astra-enemy-light-2026-11-21/battle/pollen-scout-before.webp) | [After](https://github.com/ntbaoheyhey/taskbar-hero/blob/codex/astra-enemy-light-2026-11-21/docs/astra-enemy-light-2026-11-21/battle/pollen-scout-after.webp) | — |
+| rain-spool | [Before](https://github.com/ntbaoheyhey/taskbar-hero/blob/codex/astra-enemy-light-2026-11-21/docs/astra-enemy-light-2026-11-21/battle/rain-spool-before.webp) | [After](https://github.com/ntbaoheyhey/taskbar-hero/blob/codex/astra-enemy-light-2026-11-21/docs/astra-enemy-light-2026-11-21/battle/rain-spool-after.webp) | [Off](https://github.com/ntbaoheyhey/taskbar-hero/blob/codex/astra-enemy-light-2026-11-21/docs/astra-enemy-light-2026-11-21/battle/rain-spool-phase2-before.webp) / [On](https://github.com/ntbaoheyhey/taskbar-hero/blob/codex/astra-enemy-light-2026-11-21/docs/astra-enemy-light-2026-11-21/battle/rain-spool-phase2-after.webp) |
+| crumb-sentinel | [Before](https://github.com/ntbaoheyhey/taskbar-hero/blob/codex/astra-enemy-light-2026-11-21/docs/astra-enemy-light-2026-11-21/battle/crumb-sentinel-before.webp) | [After](https://github.com/ntbaoheyhey/taskbar-hero/blob/codex/astra-enemy-light-2026-11-21/docs/astra-enemy-light-2026-11-21/battle/crumb-sentinel-after.webp) | — |
+| pantry-crown | [Before](https://github.com/ntbaoheyhey/taskbar-hero/blob/codex/astra-enemy-light-2026-11-21/docs/astra-enemy-light-2026-11-21/battle/pantry-crown-before.webp) | [After](https://github.com/ntbaoheyhey/taskbar-hero/blob/codex/astra-enemy-light-2026-11-21/docs/astra-enemy-light-2026-11-21/battle/pantry-crown-after.webp) | [Off](https://github.com/ntbaoheyhey/taskbar-hero/blob/codex/astra-enemy-light-2026-11-21/docs/astra-enemy-light-2026-11-21/battle/pantry-crown-phase2-before.webp) / [On](https://github.com/ntbaoheyhey/taskbar-hero/blob/codex/astra-enemy-light-2026-11-21/docs/astra-enemy-light-2026-11-21/battle/pantry-crown-phase2-after.webp) |
+
+## Verification
+
+- Phase A passed G1–G8.
+- boss p95 16.8 → 16.8 ms. Frames over 50 ms 0 → 0. Added maps 4.92 MB.
+- wave3 p95 16.7 → 16.8 ms. Frames over 50 ms 0 → 0. Added maps 7.54 MB.
+- Cat regions and exterior light over 2/255 both measured zero changed pixels. Largest absolute body-luminance change 11.33%. Blind picks 12/12. Self-score 86/100.
+- Typecheck and 434 focused tests passed. Both judge recordings ended with identical logs and result hashes.
+
+## Known gaps and reproduction
+
+Height maps were absent. The nine aligned pages contain painted colour and four drawn sets have different UVs. The local mood table covers the six palettes. [Blockers and fixes](https://github.com/ntbaoheyhey/taskbar-hero/blob/codex/astra-enemy-light-2026-11-21/reports/astra-enemy-light/BLOCKERS.md). [Proposals](https://github.com/ntbaoheyhey/taskbar-hero/blob/codex/astra-enemy-light-2026-11-21/reports/astra-enemy-light/PROPOSALS.md).
+`pnpm --filter @taskbar-hero/web dev --host 127.0.0.1 --port 6493 --strictPort` then `node tools/astra-enemy-light/capture.mjs --dpr=2 --out=reports/astra-enemy-light/phase-A`.

@@ -31,6 +31,8 @@ vec2 body = clamp((enemyWorld - enemyBox.xy) * enemyBox.zw, 0.0, 1.0);
 vec2 ux = vec2(dFdx(vMapUv.x), dFdy(vMapUv.x));
 vec2 vy = vec2(dFdx(vMapUv.y), dFdy(vMapUv.y));
 vec2 du = dFdx(vMapUv), dv = dFdy(vMapUv);
+// All body materials are transparent with depth writes off. Empty texels have no contribution.
+if (diffuseColor.a <= 0.0) discard;
 vec2 tilt;
 float edge, crease;
 if (enemyBaked > 0.5) {
