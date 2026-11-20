@@ -79,3 +79,9 @@
 .b3-ult-hint b{color:#ffd36b}
 @keyframes b3-hint-in{from{opacity:0;transform:translate(-50%,8px)}to{opacity:1;transform:translate(-50%,0)}}
 @media (prefers-reduced-motion:reduce){.b3-hud button.b3-portrait[data-ready=true][data-manual=true]{animation:none;box-shadow:0 0 0 4px #fff1b8,0 0 24px 8px #ffd36bcc}}
+/* Guardian wind-up warning: the one moment worth saving an ultimate for. */
+.b3-threat{position:fixed;z-index:30;top:64px;left:50%;transform:translateX(-50%);display:grid;gap:2px;max-width:min(640px,80vw);padding:8px 18px;border-radius:12px;background:linear-gradient(#5a1e1ef0,#3b1418f0);border:2px solid #ff8a5c;box-shadow:0 0 24px #ff5a3a88,0 6px 18px #000a;color:#fff1e8;text-align:center;pointer-events:none;animation:b3-threat-in .4s cubic-bezier(.2,.9,.3,1.3),b3-threat-pulse 1.1s ease-in-out .4s infinite}
+.b3-threat b{font-size:16px;letter-spacing:.02em;color:#ffd0b8}.b3-threat span{font-size:13px;opacity:.92}
+@keyframes b3-threat-in{from{opacity:0;transform:translate(-50%,-12px) scale(.9)}to{opacity:1;transform:translate(-50%,0)}}
+@keyframes b3-threat-pulse{0%,100%{box-shadow:0 0 18px #ff5a3a77,0 6px 18px #000a}50%{box-shadow:0 0 34px #ff5a3acc,0 6px 18px #000a}}
+@media (prefers-reduced-motion:reduce){.b3-threat{animation:none}}

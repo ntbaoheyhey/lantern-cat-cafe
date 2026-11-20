@@ -43,7 +43,7 @@ it('preserves quadruple speed for legacy playback',()=>{
 it('explains the A6 rage trigger while leaving the earlier ultimate rule in legacy mode',()=>{
  const view=render(<Codex v4 skillsV5 a6/>);
  fireEvent.change(screen.getByRole('combobox',{name:'Guide chapter'}),{target:{value:'3'}});
- expect(screen.getByText(/automatically at 100 rage/)).toBeTruthy();
+ expect(screen.getByText(/At 100 rage a portrait glows/)).toBeTruthy();
  expect(screen.queryByText(/after two own turns/)).toBeNull();
  view.rerender(<Codex v4 skillsV5/>);
  expect(screen.getByText(/after two own turns/)).toBeTruthy();

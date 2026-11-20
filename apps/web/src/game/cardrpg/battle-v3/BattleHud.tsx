@@ -94,6 +94,10 @@ export default function BattleHud({m}:{m:DepthModel}){
   </div>)}</div>
   <footer className="b3-bottom">
    <button data-tutorial-id="battle-speed" className="b3-speed" aria-label="Change playback speed" onClick={()=>m.cycleSpeed()}>×{m.state.settings.speed}</button>
+   {(()=>{const threat=battle.intents.find(i=>{const foe=battle.actors.find(a=>a.id===i.actorId);return i.signature&&!i.interrupted&&foe&&foe.hp>0&&['boss','elite'].includes(R.ENEMY_BY_ID[foe.catalogId]?.tier??'');});
+    if(!threat)return null;const foe=battle.actors.find(a=>a.id===threat.actorId)!,target=battle.actors.find(a=>a.id===threat.targetId);
+    const name=threat.label.includes(' · ')?threat.label.split(' · ')[1]:threat.label;
+    return <aside className="b3-threat" role="status" key={threat.actorId+battle.round}><b>⚠ {foe.name} is winding up{name&&!/basic/i.test(name)?`: ${name}`:' a heavy strike'}</b><span>{target&&target.side==='party'?`Aimed at ${target.name}. `:''}{threat.counter}</span></aside>;})()}
    {(()=>{if(controls.auto||ultHintDone())return null;const readyCat=party.find(cat=>{const u=R.CAT_BY_ID[cat.catalogId]?.skills.find(s=>s.type==='ultimate');return cat.hp>0&&cat.charge>=100&&cat.skills.includes(u?.id??'')&&!controls.queued.has(cat.id);});
     return readyCat?<p className="b3-ult-hint" role="status"><b>{readyCat.name}'s ultimate is ready.</b> Tap the glowing portrait to cast it on {readyCat.name}'s next turn. Time it: shields before a boss slam, heals after it.</p>:null;})()}
    <div data-tutorial-id="battle-roles" className="b3-party" aria-label="Crew health and ultimates">{party.map(cat=>{
