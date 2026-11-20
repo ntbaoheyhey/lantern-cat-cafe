@@ -1,1 +1,4 @@
 - Created the managed worktree from fresh origin/main (1710e1bc4). ~/th-astra points to it. Disk had 265 GiB available. Node v24.22.2 and pnpm 10.28.0.
+- The live colour atlas carries the name rig-depth on nine enemies. None of the thirteen files contains height. Bake normals from smoothed distances inside the actual source alpha, including every drawn pose, with a single GPU lookup. Keep the tints and decoding already installed by the renderer. Use an alpha-sampling fallback for alternative material layouts.
+- Use the six enemy palettes selected by chapter and boss asset until main exports arenaMood. Direction is fixed in screen space. Preserve the existing contact pass on each path.
+- Verification uses lossless WebGL colour/coverage passes and 2x browser screenshots that include the HUD and boss aura. The cat test covers the entire union of cat bounding rectangles. The untouched baseline uses the prerework production build served on port 6494.

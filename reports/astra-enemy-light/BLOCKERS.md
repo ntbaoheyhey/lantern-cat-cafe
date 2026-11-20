@@ -1,2 +1,9 @@
 No open project blockers at setup.
 - Setup: the shell exited before the background install wrote any log or installed dependencies. Restarted it in a detached tool session with the same command and log. The system Python lacked PIL and the bundled Python lacked SciPy. Image tools use a separate environment.
+- First learn fixture: “C2 requires a valid formation and Gameplay A6”. Campaign captures now use the legal four-cat formation from setFormationC2. The judge route retains its own three-cat recording.
+- No scalar height fields are present. Each rig-depth.webp is painted RGBA. The four drawn sets also have different UV layouts. Used the specified alpha bevel fallback and recorded all overlay comparisons.
+- stage-painting.ts at 1710e1bc4 has no arenaMood export. Use the six-key chapter/boss fallback permitted by A5.
+- Phase A development: TypeScript rejected pages[0].image; the native descriptor uses name. Chromium also rejected the GLSL identifier “cast” in the floor material. Corrected both and reran live capture.
+- First capture diagnostics exposed uncleared offscreen black/white passes, independent idle-video frames and rule-spawned Binding Threads outside the principal enemy mask. Cleared both passes, pinned the existing designer frame for capture, and measured the full-field exterior against all visible hostile silhouettes while retaining the per-body check.
+- First light pass lifted native body luminance by up to 41.34%. Removed absolute fill from the key and bounded rim radiance against the source luminance. Rerun recorded separately.
+- Pristine production campaign timed out waiting for __depthReview without the dev query. Opened the production campaign with its explicit dev review switch, then restored its canonical URL. All 16 switch-off frames match the untouched production build exactly at DPR 1.

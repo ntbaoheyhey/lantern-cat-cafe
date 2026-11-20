@@ -1,6 +1,6 @@
-Phase A · learning the full campaign renderer. Started 2026-11-20 16:52 UTC.
-Branch codex/astra-enemy-light-2026-11-21. Base 1710e1bc4. No push yet.
-NEXT 1 Trace assets, hooks and review controls, start dev server and inspect live actors.
-NEXT 2 Compare shipped depth to actual textures and record alignment.
-NEXT 3 Implement the gated lighting and verify on paired frames.
-Open blockers: see BLOCKERS.md.
+Phase A. Finished runtime inventory, alignment review, baseline build and 16 untouched baseline captures.
+Base 1710e1bc4; branch codex/astra-enemy-light-2026-11-21; last push 1b8ea1a36.
+NEXT 1 Bake reproducible alpha normals for the nine native atlases and four drawing sets.
+NEXT 2 Install material/ground hooks and verify fixed frames, alpha, cats, determinism and timing.
+NEXT 3 Run the phase A blind comparison and open the draft after hard gates.
+All alignment sheets judged once. Blockers and fallbacks recorded in BLOCKERS.md.
