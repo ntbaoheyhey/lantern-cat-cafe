@@ -17,11 +17,13 @@ This note lets a new session pick up the work. Update it when the state changes.
 ## Open PRs and merge order (the integration thread owns merges)
 
 1. #455 gear drops, Ch3 balance, boss result screen. **Merged.**
-2. #462 smooth cat idle: the video no longer pauses on hits or ultimates.
-3. #458 campaign default, manual ultimates, story beats, boss warning, shader-program pinning.
+2. #462 smooth cat idle: the video no longer pauses on hits or ultimates. **Merged.**
+3. #458 campaign default, manual ultimates, story beats, boss warning, shader-program pinning. **Merged.**
 4. #459 Relic offer after the Ch1 guardian.
 5. #460 chapter arenas and boss grades.
 6. #461 boss and elite voices, boss stings, victory and defeat cues.
+7. Director follow-up (this branch): the chapter intro story beat now shows, plus this checkpoint.
+8. #463 Codex enemy relight. Optional; merge only if its screenshots are clearly better.
 
 #455 and #458 both touch `supabase/functions/_shared/chain-campaign-manifest.ts`. After any merge that changes `packages/game-rules/src`, run `node tools/chain/campaign-manifest.mjs`. Also refresh `docs/chain/supply-study.json` hashes with `node tools/chain/supply-study.mjs`, which takes about 6 minutes; its supply numbers should stay unchanged.
 
