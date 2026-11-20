@@ -7,7 +7,7 @@ import {ELEMENT_COLORS} from '../stage/core';
 import BattleLogV3 from '../ui-v3/BattleLogV3';
 import BattleLeaveV3 from '../ui-v3/BattleLeaveV3';
 import {SoundControlA6} from '../ui-v3/SoundControlA6';
-import {battleControls,skipPlate,type CinematicMode} from './controls';
+import {battleControls,setAutoUltimates,skipPlate,type CinematicMode} from './controls';
 import {STATUS_BODY,STATUS_COLOR,STATUS_PATH} from './status';
 import '@fontsource/baloo-2/800.css';
 import './battle.css';
@@ -38,6 +38,10 @@ function Badges({actor,tutorial=false}:{actor:R.Actor;tutorial?:boolean}){
   {actor.statuses.length>3&&<span tabIndex={0} title={actor.statuses.slice(3).map(s=>R.STATUS_BY_ID[s.id].name).join(',')} aria-label={`${actor.statuses.length-3} more statuses`}>+{actor.statuses.length-3}</span>}
  </div>;
 }
+const ULT_HINT_KEY='lantern-ult-hint';
+let ultHintSession=false;
+function ultHintDone(){if(ultHintSession)return true;try{return localStorage.getItem(ULT_HINT_KEY)==='done';}catch{return false;}}
+function markUltHintDone(){ultHintSession=true;try{localStorage.setItem(ULT_HINT_KEY,'done');}catch{/* Session flag still hides it. */}}
 export default function BattleHud({m}:{m:DepthModel}){
  const battle=m.visualBattle!,controls=battleControls(m),world=useRef(new Map<string,HTMLDivElement>()),total=useRef<HTMLOutputElement>(null);
  const worldLayer=useRef<HTMLDivElement>(null);
@@ -90,18 +94,24 @@ export default function BattleHud({m}:{m:DepthModel}){
   </div>)}</div>
   <footer className="b3-bottom">
    <button data-tutorial-id="battle-speed" className="b3-speed" aria-label="Change playback speed" onClick={()=>m.cycleSpeed()}>×{m.state.settings.speed}</button>
+   {(()=>{const threat=battle.intents.find(i=>{const foe=battle.actors.find(a=>a.id===i.actorId);return i.signature&&!i.interrupted&&foe&&foe.hp>0&&['boss','elite'].includes(R.ENEMY_BY_ID[foe.catalogId]?.tier??'');});
+    if(!threat)return null;const foe=battle.actors.find(a=>a.id===threat.actorId)!,target=battle.actors.find(a=>a.id===threat.targetId);
+    const name=threat.label.includes(' · ')?threat.label.split(' · ')[1]:threat.label;
+    return <aside className="b3-threat" role="status" key={threat.actorId+battle.round}><b>⚠ {foe.name} is winding up{name&&!/basic/i.test(name)?`: ${name}`:' a heavy strike'}</b><span>{target&&target.side==='party'?`Aimed at ${target.name}. `:''}{threat.counter}</span></aside>;})()}
+   {(()=>{if(controls.auto||ultHintDone())return null;const readyCat=party.find(cat=>{const u=R.CAT_BY_ID[cat.catalogId]?.skills.find(s=>s.type==='ultimate');return cat.hp>0&&cat.charge>=100&&cat.skills.includes(u?.id??'')&&!controls.queued.has(cat.id);});
+    return readyCat?<p className="b3-ult-hint" role="status"><b>{readyCat.name}'s ultimate is ready.</b> Tap the glowing portrait to cast it on {readyCat.name}'s next turn. Time it: shields before a boss slam, heals after it.</p>:null;})()}
    <div data-tutorial-id="battle-roles" className="b3-party" aria-label="Crew health and ultimates">{party.map(cat=>{
     const ult=R.CAT_BY_ID[cat.catalogId]?.skills.find(s=>s.type==='ultimate'),ready=cat.hp>0&&cat.charge>=100&&cat.skills.includes(ult?.id??''),queued=controls.queued.has(cat.id);
     const stars=m.state.account.cards.find(c=>c.cardId===cat.catalogId)?.stars??1;
-    return <button key={cat.id} className="b3-portrait" data-actor={cat.id} data-ready={ready} data-fallen={cat.hp<=0} data-rarity={CARD_BY_ID[cat.catalogId]?.rarity} title={cat.name}
+    return <button key={cat.id} className="b3-portrait" data-actor={cat.id} data-ready={ready} data-manual={!controls.auto} data-queued={queued} data-fallen={cat.hp<=0} data-rarity={CARD_BY_ID[cat.catalogId]?.rarity} title={cat.name}
      style={{'--element':ELEMENT_COLORS[cat.catalogId]??'#e8c06e'} as CSSProperties}
      aria-label={`${cat.name} ultimate: ${ready?'Ready':cat.hp<=0?'Fallen':cat.charge+'/100 rage'}.${controls.auto?' Casts automatically.':queued?' Queued for next legal turn.':' Click to queue.'}`}
-     onClick={()=>{if(!controls.auto&&ready){queued?controls.queued.delete(cat.id):controls.queued.add(cat.id);m.notify(false);}}}>
+     onClick={()=>{if(!controls.auto&&ready){if(queued)controls.queued.delete(cat.id);else{controls.queued.add(cat.id);markUltHintDone();}m.notify(false);}}}>
       <img src={`/units/${cat.catalogId}/portrait.webp`} alt=""/><span className="b3-name" aria-hidden="true">{cat.name}</span><span className="b3-portrait-shine" aria-hidden="true"/><span className="b3-stars" aria-label={stars+' stars'}>{'★'.repeat(stars)}</span>
-      {queued&&<span className="b3-queued" aria-label="Queued">◆</span>}<Meter hp={cat.hp} max={cat.maxHp} shield={cat.shield} name={cat.name} reduced={m.state.settings.reducedMotion}/><span data-tutorial-id={cat.id===party[0]?.id?"battle-rage":undefined} className="b3-rage-target"><Rage value={cat.charge} name={cat.name}/></span>
+      {queued?<span className="b3-queued" aria-label="Queued">Next turn</span>:ready&&!controls.auto&&<span className="b3-tap" aria-hidden="true">TAP</span>}<Meter hp={cat.hp} max={cat.maxHp} shield={cat.shield} name={cat.name} reduced={m.state.settings.reducedMotion}/><span data-tutorial-id={cat.id===party[0]?.id?"battle-rage":undefined} className="b3-rage-target"><Rage value={cat.charge} name={cat.name}/></span>
      </button>;
    })}</div>
-   <div className="b3-bottom-actions"><button aria-label="Toggle Auto ultimates" aria-pressed={controls.auto} onClick={()=>{controls.auto=!controls.auto;m.notify(false);}} className="b3-auto"><GameIcon name="refresh" size={20}/>Auto<i data-on={controls.auto}/></button>
+   <div className="b3-bottom-actions"><button aria-label="Toggle Auto ultimates" aria-pressed={controls.auto} onClick={()=>setAutoUltimates(m,!controls.auto)} className="b3-auto"><GameIcon name="refresh" size={20}/>Auto<i data-on={controls.auto}/></button>
     <button aria-label="Skip to result" disabled={!m.canSkip} title={m.canSkip?'Skip to result':'Earn three stars to skip this battle'} onClick={()=>m.skip()} className="b3-skip"><svg viewBox="0 0 32 24" aria-hidden="true"><path d="M4 4 15 12 4 20ZM16 4 27 12 16 20Z"/><path d="M29 4V20"/></svg></button></div>
   </footer>
   <button ref={skipButton} hidden className="b3-skip-plate" onClick={()=>skipPlate(m)} aria-label="Skip cinematic" title="Skip cinematic"><svg viewBox="0 0 32 24" aria-hidden="true"><path d="M4 4 15 12 4 20ZM16 4 27 12 16 20Z"/></svg></button>

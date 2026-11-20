@@ -2,14 +2,8 @@ export interface Lesson{icon:string;text:string;target:string}
 const at=(id:string)=>`[data-tutorial-id="${id}"]`;
 export const LESSONS:Record<string,readonly Lesson[]>={
  battle:[
-  {icon:'team',text:'Guardians hold front. Witches hit groups. Alchemists heal.',target:at('battle-roles')},
   {icon:'shield',text:'Front cats protect the back row.',target:at('battle-rows')},
-  {icon:'clock',text:'These portraits show who acts next.',target:at('battle-order')},
-  {icon:'debuff',text:'Read enemy intent. Choose targeting before battle.',target:at('battle-intent')},
-  {icon:'buff',text:'Basics build rage. Full rage readies your Ultimate.',target:at('battle-rage')},
-  {icon:'burn',text:'Status icons show shields, burns, and delays.',target:at('battle-statuses')},
-  {icon:'potion',text:'Pack supplies before battle. Your packed treat appears here.',target:at('battle-supplies')},
-  {icon:'settings',text:'Change speed here. Pause and Auto remain available.',target:at('battle-speed')},
+  {icon:'buff',text:'Full rage: tap the glowing portrait to cast.',target:at('battle-rage')},
  ],
  team:[{icon:'team',text:'Keep guardians in front and fragile cats behind.',target:at('team-rows')},{icon:'weapon',text:'Choose a gear slot to compare upgrades.',target:at('team-gear')},{icon:'outfit',text:'Save a crew for each activity.',target:at('team-tools')}],
  inventory:[{icon:'bag',text:'Select gear to compare stats and equip a cat.',target:at('bag-item')},{icon:'forge',text:'Enhance gear here. Review costs before confirming.',target:at('bag-enhance')},{icon:'star-thread',text:'Open the workshop to fuse matching gear.',target:at('bag-workshop')}],
@@ -23,7 +17,7 @@ export const GUIDE_PAGES=[
  {id:'roles',title:'Roles',icon:'team',text:'Guardians protect. Witches strike groups. Alchemists heal. Keep two cats forward.'},
  {id:'formation',title:'Rows',icon:'shield',text:'The front row protects fragile allies. Drag cats in Team.'},
  {id:'turns',title:'Turns',icon:'clock',text:'Turn order follows initiative. Read enemy intent before choosing your plan.'},
- {id:'rage',title:'Rage',icon:'buff',text:'Ultimates cast automatically at 100 rage, when the cat can act.'},
+ {id:'rage',title:'Rage',icon:'buff',text:'At 100 rage a portrait glows. Tap it and that cat casts its Ultimate on its next turn. Turn on Auto to cast them automatically.'},
  {id:'statuses',title:'Statuses',icon:'burn',text:'Burn damages. Freeze delays. Shields absorb hits. Inspect duration and stacks.'},
  {id:'supplies',title:'Supplies',icon:'potion',text:'Pack supplies during preparation. Using one spends that cat’s action.'},
  {id:'speed',title:'Speed',icon:'settings',text:'Choose one, two, or three times speed. Pause auto anytime.'},
