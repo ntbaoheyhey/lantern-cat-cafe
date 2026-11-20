@@ -24,3 +24,13 @@
 .a6-gear-drop-cat {width:30px;height:30px;border-radius:50%;object-fit:cover;border:2px solid var(--rarity);margin-left:4px;background:#0005}
 .a6-gear-drops {position:relative}
 .a6-drop-chance {position:absolute;right:-6px;top:-10px;margin:0}
+.a6-reward-icon {display:grid;place-items:center;border-radius:50%;background:#f8df9b;border:2px solid #a67532;box-sizing:border-box}
+.a6-chapter-clear {display:flex;align-items:center;justify-content:center;gap:8px;margin:0 auto 8px;padding:6px 16px;border-radius:99px;width:max-content;max-width:100%;
+ background:linear-gradient(90deg,#6d2f1f,#b5662c 50%,#6d2f1f);border:2px solid #f2c46d;color:#fff3d6;font-size:18px;box-shadow:0 0 18px #f2c46d66;animation:a6-gear-drop-in .6s cubic-bezier(.2,1.4,.4,1) both .2s}
+.a6-chapter-clear b {font-size:19px}
+.a6-chapter-clear span {display:flex;align-items:center;gap:4px;color:#ffe08f;font-weight:800}
+.uv-app[data-a6=true] .uv-shell .c2-result .a6-result-tickets[data-many] {gap:4px!important;margin:0 0 4px!important}
+.uv-app[data-a6=true] .uv-shell .c2-result .a6-result-tickets[data-many]>article {width:62px!important;min-height:72px!important;padding:3px!important;border-width:7px!important}
+.uv-app[data-a6=true] .uv-shell .c2-result .a6-result-tickets[data-many] .a6-reward-mark {width:34px;height:34px}
+.uv-app[data-a6=true] .uv-shell .c2-result .a6-result-tickets[data-many] strong {font-size:17px!important}
+.uv-app[data-a6=true] .c2-result .a6-result-receipt:has(.a6-chapter-clear) {padding-top:8px!important}
