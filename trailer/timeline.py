@@ -71,7 +71,7 @@ SHOTS = [
          text=dict(kind="caption", main="Choose your route"),
          note="Route map: battle, event, elite, treasure, shop, campfire, boss. Cursor picks a node."),
     dict(id="s11", t0=b(10), t1=b(11), src="event_card", tr="cut",
-         note="Story event card (The chipped cup) with two choices; one is picked."),
+         note="Prepare screen: formation set, cursor taps Fight."),
     dict(id="s12", t0=b(11), t1=b(12), src="battle_wave_start", tr="cut",
          note="Battle opens: wave banner, cats advance."),
     dict(id="s13", t0=b(12), t1=b(13), src="battle_auto", tr="cut",

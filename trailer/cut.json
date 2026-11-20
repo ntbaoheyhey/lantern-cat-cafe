@@ -1,44 +1,437 @@
 {
- "_note": "Draft cut 20 Nov: battle shots come from the v5-m2.14 judge-route recording (real gameplay, 720p) until the director tags the final build. placeholder=true marks stand-ins.",
- "landing_night_push": {"file": "../apps/web/public/art/v3-shell/landing.webp", "zoom": [1.0, 1.12], "center": [0.62, 0.42], "grade": "night"},
- "tangle_closeup": {"file": "../docs/demo-v5-m2.14/demo.mp4", "in": 27.4, "zoom": [1.7, 1.85], "center": [0.72, 0.62], "grade": "menace"},
- "soot_ult_cutin": {"file": "../docs/demo-v5-m2.14/demo.mp4", "in": 43.75},
- "cafe_home": {"file": "shots/cafe_home.mp4", "in": 0.3, "zoom": [1.0, 1.06], "center": [0.5, 0.6]},
- "mochi_idle": {"file": "shots/cats_mochi.mp4", "in": 0.2, "zoom": [1.75, 1.85], "center": [0.43, 0.57]},
- "clover_idle": {"file": "shots/cats_clover.mp4", "in": 0.2, "zoom": [1.75, 1.85], "center": [0.43, 0.57]},
- "soot_idle": {"file": "shots/cats_soot.mp4", "in": 0.2, "zoom": [1.75, 1.85], "center": [0.43, 0.57]},
- "collection_12": {"file": "../docs/demo-v5-m2.14/demo.mp4", "in": 4.3, "zoom": [1.25, 1.32], "center": [0.5, 0.18]},
- "route_map_ch1": {"file": "shots/route_map_ch1.mp4", "in": 0.2},
- "event_card": {"file": "shots/event_card.mp4", "in": 0.2},
- "battle_wave_start": {"file": "../docs/demo-v5-m2.14/demo.mp4", "in": 9.0, "zoom": [1.08, 1.0]},
- "battle_auto": {"file": "../docs/demo-v5-m2.14/demo.mp4", "in": 15.6, "zoom": [1.0, 1.1], "center": [0.6, 0.5]},
- "battle_tap_ult": {"file": "shots/battle_tap_ult.mp4", "in": 0.5, "zoom": [1.0, 1.12], "center": [0.4, 0.85]},
- "mochi_ult": {"file": "../docs/demo-v5-m2.14/demo.mp4", "in": 17.75},
- "battle_victory": {"file": "../docs/demo-v5-m2.14/demo.mp4", "in": 46.3, "zoom": [1.1, 1.2], "center": [0.5, 0.25], "placeholder": true},
- "gear_drop": {"file": "/mnt/project-files/loop-items/victory-gear-drop.png", "zoom": [1.0, 1.08], "placeholder": true},
- "equip_gear": {"file": "/mnt/project-files/loop-items/defeat-equip-new-gear.png", "zoom": [1.0, 1.06], "placeholder": true},
- "forge_enhance": {"file": "shots/forge_enhance.mp4", "in": 0.2, "zoom": [1.0, 1.08]},
- "chapters_123": {"file": "/mnt/project-files/arena-2026-11-20/pantry.png", "zoom": [1.0, 1.1], "placeholder": true},
- "card:earned": {"file": "shots/cafe_home.mp4", "in": 1.0, "grade": "plate", "zoom": [1.1, 1.15]},
- "seal_gear_nft": {"file": "shots/forge_enhance.mp4", "in": 0.5, "grade": "plate", "zoom": [1.1, 1.18]},
- "relic_market": {"file": "shots/economy_page.mp4", "in": 0.5, "grade": "plate", "zoom": [1.1, 1.16]},
- "yarn_burn_explorer": {"file": "../apps/web/public/art/v3-shell/landing.webp", "grade": "plate_dark", "zoom": [1.15, 1.22]},
- "boss_yarn_giant": {"file": "../docs/demo-v5-m2.14/demo.mp4", "in": 27.0, "zoom": [1.15, 1.25], "center": [0.62, 0.55], "grade": "boss"},
- "boss_rain_spool": {"file": "/mnt/project-files/arena-2026-11-20/rain.png", "zoom": [1.05, 1.15], "grade": "boss", "placeholder": true},
- "boss_pantry_crown": {"file": "/mnt/project-files/arena-2026-11-20/crown.png", "zoom": [1.05, 1.15], "grade": "boss", "placeholder": true},
- "m_clover_ult": {"file": "../docs/demo-v5-m2.14/demo.mp4", "in": 41.95},
- "m_boss_attack": {"file": "../docs/demo-v5-m2.14/demo.mp4", "in": 36.6, "zoom": [1.2, 1.3], "center": [0.6, 0.55]},
- "m_mochi_block": {"file": "../docs/demo-v5-m2.14/demo.mp4", "in": 32.6, "zoom": [1.25, 1.3], "center": [0.35, 0.5]},
- "m_soot_crit": {"file": "../docs/demo-v5-m2.14/demo.mp4", "in": 22.8, "zoom": [1.15, 1.2], "center": [0.7, 0.4]},
- "m_rain_spool_attack": {"file": "../docs/demo-v5-m2.14/demo.mp4", "in": 41.0, "zoom": [1.2, 1.3], "center": [0.55, 0.6], "placeholder": true},
- "m_clover_heal": {"file": "../docs/demo-v5-m2.14/demo.mp4", "in": 42.5, "zoom": [1.3, 1.35], "center": [0.2, 0.35]},
- "m_pantry_crown_attack": {"file": "../docs/demo-v5-m2.14/demo.mp4", "in": 37.0, "zoom": [1.3, 1.4], "center": [0.6, 0.5], "placeholder": true},
- "m_mochi_ult": {"file": "../docs/demo-v5-m2.14/demo.mp4", "in": 31.85},
- "boss_final_pressure": {"file": "../docs/demo-v5-m2.14/demo.mp4", "in": 38.2, "zoom": [1.0, 1.25], "center": [0.6, 0.5], "grade": "boss"},
- "soot_portrait_freeze": {"file": "../docs/demo-v5-m2.14/demo.mp4", "freeze": 44.05, "zoom": [1.3, 1.45], "center": [0.3, 0.45], "grade": "freeze"},
- "soot_ult_final": {"file": "../docs/demo-v5-m2.14/demo.mp4", "in": 44.7, "speed": 0.42},
- "chapter_clear": {"file": "../docs/demo-v5-m2.14/demo.mp4", "in": 46.4, "zoom": [1.2, 1.25], "center": [0.5, 0.2]},
- "cafe_home_warm": {"file": "shots/cafe_home.mp4", "in": 0.0, "zoom": [1.1, 1.0], "center": [0.5, 0.65], "grade": "warm"},
- "card:lockup": {"file": "../apps/web/public/art/v3-shell/landing.webp", "grade": "plate", "zoom": [1.0, 1.06]},
- "card:cta": {"file": "../apps/web/public/art/v3-shell/landing.webp", "grade": "plate_dark", "zoom": [1.06, 1.1]}
+ "_note": "Final cut 20-21 Nov: all gameplay filmed from main f8cd3aa (director-confirmed) with capture_shot.mjs (finalA-F.json). Economy cards use real Fuji txs (CHAIN-FACTS.md).",
+ "landing_night_push": {
+  "file": "../apps/web/public/art/v3-shell/landing.webp",
+  "zoom": [
+   1.0,
+   1.12
+  ],
+  "center": [
+   0.62,
+   0.42
+  ],
+  "grade": "night"
+ },
+ "tangle_closeup": {
+  "file": "shots/f_boss1.mp4",
+  "in": 1.4,
+  "zoom": [
+   1.75,
+   1.9
+  ],
+  "center": [
+   0.6,
+   0.4
+  ],
+  "grade": "menace"
+ },
+ "soot_ult_cutin": {
+  "file": "shots/f_boss3.mp4",
+  "in": 8.15,
+  "speed": 0.95
+ },
+ "cafe_home": {
+  "file": "shots/cafe_home.mp4",
+  "in": 0.3,
+  "zoom": [
+   1.0,
+   1.06
+  ],
+  "center": [
+   0.5,
+   0.6
+  ]
+ },
+ "mochi_idle": {
+  "file": "shots/cats_mochi.mp4",
+  "in": 0.2,
+  "zoom": [
+   1.75,
+   1.85
+  ],
+  "center": [
+   0.38,
+   0.5
+  ]
+ },
+ "clover_idle": {
+  "file": "shots/cats_clover.mp4",
+  "in": 0.2,
+  "zoom": [
+   1.75,
+   1.85
+  ],
+  "center": [
+   0.38,
+   0.5
+  ]
+ },
+ "soot_idle": {
+  "file": "shots/cats_soot.mp4",
+  "in": 0.2,
+  "zoom": [
+   1.75,
+   1.85
+  ],
+  "center": [
+   0.38,
+   0.5
+  ]
+ },
+ "collection_12": {
+  "file": "shots/cats_all2.mp4",
+  "in": 0.55,
+  "speed": 1.5,
+  "zoom": [
+   1.7,
+   1.8
+  ],
+  "center": [
+   0.0,
+   0.7
+  ]
+ },
+ "route_map_ch1": {
+  "file": "shots/route_map_ch1.mp4",
+  "in": 0.2,
+  "zoom": [
+   1.0,
+   1.08
+  ],
+  "center": [
+   0.5,
+   0.55
+  ]
+ },
+ "event_card": {
+  "file": "shots/f_prepare.mp4",
+  "in": 0.0,
+  "zoom": [
+   1.0,
+   1.1
+  ],
+  "center": [
+   0.7,
+   0.6
+  ]
+ },
+ "battle_wave_start": {
+  "file": "shots/f_ch1_battle.mp4",
+  "in": 0.0,
+  "zoom": [
+   1.1,
+   1.0
+  ],
+  "center": [
+   0.5,
+   0.45
+  ]
+ },
+ "battle_auto": {
+  "file": "shots/f_ch1_battle.mp4",
+  "in": 2.9,
+  "zoom": [
+   1.0,
+   1.1
+  ],
+  "center": [
+   0.55,
+   0.5
+  ]
+ },
+ "battle_tap_ult": {
+  "file": "shots/f_ch1_tap.mp4",
+  "in": 0.0,
+  "zoom": [
+   1.25,
+   1.45
+  ],
+  "center": [
+   0.45,
+   0.92
+  ]
+ },
+ "mochi_ult": {
+  "file": "shots/f_ch1_tap.mp4",
+  "in": 5.35
+ },
+ "battle_victory": {
+  "file": "shots/f_win.mp4",
+  "in": 0.9,
+  "zoom": [
+   1.05,
+   1.15
+  ],
+  "center": [
+   0.45,
+   0.3
+  ]
+ },
+ "gear_drop": {
+  "file": "shots/f_win.mp4",
+  "in": 1.0,
+  "zoom": [
+   1.45,
+   1.6
+  ],
+  "center": [
+   1.0,
+   0.35
+  ]
+ },
+ "equip_gear": {
+  "file": "shots/bag_equip.mp4",
+  "in": 0.2,
+  "zoom": [
+   1.05,
+   1.15
+  ],
+  "center": [
+   0.5,
+   0.5
+  ]
+ },
+ "forge_enhance": {
+  "file": "shots/forge_enhance2.mp4",
+  "in": 1.3,
+  "zoom": [
+   1.0,
+   1.06
+  ],
+  "center": [
+   0.5,
+   0.3
+  ]
+ },
+ "chapters_123": {
+  "file": "shots/chapters_123.mp4",
+  "in": 0.0
+ },
+ "card:earned": {
+  "file": "shots/cafe_home.mp4",
+  "in": 1.0,
+  "grade": "plate",
+  "zoom": [
+   1.1,
+   1.15
+  ]
+ },
+ "seal_gear_nft": {
+  "file": "shots/forge_enhance.mp4",
+  "in": 0.5,
+  "grade": "plate",
+  "zoom": [
+   1.1,
+   1.18
+  ]
+ },
+ "relic_market": {
+  "file": "shots/economy_page.mp4",
+  "in": 0.5,
+  "grade": "plate",
+  "zoom": [
+   1.1,
+   1.16
+  ]
+ },
+ "yarn_burn_explorer": {
+  "file": "../apps/web/public/art/v3-shell/landing.webp",
+  "grade": "plate_dark",
+  "zoom": [
+   1.15,
+   1.22
+  ]
+ },
+ "boss_yarn_giant": {
+  "file": "shots/f_boss1.mp4",
+  "in": 0.9,
+  "zoom": [
+   1.12,
+   1.25
+  ],
+  "center": [
+   0.62,
+   0.45
+  ],
+  "grade": "boss"
+ },
+ "boss_rain_spool": {
+  "file": "shots/f_boss2.mp4",
+  "in": 3.4,
+  "zoom": [
+   1.12,
+   1.24
+  ],
+  "center": [
+   0.62,
+   0.5
+  ],
+  "grade": "boss"
+ },
+ "boss_pantry_crown": {
+  "file": "shots/f_boss3.mp4",
+  "in": 0.9,
+  "zoom": [
+   1.12,
+   1.24
+  ],
+  "center": [
+   0.6,
+   0.45
+  ],
+  "grade": "boss"
+ },
+ "m_clover_ult": {
+  "file": "shots/f_boss2.mp4",
+  "in": 1.35
+ },
+ "m_boss_attack": {
+  "file": "shots/f_boss1.mp4",
+  "in": 3.25,
+  "zoom": [
+   1.15,
+   1.22
+  ],
+  "center": [
+   0.45,
+   0.6
+  ]
+ },
+ "m_mochi_block": {
+  "file": "shots/f_boss1.mp4",
+  "in": 7.35,
+  "zoom": [
+   1.15,
+   1.2
+  ],
+  "center": [
+   0.25,
+   0.6
+  ]
+ },
+ "m_soot_crit": {
+  "file": "shots/f_boss3.mp4",
+  "in": 2.2,
+  "zoom": [
+   1.15,
+   1.22
+  ],
+  "center": [
+   0.55,
+   0.4
+  ]
+ },
+ "m_rain_spool_attack": {
+  "file": "shots/f_boss2.mp4",
+  "in": 4.85,
+  "zoom": [
+   1.2,
+   1.28
+  ],
+  "center": [
+   0.4,
+   0.6
+  ]
+ },
+ "m_clover_heal": {
+  "file": "shots/f_boss2.mp4",
+  "in": 2.3,
+  "zoom": [
+   1.3,
+   1.38
+  ],
+  "center": [
+   0.15,
+   0.45
+  ]
+ },
+ "m_pantry_crown_attack": {
+  "file": "shots/f_boss3.mp4",
+  "in": 3.3,
+  "zoom": [
+   1.2,
+   1.28
+  ],
+  "center": [
+   0.45,
+   0.6
+  ]
+ },
+ "m_mochi_ult": {
+  "file": "shots/f_boss2.mp4",
+  "in": 7.45
+ },
+ "boss_final_pressure": {
+  "file": "shots/f_boss3.mp4",
+  "in": 3.8,
+  "speed": 0.5,
+  "zoom": [
+   1.0,
+   1.3
+  ],
+  "center": [
+   0.6,
+   0.5
+  ],
+  "grade": "boss"
+ },
+ "soot_portrait_freeze": {
+  "file": "shots/f_comet.mp4",
+  "freeze": 8.95,
+  "zoom": [
+   1.3,
+   1.45
+  ],
+  "center": [
+   0.25,
+   0.45
+  ],
+  "grade": "freeze"
+ },
+ "soot_ult_final": {
+  "file": "shots/f_comet.mp4",
+  "in": 9.15,
+  "speed": 0.42
+ },
+ "chapter_clear": {
+  "file": "shots/f_boss1_win.mp4",
+  "in": 1.05,
+  "zoom": [
+   1.12,
+   1.22
+  ],
+  "center": [
+   0.55,
+   0.2
+  ]
+ },
+ "cafe_home_warm": {
+  "file": "shots/cafe_home.mp4",
+  "in": 0.0,
+  "zoom": [
+   1.1,
+   1.0
+  ],
+  "center": [
+   0.5,
+   0.65
+  ],
+  "grade": "warm"
+ },
+ "card:lockup": {
+  "file": "../apps/web/public/art/v3-shell/landing.webp",
+  "grade": "plate",
+  "zoom": [
+   1.0,
+   1.06
+  ]
+ },
+ "card:cta": {
+  "file": "../apps/web/public/art/v3-shell/landing.webp",
+  "grade": "plate_dark",
+  "zoom": [
+   1.06,
+   1.1
+  ]
+ }
 }

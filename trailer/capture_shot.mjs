@@ -134,6 +134,15 @@ for (const shot of shots) {
       const now = i / FPS;
       while (events.length && events[0].at <= now + 1e-6) {
         const e = events.shift();
+        if (e.tapBtn) {
+          const box = await page.getByRole('button', {name: e.tapBtn, exact: e.exact ?? true}).nth(e.nth ?? 0).boundingBox().catch(() => null);
+          if (box) {
+            const c = [box.x + box.width / 2, box.y + box.height / 2];
+            move = {from: mouse ?? [c[0] + 160, c[1] + 120], to: c, t0: now, dur: e.lead ?? .5};
+            await page.evaluate(() => window.__cursor(true));
+            events.push({at: now + (e.lead ?? .5) + .05, clickAt: c}); events.sort((a, b) => a.at - b.at);
+          } else errors.push('tapBtn not found: ' + e.tapBtn);
+        }
         if (e.move) { move = {from: mouse ?? e.move, to: e.move, t0: now, dur: e.dur ?? .5}; await page.evaluate(() => window.__cursor(true)); }
         if (e.clickAt) { await page.mouse.move(...e.clickAt); mouse = e.clickAt; await page.mouse.down(); await page.mouse.up(); }
         if (e.click) await page.getByRole('button', {name: e.click, exact: e.exact ?? true}).nth(e.nth ?? 0).click({timeout: 5000, noWaitAfter: true}).catch(err => errors.push('click ' + e.click + ': ' + err.message.split('\n')[0]));

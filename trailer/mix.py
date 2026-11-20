@@ -43,6 +43,24 @@ def follower(x, attack, release):
     return np.repeat(env, blk)[:len(x)] if nb else np.zeros(len(x))
 
 
+def hall(x, send=0.16, rt=2.2):
+    """Light convolution 'hall' on the music bus: decaying, darkened stereo noise IR."""
+    from scipy.signal import fftconvolve, butter, sosfilt
+    rng = np.random.default_rng(3)
+    n = int(rt * SR)
+    t = np.arange(n) / SR
+    ir = rng.standard_normal((n, 2)) * np.exp(-6.9 * t / rt)[:, None]
+    ir = sosfilt(butter(2, 5200, "low", fs=SR, output="sos"), ir, axis=0)
+    ir[: int(0.018 * SR)] = 0                      # 18 ms pre-delay
+    ir /= np.sqrt((ir ** 2).sum(axis=0))
+    wet = np.stack([fftconvolve(x[:, c], ir[:, c])[: len(x)] for c in range(2)], axis=1)
+    wet = sosfilt(butter(2, 180, "high", fs=SR, output="sos"), wet, axis=0)
+    dry = sosfilt(butter(2, 28, "high", fs=SR, output="sos"), x, axis=0)
+    wet = wet * send * (np.sqrt((dry ** 2).mean()) / (np.sqrt((wet ** 2).mean()) + 1e-12))
+    wet *= gate_window(len(x), 39 * BAR, 39 * BAR + 3.5 * BEAT, fade=0.02)[:, None]   # keep the stop-down silent
+    return dry + wet
+
+
 def gate_window(n, t0, t1, fade=0.03):
     g = np.ones(n)
     a, b = int(t0 * SR), int(t1 * SR)
@@ -67,6 +85,7 @@ def main():
         if stem != "lead":                      # bar 39 = true silence (celesta lives in 'lead')
             x *= gate_window(n, 39 * BAR, 39 * BAR + 3 * BEAT + 0.5 * BEAT)[:, None]
         music += x
+    music = hall(music)
     sfx = fit(load("audio/sfx.wav"), n)
     music *= 0.55
     sfx *= 0.5

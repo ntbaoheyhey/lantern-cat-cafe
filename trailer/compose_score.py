@@ -49,9 +49,18 @@ def inst(stem, program, name, drum=False):
     return STEMS[key]
 
 
+import random
+_rng = random.Random(1121)
+
+
 def note(i, pitch, start, dur, vel=80):
     if isinstance(pitch, str):
         pitch = p(pitch)
+    if not i.is_drum and dur > 0.05:          # humanise: a few ms of timing, a little velocity
+        start = max(0.0, start + _rng.gauss(0, 0.006))
+        vel = vel + _rng.randint(-6, 6)
+    elif i.is_drum:
+        vel = vel + _rng.randint(-4, 4)
     i.notes.append(pm.Note(velocity=int(max(1, min(127, vel))), pitch=int(pitch), start=start, end=start + dur))
 
 

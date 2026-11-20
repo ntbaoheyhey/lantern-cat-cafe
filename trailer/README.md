@@ -13,7 +13,7 @@ owner's voiceover without re-editing.
 | `temp_vo.py` | Placeholder narration (Kokoro-82M, Apache-2.0) for timing review only. |
 | `place_vo.py` | Places recorded lines (per-line files or one take) on their cues; checks slot lengths. |
 | `mix.py` | Stems → ducking under VO → silence gate on the stop-down → −14 LUFS / −1 dBTP master. |
-| `capture_shot.mjs` + `shots.json` | Frame-exact 1080p30 recorder for game footage (virtual time, any renderer speed). |
+| `capture_shot.mjs` + `final*.json` | Frame-exact 1080p30 recorder for game footage (virtual time, any renderer speed); `finalA`–`finalG` are the specs behind the final cut (`shots.json` = older captures). |
 | `titles/` + `render_titles.mjs` | Animated title / name / boss / proof cards in the game's fonts (alpha .mov). |
 | `cut.json` + `assemble.py` | Maps each timeline shot to footage (in-point, Ken Burns, grade, slow-mo) and cuts the picture. |
 
@@ -42,7 +42,7 @@ the call to action.
 # 0) game preview on :6301 (from repo root)
 node tools/v5int/run-chain-mode.mjs --fixture
 # 1) footage (repo root)
-node trailer/capture_shot.mjs trailer/shots.json            # or list shot ids
+TRAILER_REPO=$PWD node trailer/capture_shot.mjs trailer/finalA.json   # then finalB..finalG
 # 2) audio + titles (in trailer/)
 python3 timeline.py && python3 compose_score.py && python3 build_sfx.py
 /home/user/kvenv/bin/python temp_vo.py && python3 place_vo.py vo/temp audio/vo_temp.wav
