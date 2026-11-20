@@ -44,7 +44,9 @@ jobs:
     needs: changes
     if: needs.changes.outputs.code == 'true'
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    # Install, typecheck, the full unit suite and the production build already take
+    # 9-10 minutes; at 10 the job was cancelled after its last step had passed.
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
       - uses: pnpm/action-setup@v4

@@ -25,6 +25,8 @@ test('a local fight never writes storage or contacts a game API', async ({ page 
     Storage.prototype.setItem = function (key, value) { (window as unknown as { squadStorageWrites: string[] }).squadStorageWrites.push(key); return original.call(this, key, value); };
   });
   const requests: string[] = []; page.on('request', r => { if (r.method() !== 'GET' || /\/functions\/|\/api\/|supabase|wallet/i.test(r.url())) requests.push(r.url()); });
+  // An exception in a controller listener stops the fight's frame loop, so fail on it directly.
+  const errors: string[] = []; page.on('pageerror', e => errors.push(e.message));
   await page.goto(url); await page.getByRole('button', { name: 'Start encounter', exact: true }).click();
   // The run clock follows rendered frames; a loaded CI runner can render far
   // fewer than 60 fps, so assert that the local fight advanced, not its speed.
@@ -32,6 +34,7 @@ test('a local fight never writes storage or contacts a game API', async ({ page 
   await page.getByRole('button', { name: 'Pause', exact: true }).click();
   expect(await page.evaluate(() => (window as unknown as { squadStorageWrites: string[] }).squadStorageWrites)).toEqual([]);
   expect(requests).toEqual([]);
+  expect(errors).toEqual([]);
   await expect(page.locator('.sq-prototype')).toHaveText('Prototype - Squad Combat. Candidate build, not live.');
 });
 
