@@ -1,0 +1,23 @@
+.a6-gear-drop {grid-column:1/-1;display:flex;align-items:center;gap:14px;padding:10px 14px;border-radius:12px;position:relative;overflow:hidden;
+ background:linear-gradient(115deg,color-mix(in srgb,var(--rarity) 32%,#2b1d14) 0%,#2a1d16 70%);border:2px solid var(--rarity);
+ box-shadow:0 0 0 1px #0006 inset,0 0 22px color-mix(in srgb,var(--rarity) 45%,transparent);color:#fbefd8;animation:a6-gear-drop-in .6s cubic-bezier(.2,1.4,.4,1) both .35s}
+.a6-gear-drop::after {content:"";position:absolute;inset:0;background:linear-gradient(100deg,transparent 30%,#fff5 48%,transparent 66%);transform:translateX(-120%);animation:a6-gear-drop-shine 1.6s ease-out 1s both;pointer-events:none}
+.a6-gear-drop[data-rarity=common]::after {display:none}
+.a6-gear-drop-art {width:74px;height:70px;flex:none;border-radius:10px;background:radial-gradient(circle at 50% 45%,color-mix(in srgb,var(--rarity) 55%,#fff3) 0%,#0000 70%)}
+.a6-gear-drop-art .a6-gear-art {width:100%;height:100%}
+.a6-gear-drop-text {display:grid;gap:2px;min-width:0}
+.a6-gear-drop-text small {font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:#e9d8b9}
+.a6-gear-drop-rarity {color:var(--rarity);font-weight:800}
+.a6-gear-drop-text strong {font-size:21px;line-height:1.15;color:#fff7e6}
+.a6-gear-drop-text>span {display:flex;align-items:center;gap:5px;font-size:15px;color:#ffd987}
+.a6-drop-chance {grid-column:1/-1;display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;margin:2px 0 0;font-size:13px;color:#e8d6b6}
+.a6-drop-chance b {color:#fff1d2}
+.a6-drop-chance span {padding:1px 8px;border-radius:99px;border:1px solid var(--rarity);color:var(--rarity);background:#0004;font-weight:700}
+.a6-drop-chance small {flex-basis:100%;color:#cdb998}
+@keyframes a6-gear-drop-in {from{opacity:0;transform:translateY(14px) scale(.92)}to{opacity:1;transform:none}}
+@keyframes a6-gear-drop-shine {to{transform:translateX(120%)}}
+[data-reduced=true] .a6-gear-drop,[data-reduced=true] .a6-gear-drop::after {animation:none}
+.a6-gear-drops {display:grid;gap:8px;width:100%;max-width:440px;margin:6px auto 4px}
+.uv-app[data-a6=true] .c2-result .a6-result-receipt:has(.a6-gear-drops) .a6-result-tickets {margin:0 0 4px!important}
+.uv-app[data-a6=true] .c2-result .a6-result-receipt:has(.a6-gear-drops) {align-content:start;gap:4px}
+.a6-drop-chance small {flex-basis:auto}

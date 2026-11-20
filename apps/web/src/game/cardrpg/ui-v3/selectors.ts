@@ -39,15 +39,37 @@ export function patrolDefaults(state:R.DepthAccount) {
 }
 
 /** Preview the existing transaction on its copy; never apply it to the model. */
-export function resultRewards(state:R.DepthAccount) {
+export interface GearDropView {templateId:string;name:string;rarity:R.GearTemplate['rarity'];slot:string;setId:string;powerGain:number;wearer:string|null}
+export interface ResultRewardRow {id:string;label:string;amount:number;gear?:GearDropView}
+export function resultRewards(state:R.DepthAccount):ResultRewardRow[] {
  if(!state.run?.battle?.result)return [];
  const result=R.finishEncounter(state);if(!result.ok)return [];
- const rows=Object.entries(state.account.currencies).flatMap(([id,n])=>{
+ const rows:ResultRewardRow[]=Object.entries(state.account.currencies).flatMap(([id,n])=>{
   const delta=result.state.account.currencies[id as keyof typeof state.account.currencies]-n;
   return delta>0?[{id,label:id,amount:delta}]:[];
  });
  const points=(result.state.run?.points??0)-state.run.points;
  if(points>0)rows.push({id:'points',label:'route points',amount:points});
- for(const item of result.state.gear.filter(g=>!state.gear.some(old=>old.id===g.id)))rows.push({id:item.id,label:R.GEAR_BY_ID[item.templateId]!.name,amount:1});
+ for(const item of result.state.gear.filter(g=>!state.gear.some(old=>old.id===g.id))){
+  const t=R.GEAR_BY_ID[item.templateId]!,best=gearUpgradePreview(result.state,item.id);
+  rows.push({id:item.id,label:t.name,amount:1,gear:{templateId:t.id,name:t.name,rarity:t.rarity,slot:t.slot,setId:t.setId,powerGain:best.gain,wearer:best.cardId}});
+ }
  return rows;
+}
+/** Team Power gained if this piece replaced the matching slot on the teammate who benefits most. Read-only preview. */
+export function gearUpgradePreview(state:R.DepthAccount,instanceId:string):{gain:number;cardId:string|null} {
+ const item=state.gear.find(g=>g.id===instanceId);if(!item)return {gain:0,cardId:null};
+ const slot=R.GEAR_BY_ID[item.templateId]!.slot,before=R.teamPowerV4(state);let gain=0,cardId:string|null=null;
+ for(const id of state.team){
+  const preview={...state,equipment:{...state.equipment,[id]:{...state.equipment[id],[slot]:instanceId}}};
+  const delta=Math.round(R.teamPowerV4(preview)-before);
+  if(delta>gain){gain=delta;cardId=id;}
+ }
+ return {gain,cardId};
+}
+/** The kind of gear roll the current encounter makes, matching run.ts finishEncounter. */
+export function encounterDropKind(state:R.DepthAccount):'battle'|'elite'|'boss'|null {
+ const run=state.run,node=run?.nodes.find(n=>n.id===run.current);
+ if(!run||!node||run.towerA6)return null;
+ return node.kind==='elite'||node.kind==='boss'?node.kind:node.kind==='battle'?'battle':null;
 }
