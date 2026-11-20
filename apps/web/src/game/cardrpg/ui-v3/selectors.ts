@@ -73,3 +73,9 @@ export function encounterDropKind(state:R.DepthAccount):'battle'|'elite'|'boss'|
  if(!run||!node||run.towerA6)return null;
  return node.kind==='elite'||node.kind==='boss'?node.kind:node.kind==='battle'?'battle':null;
 }
+
+/** Team Power that "equip best" would add once this route ends (gear can only change at home). Read-only. */
+export function homeEquipGain(state:R.DepthAccount):number {
+ const home={...state,run:null},equipped=R.autoEquipA6(home);
+ return equipped.ok?Math.max(0,Math.round(R.teamPowerV4(equipped.state)-R.teamPowerV4(home))):0;
+}
