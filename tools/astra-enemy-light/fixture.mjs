@@ -115,7 +115,8 @@ export function inspectActors() {
       const mat = node.material, tex = mat.map, img = tex?.image;
       meshes.push({ name: node.name, material: mat.type, texture: img?.currentSrc || img?.src || img?.tagName || null,
         width: img?.width, height: img?.height, flipY: tex?.flipY,
-        normalReady: s.renderer.properties.get(mat).uniforms?.enemyBaked?.value });
+        normalReady: s.renderer.properties.get(mat).uniforms?.enemyBaked?.value,
+        keyColour: s.renderer.properties.get(mat).uniforms?.enemyKey?.value?.getHexString() });
     });
     result[e.asset] = { id, source: e.actor.source, path: e.craftPose ? 'drawn' : e.actor.source,
       meshes, pose: e.craftPose?.drawing.key, bounds: s.bounds(e), tier: e.actor.unit.tier };

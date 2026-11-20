@@ -25,9 +25,11 @@ if (process.argv.includes('--reveal')) {
   console.log(phase, wins + '/' + ids.length);
 } else {
   await mkdir(dir, { recursive:true }); await mkdir(out, { recursive:true });
-  const key = ids.map(id => ({ id, after: randomInt(2) ? 'L' : 'R' }));
+  const reproduce = process.argv.includes('--reproduce');
+  const key = reproduce ? (await read(resolve(out,'result.json'))).rows.map(({id,after})=>({id,after})) :
+    ids.map(id => ({ id, after: randomInt(2) ? 'L' : 'R' }));
   // Exclusive creation keeps the first assignment and prevents a post-judgment reshuffle.
-  await writeFile(keyPath, JSON.stringify(key), { flag:'wx' });
+  if (!reproduce) await writeFile(keyPath, JSON.stringify(key), { flag:'wx' });
   for (let group = 0; group < 3; group++) {
     const layers = [];
     for (let j = 0; j < 4; j++) {

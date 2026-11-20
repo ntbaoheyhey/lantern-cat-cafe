@@ -23,8 +23,8 @@ for image in sorted(OUT.rglob("*.webp")):
         inputs = [v[k] for v in sources for k in ["texture","source"]]
     elif section.startswith("blind-"):
         phase = section.split("-")[-1]
-        command = f"node tools/astra-enemy-light/ab.mjs {phase}"
-        inputs = [f"reports/astra-enemy-light/phase-{phase}/dpr-2", f"reports/astra-enemy-light/blind-{phase}/key.json"]
+        command = f"node tools/astra-enemy-light/ab.mjs {phase} --reproduce"
+        inputs = [f"reports/astra-enemy-light/phase-{phase}/dpr-2", str((image.parent/'result.json').relative_to(ROOT))]
     elif section in ("gallery","battle"):
         phase = "C" if (REPORT / "measure-C.json").exists() else "B" if (REPORT / "measure-B.json").exists() else "A"
         gallery = section == "gallery"
@@ -33,7 +33,7 @@ for image in sorted(OUT.rglob("*.webp")):
         inputs = [align[unit]["texture"], "apps/web/public/units/"+unit+"/relight-normal.webp",
                   "apps/web/src/game/cardrpg/spine/scene.ts", "tools/astra-enemy-light/fixture.mjs"]
     elif section == "motion":
-        command = "node tools/astra-enemy-light/motion.mjs"
+        command = "node tools/astra-enemy-light/motion.mjs C"
         inputs = ["tools/astra-enemy-light/fixture.mjs", "apps/web/src/game/cardrpg/spine/scene.ts"]
     else:
         raise ValueError(section)

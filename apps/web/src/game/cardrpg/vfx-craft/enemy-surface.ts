@@ -1,4 +1,5 @@
 import * as T from 'three';
+import { unravelEnemyFragment } from './enemy-unravel';
 
 export function enemyUniforms() {
   return {
@@ -9,6 +10,7 @@ export function enemyUniforms() {
     enemyTile: { value: new T.Vector4(0, 0, 1, 1) },
     enemyNormal: { value: null as T.Texture | null },
     enemyBaked: { value: 0 },
+    enemyUnravel: { value: -1 },
     enemyRimPower: { value: 1 },
     enemyMotion: { value: new T.Vector4(1, 0, -1, -1) },
     enemyHitColour: { value: new T.Color() },
@@ -21,7 +23,7 @@ varying vec2 enemyWorld;
 uniform vec3 enemyKey, enemyRim, enemyFill;
 uniform vec4 enemyBox, enemyTile;
 uniform sampler2D enemyNormal;
-uniform float enemyBaked, enemyRimPower;
+uniform float enemyBaked, enemyRimPower, enemyUnravel;
 uniform vec4 enemyMotion;
 uniform vec3 enemyHitColour;
 `;
@@ -38,7 +40,7 @@ vec2 du = dFdx(vMapUv), dv = dFdy(vMapUv);
 // All body materials are transparent with depth writes off. Empty texels have no contribution.
 if (diffuseColor.a <= 0.0) discard;
 vec2 tilt;
-float edge, crease;
+float edge, crease, enemyDepth;
 if (enemyBaked > 0.5) {
   vec4 relief = texture2D(enemyNormal, vMapUv * enemyTile.zw + enemyTile.xy);
   vec2 slope = relief.rg * 2.0 - 1.0;
@@ -46,6 +48,7 @@ if (enemyBaked > 0.5) {
        + vy * inversesqrt(max(dot(vy, vy), 1e-15)) * slope.y;
   edge = 1.0 - smoothstep(0.04, 0.64, relief.b);
   crease = relief.a;
+  enemyDepth = relief.b;
 } else {
   // Alternate sequence/puppet UVs and failed deliveries use the current colour
   // map's alpha. These four taps point outward in physical screen coordinates.
@@ -54,6 +57,7 @@ if (enemyBaked > 0.5) {
               texture2D(map, vMapUv-stepY).a - texture2D(map, vMapUv+stepY).a);
   edge = clamp(length(tilt), 0.0, 1.0);
   crease = 1.0;
+  enemyDepth = 1.0-edge;
 }
 vec2 slope = tilt * 0.86 + (body - vec2(0.50, 0.48)) * vec2(1.05, 0.78);
 vec3 normal = normalize(vec3(slope, max(0.28, 1.0 - 0.75*length(tilt))));
@@ -87,8 +91,8 @@ export function patchEnemySurface(material: T.MeshBasicMaterial, uniforms: Enemy
     Object.assign(shader.uniforms, uniforms);
     shader.vertexShader = 'varying vec2 enemyWorld;\n' + shader.vertexShader.replace(
       '#include <project_vertex>', 'enemyWorld=(modelMatrix*vec4(transformed,1.)).xy;\n#include <project_vertex>');
-    shader.fragmentShader = declarations + shader.fragmentShader.replace(
-      '#include <color_fragment>', '#include <color_fragment>\n' + shade);
+    shader.fragmentShader = unravelEnemyFragment(declarations + shader.fragmentShader.replace(
+      '#include <color_fragment>', '#include <color_fragment>\n' + shade));
   };
   material.customProgramCacheKey = () => cacheKey + '|enemy-bevel-v1';
   material.needsUpdate = true;

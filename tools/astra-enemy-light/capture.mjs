@@ -24,10 +24,11 @@ async function capture(page, id, label, condition, settings, evidence) {
   const file = label + '-' + condition, dir = resolve(raw, label);
   await mkdir(dir, { recursive: true });
   const actors = await page.evaluate(inspectActors);
-  const result = await page.evaluate(id => {
+  const result = await page.evaluate(({ id, gallery }) => {
     const s = window.__depthScene, r = s.renderer, canvas = r.domElement;
     const entry = [...s.actors.values()].find(e => e.asset === id);
     const frame = canvas.toDataURL();
+    if (gallery) return { frame, width: canvas.width, height: canvas.height, cssWidth: s.width, cssHeight: s.height };
     // Render the identical body on black and white. Their difference recovers
     // actual coverage including MSAA, translucent paint and overlapping parts.
     const old = r.getClearColor(entry.shadow.material.color.clone()), alpha = r.getClearAlpha();
@@ -60,9 +61,9 @@ async function capture(page, id, label, condition, settings, evidence) {
     finally { r.autoClear = autoClear; r.setClearColor(old, alpha); r.render(s.scene, s.camera); }
     return { frame, black, white, enemies, width: canvas.width, height: canvas.height,
       cssWidth: s.width, cssHeight: s.height, textures: r.info.memory.textures };
-  }, id);
+  }, { id, gallery });
   const { frame, black, white, enemies, ...metadata } = result;
-  await Promise.all([['frame', frame], ['black', black], ['white', white], ['enemies', enemies]].map(
+  if (!gallery) await Promise.all([['frame', frame], ['black', black], ['white', white], ['enemies', enemies]].map(
     ([key, image]) => writeFile(resolve(dir, condition + '-' + key + '.png'), decode(image))));
   await writeFile(resolve(dir, condition + '.json'), JSON.stringify({ id, label, settings, dpr, actors, ...metadata }, null, 2) + '\n');
   if (evidence) {

@@ -38,6 +38,7 @@ interface LightEntry {
   asset: string;
   actor: SpineActor;
   hurtAt: number;
+  koAt: number;
   entered: number;
   phase: number;
   craftLight?: PaintLight;
@@ -147,6 +148,7 @@ export function updateEnemyLight(entry: LightEntry, view: SceneView, unit: TurnA
     light.mood = mood; light.hot = hot;
   }
   const reduced = !!view.reducedMotion;
+  u.enemyUnravel.value = unit.hp <= 0 && !reduced ? Math.min(1,Math.max(0,(time-entry.koAt)/0.6)) : -1;
   const pulse = unit.hp > 0 ? hitLightPulse(damageAge ?? (time-entry.hurtAt), reduced) : 0;
   let direction = -1;
   if (pulse > 0) {
