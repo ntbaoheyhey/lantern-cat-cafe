@@ -1,6 +1,6 @@
 import * as T from 'three';
 import { PAINT } from './style';
-import { cafePainting, cafeLayers, formationPaintingC2 } from './stage-painting';
+import { cafePainting, cafeLayers, formationPaintingC2, arenaPaintingC2, arenaImage, type ArenaMood } from './stage-painting';
 
 const P=PAINT.stage;
 function ellipse(c:CanvasRenderingContext2D,x:number,y:number,rx:number,ry:number,color:string,rotation=0){
@@ -26,6 +26,7 @@ export class PaintedStage {
  private disposed=false;
  private source:'loading'|'painted'|'procedural'='loading';
  private formation?:T.Mesh<T.PlaneGeometry,T.MeshBasicMaterial>;
+ private arenas=new Map<ArenaMood,T.Texture>();private pendingArena=new Set<ArenaMood>();private mood:ArenaMood='garden';
  constructor(private onChange:()=>void=()=>{}){
   for(let layer=0;layer<3;layer++){
    const canvas=document.createElement('canvas');canvas.width=2048;canvas.height=1024;
@@ -83,10 +84,23 @@ export class PaintedStage {
    this.layers.forEach((mesh,i)=>{mesh.material.map=textures[i]!;mesh.material.needsUpdate=true;});
    this.textures.forEach(texture=>texture.dispose());this.textures=textures;this.source='painted';this.onChange();
    const texture=new T.CanvasTexture(formationPaintingC2(image));texture.colorSpace=T.SRGBColorSpace;this.textures.push(texture);
-   this.formation=new T.Mesh(new T.PlaneGeometry(1,1),new T.MeshBasicMaterial({map:texture,depthWrite:false,depthTest:false,toneMapped:false}));this.formation.renderOrder=-99;this.formation.visible=false;this.root.add(this.formation);this.onChange();
+   this.formation=new T.Mesh(new T.PlaneGeometry(1,1),new T.MeshBasicMaterial({map:texture,depthWrite:false,depthTest:false,toneMapped:false}));this.formation.renderOrder=-99;this.formation.visible=false;this.root.add(this.formation);this.applyArena();this.onChange();
   }).catch(()=>{if(!this.disposed){this.source='procedural';this.onChange();}});
+
  }
- update(width:number,height:number,shift:number,dim:number,formationC2=false){this.layers.forEach((mesh,i)=>{mesh.visible=!formationC2||!this.formation;mesh.scale.set(width*1.04,height*1.04,1);mesh.position.set(shift*(i+1)*.13,height/2,-30+i);mesh.material.color.setScalar(1-dim);});if(this.formation){this.formation.visible=formationC2;this.formation.scale.set(width,height,1);this.formation.position.set(0,height/2,-28);this.formation.material.color.setScalar(1-dim);}}
+ /** Swap the formation backdrop to this chapter/boss arena once its painting decodes; the café plank floor stays as fallback. */
+ private applyArena(){
+  if(!this.formation)return;
+  const mood=this.mood,texture=this.arenas.get(mood);
+  if(texture){if(this.formation.material.map!==texture){this.formation.material.map=texture;this.formation.material.needsUpdate=true;}return;}
+  if(this.pendingArena.has(mood))return;this.pendingArena.add(mood);
+  void arenaImage(mood).then(source=>{
+   this.pendingArena.delete(mood);if(this.disposed)return;
+   const made=new T.CanvasTexture(arenaPaintingC2(source,mood));made.colorSpace=T.SRGBColorSpace;this.arenas.set(mood,made);
+   if(this.mood===mood){this.applyArena();this.onChange();}
+  }).catch(()=>{this.pendingArena.delete(mood);});
+ }
+ update(width:number,height:number,shift:number,dim:number,formationC2=false,mood:ArenaMood='garden'){if(mood!==this.mood){this.mood=mood;this.applyArena();}this.layers.forEach((mesh,i)=>{mesh.visible=!formationC2||!this.formation;mesh.scale.set(width*1.04,height*1.04,1);mesh.position.set(shift*(i+1)*.13,height/2,-30+i);mesh.material.color.setScalar(1-dim);});if(this.formation){this.formation.visible=formationC2;this.formation.scale.set(width,height,1);this.formation.position.set(0,height/2,-28);this.formation.material.color.setScalar(1-dim);}}
  audit(){return{source:this.source,layers:this.layers.length,textureSize:[2048,1024],offsets:this.layers.map(layer=>layer.position.x)};}
- dispose(){this.disposed=true;for(const layer of [...this.layers,...(this.formation?[this.formation]:[])]){layer.geometry.dispose();layer.material.dispose();}this.textures.forEach(t=>t.dispose());}
+ dispose(){this.disposed=true;for(const layer of [...this.layers,...(this.formation?[this.formation]:[])]){layer.geometry.dispose();layer.material.dispose();}this.textures.forEach(t=>t.dispose());this.arenas.forEach(t=>t.dispose());}
 }

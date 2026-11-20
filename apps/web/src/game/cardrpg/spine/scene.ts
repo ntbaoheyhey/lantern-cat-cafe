@@ -30,6 +30,7 @@ import { stageLayoutC2 } from '../stage/layout-c2';
 import {unitCore,unitFace,spriteFacing,ELEMENT_COLORS} from '../stage/core';
 import {actorOpaqueWorldBounds} from '../stage/media-pose-bounds';
 import { PaintedStage } from './stage';
+import { arenaMood } from './stage-painting';
 import { PAINT } from './style';
 import { PaintedVfx } from './vfx';
 import {getV5Timeline,skillPoseTime} from '../vfx-layered/skill-timeline';
@@ -511,7 +512,7 @@ export class SpineScene {
    const px=this.worldWidth/width;this.camera.position.x+=ultLive.shake.x*px;this.camera.position.y+=ultLive.shake.y*px;this.camera.rotation.z+=ultLive.shake.angle;
   }
   this.camera.updateProjectionMatrix();this.camera.updateMatrixWorld();
-  this.stage.update(this.worldWidth,PAINT.worldHeight,0,1-focusLight,view.formationC2);
+  this.stage.update(this.worldWidth,PAINT.worldHeight,0,1-focusLight,view.formationC2,arenaMood(view.chapter,view.boss,[...this.actors.values()].find(e=>e.actor.unit.tier==='boss')?.asset));
   const focusActor=plan?this.actors.get(plan.actorId):undefined;
   this.casterFocus.render(focusActor?.actor.root,plan?.color??'#ffd892',focus,pixelsToWorld,!!focusActor&&hasDesignerIdleBody(focusActor.asset,focusActor.actor));
   this.scene.updateMatrixWorld(true);this.projectAnchors(view);
