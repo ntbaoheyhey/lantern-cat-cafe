@@ -1,8 +1,8 @@
 {
-  "phase": "A",
+  "phase": "B",
   "step": "verified",
-  "lastPush": "6cfdc3976",
-  "prUrl": null,
+  "lastPush": "69ee323f7",
+  "prUrl": "https://github.com/ntbaoheyhey/taskbar-hero/pull/463",
   "killSwitch": "enemyLight=0",
   "perf": {
     "method": "1280x720, DPR 1, Metal Chromium, 3s warmup then 20s RAF intervals in the unpaused campaign; standard auto choices. RGBA8 decoded map bytes, no mipmaps.",
@@ -12,12 +12,12 @@
       "wave3": {
         "before": {
           "gpu": "ANGLE (Apple, ANGLE Metal Renderer: Apple M3 Pro, Unspecified Version)",
-          "frames": 1195,
+          "frames": 1198,
           "p50": 16.7,
-          "p95": 16.7,
-          "max": 33.4,
+          "p95": 16.8,
+          "max": 33.2,
           "above50": 0,
-          "durationMs": 20012.90000000596,
+          "durationMs": 20010.09999999404,
           "draws": 50,
           "textures": 44,
           "eventsPlayed": 119,
@@ -35,10 +35,10 @@
           "gpu": "ANGLE (Apple, ANGLE Metal Renderer: Apple M3 Pro, Unspecified Version)",
           "frames": 1198,
           "p50": 16.7,
-          "p95": 16.8,
+          "p95": 16.7,
           "max": 33.4,
           "above50": 0,
-          "durationMs": 20007.80000001192,
+          "durationMs": 20015.29999999702,
           "draws": 50,
           "textures": 50,
           "eventsPlayed": 119,
@@ -52,18 +52,18 @@
           ],
           "mapBytes": 7536640
         },
-        "deltaP95": 0.1,
+        "deltaP95": -0.1,
         "green": true
       },
       "boss": {
         "after": {
           "gpu": "ANGLE (Apple, ANGLE Metal Renderer: Apple M3 Pro, Unspecified Version)",
-          "frames": 1196,
+          "frames": 1199,
           "p50": 16.7,
-          "p95": 16.8,
-          "max": 33.3,
+          "p95": 16.7,
+          "max": 33.4,
           "above50": 0,
-          "durationMs": 20013.89999999106,
+          "durationMs": 20016.5,
           "draws": 41,
           "textures": 40,
           "eventsPlayed": 112,
@@ -75,12 +75,12 @@
         },
         "before": {
           "gpu": "ANGLE (Apple, ANGLE Metal Renderer: Apple M3 Pro, Unspecified Version)",
-          "frames": 1196,
+          "frames": 1198,
           "p50": 16.7,
-          "p95": 16.8,
+          "p95": 16.7,
           "max": 33.3,
           "above50": 0,
-          "durationMs": 20004.70000000298,
+          "durationMs": 20015.70000000298,
           "draws": 41,
           "textures": 38,
           "eventsPlayed": 112,
@@ -95,9 +95,19 @@
       }
     }
   },
-  "score": 86,
+  "score": 88,
   "gates": {
     "A": {
+      "G1": "PASS",
+      "G2": "PASS",
+      "G3": "PASS",
+      "G4": "PASS",
+      "G5": "PASS",
+      "G6": "PASS",
+      "G7": "PASS",
+      "G8": "PASS"
+    },
+    "B": {
       "G1": "PASS",
       "G2": "PASS",
       "G3": "PASS",

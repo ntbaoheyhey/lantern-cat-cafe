@@ -1,6 +1,7 @@
 import * as T from 'three';
-import { describe, expect, it, vi } from 'vitest';
-import { ENEMY_LIGHT_BY_MOOD, enemyLightEnabled, enemyMood, receivesEnemyLight, updateEnemyLight } from './enemy-relight';
+import { describe, expect, it } from 'vitest';
+import { ENEMY_LIGHT_BY_MOOD, enemyLightEnabled, enemyMood, receivesEnemyLight, updateEnemyLight, hitLightPulse } from './enemy-relight';
+import { bossLandingSweep } from './boss-arrival';
 import { enemyUniforms, patchEnemySurface } from '../vfx-craft/enemy-surface';
 import { SPINE_UNIT_BY_ID } from './config';
 import { enemyIdleLife } from './enemy-life';
@@ -28,7 +29,7 @@ describe('painted enemy lighting', () => {
     expect(receivesEnemyLight('party',hostile)).toBe(false);
     expect(receivesEnemyLight('enemy',hostile)).toBe(true);
     const actor = { unit: cat, get root() { throw Error('cat traversed'); } };
-    expect(updateEnemyLight({ actor } as never, {} as never, 'enemy', {} as never, vi.fn())).toBe(false);
+    expect(updateEnemyLight({ actor } as never, {} as never, { side:'enemy' } as never, {} as never, 5, 1)).toBe(false);
   });
   it('binds independent uniforms and retains the atlas decode and grade', () => {
     const u = enemyUniforms(), other = enemyUniforms(), material = new T.MeshBasicMaterial();
@@ -50,5 +51,11 @@ describe('painted enemy lighting', () => {
     const first = sample();
     enemyIdleLife('yarn-giant',19,1,720,false);
     expect(sample()).toEqual(first);
+    expect(hitLightPulse(.08,false)).toBe(.5);
+    expect(hitLightPulse(.16,false)).toBe(0);
+    expect(hitLightPulse(.01,true)).toBe(0);
+    expect(bossLandingSweep(370,false)).toBe(.5);
+    expect(bossLandingSweep(370,true)).toBe(-1);
+    expect(bossLandingSweep(501,false)).toBe(-1);
   });
 });

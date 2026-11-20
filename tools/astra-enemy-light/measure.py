@@ -22,6 +22,8 @@ def linear(srgb):
     return np.where(f <= 0.04045, f / 12.92, ((f + 0.055) / 1.055) ** 2.4)
 
 
+palette = {1:'ffcb84', 2:'c7dded', 3:'ffbf72', 'yarn-giant':'f3b5ce', 'rain-spool':'bad4f2', 'pantry-crown':'ffdc8a'}
+home = json.loads((Path(__file__).resolve().parents[2] / 'reports/astra-enemy-light/runtime.json').read_text())
 rows = {}
 for d in sorted(args.root.iterdir()):
     meta = json.loads((d / "after.json").read_text())
@@ -51,6 +53,17 @@ for d in sorted(args.root.iterdir()):
                outsideBodyPassOver2=int(((b1-b0).max(axis=2)[exterior] > 2).sum()),
                bodyPixels=int(opaque.sum()), bodyChanged=int(changed[opaque].sum()),
                luminanceChangePct=round(float((lit.mean()/base.mean()-1)*100),3))
+    # Compare mean linear-RGB chromaticity on upper-left, directly illuminated body pixels.
+    y, x = np.ogrid[:before.shape[0], :before.shape[1]]
+    box = meta['actors'][meta['id']]['bounds']
+    xx, yy = x/k, y/k
+    face = ((xx < box['x']+.5*box['width']) & (yy < box['y']+.55*box['height']))[opaque] & (base>.02) & (lit>1.05*base)
+    assert face.sum() > 30
+    key = linear(np.array(list(bytes.fromhex(palette.get(meta['id'],palette[home[meta['id']]['chapter']])))))
+    old, new = linear(b0[opaque][face]).mean(0), linear(b1[opaque][face]).mean(0)
+    old /= old.sum(); new /= new.sum(); key /= key.sum()
+    row['litSidePixels'] = int(face.sum())
+    row['litSideTowardsKey'] = bool(np.linalg.norm(new-key) < np.linalg.norm(old-key))
     if args.main:
         pristine = rgb(args.main / d.name / "before-frame.png")
         row["offVsPristine"] = int((pristine != before).any(axis=2).sum())

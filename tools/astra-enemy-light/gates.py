@@ -23,7 +23,7 @@ checks = dict(
                                          for key in expected for mode in ("before","after")),
     G2=all(r["changedCatBoxPixels"]==0 for r in rows),
     G3=all(r["outsideAddedOver2"]==r["outsideBodyPassOver2"]==0 for r in rows),
-    G4=all(abs(r["luminanceChangePct"]) <= 12 for r in rows),
+    G4=all(abs(r["luminanceChangePct"]) <= 12 and r['litSideTowardsKey'] for r in rows),
     G5=ab["wins"] >= 10,
     G6=all(perf["scenarios"][f]["green"] for f in ("wave3","boss")) and perf["allMapBytes"]<24000000,
     G7=bool(re.search(r"Test Files\s+\d+ passed \(\d+\)",tests)) and

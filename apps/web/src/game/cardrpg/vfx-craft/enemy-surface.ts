@@ -10,6 +10,8 @@ export function enemyUniforms() {
     enemyNormal: { value: null as T.Texture | null },
     enemyBaked: { value: 0 },
     enemyRimPower: { value: 1 },
+    enemyMotion: { value: new T.Vector4(1, 0, -1, -1) },
+    enemyHitColour: { value: new T.Color() },
   };
 }
 export type EnemyUniforms = ReturnType<typeof enemyUniforms>;
@@ -20,6 +22,8 @@ uniform vec3 enemyKey, enemyRim, enemyFill;
 uniform vec4 enemyBox, enemyTile;
 uniform sampler2D enemyNormal;
 uniform float enemyBaked, enemyRimPower;
+uniform vec4 enemyMotion;
+uniform vec3 enemyHitColour;
 `;
 
 // R and G encode tangent-space normals. B is the interior distance, A is crease AO.
@@ -63,7 +67,15 @@ lit += enemyKey * (0.11*luma) * wrap*wrap;
 float rim = edge * smoothstep(0.02,0.84,dot(normal.xy,vec2(0.91,0.41)));
 lit += enemyRim * rim * enemyRimPower * (0.012+0.50*luma);
 float litLuma = dot(lit,vec3(0.2126,0.7152,0.0722));
-diffuseColor.rgb = lit * min(1.0,1.28*luma/max(0.00001,litLuma));
+diffuseColor.rgb = lit * min(1.0,1.28*luma/max(0.00001,litLuma)) * mix(1.0,enemyMotion.x,wrap);
+if (enemyMotion.y > 0.0) {
+  float facing = dot(normal,normalize(vec3(enemyMotion.z,0.16,0.36)));
+  diffuseColor.rgb += enemyHitColour * enemyMotion.y * smoothstep(-0.18,0.91,facing) * (0.05+0.78*luma);
+}
+if (enemyMotion.w >= 0.0) {
+  float band = 1.0 - smoothstep(0.04,0.25,abs(body.y-enemyMotion.w));
+  diffuseColor.rgb += enemyRim * edge * band * sin(3.14159*enemyMotion.w) * (0.05+0.42*luma);
+}
 #endif
 `;
 
