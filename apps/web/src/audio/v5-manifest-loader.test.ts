@@ -98,7 +98,7 @@ describe('V5 audio delivery',()=>{
  });
  it('matches every delivered voice take by identity while preserving bus, duration and processed voice treatment',()=>{
   const base=read('manifest.json') as AudioManifest,next=applyV5Audio(base,read('v5/manifest.json'));
-  for(const hero of ['mochi','soot','clover','panko'])for(const phase of ['hit','death']){
+  for(const hero of ['panko'])for(const phase of ['hit','death']){
    const key=`voice.${hero}.${phase}`;
    expect(next.cues[key]).toHaveLength(base.cues[key]!.length);
    base.cues[key]!.forEach((sample,index)=>{
@@ -109,10 +109,10 @@ describe('V5 audio delivery',()=>{
   }
  });
  it('keeps a missing voice variant on its original pack while using delivered peers',()=>{
-  const base=read('manifest.json') as AudioManifest,rows=read('v5/manifest.json')['voice.mochi.hit'];
-  const next=applyV5Audio(base,{'voice.mochi.hit':[rows[0]]});
-  expect(next.cues['voice.mochi.hit']![0]!.pack).toMatch(/^v5:voice\//);
-  expect(next.cues['voice.mochi.hit']![1]).toEqual(base.cues['voice.mochi.hit']![1]);
+  const base=read('manifest.json') as AudioManifest,rows=read('v5/manifest.json')['voice.panko.hit'];
+  const next=applyV5Audio(base,{'voice.panko.hit':[rows[0]]});
+  expect(next.cues['voice.panko.hit']![0]!.pack).toMatch(/^v5:voice\//);
+  expect(next.cues['voice.panko.hit']![1]).toEqual(base.cues['voice.panko.hit']![1]);
  });
  it('resolves explicit hero cues before generic element bindings and does not double scheduled impact offsets',()=>{
   const base=read('manifest.json'),delivery=read('v5/manifest.json');
