@@ -50,3 +50,15 @@ it('preserves the uncapped legacy Tower route transition',()=>{
  const m=model(false);m.state.run!.mode='tower';m.state.run!.floor=30;const expected=R.nextTowerFloor(m.state);render(<RouteComplete m={m}/>);
  fireEvent.click(screen.getByRole('button',{name:'Climb to floor 31'}));expect(m.state).toEqual(expected.state);expect(m.state.run!.floor).toBe(31);
 });
+it('offers the Avalanche Relic only after a won Chapter 1 campaign route, with honest wording',async()=>{
+ const m=model();render(<RouteComplete m={m}/>);
+ expect(screen.getByRole('heading',{name:'Keep this memory as a Relic on Avalanche'})).toBeTruthy();
+ expect(screen.getByText(/does not replay your battle yet/)).toBeTruthy();
+ // Builds without a chain backend show only the labelled fixture preview.
+ fireEvent.click(await screen.findByRole('button',{name:'Preview receipt fixture'},{timeout:10_000}));
+ expect(await screen.findByLabelText('Fixture receipt — no transaction')).toBeTruthy();
+});
+it.each([['loss',(m:DepthModel)=>{m.state.run!.won=false;}],['chapter 2',(m:DepthModel)=>{m.state.run!.chapter=2;}],['tower',(m:DepthModel)=>{m.state.run!.mode='tower';}]] as const)('hides the Avalanche Relic offer on a %s',(_,change)=>{
+ const m=model();change(m);render(<RouteComplete m={m}/>);
+ expect(screen.queryByRole('heading',{name:'Keep this memory as a Relic on Avalanche'})).toBeNull();
+});

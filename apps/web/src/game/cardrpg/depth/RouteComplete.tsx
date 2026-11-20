@@ -1,6 +1,7 @@
 import {useMemo,useSyncExternalStore} from 'react';
 import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
 import {GearArtA6} from '../ui-v3/KeepsakeArtA6';
+import {GuardianRelicOffer,guardianRelicEligible} from '../chain/GuardianRelicOffer';
 import type {DepthModel} from './model';
 import {dailySuppliesFullV4} from './star-plans-v4';
 import './route-stops.css';
@@ -32,6 +33,7 @@ export function RouteComplete({m}:{m:DepthModel}){
    </article>;})}
    {notes.map((note,index)=><p className="dp-route-find-note" key={index}>{note}</p>)}
   </section>:<p>No new equipment this route.</p>}
+  {guardianRelicEligible(run)&&<GuardianRelicOffer/>}
   {nextFloor&&!nextFloor.ok&&<p className="dp-route-complete-status" role="status">{nextFloor.error}</p>}
   <div className="cr-actions"><button className="cr-primary" onClick={()=>open(firstAvailable)}>Review equipment</button><button onClick={()=>m.go('hub')}>Return to cafe</button>
    {nextFloor?.ok&&<button onClick={()=>m.apply(R.nextTowerFloor(m.state),'Next Tower floor opened.')}>Climb to floor {run.floor+1}</button>}
