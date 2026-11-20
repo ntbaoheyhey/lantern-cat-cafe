@@ -374,7 +374,9 @@ export class SpineScene {
    else if(frozen&&previous&&previous.name===name&&previous.key===key)at=previous.at;
    if(actor.mesh&&!frozen){actor.mesh.proceduralTime=worldTime+phaseOffset;if(actor.mesh.livingCat)actor.mesh.livingReducedMotion=!!view.reducedMotion;}
    if(entry.asset==='mochi'||entry.asset==='clover'||entry.asset==='soot')actor.sample(name,key,at,delta,this.camera,view.reducedMotion,
-    {worldTime:worldTime+phaseOffset,paused:!!view.paused,fixedTime:view.fixedTime!==undefined,frozen,playbackRate:view.playbackSpeed??1});
+    // Hit-stop is 60-100 ms: pausing a video for it, then restarting it, makes all
+    // three idles hitch on every hit. Only ice (a real status) stops the loop.
+    {worldTime:worldTime+phaseOffset,paused:!!view.paused,fixedTime:view.fixedTime!==undefined,frozen:iced,playbackRate:view.playbackSpeed??1});
    else actor.sample(name,key,at,delta,this.camera,view.reducedMotion);
    const drawingDamage=unit.hp>0&&frame?.plan.events.some(e=>e.type==='damage'&&e.amount>0&&e.targetIds.includes(unit.id));
    const damageAge=drawingDamage&&frame?(frame.elapsed-frame.plan.beats[2]!.start)/1000:undefined;

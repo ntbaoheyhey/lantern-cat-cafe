@@ -1,5 +1,5 @@
-import {describe,expect,it} from 'vitest';
-import {designerBodyRect,designerVideoSource,validateDesignerVideoMeta,DESIGNER_BODY_UNITS} from './designer-video';
+import {afterEach,beforeEach,describe,expect,it,vi} from 'vitest';
+import {designerBodyRect,designerVideoSource,validateDesignerVideoMeta,DesignerVideoMedia,DESIGNER_BODY_UNITS,DESIGNER_HOLD_RATE} from './designer-video';
 import {hasDesignerIdleBody} from './designer-idle-body';
 
 const mochi={fps:30,frames:300,width:922,height:778,feetY:749,heightPx:720,anchor:[.5,.9627] as [number,number],marginPx:29,alpha:'straight' as const};
@@ -28,5 +28,45 @@ describe('V9 designer video idles',()=>{
   for(const id of ['mochi','clover','soot'])expect(hasDesignerIdleBody(id,{designerIdle:true})).toBe(true);
   expect(hasDesignerIdleBody('soot',{})).toBe(false);
   expect(hasDesignerIdleBody('panko',{designerIdle:true})).toBe(false);
+ });
+});
+
+describe('designer idles never freeze into stills',()=>{
+ // jsdom has no media pipeline: model paused/play/pause on the prototype.
+ let paused:WeakMap<HTMLMediaElement,boolean>;
+ beforeEach(()=>{
+  paused=new WeakMap();
+  vi.spyOn(HTMLMediaElement.prototype,'paused','get').mockImplementation(function(this:HTMLMediaElement){return paused.get(this)??true;});
+  vi.spyOn(HTMLMediaElement.prototype,'play').mockImplementation(function(this:HTMLMediaElement){paused.set(this,false);return Promise.resolve();});
+  vi.spyOn(HTMLMediaElement.prototype,'pause').mockImplementation(function(this:HTMLMediaElement){paused.set(this,true);});
+  vi.spyOn(HTMLMediaElement.prototype,'load').mockImplementation(()=>{});
+ });
+ afterEach(()=>vi.restoreAllMocks());
+ const clock={worldTime:0,paused:false,fixedTime:false,frozen:false,playbackRate:1};
+ it('keeps playing through a cast hold, only slower, and restores speed after',()=>{
+  const media=new DesignerVideoMedia(mochi,'/units/mochi/designer/');
+  media.sample(clock,false);expect(media.video.paused).toBe(false);
+  media.hold();media.sample(clock,false);
+  expect(media.isHeld).toBe(true);expect(media.video.paused).toBe(false);
+  expect(media.video.playbackRate).toBeCloseTo(DESIGNER_HOLD_RATE,3);
+  media.release();media.sample(clock,false);
+  expect(media.video.paused).toBe(false);expect(media.video.playbackRate).toBeCloseTo(1,3);
+  media.dispose();
+ });
+ it('keeps the hold slow-down relative to the battle speed setting',()=>{
+  const media=new DesignerVideoMedia(mochi,'/units/mochi/designer/');
+  media.hold();media.sample({...clock,playbackRate:2},false);
+  expect(media.video.playbackRate).toBeCloseTo(2*DESIGNER_HOLD_RATE,3);
+  media.dispose();
+ });
+ it('stops only for a real pause, ice, a hidden tab or reduced motion',()=>{
+  const media=new DesignerVideoMedia(mochi,'/units/mochi/designer/');
+  media.sample({...clock,paused:true},false);expect(media.video.paused).toBe(true);
+  media.sample(clock,false);expect(media.video.paused).toBe(false);
+  media.sample({...clock,frozen:true},false);expect(media.video.paused).toBe(true);
+  media.sample(clock,false);media.setSuspended(true);expect(media.video.paused).toBe(true);
+  media.setSuspended(false);expect(media.video.paused).toBe(false);
+  media.hold();media.sample(clock,true);expect(media.video.paused).toBe(true);
+  media.dispose();
  });
 });
