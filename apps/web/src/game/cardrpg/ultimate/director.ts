@@ -35,7 +35,7 @@ export class UltimateDirector {
  /** Sound hook; the scene routes ids to its audio bus. */
  onBeat:(beat:UltBeat,recipe:UltRecipe)=>void=()=>{};
  readonly audit={active:false,cat:'',at:0,dim:0,phase:'' as CastPose['phase']|'',shake:0,held:false,beats:[] as string[]};
- constructor(host:HTMLElement,scene:T.Scene){this.painter=new UltimatePainter(host);this.group.name='v9-ultimate';scene.add(this.group);this.painter.flipbooks.load();}
+ constructor(host:HTMLElement,scene:T.Scene){this.painter=new UltimatePainter(host);this.group.name='v9-ultimate';scene.add(this.group);}
  /** True when this plan is a V9 ultimate the director owns. */
  owns(ultimate:boolean,asset:string|undefined){return ultimate&&!!ultRecipe(asset);}
  get active(){return !!this.recipe;}
@@ -116,14 +116,14 @@ export class UltimateDirector {
  private buildSilhouettes(media:DesignerVideoMedia){
   const r=this.recipe!,geometry=media.plane.geometry;
   this.rim=new T.Mesh(geometry,silhouetteMaterial(media.texture,r.palette.glow,0));this.rim.matrixAutoUpdate=false;this.rim.frustumCulled=false;this.group.add(this.rim);
-  this.ghosts=[[45,.42],[90,.28],[140,.16]].map(([delay,alpha])=>{const mesh=new T.Mesh(geometry,silhouetteMaterial(media.texture,r.palette.accent,0));mesh.matrixAutoUpdate=false;mesh.frustumCulled=false;this.group.add(mesh);return{mesh,delay:delay!,alpha:alpha!};});
+  this.ghosts=[[40,.2],[80,.11],[120,.05]].map(([delay,alpha])=>{const mesh=new T.Mesh(geometry,silhouetteMaterial(media.texture,r.palette.accent,0));mesh.matrixAutoUpdate=false;mesh.frustumCulled=false;this.group.add(mesh);return{mesh,delay:delay!,alpha:alpha!};});
  }
  private updateSilhouettes(at:number,root:T.Object3D|undefined,reduced:boolean){
   if(!this.rim||!this.media||!root)return;
   const plane=this.media.plane;plane.updateMatrix();
   const base=new T.Matrix4().multiplyMatrices(root.matrixWorld,plane.matrix);
   // Rim: grows in on the banner, peaks on impact, fades in the linger.
-  const rimAlpha=reduced?0:at<ULT_TIMING.impact?.25+.45*Math.min(1,at/ULT_TIMING.impact):Math.max(0,.75*(1-(at-ULT_TIMING.impact)/700));
+  const rimAlpha=reduced?0:at<ULT_TIMING.impact?.2+.3*Math.min(1,at/ULT_TIMING.impact):Math.max(0,.5*(1-(at-ULT_TIMING.impact)/600));
   const grow=new T.Matrix4().makeScale(1.045,1.03,1),order=(plane.renderOrder||0)-.5;
   this.rim.matrix.copy(base).multiply(grow);this.rim.material.opacity=rimAlpha;this.rim.renderOrder=order;this.rim.visible=rimAlpha>.01;
   this.history.push({t:at,matrix:base.clone()});while(this.history.length>30)this.history.shift();

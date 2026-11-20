@@ -73,7 +73,12 @@ export class DesignerVideoMedia {
   this.ready=new Promise<boolean>(resolve=>{
    const timer=setTimeout(()=>{this.failure='Designer video timeout';resolve(false);},8000);
    video.addEventListener('loadeddata',()=>{clearTimeout(timer);resolve(true);},{once:true});
-   video.addEventListener('error',()=>{clearTimeout(timer);this.failure='Designer video failed '+(video.error?.code??'');resolve(false);},{once:true});
+   const failed=()=>{
+    // A cat delivered without an HEVC-alpha export (Soot) still plays its WebM.
+    if(video.src.endsWith('.mov')){video.src=`${folder}idle.webm`;video.addEventListener('error',failed,{once:true});return;}
+    clearTimeout(timer);this.failure='Designer video failed '+(video.error?.code??'');resolve(false);
+   };
+   video.addEventListener('error',failed,{once:true});
   });
   this.watchFrames();
   void video.play().catch(()=>{/* autoplay is retried on sample */});
@@ -112,7 +117,7 @@ export class DesignerVideoMedia {
 }
 
 /** Socket heights as fractions of the opaque body, measured on the three idles. */
-const SOCKETS:Record<string,[number,number]>={feet:[0,0],chest:[0,.5],head:[0,.77],hpAnchor:[0,1.1],vfxOrigin:[0,.52],mainHand:[.24,.5],offHand:[-.2,.48]};
+const SOCKETS:Record<string,[number,number]>={feet:[0,0],chest:[0,.5],head:[0,.77],hpAnchor:[.36,.9],vfxOrigin:[0,.52],mainHand:[.24,.5],offHand:[-.2,.48]};
 
 export class DesignerVideoActorMedia {
  readonly designerVideo=true;

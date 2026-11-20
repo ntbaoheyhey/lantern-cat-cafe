@@ -260,12 +260,20 @@ export async function startLocal({web = true, campaignRewards = web, economyV3 =
         outgoing.setHeader('content-type','application/json');outgoing.end(stringify(result));
       }catch(error){
         const failure=modules.chainFailure(error,'local_request_failed');
+        // Unexpected failures surface to the UI as a generic retry; keep the cause in the CI log.
+        if(failure.status>=500&&error?.name!=='AuthError')console.error('[chain-local]',incoming.url,error?.code??'',error?.message??error);
         outgoing.setHeader('content-type','application/json');
         outgoing.writeHead(error?.name==='AuthError'?401:failure.status).end(stringify(failure.body));
       }finally{if(counted)apiRequests--;}
     });
     await new Promise((r,j)=>{server.once('error',j);server.listen(ports.api,'127.0.0.1',r);});handles.push(()=>new Promise(r=>server.close(r)));
     mkdirSync(resolve(root,'apps/web/public'),{recursive:true});
+    // Anvil keeps block timestamps strictly increasing, so the burst of deploy and
+    // seed blocks above runs ahead of the wall clock on a fast machine. Reward
+    // quotes refuse a chain head more than 5 s in the future (routine_snapshot),
+    // so let real time catch up before the fixture opens.
+    for(let head=Number((await client.getBlock()).timestamp);head>Math.floor(Date.now()/1000);head=Number((await client.getBlock()).timestamp))
+      await new Promise(r=>setTimeout(r,250));
     writeFileSync(resolve(root,'apps/web/public/chain-local.json'),stringify(config));
     writeFileSync(resolve(root,'work/chain/local-addresses.json'),stringify(config));
     if(web){

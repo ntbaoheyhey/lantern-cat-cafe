@@ -1,5 +1,7 @@
 # Three-minute pitch — DRAFT, not submitted
 
+> **Archived (v2, early November 2026).** This page describes the earlier v2 build and is kept for history only. The current judge path, Fuji contracts (including the fixed-supply ERC-20 YARN) and demo steps are in the [README](../../README.md).
+
 Target: about 411 spoken words plus screen changes. Rehearse with the actual recording before claiming a three-minute runtime. The screen recording must identify local candidate `1eefc3e` or the subsequently verified live release. Do not mix their evidence.
 
 ## 0:00–0:25 — Problem and promise (Impact 15, Creativity 15)

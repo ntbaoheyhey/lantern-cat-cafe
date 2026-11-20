@@ -118,7 +118,9 @@ jobs:
     needs: changes
     if: needs.changes.outputs.code == 'true'
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    # 16 fresh fixture launches; each waits ~20 s for the wall clock to catch
+    # up with Anvil's deploy burst (tools/chain/local.mjs), so 15 min was too tight.
+    timeout-minutes: 25
     steps:
       - uses: actions/checkout@v4
         with:
