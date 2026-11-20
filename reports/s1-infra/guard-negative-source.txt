@@ -1,4 +1,0 @@
-import { test } from '../support/test';
-import { classicURL } from '../support/servers';
-test.use({ baseURL: classicURL });
-test('guard rejects accidental classic routing', async ({ page }) => { await page.goto('/'); });

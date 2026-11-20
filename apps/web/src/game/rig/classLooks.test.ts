@@ -8,20 +8,20 @@ import { ANIM_NAMES, CLASS_IDS } from './types';
 import { mapProblems } from './spriteMap';
 import { BODY_CHARS } from './palettes';
 
-it('uses all seven agreed palettes and their unchanged weapon/marking contracts', () => {
+it('uses seven palette-locked class ramps and unchanged weapon/marking contracts', () => {
   const approved = {
-    warrior: [0xf0a040, 0xc66a1a, 0xfff0d8, 0x3f9e5a, 0xff8fb1, 'sword', 'tabby'],
-    guardian: [0x9aa0b4, 0x666c80, 0xe8eaf0, 0xffd75e, 0xff8fb1, 'hammer', 'plain'],
-    rogue: [0x4a4258, 0x2e2838, 0xd8d8e8, 0xffd75e, 0xd07890, 'daggers', 'plain'],
-    hunter: [0xa0703f, 0x6e4a26, 0xe8d2b0, 0x4aa8ff, 0xff8fb1, 'spear', 'tabby'],
-    archer: [0xf3e2c4, 0x8a6a52, 0xfffaf0, 0x3a7ad0, 0xff8fb1, 'bow', 'points'],
-    witch: [0xf2eefc, 0xb8b0d4, 0xffffff, 0xbb74ff, 0xff8fb1, 'staff', 'plain'],
-    alchemist: [0xfff3e0, 0xe08a3a, 0xffffff, 0x6be08a, 0xff8fb1, 'flasks', 'patches'],
+    warrior: [0xffbd79, 0xd98a51, 0xffe0aa, 0x35534e, 0xf2a6b5, 'sword', 'tabby'],
+    guardian: [0x8495ae, 0x46516b, 0xfff1d6, 0xf5cb7b, 0xf2a6b5, 'hammer', 'plain'],
+    rogue: [0x2d354d, 0x1d2335, 0xe6d6f5, 0xf5cb7b, 0xd87c88, 'daggers', 'plain'],
+    hunter: [0xae7961, 0x543b45, 0xffe0aa, 0xa5d5ad, 0xf2a6b5, 'spear', 'tabby'],
+    archer: [0xfff1d6, 0xae7961, 0xffe0aa, 0x92c6ff, 0xf2a6b5, 'bow', 'points'],
+    witch: [0xe6d6f5, 0x8c628d, 0xfff1d6, 0xcfadf5, 0xf2a6b5, 'staff', 'plain'],
+    alchemist: [0xffe0aa, 0xd98a51, 0xfff1d6, 0xa5d5ad, 0xf2a6b5, 'flasks', 'patches'],
   };
   for (const id of CLASS_IDS) {
     const { fur, weaponType, markings, starterWeapon } = CLASS_LOOKS[id];
     expect([fur.o, fur.d, fur.w, fur.e, fur.n, weaponType, markings]).toEqual(approved[id]);
-    expect(fur.k).toBe(0x140a12);
+    expect(fur.k).toBe(0x121522);
     expect(starterWeapon).toBe(`${weaponType}.basic`);
   }
 });

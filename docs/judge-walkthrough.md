@@ -1,6 +1,8 @@
-# Judge walkthrough — current guest flow, recording DRAFT
+# Judge walkthrough — DRAFT, local candidate and live baseline
 
-Use [the live frontend](https://taskbarhero-eight.vercel.app) on desktop. This guide separates local guest progress, authenticated server state and Fuji transactions. It is not a completed timed demo or submission. SYSTEM must wait for the UI session's CXU3/CXC2 readiness record before refreshing live QA.
+> **Archived (v2, early November 2026).** This page describes the earlier v2 build and is kept for history only. The current judge path, Fuji contracts (including the fixed-supply ERC-20 YARN) and demo steps are in the [README](../README.md).
+
+Use [the live frontend](https://taskbarhero-eight.vercel.app) on desktop. This guide separates local guest progress, authenticated server state and Fuji transactions. It is not a completed timed demo or submission. Integrated candidate `1eefc3e` is not deployed; live baseline remains `340f88b`. Use the [current release evidence](release-status.md) and [90-second candidate shot list](submission/shot-list-90-second.md) to label the source being demonstrated.
 
 ## Guest inspection
 
@@ -18,7 +20,7 @@ The separate QA route is Landing→Guest→Class→Idle→Boss→Forge→Bag→O
 
 For the funded scenario, use only throwaway Fuji accounts and free test AVAX. Record actual mint/list/buy transaction hashes against the specified contracts and verify successful receipts. Wallet/key/login prerequisites remain owner-controlled; never share seeds/private keys. There is no mainnet or real-funds step. Pending evidence stays explicitly NOT VERIFIED.
 
-[145-second recording draft](video-script.md) · [Submission pack DRAFT](submission.md) · [Versioned baseline screenshots](../reports/submission/evidence/media-manifest.json). Baseline 6144d42 images show guest/read-only states and must be refreshed after UI readiness.
+[145-second recording draft](video-script.md) · [Submission pack DRAFT](submission.md) · [Versioned baseline screenshots](../reports/submission/evidence/media-manifest.json). Baseline 6144d42 images remain historical guest/read-only evidence. The [refreshed integrated gallery](https://github.com/ntbaoheyhey/taskbar-hero/blob/ai/codex-gallery-on-stack/docs/ui/gallery/index.html) supplies current local candidate captures with fixture labels; it is not a new live recording.
 
 ## Security in 2 minutes
 
@@ -26,4 +28,4 @@ Guest progress is local browser data. Authenticated progress uses wallet sign-in
 
 Open Help → On-chain proof to read the public Fuji contracts (43113). Code/linkage/events are read-only evidence, not a transaction receipt or an independent audit. The [security overview](security-overview.md) links exact source tests and explains the distinction.
 
-PR #244 is still blocked by the missing complete deployed function backup and tested restore path. This session has not deployed the backend, changed flags/settings or completed fresh funded mint/list/buy proof. UI presentation still awaits its release-readiness record and a fresh timed run; this document does not imply either is complete.
+PR #244 is still blocked by the missing complete deployed function backup and tested restore path. This session has not deployed the backend, changed flags/settings or completed fresh funded mint/list/buy proof. The [exact integration receipt](release-status.md) records local UI verification. A released timed recording and funded wallet proof remain pending; local browser tests do not complete them.

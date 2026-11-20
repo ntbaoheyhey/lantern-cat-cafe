@@ -1,0 +1,35 @@
+import { test, expect } from '../support/test';
+import { pinVisualFonts } from '../support/visual-fonts';
+
+test('keyboard starts the first class directly and later switches require confirmation', async ({ page }) => {
+  await pinVisualFonts(page);
+  await page.addInitScript(() => localStorage.setItem('taskbar-hero.howToPlaySeen', '1'));
+  const errors: string[] = [];
+  page.on('pageerror', error => errors.push(error.message));
+  page.on('console', message => { if (message.type() === 'error') errors.push(message.text()); });
+  await page.goto('/#landing');
+  await page.getByTestId('landing-start').click();
+  await page.getByTestId('class-picker-choose-button').focus();
+  await page.keyboard.press('Enter');
+  await expect(page.getByTestId('class-picker-confirm-box')).toHaveCount(0);
+  await expect(page.getByTestId('home-dashboard')).toBeVisible();
+  await page.getByTestId('nav-hero').click();
+  const change = page.getByRole('button', { name: 'Change class', exact: true });
+  await change.focus(); await page.keyboard.press('Enter');
+  const dialog = page.getByRole('dialog', { name: 'Change class', exact: true });
+  await expect(dialog).toBeVisible();
+  await page.keyboard.press('Escape');
+  await expect(dialog).toHaveCount(0); await expect(change).toBeFocused();
+  await page.keyboard.press('Enter');
+  await dialog.getByRole('button', { name: 'Cancel', exact: true }).focus();
+  await page.keyboard.press('Enter');
+  await expect(dialog).toHaveCount(0); await expect(change).toBeFocused();
+  await page.keyboard.press('Enter');
+  await dialog.getByLabel('Cat class', { exact: true }).selectOption('guardian');
+  const confirm = dialog.getByRole('button', { name: 'Confirm class', exact: true });
+  await confirm.focus(); await expect(confirm).toBeInViewport({ ratio: 1 });
+  await page.keyboard.press('Enter');
+  await expect(dialog).toHaveCount(0);
+  await expect(page.getByText('Class changed to Guardian.', { exact: true })).toBeVisible();
+  expect(errors).toEqual([]);
+});

@@ -1,113 +1,144 @@
-# Taskbar Hero
+# Taskbar Hero — Lantern Cat Café
 
-## For judges — draft review entry
+![Mochi casts Last Lantern Vow](docs/submission/media/hero.gif)
 
-[Play Taskbar Hero](https://taskbarhero-eight.vercel.app). The repository remains **private**; this task does not submit the project or change access. [Submission pack DRAFT](docs/submission.md) · [Nine-slide outline](docs/pitch-slides.md) · [Video script DRAFT](docs/video-script.md) · [Security overview](docs/security-overview.md).
+[Watch the 51-second demo recording](art/trailer/v9/battle_v5-m2.5.mp4) · [View the six-frame contact sheet](art/trailer/v9/contact_sheet_v5-m2.5.png)
 
-Taskbar Hero is a desktop idle RPG with a cat adventurer. Guest progress lives locally in the browser. Authenticated play uses server-owned state and shared rules; collectible Relics use wallet transactions on Avalanche Fuji. No separate ERC-20 game currency or mainnet deployment is claimed.
+The GIF and video images were captured from `v5-m2.5`; the 51-second recording now includes the licensed wave and boss music. These images predate the final Mochi/Clover idles in the current build. The planned three-minute trailer remains separate.
 
-| Fuji 43113 contract | Address / public explorer |
-|---|---|
-| RelicNFT (ERC-1155) | [0xB1a1edb7A75Db6e7067E747ddee32B39c2296f2D](https://testnet.routescan.io/address/0xB1a1edb7A75Db6e7067E747ddee32B39c2296f2D/contract) |
-| RelicMarket (escrow) | [0x10fcC46e439d3E31Fb1720B337C45CadB9b2ff93](https://testnet.routescan.io/address/0x10fcC46e439d3E31Fb1720B337C45CadB9b2ff93/contract) |
+The Lantern Cat Café is the last lit shop on a street tangled by abandoned tasks. Lead Mochi, Clover and Soot through a street patrol and face the Yarn Giant in a cosy browser card RPG. In the configured Avalanche mode, café memories become Relics that players can own on Fuji.
 
-Help→On-chain proof reads code, linkage and recent events. Read-only evidence is not a mint/list/buy receipt, lifetime supply count or independent audit. Fresh funded wallet proof is pending. PR #244 also remains blocked by the missing complete deployed function backup and tested restore path; see [security evidence](docs/security-overview.md).
+**Latest integrated build:** [v5-m2.13](https://github.com/ntbaoheyhey/taskbar-hero/tree/v5-m2.13), with Mochi’s enemy push-back, Clover/Soot lunges, complete designer WebM and Safari HEVC-alpha exports for Mochi/Clover, and working enemy HUD portraits. The [v5-m2.2 recording baseline](https://github.com/ntbaoheyhey/taskbar-hero/tree/v5-m2.2) remains published before the recording deadline, with all three ultimate sequences and layered sound playback.
 
-## How to inspect the current v2 guest loop
+## Play in three steps
 
-1. Open the live site, dismiss initial Help if shown, and choose one of three starter classes. The broader registry contains seven classes.
-2. Watch real idle claims, then use Bag to compare/equip gear. The bag holds 200 items; Hero shows nine slots.
-3. Map shows five chapters and boss requirements. A daily first claim grants a Cat Key; a boss win spends one and a loss keeps it.
-4. Forge crafts gear from game materials. The v2 daily Relic recipe is 30 Yarn plus 1 Moon Pearl; minting requires wallet/sign-in and free Fuji test AVAX.
-5. Open Help→On-chain proof, then Market. Guest mode honestly shows the wallet requirement; ordinary gear is not tradable there.
+Use Node 24 and pnpm 10.28.0. The local demo needs no account, wallet setup or test tokens.
 
-The optional catalog starts OFF and previews 12 stats, 15 items, 5 qualities and 7 skills. It does not activate the shared original economy, change saves or grant ownership. Timed live demo refresh waits for the UI session's readiness log. See the [judge guide](docs/judge-walkthrough.md) and distinguish its dated historical sections from current evidence.
+1. Clone the release branch and install its dependencies:
 
-## Versioned live screenshots
+   ```sh
+   git clone --depth 1 --branch release/2026-11-21 https://github.com/ntbaoheyhey/taskbar-hero.git
+   cd taskbar-hero
+   pnpm install --frozen-lockfile
+   ```
 
-These are unchanged guest/read-only captures of 6144d42 on 3 November 2026, before the current UI refresh. [Media hashes and scope](reports/submission/evidence/media-manifest.json) · [Exact release receipt](reports/submission/evidence/6144d42-acceptance.json). That receipt records 2,490 package unit cases, 323 browser cases per desktop size and 35 matching live assets; these are historical, version-specific numbers.
+2. Build and launch the local preview:
 
-![Live guest landing at 6144d42](reports/submission/screenshots/landing-1280x720.png)
+   ```sh
+   node tools/v5int/run-chain-mode.mjs --fixture
+   ```
 
-![Live guest Home at 6144d42](reports/submission/screenshots/home-1600x900.png)
+3. Open [Lantern Cat Café on port 6301](http://127.0.0.1:6301/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3). Choose **Play free → Guard the café → Face the Yarn Giant**. The complete URL selects the judge journey explicitly.
 
-![Public Fuji read-only proof at 6144d42](reports/submission/screenshots/fuji-read-only-1280x720.png)
+The three cats fight automatically at 1× speed. Mochi protects the team, Clover heals, and Soot delivers the final boss ultimate. The seeded journey has one street wave followed by the Yarn Giant; all twelve cats appear in Collection, while only the three demo cats enter these battles. **Play again** repeats the journey, and `&legacy=1` keeps the earlier game available.
 
-Other baseline captures in the manifest show a locked Map gate and the guest Hero screen. They are not victory, wallet ownership or transaction evidence. Existing older local/sample screenshots remain in docs/screenshots and are not relabelled as live.
+The `--fixture` launch shows an explicitly labelled receipt preview after victory: no transaction or ownership is claimed. Collection can still read real Fuji balances for a public wallet address. For the owner-configured backend, sponsored guest funding and a real mint, follow [RUN-CHAIN-MODE.md](docs/RUN-CHAIN-MODE.md) and launch the same command without `--fixture`.
 
-## On-chain
+## How Avalanche is used
 
-Network: **Avalanche Fuji testnet — chain ID 43113**. The market uses test AVAX.
+Combat runs off-chain using shared deterministic TypeScript rules. The server independently runs the fixed trial and controls reward entitlement; an editable browser save is never mint authority.
 
-| Contract | Address on Snowtrace |
+- **Guest sign-in:** a browser wallet signs a SIWE message, and Supabase validates the session.
+- **Sponsored entry:** an owner-funded sponsor sends test AVAX through `guest-drip`. The guest wallet pays its own mint gas using those funds; this is a funded-EOA flow.
+- **Boss reward:** after victory, the configured UI requests the existing finale voucher for **Relic #3, Moon Collar**, then submits `RelicNFT.mint`. The EIP-712 voucher binds the recipient, chain, contract, nonce and expiry, and the nonce prevents reuse.
+- **Visible proof:** a successful receipt shows the full transaction hash, **Avalanche Fuji**, actual fee payer, AVAX fee and Snowtrace link.
+- **Independent Collection:** the browser calls ERC-1155 `balanceOfBatch` directly on Fuji at one block. No backend or sign-in is required for this read; **Owned on Avalanche Fuji** appears only after a successful response.
+- **Wider contract system:** ERC-20 YARN, markets and seasonal claims support the larger game. They are separate from the short three-cat judge journey and require their matching configured services.
+
+All addresses below are on **Avalanche Fuji, chain ID 43113**, from the [versioned deployment registry](packages/chain/deployments/43113.json). Source verification was confirmed on 19 November 2026 using Foundry and Routescan, without an API key or a new deployment.
+
+| Contract | Purpose | Verified source |
+| --- | --- | --- |
+| RelicNFT | ERC-1155 Relics and signed-voucher minting | [0xB1a1edb7A75Db6e7067E747ddee32B39c2296f2D](https://testnet.snowtrace.io/address/0xB1a1edb7A75Db6e7067E747ddee32B39c2296f2D/contract/43113/code) |
+| RelicMarket | Legacy AVAX escrow market | [0x10fcC46e439d3E31Fb1720B337C45CadB9b2ff93](https://testnet.snowtrace.io/address/0x10fcC46e439d3E31Fb1720B337C45CadB9b2ff93/contract/43113/code) |
+| YarnToken | ERC-20 YARN | [0x3ae1b898c1Ded263b30D968D26Fe65211f102d6b](https://testnet.snowtrace.io/address/0x3ae1b898c1Ded263b30D968D26Fe65211f102d6b/contract/43113/code) |
+| RelicMarketV2 | AVAX/YARN trading and seller proceeds | [0x6Fe415494D791E63d87613B8FBCdbb24743C7eb4](https://testnet.snowtrace.io/address/0x6Fe415494D791E63d87613B8FBCdbb24743C7eb4/contract/43113/code) |
+| SeasonRewards | Signed seasonal reward claims | [0x29d4F1b9d4577BF2bA5c6bdB849CA5fdc9bd6c11](https://testnet.snowtrace.io/address/0x29d4F1b9d4577BF2bA5c6bdB849CA5fdc9bd6c11/contract/43113/code) |
+
+### Three real Fuji transactions
+
+These successful **historical gameplay transactions from 12 November 2026** were read back from Fuji RPC on 19 November. The destination contracts, decoded methods and receipt events confirm minting, listing and buying Relic #3. They show the existing on-chain flow; the fresh V9 sponsored reward-mint recording remains owner-dependent.
+
+| Transaction | Receipt | Block |
+| --- | --- | ---: |
+| Mint Moon Collar, Relic #3 | [0x1cd4a1fb…261b8](https://testnet.snowtrace.io/tx/0x1cd4a1fb0fbe78a95893608b0435b9b720e9191c5287137f64696a519c9261b8) | 60,934,447 |
+| List Relic #3 for 0.001 AVAX | [0x899ed5c5…83636](https://testnet.snowtrace.io/tx/0x899ed5c516b2909764f34143b6568711a8f94e61cccd1b6b551e0878e3b83636) | 60,934,457 |
+| Buy that listing | [0x9662228f…7fddd](https://testnet.snowtrace.io/tx/0x9662228f168bd5080907f49bd3a01d735f91b620d5468c7778a362b74ec7fddd) | 60,934,461 |
+
+## Game economy and YARN
+
+Play earns bound rewards; power never needs the token. **YARN** (fixed 1B ERC-20 on Fuji, no mint) buys ownership: sealing gear into tradable NFTs, fusing three Epics into a Legendary NFT, café cosmetics and market trades, and each of those burns YARN on-chain. Weekly rewards leave the game as YARN only while season emission stays within a small launch allowance plus 90% of public burns, checked against Fuji before every claim is signed.
+
+| | |
 | --- | --- |
-| RelicNFT (ERC-1155) | [0xB1a1edb7A75Db6e7067E747ddee32B39c2296f2D](https://testnet.snowtrace.io/address/0xB1a1edb7A75Db6e7067E747ddee32B39c2296f2D) |
-| RelicMarket | [0x10fcC46e439d3E31Fb1720B337C45CadB9b2ff93](https://testnet.snowtrace.io/address/0x10fcC46e439d3E31Fb1720B337C45CadB9b2ff93) |
+| Drop, gacha, fusion and enhancement odds | published in [docs/ECONOMY.md](docs/ECONOMY.md), generated from the live rule table |
+| Fees | seal 13% of reference (burned); market 5% = 2% burned + 3% treasury |
+| Allocation | players 35%, team 15%, treasury 12%, investors 12%, ecosystem 10%, early testers 6%, liquidity 5%, advisors 3%, partners 2% |
+| 52-week simulation | burned / claimed **2.85×** balanced, **1.14×** at half demand; inflation capped if demand collapses ([report](docs/economy/SIM-REPORT.md)) |
+| Studio revenue | 3% of every market sale plus capped treasury YARN sales; no paid randomness, no sold power |
 
-The server signs an EIP-712 voucher binding the player, Relic ID, rarity, nonce, and expiry to this chain and contract; the player's wallet submits it, and RelicNFT checks the signer, caller, expiry, unused nonce, and rarity consistency before minting one copy.
-
-See [contract details](docs/contracts.md) for voucher validation and the fixed-price escrow market.
+Re-run the model with `node tools/economy/sim.mjs`.
 
 ## Architecture
 
 ```mermaid
 flowchart LR
-  Web[React + Phaser] -->|Signed-in requests| API[Supabase Edge Functions]
-  API --> DB[(Supabase database)]
-  Rules[Shared game rules] --> Web
-  Rules --> API
-  API -->|EIP-712 voucher| Web
-  Web -->|Wallet transaction| Fuji[Fuji: RelicNFT + RelicMarket]
+  Rules[Shared deterministic rules] --> UI[React UI and Three.js battle]
+  Rules --> API[Supabase auth and chain judge]
+  UI -->|SIWE and reward request| API
+  API --> Ledger[(Entitlements and used nonces)]
+  API -->|Signed voucher| Wallet[Browser guest wallet]
+  Sponsor[Owner-funded sponsor] -->|Guest drip: test AVAX| Wallet
+  Wallet -->|Mint transaction| Fuji[Avalanche Fuji contracts]
+  UI -->|Read-only balanceOfBatch| Fuji
+  Fuji -->|Receipt and ownership| UI
 ```
 
-- **Client:** `apps/web` uses Vite, React, TypeScript, and Phaser for the UI and bottom game strip.
-- **Game rules:** `packages/game-rules` shares deterministic progression and combat rules between client and server.
-- **Backend:** `supabase` holds migrations and Edge Functions; the server decides gold, gear, shards, and Boss Key outcomes.
-- **Wallet and auth:** `packages/auth` supplies wallet sign-in logic; the client uses wagmi and viem with injected wallets.
-- **Blockchain:** `packages/chain` holds chain configuration and contract interfaces; `contracts` contains the Foundry NFT and market projects.
+The browser owns presentation and wallet interaction, Supabase owns authenticated issuance decisions, and Fuji owns token settlement. Collection reads the chain directly. See [ARCHITECTURE.md](docs/ARCHITECTURE.md) and the [chain-mode run guide](docs/RUN-CHAIN-MODE.md) for service boundaries and configuration.
 
-More detail: [architecture](docs/architecture.md). To add an endpoint, gear slot, rarity, boss or tab, follow the checklists in [extending](docs/extending.md).
+## Stack and repository map
 
-## Run locally
+The judge experience uses **Vite, React, TypeScript and Three.js**, with Spine/native rigs and video-texture idles. Shared game rules drive the seeded combat. **Supabase Edge Functions and Postgres**, SIWE, viem and Solidity contracts built with Foundry support the optional Avalanche mode. Phaser remains in legacy code; it does not draw the V9 judge battle.
 
-Prerequisites: Node.js compatible with Vite 8, pnpm (the root package declares 10.28.0), and Git. Foundry is needed for contract tests. Run these commands from the repository root:
+| Path | Contents |
+| --- | --- |
+| `apps/web/` | Game UI, Three.js presentation, audio, wallet flow and public media |
+| `packages/game-rules/` | Shared deterministic battle rules and V9 demo setup |
+| `packages/chain/` | ABIs, Fuji addresses and chain helpers |
+| `packages/auth/` | Authentication/session contracts |
+| `supabase/` | Edge Functions and database migrations |
+| `contracts/` | Solidity contracts, deployment scripts and Foundry tests |
+| `tools/v5int/` | Local launch, verification and integration smoke tools |
+| `tools/v9/` | Designer-idle conversion and original Blender VFX generation |
+| `docs/` | Architecture, run guides, submission material and credits |
 
-```sh
-pnpm install
-pnpm --filter @taskbar-hero/web dev
-```
+## Validation and current limits
 
-Open the local URL printed by Vite. Without Supabase configuration, the client uses mock game and auth APIs; this demo mode does not mint real Relics. See [backend setup](docs/go-live.md) for connected play.
+The integration gate is a production build, TypeScript check, focused tests for changed code and a muted browser demo run on port 6301. The v5-m2.13 changes passed 40 focused web unit tests, 19 server budget tests, the 33-screen word-budget audit, keyboard access, three independent viewport checks, three effect/contact checks and all four isolated chain browser scenarios. The real Anvil seal-price and tester-budget proofs pass, including a deliberately advanced chain clock; production freshness, finite-budget and replay guards remain enabled.
 
-Run all workspace unit tests, or either requested suite individually:
-
-```sh
-pnpm test
-pnpm --filter @taskbar-hero/web test
-pnpm --filter @taskbar-hero/game-rules test
-pnpm --filter @taskbar-hero/supabase-tests test   # Edge Function tests (also run by pnpm test)
-```
-
-Browser tests (Playwright) need a one-time browser download and a production build first:
+The browser gate exercises the street wave and boss at normal speed, all three ultimates, twelve sound layers, eight base Blender flipbooks, all three enemy HUD portraits, live Fuji Collection, the labelled receipt fixture and the legacy route. Chromium output is muted while audio playback diagnostics remain active. [PR #446](https://github.com/ntbaoheyhey/taskbar-hero/pull/446) reports the current remote CI results. These local checks do not establish a fresh public Fuji mint or Safari device playback.
 
 ```sh
-pnpm --filter @taskbar-hero/web exec playwright install chromium
+pnpm --filter @taskbar-hero/web typecheck
 pnpm --filter @taskbar-hero/web build
-pnpm --filter @taskbar-hero/web test:e2e
+node tools/v5int/v9-demo-smoke.mjs --chain-ui --v9-deliveries --v9-recording
 ```
 
-For Solidity tests, initialize the pinned dependencies, then run Foundry:
+Build the fixture mode with the launch command above before using the `--chain-ui` smoke option. Run contract tests separately with Foundry after initializing the repository submodules.
 
-```sh
-git submodule update --init --recursive
-cd contracts
-forge test -vv
-```
+The three ultimates and their sound layers are integrated. The hero GIF, a demo recording with music and six 1920×1080 screenshots are available. Mochi/Clover now use final designer PNG-sequence conversions at a shared source scale; Claude reported clean edges in the delivered judge run. Safari HEVC-alpha MOVs are included alongside the WebMs; the automated browser gate runs Chromium. Soot designer files are still missing, so Soot uses its existing rig. The final three-minute trailer and visual-lane V2 effect wiring remain separate follow-ups. A configured/deployed Supabase backend, funded sponsor and fresh real-mint screenshot remain owner work.
 
-Dependency installation needs network access unless cached. Unit and contract tests run locally without a live Supabase service, wallet, or Fuji RPC once dependencies and the Solidity compiler are available.
+## Submission screenshots
 
-## Credits and licenses
+[Title](docs/submission/media/title.png) · [Three-cat squad](docs/submission/media/squad.png) · [Mochi cut-in](docs/submission/media/cutin.png) · [Impact](docs/submission/media/impact.png) · [Receipt fixture](docs/submission/media/mint-toast.png) · [Fuji Collection read](docs/submission/media/collection.png)
 
-Built for **Avalanche Team1 Vietnam UniHack 2026**. Project code is licensed under the [MIT License](LICENSE); third-party dependencies retain their own licenses.
+These stills were captured from `v5-m2.5`, before the final Mochi/Clover idles. The receipt screenshot is explicitly a **fixture**, with no submitted transaction or explorer link. The Collection screenshot shows a successful Fuji read for an empty wallet. Neither screenshot is proof of a new mint.
 
-New catalog icons have [concrete source/tool/date/hash provenance](reports/asset-provenance.md). [Canonical historical provenance](docs/art/PROVENANCE.md) distinguishes existing project-original claims from independent chain-of-title proof; unknown historical prompts/model details remain unknown. The older [licence inventory](docs/licenses-v2.md) declares the fonts as SIL OFL1.1. This draft does not certify every historical asset licence or add third-party artwork.
+## Credits
+
+- **Character art and idle animation:** original project art and commissioned designer work for Mochi, Clover and Soot. Final Mochi/Clover WebMs and HEVC-alpha MOVs are converted from the designer’s transparent PNG sequences; Soot designer files remain pending.
+- **V9 effects:** original Blender geometry, shaders and animation authored for the project; no OMG 3Q art or sound is included.
+- **Battle music:** “RPG - To Arms! Battle Music 1” by HitCtrl, [source](https://opengameart.org/content/rpg-to-arms-battle-music-1), CC-BY 3.0; transcoded for browser playback.
+- **Boss music:** “Volatile Reaction” by Kevin MacLeod (incompetech.com), [source](https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1400039), licensed under [Creative Commons Attribution 4.0](https://creativecommons.org/licenses/by/4.0/). Cropped and transcoded for browser playback.
+- **Music and sound attribution:** [submission credits](docs/submission/CREDITS.md), [V9 music licences](apps/web/public/audio/v9/LICENSES.json), [existing audio provenance](apps/web/public/audio/LICENSES.json) and [project credits](docs/credits-v4.md). The twelve S2 ultimate layers and three shared sounds derive from Kenney Impact Sounds and RPG Audio under CC0; per-cue sources are listed in the submission credits.
+- **Art provenance:** [project asset record](docs/art/PROVENANCE.md). Project code is [MIT licensed](LICENSE); media and dependencies retain their stated licences.

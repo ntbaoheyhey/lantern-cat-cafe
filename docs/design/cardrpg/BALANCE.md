@@ -1,0 +1,165 @@
+# Balance and reproduction evidence
+
+Measured gameplay source: `b65168c6`; contract 0.3.0. Final contract 0.4.0 removes an internal mutating builder from the public API and regenerates fixture version fields; tuning and simulation outcomes are unchanged. All measurements use the actual pure meta commands and existing numbered-round battle engine, not estimated reward formulas. The runtime files did not change between these final simulations and this revision. The audit records SHA-256 values. Previous tuning trials remain in `evidence/`; filenames containing `initial`, `pressure`, `durability`, `redistributed`, or `tuned` are historical, not final gates.
+
+## Combat
+
+Final grid: 36 conditions × 100 seeds (1–100) = 3,600 battles. Holdout: 2 doctrines × 2 policies × 400 fresh seeds (1001–1400) = 1,600 battles. No tuning followed the holdout. Starter Auto target is 55–75%; the active policy is a deterministic proxy using visible information, not a human player. First-death counts include eventual victories and can be lower than trials because some runs have no deaths.
+
+| Encounter | Doctrine | Policy | Gear | Wins / 100 | Mean rounds | First deaths G/W/A |
+| --- | --- | --- | --- | ---: | ---: | --- |
+| patrol | hearthkeepers | auto | off | 100 | 15.64 | 0/0/0 |
+| patrol | hearthkeepers | auto | starter | 100 | 12.21 | 0/0/0 |
+| patrol | hearthkeepers | auto | high | 100 | 9.04 | 0/0/0 |
+| patrol | hearthkeepers | active | off | 100 | 14.63 | 0/0/0 |
+| patrol | hearthkeepers | active | starter | 100 | 11.28 | 0/0/0 |
+| patrol | hearthkeepers | active | high | 100 | 8.70 | 0/0/0 |
+| patrol | lanternbreakers | auto | off | 100 | 16.02 | 0/0/0 |
+| patrol | lanternbreakers | auto | starter | 100 | 12.67 | 0/0/0 |
+| patrol | lanternbreakers | auto | high | 100 | 9.39 | 0/0/0 |
+| patrol | lanternbreakers | active | off | 100 | 14.67 | 0/0/0 |
+| patrol | lanternbreakers | active | starter | 100 | 11.58 | 0/0/0 |
+| patrol | lanternbreakers | active | high | 100 | 8.95 | 0/0/0 |
+| boss | hearthkeepers | auto | off | 2 | 21.22 | 31/44/24 |
+| boss | hearthkeepers | auto | starter | 62 | 18.41 | 11/27/4 |
+| boss | hearthkeepers | auto | high | 100 | 10.79 | 0/0/0 |
+| boss | hearthkeepers | active | off | 2 | 21.22 | 31/44/24 |
+| boss | hearthkeepers | active | starter | 62 | 18.41 | 11/27/4 |
+| boss | hearthkeepers | active | high | 100 | 10.79 | 0/0/0 |
+| boss | lanternbreakers | auto | off | 2 | 20.10 | 31/51/17 |
+| boss | lanternbreakers | auto | starter | 95 | 17.19 | 4/2/11 |
+| boss | lanternbreakers | auto | high | 100 | 9.99 | 0/0/0 |
+| boss | lanternbreakers | active | off | 2 | 20.10 | 31/51/17 |
+| boss | lanternbreakers | active | starter | 95 | 17.19 | 4/2/11 |
+| boss | lanternbreakers | active | high | 100 | 9.99 | 0/0/0 |
+| campaign | hearthkeepers | auto | off | 0 | 36.53 | 74/22/4 |
+| campaign | hearthkeepers | auto | starter | 55 | 32.51 | 21/28/7 |
+| campaign | hearthkeepers | auto | high | 100 | 21.72 | 0/0/0 |
+| campaign | hearthkeepers | active | off | 0 | 35.93 | 53/36/11 |
+| campaign | hearthkeepers | active | starter | 81 | 30.49 | 7/14/7 |
+| campaign | hearthkeepers | active | high | 100 | 20.54 | 0/0/0 |
+| campaign | lanternbreakers | auto | off | 0 | 35.50 | 70/24/6 |
+| campaign | lanternbreakers | auto | starter | 61 | 32.31 | 27/13/10 |
+| campaign | lanternbreakers | auto | high | 100 | 21.43 | 0/0/0 |
+| campaign | lanternbreakers | active | off | 1 | 35.26 | 72/22/5 |
+| campaign | lanternbreakers | active | starter | 89 | 30.47 | 5/7/8 |
+| campaign | lanternbreakers | active | high | 100 | 20.47 | 0/0/0 |
+
+| Fresh holdout | Policy | Wins / 400 | Rate | First deaths G/W/A |
+| --- | --- | ---: | ---: | --- |
+| hearthkeepers | auto | 247 | 61.75% | 82/88/25 |
+| hearthkeepers | active | 339 | 84.75% | 39/41/16 |
+| lanternbreakers | auto | 244 | 61.00% | 117/76/27 |
+| lanternbreakers | active | 348 | 87.00% | 46/28/23 |
+
+All three roles now appear as first deaths. The distribution is not uniform: guardians are most exposed under Lanternbreakers. High gear makes chapter one nearly trivial, while gear-off remains deliberately punishing. Standalone boss has no campaign resource-selection decisions, so the two policy rows can coincide. These are limits of the narrow sandbox, not proof of long-term encounter balance.
+
+## Thirty-day economy
+
+Thirty seeded accounts per style, 90 total, across 2,700 account-days and 9,000 complete battles. Styles label 10/30/120 minutes, using 1/3/6 rewarded attempts per day and 1/2/2 cafe services. Service accrues alongside desktop activity, not additional active play time. These are scenario labels, not measured human session durations. The policy buys a chosen rare set, saves for Golden Maneki, develops cards/gear, then prepares supplies. No player purchasing or market prices are modeled.
+
+| Style | Draws/week | Draws/30 days | First legendary median day | First rare 4-set median day | Collection day 30 | Legendary cats day 30 |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| casual | 12.65 | 54.20 | 24 | 3 | 82.78% | 1.17 |
+| regular | 22.84 | 97.87 | 13 | 2 | 93.06% | 2.17 |
+| heavy | 23.80 | 102.00 | 13 | 1 | 93.33% | 2.23 |
+
+All 90 scenarios receive at least one legendary and earn Golden Maneki local eligibility by day 30. This is observed for these seeds, not a promise: the hard guarantee is 60 draws, and a casual account may earn fewer than 60 by day 30. Base legendary probability is 1%; pity raises the exact long-run frequency to 2.6640% (mean 37.5376 draws). The 12-cat roster becomes mostly complete within a month; expansion needs real new kit/encounter content.
+
+| Style | Resource | Earned | Spent | Initial | Day-30 balance |
+| --- | --- | ---: | ---: | ---: | ---: |
+| casual | fish | 6968.00 | 7535.67 | 600 | 32.33 |
+| casual | threads | 1314.47 | 1208.50 | 40 | 145.97 |
+| casual | stamps | 7621.33 | 8130.00 | 600 | 91.33 |
+| casual | essence | 35.00 | 30.00 | 0 | 5.00 |
+| regular | fish | 12800.00 | 13218.67 | 600 | 181.33 |
+| regular | threads | 2756.80 | 2647.93 | 40 | 148.87 |
+| regular | stamps | 14149.33 | 14680.00 | 600 | 69.33 |
+| regular | essence | 40.00 | 30.00 | 0 | 10.00 |
+| heavy | fish | 12800.00 | 13258.33 | 600 | 141.67 |
+| heavy | threads | 3068.67 | 2965.73 | 40 | 142.93 |
+| heavy | stamps | 14700.00 | 15300.00 | 600 | 0.00 |
+| heavy | essence | 40.00 | 30.00 | 0 | 10.00 |
+
+“Inflation” here means unspent point accumulation, not market-price inflation. Spent can exceed earned because of starter balances. Recycling gear counts as earned threads; crafting never refunds its total cost. Final heavy threads are 142.93 vs 1,876.4 in the preceding trial; simultaneous combat tuning prevents attributing the entire change to pantry costs alone. Essence retains a small reserve because this policy saves for the second design; repeatable epic tailoring remains available.
+
+| Week | Fish ratio | Thread ratio | Stamp ratio | Essence ratio | XP ratio | Draw ratio |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| 1 | 1.829 | 2.363 | 1.824 | 1.000 | 1.497 | 1.633 |
+| 2 | 1.850 | 2.323 | 1.999 | 1.000 | 1.765 | 1.983 |
+| 3 | 1.840 | 2.332 | 1.897 | 1.000 | 1.553 | 2.012 |
+| 4 | 1.829 | 2.321 | 1.921 | 1.000 | 1.598 | 1.838 |
+
+The maximum weekly cohort-mean ratio is 2.3631, below the 3× design target. This is not a universal bound for every pair of players: luck, losses and chosen spending differ. Caps bound repeated grants; a local client/day is not secure against tampering. No bot-resistance or online economy claim follows.
+
+Three additional 30-day runs disable every draw: casual/regular/heavy all forge Golden Maneki eligibility with zero pulls and starter cats plus chosen gear. This proves the deterministic route is reachable without gacha; three examples do not establish a population rate. See `evidence/economy-no-draws.json`.
+
+## Verification and commands
+
+Rules: baseline 614 passed; final 663 passed (+49), unchanged 2 expected failures and 11 skips. All workspace typechecks pass. The final rule regression includes paired effect-hit investment across 400 seeds, exact capped reward previews, a genuine victorious reward fixture, local global/season cap edges, pity, deterministic replay, immutable commands, no tradeable draw output, and losing forge/enhance/salvage loops. `evidence/audit.json` checks research coverage, ownership, pure meta I/O exclusions, current-core scheduler grep and every next-pull odds row.
+
+```sh
+pnpm --filter @taskbar-hero/game-rules test
+pnpm typecheck
+node tools/cardrpg-sim/fixtures.mjs
+node tools/cardrpg-sim/audit.mjs
+CARDRPG_FULL=1 CARDRPG_SEEDS=100 CARDRPG_TRIAL=final-grid node tools/cardrpg-sim/combat.mjs
+CARDRPG_SEEDS=400 CARDRPG_SEED_OFFSET=1000 CARDRPG_TRIAL=final-holdout node tools/cardrpg-sim/combat.mjs
+CARDRPG_PLAYERS=30 CARDRPG_TRIAL=final node tools/cardrpg-sim/economy.mjs
+CARDRPG_PLAYERS=1 CARDRPG_NO_DRAWS=1 CARDRPG_TRIAL=no-draws node tools/cardrpg-sim/economy.mjs
+```
+
+Run from the systems worktree with pnpm 10.28.0 and its frozen-lockfile install. Tools use existing local Vite/TypeScript/Vitest/fast-check, no new runtime dependencies or model calls. Never substitute fixture balances for real play when reporting a simulated outcome. Rendered integration, flag-off screenshots and actual offline behavior belong to Session B and are linked by the final ledger report.
+
+## Depth mode 0.5.0 — final seeded measurements
+
+This section governs the opt-in depth contract. Earlier sections preserve the 0.4.0 measurements. Final and held-out samples use 150 paired seeds per chapter/policy, with starter equipment and identical between-battle choices. Seeds 1–150 and 1001–1150 total 3,600 full seven-stop runs.
+
+| Sample | Chapter | Random | Auto | Greedy | Smart | Smart − Auto |
+| --- | --- | --- | --- | --- | --- | --- |
+| final | 1 | 0.00% | 66.67% | 78.00% | 87.33% | 20.67 pp |
+| final | 2 | 0.00% | 50.67% | 61.33% | 100.00% | 49.33 pp |
+| final | 3 | 0.67% | 46.00% | 63.33% | 100.00% | 54.00 pp |
+| heldout | 1 | 0.00% | 71.33% | 90.67% | 93.33% | 22.00 pp |
+| heldout | 2 | 0.00% | 51.33% | 69.33% | 100.00% | 48.67 pp |
+| heldout | 3 | 0.00% | 41.33% | 56.00% | 100.00% | 58.67 pp |
+
+Auto targets are 55–75%, 45–60% and 30–50% for chapters one through three. Both final samples fall inside those bands. Smart clears the chapter-two/three minimum improvement of 15 percentage points, while its perfect results exceed the desired 15–30-point improvement band. Smart uses bounded two-round evaluation of the public seeded state. These rates require human playtesting before translation into manual-player expectations.
+
+REFERENCE: reports/cardrpg-depth/sim/combat-final.json; reports/cardrpg-depth/sim/combat-heldout.json; packages/game-rules/src/cardrpg/depth/policies.ts; packages/game-rules/src/cardrpg/depth/run-bot.ts.
+
+The roster sweep covers all 220 three-cat teams with four omitted-skill patterns, two chapter bosses and three seat/seed rotations. It totals 5,280 encounters and 247,256 party actions. Every cat has 1,320 observations. Team-context win rates range from 83.71% for Sorrel to 99.85% for Mallow. Conditional skill selection ranges from 5.37% to 86.25% among skills offered at least 30 times. All six roles occur among first deaths. Shared omission patterns and the smart evaluator limit the conclusion. Build dominance remains PARTIAL.
+
+REFERENCE: reports/cardrpg-depth/sim/roster-broad.json; tools/cardrpg-depth/roster-sim.mjs; packages/game-rules/src/cardrpg/depth/skills.test.ts; packages/game-rules/src/cardrpg/depth/builds.test.ts.
+
+Ninety accounts, thirty per casual/regular/heavy style, use real capped commands for 45 days. The regular cohort owns 60.56%/73.89%/83.06% of cats and 31.77%/66.95%/76.35% of equipment templates on days 8/30/45. All thirty regular accounts retain missing cats through day 45. Mean first epic, legendary and four-slot set arrive on days 1.13, 5.00 and 2.63. These milestones refer to equipment. The six weekly heavy/casual cohort-mean ratios peak at 2.3334× across each currency and draw count. The report exposes all balances and mastery/seal accumulation separately.
+
+The earlier essence cap of twelve produced a 4.42× ratio and was reduced to six. Legendary tailoring now spends a boss seal. Fish points remain the bot's main constraint, leaving mastery materials and seals underused. The simulation demonstrates capped progression under stated play policies. Retention and authoritative anti-bot behavior require live evidence.
+
+REFERENCE: reports/cardrpg-depth/sim/economy-before-cap.json; reports/cardrpg-depth/sim/economy-45.json; tools/cardrpg-depth/economy.mjs; docs/design/cardrpg/DESIGN.md.
+
+<!-- A4_P6_MEASURED -->
+## Gameplay v4 — registered balance results
+
+| Target | Before | After | Status |
+|---|---|---|---|
+| Adjacent tiers ≥44/48, zero reversals | 26 positive / 22 ties / 0 reversals (50 seeds/cell) | 46/48 gain≥2pp; 0 reversals | PASS |
+| Intended bands: ≥15pp spread; no saturation | Level6 saturation; max50 dominated | 33/33 bands; minimum spread 16.80pp | PASS |
+| One piece ≤12pp; utility-aware share ≤10% | +34pp heldout; old displayed score omitted utility | Worst 93.40pp (hearthloom-charm-legendary, mochi, chapter3); share≤4.80% | MISS |
+| Every set 35–75% and leads a common situation | 8–92% heldout | 67.03–79.60% | MISS |
+| Every cat 55–75% and a top pick | 49.15–83.76% heldout | 31.38–64.66% | MISS |
+| Coherent crew +10–25pp at matched power | Not measured under v4 protocol | 47.73pp | MISS |
+| Matched-power tolerance ±2% | Not measured under v4 protocol | 0.99438–1.00569 ratio | PASS |
+| Wall time ordinary, chapter1 | 52.477–63.705s | 21.340s / party | PASS |
+| Wall time elite, chapter2 | Not measured at G0 | 33.785s / party | PASS |
+| Wall time boss, chapter1 | 177.346s (different earned day7 fixture) | 57.546s / enemy | PASS |
+| Wall time boss, chapter2 | Not measured at G0 | 64.807s / enemy | PASS |
+| Wall time boss, chapter3 | Not measured at G0 | 58.680s / enemy | PASS |
+| 45day heavy/casual ≤3×: every currency and paid draws | Max2.1948×; 90 accounts | paidPulls 1.0000×; fish 1.2069×; threads 1.4098×; stamps 1.0000×; essence 2.7260× | PASS |
+| Invitations: conditional CDF deviation ≤1pp | P4 max0.640337pp | 30,000accounts /1.8Mdraws; max0.640337pp | PASS |
+| Collectible paired win gain ≤3pp | Local counters; no enforcement layer | 500 races; 6000 encounters; 0pp | PASS |
+| OFF behavior exact | Frozen G0 digest47477251 | 8,250 routes exact47477251 | PASS |
+| Source gates | G0 passed | Type/lint/build, rules/web/E2E pass; numeric tests reported separately | PASS |
+| Offline artifact and startup | G0 A3 26,120,329 bytes | 26,215,694bytes; +95,365 vs G0; current-main cold comparison belongs to P7 | MISS |
+
+Full source-bound protocol, sample limitations, floor cells and utility diagnostics: [P6 balance report](../../../reports/cardrpg-big/a4/P6-BALANCE.md). Prior sections above remain historical. Local editions add no combat stats. +12 contribution checks are display-only; combat balance at max enhancement is not established. No independent human playtest is claimed.

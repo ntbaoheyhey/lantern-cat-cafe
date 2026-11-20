@@ -1,3 +1,4 @@
+import { CONFIG } from '@taskbar-hero/game-rules';
 import { ERROR_CODES_V2 } from '../../api/GameApiV2';
 import type {
   BossFightResultV2, ClassId, CraftResultV2, ForgeResultV2, GameApiV2,
@@ -5,7 +6,7 @@ import type {
 } from '../../api/GameApiV2';
 import { diffProgressEventsV2, type ActionNameV2, type LoopEventV2 } from './events';
 
-export const CLAIM_INTERVAL_MS_V2 = 30_000;
+export const CLAIM_INTERVAL_MS_V2 = CONFIG.gameplay.claimIntervalMs;
 
 export interface PendingActionV2 {
   action: ActionNameV2;
@@ -53,6 +54,7 @@ export class GameLoopV2 {
   private doc: Document | null = null;
   private loaded = false;
   private timer: ReturnType<typeof setInterval> | null = null;
+  private firstClaimTimer: ReturnType<typeof setTimeout> | null = null;
   private claimFlight: Promise<void> | null = null;
   private actionFlight: Promise<unknown> | null = null;
   private readonly listeners = new Set<() => void>();
@@ -113,6 +115,8 @@ export class GameLoopV2 {
   }
 
   stop(): void {
+    if (this.firstClaimTimer !== null) clearTimeout(this.firstClaimTimer);
+    this.firstClaimTimer = null;
     this.gen++;
     this.doc?.removeEventListener('visibilitychange', this.onVisibility);
     this.doc = null;
@@ -268,7 +272,19 @@ export class GameLoopV2 {
   }
 
   async chooseClass(classId: ClassId): Promise<void> {
-    await this.action('chooseClass', (api) => api.chooseClass(classId));
+    const first = this.snap.state?.cat.classId === null;
+    const result = await this.action('chooseClass', (api) => api.chooseClass(classId));
+    if (first && result && this.doc && this.firstClaimTimer === null) {
+      // Anchor the regular cadence after the first claim. An independent timer
+      // could otherwise request again inside the server's ten-second minimum.
+      if (this.timer !== null) clearInterval(this.timer);
+      this.timer = null;
+      this.firstClaimTimer = setTimeout(() => {
+        this.firstClaimTimer = null;
+        this.updateVisibility();
+        void this.claimNow();
+      }, CONFIG.gameplay.firstClaimMs);
+    }
   }
 
   async equip(itemId: string | null, slot: GearSlotId): Promise<void> {

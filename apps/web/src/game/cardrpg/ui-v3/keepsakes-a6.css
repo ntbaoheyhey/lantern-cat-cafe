@@ -1,0 +1,259 @@
+/* Tangible cafe objects, a moonlit climb and a warm keepsake mantel. */
+.uv-app[data-a6=true] {
+ .a6-gear-art {width:104px;height:98px;flex:none;filter:drop-shadow(0 4px 3px #56392020)}
+ .a6-bag-tools {padding:0 2px 5px;border-bottom:1px solid #ba965e}
+ .a6-bag-tools>span {font:700 22px var(--font-display);color:#63472e}
+ .a6-bag-workspace {grid-template-columns:minmax(0,1.45fr) minmax(330px,1fr);gap:20px;align-items:start}
+ .a6-bag-workspace>.uv-gear-grid {max-height:calc(100vh - 350px);overflow:auto;padding:8px 10px 14px;border:1px solid #a57e50;border-radius:14px;background:repeating-linear-gradient(0deg,#845b3e12 0 2px,transparent 2px 48px),linear-gradient(105deg,#e5c89e,#c7a16f);scrollbar-width:thin;scrollbar-color:#8f693e #dbc096;align-content:start;gap:12px}
+ .a6-bag-workspace .uv-gear-grid>button {position:relative;min-height:166px;gap:3px;padding:6px 9px 11px;background:radial-gradient(ellipse at 45% 24%,#fff6da,var(--a6-wash,#ead8b9));border-width:2px;border-bottom-width:5px;border-radius:13px;box-shadow:inset 0 0 0 2px #fff6db99,0 5px 5px #704a3022}
+ .a6-bag-workspace .uv-gear-grid button[aria-pressed=true] {outline:2px solid #8d632e;outline-offset:2px;box-shadow:0 0 0 5px #fff0bb88}
+ .a6-bag-workspace .uv-gear-grid b {font-size:13px;line-height:1.25}
+ .a6-bag-workspace .uv-gear-grid small {font-size:12px}
+ .a6-bag-workspace>.a6-gear-detail {max-height:calc(100vh - 350px);padding:16px 18px;border:2px solid #ad8247;background:radial-gradient(ellipse at 50% 12%,#fff9df,#ecd2a7);box-shadow:inset 0 0 0 4px #fff7db77,0 7px 0 #9d754633}
+ .a6-gear-showcase {position:relative;display:flex;align-items:center;justify-content:center;min-height:145px;margin:-5px 0 10px;border-bottom:8px solid #9d7146;border-radius:0 0 10px 10px;background:radial-gradient(ellipse at 50% 100%,#d4ab6a88,transparent 70%)}
+ .a6-gear-showcase>.a6-gear-art {width:165px;height:145px;transform:rotate(-7deg)}
+ .a6-gear-showcase>.a6-gear-companion {position:absolute;right:0;bottom:0;width:100px;height:125px;object-fit:contain}
+ .a6-bag-workspace .a6-gear-detail h2 {font-size:26px;margin:6px 0}
+ .a6-bag-workspace .a6-gear-detail p {font-size:13px;margin:6px 0}
+ .a6-bag-workspace .a6-gear-detail>.cr-primary {width:100%;margin-top:8px}
+ .a6-bag-workspace .a6-gear-detail details {margin-top:12px;padding-top:10px}
+ .a6-bag-workspace .a6-empty-state {min-height:300px}
+
+ .a6-tower-layout {grid-template-columns:minmax(0,1.08fr) minmax(0,1fr);gap:22px;align-items:stretch}
+ .a6-tower-board {position:relative;min-height:435px;overflow:hidden;border-radius:18px;box-shadow:0 4px 0 #8f7654,0 8px 20px #3b332830}
+ .a6-tower-scenery {position:absolute;inset:0;width:100%;height:100%}
+ .a6-tower-floors {position:absolute;inset:24% 23% 9%;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));grid-template-rows:repeat(6,minmax(0,1fr));gap:10px 5px}
+ .a6-tower-floors button {position:relative;min-height:0;min-width:0;padding:2px;border:1px solid #ba9c72;border-bottom:4px solid #40332d;border-radius:9px 9px 4px 4px;background:linear-gradient(#c8ad87,#9d8060);color:#3b302c;display:flex;flex-direction:column;justify-content:center;gap:0;box-shadow:inset 0 0 0 2px #efd8aa44}
+ .a6-tower-floors button b {font-size:19px;line-height:1.1}
+ .a6-tower-floors button span {font-size:10px;line-height:1}
+ .a6-tower-floors button:disabled {opacity:1;background:linear-gradient(#7d7871,#5f5e5a);color:#ded3b9;border-color:#99947f;box-shadow:inset 0 0 0 2px #45433d}
+ .a6-tower-floors button[data-cleared=true] {background:linear-gradient(#bec39a,#829276);color:#273c2b}
+ .a6-tower-floors button[data-milestone=true] {border-top:3px solid #d9ad63}
+ .a6-tower-floors button[aria-pressed=true] {z-index:1;background:linear-gradient(#ffe9a8,#e9b351);color:#49331b;border:2px solid #fff0bb;border-bottom:4px solid #a66b2e;box-shadow:0 0 0 3px #b77a37,0 0 24px #ffe1a988}
+ .a6-tower-preview {border:2px solid #a28d69;border-radius:18px;background:radial-gradient(ellipse at 55% 35%,#f9efcf,#d6d5c2);gap:8px}
+ .a6-tower-enemies {flex:1;align-items:center;gap:18px;min-height:150px;background:radial-gradient(ellipse at 50% 90%,#97836344,transparent 65%)}
+ .a6-tower-enemies img {width:160px;height:170px;filter:drop-shadow(0 7px 4px #604b3e30)}
+ .a6-tower-preview .uv-fight {width:100%}
+
+ .a6-relic-slot {position:relative;gap:24px;padding:12px 22px 19px;margin:2px 0 14px;border:2px solid #b79b68;border-bottom:11px solid #96704b;border-radius:20px 20px 9px 9px;background:radial-gradient(ellipse at 15% 40%,#8f8b9b,#494957 65%);box-shadow:inset 0 0 0 4px #ddc49344,0 5px 0 #624831}
+ .a6-relic-slot:after {content:"";position:absolute;left:8px;right:8px;bottom:-9px;border-top:2px solid #d1ac71;pointer-events:none}
+ .a6-relic-slot .a6-relic-art {width:190px;height:170px;flex:none;filter:drop-shadow(0 8px 7px #21192355);color:inherit}
+ .a6-relic-slot :is(h3,p,small) {color:#fff0d0!important}
+ .a6-relic-slot h3 {font-size:30px;max-width:400px}
+ .a6-relic-slot strong {color:#ffda8e}
+ .a6-relic-collection {gap:15px}
+ .a6-relic-collection article {position:relative;gap:5px;padding:9px 12px 14px;border-radius:15px 15px 8px 8px;border-width:2px;border-bottom-width:7px;box-shadow:inset 0 0 0 3px #fff7dcaa,0 5px 8px #67432c22}
+ .a6-relic-collection .a6-relic-art {width:150px;height:135px;filter:none}
+ .a6-relic-collection h3 {font-size:20px;line-height:1.15;max-width:200px}
+ .a6-relic-collection button {min-height:40px;margin-top:7px}
+ .a6-relic-collection article[data-owned=false] .a6-relic-art {filter:saturate(.3);opacity:.75}
+ .a6-relic-collection article[data-selected=true] {box-shadow:0 0 0 3px #ffdc8999,0 5px 8px #67432c22}
+ .a6-relic-note {text-align:center;margin:14px 0 0}
+
+ /* Keep the current route choice inside the street, with its action above the fold. */
+ .a6-route-stage {position:relative}
+ .a6-route-stage[data-activity=true]>.a6-route-activity {position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:22px;background:#1f2337a6;border-radius:15px;overflow:auto}
+ .a6-route-activity>.cr-panel {width:100%;max-height:100%;overflow:auto;margin:0;padding:20px;background:linear-gradient(#fff0d2,#e8d0a0);border:2px solid #c7a56b;border-radius:16px;box-shadow:0 12px 28px #19162680}
+ .a6-route-activity>.cr-panel h2 {margin:0 0 12px;color:#553520;font:700 25px var(--font-display)}
+ .a6-route-activity .dp-three {gap:12px}
+ .a6-route-activity .dp-three>button {min-height:110px;background:linear-gradient(#fff5dc,#e8cca0);border-color:#b9935e;color:#483421;text-align:left;box-shadow:0 4px 0 #ae8955}
+ .a6-route-activity .dp-three>button h3 {color:#684323;font:700 19px var(--font-display);margin:0 0 9px}
+ .a6-route-activity .dp-three>button p {line-height:1.4;font-size:14px}
+ .a6-route-activity .dp-three>button small {color:#725638}
+ /* An earned boon must stay readable against the parchment card. */
+ .dp-reward b,.dp-reward strong,.dp-reward h3 {color:#684323}
+ .a6-night-map .cr-panel:has(.dp-reward) {background:linear-gradient(#ead7b1,#d6bc8d);border-color:#ad844c}
+ @media(max-height:780px) {
+  .a6-route-stage[data-activity=true]>.a6-route-activity {padding:15px}
+  .a6-route-activity>.cr-panel {padding:16px}
+  .a6-route-activity>.cr-panel h2 {font-size:23px}
+  .a6-route-activity .dp-three>button {min-height:100px;padding:12px}
+  .a6-route-activity .dp-three>button p {font-size:13px}
+  .a6-bag-tools>span {font-size:19px}
+  .a6-bag-workspace {gap:16px;grid-template-columns:minmax(0,1.5fr) minmax(330px,1fr)}
+  .a6-bag-workspace>.uv-gear-grid,.a6-bag-workspace>.a6-gear-detail {max-height:calc(100vh - 345px)}
+  .a6-bag-workspace .uv-gear-grid>button {min-height:146px;gap:1px}
+  .a6-bag-workspace .a6-gear-art {height:82px;width:92px}
+  .a6-bag-workspace .a6-gear-detail {padding:10px 14px}
+  .a6-bag-workspace .a6-gear-detail h2 {font-size:23px}
+  .a6-gear-showcase {min-height:102px;margin-bottom:8px}
+  .a6-gear-showcase>.a6-gear-art {width:120px;height:102px}
+  .a6-gear-showcase>.a6-gear-companion {height:95px;width:80px}
+  .a6-bag-workspace .a6-gear-detail details {margin-top:8px;padding-top:8px}
+  .a6-tower-board {min-height:358px}
+  .a6-tower-floors {inset:24% 23% 9%;gap:8px 4px}
+  .a6-tower-floors button {padding:1px;border-bottom-width:3px}
+  .a6-tower-floors button b {font-size:16px}
+  .a6-tower-floors button span {font-size:9px}
+  .a6-tower-preview {gap:5px;padding:12px}
+  .a6-tower-enemies {min-height:115px}
+  .a6-tower-enemies img {width:124px;height:125px}
+  .a6-tower-preview h2 {font-size:26px}
+  .a6-tower-preview>.uv-fight {min-height:50px;font-size:24px}
+  .a6-relic-slot {padding:7px 17px 12px;gap:18px;margin-bottom:12px}
+  .a6-relic-slot .a6-relic-art {width:140px;height:118px}
+  .a6-relic-slot h3 {font-size:24px;margin:4px 0}
+  .a6-relic-slot p {font-size:12px}
+  .a6-relic-collection {gap:12px}
+  .a6-relic-collection article {padding:5px 10px 10px;gap:3px}
+  .a6-relic-collection .a6-relic-art {width:112px;height:90px}
+  .a6-relic-collection h3 {font-size:18px}
+  .a6-relic-collection button {min-height:38px;margin-top:5px;font-size:12px}
+  .a6-relic-note {margin-top:9px;font-size:12px}
+ }
+ @media(max-width:1000px) {
+  .a6-bag-workspace {grid-template-columns:minmax(0,1fr) 310px}
+  .a6-tower-layout {gap:12px}
+  .a6-tower-floors {inset-inline:21%}
+  .a6-tower-enemies img {width:100px}
+ }
+ @media(max-width:720px) {
+  .a6-bag-workspace,.a6-tower-layout {grid-template-columns:1fr}
+  .a6-bag-workspace>.uv-gear-grid,.a6-bag-workspace>.a6-gear-detail {max-height:none}
+  .a6-relic-slot {flex-wrap:wrap}
+  .a6-relic-slot .a6-relic-art {width:100px}
+  .a6-relic-slot>button {width:100%}
+ }
+}
+
+/* Daily gifts: wrapped parcels, one weekly meter, explicit task state. */
+.uv-app[data-a6=true] {
+ .a6-daily {gap:14px;grid-template-columns:minmax(0,1.85fr) minmax(0,1fr)}
+ .a6-login,.a6-weekly {position:relative;background:radial-gradient(ellipse at 30% 0,#fff9e3,#e9cca0);border-radius:18px}
+ .a6-login p {font-size:14px}
+ .a6-daily-rewards {display:flex;flex-wrap:wrap;gap:8px;line-height:1.5}
+ .a6-daily-rewards>span {display:inline-flex;align-items:center;gap:5px;color:#65452d;white-space:nowrap}
+ .a6-daily-rewards i {font-style:normal;font-size:17px;color:#9c6c27}
+ .a6-daily-rewards b {font:700 14px/1.5 var(--font-body)}
+ .a6-login-days .a6-daily-rewards {display:flex;flex-direction:column;align-items:center}
+ .a6-login-days .a6-daily-rewards b {font:700 14px/1.5 var(--font-body)}
+ .a6-login-days {gap:7px;margin:12px 0}
+ .a6-login-days>div {gap:4px;padding:7px 3px;border-bottom-width:4px}
+ .a6-login-days .a6-gift-art {width:61px;height:53px}
+ .a6-login-days small,.a6-login-days b {font-size:14px;color:#63452c}
+ .a6-login-days .a6-daily-rewards {font-size:12px;line-height:1.5;gap:1px}
+ .a6-login-days>div[data-collected=true] {background:#dde4bf;border-color:#8b9f66}
+ .a6-weekly {overflow:hidden}
+ .a6-gift-host {position:absolute;right:3px;top:-3px;width:112px;height:128px;object-fit:contain;transform:rotate(5deg);pointer-events:none;opacity:.9}
+ .a6-weekly>div:not(.a6-weekly-chests) {position:relative;min-height:48px;padding-right:83px}
+ .a6-weekly>div:not(.a6-weekly-chests) span {font-size:14px;line-height:1.4}
+ .a6-weekly>progress {position:relative;height:8px;margin-top:11px;accent-color:#9b772f;border-radius:8px;overflow:hidden}
+ .a6-weekly>progress::-webkit-progress-bar {background:#cfb07e}
+ .a6-weekly>progress::-webkit-progress-value {background:linear-gradient(90deg,#bd8b36,#efcb79)}
+ .a6-weekly-chests {position:relative;gap:8px;margin-top:16px}
+ .a6-weekly-chests button {padding:8px 4px;gap:3px;min-height:126px;border-bottom-width:4px}
+ .a6-weekly-chests .a6-gift-art {width:68px;height:62px}
+ .a6-weekly-chests b,.a6-weekly-chests span {font-size:14px}
+ .a6-daily-tasks {gap:12px}
+ .a6-daily-tasks article {padding:12px;gap:8px;position:relative;background:linear-gradient(140deg,#fff3d6,#edd6ad);border-top:4px solid #bea274}
+ .a6-daily-tasks article[data-ready=true] {border-top-color:#8b9f65;background:linear-gradient(140deg,#f5f5d7,#dce4b5)}
+ .a6-daily-tasks article[data-collected=true] {background:#e8ddc2}
+ .a6-daily-tasks h3 {font-size:19px;line-height:1.2}
+ .a6-daily-tasks p {font-size:14px;min-height:40px;line-height:1.4}
+ .a6-task-state {display:flex;align-items:center;gap:6px;font-size:14px;color:#795f42}
+ .a6-task-state>span {display:inline-grid;place-items:center;width:19px;height:19px;border:1px solid #b59b71;border-radius:50%;font-size:14px;line-height:1;background:#fff2cf}
+ .a6-daily-tasks article[data-ready=true] .a6-task-state {color:#4d642f;font-weight:700}
+ .a6-daily-tasks article[data-ready=true] .a6-task-state>span {color:#fff8dd;background:#738d4e;border-color:#607c3a}
+ .a6-daily-tasks .a6-daily-rewards {font-size:13px;gap:5px}
+ .a6-daily-tasks button {font-size:14px;min-height:44px;padding:7px}
+ .a6-login>.cr-primary {min-height:44px;font-size:14px}
+ .a6-daily button:disabled {background:#e0d3b7;color:#715c43;border-color:#af9974;box-shadow:none}
+ .a6-daily-reward-empty {font-size:14px;line-height:1.4;color:#775b3b}
+ .a6-weekly-chests .a6-daily-rewards {justify-content:center;gap:3px 7px}
+ .a6-daily-book button:focus-visible {outline:3px solid #8966b5;outline-offset:2px}
+ .a6-earned-chests button {min-height:40px;font-size:14px}
+ @media(max-height:760px) {
+  .a6-daily {gap:6px}
+  .a6-login,.a6-weekly {padding:8px 12px}
+  .a6-login h2 {margin-bottom:4px}
+  .a6-login p {font-size:14px;line-height:1.3;margin-bottom:6px}
+  .a6-login-days {margin:8px 0 0}
+  .a6-login-days>div {gap:1px;padding:4px 2px}
+  .a6-login-days .a6-gift-art {width:48px;height:41px}
+  .a6-login-days .a6-daily-rewards {font-size:11px;line-height:1.4}
+  .a6-login-days small,.a6-login-days b {font-size:14px}
+  .a6-login>.cr-primary {margin-top:6px;min-height:44px;font-size:14px}
+  .a6-gift-host {width:95px;height:106px}
+  .a6-weekly-chests {margin-top:12px}
+  .a6-weekly-chests button {min-height:115px}
+  .a6-weekly-chests .a6-gift-art {height:34px;width:42px}
+  .a6-daily-tasks article {padding:6px 10px;gap:3px}
+  .a6-daily-tasks h3 {font-size:17px}
+  .a6-daily-tasks p {font-size:14px;min-height:38px}
+  .a6-daily-tasks .a6-daily-rewards {font-size:12px}
+  .a6-daily-tasks button {font-size:14px;min-height:44px;padding:6px}
+ }
+ @media(max-width:900px) {
+  .a6-daily {grid-template-columns:1fr}
+ }
+}
+
+/* Direct access to the existing milestone gifts; readiness comes from badgesA6. */
+.uv-app[data-a6=true] .a6-daily {
+ .a6-login>.cr-primary:disabled {background:#e0d3b7!important;color:#715c43!important;border-color:#af9974!important;box-shadow:none;opacity:1}
+ .a6-login-claim {margin-top:12px;padding-top:8px;border-top:1px dashed #b3996e;font-size:14px}
+ .a6-login-claim>b {font-size:15px;color:#59412c}
+ .a6-daily-gift-note,.a6-weekly-reset,.a6-task-heading p {font-size:14px;line-height:1.4;color:#6c4831;margin:6px 0;min-height:0}
+ .a6-weekly-reset {position:relative;padding-right:0}
+ .a6-weekly>.a6-gift-host {width:76px;height:82px;top:4px;right:10px}
+ .a6-gift-amounts p {min-height:0;margin:4px 0;font-size:14px;line-height:1.4}
+ .a6-weekly-chests {align-items:stretch;margin-top:8px}
+ .a6-weekly-chests article {display:flex;flex-direction:column;align-items:stretch;gap:6px;min-width:0;padding:8px;border:1px solid #bda16d;border-radius:10px;background:#f6e6be}
+ .a6-weekly-chests article>.a6-gift-art {align-self:center;width:44px;height:38px}
+ .a6-weekly-chests article>b {font-size:14px;color:#59412c}
+ .a6-weekly-chests article[data-collected=true] {background:#dde4bf;border-color:#8b9f66}
+ .a6-weekly-chests button {min-height:44px;padding:7px 4px;font-size:14px;line-height:1.3;margin-top:auto;width:100%;gap:0}
+ .a6-task-heading {grid-column:1/-1}
+ .a6-task-heading h2 {margin:0;scroll-margin-top:14px}
+ .a6-task-heading h2:focus-visible {outline:2px solid #8966b5;outline-offset:3px;border-radius:4px}
+ button {scroll-margin-block:8px}
+}
+.uv-app[data-a6=true] {
+ .a6-daily-book {display:grid;gap:12px}
+ .a6-daily-sections {display:flex;align-items:center;gap:8px}
+ .a6-daily-sections button {display:flex;align-items:center;gap:12px;min-height:44px;padding:8px 18px;font-size:15px;border-radius:12px}
+ .a6-daily-sections button[aria-pressed=true] {background:linear-gradient(#ffe4a2,#dfae57);border-color:#9a6c2c;color:#4d301d;box-shadow:inset 0 1px #fff5d8,0 3px #ad79383d}
+ .a6-daily-sections button span {display:grid;place-items:center;min-width:24px;height:24px;border-radius:50%;background:#d7c6a3;color:#664d35;font:700 13px/1 var(--font-body)}
+ .a6-daily-sections button span[data-ready=true] {background:#8e462d;color:#fff9df}
+ .a6-daily-sections p {margin:0 0 0 auto;font-size:14px;color:#73563a}
+ .a6-earned-gifts {display:grid;gap:14px}
+ .a6-gifts-intro {display:flex;align-items:center;gap:14px;min-height:68px}
+ .a6-gifts-intro>.a6-gift-art {width:70px;height:64px;flex:none}
+ .a6-gifts-intro h2 {margin:0 0 4px;font-size:26px;line-height:1.15}
+ .a6-gifts-intro p {margin:0;color:#745337;font-size:14px;line-height:1.4}
+ .a6-gift-shelves {display:grid;grid-template-columns:1fr 1fr 1.15fr;gap:14px;align-items:start}
+ .a6-gift-shelf {padding:12px;border:1px solid #b49159;border-bottom:5px solid #aa7a43;border-radius:15px;background:linear-gradient(135deg,#fff2d3,#ead2a9);box-shadow:0 4px 10px #72533515}
+ .a6-gift-shelf>header {padding:0 2px 10px;margin-bottom:10px;border-bottom:1px dashed #b3996e}
+ .a6-gift-shelf h3 {font-size:23px;line-height:1.2;margin:0 0 3px}
+ .a6-gift-shelf>header p {font-size:14px;color:#775b3e;margin:0}
+ .a6-gift-tickets {display:grid;gap:7px}
+ .a6-gift-tickets article {display:grid;grid-template-columns:36px minmax(0,1fr) auto;align-items:center;gap:8px;padding:8px;border:1px solid #c2aa80;border-radius:10px;background:#eee0c3}
+ .a6-gift-tickets article[data-ready=true] {border-color:#a38643;background:linear-gradient(125deg,#fff9df,#f1dfa6);box-shadow:0 2px #a9894d22}
+ .a6-gift-tickets article[data-collected=true] {background:#e1e3c8;border-color:#acb390}
+ .a6-gift-tickets .a6-gift-art {width:36px;height:36px}
+ .a6-gift-tickets h4 {font:700 15px/1.3 var(--font-body);margin:0 0 3px;color:#59412c}
+ .a6-gift-note {font:14px/1.4 var(--font-body);color:#72573a}
+ .a6-gift-tickets .a6-daily-rewards {gap:8px}
+ .a6-gift-tickets .a6-daily-rewards b {font-size:14px}
+ .a6-gift-tickets .a6-daily-rewards i {font-size:14px}
+ .a6-gift-tickets button {min-height:40px;padding:7px 10px;font-size:14px}
+ @media(max-height:760px) {
+  .a6-daily-book {gap:9px}
+  .a6-earned-gifts {gap:9px}
+  .a6-gifts-intro {min-height:54px;gap:10px}
+  .a6-gifts-intro>.a6-gift-art {width:56px;height:50px}
+  .a6-gifts-intro h2 {font-size:23px}
+  .a6-gift-shelves {gap:10px}
+  .a6-gift-shelf {padding:8px 10px}
+  .a6-gift-shelf>header {padding-bottom:8px;margin-bottom:8px}
+  .a6-gift-shelf h3 {font-size:20px}
+  .a6-gift-tickets {gap:4px}
+  .a6-gift-tickets article {grid-template-columns:28px minmax(0,1fr) auto;padding:5px 6px;gap:7px}
+  .a6-gift-tickets .a6-gift-art {width:28px;height:30px}
+  .a6-gift-tickets h4 {font-size:14px;margin-bottom:1px}
+ }
+ @media(max-width:900px) {
+  .a6-daily-sections p {display:none}
+  .a6-gift-shelves {grid-template-columns:1fr}
+ }
+}

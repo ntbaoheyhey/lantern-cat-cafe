@@ -36,7 +36,6 @@ test.describe('Cat RPG v2 QA Regression Suite (Mission S3)', () => {
 
     // Pick warrior
     await page.getByTestId('class-picker-choose-button').click();
-    await page.getByTestId('class-picker-confirm-button').click();
 
     // Stage canvas is mounted
     await expect(page.locator('.v2-stage canvas')).toBeVisible();
@@ -46,6 +45,8 @@ test.describe('Cat RPG v2 QA Regression Suite (Mission S3)', () => {
   test('idle loop accrues fish and XP across claims without double-pay', async ({ page }) => {
     await page.clock.install();
     await load(page, 'fresh');
+    // The fixture is in storage before React loads it and starts the claim timer.
+    await expect(page.getByRole('region', { name: 'Cat status' })).toBeVisible();
     const before = (await raw(page)).state;
 
     // Fast forward clock past claim interval (30s)

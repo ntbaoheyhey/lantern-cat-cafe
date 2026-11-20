@@ -18,11 +18,16 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 0
+          # The release removes many historical media files. Fetching every
+          # branch and tag exhausted this job before it could classify changes.
+          fetch-depth: 1
       - id: f
         env:
           BASE: ${{ github.event.pull_request.base.sha || github.event.before }}
         run: |
+          if [ -n "$BASE" ] && [ "$BASE" != "0000000000000000000000000000000000000000" ] && ! git cat-file -e "$BASE^{commit}" 2>/dev/null; then
+            git fetch --no-tags --depth=1 origin "$BASE"
+          fi
           if [ -z "$BASE" ] || [ "$BASE" = "0000000000000000000000000000000000000000" ] || ! git cat-file -e "$BASE^{commit}" 2>/dev/null; then
             files=$(git ls-files)
           else
@@ -59,7 +64,10 @@ jobs:
     needs: changes
     if: github.event_name == 'workflow_dispatch' || github.event_name == 'pull_request'
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    # Match the reviewed Linux pixel fixtures, including fallback symbol fonts.
+    # Chromium and pinned web-font bytes alone do not fix host font rasterization.
+    container: mcr.microsoft.com/playwright:v1.64.1-noble@sha256:2f05f8a734509a7b3f26a912639488ee08f58a7b292d14d62271bcff9038768f
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
       - uses: pnpm/action-setup@v4
@@ -68,10 +76,25 @@ jobs:
           node-version-file: .nvmrc
           cache: pnpm
       - run: pnpm install --frozen-lockfile
-      - run: pnpm exec playwright install --with-deps chromium
+      # The pinned image supplies system libraries/fonts; do not upgrade them via apt.
+      - run: pnpm exec playwright install chromium
         working-directory: apps/web
       - run: pnpm --filter @taskbar-hero/web build
+      - name: Check native screenshot and font fixtures
+        run: pnpm --filter @taskbar-hero/web exec playwright test e2e/ui/art2-flag-off.spec.ts e2e/ui/landing-font-stability.spec.ts --project=stage-layout --workers=2
+        env:
+          ART2_SCREENSHOTS: ${{ github.workspace }}/apps/web/test-results/flag-off-native
       - run: pnpm --filter @taskbar-hero/web test:e2e
+        env:
+          ART2_SCREENSHOTS: ${{ github.workspace }}/apps/web/test-results/flag-off-native
+      - name: Retain browser failure evidence
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: browser-failure-evidence
+          path: apps/web/test-results/
+          retention-days: 7
+          if-no-files-found: warn
   contracts:
     needs: changes
     if: needs.changes.outputs.contracts == 'true'
@@ -91,3 +114,54 @@ jobs:
       # Both must match what is committed.
       - run: node ../packages/chain/scripts/gen-abi.mjs
       - run: git diff --exit-code -- ../packages/chain
+  chain-e2e:
+    needs: changes
+    if: needs.changes.outputs.code == 'true'
+    runs-on: ubuntu-latest
+    # 16 fresh fixture launches; each waits ~20 s for the wall clock to catch
+    # up with Anvil's deploy burst (tools/chain/local.mjs), so 15 min was too tight.
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+      - uses: foundry-rs/foundry-toolchain@v1
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm exec playwright install --with-deps chromium
+        working-directory: apps/web
+      - run: node tools/chain/check-drip.mjs
+      - run: node tools/chain/check-move.mjs
+      - run: node tools/chain/check-cosmetics.mjs
+      - run: node tools/chain/check-source.mjs
+      - run: node tools/chain/campaign-manifest.mjs --check
+      - run: node tools/chain/check-campaign.mjs
+      - run: node tools/chain/check-campaign-rewards.mjs
+      - run: node tools/chain/check-forge.mjs
+      - run: node tools/chain/check-seal-trial.mjs
+      - run: node tools/chain/check-routine.mjs
+      - run: node tools/chain/check-tester-budget.mjs
+      - run: node tools/chain/check-reservations-postgres.mjs
+      - run: node tools/chain/fuji-smoke.mjs --dry-run
+      - run: node tools/chain/seed-market.mjs --dry-run
+      - run: node --test tools/chain/*.test.mjs
+      - run: node tools/chain/token-sim.mjs
+      - name: Three consecutive fresh Fuji-ID Anvil runs
+        run: |
+          for attempt in 1 2 3; do
+            pnpm chain:test || exit 1
+          done
+      - name: Optional price trial on fresh Anvil
+        run: CHAIN_SEAL_PRICE_TRIAL=1 pnpm chain:test
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: chain-evidence
+          path: |
+            apps/web/test-results/chain/
+            reports/chain/shots/
+          retention-days: 7

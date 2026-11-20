@@ -1,0 +1,1228 @@
+{
+  "generator": "node tools/art/gameplay-sheets.mjs",
+  "date": "2026-11-04",
+  "provenance": "Original hand-authored rig maps and poses; no input images, no generative prompt; Evening Atelier palette.",
+  "files": [
+    {
+      "file": "apps/web/public/art/gameplay/mochi-warrior-idle.png",
+      "bytes": 815,
+      "sha256": "0a9d9eb61a2a1392b5d1a8e5112fe26c8cb9ee43ef564def047302e647057066",
+      "parameters": {
+        "class": "warrior",
+        "gear": {},
+        "animation": "idle",
+        "frames": 8,
+        "frameMs": [
+          700,
+          180,
+          120,
+          180,
+          600,
+          100,
+          120,
+          200
+        ],
+        "hitFrames": [],
+        "frameWidth": 56,
+        "frameHeight": 48,
+        "scale": 1
+      }
+    },
+    {
+      "file": "apps/web/public/art/gameplay/mochi-warrior-nap.png",
+      "bytes": 441,
+      "sha256": "de35a211daa82abdacf1fa4c12962d4004d76e86fb77e9f57a3f6eed131fbf0a",
+      "parameters": {
+        "class": "warrior",
+        "gear": {},
+        "animation": "nap",
+        "frames": 2,
+        "frameMs": [
+          1400,
+          1400
+        ],
+        "hitFrames": [],
+        "frameWidth": 56,
+        "frameHeight": 48,
+        "scale": 1
+      }
+    },
+    {
+      "file": "apps/web/public/art/gameplay/mochi-warrior-equip.png",
+      "bytes": 680,
+      "sha256": "a7a7210e713fc71c22294bacf6a83d7ff624ed3542425f45efab4616e3ada64b",
+      "parameters": {
+        "class": "warrior",
+        "gear": {},
+        "animation": "equip",
+        "frames": 4,
+        "frameMs": [
+          100,
+          140,
+          140,
+          180
+        ],
+        "hitFrames": [],
+        "frameWidth": 56,
+        "frameHeight": 48,
+        "scale": 1
+      }
+    },
+    {
+      "file": "apps/web/public/art/gameplay/mochi-warrior-walk.png",
+      "bytes": 841,
+      "sha256": "2ee05acb4e6408adcdffcaa7ff0ba7020a5dacba3212631892b4a7d5e812740d",
+      "parameters": {
+        "class": "warrior",
+        "gear": {},
+        "animation": "walk",
+        "frames": 6,
+        "frameMs": [
+          100,
+          100,
+          100,
+          100,
+          100,
+          100
+        ],
+        "hitFrames": [],
+        "frameWidth": 56,
+        "frameHeight": 48,
+        "scale": 1
+      }
+    },
+    {
+      "file": "apps/web/public/art/gameplay/mochi-warrior-hurt.png",
+      "bytes": 458,
+      "sha256": "62ff374adf14fd16aa2aac8c2f48fabc3f394555c249566893e70b6a2996f6a6",
+      "parameters": {
+        "class": "warrior",
+        "gear": {},
+        "animation": "hurt",
+        "frames": 2,
+        "frameMs": [
+          120,
+          120
+        ],
+        "hitFrames": [],
+        "frameWidth": 56,
+        "frameHeight": 48,
+        "scale": 1
+      }
+    },
+    {
+      "file": "apps/web/public/art/gameplay/mochi-warrior-defeat.png",
+      "bytes": 741,
+      "sha256": "56436cadc35f6b3e9d5dfe394a450d82390a42ff56e66e30850ce208247f495d",
+      "parameters": {
+        "class": "warrior",
+        "gear": {},
+        "animation": "defeat",
+        "frames": 4,
+        "frameMs": [
+          120,
+          140,
+          160,
+          400
+        ],
+        "hitFrames": [],
+        "frameWidth": 56,
+        "frameHeight": 48,
+        "scale": 1
+      }
+    },
+    {
+      "file": "apps/web/public/art/gameplay/mochi-warrior-victory.png",
+      "bytes": 702,
+      "sha256": "44962463512f2e79a5ff8cafc563d99831d53f38a994ef40853ae7709a8fee43",
+      "parameters": {
+        "class": "warrior",
+        "gear": {},
+        "animation": "victory",
+        "frames": 4,
+        "frameMs": [
+          120,
+          140,
+          200,
+          240
+        ],
+        "hitFrames": [],
+        "frameWidth": 56,
+        "frameHeight": 48,
+        "scale": 1
+      }
+    },
+    {
+      "file": "apps/web/public/art/gameplay/mochi-warrior-attack.png",
+      "bytes": 980,
+      "sha256": "e9081b2b273ed09bb5de9136c4dba923264cc7f31ec18c0da6431182a52f51f1",
+      "parameters": {
+        "class": "warrior",
+        "gear": {},
+        "animation": "attack",
+        "frames": 6,
+        "frameMs": [
+          60,
+          60,
+          60,
+          60,
+          90,
+          90
+        ],
+        "hitFrames": [
+          4
+        ],
+        "frameWidth": 56,
+        "frameHeight": 48,
+        "scale": 1
+      }
+    },
+    {
+      "file": "apps/web/public/art/gameplay/mochi-guardian-idle.png",
+      "bytes": 771,
+      "sha256": "20923ec0f855e036781b6ccde217f7f7021ac3de35cdd8198a176a70c7b0c309",
+      "parameters": {
+        "class": "guardian",
+        "gear": {},
+        "animation": "idle",
+        "frames": 8,
+        "frameMs": [
+          700,
+          180,
+          120,
+          180,
+          600,
+          100,
+          120,
+          200
+        ],
+        "hitFrames": [],
+        "frameWidth": 56,
+        "frameHeight": 48,
+        "scale": 1
+      }
+    },
+    {
+      "file": "apps/web/public/art/gameplay/mochi-guardian-nap.png",
+      "bytes": 446,
+      "sha256": "a4231de3e062e7e17f57f6ff47bd31630ed7d126fe8073fb427081643900a6b4",
+      "parameters": {
+        "class": "guardian",
+        "gear": {},
+        "animation": "nap",
+        "frames": 2,
+        "frameMs": [
+          1400,
+          1400
+        ],
+        "hitFrames": [],
+        "frameWidth": 56,
+        "frameHeight": 48,
+        "scale": 1
+      }
+    },
+    {
+      "file": "apps/web/public/art/gameplay/mochi-guardian-equip.png",
+      "bytes": 690,
+      "sha256": "918fc9b926ac7674b8aa479e14993d4afbcdc2dabe590f092004f76ed628f464",
+      "parameters": {
+        "class": "guardian",
+        "gear": {},
+        "animation": "equip",
+        "frames": 4,
+        "frameMs": [
+          100,
+          140,
+          140,
+          180
+        ],
+        "hitFrames": [],
+        "frameWidth": 56,
+        "frameHeight": 48,
+        "scale": 1
+      }
+    },
+    {
+      "file": "apps/web/public/art/gameplay/mochi-guardian-walk.png",
+      "bytes": 787,
+      "sha256": "0850e6c0fa4fbc4d617e38d7b5342bd2dfc805aa31a8f753a423870e79ce4939",
+      "parameters": {
+        "class": "guardian",
+        "gear": {},
+        "animation": "walk",
+        "frames": 6,
+        "frameMs": [
+          100,
+          100,
+          100,
+          100,
+          100,
+          100
+        ],
+        "hitFrames": [],
+        "frameWidth": 56,
+        "frameHeight": 48,
+        "scale": 1
+      }
+    },
+    {
+      "file": "apps/web/public/art/gameplay/mochi-guardian-hurt.png",
+      "bytes": 468,
+      "sha256": "b12c7bee837f70a23ef5bb1a12eaf955a933cbf1ac985c937c3b8089eefc2b26",
+      "parameters": {
+        "class": "guardian",
+        "gear": {},
+        "animation": "hurt",
+        "frames": 2,
+        "frameMs": [
+          120,
+          120
+        ],
+        "hitFrames": [],
+        "frameWidth": 56,
+        "frameHeight": 48,
+        "scale": 1
+      }
+    },
+    {
+      "file": "apps/web/public/art/gameplay/mochi-guardian-defeat.png",
+      "bytes": 757,
+      "sha256": "1433ed35c735f391dcf5d0f6b12d2411a4d691e3cedd2d730c9701d5943e1541",
+      "parameters": {
+        "class": "guardian",
+        "gear": {},
+        "animation": "defeat",
+        "frames": 4,
+        "frameMs": [
+          120,
+          140,
+          160,
+          400
+        ],
+        "hitFrames": [],
+        "frameWidth": 56,
+        "frameHeight": 48,
+        "scale": 1
+      }
+    },
+    {
+      "file": "apps/web/public/art/gameplay/mochi-guardian-victory.png",
+      "bytes": 734,
+      "sha256": "9c69d20d7c6405d95a21972fd2f4902f7e420d08844df42664f940c84ef18628",
+      "parameters": {
+        "class": "guardian",
+        "gear": {},
+        "animation": "victory",
+        "frames": 4,
+        "frameMs": [
+          120,
+          140,
+          200,
+          240
+        ],
+        "hitFrames": [],
+        "frameWidth": 56,
+        "frameHeight": 48,
+        "scale": 1
+      }
+    },
+    {
+      "file": "apps/web/public/art/gameplay/mochi-guardian-attack.png",
+      "bytes": 1047,
+      "sha256": "ce048f75771855bc3ff444ad392a93013756f084ddc8c2dfa4db636f555f6763",
+      "parameters": {
+        "class": "guardian",
+        "gear": {},
+        "animation": "attack",
+        "frames": 6,
+        "frameMs": [
+          100,
+          160,
+          160,
+          100,
+          120,
+          140
+        ],
+        "hitFrames": [
+          4
+        ],
+        "frameWidth": 56,
+        "frameHeight": 48,
+        "scale": 1
+      }
+    },
+    {
+      "file": "apps/web/public/art/gameplay/mochi-rogue-idle.png",
+      "bytes": 695,
+      "sha256": "d53c450fe09e26d1fe1c4f886b034863c1937cb53f92a5fc5c0f66cda5e18c6e",
+      "parameters": {
+        "class": "rogue",
+        "gear": {},
+        "animation": "idle",
+        "frames": 8,
+        "frameMs": [
+          700,
+          180,
+          120,
+          180,
+          600,
+          100,
+          120,
+          200
+        ],
+        "hitFrames": [],
+        "frameWidth": 56,
+        "frameHeight": 48,
+        "scale": 1
+      }
+    },
+    {
+      "file": "apps/web/public/art/gameplay/mochi-rogue-nap.png",
+      "bytes": 423,
+      "sha256": "97f5a9a8fbe442bbf74711cc96e4d2a5eb8e95bbdbc616eedee5b225b829678c",
+      "parameters": {
+        "class": "rogue",
+        "gear": {},
+        "animation": "nap",
+        "frames": 2,
+        "frameMs": [
+          1400,
+          1400
+        ],
+        "hitFrames": [],
+        "frameWidth": 56,
+        "frameHeight": 48,
+        "scale": 1
+      }
+    },
+    {
+      "file": "apps/web/public/art/gameplay/mochi-rogue-equip.png",
+      "bytes": 617,
+      "sha256": "f68e39a1a385ffead4ef121c0fca5de7d689f0983e7a9f64a8c01fa144f28241",
+      "parameters": {
+        "class": "rogue",
+        "gear": {},
+        "animation": "equip",
+        "frames": 4,
+        "frameMs": [
+          100,
+          140,
+          140,
+          180
+        ],
+        "hitFrames": [],
+        "frameWidth": 56,
+        "frameHeight": 48,
+        "scale": 1
+      }
+    },
+    {
+      "file": "apps/web/public/art/gameplay/mochi-rogue-walk.png",
+      "bytes": 784,
+      "sha256": "861404787d286e267a9956ecd065aeac31e5747c126cf6bb7f951554cb0b8ba3",
+      "parameters": {
+        "class": "rogue",
+        "gear": {},
+        "animation": "walk",
+        "frames": 6,
+        "frameMs": [
+          100,
+          100,
+          100,
+          100,
+          100,
+          100
+        ],
+        "hitFrames": [],
+        "frameWidth": 56,
+        "frameHeight": 48,
+        "scale": 1
+      }
+    },
+    {
+      "file": "apps/web/public/art/gameplay/mochi-rogue-hurt.png",
+      "bytes": 449,
+      "sha256": "41bba7bd703f3397836080c877074c98cda02d70be86f0859214aac8a7d5aaf0",
+      "parameters": {
+        "class": "rogue",
+        "gear": {},
+        "animation": "hurt",
+        "frames": 2,
+        "frameMs": [
+          120,
+          120
+        ],
+        "hitFrames": [],
+        "frameWidth": 56,
+        "frameHeight": 48,
+        "scale": 1
+      }
+    },
+    {
+      "file": "apps/web/public/art/gameplay/mochi-rogue-defeat.png",
+      "bytes": 682,
+      "sha256": "a89158f8388b0c5214614fef26f55767b304524e8d55ab3a8bfa50ca27007f36",
+      "parameters": {
+        "class": "rogue",
+        "gear": {},
+        "animation": "defeat",
+        "frames": 4,
+        "frameMs": [
+          120,
+          140,
+          160,
+          400
+        ],
+        "hitFrames": [],
+        "frameWidth": 56,
+        "frameHeight": 48,
+        "scale": 1
+      }
+    },
+    {
+      "file": "apps/web/public/art/gameplay/mochi-rogue-victory.png",
+      "bytes": 676,
+      "sha256": "d9320e195f3393ecc3af02047df1ce90992d293c4119a5487498cebd98398dc3",
+      "parameters": {
+        "class": "rogue",
+        "gear": {},
+        "animation": "victory",
+        "frames": 4,
+        "frameMs": [
+          120,
+          140,
+          200,
+          240
+        ],
+        "hitFrames": [],
+        "frameWidth": 56,
+        "frameHeight": 48,
+        "scale": 1
+      }
+    },
+    {
+      "file": "apps/web/public/art/gameplay/mochi-rogue-attack.png",
+      "bytes": 910,
+      "sha256": "402423a224c9a7617db31d74b1e8b2ebd769180e83a5750f8164408bd83bb52a",
+      "parameters": {
+        "class": "rogue",
+        "gear": {},
+        "animation": "attack",
+        "frames": 8,
+        "frameMs": [
+          50,
+          40,
+          50,
+          80,
+          80,
+          80,
+          80,
+          80
+        ],
+        "hitFrames": [
+          3,
+          5
+        ],
+        "frameWidth": 56,
+        "frameHeight": 48,
+        "scale": 1
+      }
+    },
+    {
+      "file": "apps/web/public/art/gameplay/mochi-hunter-idle.png",
+      "bytes": 811,
+      "sha256": "eb56ddbad7887ca9014b513972c78a7244ce7dd39b36a631def1feb21394df52",
+      "parameters": {
+        "class": "hunter",
+        "gear": {},
+        "animation": "idle",
+        "frames": 8,
+        "frameMs": [
+          700,
+          180,
+          120,
+          180,
+          600,
+          100,
+          120,
+          200
+        ],
+        "hitFrames": [],
+        "frameWidth": 56,
+        "frameHeight": 48,
+        "scale": 1
+      }
+    },
+    {
+      "file": "apps/web/public/art/gameplay/mochi-hunter-nap.png",
+      "bytes": 460,
+      "sha256": "17f15d6a71e9cc1f4ecb2e682c706f2e5709e7ff34bdfe792205fe0989098b52",
+      "parameters": {
+        "class": "hunter",
+        "gear": {},
+        "animation": "nap",
+        "frames": 2,
+        "frameMs": [
+          1400,
+          1400
+        ],
+        "hitFrames": [],
+        "frameWidth": 56,
+        "frameHeight": 48,
+        "scale": 1
+      }
+    },
+    {
+      "file": "apps/web/public/art/gameplay/mochi-hunter-equip.png",
+      "bytes": 678,
+      "sha256": "ecaeb397da783bb570d072b09008606bb093cb34dd7616d7e53e6cb1a03f52a9",
+      "parameters": {
+        "class": "hunter",
+        "gear": {},
+        "animation": "equip",
+        "frames": 4,
+        "frameMs": [
+          100,
+          140,
+          140,
+          180
+        ],
+        "hitFrames": [],
+        "frameWidth": 56,
+        "frameHeight": 48,
+        "scale": 1
+      }
+    },
+    {
+      "file": "apps/web/public/art/gameplay/mochi-hunter-walk.png",
+      "bytes": 876,
+      "sha256": "a4e0236e82515c56be92200e6128765e2602055948c6952b36d2051a7479c296",
+      "parameters": {
+        "class": "hunter",
+        "gear": {},
+        "animation": "walk",
+        "frames": 6,
+        "frameMs": [
+          100,
+          100,
+          100,
+          100,
+          100,
+          100
+        ],
+        "hitFrames": [],
+        "frameWidth": 56,
+        "frameHeight": 48,
+        "scale": 1
+      }
+    },
+    {
+      "file": "apps/web/public/art/gameplay/mochi-hunter-hurt.png",
+      "bytes": 468,
+      "sha256": "95fef98b10cfb9518fba66849ce8db4d2b8a1aee0cc4f5472a88eb83b2da49fa",
+      "parameters": {
+        "class": "hunter",
+        "gear": {},
+        "animation": "hurt",
+        "frames": 2,
+        "frameMs": [
+          120,
+          120
+        ],
+        "hitFrames": [],
+        "frameWidth": 56,
+        "frameHeight": 48,
+        "scale": 1
+      }
+    },
+    {
+      "file": "apps/web/public/art/gameplay/mochi-hunter-defeat.png",
+      "bytes": 754,
+      "sha256": "08f8c3a33472ef0ddf45622af3193f91352c649d30ac6d22805cbe998decf426",
+      "parameters": {
+        "class": "hunter",
+        "gear": {},
+        "animation": "defeat",
+        "frames": 4,
+        "frameMs": [
+          120,
+          140,
+          160,
+          400
+        ],
+        "hitFrames": [],
+        "frameWidth": 56,
+        "frameHeight": 48,
+        "scale": 1
+      }
+    },
+    {
+      "file": "apps/web/public/art/gameplay/mochi-hunter-victory.png",
+      "bytes": 732,
+      "sha256": "c57864ad88d7705aba82097638f7faec403015e2e840778d589732a8a2f1bf91",
+      "parameters": {
+        "class": "hunter",
+        "gear": {},
+        "animation": "victory",
+        "frames": 4,
+        "frameMs": [
+          120,
+          140,
+          200,
+          240
+        ],
+        "hitFrames": [],
+        "frameWidth": 56,
+        "frameHeight": 48,
+        "scale": 1
+      }
+    },
+    {
+      "file": "apps/web/public/art/gameplay/mochi-hunter-attack.png",
+      "bytes": 885,
+      "sha256": "cfda35690a6ca5da9fba6b9b67a93c7cb12b6c35c4f6c55ba5ce5ca89092f2c1",
+      "parameters": {
+        "class": "hunter",
+        "gear": {},
+        "animation": "attack",
+        "frames": 6,
+        "frameMs": [
+          70,
+          70,
+          80,
+          80,
+          100,
+          100
+        ],
+        "hitFrames": [
+          4
+        ],
+        "frameWidth": 56,
+        "frameHeight": 48,
+        "scale": 1
+      }
+    },
+    {
+      "file": "apps/web/public/art/gameplay/mochi-archer-idle.png",
+      "bytes": 745,
+      "sha256": "b2e461ea78b689a0f93c38b287519c2b419d80318b4ffd38778819fac0a54332",
+      "parameters": {
+        "class": "archer",
+        "gear": {},
+        "animation": "idle",
+        "frames": 8,
+        "frameMs": [
+          700,
+          180,
+          120,
+          180,
+          600,
+          100,
+          120,
+          200
+        ],
+        "hitFrames": [],
+        "frameWidth": 56,
+        "frameHeight": 48,
+        "scale": 1
+      }
+    },
+    {
+      "file": "apps/web/public/art/gameplay/mochi-archer-nap.png",
+      "bytes": 421,
+      "sha256": "ed6bc4f4f7bab116b626eb555703e65f785ea986ea5caf78e63b1f7aed029e1f",
+      "parameters": {
+        "class": "archer",
+        "gear": {},
+        "animation": "nap",
+        "frames": 2,
+        "frameMs": [
+          1400,
+          1400
+        ],
+        "hitFrames": [],
+        "frameWidth": 56,
+        "frameHeight": 48,
+        "scale": 1
+      }
+    },
+    {
+      "file": "apps/web/public/art/gameplay/mochi-archer-equip.png",
+      "bytes": 641,
+      "sha256": "8d8a82c95bccdd89c8b5b87d67e000772f2b1c2294753730f6a3be79c1aaf573",
+      "parameters": {
+        "class": "archer",
+        "gear": {},
+        "animation": "equip",
+        "frames": 4,
+        "frameMs": [
+          100,
+          140,
+          140,
+          180
+        ],
+        "hitFrames": [],
+        "frameWidth": 56,
+        "frameHeight": 48,
+        "scale": 1
+      }
+    },
+    {
+      "file": "apps/web/public/art/gameplay/mochi-archer-walk.png",
+      "bytes": 794,
+      "sha256": "ab9e10308d537163397e8e3097eabbd2649e99a0081acc3f38857aeb76c6c7ae",
+      "parameters": {
+        "class": "archer",
+        "gear": {},
+        "animation": "walk",
+        "frames": 6,
+        "frameMs": [
+          100,
+          100,
+          100,
+          100,
+          100,
+          100
+        ],
+        "hitFrames": [],
+        "frameWidth": 56,
+        "frameHeight": 48,
+        "scale": 1
+      }
+    },
+    {
+      "file": "apps/web/public/art/gameplay/mochi-archer-hurt.png",
+      "bytes": 444,
+      "sha256": "da0af7ba9e7311fddcfe463806ba805d16d7712c227252e64da6cdbf4e4aee2b",
+      "parameters": {
+        "class": "archer",
+        "gear": {},
+        "animation": "hurt",
+        "frames": 2,
+        "frameMs": [
+          120,
+          120
+        ],
+        "hitFrames": [],
+        "frameWidth": 56,
+        "frameHeight": 48,
+        "scale": 1
+      }
+    },
+    {
+      "file": "apps/web/public/art/gameplay/mochi-archer-defeat.png",
+      "bytes": 715,
+      "sha256": "f22c10340b89eea1c1c65a5a53af91defc2f5c6ec77552602bfbe0f67126d8d6",
+      "parameters": {
+        "class": "archer",
+        "gear": {},
+        "animation": "defeat",
+        "frames": 4,
+        "frameMs": [
+          120,
+          140,
+          160,
+          400
+        ],
+        "hitFrames": [],
+        "frameWidth": 56,
+        "frameHeight": 48,
+        "scale": 1
+      }
+    },
+    {
+      "file": "apps/web/public/art/gameplay/mochi-archer-victory.png",
+      "bytes": 702,
+      "sha256": "68a2aa5a76b1219418607b3002316781da4eae5fe0910a94e05282fd13f7bebe",
+      "parameters": {
+        "class": "archer",
+        "gear": {},
+        "animation": "victory",
+        "frames": 4,
+        "frameMs": [
+          120,
+          140,
+          200,
+          240
+        ],
+        "hitFrames": [],
+        "frameWidth": 56,
+        "frameHeight": 48,
+        "scale": 1
+      }
+    },
+    {
+      "file": "apps/web/public/art/gameplay/mochi-archer-attack.png",
+      "bytes": 854,
+      "sha256": "3bf23cc8408886edcca424909e82c3e88f6802ca01280f5cd8f18c465eca5418",
+      "parameters": {
+        "class": "archer",
+        "gear": {},
+        "animation": "attack",
+        "frames": 6,
+        "frameMs": [
+          80,
+          110,
+          110,
+          80,
+          80,
+          100
+        ],
+        "hitFrames": [
+          3
+        ],
+        "frameWidth": 56,
+        "frameHeight": 48,
+        "scale": 1
+      }
+    },
+    {
+      "file": "apps/web/public/art/gameplay/mochi-witch-idle.png",
+      "bytes": 766,
+      "sha256": "d047c9d583a572ec204b5d18800c87a4805d0f9bd15d2484be3a5330bca0ec7d",
+      "parameters": {
+        "class": "witch",
+        "gear": {},
+        "animation": "idle",
+        "frames": 8,
+        "frameMs": [
+          700,
+          180,
+          120,
+          180,
+          600,
+          100,
+          120,
+          200
+        ],
+        "hitFrames": [],
+        "frameWidth": 56,
+        "frameHeight": 48,
+        "scale": 1
+      }
+    },
+    {
+      "file": "apps/web/public/art/gameplay/mochi-witch-nap.png",
+      "bytes": 452,
+      "sha256": "95bf964f65a05e65b36c3729689cef75bdfd95c404e8495e7dbe7831ca071d0d",
+      "parameters": {
+        "class": "witch",
+        "gear": {},
+        "animation": "nap",
+        "frames": 2,
+        "frameMs": [
+          1400,
+          1400
+        ],
+        "hitFrames": [],
+        "frameWidth": 56,
+        "frameHeight": 48,
+        "scale": 1
+      }
+    },
+    {
+      "file": "apps/web/public/art/gameplay/mochi-witch-equip.png",
+      "bytes": 657,
+      "sha256": "9f37979d1f60cce108d0e5f14964223e288b9e22cf571e3a6f8c466c7e83722c",
+      "parameters": {
+        "class": "witch",
+        "gear": {},
+        "animation": "equip",
+        "frames": 4,
+        "frameMs": [
+          100,
+          140,
+          140,
+          180
+        ],
+        "hitFrames": [],
+        "frameWidth": 56,
+        "frameHeight": 48,
+        "scale": 1
+      }
+    },
+    {
+      "file": "apps/web/public/art/gameplay/mochi-witch-walk.png",
+      "bytes": 819,
+      "sha256": "54d450bd3b20b8d73d09ea8beb7884c7d09b5b83f45b68c1f87d1c7e0379a00c",
+      "parameters": {
+        "class": "witch",
+        "gear": {},
+        "animation": "walk",
+        "frames": 6,
+        "frameMs": [
+          100,
+          100,
+          100,
+          100,
+          100,
+          100
+        ],
+        "hitFrames": [],
+        "frameWidth": 56,
+        "frameHeight": 48,
+        "scale": 1
+      }
+    },
+    {
+      "file": "apps/web/public/art/gameplay/mochi-witch-hurt.png",
+      "bytes": 470,
+      "sha256": "1eb25375e0f1a9e69f1b74563537f71b3323f605908ec677a651a70960c8cc74",
+      "parameters": {
+        "class": "witch",
+        "gear": {},
+        "animation": "hurt",
+        "frames": 2,
+        "frameMs": [
+          120,
+          120
+        ],
+        "hitFrames": [],
+        "frameWidth": 56,
+        "frameHeight": 48,
+        "scale": 1
+      }
+    },
+    {
+      "file": "apps/web/public/art/gameplay/mochi-witch-defeat.png",
+      "bytes": 734,
+      "sha256": "556b9841f81ee515c1fb8e6b8335fb6c755083b9d89ce4413712497649643c28",
+      "parameters": {
+        "class": "witch",
+        "gear": {},
+        "animation": "defeat",
+        "frames": 4,
+        "frameMs": [
+          120,
+          140,
+          160,
+          400
+        ],
+        "hitFrames": [],
+        "frameWidth": 56,
+        "frameHeight": 48,
+        "scale": 1
+      }
+    },
+    {
+      "file": "apps/web/public/art/gameplay/mochi-witch-victory.png",
+      "bytes": 735,
+      "sha256": "b23ab6e1f18d4122cf1ef0723d7407e1e08981806736a55dfcac1efc7ce21b7a",
+      "parameters": {
+        "class": "witch",
+        "gear": {},
+        "animation": "victory",
+        "frames": 4,
+        "frameMs": [
+          120,
+          140,
+          200,
+          240
+        ],
+        "hitFrames": [],
+        "frameWidth": 56,
+        "frameHeight": 48,
+        "scale": 1
+      }
+    },
+    {
+      "file": "apps/web/public/art/gameplay/mochi-witch-attack.png",
+      "bytes": 909,
+      "sha256": "773660224fe6e896a4c84919b97b12a083fcb8f34e6849a96a454a8aa9b4dd09",
+      "parameters": {
+        "class": "witch",
+        "gear": {},
+        "animation": "attack",
+        "frames": 6,
+        "frameMs": [
+          100,
+          150,
+          150,
+          100,
+          100,
+          120
+        ],
+        "hitFrames": [
+          4
+        ],
+        "frameWidth": 56,
+        "frameHeight": 48,
+        "scale": 1
+      }
+    },
+    {
+      "file": "apps/web/public/art/gameplay/mochi-alchemist-idle.png",
+      "bytes": 750,
+      "sha256": "c4ca3f09101533c25b0607d9dd5a4b9d32a8b9e4de3124e5cf50afda20847835",
+      "parameters": {
+        "class": "alchemist",
+        "gear": {},
+        "animation": "idle",
+        "frames": 8,
+        "frameMs": [
+          700,
+          180,
+          120,
+          180,
+          600,
+          100,
+          120,
+          200
+        ],
+        "hitFrames": [],
+        "frameWidth": 56,
+        "frameHeight": 48,
+        "scale": 1
+      }
+    },
+    {
+      "file": "apps/web/public/art/gameplay/mochi-alchemist-nap.png",
+      "bytes": 447,
+      "sha256": "79c603ca8137cc848dd14bf4007dda6b9627d7d3727b03448a2f45594b39a6f2",
+      "parameters": {
+        "class": "alchemist",
+        "gear": {},
+        "animation": "nap",
+        "frames": 2,
+        "frameMs": [
+          1400,
+          1400
+        ],
+        "hitFrames": [],
+        "frameWidth": 56,
+        "frameHeight": 48,
+        "scale": 1
+      }
+    },
+    {
+      "file": "apps/web/public/art/gameplay/mochi-alchemist-equip.png",
+      "bytes": 652,
+      "sha256": "6001482f251f8971fcb48ee50b13ec9ecd40910e753fd44b0d1de8a4f9aa41e3",
+      "parameters": {
+        "class": "alchemist",
+        "gear": {},
+        "animation": "equip",
+        "frames": 4,
+        "frameMs": [
+          100,
+          140,
+          140,
+          180
+        ],
+        "hitFrames": [],
+        "frameWidth": 56,
+        "frameHeight": 48,
+        "scale": 1
+      }
+    },
+    {
+      "file": "apps/web/public/art/gameplay/mochi-alchemist-walk.png",
+      "bytes": 816,
+      "sha256": "17662a893c37d02a7f0ee22ec06e4a7be9b60195682beef810e37e39c1e241dd",
+      "parameters": {
+        "class": "alchemist",
+        "gear": {},
+        "animation": "walk",
+        "frames": 6,
+        "frameMs": [
+          100,
+          100,
+          100,
+          100,
+          100,
+          100
+        ],
+        "hitFrames": [],
+        "frameWidth": 56,
+        "frameHeight": 48,
+        "scale": 1
+      }
+    },
+    {
+      "file": "apps/web/public/art/gameplay/mochi-alchemist-hurt.png",
+      "bytes": 463,
+      "sha256": "35466c2f99087cce7277ce489068c5ed6952536e9a2608a2a6e79abff8697b08",
+      "parameters": {
+        "class": "alchemist",
+        "gear": {},
+        "animation": "hurt",
+        "frames": 2,
+        "frameMs": [
+          120,
+          120
+        ],
+        "hitFrames": [],
+        "frameWidth": 56,
+        "frameHeight": 48,
+        "scale": 1
+      }
+    },
+    {
+      "file": "apps/web/public/art/gameplay/mochi-alchemist-defeat.png",
+      "bytes": 753,
+      "sha256": "a183c60054fc5244cf996374a304b283baab703ddc66eb672d5626fafc822239",
+      "parameters": {
+        "class": "alchemist",
+        "gear": {},
+        "animation": "defeat",
+        "frames": 4,
+        "frameMs": [
+          120,
+          140,
+          160,
+          400
+        ],
+        "hitFrames": [],
+        "frameWidth": 56,
+        "frameHeight": 48,
+        "scale": 1
+      }
+    },
+    {
+      "file": "apps/web/public/art/gameplay/mochi-alchemist-victory.png",
+      "bytes": 708,
+      "sha256": "6d72e51ef3f48d53ecf04893e65ccf90d400d449fed6bf8f5b88e7e19fafc566",
+      "parameters": {
+        "class": "alchemist",
+        "gear": {},
+        "animation": "victory",
+        "frames": 4,
+        "frameMs": [
+          120,
+          140,
+          200,
+          240
+        ],
+        "hitFrames": [],
+        "frameWidth": 56,
+        "frameHeight": 48,
+        "scale": 1
+      }
+    },
+    {
+      "file": "apps/web/public/art/gameplay/mochi-alchemist-attack.png",
+      "bytes": 911,
+      "sha256": "b9748b21d0f21d9b1be20bf16ac60bfb5b8e92b353555d4e60fee56bd81d93d8",
+      "parameters": {
+        "class": "alchemist",
+        "gear": {},
+        "animation": "attack",
+        "frames": 6,
+        "frameMs": [
+          80,
+          90,
+          90,
+          80,
+          80,
+          100
+        ],
+        "hitFrames": [
+          3
+        ],
+        "frameWidth": 56,
+        "frameHeight": 48,
+        "scale": 1
+      }
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "registeredAt": "2026-11-08T07:24:26.905739+00:00",
+  "seeds": [
+    1,
+    50
+  ],
+  "scopes": [
+    "equipped",
+    "tiers",
+    "sets",
+    "teams"
+  ],
+  "fixtureSource": "/Users/bao/taskbar-hero-cardrpg-a4/tools/cardrpg-big/a5-drafts/b1-prep/policy-smooth-04/matrix.mjs",
+  "fixtureSourceSha256": "00b4b6d34fbfd20660e795124f1016291b7baaa285fcdbe5afff4c054fe9cd89",
+  "originalPolicySha256": "f467781a6a689b280bf4b2f76621a90f0547508b541dfabfa776767fcc121f67",
+  "variants": {
+    "smooth-a4": {
+      "packages/game-rules/src/cardrpg/depth/policies.ts": {
+        "file": "/Users/bao/taskbar-hero-cardrpg-a4/tools/cardrpg-big/a5-drafts/b1-prep/policy-smooth-04/smooth-a4/packages/game-rules/src/cardrpg/depth/policies.ts",
+        "sha256": "0beaebc501e5713cc78d0e0524027b26e97aceec13c4ea6dd5a26e07a8e0b15d"
+      }
+    },
+    "smooth-budget": {
+      "packages/game-rules/src/cardrpg/depth/policies.ts": {
+        "file": "/Users/bao/taskbar-hero-cardrpg-a4/tools/cardrpg-big/a5-drafts/b1-prep/policy-smooth-04/smooth-budget/packages/game-rules/src/cardrpg/depth/policies.ts",
+        "sha256": "0beaebc501e5713cc78d0e0524027b26e97aceec13c4ea6dd5a26e07a8e0b15d"
+      },
+      "packages/game-rules/src/cardrpg/depth/battle.ts": {
+        "file": "/Users/bao/taskbar-hero-cardrpg-a4/tools/cardrpg-big/a5-drafts/b1-prep/policy-smooth-04/smooth-budget/packages/game-rules/src/cardrpg/depth/battle.ts",
+        "sha256": "e06ce1a8b34854f8a62ffaf4a6cda3cd15394c80607b821565142221ded96718"
+      },
+      "packages/game-rules/src/cardrpg/depth/contract.ts": {
+        "file": "/Users/bao/taskbar-hero-cardrpg-a4/tools/cardrpg-big/a5-drafts/b1-prep/policy-smooth-04/smooth-budget/packages/game-rules/src/cardrpg/depth/contract.ts",
+        "sha256": "86b090a661ce864d51f7ede826dd3b67adf1402fdb62213bf8691577e3725f5c"
+      }
+    }
+  }
+}

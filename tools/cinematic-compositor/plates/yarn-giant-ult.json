@@ -1,0 +1,123 @@
+{
+  "version": 2,
+  "id": "yarn-giant-ult",
+  "unit": "yarn-giant",
+  "title": "Yarn crash",
+  "width": 1280,
+  "height": 720,
+  "fps": 30,
+  "frames": 68,
+  "signature": {
+    "element": {
+      "palette": [
+        "#ffd8e0",
+        "#c565a5",
+        "#2e1b3b"
+      ],
+      "grade": "yarn-shadow"
+    },
+    "camera": "pull_out_wide",
+    "motif": "yarn-whale",
+    "target": "all-enemies",
+    "soundKit": "wool-thunder"
+  },
+  "layers": [
+    {
+      "type": "background",
+      "start": 0,
+      "end": 68
+    },
+    {
+      "type": "animated-environment",
+      "start": 0,
+      "end": 68
+    },
+    {
+      "type": "light-shafts",
+      "start": 30,
+      "end": 68
+    },
+    {
+      "type": "speed-lines",
+      "start": 0,
+      "end": 68
+    },
+    {
+      "type": "caster",
+      "start": 0,
+      "end": 68
+    },
+    {
+      "type": "painted-motif",
+      "start": 0,
+      "end": 68,
+      "source": "../motifs/yarn-giant.png"
+    },
+    {
+      "type": "ground-glyph",
+      "start": 0,
+      "end": 68
+    },
+    {
+      "type": "particles",
+      "start": 0,
+      "end": 68,
+      "count": 480
+    },
+    {
+      "type": "painted-layer",
+      "start": 12,
+      "end": 68,
+      "source": "/assets/cardrpg-look/vfx-layered/enemy-yarn-giant.webp",
+      "region": [
+        256,
+        0,
+        256,
+        256
+      ]
+    },
+    {
+      "type": "impact-frame",
+      "start": 55,
+      "end": 56
+    },
+    {
+      "type": "closing-flash",
+      "start": 64,
+      "end": 68
+    }
+  ],
+  "composition": {
+    "background": "knit",
+    "camera": "whale-surge",
+    "focus": [
+      710,
+      350
+    ],
+    "motifSize": 1390,
+    "casterX": 350,
+    "casterFoot": 770,
+    "casterHeight": 680,
+    "casterEnter": -700,
+    "casterTilt": -0.07,
+    "motifTilt": 0.04,
+    "particle": "thread",
+    "casterBehind": false,
+    "seed": 39,
+    "impactDark": false
+  },
+  "beats": [
+    {
+      "name": "entrance",
+      "frame": 12
+    },
+    {
+      "name": "build",
+      "frame": 35
+    },
+    {
+      "name": "climax",
+      "frame": 54
+    }
+  ]
+}

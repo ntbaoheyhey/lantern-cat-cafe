@@ -1,0 +1,61 @@
+{
+  "at": "2026-11-15T07:07:15.486Z",
+  "sourceCommit": "b9e188f3ef65260b63d376e1e47f68b1cb5ada33",
+  "scope": {
+    "legacyAllQ1": {
+      "PASS": 28,
+      "FAIL": 3,
+      "OPEN": 78
+    },
+    "ownRowsOnly": {
+      "PASS": 28,
+      "FAIL": 3,
+      "OPEN": 24
+    },
+    "laterCraftRows": 54
+  },
+  "timing": [
+    {
+      "fixture": "wave1",
+      "actions": 50,
+      "ultimateCount": 15,
+      "scheduleDurationMinMs": 2200,
+      "scheduleDurationMaxMs": 2200,
+      "scheduleImpactOffsetsMs": [
+        1100
+      ],
+      "postDrawInferredOverlapMaxMs": 1.4001735687287464,
+      "note": "Configured plan timings are exact; inferred starts include render latency. Neither alone proves video contact."
+    },
+    {
+      "fixture": "wave3",
+      "actions": 48,
+      "ultimateCount": 15,
+      "scheduleDurationMinMs": 2200,
+      "scheduleDurationMaxMs": 2200,
+      "scheduleImpactOffsetsMs": [
+        1100
+      ],
+      "postDrawInferredOverlapMaxMs": 6.299811172485192,
+      "note": "Configured plan timings are exact; inferred starts include render latency. Neither alone proves video contact."
+    },
+    {
+      "fixture": "boss",
+      "actions": 47,
+      "ultimateCount": 16,
+      "scheduleDurationMinMs": 2200,
+      "scheduleDurationMaxMs": 2200,
+      "scheduleImpactOffsetsMs": [
+        1100
+      ],
+      "postDrawInferredOverlapMaxMs": 1.2999351501463252,
+      "note": "Configured plan timings are exact; inferred starts include render latency. Neither alone proves video contact."
+    }
+  ],
+  "evidence": {
+    "trackedBytes": 276355014,
+    "ignoreOnlyTrackedByteReduction": 0,
+    "untrackRawCapturesAndWavsByteReduction": 125865992,
+    "removableFiles": 18
+  }
+}

@@ -1,0 +1,662 @@
+{
+  "at": "2026-11-16T02:14:27.428810+00:00",
+  "scope": "Art selection only; normalized feet are imposed alignment, not runtime acceptance",
+  "recipe": "Core alpha160 dilated2px; discard alpha<4; opaque-only per-channel quantile histogram matching to approved K0; Lanczos common opaque height and bottom-five-row contact centroid.",
+  "baseBounds": [
+    142,
+    193,
+    499,
+    599
+  ],
+  "baseFoot": [
+    273.4157894736842,
+    599.0
+  ],
+  "headLandmarks": {
+    "K0": [
+      191,
+      355
+    ],
+    "K1-A1": [
+      336,
+      675
+    ],
+    "K1-A2": [
+      373,
+      700
+    ],
+    "K1-A3": [
+      394,
+      708
+    ],
+    "K1-A4": [
+      369,
+      684
+    ],
+    "K2-A1": [
+      315,
+      657
+    ],
+    "K2-A2": [
+      394,
+      724
+    ],
+    "K2-A3": [
+      396,
+      714
+    ],
+    "K2-A4": [
+      387,
+      696
+    ],
+    "K4-A1": [
+      410,
+      697
+    ],
+    "K4-A2": [
+      418,
+      694
+    ],
+    "K4-A3": [
+      372,
+      707
+    ],
+    "K4-A4": [
+      432,
+      725
+    ],
+    "K5-A1": [
+      375,
+      695
+    ],
+    "K5-A2": [
+      377,
+      695
+    ],
+    "K5-A3": [
+      363,
+      682
+    ],
+    "K5-A4": [
+      378,
+      701
+    ]
+  },
+  "transforms": {
+    "K1-A1": {
+      "scale": 0.4891566265060241,
+      "offset": [
+        55,
+        29
+      ],
+      "sourceFoot": [
+        447.3230337078652,
+        1166.0
+      ],
+      "sourceBounds": [
+        128,
+        336,
+        949,
+        1166
+      ],
+      "headSource": [
+        336,
+        675
+      ]
+    },
+    "K1-A2": {
+      "scale": 0.5081351689612015,
+      "offset": [
+        9,
+        3
+      ],
+      "sourceFoot": [
+        519.6541554959786,
+        1172.0
+      ],
+      "sourceBounds": [
+        181,
+        373,
+        953,
+        1172
+      ],
+      "headSource": [
+        373,
+        700
+      ]
+    },
+    "K1-A3": {
+      "scale": 0.524547803617571,
+      "offset": [
+        -29,
+        -14
+      ],
+      "sourceFoot": [
+        576.616636528029,
+        1168.0
+      ],
+      "sourceBounds": [
+        224,
+        394,
+        962,
+        1168
+      ],
+      "headSource": [
+        394,
+        708
+      ]
+    },
+    "K1-A4": {
+      "scale": 0.5030978934324659,
+      "offset": [
+        3,
+        7
+      ],
+      "sourceFoot": [
+        538.2691415313225,
+        1176.0
+      ],
+      "sourceBounds": [
+        141,
+        369,
+        916,
+        1176
+      ],
+      "headSource": [
+        369,
+        684
+      ]
+    },
+    "K2-A1": {
+      "scale": 0.5471698113207547,
+      "offset": [
+        -10,
+        21
+      ],
+      "sourceFoot": [
+        517.7422096317281,
+        1056.0
+      ],
+      "sourceBounds": [
+        60,
+        314,
+        1192,
+        1056
+      ],
+      "headSource": [
+        315,
+        657
+      ]
+    },
+    "K2-A2": {
+      "scale": 0.5363276089828269,
+      "offset": [
+        37,
+        -18
+      ],
+      "sourceFoot": [
+        440.1936170212766,
+        1150.0
+      ],
+      "sourceBounds": [
+        45,
+        393,
+        1174,
+        1150
+      ],
+      "headSource": [
+        394,
+        724
+      ]
+    },
+    "K2-A3": {
+      "scale": 0.5272727272727272,
+      "offset": [
+        72,
+        -16
+      ],
+      "sourceFoot": [
+        382.1743869209809,
+        1166.0
+      ],
+      "sourceBounds": [
+        77,
+        396,
+        1089,
+        1166
+      ],
+      "headSource": [
+        396,
+        714
+      ]
+    },
+    "K2-A4": {
+      "scale": 0.530718954248366,
+      "offset": [
+        -12,
+        -12
+      ],
+      "sourceFoot": [
+        538.2057613168724,
+        1152.0
+      ],
+      "sourceBounds": [
+        89,
+        387,
+        1149,
+        1152
+      ],
+      "headSource": [
+        387,
+        696
+      ]
+    },
+    "K4-A1": {
+      "scale": 0.5321100917431193,
+      "offset": [
+        -37,
+        -25
+      ],
+      "sourceFoot": [
+        583.0526315789474,
+        1173.0
+      ],
+      "sourceBounds": [
+        246,
+        410,
+        1025,
+        1173
+      ],
+      "headSource": [
+        410,
+        697
+      ]
+    },
+    "K4-A2": {
+      "scale": 0.5391766268260292,
+      "offset": [
+        -18,
+        -32
+      ],
+      "sourceFoot": [
+        541.1217038539554,
+        1171.0
+      ],
+      "sourceBounds": [
+        249,
+        418,
+        1059,
+        1171
+      ],
+      "headSource": [
+        418,
+        694
+      ]
+    },
+    "K4-A3": {
+      "scale": 0.5165394402035624,
+      "offset": [
+        -37,
+        1
+      ],
+      "sourceFoot": [
+        601.3297413793103,
+        1158.0
+      ],
+      "sourceBounds": [
+        272,
+        372,
+        916,
+        1158
+      ],
+      "headSource": [
+        372,
+        707
+      ]
+    },
+    "K4-A4": {
+      "scale": 0.5435073627844712,
+      "offset": [
+        -21,
+        -42
+      ],
+      "sourceFoot": [
+        541.0154867256637,
+        1179.0
+      ],
+      "sourceBounds": [
+        250,
+        432,
+        1020,
+        1179
+      ],
+      "headSource": [
+        432,
+        725
+      ]
+    },
+    "K5-A1": {
+      "scale": 0.5056039850560399,
+      "offset": [
+        -21,
+        3
+      ],
+      "sourceFoot": [
+        583.1507633587786,
+        1178.0
+      ],
+      "sourceBounds": [
+        172,
+        375,
+        1059,
+        1178
+      ],
+      "headSource": [
+        375,
+        695
+      ]
+    },
+    "K5-A2": {
+      "scale": 0.5171974522292994,
+      "offset": [
+        -46,
+        -2
+      ],
+      "sourceFoot": [
+        617.4035087719299,
+        1162.0
+      ],
+      "sourceBounds": [
+        180,
+        377,
+        1012,
+        1162
+      ],
+      "headSource": [
+        377,
+        695
+      ]
+    },
+    "K5-A3": {
+      "scale": 0.5030978934324659,
+      "offset": [
+        -4,
+        10
+      ],
+      "sourceFoot": [
+        551.1624129930394,
+        1170.0
+      ],
+      "sourceBounds": [
+        171,
+        363,
+        1073,
+        1170
+      ],
+      "headSource": [
+        363,
+        682
+      ]
+    },
+    "K5-A4": {
+      "scale": 0.5081351689612015,
+      "offset": [
+        -21,
+        1
+      ],
+      "sourceFoot": [
+        578.4975369458128,
+        1177.0
+      ],
+      "sourceBounds": [
+        196,
+        378,
+        1053,
+        1177
+      ],
+      "headSource": [
+        378,
+        701
+      ]
+    }
+  },
+  "rows": [
+    {
+      "candidate": "K1-A1",
+      "source": "tools/v3craft-lab/poses/raw/soot/K1-A1.png",
+      "iou": 0.5641982287544752,
+      "frontReachBodyFraction": 0.04926108374384237,
+      "paletteDeltaE00": 1.3242213461099201,
+      "rawPaletteDeltaE00": 5.353856110264519,
+      "headRatioRelative": 1.0111225389362328,
+      "clipped": false,
+      "heightPx": 406,
+      "alignmentFootDriftPx": 0,
+      "numericPass": true,
+      "accepted": false
+    },
+    {
+      "candidate": "K1-A2",
+      "source": "tools/v3craft-lab/poses/raw/soot/K1-A2.png",
+      "iou": 0.5749190547528149,
+      "frontReachBodyFraction": -0.014778325123152709,
+      "paletteDeltaE00": 3.529369646828211,
+      "rawPaletteDeltaE00": 3.9579803173559687,
+      "headRatioRelative": 1.0131719527458103,
+      "clipped": false,
+      "heightPx": 406,
+      "alignmentFootDriftPx": 1,
+      "numericPass": true,
+      "accepted": false
+    },
+    {
+      "candidate": "K1-A3",
+      "source": "tools/v3craft-lab/poses/raw/soot/K1-A3.png",
+      "iou": 0.6682876033726267,
+      "frontReachBodyFraction": -0.05665024630541872,
+      "paletteDeltaE00": 2.871557078116549,
+      "rawPaletteDeltaE00": 2.919831083569413,
+      "headRatioRelative": 1.0043171361946177,
+      "clipped": false,
+      "heightPx": 406,
+      "alignmentFootDriftPx": 0,
+      "numericPass": true,
+      "accepted": false
+    },
+    {
+      "candidate": "K1-A4",
+      "source": "tools/v3craft-lab/poses/raw/soot/K1-A4.png",
+      "iou": 0.6431896092406985,
+      "frontReachBodyFraction": -0.08620689655172414,
+      "paletteDeltaE00": 2.540949507955991,
+      "rawPaletteDeltaE00": 4.50146661184366,
+      "headRatioRelative": 0.9663160758001631,
+      "clipped": false,
+      "heightPx": 406,
+      "alignmentFootDriftPx": 0,
+      "numericPass": true,
+      "accepted": false
+    },
+    {
+      "candidate": "K2-A1",
+      "source": "tools/v3craft-lab/poses/raw/soot-K2-A1.png",
+      "iou": 0.5518657964476539,
+      "frontReachBodyFraction": 0.3472906403940887,
+      "paletteDeltaE00": 3.3468347452310803,
+      "rawPaletteDeltaE00": 2.566388938694992,
+      "headRatioRelative": 1.141049240681086,
+      "clipped": true,
+      "heightPx": 406,
+      "alignmentFootDriftPx": 0,
+      "numericPass": false,
+      "accepted": false
+    },
+    {
+      "candidate": "K2-A2",
+      "source": "tools/v3craft-lab/poses/raw/soot-K2-A2.png",
+      "iou": 0.49645882269200653,
+      "frontReachBodyFraction": 0.3472906403940887,
+      "paletteDeltaE00": 3.8541203653242397,
+      "rawPaletteDeltaE00": 4.87328655565254,
+      "headRatioRelative": 1.0791957985630054,
+      "clipped": true,
+      "heightPx": 406,
+      "alignmentFootDriftPx": 0,
+      "numericPass": false,
+      "accepted": false
+    },
+    {
+      "candidate": "K2-A3",
+      "source": "tools/v3craft-lab/poses/raw/soot/K2-A3.png",
+      "iou": 0.49287460015095425,
+      "frontReachBodyFraction": 0.3472906403940887,
+      "paletteDeltaE00": 3.143937486701585,
+      "rawPaletteDeltaE00": 1.9831563757185773,
+      "headRatioRelative": 1.0223946784922395,
+      "clipped": true,
+      "heightPx": 405,
+      "alignmentFootDriftPx": 1,
+      "numericPass": false,
+      "accepted": false
+    },
+    {
+      "candidate": "K2-A4",
+      "source": "tools/v3craft-lab/poses/raw/soot/K2-A4.png",
+      "iou": 0.5562867281227118,
+      "frontReachBodyFraction": 0.2438423645320197,
+      "paletteDeltaE00": 4.425347223096851,
+      "rawPaletteDeltaE00": 4.77164062109348,
+      "headRatioRelative": 0.9999521759923482,
+      "clipped": false,
+      "heightPx": 407,
+      "alignmentFootDriftPx": 1,
+      "numericPass": true,
+      "accepted": false
+    },
+    {
+      "candidate": "K4-A1",
+      "source": "tools/v3craft-lab/poses/raw/soot/K4-A1.png",
+      "iou": 0.5363426942624346,
+      "frontReachBodyFraction": 0.022167487684729065,
+      "paletteDeltaE00": 7.998037855191053,
+      "rawPaletteDeltaE00": 3.5553469129806134,
+      "headRatioRelative": 0.9311926605504588,
+      "clipped": false,
+      "heightPx": 406,
+      "alignmentFootDriftPx": 0,
+      "numericPass": true,
+      "accepted": false
+    },
+    {
+      "candidate": "K4-A2",
+      "source": "tools/v3craft-lab/poses/raw/soot/K4-A2.png",
+      "iou": 0.6213553541307532,
+      "frontReachBodyFraction": 0.1330049261083744,
+      "paletteDeltaE00": 2.5246437079180013,
+      "rawPaletteDeltaE00": 3.881539895840337,
+      "headRatioRelative": 0.9073948109999028,
+      "clipped": false,
+      "heightPx": 406,
+      "alignmentFootDriftPx": 0,
+      "numericPass": false,
+      "accepted": false
+    },
+    {
+      "candidate": "K4-A3",
+      "source": "tools/v3craft-lab/poses/raw/soot/K4-A3.png",
+      "iou": 0.548700769763369,
+      "frontReachBodyFraction": -0.15517241379310345,
+      "paletteDeltaE00": 2.577707001617888,
+      "rawPaletteDeltaE00": 3.978005045463862,
+      "headRatioRelative": 1.0551262955377645,
+      "clipped": false,
+      "heightPx": 406,
+      "alignmentFootDriftPx": 0,
+      "numericPass": true,
+      "accepted": false
+    },
+    {
+      "candidate": "K4-A4",
+      "source": "tools/v3craft-lab/poses/raw/soot/K4-A4.png",
+      "iou": 0.6400666420545442,
+      "frontReachBodyFraction": 0.08620689655172414,
+      "paletteDeltaE00": 3.196098699658201,
+      "rawPaletteDeltaE00": 3.694079446446873,
+      "headRatioRelative": 0.9710223005844516,
+      "clipped": false,
+      "heightPx": 406,
+      "alignmentFootDriftPx": 0,
+      "numericPass": true,
+      "accepted": false
+    },
+    {
+      "candidate": "K5-A1",
+      "source": "tools/v3craft-lab/poses/raw/soot/K5-A1.png",
+      "iou": 0.5790369036903691,
+      "frontReachBodyFraction": 0.03940886699507389,
+      "paletteDeltaE00": 3.75255132461013,
+      "rawPaletteDeltaE00": 4.7296401190603525,
+      "headRatioRelative": 0.9865443610849558,
+      "clipped": false,
+      "heightPx": 405,
+      "alignmentFootDriftPx": 1,
+      "numericPass": true,
+      "accepted": false
+    },
+    {
+      "candidate": "K5-A2",
+      "source": "tools/v3craft-lab/poses/raw/soot/K5-A2.png",
+      "iou": 0.5695002120421919,
+      "frontReachBodyFraction": -0.05172413793103448,
+      "paletteDeltaE00": 3.7769231946261432,
+      "rawPaletteDeltaE00": 4.080973277582323,
+      "headRatioRelative": 1.0028584744446172,
+      "clipped": false,
+      "heightPx": 406,
+      "alignmentFootDriftPx": 0,
+      "numericPass": true,
+      "accepted": false
+    },
+    {
+      "candidate": "K5-A3",
+      "source": "tools/v3craft-lab/poses/raw/soot/K5-A3.png",
+      "iou": 0.6224006341715212,
+      "frontReachBodyFraction": 0.09113300492610837,
+      "paletteDeltaE00": 3.7188822028905624,
+      "rawPaletteDeltaE00": 3.9247474880887108,
+      "headRatioRelative": 0.9785867561277842,
+      "clipped": false,
+      "heightPx": 406,
+      "alignmentFootDriftPx": 0,
+      "numericPass": true,
+      "accepted": false
+    },
+    {
+      "candidate": "K5-A4",
+      "source": "tools/v3craft-lab/poses/raw/soot/K5-A4.png",
+      "iou": 0.6017850413169965,
+      "frontReachBodyFraction": 0.03694581280788178,
+      "paletteDeltaE00": 3.844496549261418,
+      "rawPaletteDeltaE00": 4.78763155251184,
+      "headRatioRelative": 1.0007784120394394,
+      "clipped": false,
+      "heightPx": 406,
+      "alignmentFootDriftPx": 0,
+      "numericPass": true,
+      "accepted": false
+    }
+  ],
+  "selections": {
+    "K1": "K1-A2",
+    "K2": "K2-A4",
+    "K4": "K4-A4",
+    "K5": "K5-A2"
+  },
+  "second": {
+    "K1": "K1-A3",
+    "K2": "K2-A3",
+    "K4": "K4-A1",
+    "K5": "K5-A1"
+  },
+  "productionAccepted": false
+}

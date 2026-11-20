@@ -1,0 +1,441 @@
+<title>Lantern UI v3 Options</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Be+Vietnam+Pro:wght@400;500;600&display=swap">
+<style>
+/* Layout: one reading column; each option is a 16:9 game-screen mock drawn with the game's own look tokens, followed by its score. Single dark look on purpose (the game is dark teal). */
+:root{
+  --night:#102129; --ink:#172d36; --panel:#233e46; --raised:#304c53;
+  --cream:#fff0d2; --paper:#e8d7b8; --muted:#b3c0ba;
+  --honey:#f3bb61; --amber:#cf8742; --coral:#e78570; --mint:#9ccbb1; --iris:#b9a5dc; --sky:#8abfcb;
+  --wood:#805a46; --woodl:#a27655; --danger:#e99488;
+  --display:"Baloo 2","Trebuchet MS",system-ui,sans-serif;
+  --body:"Be Vietnam Pro",system-ui,-apple-system,"Segoe UI",sans-serif;
+  color-scheme:dark;
+}
+html,body{background:var(--night);color:var(--cream)}
+body{font-family:var(--body);font-size:15px;line-height:1.6;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:32px 64px}
+main{max-width:980px;margin:0 auto;display:flex;flex-direction:column;gap:40px}
+h1,h2,h3{font-family:var(--display);line-height:1.15;text-wrap:balance;margin:0}
+h1{font-size:clamp(30px,5vw,46px);font-weight:800;color:var(--honey)}
+h2{font-size:clamp(22px,3.2vw,30px);font-weight:700}
+h3{font-size:19px;font-weight:700}
+p{margin:0;max-width:68ch}
+.eyebrow{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--mint);font-weight:600}
+section{display:flex;flex-direction:column;gap:14px}
+ul{margin:0;padding-left:20px;max-width:70ch}
+li{margin:4px 0}
+.muted{color:var(--muted)}
+.lead{font-size:17px;color:var(--paper)}
+.verdict{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.vcell{background:var(--ink);border:1px solid var(--raised);border-radius:12px;padding:14px 16px;display:flex;flex-direction:column;gap:4px;min-width:0}
+.vcell b{font-family:var(--display);font-size:24px;color:var(--honey)}
+.tag{display:inline-block;font-size:12px;font-weight:600;padding:1px 9px;border-radius:99px;background:var(--raised);color:var(--cream)}
+.tag.ok{background:#2f5b4a;color:#d4f1e0}.tag.bad{background:#5c3530;color:#ffd9d2}.tag.mid{background:#5b4a2a;color:#ffe7bd}
+.tablewrap{overflow-x:auto;border:1px solid var(--raised);border-radius:12px}
+table{border-collapse:collapse;width:100%;min-width:640px;font-size:14px;font-variant-numeric:tabular-nums}
+th,td{padding:9px 12px;text-align:left;border-bottom:1px solid var(--panel);vertical-align:top}
+th{background:var(--ink);font-weight:600;color:var(--paper)}
+tr.best td{background:rgba(243,187,97,.09)}
+td.n{text-align:center}
+.opt-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px}
+.score{font-family:var(--display);font-size:20px;color:var(--honey)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media (max-width:700px){.two{grid-template-columns:1fr}}
+.box{background:var(--ink);border-radius:12px;padding:14px 16px;min-width:0}
+.box h3{margin-bottom:6px}
+
+/* ===== game mock frame ===== */
+.frame{container-type:inline-size;position:relative;aspect-ratio:16/9;max-width:100%;border-radius:14px;overflow:hidden;border:2px solid var(--raised);background:var(--night);box-shadow:0 18px 50px rgba(0,0,0,.45)}
+.frame *{box-sizing:border-box}
+.scene{position:absolute;inset:0;background:
+  radial-gradient(60% 45% at 50% 30%,rgba(243,187,97,.35),transparent 70%),
+  linear-gradient(180deg,#1d3a47 0%,#28485a 38%,var(--wood) 38.2%,var(--woodl) 70%,#6c4a39 100%)}
+.window{position:absolute;top:6cqw;width:12cqw;height:12cqw;border-radius:6cqw 6cqw 1cqw 1cqw;background:linear-gradient(#0d1d33,#24476a);border:.6cqw solid #5d3f30}
+.window::after{content:"";position:absolute;right:2cqw;top:2cqw;width:2.4cqw;height:2.4cqw;border-radius:50%;background:var(--cream);box-shadow:0 0 2cqw var(--honey)}
+.lamp{position:absolute;top:0;width:.25cqw;height:7cqw;background:#3d2a21}
+.lamp::after{content:"";position:absolute;bottom:-2cqw;left:-1.2cqw;width:2.6cqw;height:2.6cqw;border-radius:50% 50% 40% 40%;background:var(--honey);box-shadow:0 0 4cqw 1cqw rgba(243,187,97,.6)}
+.counter{position:absolute;left:30%;right:30%;top:33%;height:6cqw;background:linear-gradient(#8d644d,#6b4b3a);border-radius:1cqw;border-top:.6cqw solid #b88a62}
+.cat{position:absolute;width:var(--s,6cqw);height:var(--s,6cqw);border-radius:48% 48% 44% 44%;background:var(--c,var(--paper));box-shadow:inset 0 -.8cqw 0 rgba(0,0,0,.15)}
+.cat::before,.cat::after{content:"";position:absolute;top:-22%;width:34%;height:40%;background:inherit;clip-path:polygon(50% 0,100% 100%,0 100%)}
+.cat::before{left:4%}.cat::after{right:4%}
+.cat i{position:absolute;top:42%;width:12%;height:14%;border-radius:50%;background:#2a2320}
+.cat i:first-child{left:28%}.cat i:last-child{right:28%}
+.shadow{position:absolute;width:var(--s,6cqw);height:1.6cqw;border-radius:50%;background:rgba(0,0,0,.28)}
+.label{position:absolute;font-family:var(--display);font-weight:700;font-size:1.25cqw;color:var(--cream);background:rgba(16,33,41,.78);padding:.15cqw .7cqw;border-radius:99px;white-space:nowrap;transform:translateX(-50%)}
+/* HUD */
+.hud-top{position:absolute;left:0;right:0;top:0;height:6.6cqw;display:flex;align-items:center;gap:1.2cqw;padding:0 1.4cqw;background:linear-gradient(rgba(16,33,41,.92),rgba(16,33,41,0))}
+.avatar{width:4.6cqw;height:4.6cqw;border-radius:50%;background:var(--paper);border:.35cqw solid var(--honey);position:relative;flex:none}
+.lv{position:absolute;bottom:-.6cqw;left:50%;transform:translateX(-50%);font:700 1cqw var(--display);background:var(--amber);color:var(--night);padding:0 .5cqw;border-radius:99px}
+.who{display:flex;flex-direction:column;line-height:1.1}
+.who b{font:800 1.5cqw var(--display)}
+.who span{font:600 1.15cqw var(--body);color:var(--honey)}
+.spacer{flex:1}
+.cur{display:flex;align-items:center;gap:.5cqw;background:rgba(35,62,70,.92);border:.15cqw solid var(--raised);border-radius:99px;padding:.25cqw .9cqw .25cqw .3cqw;font:600 1.2cqw var(--body);white-space:nowrap}
+.cur i{width:1.8cqw;height:1.8cqw;border-radius:50%;display:block;background:var(--honey)}
+.cur.relic{border-color:var(--iris);color:var(--iris)}
+.cur.relic i{background:conic-gradient(var(--iris),var(--sky),var(--iris));border-radius:.4cqw;transform:rotate(45deg) scale(.8)}
+.gear{width:3cqw;height:3cqw;border-radius:50%;background:var(--panel);border:.15cqw solid var(--raised);display:grid;place-items:center;font:700 1.5cqw var(--display);color:var(--muted)}
+.side{position:absolute;left:1.4cqw;top:9cqw;display:flex;flex-direction:column;gap:1.2cqw}
+.bub{width:5.4cqw;display:flex;flex-direction:column;align-items:center;gap:.2cqw;font:600 1cqw var(--body);text-align:center;line-height:1.1}
+.bub span{width:4.2cqw;height:4.2cqw;border-radius:1.2cqw;background:var(--panel);border:.2cqw solid var(--raised);position:relative}
+.bub span::after{content:"";position:absolute;right:-.4cqw;top:-.4cqw;width:1.3cqw;height:1.3cqw;border-radius:50%;background:var(--coral);border:.2cqw solid var(--night)}
+.bub.quiet span::after{display:none}
+.dock{position:absolute;left:0;right:0;bottom:0;height:9.6cqw;display:flex;align-items:flex-end;gap:1cqw;padding:0 1.4cqw 1cqw;background:linear-gradient(rgba(16,33,41,0),rgba(16,33,41,.95) 45%)}
+.dbtn{width:7.4cqw;display:flex;flex-direction:column;align-items:center;gap:.25cqw;font:700 1.2cqw var(--display);color:var(--cream)}
+.dbtn span{width:5.2cqw;height:5.2cqw;border-radius:1.4cqw;background:linear-gradient(var(--raised),var(--panel));border:.25cqw solid #4a6970;position:relative;box-shadow:0 .4cqw 0 rgba(0,0,0,.35)}
+.dbtn span::before{content:"";position:absolute;inset:1.2cqw;border-radius:.6cqw;background:var(--g,var(--mint));opacity:.9}
+.dbtn.dot span::after{content:"";position:absolute;right:-.5cqw;top:-.5cqw;width:1.4cqw;height:1.4cqw;border-radius:50%;background:var(--coral);border:.2cqw solid var(--night)}
+.go{margin-left:auto;height:7.6cqw;min-width:17cqw;border-radius:2cqw;background:linear-gradient(#ffd27d,var(--amber));color:var(--night);display:flex;flex-direction:column;justify-content:center;align-items:center;font:800 2.2cqw var(--display);line-height:1;box-shadow:0 .5cqw 0 #8d5524,0 0 3cqw rgba(243,187,97,.55);border:.3cqw solid #ffe2a8}
+.go small{font:600 1.1cqw var(--body);margin-top:.4cqw}
+.chest{position:absolute;display:flex;flex-direction:column;align-items:center;gap:.3cqw}
+.chest span{width:6cqw;height:4.6cqw;border-radius:1cqw 1cqw .6cqw .6cqw;background:linear-gradient(var(--honey) 0 35%,var(--amber) 35%);border:.3cqw solid #6b4026;box-shadow:0 0 3cqw rgba(243,187,97,.7)}
+.chest b{font:700 1.15cqw var(--display);background:rgba(16,33,41,.85);padding:0 .7cqw;border-radius:99px;color:var(--honey)}
+.hot{position:absolute;font:700 1.15cqw var(--display);color:var(--night);background:var(--mint);padding:.2cqw .8cqw;border-radius:99px;transform:translateX(-50%);box-shadow:0 .3cqw 0 rgba(0,0,0,.3)}
+.hot::after{content:"";position:absolute;left:50%;bottom:-.7cqw;border:.4cqw solid transparent;border-top-color:var(--mint);transform:translateX(-50%)}
+.callout{position:absolute;font:600 1.1cqw var(--body);color:var(--night);background:var(--cream);padding:.4cqw .8cqw;border-radius:.8cqw;max-width:22cqw;line-height:1.25}
+/* map option */
+.mapbg{position:absolute;inset:0;background:radial-gradient(40% 30% at 70% 30%,rgba(185,165,220,.25),transparent),linear-gradient(160deg,#16303b,#1f3b33 60%,#2b2a3e)}
+.path{position:absolute;inset:0}
+.node{position:absolute;width:5cqw;height:5cqw;border-radius:50%;transform:translate(-50%,-50%);background:var(--panel);border:.35cqw solid var(--mint);display:grid;place-items:center;font:800 1.5cqw var(--display)}
+.node.done{background:#2f5b4a}.node.now{border-color:var(--honey);box-shadow:0 0 2.6cqw var(--honey);background:var(--amber);color:var(--night)}
+.node.boss{width:7cqw;height:7cqw;border-color:var(--coral);background:#4a2b30}
+.node.lock{opacity:.45}
+/* slim rail option */
+.rail{position:absolute;left:0;top:0;bottom:0;width:7cqw;background:var(--ink);border-right:.2cqw solid var(--raised);display:flex;flex-direction:column;align-items:center;gap:1.3cqw;padding-top:7.5cqw}
+.rail span{width:4.4cqw;height:4.4cqw;border-radius:1.2cqw;background:var(--panel);border:.2cqw solid var(--raised)}
+.rail span.on{background:var(--amber);border-color:var(--honey)}
+.panelcard{position:absolute;background:var(--panel);border:.2cqw solid var(--raised);border-radius:1.2cqw}
+/* battle */
+.arena{position:absolute;inset:0;background:radial-gradient(55% 40% at 50% 62%,rgba(243,187,97,.28),transparent 70%),linear-gradient(180deg,#1b3442 0 40%,#7d5745 40% 100%)}
+.rug{position:absolute;left:18%;right:18%;top:48%;height:34%;border-radius:50%;background:radial-gradient(#9b6a50,#7b513f);border:.4cqw dashed rgba(255,240,210,.25)}
+.bossbar{position:absolute;left:28%;right:28%;top:2cqw;display:flex;flex-direction:column;gap:.4cqw;align-items:center}
+.bossbar b{font:800 1.6cqw var(--display)}
+.bar{width:100%;height:1.4cqw;border-radius:99px;background:#2a1d22;border:.2cqw solid #5c3530;overflow:hidden}
+.bar i{display:block;height:100%;width:62%;background:linear-gradient(90deg,var(--coral),#f3a07e)}
+.wave{position:absolute;left:1.4cqw;top:1.8cqw;font:700 1.25cqw var(--display);background:rgba(16,33,41,.85);padding:.3cqw .9cqw;border-radius:99px}
+.speed{position:absolute;right:1.4cqw;top:1.6cqw;display:flex;gap:.6cqw}
+.speed span{font:800 1.25cqw var(--display);padding:.3cqw .8cqw;border-radius:.7cqw;background:var(--panel);border:.2cqw solid var(--raised)}
+.speed span.on{background:var(--honey);color:var(--night)}
+.team{position:absolute;left:50%;bottom:1cqw;transform:translateX(-50%);display:flex;gap:1cqw}
+.pc{width:9.4cqw;background:rgba(16,33,41,.9);border:.2cqw solid var(--raised);border-radius:1cqw;padding:.5cqw;display:flex;flex-direction:column;gap:.35cqw;align-items:center}
+.pc .face{width:4.4cqw;height:4.4cqw;border-radius:50%;background:var(--c,var(--paper));border:.3cqw solid var(--r,var(--mint))}
+.pc .ult{width:100%;height:.9cqw;border-radius:99px;background:#33282a;overflow:hidden}
+.pc .ult i{display:block;height:100%;background:var(--honey)}
+.pc .hp{width:100%;height:.7cqw;border-radius:99px;background:#33282a;overflow:hidden}
+.pc .hp i{display:block;height:100%;background:var(--mint)}
+.pc.ready{border-color:var(--honey);box-shadow:0 0 2cqw rgba(243,187,97,.7)}
+.banner{position:absolute;left:0;right:0;top:20%;height:9cqw;background:linear-gradient(90deg,transparent,rgba(207,135,66,.92) 18%,rgba(207,135,66,.92) 82%,transparent);display:flex;align-items:center;justify-content:center;gap:2cqw;transform:skewY(-3deg)}
+.banner b{font:800 3.6cqw var(--display);color:var(--cream);text-shadow:0 .3cqw 0 #6b4026}
+.banner span{font:600 1.4cqw var(--body);color:var(--night)}
+.dmg{position:absolute;font:800 2.4cqw var(--display);text-shadow:0 .25cqw 0 rgba(0,0,0,.5)}
+.react{position:absolute;font:800 1.6cqw var(--display);color:var(--night);background:var(--iris);padding:.2cqw .9cqw;border-radius:99px}
+.eplate{position:absolute;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.2cqw;font:700 1.05cqw var(--display)}
+.eplate .bar{width:8cqw;height:.9cqw}
+.icons{display:flex;gap:.3cqw}
+.icons i{width:1.4cqw;height:1.4cqw;border-radius:.3cqw;background:var(--coral)}
+/* gacha strip */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+@media (max-width:700px){.steps{grid-template-columns:1fr 1fr}}
+.step{container-type:inline-size;aspect-ratio:3/4;border-radius:12px;position:relative;overflow:hidden;border:1px solid var(--raised)}
+.step .cap{position:absolute;left:0;right:0;bottom:0;padding:8px 10px;background:rgba(16,33,41,.88);font-size:13px;line-height:1.35}
+.step .cap b{display:block;font-family:var(--display);font-size:15px;color:var(--honey)}
+.s1{background:radial-gradient(circle at 50% 42%,rgba(243,187,97,.35),transparent 55%),var(--ink)}
+.s2{background:radial-gradient(circle at 50% 42%,rgba(185,165,220,.75),transparent 60%),#1d1a33}
+.s3{background:conic-gradient(from 0deg at 50% 42%,#f3bb61,#e78570,#b9a5dc,#8abfcb,#f3bb61);}
+.s4{background:radial-gradient(circle at 50% 40%,#ffe6b0,#cf8742 55%,#5b3420)}
+.env{position:absolute;left:50%;top:40%;width:38cqw;height:26cqw;transform:translate(-50%,-50%);background:var(--paper);border-radius:3cqw;border:1.2cqw solid var(--amber)}
+.seal{position:absolute;left:50%;top:40%;width:14cqw;height:14cqw;transform:translate(-50%,-50%);border-radius:50%;background:var(--iris);box-shadow:0 0 14cqw 6cqw rgba(185,165,220,.8)}
+.flash{position:absolute;left:50%;top:40%;width:30cqw;height:30cqw;transform:translate(-50%,-50%);border-radius:50%;background:#fff6e2;box-shadow:0 0 22cqw 12cqw #fff2cf}
+.bigcat{position:absolute;left:50%;top:38%;transform:translate(-50%,-50%);--s:40cqw}
+.mapping td:first-child{white-space:nowrap}
+.src a{color:var(--sky)}
+a{color:var(--sky)}
+:focus-visible{outline:2px solid var(--honey);outline-offset:2px}
+@media (prefers-reduced-motion:no-preference){.go{animation:pulse 2.4s ease-in-out infinite}@keyframes pulse{50%{box-shadow:0 .5cqw 0 #8d5524,0 0 5cqw rgba(243,187,97,.85)}}}
+</style>
+
+<main>
+<header style="display:flex;flex-direction:column;gap:10px">
+  <span class="eyebrow">Taskbar Hero · The Lantern · đề xuất giao diện v3 · 9/11/2026</span>
+  <h1>Từ "menu" thành "game": 3 phương án bố cục</h1>
+  <p class="lead">Bạn thấy thanh bên quá nhiều mục và trông như một trang quản trị. Trang này đánh giá giao diện hiện tại, rút nguyên tắc bố cục từ thể loại gacha RPG thẻ tướng (OMG3Q, Danh Tướng 3Q, kiểu AFK), rồi đưa 3 phương án có chấm điểm. Mọi hình dưới đây là bản phác bằng CSS để so bố cục, không phải art cuối cùng (art do lane B làm).</p>
+</header>
+
+<section>
+  <span class="eyebrow">Phần 1</span>
+  <h2>Lane A, bước S6: kết quả ra sao</h2>
+  <div class="verdict">
+    <div class="vcell"><span class="muted">Tự chấm</span><b>6.16 / 10</b><span>Mục tiêu 8.0, kết luận <span class="tag mid">PARTIAL</span></span></div>
+    <div class="vcell"><span class="muted">Cổng số liệu (bản V5)</span><b>21 đạt · 21 trượt</b><span>Bản dự phòng: 17 đạt · 25 trượt</span></div>
+    <div class="vcell"><span class="muted">Điểm mạnh</span><b>Trung thực</b><span>Tương thích save cũ khớp hash 100%, không sửa số sau khi đo</span></div>
+    <div class="vcell"><span class="muted">Điểm yếu nhất</span><b>Nhịp trận 2.59</b><span>Boss mất 130 giây (mục tiêu 45–90), trận thường 13 vòng (mục tiêu 8–12)</span></div>
+  </div>
+  <div class="two">
+    <div class="box"><h3>Đã làm được</h3><ul>
+      <li>Skills V5 chạy thật: Burn, Bleed, Bitter, đánh nhiều mục tiêu, 4 phản ứng có báo trên màn hình.</li>
+      <li>Sát thương nhiều mục tiêu 32.66% <span class="tag ok">đạt</span> (trước chỉ 9.1%).</li>
+      <li>Phản ứng hiện rõ ở 6.7 lần mỗi trận, 3 trên 4 phản ứng xuất hiện gần như mọi trận đúng đội.</li>
+      <li>Huyền thoại đầu tiên đến ngày 5–6, ống chọn tướng ngày 9–11 <span class="tag ok">đạt</span>.</li>
+    </ul></div>
+    <div class="box"><h3>Còn hở</h3><ul>
+      <li>Trận dài, boss chậm; 2 kỹ năng (Mochi, Panko) gần như không bao giờ được dùng.</li>
+      <li>Cân bằng đồ và set vẫn có "ô thứ 4" lời tới 48 điểm %.</li>
+      <li>Hiệu năng: 234 draw call (mục tiêu 130), demo 21 MB, tải lạnh 183 ms.</li>
+      <li>Field guide trong game còn dùng tên trạng thái cũ; 6 chỗ thanh máu kẻ địch bị che.</li>
+    </ul></div>
+  </div>
+  <p><b>Nhận xét:</b> lane A làm hệ thống chiến đấu sâu và đo rất kỹ, nhưng 35% điểm vẫn đến từ nhịp trận và cân bằng chưa đạt. Quan trọng hơn với bạn: giao diện lane A vẫn là khung "trang web có menu" từ trước. Phần này không nằm trong nhiệm vụ S6 nên không được sửa, và đó là lý do phần 3 trở đi tồn tại.</p>
+</section>
+
+<section>
+  <span class="eyebrow">Phần 2</span>
+  <h2>Demo offline là bản thật hay tượng trưng?</h2>
+  <p><b>Là bản thật của code game, chạy offline.</b> File <code>docs/cardrpg3/skills-v5.html</code> (21 MB) được build từ chính mã nguồn game (commit d498f97, <code>apps/web/src/game/cardrpg/depth</code> và <code>packages/game-rules</code>) bằng <code>tools/cardrpg-big/build.mjs</code>, rồi đóng gói thành một file. Luật chơi, trận đấu, đồ, chiêu mộ đều là code thật.</p>
+  <ul>
+    <li><b>Khác bản chính thức ở 3 điểm:</b> dữ liệu lưu trên máy (không đăng nhập, không Supabase), Relic Fuji chỉ đọc; art là bản cũ của lane A, chưa có art mới của lane B; và đây là nhánh nháp, chưa merge, nên trang web live hiện vẫn là bản cũ hơn nhiều.</li>
+    <li><b>Hệ quả:</b> giao diện bạn thấy trong demo chính là giao diện game sẽ ship nếu không đổi gì. Vì vậy góp ý "giống menu" là đúng chỗ cần sửa.</li>
+  </ul>
+</section>
+
+<section>
+  <span class="eyebrow">Phần 3</span>
+  <h2>Giao diện hiện tại sai ở đâu</h2>
+  <p>Từ 21 ảnh chụp S6 ở 1440 px và mã <code>depth/App.tsx</code>:</p>
+  <ul>
+    <li><b>Thanh bên có 11 mục</b> (Cafe, Team &amp; cards, Night route, Companions, Collection journal, Equipment, Invitations, Field guide, Fuji Relics, Save &amp; settings, Before/after). Hai mục trùng nghĩa (Companions và Collection journal), một mục là công cụ dev (Before/after). Người chơi không biết bấm gì trước.</li>
+    <li><b>Mọi màn đều là trang cuộn chữ trên nền xanh đậm</b>: tiêu đề kiểu bài báo, form, dropdown, thanh tiến độ mảnh. Chỉ duy nhất màn chiến đấu trông như game.</li>
+    <li><b>Không có "nút chính".</b> Game thể loại này luôn có một nút to, sáng, luôn ở cùng chỗ (Chinh chiến, Vượt ải). Ở đây việc đi đánh nằm trong mục thứ 3 của danh sách.</li>
+    <li><b>Mèo nhỏ, nằm trong thẻ.</b> Nhân vật là thứ đẹp nhất của game nhưng chỉ chiếm khoảng 5% diện tích màn hình chính.</li>
+    <li><b>Chữ dài và giọng spec</b> ("Choose tonight's route", "Comparisons", tham số % dài) làm người mới ngợp.</li>
+    <li><b>Phần thưởng không có cảm giác.</b> Nhận quà, chiêu mộ, lên cấp chủ yếu là đổi chữ trong thẻ, không có khoảnh khắc ăn mừng.</li>
+  </ul>
+</section>
+
+<section>
+  <span class="eyebrow">Phần 4</span>
+  <h2>Học được gì từ OMG3Q, Danh Tướng 3Q và thể loại</h2>
+  <p class="muted">Nguồn công khai về bố cục của 2 game này khá mỏng (chủ yếu bài hướng dẫn của BlueStacks, FPT Shop, Thế Giới Di Động). Phần dưới kết hợp các nguồn đó với mẫu bố cục chung của dòng gacha RPG thẻ tướng đánh tự động. Chỉ học nguyên tắc; không dùng art, chữ, biểu tượng hay tên của họ.</p>
+  <div class="two">
+    <div class="box"><h3>Màn chính</h3><ul>
+      <li>Màn chính là <b>một cảnh sống</b> (thành, doanh trại, trận đánh idle) phủ kín màn hình; tính năng là các điểm bấm trên cảnh.</li>
+      <li><b>HUD trên mỏng</b>: trái là avatar, cấp, lực chiến; phải là tiền tệ và nút cài đặt.</li>
+      <li><b>Dock dưới 4–6 nút icon</b> có chấm đỏ báo việc, cộng <b>một nút đánh to</b> ở góc phải dưới.</li>
+      <li><b>Cột sự kiện bên trái</b> chỉ hiện việc đang có hạn (nhiệm vụ ngày, quà chờ), không phải mục điều hướng cố định.</li>
+      <li><b>Rương quà idle</b> đặt ngay trong cảnh, đầy dần theo giờ.</li>
+    </ul></div>
+    <div class="box"><h3>Trận đấu và hiệu ứng</h3><ul>
+      <li>Trận <b>tự động theo lượt</b>; người chơi quyết ở <b>đội hình</b> (OMG3Q, Danh Tướng 3Q đều thế). Hợp với V5 của ta.</li>
+      <li>Thanh nộ dưới chân tướng; khi đầy, <b>băng-rôn tên tuyệt kỹ</b> chạy ngang màn hình.</li>
+      <li>Số sát thương to, màu theo loại; <b>chữ phản ứng/hợp kích</b> nổi lên giữa trận.</li>
+      <li>Nút <b>x1/x2/x3, Tự động, Bỏ qua</b> cố định góc trên phải.</li>
+      <li>Danh Tướng 3Q bị chê vì <b>mở được tướng hiếm mà không thấy phấn khích</b>. Bài học: màn chiêu mộ phải có nhịp tăng dần và màu báo độ hiếm trước khi lộ.</li>
+    </ul></div>
+  </div>
+</section>
+
+<section>
+  <span class="eyebrow">Phần 5 · Phương án A (đề xuất)</span>
+  <div class="opt-head"><h2>Quán cà phê sống</h2><span class="score">8.30 / 10</span></div>
+  <p>Màn chính là quán cà phê 3D phủ kín màn hình, mèo đi lại trong quán. Không còn thanh bên. 11 mục cũ gom vào 5 nút dock và một nút "Đi tuần đêm" to.</p>
+  <div class="frame" role="img" aria-label="Phác thảo màn chính phương án A: quán cà phê toàn màn hình, HUD trên, dock 5 nút dưới và nút đi đánh lớn">
+    <div class="scene"></div>
+    <div class="window" style="left:14%"></div><div class="window" style="right:14%"></div>
+    <div class="lamp" style="left:36%"></div><div class="lamp" style="left:64%"></div>
+    <div class="counter"></div>
+    <div class="hot" style="left:50%;top:27%">Quầy chiêu mộ</div>
+    <div class="shadow" style="left:22%;top:63%;--s:9cqw"></div><div class="cat" style="left:22%;top:50%;--s:9cqw;--c:#e8d7b8"><i></i><i></i></div><div class="label" style="left:26.5%;top:66%">Mochi</div>
+    <div class="shadow" style="left:41%;top:72%;--s:8cqw"></div><div class="cat" style="left:41%;top:60%;--s:8cqw;--c:#5a5560"><i></i><i></i></div><div class="label" style="left:45%;top:74.5%">Soot</div>
+    <div class="shadow" style="left:62%;top:66%;--s:8.5cqw"></div><div class="cat" style="left:62%;top:53%;--s:8.5cqw;--c:#f0c38c"><i></i><i></i></div><div class="label" style="left:66.2%;top:69%">Biscuit</div>
+    <div class="chest" style="left:77%;top:44%"><span></span><b>Quà đêm 3/8 giờ</b></div>
+    <div class="hud-top">
+      <div class="avatar"><span class="lv">Lv 18</span></div>
+      <div class="who"><b>Quán Đèn Lồng</b><span>Lực đội 2 940</span></div>
+      <div class="spacer"></div>
+      <div class="cur"><i></i>1 985</div>
+      <div class="cur"><i style="background:var(--mint)"></i>32</div>
+      <div class="cur relic"><i></i>Relic Fuji 2</div>
+      <div class="gear">≡</div>
+    </div>
+    <div class="side">
+      <div class="bub"><span></span>Việc hôm nay</div>
+      <div class="bub"><span style="background:#4a3a5c"></span>Chiêu mộ miễn phí</div>
+      <div class="bub quiet"><span style="background:#3f4a2e"></span>Sổ sưu tập</div>
+    </div>
+    <div class="dock">
+      <div class="dbtn dot" style="--g:var(--paper)"><span></span>Mèo</div>
+      <div class="dbtn" style="--g:var(--mint)"><span></span>Đội hình</div>
+      <div class="dbtn dot" style="--g:var(--sky)"><span></span>Túi đồ</div>
+      <div class="dbtn dot" style="--g:var(--iris)"><span></span>Chiêu mộ</div>
+      <div class="dbtn" style="--g:var(--coral)"><span></span>Sự kiện</div>
+      <div class="go">Đi tuần đêm<small>Chương 2 · ải 7 · Boss</small></div>
+    </div>
+  </div>
+  <div class="two">
+    <div class="box"><h3>Vì sao chọn</h3><ul>
+      <li>Nhìn vào là biết đây là game: mèo to, quán ấm, nút đánh rõ ràng.</li>
+      <li>Chỉ 6 điểm bấm cố định (5 dock + 1 nút đánh), so với 11 mục hiện tại.</li>
+      <li>Dùng thẳng cảnh 3D và mèo mới của lane B; cảnh quán chính là "sân khấu" lane B đang làm (R5).</li>
+      <li>Relic Fuji luôn hiện trên HUD, giữ điểm "Avalanche Integration" khi giám khảo xem.</li>
+    </ul></div>
+    <div class="box"><h3>Rủi ro</h3><ul>
+      <li>Cần thêm một cảnh 3D chạy ở màn chính: phải kiểm hiệu năng (đang 234 draw call). Có phương án dự phòng là ảnh tĩnh render sẵn với mèo 2.5D chuyển động nhẹ.</li>
+      <li>Phải viết lại khung điều hướng (App.tsx) và chuyển 9 trang sang dạng bảng nổi (popup). Khoảng 4–6 ngày Codex.</li>
+    </ul></div>
+  </div>
+</section>
+
+<section>
+  <span class="eyebrow">Phương án B</span>
+  <div class="opt-head"><h2>Bản đồ đêm làm màn chính</h2><span class="score">7.55 / 10</span></div>
+  <p>Màn chính là bản đồ chương với các ải nối nhau; quán cà phê thành một nút trong dock. Giống cách nhiều game "vượt ải" cho người chơi thấy tiến độ ngay.</p>
+  <div class="frame" role="img" aria-label="Phác thảo phương án B: bản đồ ải là màn chính">
+    <div class="mapbg"></div>
+    <svg class="path" viewBox="0 0 160 90" preserveAspectRatio="none"><path d="M18 62 C35 40,48 70,64 48 S92 30,104 46 S130 60,142 34" fill="none" stroke="#9ccbb1" stroke-width=".7" stroke-dasharray="2 1.6"/></svg>
+    <div class="node done" style="left:11%;top:69%">1</div>
+    <div class="node done" style="left:27%;top:52%">2</div>
+    <div class="node done" style="left:40%;top:57%">3</div>
+    <div class="node now" style="left:55%;top:40%">4</div>
+    <div class="node lock" style="left:68%;top:54%">5</div>
+    <div class="node boss lock" style="left:88%;top:38%">B</div>
+    <div class="callout" style="left:49%;top:22%">Ải 4 · Cửa hàng len · Gợi ý: đội đánh lan</div>
+    <div class="hud-top">
+      <div class="avatar"><span class="lv">Lv 18</span></div>
+      <div class="who"><b>Chương 2 · Phố Đêm</b><span>Lực đội 2 940</span></div>
+      <div class="spacer"></div>
+      <div class="cur"><i></i>1 985</div>
+      <div class="cur relic"><i></i>Relic Fuji 2</div>
+      <div class="gear">≡</div>
+    </div>
+    <div class="dock">
+      <div class="dbtn" style="--g:var(--honey)"><span></span>Quán</div>
+      <div class="dbtn dot" style="--g:var(--paper)"><span></span>Mèo</div>
+      <div class="dbtn" style="--g:var(--mint)"><span></span>Đội hình</div>
+      <div class="dbtn dot" style="--g:var(--sky)"><span></span>Túi đồ</div>
+      <div class="dbtn dot" style="--g:var(--iris)"><span></span>Chiêu mộ</div>
+      <div class="go">Đánh ải 4<small>Lực đề xuất 2 800</small></div>
+    </div>
+  </div>
+  <p class="muted">Mạnh: tiến độ rõ nhất, việc tiếp theo hiển nhiên. Yếu: mất cảm giác "quán mèo ấm cúng" (điểm riêng của game), mèo không lên màn chính, bản đồ cần art riêng.</p>
+</section>
+
+<section>
+  <span class="eyebrow">Phương án C</span>
+  <div class="opt-head"><h2>Giữ khung, thu gọn thanh bên</h2><span class="score">7.00 / 10</span></div>
+  <p>Giữ bố cục trang hiện tại, thanh bên rút còn 5 icon không chữ, màn chính đổi thành thẻ lớn có mèo và nút đánh. Ít việc nhất, nhưng vẫn là "app có menu".</p>
+  <div class="frame" role="img" aria-label="Phác thảo phương án C: thanh bên icon hẹp và thẻ nội dung">
+    <div style="position:absolute;inset:0;background:var(--night)"></div>
+    <div class="rail"><span class="on"></span><span></span><span></span><span></span><span></span></div>
+    <div class="hud-top" style="left:7cqw;background:none">
+      <div class="who"><b>Quán Đèn Lồng</b><span>Lực đội 2 940</span></div><div class="spacer"></div>
+      <div class="cur"><i></i>1 985</div><div class="cur relic"><i></i>Relic Fuji 2</div>
+    </div>
+    <div class="panelcard" style="left:10cqw;top:8cqw;width:58cqw;height:42cqw;background:linear-gradient(#2b4a55,var(--panel))">
+      <div class="cat" style="left:8cqw;top:12cqw;--s:12cqw;--c:#e8d7b8"><i></i><i></i></div>
+      <div class="cat" style="left:24cqw;top:15cqw;--s:10cqw;--c:#5a5560"><i></i><i></i></div>
+      <div class="cat" style="left:38cqw;top:13cqw;--s:11cqw;--c:#f0c38c"><i></i><i></i></div>
+    </div>
+    <div class="panelcard" style="left:70cqw;top:8cqw;width:27cqw;height:20cqw"></div>
+    <div class="go" style="position:absolute;left:70cqw;top:31cqw;min-width:27cqw;height:9cqw">Đi tuần đêm<small>Chương 2 · ải 7</small></div>
+  </div>
+  <p class="muted">Mạnh: rẻ, ít rủi ro, xong trong 1–2 ngày. Yếu: không giải quyết được cảm giác "menu" mà bạn chê.</p>
+</section>
+
+<section>
+  <span class="eyebrow">Áp cho mọi phương án</span>
+  <h2>Màn chiến đấu: đọc được trong 2 giây</h2>
+  <p>Ẩn hết điều hướng khi đánh. Thông tin chia 4 góc cố định; giữa màn chỉ dành cho mèo, quái và hiệu ứng.</p>
+  <div class="frame" role="img" aria-label="Phác thảo màn chiến đấu: thanh máu boss trên, chân dung đội dưới, băng-rôn tuyệt kỹ giữa">
+    <div class="arena"></div><div class="rug"></div>
+    <div class="wave">Đợt 3/3 · Vòng 6</div>
+    <div class="bossbar"><b>Cuộn Len Khổng Lồ</b><div class="bar"><i></i></div></div>
+    <div class="speed"><span>x1</span><span class="on">x2</span><span>Tự động</span><span>Bỏ qua</span></div>
+    <div class="shadow" style="left:24%;top:72%;--s:9cqw"></div><div class="cat" style="left:24%;top:59%;--s:9cqw;--c:#e8d7b8"><i></i><i></i></div>
+    <div class="shadow" style="left:34%;top:62%;--s:8cqw"></div><div class="cat" style="left:34%;top:50%;--s:8cqw;--c:#f0c38c"><i></i><i></i></div>
+    <div class="shadow" style="left:62%;top:65%;--s:13cqw"></div><div class="cat" style="left:62%;top:44%;--s:13cqw;--c:#b9a5dc"><i></i><i></i></div>
+    <div class="eplate" style="left:68.5%;top:30%"><span>Cuộn Len</span><div class="icons"><i></i><i style="background:var(--iris)"></i></div></div>
+    <div class="banner"><b>Bánh Quy Nổ</b><span>Biscuit · tuyệt kỹ</span></div>
+    <div class="dmg" style="left:58%;top:36%;color:var(--honey)">1 240</div>
+    <div class="dmg" style="left:74%;top:47%;color:var(--coral);font-size:1.9cqw">320 Bỏng</div>
+    <div class="react" style="left:44%;top:41%">Cháy lan!</div>
+    <div class="team">
+      <div class="pc" style="--c:#e8d7b8"><div class="face"></div><div class="hp"><i style="width:80%"></i></div><div class="ult"><i style="width:55%"></i></div></div>
+      <div class="pc ready" style="--c:#f0c38c;--r:var(--honey)"><div class="face"></div><div class="hp"><i style="width:64%"></i></div><div class="ult"><i style="width:100%"></i></div></div>
+      <div class="pc" style="--c:#5a5560"><div class="face"></div><div class="hp"><i style="width:92%"></i></div><div class="ult"><i style="width:30%"></i></div></div>
+    </div>
+  </div>
+  <ul>
+    <li>Thanh máu và trạng thái kẻ địch gắn trên đầu quái, có chừa chỗ (sửa luôn lỗi 6 chỗ bị che ở S6).</li>
+    <li>Tên tuyệt kỹ chạy ngang 0.8 giây, có thể tắt; số sát thương to, màu theo loại (thường, chí mạng, Bỏng, Chảy máu, hồi máu).</li>
+    <li>Chữ phản ứng ("Cháy lan!", "Vỡ giáp!") nổi giữa trận, đúng 4 phản ứng của V5.</li>
+  </ul>
+</section>
+
+<section>
+  <span class="eyebrow">Áp cho mọi phương án</span>
+  <h2>Chiêu mộ: phấn khích tăng dần</h2>
+  <p>Sửa đúng điểm Danh Tướng 3Q bị chê. Bốn nhịp, tổng dưới 4 giây, bấm để bỏ qua từ lần thứ 2.</p>
+  <div class="steps">
+    <div class="step s1"><div class="env"></div><div class="cap"><b>1. Thư mời</b>Phong thư rơi xuống quầy, rung nhẹ.</div></div>
+    <div class="step s2"><div class="seal"></div><div class="cap"><b>2. Dấu sáp đổi màu</b>Màu báo độ hiếm trước: xanh, tím, vàng.</div></div>
+    <div class="step s3"><div class="flash"></div><div class="cap"><b>3. Bung sáng</b>Huyền thoại: tia sáng xoay, rung màn hình nhẹ.</div></div>
+    <div class="step s4"><div class="cat bigcat" style="--c:#e8d7b8"><i></i><i></i></div><div class="cap"><b>4. Mèo bước ra</b>Ảnh lớn, tên, độ hiếm; mèo mới thì thêm "Mới!".</div></div>
+  </div>
+</section>
+
+<section>
+  <span class="eyebrow">Chấm điểm</span>
+  <h2>Thang điểm và kết quả</h2>
+  <p class="muted">Điểm 1–10 cho từng tiêu chí, nhân trọng số. Đây là đánh giá của tôi dựa trên ảnh và mã hiện tại, chưa phải đo trên người chơi thật.</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Tiêu chí</th><th>Trọng số</th><th>Hiện tại</th><th>A · Quán sống</th><th>B · Bản đồ</th><th>C · Thu gọn</th></tr></thead>
+    <tbody>
+      <tr><td>Người mới biết bấm gì trong 5 giây</td><td class="n">25%</td><td class="n">4</td><td class="n">9</td><td class="n">8</td><td class="n">6</td></tr>
+      <tr><td>Cảm giác "game", không phải "app"</td><td class="n">20%</td><td class="n">3</td><td class="n">9</td><td class="n">7</td><td class="n">5</td></tr>
+      <tr><td>Ít mục điều hướng (≤ 6 điểm bấm cố định)</td><td class="n">15%</td><td class="n">2</td><td class="n">9</td><td class="n">9</td><td class="n">8</td></tr>
+      <tr><td>Trận đấu dễ đọc</td><td class="n">15%</td><td class="n">6</td><td class="n">8</td><td class="n">8</td><td class="n">7</td></tr>
+      <tr><td>Chi phí và rủi ro trước Demo Day 30/11</td><td class="n">15%</td><td class="n">10</td><td class="n">6</td><td class="n">6</td><td class="n">9</td></tr>
+      <tr><td>Hợp với lane B và bản demo tích hợp</td><td class="n">10%</td><td class="n">10</td><td class="n">8</td><td class="n">7</td><td class="n">9</td></tr>
+      <tr class="best"><td><b>Tổng</b></td><td class="n">100%</td><td class="n">5.30</td><td class="n"><b>8.30</b></td><td class="n">7.55</td><td class="n">7.00</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section>
+  <span class="eyebrow">Theo phương án A</span>
+  <h2>11 mục cũ đi đâu</h2>
+  <div class="tablewrap"><table class="mapping">
+    <thead><tr><th>Mục cũ</th><th>Chỗ mới</th></tr></thead>
+    <tbody>
+      <tr><td>Cafe</td><td>Chính là màn chính (cảnh quán)</td></tr>
+      <tr><td>Night route</td><td>Nút to "Đi tuần đêm" góc phải dưới</td></tr>
+      <tr><td>Companions + Collection journal</td><td>Dock "Mèo" (2 tab: Mèo của tôi, Sổ sưu tập)</td></tr>
+      <tr><td>Team &amp; cards</td><td>Dock "Đội hình"; cũng mở từ màn Chuẩn bị trước trận</td></tr>
+      <tr><td>Equipment</td><td>Dock "Túi đồ" (tab Đồ, Nguyên liệu, Relic)</td></tr>
+      <tr><td>Invitations</td><td>Dock "Chiêu mộ" và điểm bấm "Quầy chiêu mộ" trong cảnh</td></tr>
+      <tr><td>Fuji Relics</td><td>Chip "Relic Fuji" luôn hiện trên HUD; bấm mở tab Relic trong Túi đồ</td></tr>
+      <tr><td>Field guide</td><td>Nút "?" trong màn Chuẩn bị và trận đấu; cũng trong menu ≡</td></tr>
+      <tr><td>Save &amp; settings</td><td>Menu ≡ góc phải trên</td></tr>
+      <tr><td>Before / after</td><td>Chỉ hiện với <code>?dev=1</code></td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section>
+  <span class="eyebrow">Bước tiếp theo</span>
+  <h2>Sau khi bạn chọn</h2>
+  <p>Tôi viết <b>một prompt Codex dài, tự sửa lỗi</b> cho phương án được chọn: chạy trên flag mặc định tắt (<code>uiV3</code>), không đụng phần art của lane B, đưa vào bản demo tích hợp, có cổng kiểm tra (số điểm bấm cố định ≤ 6, không có mục nào bị mất, ảnh chụp 1280/1440, hiệu năng màn chính, axe), và tự chấm theo thang điểm trên với mục tiêu 8.5. Không merge, không deploy.</p>
+</section>
+
+<section class="src">
+  <span class="eyebrow">Nguồn</span>
+  <ul class="muted" style="font-size:13px">
+    <li><a href="https://www.bluestacks.com/vi/blog/game-guides/general-3q/dt3q-gameplay-and-features-vn.html">BlueStacks: Danh Tướng 3Q lối chơi và tính năng</a></li>
+    <li><a href="https://www.bluestacks.com/vi/blog/game-guides/tan-omg3q-vng/tan-omg3q-vng-he-thong-tinh-nang-vn.html">BlueStacks: Tân OMG3Q hệ thống tính năng</a></li>
+    <li><a href="https://fptshop.com.vn/tin-tuc/giai-tri/danh-tuong-3q-171095">FPT Shop: Danh Tướng 3Q</a></li>
+    <li><a href="https://www.bluestacks.com/vi/blog/game-guides/omg-3q-fighting-intense-tactical-battles/omg3q-heroes-team-setup-guide-vn.html">BlueStacks: OMG3Q thiết lập đội hình</a></li>
+    <li><a href="https://endless-idle-wiki.pages.dev/dev/design/ui">Endless Idle: thiết kế HUD idle</a></li>
+    <li>Báo cáo lane A: <code>reports/cardrpg-big/skills-v5/V5A-REPORT.md</code>, <code>s6/visual-review/REVIEW.md</code> (worktree taskbar-hero-cardrpg-a4)</li>
+  </ul>
+</section>
+</main>

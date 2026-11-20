@@ -1,0 +1,161 @@
+{
+  "version": 2,
+  "id": "yarn-giant",
+  "method": "A2 R-c small original-palette paint with annotated prop separation",
+  "images": [
+    {
+      "name": "foot-l",
+      "sourcePart": "foot-l",
+      "file": "foot-l.png",
+      "filledInteriorPixels": 26
+    },
+    {
+      "name": "body",
+      "sourcePart": "body",
+      "file": "body.png",
+      "filledInteriorPixels": 3941
+    },
+    {
+      "name": "arm-r",
+      "sourcePart": "arm-r",
+      "file": "arm-r.png",
+      "filledInteriorPixels": 1004
+    },
+    {
+      "name": "head",
+      "sourcePart": "head",
+      "file": "head.png",
+      "filledInteriorPixels": 340
+    },
+    {
+      "name": "arm-l",
+      "sourcePart": "arm-l",
+      "file": "arm-l.png",
+      "filledInteriorPixels": 94
+    },
+    {
+      "name": "foot-r",
+      "sourcePart": "foot-r",
+      "file": "foot-r.png",
+      "filledInteriorPixels": 7
+    },
+    {
+      "name": "eye_l",
+      "sourcePart": "head",
+      "file": "eye_l.png",
+      "rect": [
+        78,
+        311,
+        77,
+        63
+      ],
+      "slot": "eye_l",
+      "visible": true,
+      "bone": "head"
+    },
+    {
+      "name": "eye_r",
+      "sourcePart": "head",
+      "file": "eye_r.png",
+      "rect": [
+        213,
+        270,
+        97,
+        84
+      ],
+      "slot": "eye_r",
+      "visible": true,
+      "bone": "head"
+    },
+    {
+      "name": "eye_l_closed",
+      "sourcePart": "head",
+      "file": "eye_l_closed.png",
+      "rect": [
+        78,
+        311,
+        77,
+        63
+      ],
+      "slot": "eye_l",
+      "visible": false,
+      "bone": "head"
+    },
+    {
+      "name": "eye_r_closed",
+      "sourcePart": "head",
+      "file": "eye_r_closed.png",
+      "rect": [
+        213,
+        270,
+        97,
+        84
+      ],
+      "slot": "eye_r",
+      "visible": false,
+      "bone": "head"
+    },
+    {
+      "name": "mouth_neutral",
+      "sourcePart": "head",
+      "file": "mouth_neutral.png",
+      "rect": [
+        150,
+        378,
+        79,
+        50
+      ],
+      "slot": "mouth",
+      "visible": true,
+      "bone": "head"
+    },
+    {
+      "name": "mouth_open",
+      "sourcePart": "head",
+      "file": "mouth_open.png",
+      "rect": [
+        150,
+        378,
+        79,
+        50
+      ],
+      "slot": "mouth",
+      "visible": false,
+      "bone": "head"
+    },
+    {
+      "name": "mouth_shout",
+      "sourcePart": "head",
+      "file": "mouth_shout.png",
+      "rect": [
+        150,
+        378,
+        79,
+        50
+      ],
+      "slot": "mouth",
+      "visible": false,
+      "bone": "head"
+    },
+    {
+      "name": "hidden-body",
+      "sourcePart": "body",
+      "file": "hidden-body.png",
+      "rect": [
+        190,
+        446,
+        125,
+        211
+      ],
+      "slot": "hidden-body",
+      "visible": true,
+      "bone": "torso",
+      "behind": "body",
+      "paint": "Original sampled cloth/fur hidden joint substrate; 12px minimum intended overlap"
+    }
+  ],
+  "faceSeed": 5601,
+  "jointOverlapRequired": 12,
+  "weaponRequired": false,
+  "hiddenJointPaint": []
+}

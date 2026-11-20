@@ -1,0 +1,132 @@
+/* Full costs stay readable when the next upgrade is not affordable yet. */
+.uv-app[data-a6=true] .a6-growth-shortfall {
+ .a6-growth-missing {color:#874c30;line-height:1.35;}
+ .a6-growth-source {color:#655736;line-height:1.35;}
+}
+/* Four illustrated ability tabs keep the current effect readable at desktop sizes. */
+.uv-app[data-a6=true] {
+ .a6-cat-skillbook {display:flex;flex-direction:column;gap:10px;}
+ .a6-cat-skillbook .a6-cat-passive {margin:0;padding:10px 12px;border-left:3px solid #9d854c;background:#f9edce;border-radius:0 6px 6px 0;color:#644a30;}
+ .a6-cat-skillbook .a6-cat-passive>small {display:inline-block;margin:0 8px 0 0;font-size:10px;letter-spacing:1px;color:#856539;}
+ .a6-cat-skillbook .a6-cat-passive>b {font-size:14px;}
+ .a6-cat-skillbook .a6-cat-passive>span {display:block;margin-top:4px;font-size:14px;line-height:1.4;}
+ .a6-cat-skill-index {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;}
+ .a6-cat-skill-index>button {display:flex;align-items:center;gap:9px;min-width:0;min-height:58px;padding:8px 9px;text-align:left;background:#f6e8c5;border:1px solid #bba074;border-radius:7px;box-shadow:0 2px 0 #a3845030;}
+ .a6-cat-skill-index img {width:32px;height:32px;object-fit:contain;flex:none;filter:drop-shadow(0 1px 1px #80633735);}
+ .a6-cat-skill-index span {min-width:0;}
+ .a6-cat-skill-index small {display:block;font-size:10px;letter-spacing:.6px;color:#765e3b;line-height:1.2;}
+ .a6-cat-skill-index b {display:block;margin-top:4px;font-size:14px;line-height:1.2;color:#5e432d;}
+ .a6-cat-skill-index>button[data-ultimate=true] {border-color:#bb8a37;background:linear-gradient(125deg,#f9e6b6,#eed194);}
+ .a6-cat-skill-index>button[aria-pressed=true] {border-color:#936438;box-shadow:inset 0 0 0 1px #936438,0 2px 0 #a3845030;background:#e8d2a5;}
+ .a6-cat-skill-detail {padding:10px 14px;border:1px solid #bd9c64;border-radius:7px;background:#fff3d9;color:#60462f;}
+ .a6-cat-skill-detail[data-ultimate=true] {border-color:#b68537;box-shadow:inset 3px 0 0 #d2a448;}
+ .a6-cat-skill-detail>header {display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;}
+ .a6-cat-skill-detail>header>b {font:700 18px var(--font-display);color:#5b3c29;}
+ .a6-cat-skill-detail>header>small {font-size:11px;color:#7b5b2d;}
+ .a6-cat-skill-detail>p {margin:9px 0 0;font-size:15px;line-height:1.45;}
+ .a6-cat-skill-unlock {display:block;margin-top:7px;font-size:12px;color:#83522f;}
+ .a6-skill-context {margin-top:8px;padding-top:6px;border-top:1px dashed #c3a572;}
+ .a6-cat-skill-detail .a6-skill-context>p,.a6-preview-copy .a6-skill-context>p {margin:3px 0;font-size:14px;line-height:1.4;color:#765638;}
+ .a6-cat-skill-detail:focus-visible,.a6-preview-copy:focus-visible {outline:2px solid #8966b5;outline-offset:-3px;}
+ .a6-cat-skill-detail .a6-cat-passive {margin-top:10px;}
+ .a6-cat-preview {align-self:start;min-height:40px;padding:8px 14px;font-size:14px;}
+ @media(max-height:760px) {
+  .a6-cat-detail:has(.a6-cat-skillbook) .a6-cat-hero {grid-template-columns:100px minmax(0,1fr);}
+  .a6-cat-detail:has(.a6-cat-skillbook) .a6-cat-hero>img {width:100px;height:100px;}
+  .a6-cat-skillbook {gap:6px;}
+  .a6-cat-skillbook .a6-cat-passive {padding:6px 10px;}
+  .a6-cat-skillbook .a6-cat-passive>span {font-size:13px;margin-top:3px;line-height:1.35;}
+  .a6-cat-skill-index {gap:6px;}
+  .a6-cat-skill-index>button {min-height:48px;padding:6px 7px;gap:7px;}
+  .a6-cat-skill-index img {width:27px;height:27px;}
+  .a6-cat-skill-index b {font-size:13px;margin-top:3px;}
+  .a6-cat-skill-detail {padding:8px 11px;}
+  .a6-cat-skill-detail>header {gap:4px 8px;}
+  .a6-cat-skill-detail>header>b {font-size:17px;}
+  .a6-cat-skill-detail>p {font-size:14px;line-height:1.4;margin-top:6px;}
+  .a6-cat-preview {font-size:13px;}
+ }
+}
+
+/* Share the note's scroll space with the passive so the ability stays readable. */
+@media(max-height:760px) {
+ .uv-app[data-a6=true] .uv-sheet-content:has(.a6-cats-workspace) .a6-cat-detail:has(.a6-cat-skillbook) {
+  .a6-cat-hero {grid-template-columns:72px minmax(0,1fr);gap:10px}
+  .a6-cat-hero>img {width:72px;height:72px}
+  .a6-cat-hero>div {display:grid;grid-template-columns:auto 1fr;column-gap:10px;align-items:center}
+  .a6-cat-hero small,.a6-cat-hero h2 {grid-column:1/-1}
+  .a6-cat-hero h2 {font-size:26px;line-height:1.1;margin:0}
+  .a6-cat-hero p {font-size:13px;line-height:1.4}
+  .a6-cat-skill-index>button {padding-block:4px;min-height:44px}
+ }
+}
+
+/* Readable companion ownership, training costs and automatic skill readiness. */
+.uv-app[data-a6=true] {
+ .uv-cat-grid .dp-card-rarity,.uv-cat-grid .a6-bond-icon,.uv-cat-grid .a6-level-badge {font-size:12px}
+ .uv-cat-grid .cr-card-caption p,.a6-cat-hero small,.a6-cat-hero p,.a6-cat-growth small,.a6-cat-growth .cr-cost {font-size:14px;line-height:1.4}
+ .a6-cat-tabs button,.a6-cat-growth .dp-v4-growth>button,.a6-cat-panel>button,.a6-cat-panel details>button,.a6-cat-preview {min-height:44px;font-size:14px}
+ .a6-cat-panel details>summary {min-height:44px;padding-block:10px;font-size:14px;line-height:1.4;box-sizing:border-box}
+ .a6-cat-skillbook .a6-cat-passive>span,.a6-cat-skill-index b,.a6-cat-skill-detail>header>small,.a6-cat-skillbook .a6-cat-skill-unlock {font-size:14px;line-height:1.35}
+ .a6-cat-skill-index small {font-size:12px}
+ .uv-sheet-content:has(.a6-cats-workspace)>.uv-section-tools>button {min-height:44px;font-size:14px}
+ .uv-sheet-content:has(.a6-cats-workspace)>.a6-quick-upgrade p,.uv-sheet-content:has(.a6-cats-workspace)>.a6-quick-upgrade .cr-cost {font-size:14px;line-height:1.35}
+ .uv-sheet-content:has(.a6-cats-workspace)>.a6-quick-upgrade button {min-height:44px;font-size:14px}
+}
+
+/* The roster scrolls independently so training and the selected cat stay in reach. */
+.uv-app[data-a6=true] {
+ .uv-sheet-content:has(.a6-cats-workspace) {grid-template-rows:auto auto minmax(0,1fr);overflow:hidden}
+ .a6-cats-workspace>.uv-cat-grid {min-height:0;max-height:100%;overflow:auto;align-content:start;padding:5px;margin:-5px;scrollbar-width:thin;scrollbar-color:#b58b56 #ead7b2;overscroll-behavior:contain}
+ .a6-cats-workspace>.a6-cat-detail {position:static;min-height:0;max-height:100%;overflow:auto;scrollbar-width:thin;scrollbar-color:#b58b56 #ead7b2}
+ .a6-cat-detail:has(.a6-cat-skillbook) {display:flex;flex-direction:column;height:100%}
+ .a6-cat-detail:has(.a6-cat-skillbook) .a6-cat-hero {grid-template-columns:128px minmax(0,1fr)}
+ .a6-cat-detail:has(.a6-cat-skillbook) .a6-cat-hero>img {width:128px;height:128px}
+ .a6-cat-detail:has(.a6-cat-skillbook) .a6-cat-hero h2 {font-size:32px;margin:3px 0}
+ .a6-cat-detail:has(.a6-cat-skillbook) .a6-cat-hero p {margin:3px 0}
+ .a6-cat-panel:has(.a6-cat-skillbook) {display:flex;flex-direction:column;min-height:0;flex:1}
+ .a6-cat-skillbook {min-height:0;flex:1}
+ .a6-cat-skillbook>:not(.a6-cat-skill-detail) {flex-shrink:0}
+ .a6-cat-skill-detail {min-height:0;overflow:auto;scrollbar-width:thin;scrollbar-color:#b58b56 #ead7b2}
+ @media(max-height:760px) {
+  .a6-cat-detail:has(.a6-cat-skillbook) .a6-cat-hero {grid-template-columns:90px minmax(0,1fr)}
+  .a6-cat-detail:has(.a6-cat-skillbook) .a6-cat-hero>img {width:90px;height:90px}
+  .a6-cat-detail:has(.a6-cat-skillbook) .a6-cat-hero h2 {font-size:26px;margin:1px 0}
+  .a6-cat-detail:has(.a6-cat-skillbook) .a6-cat-hero p {margin:0}
+  .a6-cat-detail:has(.a6-cat-skillbook) .a6-cat-tabs {margin:4px 0}
+  .a6-cat-skillbook {gap:4px}
+  .a6-cat-skillbook .a6-cat-passive {padding-block:4px}
+  .a6-cat-skill-detail {padding-block:6px}
+  .a6-cat-skill-detail>p {margin-top:4px}
+  .a6-cat-skillbook .a6-cat-skill-unlock {margin-top:2px}
+ }
+}
+
+/* An open awakening receipt uses the same training space and a direct return. */
+.uv-app[data-a6=true] {
+ .a6-cat-panel:has(.a6-awakening[open])>.a6-cat-growth {display:none}
+ .a6-awakening .a6-awakening-back,.a6-awakening[open] .a6-awakening-open {display:none}
+ .a6-awakening[open] .a6-awakening-back {display:inline}
+ .a6-awakening-receipt {padding:0 3px 3px;color:#62482d;font-size:14px;line-height:1.4}
+ .a6-awakening-receipt h3 {margin:3px 0 6px;font:700 21px var(--font-display);color:#513822}
+ .a6-awakening-receipt p {margin:6px 0;font-size:14px;line-height:1.4}
+ .a6-awakening-receipt>div {display:grid;gap:5px;padding:10px 12px;margin:9px 0;background:#fff5d9;border:1px solid #bd9b60;border-radius:7px}
+ .a6-awakening-receipt .cr-cost {display:flex;flex-wrap:wrap;gap:4px 12px;font-size:14px}
+ .a6-awakening-receipt strong {color:#745522;font-size:14px}
+ .a6-awakening-heading {display:flex;align-items:center;justify-content:space-between;gap:8px}
+ .a6-awakening-heading h3 {margin:0}
+ .a6-awakening-heading>button {min-height:44px;font-size:14px;min-width:100px}
+ .a6-awakening-heading>button:disabled {background:#e6d7b4;color:#6d6047;box-shadow:none;border-color:#b59b71}
+ .a6-awakening-missing {color:#874c30}
+ .a6-awakening-source {color:#655736}
+ @media(max-height:760px) {
+  .a6-cat-detail:has(.a6-awakening[open]) .a6-cat-hero {grid-template-columns:80px minmax(0,1fr)}
+  .a6-cat-detail:has(.a6-awakening[open]) .a6-cat-hero>img {width:80px;height:80px}
+  .a6-cat-detail:has(.a6-awakening[open]) .a6-cat-hero h2 {font-size:26px;margin:1px 0}
+  .a6-cat-detail:has(.a6-awakening[open]) .a6-cat-hero p {margin:0}
+  .a6-cat-detail:has(.a6-awakening[open]) .a6-cat-tabs {margin:4px 0}
+  .a6-awakening-receipt>div {gap:4px;padding:8px 10px;margin:6px 0}
+  .a6-awakening-receipt p {margin:4px 0}
+  .a6-awakening-receipt .a6-awakening-reason {margin:0}
+ }
+}

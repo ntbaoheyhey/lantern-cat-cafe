@@ -1,0 +1,37 @@
+{
+  "tool": "Original Three.js geometry authoring with pooled InstancedMesh playback",
+  "authorship": "Cafe objects and gestures authored procedurally for Taskbar Hero",
+  "sources": {
+    "apps/web/src/game/squad/turn3d/card-effect-primitives.ts": "dfa300078f8cd5a249f69fff884bc0ab507845868078b5543a2c5c7dfd9113df",
+    "apps/web/src/game/squad/turn3d/card-effect-data.ts": "01783f4e82031de1ec43d2140c3a34f7023bb91f895943dd54619ce3ef6cc063",
+    "apps/web/src/game/squad/turn3d/card-effects.ts": "63ee7e1ab8e3d0585f392b9c832fc014aac6f908b6e64c7fb8bfbd3608d3bd5a"
+  },
+  "primitives": 40,
+  "sliceCompositions": 31,
+  "geometry": "XY paths and extruded polygons with small physical depth, tubes radius0.018\u20130.075, four radial tube segments, torus32 segments",
+  "palette": "Mochi honey/hearth, Soot cocoa/violet, Clover jade/cream. Numeric recipes and exact palette in card-effect-data.ts",
+  "pool": {
+    "instances": 96,
+    "primitiveCalls": 8,
+    "perPrimitive": 64
+  },
+  "comparison": {
+    "frames": [
+      0.14,
+      0.3,
+      0.46,
+      0.6,
+      0.76,
+      0.9
+    ],
+    "grayscaleResolution": [
+      160,
+      106
+    ],
+    "silhouetteWeight": 0.5,
+    "edgeWeight": 0.3,
+    "motionWeight": 0.2,
+    "minimumDistance": 0.16
+  },
+  "externalArt": []
+}

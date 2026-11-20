@@ -34,11 +34,10 @@ for (const mode of ['classic', 'v2']) for (const [width, height, colorScheme] of
     });
     await page.setViewportSize({ width, height });
     await page.emulateMedia({ colorScheme });
-    const response = await page.goto(`${mode === 'classic' ? classicURL : v2URL}/`);
+    const response = await page.goto(`${mode === 'classic' ? classicURL : v2URL}/?legacy=1`);
     expect(response?.headers()['content-security-policy']).toBe(headers['Content-Security-Policy']);
     if (mode === 'v2') {
       await page.getByTestId('class-picker-choose-button').click();
-      await page.getByTestId('class-picker-confirm-button').click();
       await expect(page.getByTestId('class-picker')).toHaveCount(0);
     }
     const canvas = page.locator(mode === 'classic' ? '.strip canvas' : '.v2-stage-canvas canvas');

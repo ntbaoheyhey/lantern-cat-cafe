@@ -1,0 +1,19 @@
+{
+  "runtimeVersion": "4.2",
+  "mixSeconds": 0.15,
+  "atlasMax": 2048,
+  "requiredBones": ["root", "hip", "head", "hp-anchor", "vfx-origin", "main-hand", "off-hand"],
+  "sockets": {"hpAnchor":"hp-anchor", "head":"head", "vfxOrigin":"vfx-origin", "mainHand":"main-hand", "offHand":"off-hand", "feet":"root", "chest":"hip"},
+  "animations": {
+    "idle": {"seconds":[2,3], "loop":true, "events":{}},
+    "appear": {"seconds":[0.5,0.8], "loop":false, "events":{}},
+    "attack": {"seconds":[0.6,0.9], "loop":false, "events":{"hit":0.48}},
+    "skill": {"seconds":[0.8,1.2], "loop":false, "events":{"cast":0.25,"hit":0.55}},
+    "ult": {"seconds":[1.5,2.5], "loop":false, "events":{"ult-start":0.04,"cast":0.25,"hit":0.55,"ult-end":0.94}},
+    "hurt": {"seconds":[0.3,0.4], "loop":false, "events":{}},
+    "ko": {"seconds":[0.8,1.2], "loop":false, "hold":true, "events":{}},
+    "victory": {"seconds":[1.5,2], "loop":true, "events":{}},
+    "idle-phase2": {"seconds":[2,3], "loop":true, "bossOnly":true, "events":{}},
+    "enrage": {"seconds":[0.8,1.2], "loop":false, "bossOnly":true, "events":{"cast":0.4}}
+  }
+}

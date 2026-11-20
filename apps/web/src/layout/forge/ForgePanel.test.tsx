@@ -547,14 +547,14 @@ describe('ForgePanel', () => {
 
       // Salvage row for 'arm.ranger.armor.rare' shows data-icon "arm.ranger.armor"
       const armorSvg = container.querySelector(
-        '[data-testid="salvage-item-salvage-armor-1"] svg[data-icon="arm.ranger.armor"]',
+        '[data-testid="salvage-item-salvage-armor-1"] img[data-icon="arm.ranger.armor"]',
       );
       expect(armorSvg).toBeTruthy();
       expect(armorSvg?.getAttribute('aria-hidden')).toBe('true');
 
       // Weapon row without weaponType shows class weapon icon "bow"
       const weaponSvg = container.querySelector(
-        '[data-testid="salvage-item-salvage-untyped-weapon"] svg[data-icon="bow"]',
+        '[data-testid="salvage-item-salvage-untyped-weapon"] img[data-icon="bow"]',
       );
       expect(weaponSvg).toBeTruthy();
       expect(weaponSvg?.getAttribute('aria-hidden')).toBe('true');
@@ -566,11 +566,11 @@ describe('ForgePanel', () => {
       // Craft slot picker still shows slot icons
       fireEvent.click(screen.getByTestId('tab-craft'));
       const weaponSlotBtn = screen.getByTestId('slot-weapon');
-      expect(weaponSlotBtn.querySelector('svg[data-icon="bow"]')).toBeTruthy();
+      expect(weaponSlotBtn.querySelector('img[data-icon="bow"]')?.getAttribute('src')).toBe('/art/gameplay/item-bow.png');
       const helmetSlotBtn = screen.getByTestId('slot-helmet');
-      expect(helmetSlotBtn.querySelector('svg[data-icon="slotHelmet"]')).toBeTruthy();
+      expect(helmetSlotBtn.querySelector('img[data-icon="slotHelmet"]')?.getAttribute('src')).toBe('/art/gameplay/item-slotHelmet.png');
       const armorSlotBtn = screen.getByTestId('slot-armor');
-      expect(armorSlotBtn.querySelector('svg[data-icon="slotArmor"]')).toBeTruthy();
+      expect(armorSlotBtn.querySelector('img[data-icon="slotArmor"]')?.getAttribute('src')).toBe('/art/gameplay/item-slotArmor.png');
     });
 
     it('proves prefers-reduced-motion animation: none rules exist in ForgePanel.css and ClassPicker.css (A18 finding #3)', () => {

@@ -1,0 +1,1417 @@
+{
+  "status": "PASS",
+  "sourceHead": "921c84d50cbd10d74f0959a2dbaabaf066fc47e3",
+  "version": "0.4.0",
+  "research": {
+    "games": 34,
+    "sources": 53,
+    "fields": 27,
+    "scope": "Mechanisms verified only to field_evidence scope; not every live-game detail"
+  },
+  "ownership": {
+    "changed": [
+      "docs/design/cardrpg/BALANCE.md",
+      "docs/design/cardrpg/DECISIONS.md",
+      "docs/design/cardrpg/DESIGN.md",
+      "docs/design/cardrpg/FRESH-EYES.md",
+      "docs/design/cardrpg/PATTERNS.md",
+      "docs/design/cardrpg/RESEARCH.md",
+      "docs/design/cardrpg/evidence/audit.json",
+      "docs/design/cardrpg/evidence/combat-durability4.json",
+      "docs/design/cardrpg/evidence/combat-durability5.json",
+      "docs/design/cardrpg/evidence/combat-durability6.json",
+      "docs/design/cardrpg/evidence/combat-durability7.json",
+      "docs/design/cardrpg/evidence/combat-effects-validation.json",
+      "docs/design/cardrpg/evidence/combat-final-grid.json",
+      "docs/design/cardrpg/evidence/combat-final-holdout.json",
+      "docs/design/cardrpg/evidence/combat-final30.json",
+      "docs/design/cardrpg/evidence/combat-formation104.json",
+      "docs/design/cardrpg/evidence/combat-holdout200.json",
+      "docs/design/cardrpg/evidence/combat-initial.json",
+      "docs/design/cardrpg/evidence/combat-pressure.json",
+      "docs/design/cardrpg/evidence/combat-pressure10.json",
+      "docs/design/cardrpg/evidence/combat-pressure12.json",
+      "docs/design/cardrpg/evidence/combat-pressure14.json",
+      "docs/design/cardrpg/evidence/combat-pressure16.json",
+      "docs/design/cardrpg/evidence/combat-pressure8.json",
+      "docs/design/cardrpg/evidence/combat-redistributed.json",
+      "docs/design/cardrpg/evidence/combat-redistributed2.json",
+      "docs/design/cardrpg/evidence/combat-redistributed3.json",
+      "docs/design/cardrpg/evidence/combat-validation100.json",
+      "docs/design/cardrpg/evidence/economy-final.json",
+      "docs/design/cardrpg/evidence/economy-initial.json",
+      "docs/design/cardrpg/evidence/economy-no-draws.json",
+      "docs/design/cardrpg/evidence/economy-tuned.json",
+      "docs/design/cardrpg/evidence/logs/cardrpg-a-baseline.log",
+      "docs/design/cardrpg/evidence/logs/cardrpg-audit-final.log",
+      "docs/design/cardrpg/evidence/logs/cardrpg-combat-final-grid.log",
+      "docs/design/cardrpg/evidence/logs/cardrpg-combat-final-holdout.log",
+      "docs/design/cardrpg/evidence/logs/cardrpg-economy-final.log",
+      "docs/design/cardrpg/evidence/logs/cardrpg-economy-no-draws.log",
+      "docs/design/cardrpg/evidence/logs/cardrpg-effects-regression.log",
+      "docs/design/cardrpg/evidence/logs/cardrpg-rules-final.log",
+      "docs/design/cardrpg/evidence/logs/cardrpg-typecheck-final.log",
+      "docs/design/cardrpg/evidence/receipts.json",
+      "docs/design/cardrpg/research-matrix.json",
+      "docs/design/cardrpg/sources.json",
+      "packages/game-rules/package.json",
+      "packages/game-rules/src/cardrpg/battle.test.ts",
+      "packages/game-rules/src/cardrpg/battle.ts",
+      "packages/game-rules/src/cardrpg/catalog.ts",
+      "packages/game-rules/src/cardrpg/commands.ts",
+      "packages/game-rules/src/cardrpg/config.ts",
+      "packages/game-rules/src/cardrpg/contract.ts",
+      "packages/game-rules/src/cardrpg/equipment.ts",
+      "packages/game-rules/src/cardrpg/fixtures/banner-featured.json",
+      "packages/game-rules/src/cardrpg/fixtures/banner-standard.json",
+      "packages/game-rules/src/cardrpg/fixtures/battle-reward.json",
+      "packages/game-rules/src/cardrpg/fixtures/index.ts",
+      "packages/game-rules/src/cardrpg/fixtures/midgame-account.json",
+      "packages/game-rules/src/cardrpg/fixtures/pity-near-hard.json",
+      "packages/game-rules/src/cardrpg/fixtures/starter-account.json",
+      "packages/game-rules/src/cardrpg/fixtures/team-equipped.json",
+      "packages/game-rules/src/cardrpg/gacha.ts",
+      "packages/game-rules/src/cardrpg/index.ts",
+      "packages/game-rules/src/cardrpg/internal.ts",
+      "packages/game-rules/src/cardrpg/progression.ts",
+      "packages/game-rules/src/cardrpg/rules.test.ts",
+      "packages/game-rules/src/cardrpg/state.ts",
+      "packages/game-rules/src/squad/gear/equipment.ts",
+      "packages/game-rules/src/squad/gear/run.ts",
+      "packages/game-rules/src/squad/turn/engine.ts",
+      "packages/game-rules/src/squad/turn/types.ts",
+      "tools/cardrpg-sim/audit.mjs",
+      "tools/cardrpg-sim/combat.mjs",
+      "tools/cardrpg-sim/economy.mjs",
+      "tools/cardrpg-sim/fixtures.mjs",
+      "tools/cardrpg-sim/load.mjs"
+    ],
+    "allOwned": true
+  },
+  "pureMeta": {
+    "ioHits": []
+  },
+  "numberedRoundGrep": {
+    "pattern": "/\\b(?:speed|interval|clock)\\b|\\bat:/",
+    "roundHits": [],
+    "scope": "Current TypeScript core; historical artifacts and design discussions excluded"
+  },
+  "odds": [
+    {
+      "banner": "standard",
+      "meanPullsToLegendaryFromReset": 37.537577635858014,
+      "longRunLegendaryFraction": 0.02663997154266938,
+      "rows": [
+        {
+          "pull": 1,
+          "common": 6000,
+          "rare": 3000,
+          "epic": 900,
+          "legendary": 100
+        },
+        {
+          "pull": 2,
+          "common": 6000,
+          "rare": 3000,
+          "epic": 900,
+          "legendary": 100
+        },
+        {
+          "pull": 3,
+          "common": 6000,
+          "rare": 3000,
+          "epic": 900,
+          "legendary": 100
+        },
+        {
+          "pull": 4,
+          "common": 6000,
+          "rare": 3000,
+          "epic": 900,
+          "legendary": 100
+        },
+        {
+          "pull": 5,
+          "common": 6000,
+          "rare": 3000,
+          "epic": 900,
+          "legendary": 100
+        },
+        {
+          "pull": 6,
+          "common": 6000,
+          "rare": 3000,
+          "epic": 900,
+          "legendary": 100
+        },
+        {
+          "pull": 7,
+          "common": 6000,
+          "rare": 3000,
+          "epic": 900,
+          "legendary": 100
+        },
+        {
+          "pull": 8,
+          "common": 6000,
+          "rare": 3000,
+          "epic": 900,
+          "legendary": 100
+        },
+        {
+          "pull": 9,
+          "common": 6000,
+          "rare": 3000,
+          "epic": 900,
+          "legendary": 100
+        },
+        {
+          "pull": 10,
+          "common": 6000,
+          "rare": 3000,
+          "epic": 900,
+          "legendary": 100
+        },
+        {
+          "pull": 11,
+          "common": 6000,
+          "rare": 3000,
+          "epic": 900,
+          "legendary": 100
+        },
+        {
+          "pull": 12,
+          "common": 6000,
+          "rare": 3000,
+          "epic": 900,
+          "legendary": 100
+        },
+        {
+          "pull": 13,
+          "common": 6000,
+          "rare": 3000,
+          "epic": 900,
+          "legendary": 100
+        },
+        {
+          "pull": 14,
+          "common": 6000,
+          "rare": 3000,
+          "epic": 900,
+          "legendary": 100
+        },
+        {
+          "pull": 15,
+          "common": 6000,
+          "rare": 3000,
+          "epic": 900,
+          "legendary": 100
+        },
+        {
+          "pull": 16,
+          "common": 6000,
+          "rare": 3000,
+          "epic": 900,
+          "legendary": 100
+        },
+        {
+          "pull": 17,
+          "common": 6000,
+          "rare": 3000,
+          "epic": 900,
+          "legendary": 100
+        },
+        {
+          "pull": 18,
+          "common": 6000,
+          "rare": 3000,
+          "epic": 900,
+          "legendary": 100
+        },
+        {
+          "pull": 19,
+          "common": 6000,
+          "rare": 3000,
+          "epic": 900,
+          "legendary": 100
+        },
+        {
+          "pull": 20,
+          "common": 6000,
+          "rare": 3000,
+          "epic": 900,
+          "legendary": 100
+        },
+        {
+          "pull": 21,
+          "common": 6000,
+          "rare": 3000,
+          "epic": 900,
+          "legendary": 100
+        },
+        {
+          "pull": 22,
+          "common": 6000,
+          "rare": 3000,
+          "epic": 900,
+          "legendary": 100
+        },
+        {
+          "pull": 23,
+          "common": 6000,
+          "rare": 3000,
+          "epic": 900,
+          "legendary": 100
+        },
+        {
+          "pull": 24,
+          "common": 6000,
+          "rare": 3000,
+          "epic": 900,
+          "legendary": 100
+        },
+        {
+          "pull": 25,
+          "common": 6000,
+          "rare": 3000,
+          "epic": 900,
+          "legendary": 100
+        },
+        {
+          "pull": 26,
+          "common": 6000,
+          "rare": 3000,
+          "epic": 900,
+          "legendary": 100
+        },
+        {
+          "pull": 27,
+          "common": 6000,
+          "rare": 3000,
+          "epic": 900,
+          "legendary": 100
+        },
+        {
+          "pull": 28,
+          "common": 6000,
+          "rare": 3000,
+          "epic": 900,
+          "legendary": 100
+        },
+        {
+          "pull": 29,
+          "common": 6000,
+          "rare": 3000,
+          "epic": 900,
+          "legendary": 100
+        },
+        {
+          "pull": 30,
+          "common": 6000,
+          "rare": 3000,
+          "epic": 900,
+          "legendary": 100
+        },
+        {
+          "pull": 31,
+          "common": 6000,
+          "rare": 3000,
+          "epic": 900,
+          "legendary": 100
+        },
+        {
+          "pull": 32,
+          "common": 6000,
+          "rare": 3000,
+          "epic": 900,
+          "legendary": 100
+        },
+        {
+          "pull": 33,
+          "common": 6000,
+          "rare": 3000,
+          "epic": 900,
+          "legendary": 100
+        },
+        {
+          "pull": 34,
+          "common": 6000,
+          "rare": 3000,
+          "epic": 900,
+          "legendary": 100
+        },
+        {
+          "pull": 35,
+          "common": 6000,
+          "rare": 3000,
+          "epic": 900,
+          "legendary": 100
+        },
+        {
+          "pull": 36,
+          "common": 6000,
+          "rare": 3000,
+          "epic": 900,
+          "legendary": 100
+        },
+        {
+          "pull": 37,
+          "common": 6000,
+          "rare": 3000,
+          "epic": 900,
+          "legendary": 100
+        },
+        {
+          "pull": 38,
+          "common": 6000,
+          "rare": 3000,
+          "epic": 900,
+          "legendary": 100
+        },
+        {
+          "pull": 39,
+          "common": 6000,
+          "rare": 3000,
+          "epic": 900,
+          "legendary": 100
+        },
+        {
+          "pull": 40,
+          "common": 6000,
+          "rare": 3000,
+          "epic": 900,
+          "legendary": 100
+        },
+        {
+          "pull": 41,
+          "common": 5819,
+          "rare": 2909,
+          "epic": 872,
+          "legendary": 400
+        },
+        {
+          "pull": 42,
+          "common": 5637,
+          "rare": 2818,
+          "epic": 845,
+          "legendary": 700
+        },
+        {
+          "pull": 43,
+          "common": 5455,
+          "rare": 2727,
+          "epic": 818,
+          "legendary": 1000
+        },
+        {
+          "pull": 44,
+          "common": 5274,
+          "rare": 2636,
+          "epic": 790,
+          "legendary": 1300
+        },
+        {
+          "pull": 45,
+          "common": 5092,
+          "rare": 2545,
+          "epic": 763,
+          "legendary": 1600
+        },
+        {
+          "pull": 46,
+          "common": 4910,
+          "rare": 2454,
+          "epic": 736,
+          "legendary": 1900
+        },
+        {
+          "pull": 47,
+          "common": 4728,
+          "rare": 2363,
+          "epic": 709,
+          "legendary": 2200
+        },
+        {
+          "pull": 48,
+          "common": 4547,
+          "rare": 2272,
+          "epic": 681,
+          "legendary": 2500
+        },
+        {
+          "pull": 49,
+          "common": 4365,
+          "rare": 2181,
+          "epic": 654,
+          "legendary": 2800
+        },
+        {
+          "pull": 50,
+          "common": 4183,
+          "rare": 2090,
+          "epic": 627,
+          "legendary": 3100
+        },
+        {
+          "pull": 51,
+          "common": 4000,
+          "rare": 2000,
+          "epic": 600,
+          "legendary": 3400
+        },
+        {
+          "pull": 52,
+          "common": 3819,
+          "rare": 1909,
+          "epic": 572,
+          "legendary": 3700
+        },
+        {
+          "pull": 53,
+          "common": 3637,
+          "rare": 1818,
+          "epic": 545,
+          "legendary": 4000
+        },
+        {
+          "pull": 54,
+          "common": 3455,
+          "rare": 1727,
+          "epic": 518,
+          "legendary": 4300
+        },
+        {
+          "pull": 55,
+          "common": 3274,
+          "rare": 1636,
+          "epic": 490,
+          "legendary": 4600
+        },
+        {
+          "pull": 56,
+          "common": 3092,
+          "rare": 1545,
+          "epic": 463,
+          "legendary": 4900
+        },
+        {
+          "pull": 57,
+          "common": 2910,
+          "rare": 1454,
+          "epic": 436,
+          "legendary": 5200
+        },
+        {
+          "pull": 58,
+          "common": 2728,
+          "rare": 1363,
+          "epic": 409,
+          "legendary": 5500
+        },
+        {
+          "pull": 59,
+          "common": 2547,
+          "rare": 1272,
+          "epic": 381,
+          "legendary": 5800
+        },
+        {
+          "pull": 60,
+          "common": 0,
+          "rare": 0,
+          "epic": 0,
+          "legendary": 10000
+        }
+      ]
+    },
+    {
+      "banner": "featured",
+      "meanPullsToLegendaryFromReset": 37.537577635858014,
+      "longRunLegendaryFraction": 0.02663997154266938,
+      "rows": [
+        {
+          "pull": 1,
+          "common": 6000,
+          "rare": 3000,
+          "epic": 900,
+          "legendary": 100
+        },
+        {
+          "pull": 2,
+          "common": 6000,
+          "rare": 3000,
+          "epic": 900,
+          "legendary": 100
+        },
+        {
+          "pull": 3,
+          "common": 6000,
+          "rare": 3000,
+          "epic": 900,
+          "legendary": 100
+        },
+        {
+          "pull": 4,
+          "common": 6000,
+          "rare": 3000,
+          "epic": 900,
+          "legendary": 100
+        },
+        {
+          "pull": 5,
+          "common": 6000,
+          "rare": 3000,
+          "epic": 900,
+          "legendary": 100
+        },
+        {
+          "pull": 6,
+          "common": 6000,
+          "rare": 3000,
+          "epic": 900,
+          "legendary": 100
+        },
+        {
+          "pull": 7,
+          "common": 6000,
+          "rare": 3000,
+          "epic": 900,
+          "legendary": 100
+        },
+        {
+          "pull": 8,
+          "common": 6000,
+          "rare": 3000,
+          "epic": 900,
+          "legendary": 100
+        },
+        {
+          "pull": 9,
+          "common": 6000,
+          "rare": 3000,
+          "epic": 900,
+          "legendary": 100
+        },
+        {
+          "pull": 10,
+          "common": 6000,
+          "rare": 3000,
+          "epic": 900,
+          "legendary": 100
+        },
+        {
+          "pull": 11,
+          "common": 6000,
+          "rare": 3000,
+          "epic": 900,
+          "legendary": 100
+        },
+        {
+          "pull": 12,
+          "common": 6000,
+          "rare": 3000,
+          "epic": 900,
+          "legendary": 100
+        },
+        {
+          "pull": 13,
+          "common": 6000,
+          "rare": 3000,
+          "epic": 900,
+          "legendary": 100
+        },
+        {
+          "pull": 14,
+          "common": 6000,
+          "rare": 3000,
+          "epic": 900,
+          "legendary": 100
+        },
+        {
+          "pull": 15,
+          "common": 6000,
+          "rare": 3000,
+          "epic": 900,
+          "legendary": 100
+        },
+        {
+          "pull": 16,
+          "common": 6000,
+          "rare": 3000,
+          "epic": 900,
+          "legendary": 100
+        },
+        {
+          "pull": 17,
+          "common": 6000,
+          "rare": 3000,
+          "epic": 900,
+          "legendary": 100
+        },
+        {
+          "pull": 18,
+          "common": 6000,
+          "rare": 3000,
+          "epic": 900,
+          "legendary": 100
+        },
+        {
+          "pull": 19,
+          "common": 6000,
+          "rare": 3000,
+          "epic": 900,
+          "legendary": 100
+        },
+        {
+          "pull": 20,
+          "common": 6000,
+          "rare": 3000,
+          "epic": 900,
+          "legendary": 100
+        },
+        {
+          "pull": 21,
+          "common": 6000,
+          "rare": 3000,
+          "epic": 900,
+          "legendary": 100
+        },
+        {
+          "pull": 22,
+          "common": 6000,
+          "rare": 3000,
+          "epic": 900,
+          "legendary": 100
+        },
+        {
+          "pull": 23,
+          "common": 6000,
+          "rare": 3000,
+          "epic": 900,
+          "legendary": 100
+        },
+        {
+          "pull": 24,
+          "common": 6000,
+          "rare": 3000,
+          "epic": 900,
+          "legendary": 100
+        },
+        {
+          "pull": 25,
+          "common": 6000,
+          "rare": 3000,
+          "epic": 900,
+          "legendary": 100
+        },
+        {
+          "pull": 26,
+          "common": 6000,
+          "rare": 3000,
+          "epic": 900,
+          "legendary": 100
+        },
+        {
+          "pull": 27,
+          "common": 6000,
+          "rare": 3000,
+          "epic": 900,
+          "legendary": 100
+        },
+        {
+          "pull": 28,
+          "common": 6000,
+          "rare": 3000,
+          "epic": 900,
+          "legendary": 100
+        },
+        {
+          "pull": 29,
+          "common": 6000,
+          "rare": 3000,
+          "epic": 900,
+          "legendary": 100
+        },
+        {
+          "pull": 30,
+          "common": 6000,
+          "rare": 3000,
+          "epic": 900,
+          "legendary": 100
+        },
+        {
+          "pull": 31,
+          "common": 6000,
+          "rare": 3000,
+          "epic": 900,
+          "legendary": 100
+        },
+        {
+          "pull": 32,
+          "common": 6000,
+          "rare": 3000,
+          "epic": 900,
+          "legendary": 100
+        },
+        {
+          "pull": 33,
+          "common": 6000,
+          "rare": 3000,
+          "epic": 900,
+          "legendary": 100
+        },
+        {
+          "pull": 34,
+          "common": 6000,
+          "rare": 3000,
+          "epic": 900,
+          "legendary": 100
+        },
+        {
+          "pull": 35,
+          "common": 6000,
+          "rare": 3000,
+          "epic": 900,
+          "legendary": 100
+        },
+        {
+          "pull": 36,
+          "common": 6000,
+          "rare": 3000,
+          "epic": 900,
+          "legendary": 100
+        },
+        {
+          "pull": 37,
+          "common": 6000,
+          "rare": 3000,
+          "epic": 900,
+          "legendary": 100
+        },
+        {
+          "pull": 38,
+          "common": 6000,
+          "rare": 3000,
+          "epic": 900,
+          "legendary": 100
+        },
+        {
+          "pull": 39,
+          "common": 6000,
+          "rare": 3000,
+          "epic": 900,
+          "legendary": 100
+        },
+        {
+          "pull": 40,
+          "common": 6000,
+          "rare": 3000,
+          "epic": 900,
+          "legendary": 100
+        },
+        {
+          "pull": 41,
+          "common": 5819,
+          "rare": 2909,
+          "epic": 872,
+          "legendary": 400
+        },
+        {
+          "pull": 42,
+          "common": 5637,
+          "rare": 2818,
+          "epic": 845,
+          "legendary": 700
+        },
+        {
+          "pull": 43,
+          "common": 5455,
+          "rare": 2727,
+          "epic": 818,
+          "legendary": 1000
+        },
+        {
+          "pull": 44,
+          "common": 5274,
+          "rare": 2636,
+          "epic": 790,
+          "legendary": 1300
+        },
+        {
+          "pull": 45,
+          "common": 5092,
+          "rare": 2545,
+          "epic": 763,
+          "legendary": 1600
+        },
+        {
+          "pull": 46,
+          "common": 4910,
+          "rare": 2454,
+          "epic": 736,
+          "legendary": 1900
+        },
+        {
+          "pull": 47,
+          "common": 4728,
+          "rare": 2363,
+          "epic": 709,
+          "legendary": 2200
+        },
+        {
+          "pull": 48,
+          "common": 4547,
+          "rare": 2272,
+          "epic": 681,
+          "legendary": 2500
+        },
+        {
+          "pull": 49,
+          "common": 4365,
+          "rare": 2181,
+          "epic": 654,
+          "legendary": 2800
+        },
+        {
+          "pull": 50,
+          "common": 4183,
+          "rare": 2090,
+          "epic": 627,
+          "legendary": 3100
+        },
+        {
+          "pull": 51,
+          "common": 4000,
+          "rare": 2000,
+          "epic": 600,
+          "legendary": 3400
+        },
+        {
+          "pull": 52,
+          "common": 3819,
+          "rare": 1909,
+          "epic": 572,
+          "legendary": 3700
+        },
+        {
+          "pull": 53,
+          "common": 3637,
+          "rare": 1818,
+          "epic": 545,
+          "legendary": 4000
+        },
+        {
+          "pull": 54,
+          "common": 3455,
+          "rare": 1727,
+          "epic": 518,
+          "legendary": 4300
+        },
+        {
+          "pull": 55,
+          "common": 3274,
+          "rare": 1636,
+          "epic": 490,
+          "legendary": 4600
+        },
+        {
+          "pull": 56,
+          "common": 3092,
+          "rare": 1545,
+          "epic": 463,
+          "legendary": 4900
+        },
+        {
+          "pull": 57,
+          "common": 2910,
+          "rare": 1454,
+          "epic": 436,
+          "legendary": 5200
+        },
+        {
+          "pull": 58,
+          "common": 2728,
+          "rare": 1363,
+          "epic": 409,
+          "legendary": 5500
+        },
+        {
+          "pull": 59,
+          "common": 2547,
+          "rare": 1272,
+          "epic": 381,
+          "legendary": 5800
+        },
+        {
+          "pull": 60,
+          "common": 0,
+          "rare": 0,
+          "epic": 0,
+          "legendary": 10000
+        }
+      ]
+    },
+    {
+      "banner": "equipment",
+      "meanPullsToLegendaryFromReset": 37.537577635858014,
+      "longRunLegendaryFraction": 0.02663997154266938,
+      "rows": [
+        {
+          "pull": 1,
+          "common": 5500,
+          "rare": 3400,
+          "epic": 1000,
+          "legendary": 100
+        },
+        {
+          "pull": 2,
+          "common": 5500,
+          "rare": 3400,
+          "epic": 1000,
+          "legendary": 100
+        },
+        {
+          "pull": 3,
+          "common": 5500,
+          "rare": 3400,
+          "epic": 1000,
+          "legendary": 100
+        },
+        {
+          "pull": 4,
+          "common": 5500,
+          "rare": 3400,
+          "epic": 1000,
+          "legendary": 100
+        },
+        {
+          "pull": 5,
+          "common": 5500,
+          "rare": 3400,
+          "epic": 1000,
+          "legendary": 100
+        },
+        {
+          "pull": 6,
+          "common": 5500,
+          "rare": 3400,
+          "epic": 1000,
+          "legendary": 100
+        },
+        {
+          "pull": 7,
+          "common": 5500,
+          "rare": 3400,
+          "epic": 1000,
+          "legendary": 100
+        },
+        {
+          "pull": 8,
+          "common": 5500,
+          "rare": 3400,
+          "epic": 1000,
+          "legendary": 100
+        },
+        {
+          "pull": 9,
+          "common": 5500,
+          "rare": 3400,
+          "epic": 1000,
+          "legendary": 100
+        },
+        {
+          "pull": 10,
+          "common": 5500,
+          "rare": 3400,
+          "epic": 1000,
+          "legendary": 100
+        },
+        {
+          "pull": 11,
+          "common": 5500,
+          "rare": 3400,
+          "epic": 1000,
+          "legendary": 100
+        },
+        {
+          "pull": 12,
+          "common": 5500,
+          "rare": 3400,
+          "epic": 1000,
+          "legendary": 100
+        },
+        {
+          "pull": 13,
+          "common": 5500,
+          "rare": 3400,
+          "epic": 1000,
+          "legendary": 100
+        },
+        {
+          "pull": 14,
+          "common": 5500,
+          "rare": 3400,
+          "epic": 1000,
+          "legendary": 100
+        },
+        {
+          "pull": 15,
+          "common": 5500,
+          "rare": 3400,
+          "epic": 1000,
+          "legendary": 100
+        },
+        {
+          "pull": 16,
+          "common": 5500,
+          "rare": 3400,
+          "epic": 1000,
+          "legendary": 100
+        },
+        {
+          "pull": 17,
+          "common": 5500,
+          "rare": 3400,
+          "epic": 1000,
+          "legendary": 100
+        },
+        {
+          "pull": 18,
+          "common": 5500,
+          "rare": 3400,
+          "epic": 1000,
+          "legendary": 100
+        },
+        {
+          "pull": 19,
+          "common": 5500,
+          "rare": 3400,
+          "epic": 1000,
+          "legendary": 100
+        },
+        {
+          "pull": 20,
+          "common": 5500,
+          "rare": 3400,
+          "epic": 1000,
+          "legendary": 100
+        },
+        {
+          "pull": 21,
+          "common": 5500,
+          "rare": 3400,
+          "epic": 1000,
+          "legendary": 100
+        },
+        {
+          "pull": 22,
+          "common": 5500,
+          "rare": 3400,
+          "epic": 1000,
+          "legendary": 100
+        },
+        {
+          "pull": 23,
+          "common": 5500,
+          "rare": 3400,
+          "epic": 1000,
+          "legendary": 100
+        },
+        {
+          "pull": 24,
+          "common": 5500,
+          "rare": 3400,
+          "epic": 1000,
+          "legendary": 100
+        },
+        {
+          "pull": 25,
+          "common": 5500,
+          "rare": 3400,
+          "epic": 1000,
+          "legendary": 100
+        },
+        {
+          "pull": 26,
+          "common": 5500,
+          "rare": 3400,
+          "epic": 1000,
+          "legendary": 100
+        },
+        {
+          "pull": 27,
+          "common": 5500,
+          "rare": 3400,
+          "epic": 1000,
+          "legendary": 100
+        },
+        {
+          "pull": 28,
+          "common": 5500,
+          "rare": 3400,
+          "epic": 1000,
+          "legendary": 100
+        },
+        {
+          "pull": 29,
+          "common": 5500,
+          "rare": 3400,
+          "epic": 1000,
+          "legendary": 100
+        },
+        {
+          "pull": 30,
+          "common": 5500,
+          "rare": 3400,
+          "epic": 1000,
+          "legendary": 100
+        },
+        {
+          "pull": 31,
+          "common": 5500,
+          "rare": 3400,
+          "epic": 1000,
+          "legendary": 100
+        },
+        {
+          "pull": 32,
+          "common": 5500,
+          "rare": 3400,
+          "epic": 1000,
+          "legendary": 100
+        },
+        {
+          "pull": 33,
+          "common": 5500,
+          "rare": 3400,
+          "epic": 1000,
+          "legendary": 100
+        },
+        {
+          "pull": 34,
+          "common": 5500,
+          "rare": 3400,
+          "epic": 1000,
+          "legendary": 100
+        },
+        {
+          "pull": 35,
+          "common": 5500,
+          "rare": 3400,
+          "epic": 1000,
+          "legendary": 100
+        },
+        {
+          "pull": 36,
+          "common": 5500,
+          "rare": 3400,
+          "epic": 1000,
+          "legendary": 100
+        },
+        {
+          "pull": 37,
+          "common": 5500,
+          "rare": 3400,
+          "epic": 1000,
+          "legendary": 100
+        },
+        {
+          "pull": 38,
+          "common": 5500,
+          "rare": 3400,
+          "epic": 1000,
+          "legendary": 100
+        },
+        {
+          "pull": 39,
+          "common": 5500,
+          "rare": 3400,
+          "epic": 1000,
+          "legendary": 100
+        },
+        {
+          "pull": 40,
+          "common": 5500,
+          "rare": 3400,
+          "epic": 1000,
+          "legendary": 100
+        },
+        {
+          "pull": 41,
+          "common": 5335,
+          "rare": 3296,
+          "epic": 969,
+          "legendary": 400
+        },
+        {
+          "pull": 42,
+          "common": 5168,
+          "rare": 3193,
+          "epic": 939,
+          "legendary": 700
+        },
+        {
+          "pull": 43,
+          "common": 5001,
+          "rare": 3090,
+          "epic": 909,
+          "legendary": 1000
+        },
+        {
+          "pull": 44,
+          "common": 4835,
+          "rare": 2987,
+          "epic": 878,
+          "legendary": 1300
+        },
+        {
+          "pull": 45,
+          "common": 4668,
+          "rare": 2884,
+          "epic": 848,
+          "legendary": 1600
+        },
+        {
+          "pull": 46,
+          "common": 4501,
+          "rare": 2781,
+          "epic": 818,
+          "legendary": 1900
+        },
+        {
+          "pull": 47,
+          "common": 4335,
+          "rare": 2678,
+          "epic": 787,
+          "legendary": 2200
+        },
+        {
+          "pull": 48,
+          "common": 4168,
+          "rare": 2575,
+          "epic": 757,
+          "legendary": 2500
+        },
+        {
+          "pull": 49,
+          "common": 4001,
+          "rare": 2472,
+          "epic": 727,
+          "legendary": 2800
+        },
+        {
+          "pull": 50,
+          "common": 3835,
+          "rare": 2369,
+          "epic": 696,
+          "legendary": 3100
+        },
+        {
+          "pull": 51,
+          "common": 3668,
+          "rare": 2266,
+          "epic": 666,
+          "legendary": 3400
+        },
+        {
+          "pull": 52,
+          "common": 3501,
+          "rare": 2163,
+          "epic": 636,
+          "legendary": 3700
+        },
+        {
+          "pull": 53,
+          "common": 3334,
+          "rare": 2060,
+          "epic": 606,
+          "legendary": 4000
+        },
+        {
+          "pull": 54,
+          "common": 3168,
+          "rare": 1957,
+          "epic": 575,
+          "legendary": 4300
+        },
+        {
+          "pull": 55,
+          "common": 3001,
+          "rare": 1854,
+          "epic": 545,
+          "legendary": 4600
+        },
+        {
+          "pull": 56,
+          "common": 2834,
+          "rare": 1751,
+          "epic": 515,
+          "legendary": 4900
+        },
+        {
+          "pull": 57,
+          "common": 2668,
+          "rare": 1648,
+          "epic": 484,
+          "legendary": 5200
+        },
+        {
+          "pull": 58,
+          "common": 2501,
+          "rare": 1545,
+          "epic": 454,
+          "legendary": 5500
+        },
+        {
+          "pull": 59,
+          "common": 2334,
+          "rare": 1442,
+          "epic": 424,
+          "legendary": 5800
+        },
+        {
+          "pull": 60,
+          "common": 0,
+          "rare": 0,
+          "epic": 0,
+          "legendary": 10000
+        }
+      ]
+    }
+  ],
+  "sha256": {
+    "packages/game-rules/src/cardrpg/battle.ts": "cf2b02d5cf0d193d7395be8f736e2e4b8dd9cbed6264e37a5d46f2306da393a5",
+    "packages/game-rules/src/cardrpg/catalog.ts": "3a0e7ec530f4d8f4aa5b6bcffc665f6226fb1aafe36b9854c1999b7aedd87145",
+    "packages/game-rules/src/cardrpg/commands.ts": "cb8320136dc7663ced7f2b29b6e107cb1087188e00ef38228d71314d27ca3f7c",
+    "packages/game-rules/src/cardrpg/config.ts": "c3a7f68aac65c19158e3cfe20c0c28ab08b50b0f6da657b2f81bb9db91c088c3",
+    "packages/game-rules/src/cardrpg/contract.ts": "40ffcc72d23ac5ddbf2bf7c3babf48339afcfd7ccf04c0f4c7fed5e3b68d36f0",
+    "packages/game-rules/src/cardrpg/equipment.ts": "c72b84c5961ea3073eea7ed1fc061f6171329a0982834883e5f34e8a0786f597",
+    "packages/game-rules/src/cardrpg/fixtures/index.ts": "0627a3f89483eee71ff5ccedc2df355cd6530f38ffa0b8e1682720698dc29390",
+    "packages/game-rules/src/cardrpg/gacha.ts": "ace3b76900607785f8a26dc95619bc4411e5cd79491075c37503bf10efa9e09a",
+    "packages/game-rules/src/cardrpg/index.ts": "06d7a8244835dc11ed7908101a312b5b94ec0329924bc4230c671b001725934b",
+    "packages/game-rules/src/cardrpg/internal.ts": "a881bd313e3a1b0401ec08929a92025fc5de54bfe7c5f05c86a150b6e0f23704",
+    "packages/game-rules/src/cardrpg/progression.ts": "dd2afa830bc2ef3328d6dc2e94f21cabc89c1cfc36ae1bec64b9753de485118e",
+    "packages/game-rules/src/cardrpg/state.ts": "09da5dd6df7a88da66a0e2ba842dc3f66b1c5d708bc38cd585085bbfea45d0ea",
+    "packages/game-rules/src/squad/config.ts": "fd417896ce927b4a5b252476fe3dd4505a748c24ccc80afefb715b07217f230d",
+    "packages/game-rules/src/squad/engine.ts": "1d669512dd90556270f71d736958954e47fe1e4ac08fad7c0ac87213c348629c",
+    "packages/game-rules/src/squad/gear/catalog.ts": "b9684a35dd892709061e951a5639945765970e484fd3e61d956d3c763d98061a",
+    "packages/game-rules/src/squad/gear/equipment.ts": "ace2e9b1e403b71e61d40438c1822243e421a77e6ac60519e574cb5003454c23",
+    "packages/game-rules/src/squad/gear/run.ts": "0e8ebf88d83ccab0183bf97c6540ef2783201cde66489af9f8e1ee7c5412f3ee",
+    "packages/game-rules/src/squad/index.ts": "5a83f5523b9b56460792d346a296bea3ae5be5f39a2b2debba2b69bd3013eec8",
+    "packages/game-rules/src/squad/replay.ts": "0b7017cc4bb6f1dcccad1bd320e638fafbca54df97c1dfeaae422663b5bfe79d",
+    "packages/game-rules/src/squad/rules.ts": "a4b0709fed2292fae1cbe8423fce7b11ff059dfcd67f5069f024aa6e25344b2f",
+    "packages/game-rules/src/squad/turn/config.ts": "6778f56761be95d778d57a6d8bee0137ec739444505fe847d26c57a6a6c3ab8f",
+    "packages/game-rules/src/squad/turn/engine.ts": "a1c24d33cc946e5518744c1c88493576dce8a3479475edbde762c6d63722128a",
+    "packages/game-rules/src/squad/turn/policy.ts": "014d6bfd8ef14ea12f9428d189ce63f74342aa4a1d700ae549f0e033b8773a3b",
+    "packages/game-rules/src/squad/turn/rounds.ts": "c518bfc91417a621a34795a8d7dd0dd0ea24f7b03be5489b308f0dc99803c457",
+    "packages/game-rules/src/squad/turn/targeting.ts": "8d16706b1675406bb7f488c042bc03454608995a2dd5e44c64d44f6ebcea8306",
+    "packages/game-rules/src/squad/turn/test-support.ts": "38b5555fe8a48ff0a4e7f28a2007e380db0cd0201fa1ce14dcaf3bdca1fac521",
+    "packages/game-rules/src/squad/turn/types.ts": "d1fa9521a8e973511b90a94f654a560d9236d5ff4b9cf3531eec3d2c0b119fd6",
+    "packages/game-rules/src/squad/types.ts": "a81f62301ff3b00adeaa154a7027f7ac5880f232f8d41134af86f6de7bd3cd88",
+    "tools/cardrpg-sim/audit.mjs": "5221b8b1054e0e2ab52d7ba2bafe82b3631bc5a74299359065f35cb5d4807b4d",
+    "tools/cardrpg-sim/combat.mjs": "1d6d39f89ef504084bbc3b77c62073b844f5020aa7b907691091bf4188ccd037",
+    "tools/cardrpg-sim/economy.mjs": "7c497ee65b5c9a7e880e482a132d8f4cd8bcbe0976a5fb95a9500c3f9ed9b9ff",
+    "tools/cardrpg-sim/fixtures.mjs": "0f1fb2c0060222dd9f58afc99cc760d96adbb3fac394b32dd50502f2876e749d",
+    "tools/cardrpg-sim/load.mjs": "bfebf7ff424ecb61ebd8d7a406656267c050cf863dab5d123c4a5fbbda41ce25"
+  }
+}

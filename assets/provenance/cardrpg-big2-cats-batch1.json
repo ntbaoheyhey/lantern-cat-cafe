@@ -1,0 +1,32 @@
+{
+  "tool": "Original procedural Three.js geometry and authored keyframe tables; no image generation or reference images",
+  "created": "2026-11-06T17:07:43.785807+00:00",
+  "sources": {
+    "card-roster-motion.ts": "c65f5653d9bd2e8c811f95396b56edaa4e47548b77092c7e4ada2f8dab105612",
+    "card-roster-effects.ts": "e9c6719af39d5136ebb4905c7941f2110bffd239d1931fb53784b12bf7c9935c",
+    "card-roster-primitives.ts": "b6954d4a0c720916e945ed0b07e63b7be86f016066c6b684aff419f1abed41f7",
+    "card-utensils.ts": "b32faed89838d61f6ece92dda26088d6f6657ec2133bb5ae5f70eac3f776fa9d",
+    "card-face.ts": "c9e0f97230b0b4936ad5637bc9aa889c54c4931235ddb431f38a787b029016ba",
+    "card-entrance.ts": "0a1ab0e147cd779e709aef76318fe3e8f383e7fc1b90d3c36da6ee93b90d8475"
+  },
+  "models": [
+    "panko",
+    "mallow",
+    "sorrel"
+  ],
+  "parameters": {
+    "motion": "Four authored skill clips per cat, normalized key times, neutral endpoints; actual rig sampling in motion/trajectories.json",
+    "shapes": [
+      "pan",
+      "bread",
+      "oven",
+      "whisk",
+      "spoon",
+      "teapot"
+    ],
+    "props": "Two merged geometry/material parts per actor; attached to authored hand joint and disposed with actor",
+    "eyes": "Per-cat eye spacing, aspect, iris, glint and brow offset; live pupil tracking and expression states",
+    "effects": "15 explicit compositions, capped at96instances and8primitive calls; rendered identity checks pending"
+  },
+  "evidenceStatus": "Source typecheck/lint/unit/build pass; rendered checks queued under shared timing lock"
+}

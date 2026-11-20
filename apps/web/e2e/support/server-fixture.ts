@@ -35,7 +35,7 @@ export async function load(page: Page, request: APIRequestContext, kind = 'stock
   // next protocol command: transport latency can make the target already past.
   await page.clock.install({ time: new Date(0) });
   await page.clock.pauseAt(new Date());
-  await page.goto('/');
+  await page.goto('/?legacy=1');
   // In AGR1 redesign, HUD/rail is hidden on onboarding class-picker (fresh session) until class is chosen.
   if (kind === 'fresh') {
     await expect(page.getByTestId('class-picker')).toBeVisible();

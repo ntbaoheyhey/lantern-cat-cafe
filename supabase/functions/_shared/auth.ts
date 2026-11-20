@@ -69,7 +69,7 @@ export function json(req: Request, body: unknown, status = 200): Response {
 }
 
 /** Wrap a POST handler: CORS preflight, method check, AuthError -> 4xx, anything else -> 500. */
-export function handler(fn: (req: Request) => Promise<Response>): (req: Request) => Promise<Response> {
+export function handler(fn: (req: Request) => Promise<Response>, options: { nonce?: boolean } = {}): (req: Request) => Promise<Response> {
   return async (req) => {
     if (req.method === "OPTIONS") return new Response(null, { status: 204, headers: corsHeaders(req) });
     if (req.method !== "POST") return json(req, { error: "method_not_allowed" }, 405);
@@ -77,6 +77,16 @@ export function handler(fn: (req: Request) => Promise<Response>): (req: Request)
       return await fn(req);
     } catch (e) {
       if (e instanceof AuthError) return json(req, { error: e.code }, e.code === "invalid_request" ? 400 : 401);
+      if (options.nonce) {
+        // Fail closed: never issue an unstored nonce or bypass a database limit.
+        // Do not expose database messages, environment values or request data.
+        console.error("auth-nonce dependency unavailable");
+        const response = json(req, { error: "auth_unavailable", retryAfter: 30 }, 503);
+        response.headers.set("Retry-After", "30");
+        response.headers.set("Cache-Control", "no-store");
+        response.headers.set("Access-Control-Expose-Headers", "Retry-After");
+        return response;
+      }
       console.error(e);
       return json(req, { error: "internal_error" }, 500);
     }

@@ -1,3 +1,4 @@
+import { CONFIG } from '@taskbar-hero/game-rules';
 import type { WeaponPose } from './gear';
 import type { Face, TailPose, TorsoShape } from './parts';
 import type { AnimName, Point, WeaponType } from './types';
@@ -106,10 +107,24 @@ function anim(frames: PoseSpec[], frameMs: number[] | number, loop: boolean, hit
 export const SHARED_ANIMS: Readonly<Record<Exclude<AnimName, 'attack'>, AnimDef>> = {
   idle: anim([
     {},
-    { head: [0, 1], tail: 'mid' },
+    { head: [0, -1], tail: 'mid' },
+    { head: [0, -1], face: 'blink', tail: 'mid' },
+    { head: [0, -1], tail: 'up' },
     { dy: 1, head: [0, -1], pf: [0, -1], pb: [0, -1], tail: 'mid' },
-    { head: [0, 1] },
-  ], 220, true),
+    { head: [1, 0], tail: 'up' },
+    { head: [1, 0], face: 'blink' },
+    { head: [0, 1], tail: 'mid' },
+  ], [...CONFIG.gameplay.actor.idleFrameMs], true),
+  nap: anim([
+    { dy: 2, torso: 'crouch', head: [1, 1], face: 'blink', tail: 'flat', pf: [0, 1], pb: [0, 1], angle: 'drop' },
+    { dy: 3, torso: 'crouch', head: [1, 1], face: 'blink', tail: 'down', pf: [0, 1], pb: [0, 1], angle: 'drop' },
+  ], CONFIG.gameplay.actor.napFrameMs, true),
+  equip: anim([
+    { dy: 1, torso: 'crouch', face: 'happy', tail: 'mid' },
+    { dy: -2, ff: [0, -2], fb: [0, -2], pf: [0, -3], face: 'happy' },
+    { dy: -1, ff: [0, -1], fb: [0, -1], pf: [0, -2], face: 'happy' },
+    { face: 'happy' },
+  ], [...CONFIG.gameplay.actor.equipFrameMs], false),
   walk: anim([
     { ff: [2, 0], fb: [-2, 0], pf: [-1, 0], pb: [1, 0] },
     { dy: 1, ff: [1, 0], fb: [-1, 0], tail: 'mid' },

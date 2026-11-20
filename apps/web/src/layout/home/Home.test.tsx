@@ -37,17 +37,17 @@ describe('Home and Landing Components (AGR1)', () => {
   });
 
   describe('NextGoalCard', () => {
-    it('renders chapter and round progress, and navigates to map on click', () => {
+    it('renders chapter progress and sends a power-wall guest to compare gear', () => {
       const state = sampleServerStateV2();
       const onNavigate = vi.fn();
       render(<NextGoalCard state={state} onNavigate={onNavigate} />);
 
       expect(screen.getByRole('heading', { name: 'Next Goal' })).toBeTruthy();
       const mapBtn = screen.getByTestId('home-goal-map');
-      expect(mapBtn.textContent).toBe('Go to map');
+      expect(mapBtn.textContent).toBe('Compare gear');
 
       fireEvent.click(mapBtn);
-      expect(onNavigate).toHaveBeenCalledWith('map');
+      expect(onNavigate).toHaveBeenCalledWith('bag');
     });
   });
 
@@ -110,7 +110,7 @@ describe('Home and Landing Components (AGR1)', () => {
       render(<LandingHero onStartGuest={onStartGuest} onHelp={onHelp} />);
 
       expect(screen.getByTestId('landing-hero')).toBeTruthy();
-      expect(screen.getByTestId('landing-network-pill').textContent).toContain('Live on Avalanche Fuji');
+      expect(screen.getByTestId('landing-network-pill').textContent).toContain('Candidate build, not live.');
       expect(screen.getByText(/Taskbar/i)).toBeTruthy();
       expect(screen.getByText(/A cozy idle RPG that lives in a strip of your browser/i)).toBeTruthy();
       expect(screen.getByText(/No token\. No fees to play/i)).toBeTruthy();

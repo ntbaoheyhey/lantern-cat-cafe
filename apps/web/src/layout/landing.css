@@ -72,7 +72,7 @@
   border: 1px solid var(--border, #72578d);
   padding: 4px 12px;
   border-radius: 0;
-  font-family: var(--font-num, monospace);
+  
   font-size: 11px;
   font-weight: 700;
   color: var(--muted, #c3aed0);
@@ -91,7 +91,7 @@
 /* Title */
 .landing__title {
   margin: 0;
-  font-family: var(--font-display, 'Pixelify Sans', monospace);
+  
   font-size: clamp(42px, 5vw, 64px);
   line-height: 1.05;
   color: var(--accent, #ffb86b);
@@ -102,11 +102,13 @@
 /* Promise */
 .landing__promise {
   margin: 0;
-  font-family: var(--font-body, 'DM Sans', sans-serif);
+  
   font-size: 16px;
   line-height: 1.5;
   color: var(--text, #fff3e0);
   max-width: 480px;
+  /* Reserve the three lines used by the loaded body font on desktop. */
+  min-height: 72px;
 }
 
 /* Action CTA Buttons (Side-by-side, no overlap) */
@@ -122,13 +124,18 @@
 }
 
 .landing__guest-btn {
-  font-family: var(--font-display, 'Pixelify Sans', monospace) !important;
+  /* Reserve the fallback and final font footprint so the adjacent wallet stays put. */
+  width: 200px;
+  flex: 0 0 200px;
+  text-align: left;
+  
   font-size: 15px !important;
   font-weight: 700 !important;
   letter-spacing: 0.05em !important;
   text-transform: uppercase !important;
   padding: 12px 26px !important;
   min-height: 46px !important;
+  line-height: 21px !important;
   background: var(--accent, #ffb86b) !important;
   color: var(--on-accent, #1a1200) !important;
   border: 2px solid #000 !important;
@@ -174,13 +181,15 @@
 }
 
 .landing__wallet-btn-wrap .wallet-btn {
-  font-family: var(--font-display, 'Pixelify Sans', monospace) !important;
+  min-width: 240px;
+  
   font-size: 14px !important;
   font-weight: 700 !important;
   letter-spacing: 0.05em !important;
   text-transform: uppercase !important;
   padding: 12px 22px !important;
   min-height: 46px !important;
+  line-height: 21px !important;
   background: var(--surface-3, #3a2c4a) !important;
   color: var(--text, #fff3e0) !important;
   border: 2px solid #000 !important;
@@ -191,7 +200,7 @@
   text-decoration: none !important;
   display: inline-flex !important;
   align-items: center !important;
-  justify-content: center !important;
+  justify-content: flex-start !important;
   box-sizing: border-box !important;
   transition: filter 0.15s ease, transform 0.1s ease !important;
 }
@@ -206,7 +215,7 @@
 }
 
 .landing__wallet-btn-wrap .wallet-badge {
-  font-family: var(--font-num, monospace);
+  
   font-size: 13px;
   color: var(--good, #6be08a);
   background: var(--surface-2, #2a1f36);
@@ -217,7 +226,7 @@
 
 .landing__footnote {
   margin: 0;
-  font-family: var(--font-body, 'DM Sans', sans-serif);
+  
   font-size: 13px;
   color: var(--muted, #c3aed0);
   max-width: 460px;
@@ -258,7 +267,9 @@
   backdrop-filter: blur(4px);
   border-top: 2px solid #000;
   padding: 12px 40px;
-  display: flex;
+  /* Stable slots prevent late body/numeric fonts moving neighbouring proof links. */
+  display: grid;
+  grid-template-columns: 152px 4px 240px 4px 174px 4px 144px 4px minmax(110px, 1fr);
   align-items: center;
   gap: 24px;
   font-size: 13px;
@@ -267,17 +278,23 @@
 }
 
 .landing__proof-item {
+  white-space: nowrap;
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  font-family: var(--font-num, monospace);
+  
 }
 
 .landing__proof-item--help {
-  margin-left: auto;
+  justify-self: end;
+  width: 110px;
 }
 
 .landing__proof-pill {
+  /* Keep the adjacent label fixed while the numeric web font replaces fallback. */
+  flex: 0 0 70px;
+  min-width: 0;
+  box-sizing: border-box;
   background: var(--surface-3, #4a3a5e);
   color: var(--shard, #8fd8ff);
   font-size: 11px;
@@ -287,6 +304,7 @@
 }
 
 .landing__proof-check {
+  flex: 0 0 12px;
   color: var(--good, #6be08a);
   font-weight: bold;
 }
@@ -305,6 +323,8 @@
 }
 
 .landing__proof-btn {
+  width: 100%;
+  text-align: left;
   background: none;
   border: none;
   color: var(--accent, #ffb86b);

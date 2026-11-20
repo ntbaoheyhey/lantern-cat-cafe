@@ -78,8 +78,8 @@ describe('bakeCatInto', () => {
 describe('buildSheet', () => {
   it('lays frames out on a grid that holds every frame', () => {
     const { image, anchors } = buildSheet(CLASS_LOOKS.guardian, cozy);
-    expect(image.frames).toHaveLength(26);
-    expect(anchors.size).toBe(26);
+    expect(image.frames).toHaveLength(36);
+    expect(anchors.size).toBe(36);
     expect(image.width % FRAME.w).toBe(0);
     expect(image.pixels).toHaveLength(image.width * image.height);
     for (const f of image.frames) {

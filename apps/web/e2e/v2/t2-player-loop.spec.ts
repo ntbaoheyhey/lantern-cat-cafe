@@ -8,15 +8,11 @@ async function tab(page: Page, name: string) {
     Inventory: 'Bag',
   };
   const target = aliases[name] ?? name;
-  let button = page.getByRole('tablist', { name: 'Game panel tabs' }).getByRole('tab', { name: target, exact: true });
-  if ((await button.count()) === 0) {
-    button = page.getByRole('tablist', { name: 'Game panel tabs' }).getByRole('tab', { name, exact: true });
-  }
+  const button = page.getByRole('tablist', { name: 'Game panel tabs' }).getByRole('tab', { name: target, exact: true });
+  // Navigation can briefly unmount during reload; wait for the current control.
+  await expect(button).toBeVisible();
   if ((await button.getAttribute('aria-selected')) !== 'true') await button.click();
-  let panel = page.getByRole('tabpanel', { name: target, exact: true });
-  if ((await panel.count()) === 0) {
-    panel = page.getByRole('tabpanel', { name, exact: true });
-  }
+  const panel = page.getByRole('tabpanel', { name: target, exact: true });
   await expect(panel).toBeVisible();
   return panel;
 }
@@ -29,7 +25,6 @@ for (const reduced of [false, true]) test(`continuous stocked demo loop${reduced
   await page.goto('/');
   await expect(page.getByTestId('class-picker')).toBeVisible();
   await page.getByTestId('class-picker-choose-button').click();
-  await page.getByTestId('class-picker-confirm-button').click();
   await expect(page.getByTestId('class-picker')).toHaveCount(0);
   await tab(page, 'Character');
   const character = page.getByRole('region', { name: 'Character', exact: true });

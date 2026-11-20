@@ -1,0 +1,13 @@
+.ship-receipt-toast{position:fixed;z-index:1000;right:20px;bottom:20px;width:min(340px,calc(100vw - 40px));padding:16px 36px 16px 16px;border:2px solid #b8a287;border-radius:16px;background:#fff8eb;color:#30251f;box-shadow:0 8px 28px #0004;font-size:14px;line-height:1.4}
+.ship-receipt-toast>button{position:absolute;right:8px;top:6px;display:grid;place-items:center;width:26px;height:26px;padding:0;background:transparent;color:inherit;border:0;font:22px/1 system-ui,sans-serif}
+.ship-receipt-toast strong,.ship-receipt-toast small,.ship-receipt-toast>a{display:block}
+.ship-receipt-toast>small{color:#59452f}
+.ship-receipt-toast>a{color:#614018;text-decoration:underline;margin-top:6px}
+.ship-receipt-toast dl{margin:8px 0}.ship-receipt-toast dl>div{display:flex;flex-wrap:wrap;gap:4px 12px;justify-content:space-between}.ship-receipt-toast dd{margin:0;overflow-wrap:anywhere;font-variant-numeric:tabular-nums}
+.ship-receipt-toast a:focus-visible{outline:2px solid currentColor;outline-offset:3px}
+.ship-receipt-toast>button:hover:not(:disabled){background:#eadbc1;color:#30251f;filter:none}
+.ship-receipt-toast>button:focus-visible{outline:2px solid #614018;outline-offset:2px}
+.ship-receipt-toast { box-sizing: border-box; max-height: calc(100dvh - 40px); overflow-y: auto; }
+.ship-receipt-toast dd { min-width: 0; max-width: 100%; }
+.ship-receipt-toast code { font-size: 12px; overflow-wrap: anywhere; }
+.ship-receipt-toast { text-align: left; font-family: system-ui, sans-serif; }

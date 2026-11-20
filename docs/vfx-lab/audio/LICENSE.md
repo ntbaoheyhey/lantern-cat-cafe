@@ -1,0 +1,1 @@
+The short release preview is extracted from Session B's `public/audio/rpg.mp3` sprite, 1.562154–2.161701 s. Source: Kenney RPG Audio, https://kenney.nl/assets/rpg-audio, CC0 1.0, https://creativecommons.org/publicdomain/zero/1.0/. Extraction: ffmpeg 9.0.2, 13 November 2026. No paid audio tool.

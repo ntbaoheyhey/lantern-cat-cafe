@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Lantern audio lab</title><link rel="stylesheet" href="lab.css">
+<header><p class="eyebrow">Lantern Cat Café · Audio lab 2</p><h1>Listen to the layers.</h1><p>Production cues, source credits and live cat-speak. Free licensed audio; no external speech service.</p><div class="toolbar"><button id="stop">Stop all</button><label>Listening level <input id="level" type="range" min="0" max="1" value=".5" step=".05"></label><output id="status" role="status">Loading sound map…</output></div></header>
+<nav aria-label="Lab sections"><a href="#cues">Cues</a><a href="#voices">Cat voices</a><a href="#map">Sound map</a><a href="#credits">Credits</a></nav>
+<main>
+<section id="cues"><h2>Cue library</h2><div class="filters"><label>Find a cue<input id="filter" type="search" placeholder="Hit, forge, Mochi…"></label><label>Bus<select id="bus"><option value="">All buses</option></select></label><label>Screen<select id="screen"><option value="">All screens</option></select></label><output id="count"></output></div><div id="cue-list"></div></section>
+<section id="voices"><h2>Cat voices</h2><p>Edit a line, then hear consonant and real cat grains shaped for that cat. This live preview uses the source profile; the cue library above plays the mastered game lines.</p><div id="voice-list"></div></section>
+<section id="map"><h2>Screen sound map</h2><p id="map-count"></p><div class="table-scroll"><table><thead><tr><th>Screen</th><th>Event</th><th>Cue</th><th>Bus</th><th>Layers / variants</th><th>Timing / priority / duck</th></tr></thead><tbody id="map-body"></tbody></table></div></section>
+<section id="credits"><h2>Source credits</h2><p>Every cue expands to its shipped-pack credits, source licence links and hashes. Voice previews use the same recorded sources. The full ledger includes every source and shipped file.</p><a href="../../apps/web/public/audio/LICENSES.json">Full licence ledger</a> · <a href="../../reports/v3-shell/b2/SOUND-MAP.md">Sound map report</a> · <a href="../../reports/v3-shell/b2/SOUND-REEL.mp3">90-second sound reel</a><h3>Playback log</h3><pre id="play-log" aria-live="polite"></pre></section>
+</main><script type="module" src="lab.mjs"></script>
+</html>

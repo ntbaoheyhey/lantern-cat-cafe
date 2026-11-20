@@ -1,0 +1,102 @@
+/* C2: visual decisions on the surface; complete explanations in ? dialogs. */
+.c2-text .a6-heading-kicker,.c2-text .uv-hud .uv-identity small:empty{display:none}
+.c2-text .uv-sheet-heading{min-height:60px;gap:12px}
+.c2-text .uv-sheet-heading h1{font-size:25px}
+.c2-text .uv-sheet-heading .a6-heading-art{height:56px;width:56px}
+.c2-text .uv-identity{min-width:110px}
+.c2-text .uv-hud .uv-avatar span{font-size:12px}
+.c2-text .uv-sheet{top:70px}
+.c2-text .uv-sheet-content{padding-top:14px}
+.c2-text .uv-cat-grid .dp-companion small,.c2-text .uv-cat-grid .dp-companion .dp-role{display:none}
+.c2-text .uv-recruit-counter>small,.c2-text .uv-recruit-counter>h2,.c2-text .uv-recruit-counter>p:not(.uv-pity):not(.a6-recruit-limits),.c2-text .uv-recruit-welcome>p,.c2-text .uv-recruit-welcome>h2{display:none}
+.c2-text .uv-recruit-welcome img{height:min(45vh,360px);max-height:none}
+.c2-text .a6-recruit-quote{min-height:0}
+.c2-text .a6-recruit-purchases>div{display:flex;align-items:center;gap:8px}
+.c2-text .uv-recruit-counter .uv-odds{margin:8px 0}
+.c2-text .uv-recruit-counter .uv-odds[open]{max-height:250px;overflow:auto}
+.c2-help-trigger{width:34px;height:34px;flex-shrink:0;border-radius:50%!important;padding:0!important;display:inline-grid;place-items:center;color:#5f422d;background:#f4d998;border:1px solid #bc8d50;cursor:pointer}
+.c2-help{color:#45312e;background:#f3e5ce;border:2px solid #aa8154;border-radius:22px;max-width:min(900px,92vw);width:max-content;max-height:85vh;padding:20px;box-shadow:0 20px 80px #21162166}
+.c2-help::backdrop{background:#20162280}
+.c2-help header{display:flex;justify-content:space-between;align-items:center;gap:24px}
+.c2-help header h2{font:26px var(--font-display);margin:0 0 12px}
+.c2-help header button{border-radius:50%;width:36px;height:36px}
+.c2-help-body{overflow:auto;max-height:65vh;min-width:280px}
+.c2-help-body p{max-width:70ch}
+.c2-home-help{position:absolute;left:20px;top:105px;z-index:20}
+.c2-upgrades{display:flex;align-items:center;gap:16px;margin-bottom:14px;padding:10px 16px;border-bottom:1px solid #b88c5366}
+.c2-upgrades>span:nth-child(2){display:flex;align-items:center;gap:12px;margin-right:auto}
+.c2-growth{position:relative;display:grid!important;grid-template-columns:1fr 34px;gap:10px;padding:12px!important}
+.c2-growth>button:first-child{grid-column:1/-1}
+.c2-growth .cr-cost{display:flex;gap:8px}
+.c2-growth>div{display:grid;gap:8px}
+.c2-skill-icons{display:flex;gap:12px}
+.c2-skill-icons button{border-radius:50%;width:70px;height:70px;padding:5px;position:relative}
+.c2-skill-icons img{width:100%;height:100%;object-fit:contain}
+.c2-inventory .a6-inventory-desk{margin-top:12px}
+.c2-inventory .a6-inventory-tools select{max-width:170px}
+.c2-inventory .a6-inventory-grid button{min-height:125px}
+.c2-inventory .a6-inventory-actions>div{display:grid;gap:8px}
+.c2-result .a6-result-receipt{align-content:center;min-height:230px}
+.c2-result .a6-result-tickets{margin:20px 0 30px}
+.uv-battle-hud[data-c2] .uv-battle-actions button{width:42px;height:42px;min-width:42px;padding:0;border-radius:50%;background:#39291ad9;border:2px solid #c9a365;box-shadow:inset 0 0 0 2px #39291a;color:#ffedc8}
+.uv-battle-hud[data-c2] .uv-auto-continue{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;position:relative;background:#39291ad9;border:2px solid #c9a365;font-size:22px}
+.uv-battle-hud[data-c2] .uv-auto-continue input{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%;min-width:0;min-height:0;margin:0;padding:0}
+.uv-battle-hud[data-c2] .uv-auto-continue:has(input:checked){box-shadow:0 0 12px #e8bb56}
+.uv-battle-hud[data-c2] .uv-auto-continue:focus-within{outline:3px solid #fff1b9}
+.uv-battle-hud[data-c2] .uv-battle-party{width:auto;gap:12px;left:50%;right:auto;transform:translateX(-50%);bottom:15px;display:flex}
+.c2-ult{display:grid;place-items:center;position:relative;border:0;border-radius:50%;width:65px;height:65px;padding:5px;background:conic-gradient(#edc76f calc(var(--rage)*1turn),#513c32 0);box-shadow:0 3px 8px #231b27aa;pointer-events:auto;cursor:pointer}
+.c2-ult img{width:100%;height:100%;object-fit:cover;border-radius:50%;background:#503d36}
+.c2-ult[data-ready=true]{box-shadow:0 0 16px #f4cf72}
+.c2-ult[data-fallen=true]{filter:grayscale(1);opacity:.55}
+.c2-ult span{position:absolute;bottom:-3px;background:#45372b;border-radius:9px;padding:1px 5px;color:#ffe3a2;font-size:11px}
+.uv-battle-hud[data-c2] .uv-enemy-rage{display:none}
+.uv-battle-hud[data-c2] .uv-battle-round b{font-size:17px}
+@media(max-width:1050px){.c2-upgrades{gap:8px}.c2-text .uv-sheet{top:64px}.c2-ult{width:56px;height:56px}.c2-text .a6-cat-growth{gap:8px}}
+.dp-world-plate[data-c2]{width:110px!important;min-height:0!important;padding:3px 5px!important;font-size:10px!important}
+.dp-world-plate[data-c2]>div{font-size:10px;gap:3px}
+.dp-world-plate[data-c2] progress{height:5px;margin:2px 0}
+.dp-world-plate[data-c2] .dp-intent{position:absolute;right:-16px;top:2px;font-size:11px}
+.dp-world-plate[data-c2] .c2-world-rage{accent-color:#d8a953}
+.dp-world-plate[data-c2] .c2-world-rage::-webkit-progress-value{background:#d8a953}
+/* Scope above inherited A6 control styles, including late-loaded battle CSS. */
+.uv-app .uv-battle-hud[data-c2] .uv-battle-party{height:84px;padding:4px 12px;background:none;border:0;box-shadow:none;bottom:25px}
+.uv-app .uv-battle-hud[data-c2] button.c2-ult{display:grid;place-items:center;position:relative;border:0;border-radius:50%;width:72px;height:72px;min-height:72px;padding:5px;background:conic-gradient(#edc76f calc(var(--rage)*1turn),#513c32 0);box-shadow:0 3px 8px #231b27aa}
+.uv-app .uv-battle-hud[data-c2] button.c2-ult img{width:100%;height:100%;object-fit:cover;border-radius:50%;background:#503d36}
+.uv-app .uv-battle-hud[data-c2] button.c2-ult[data-ready=true]{box-shadow:0 0 16px #f4cf72}
+/* The late A6 sheet uses position:static. This must remain the checkbox's
+   containing block, or its invisible input covers the entire battle header. */
+.uv-app .uv-battle-hud[data-a6=true][data-c2] .uv-auto-continue{position:relative;inset:auto;display:grid;place-items:center;border-radius:50%;width:42px;height:42px;min-height:42px;padding:0;margin:0;font-size:22px}
+.c2-text [data-screen=team]{display:flex;flex-direction:column;overflow:hidden}
+.c2-text [data-screen=team]>.c2-formation{flex:1;min-height:0;height:auto}
+.c2-text [data-screen=team] .c2-formation-picture{min-height:0;max-height:none;aspect-ratio:auto}
+.c2-text .c2-help-trigger{display:inline-grid;place-items:center;line-height:1;text-align:center;min-width:34px;min-height:34px}
+.c2-bonds .a6-bond-index button span{display:flex;gap:3px;align-items:center}
+.c2-bonds .a6-bond-index button img{height:38px;width:38px;object-fit:cover;border-radius:50%}
+.c2-gift-amounts{display:flex;gap:12px;flex-wrap:wrap;align-items:center;padding:6px 0}
+.c2-gift-amounts>span{white-space:nowrap}.c2-gift-amounts s{opacity:.7}
+.c2-journal .a6-journal-ticket{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center}
+.c2-journal .a6-journal-ticket>progress{grid-column:1/-1;width:100%}
+.c2-journal .a6-journal-ticket .a6-journal-stamp{grid-column:1/-1;justify-self:center;height:90px}
+.c2-journal-counts{padding:18px 0;font-size:18px}
+.c2-reward-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.c2-reward-grid>article,.c2-reward-grid>div{border:1px solid #bd985f;border-radius:18px;padding:18px;display:grid;gap:12px;justify-items:center}
+.c2-reward-grid svg{height:100px;max-width:120px}
+.c2-settings .a6-save-heading{align-items:center;justify-content:space-between}
+.c2-settings .a6-comfort-desk header{min-height:160px}
+.c2-reward-book .a6-daily-tasks{grid-template-columns:repeat(5,minmax(0,1fr))}
+.c2-reward-book .a6-gift-shelves{gap:12px}
+.c2-reward-book .a6-login-claim{display:flex;gap:12px;align-items:center}
+.c2-route-toolbar{display:flex;align-items:center;gap:18px;padding:10px 0}
+.c2-route-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px}
+.c2-route-cards>article{display:grid;gap:14px;align-content:start;padding:20px;background:#f4e5ca;border:1px solid #b98f58;border-radius:18px}
+.c2-route-cards h3{font:21px var(--font-display);margin:0}
+.c2-route-health{list-style:none;padding:0;display:grid;gap:8px}
+.c2-route-health li{display:flex;align-items:center;gap:8px;font-size:13px}
+.c2-route-health img{height:36px;width:36px;object-fit:cover;border-radius:50%}
+.c2-route-finds{display:flex;gap:12px;flex-wrap:wrap}.c2-route-finds svg{height:100px;width:100px}
+.c2-supplies{display:grid;justify-items:center;gap:20px;padding:20px}
+.c2-supplies>article{display:grid;justify-items:center;gap:18px}.c2-supplies svg{height:190px;width:190px}.c2-supplies strong{font-size:36px}
+.c2-field-guide .a6-guide-page{display:flex;align-items:center;justify-content:center;min-height:290px;margin-top:16px}.c2-field-guide .a6-guide-illustration{width:240px;min-height:200px}
+.c2-text .uv-menu .a6-menu-heading small,.c2-text .uv-menu .a6-menu-heading h2,.c2-text .uv-menu .a6-menu-link small{display:none}
+.c2-tip-review::backdrop{background:#241d27}.c2-tip-review .a6-tip-review-cards article{display:grid;gap:18px}.c2-tip-review .a6-tip-review-cards h3{margin:0}
+.c2-odds table{width:100%;text-align:right;border-collapse:collapse}.c2-odds th,.c2-odds td{padding:7px}.c2-odds dl>div{display:flex;justify-content:space-between;gap:24px;padding:5px}.c2-odds dd{margin:0}.c2-odds-pool{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}.c2-odds-pool figure{margin:0;text-align:center}.c2-odds-pool :is(img,svg){width:64px;height:64px;object-fit:contain}.c2-odds section+section{margin-top:20px}

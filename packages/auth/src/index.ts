@@ -35,7 +35,11 @@ export interface AuthStore {
 export type Clock = () => Date;
 
 export interface AuthConfig {
-  /** RFC 3986 authority the client must put in the message, e.g. "taskbarhero.app" or "localhost:5173". */
+  /**
+   * RFC 3986 authority the client must put in the message, e.g. "taskbarhero.app" or "localhost:5173".
+   * A comma-separated list accepts each listed host, so one backend can serve the public
+   * build and a local recording build (e.g. "taskbarhero-eight.vercel.app,127.0.0.1:6301").
+   */
   domain: string;
   /** HS256 secret (the Supabase project's JWT secret). */
   jwtSecret: string;
@@ -111,6 +115,11 @@ function secretKey(secret: string): Uint8Array {
   return new TextEncoder().encode(secret);
 }
 
+/** Exact, lowercase hosts from a comma-separated SIWE_DOMAIN value. */
+export function allowedDomains(value: string): string[] {
+  return value.split(",").map((d) => d.trim().toLowerCase()).filter(Boolean);
+}
+
 /** True if `uri` is https (or http on a loopback host), has no credentials, and its host is `domain`. */
 function uriMatchesDomain(uri: string, domain: string): boolean {
   let url: URL;
@@ -172,8 +181,8 @@ export async function verifySignIn(deps: AuthDeps, input: { message: unknown; si
   }
   if (canonical !== message) throw new AuthError("invalid_message", "message is not in canonical EIP-4361 form");
 
-  const domain = config.domain.toLowerCase();
-  if (f.domain.toLowerCase() !== domain) throw new AuthError("wrong_domain");
+  const domain = f.domain.toLowerCase();
+  if (!allowedDomains(config.domain).includes(domain)) throw new AuthError("wrong_domain");
   if (!uriMatchesDomain(f.uri, domain)) throw new AuthError("wrong_uri");
   if (f.chainId !== chainId) throw new AuthError("wrong_chain");
 

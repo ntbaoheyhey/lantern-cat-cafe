@@ -70,11 +70,9 @@ for (const vp of CHECK_VIEWPORTS) {
     await page.goto('/');
 
     const heroTab = page.getByRole('tab', { name: 'Hero', exact: true });
-    if ((await heroTab.count()) > 0) {
-      await heroTab.click();
-    } else {
-      await page.getByRole('tab', { name: 'Character', exact: true }).click();
-    }
+    // The lazy entry can paint after navigation resolves. Let click wait for
+    // Hero rather than treating a transient zero count as an older UI version.
+    await heroTab.click();
     const character = page.getByRole('region', { name: 'Character', exact: true });
     await expect(character).toBeVisible();
 
@@ -103,9 +101,9 @@ for (const vp of CHECK_VIEWPORTS) {
         const style = getComputedStyle(el);
         const temp = document.createElement('div');
         temp.style.color = `var(--rarity-${r})`;
-        document.body.appendChild(temp);
+        el.parentElement!.appendChild(temp);
         const expected = getComputedStyle(temp).color;
-        document.body.removeChild(temp);
+        temp.remove();
         return { borderColor: style.borderTopColor, expectedRarityColor: expected };
       }, rarity);
       expect(borderColor).toBe(expectedRarityColor);
@@ -135,9 +133,9 @@ for (const vp of CHECK_VIEWPORTS) {
       const style = getComputedStyle(el);
       const temp = document.createElement('div');
       temp.style.color = 'var(--surface-2)';
-      document.body.appendChild(temp);
+      el.parentElement!.appendChild(temp);
       const expectedSurface = getComputedStyle(temp).color;
-      document.body.removeChild(temp);
+      temp.remove();
 
       function parseRgb(str: string): [number, number, number] {
         const m = str.match(/rgba?\((\d+),\s*(\d+),\s*(\d+)/);
@@ -213,11 +211,7 @@ test('capture screenshots', async ({ page }) => {
     await page.setViewportSize({ width: vp.w, height: vp.h });
     await page.goto('/');
     const heroTab = page.getByRole('tab', { name: 'Hero', exact: true });
-    if ((await heroTab.count()) > 0) {
-      await heroTab.click();
-    } else {
-      await page.getByRole('tab', { name: 'Character', exact: true }).click();
-    }
+    await heroTab.click();
     await expect(page.getByRole('region', { name: 'Character', exact: true })).toBeVisible();
     if (vp.w > 600) {
       await expect(page.getByRole('tabpanel', { name: 'Hero', exact: true })).toBeVisible();

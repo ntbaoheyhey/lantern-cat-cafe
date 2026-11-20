@@ -1,24 +1,19 @@
-import { StrictMode } from 'react';
-import { createRoot } from 'react-dom/client';
-import { App } from './App';
-import './styles.css';
-import './theme.css';
-import './motion.css';
+import {gameEntry} from './game-entry-loader';
 
-const root = createRoot(document.getElementById('root')!);
-
-// Dev sprite preview at /?dev=sprites, only in dev builds or with VITE_GAME_V2=1. In a normal
-// production build the condition is constant false, so the preview is left out of the bundle.
-if ((import.meta.env.DEV || import.meta.env.VITE_GAME_V2 === '1') && new URLSearchParams(window.location.search).get('dev') === 'sprites') {
-  void import('./dev/SpritePreview').then(({ SpritePreview }) => root.render(<StrictMode><SpritePreview /></StrictMode>));
-} else if ((import.meta.env.DEV || import.meta.env.VITE_GAME_V2 === '1') && new URLSearchParams(window.location.search).get('dev') === 'arena') {
-  void import('./dev/ArenaPreview').then(({ ArenaPreview }) => root.render(<StrictMode><ArenaPreview /></StrictMode>));
-} else if ((import.meta.env.DEV || import.meta.env.VITE_GAME_V2 === '1') && new URLSearchParams(window.location.search).get('dev') === 'art-pilot') {
-  void import('./dev/ArtPilot').then(({ ArtPilot }) => root.render(<StrictMode><ArtPilot /></StrictMode>));
+// Independent entries preserve the established game's CSS evaluation order while
+// keeping its store/API graph out of the local prototype (and vice versa).
+const route=gameEntry(window.location.search);
+if(route.search!==window.location.search)window.history.replaceState(window.history.state,'',window.location.pathname+route.search+window.location.hash);
+if (route.entry!=='legacy') {
+  if (route.entry==='depth') {
+    void import('./game/cardrpg/depth/entry');
+  } else if (route.entry==='cardrpg') {
+    void import('./game/cardrpg/entry');
+  } else if (route.entry==='squad3d') {
+    void import('./game/squad/turn3d/entry');
+  } else {
+    void import('./game/squad/entry');
+  }
 } else {
-  root.render(
-    <StrictMode>
-      <App />
-    </StrictMode>,
-  );
+  void import('./legacy-entry');
 }

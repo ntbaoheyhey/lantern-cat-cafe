@@ -1,0 +1,71 @@
+/* Session B supplies global typography tokens. OFL display face is a scoped fallback. */
+.battle-v3-active{--font-display:"Baloo 2";--font-body:"Baloo 2";--font-num:"Baloo 2"}
+.battle-v3-active .dp-battle,.b3-hud,.b3-hud :is(button,select,dialog){font-family:var(--font-body);font-weight:800}
+.battle-v3-active .uv-app .dp-battle>.dp-arena{inset:0!important}
+.battle-v3-active .dp-world-plate,.battle-v3-active .dp-ultimate-moment,.battle-v3-active .dp-float-number,.battle-v3-active .dp-combo-callout{display:none!important}
+.b3-hud{position:absolute;inset:0;z-index:35;pointer-events:none;color:#fff0ce}
+.b3-hud button,.b3-hud select,.b3-hud dialog,.b3-menu{pointer-events:auto}
+.b3-hud button{color:#ffe9b5;background:linear-gradient(#53403e,#302630);border:1px solid #a37c4e;border-radius:9px;min-height:32px;line-height:1.15;padding:6px 12px;cursor:pointer;box-shadow:inset 0 1px #fff2,0 2px 4px #0004}
+.b3-hud button:focus-visible,.b3-statuses [tabindex]:focus-visible{outline:3px solid #9de6ff;outline-offset:3px}
+.b3-hud button:disabled{opacity:.45;cursor:default}
+.b3-top{position:absolute;inset:0 0 auto;height:44px;display:flex;align-items:center;gap:12px;padding:4px 18px;background:linear-gradient(#332730,#211d29);border-bottom:1px solid #b9915266}
+.b3-round{font-size:10px;letter-spacing:1.5px}.b3-round b{font-family:var(--font-num);font-size:23px;margin-left:8px;letter-spacing:0}.b3-location{margin:auto;font-size:12px;letter-spacing:2px;color:#d9b779}.b3-wave{color:#ffd67b}.b3-top button{width:34px;padding:2px;font-size:20px}
+.b3-bottom{position:absolute;bottom:0;left:0;right:0;height:min(96px,12vh);display:flex;align-items:center;justify-content:space-between;padding:4px 20px;background:transparent;border:0}
+.b3-hud .b3-speed{font-family:var(--font-display);font-size:36px;color:#ffda86;min-width:78px;background:transparent;border:0;box-shadow:none;text-shadow:2px 3px #0007}
+.b3-party{display:flex;gap:14px;position:absolute;left:50%;transform:translateX(-50%);align-items:center}
+.b3-hud button.b3-portrait{position:relative;width:72px;height:80px;padding:0;border:2px solid var(--element);border-radius:9px;overflow:visible;background:#211c2acc;box-shadow:0 3px 9px #0007}
+.b3-portrait img{display:block;width:68px;height:58px;object-fit:cover;object-position:50% 25%;border-radius:6px}
+.b3-name{position:absolute;top:1px;left:3px;font-size:10px;color:white;text-shadow:0 1px 3px #000,1px 0 #000}
+/* Opaque local plaques keep small labels readable over portraits and the scene. */
+.b3-stars{position:absolute;top:45px;left:50%;transform:translateX(-50%);width:max-content;min-width:16px;max-width:100%;padding:0 3px;border-radius:4px;background:#241c2b;font-size:10px;line-height:12px;color:#ffe19a;text-shadow:none}
+.b3-portrait>.b3-hp{width:64px;margin:3px 2px 0}.b3-portrait>.b3-rage{width:64px;margin:3px 2px 0}
+.b3-portrait[data-ready=true]{animation:b3-ready 1.2s ease-in-out infinite;border-color:#ffdf81!important}
+.b3-portrait[data-fallen=true]{filter:grayscale(1) brightness(.48)}
+.b3-queued{position:absolute;top:38px;left:-4px;right:-4px;background:#ffc85e;color:#38291f;font-size:10px;transform:rotate(-8deg)}
+.b3-bottom-actions{display:flex;gap:10px;margin-left:auto}.b3-bottom-actions button{font-size:13px}
+.b3-world{position:fixed;transform:translate(-50%,-100%);width:64px;pointer-events:none;filter:drop-shadow(0 1px 1px #0009)}
+.b3-world-name{display:block;text-align:center;white-space:nowrap;font-size:9px;line-height:11px;text-shadow:0 1px 2px #211823}
+.b3-hp{position:relative;height:7px;width:64px;background:#241c29;box-shadow:0 0 0 1px #3e2a32;overflow:hidden;border-radius:2px}
+.b3-hp i{position:absolute;inset:0 auto 0 0;height:100%}.b3-trail{background:white;transition:width .28s ease}.b3-fill{background:linear-gradient(#b8f19f,#55b276)}.b3-world[data-side=enemy] .b3-fill{background:linear-gradient(#ffc2a5,#e46965)}.b3-shield{background:#e6faff99}
+.b3-rage{position:relative;width:64px;height:3px;background:#251e2a;margin-top:3px;box-shadow:0 0 0 1px #3e2a32;border-radius:2px;overflow:hidden}.b3-rage i{display:block;height:100%;background:linear-gradient(90deg,#d9943f,#ffe191)}
+.b3-statuses{display:flex;justify-content:center;gap:3px;min-height:0;margin-bottom:3px}.b3-statuses span{position:relative;width:18px;height:18px;flex:none;background:#241c2be0;border:1px solid currentColor;border-radius:4px;pointer-events:auto;font-size:10px;text-align:center}.b3-statuses svg{width:16px;height:16px;fill:currentColor;fill-opacity:.3;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}.b3-statuses b{position:absolute;bottom:-4px;right:-3px;min-width:10px;padding:0 2px;border-radius:3px;background:#241c2b;font-size:9px;line-height:11px;color:white;text-shadow:none}
+.b3-total{position:absolute;left:22px;bottom:calc(min(96px,12vh) + 12px);display:flex;gap:18px;align-items:center;min-width:230px;padding:0 38px 0 24px;background:linear-gradient(100deg,#201c2beb,#201c2bce 80%,#201c2b00);clip-path:polygon(5% 0,100% 0,95% 100%,0 100%);font-family:var(--font-display);transform:rotate(-3deg)}
+.b3-total[hidden]{display:none}.b3-total i{font-size:18px;color:#fff0cc}.b3-total b{font-size:42px;color:#ffd57a;text-shadow:2px 3px #57382c}
+.b3-menu{position:absolute;right:15px;top:50px;display:grid;gap:10px;padding:18px;background:#271f2f;border:1px solid #b99152;border-radius:12px;min-width:220px;box-shadow:0 10px 40px #0008}.b3-menu label{display:grid;gap:8px}.b3-menu select{background:#171520;color:#ffe7b4;border:1px solid #8e714e;border-radius:8px;padding:7px}
+.b3-help{max-width:480px;background:#282030;color:#ffe8be;border:1px solid #c9a76d;border-radius:18px;padding:26px}.b3-help::backdrop{background:#110b18bb}
+@keyframes b3-ready{50%{box-shadow:0 0 22px #f9cb77aa,inset 0 0 8px #ffdda6}}
+.b3-hud[data-reduced=true] *{animation:none!important;transition:none!important}
+@media(max-width:700px){.b3-bottom{height:110px;padding:6px 8px}.b3-party{gap:7px}.b3-hud button.b3-portrait{width:60px;height:80px}.b3-portrait img{width:56px;height:56px}.b3-portrait>.b3-hp,.b3-portrait>.b3-rage{width:52px}.b3-stars{top:44px;font-size:8px}.b3-hud .b3-speed{font-size:22px;min-width:38px;padding:0}.b3-bottom-actions{flex-direction:column;gap:6px}.b3-bottom-actions button{font-size:10px;padding:5px}.battle-v3-active .uv-app .dp-battle>.dp-arena{inset:44px 0 110px!important}.b3-location{font-size:9px;letter-spacing:0}.b3-top{padding:4px 8px;gap:6px}}
+.b3-menu .b3-autonext{display:flex;align-items:center;gap:12px}.b3-autonext input{position:static;width:18px;height:18px}
+@media(max-width:700px){
+ .battle-v3-active .uv-app .dp-battle>.dp-arena{top:calc(44px + (100% - 154px - 56.25vw)/2)!important;bottom:auto!important;height:56.25vw!important}
+ .b3-world,.b3-world .b3-hp,.b3-world .b3-rage{width:42px}.b3-world-name{font-size:7px;line-height:8px}.b3-world .b3-hp{height:5px}.b3-statuses{gap:1px;margin-bottom:1px}.b3-statuses span{width:14px;height:14px}.b3-statuses svg{width:12px;height:12px}
+}
+/* Cinematics sit above the field and below the persistent portrait HUD. */
+.b3-cinema{position:absolute;inset:0;pointer-events:none;z-index:20;overflow:hidden}
+.b3-cinema [hidden]{display:none!important}
+.b3-cinema-dim,.b3-cinema-flash{position:absolute;inset:0;background:#090719}
+.b3-cinema-flash{background:white;z-index:4}
+.b3-plate{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#151125}
+.b3-cutin{position:absolute;left:-2%;top:18%;width:96%;height:52%;display:flex;align-items:center;gap:4%;padding:0 10%;box-sizing:border-box;background:repeating-linear-gradient(-12deg,transparent 0 15px,#ffffff18 16px 17px),linear-gradient(105deg,#151125 8%,var(--element),#151125 92%);border-block:3px solid #fff3be;clip-path:polygon(5% 0,100% 0,94% 100%,0 100%);box-shadow:0 0 70px var(--element)}
+.b3-cutin img{height:150%;max-width:44%;object-fit:contain;transform:rotate(-7deg);filter:drop-shadow(0 0 22px #ffedb9)}
+.b3-cutin strong{font-family:var(--font-display);font-size:clamp(28px,4.6vw,68px);line-height:1.05;color:#fff1c5;text-transform:uppercase;font-style:italic;max-width:55%;text-shadow:3px 4px #302137,-2px -2px #302137,0 0 20px #fff2;transform:rotate(-4deg)}
+.b3-skip-plate{position:fixed;right:24px;bottom:132px;z-index:95;border:1px solid #edc77f;background:#241d32e8;color:#fff0c2;padding:8px 18px;border-radius:8px;font-family:var(--font-display)}
+
+.b3-cinema-occludes .b3-world-layer{visibility:hidden}
+
+/* The shared audio controls occupy the upper-right corner of the shell. */
+.battle-v3-active:has(.th-audio) .b3-top{padding-right:112px}
+.battle-v3-active:has(.th-audio) .b3-menu{right:112px}
+@media(max-width:600px){.battle-v3-active:has(.th-audio) .b3-location{display:none}}
+
+.b3-turns{display:flex;gap:4px;max-width:96px}.b3-turns>span{display:grid;place-items:center;width:20px;height:24px;background:#241c27;border:1px solid #ad8a58;border-radius:5px}.b3-turns>span:first-child{border-color:#ffe5a4}.b3-supplies{display:flex;align-items:center;gap:2px;font-size:12px}.b3-rage-target{display:block;min-height:8px}.b3-statuses{min-width:20px;min-height:18px}@media(max-width:600px){.b3-top{gap:6px;padding:4px 8px}.b3-turns{max-width:44px;overflow:hidden;flex-shrink:0}.b3-turns>span{flex-shrink:0}.b3-supplies{gap:0}.b3-top-spacer{min-width:0}}
+
+.b3-turns img{width:18px;height:22px;object-fit:cover;border-radius:4px}
+
+/* In-field ultimate title: fixed camera, local focus. */
+.b3-focus-name {position:absolute;box-sizing:border-box;min-height:38px;display:flex;align-items:center;justify-content:center;padding:7px 12px;border:1px solid var(--element,#f6d7a0);border-radius:8px;background:linear-gradient(100deg,#241c2aee,#463242ee);color:#fff5d9;font:700 16px/1.25 var(--font-display);text-align:center;overflow-wrap:anywhere;text-shadow:0 1px 2px #000;box-shadow:0 2px 12px #0008;}
+.b3-focus-name[hidden]{display:none;}
+.b3-focus-identified{display:grid;grid-template-columns:36px minmax(0,1fr);column-gap:10px;text-align:left;align-items:center}
+.b3-focus-identified>img{width:36px;height:36px;box-sizing:border-box;object-fit:contain;border-radius:8px;border:1px solid var(--element);background:#1b1824}
+.b3-focus-copy{display:flex;flex-direction:column;gap:2px;min-width:0}

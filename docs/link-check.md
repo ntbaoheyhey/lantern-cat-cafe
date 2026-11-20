@@ -101,7 +101,7 @@ The table below lists every broken link, image path, or backticked repository pa
 
 All other links and paths across the documentation suite passed validation:
 1. **Markdown Relative Links (`[text](url)`):**
-   - 100% of relative markdown links point to valid, existing local markdown files (e.g., `docs/contracts.md`, `docs/architecture.md`, `docs/extending.md`, `docs/go-live.md`, `LICENSE`, `../apps/web/src/theme.css`, `../apps/web/src/theme/labels.ts`).
+   - 100% of relative markdown links point to valid, existing local markdown files (e.g., `docs/contracts.md`, `docs/ARCHITECTURE.md`, `docs/extending.md`, `docs/go-live.md`, `LICENSE`, `../apps/web/src/theme.css`, `../apps/web/src/theme/labels.ts`).
    - Anchor fragments (e.g. `#display-names`, `#backend-rules`, `#rotate-the-voucher-signer`) correctly resolve to existing files.
 2. **Image Embeds (`![alt](url)` and `<img src="url">`):**
    - All 80+ documentation screenshots under `docs/screenshots/`, `docs/qa-screenshots/`, `docs/qa-screenshots-2/`, and `docs/qa-screenshots-3/` exist on disk and resolved cleanly.

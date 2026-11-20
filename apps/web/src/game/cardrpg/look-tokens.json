@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "version": 2,
+  "name": "Lantern atelier",
+  "seed": 20261107,
+  "colorSpace": "sRGB",
+  "palette": {
+    "ink": "#172D36",
+    "night": "#102129",
+    "panel": "#233E46",
+    "panelRaised": "#304C53",
+    "cream": "#FFF0D2",
+    "paper": "#E8D7B8",
+    "muted": "#B3C0BA",
+    "honey": "#F3BB61",
+    "amber": "#CF8742",
+    "coral": "#E78570",
+    "mint": "#9CCBB1",
+    "iris": "#B9A5DC",
+    "sky": "#8ABFCB",
+    "wood": "#805A46",
+    "woodLight": "#A27655",
+    "outline": "#28333B",
+    "danger": "#E99488"
+  },
+  "roles": {
+    "background": "night", "surface": "panel", "surfaceRaised": "panelRaised",
+    "text": "cream", "textSecondary": "muted", "focus": "honey",
+    "friendly": "mint", "hostile": "coral", "border": "woodLight"
+  },
+  "rarities": {
+    "common": { "body": "#AFC2BC", "edge": "#E8D7B8", "foil": 0.05 },
+    "rare": { "body": "#80B9C6", "edge": "#CCE8DF", "foil": 0.12 },
+    "epic": { "body": "#B9A5DC", "edge": "#E1D4F2", "foil": 0.2 },
+    "legendary": { "body": "#F3BB61", "edge": "#FFF0D2", "foil": 0.28 }
+  },
+  "chapters": [
+    { "id": 1, "name": "Lantern supper", "shadow": "#233E46", "key": "#FFE2AE", "rim": "#9BCBDA", "accent": "#E78570", "fog": "#233E46", "lut": "supper" },
+    { "id": 2, "name": "Rain conservatory", "shadow": "#233D3B", "key": "#F6E6B8", "rim": "#9ED9CA", "accent": "#B7D393", "fog": "#294844", "lut": "rain" },
+    { "id": 3, "name": "Moon observatory", "shadow": "#34384F", "key": "#F6D7B2", "rim": "#B4BFEF", "accent": "#CCA7CD", "fog": "#30384A", "lut": "moon" }
+  ],
+  "lighting": {
+    "key": { "position": [-4, 7, 5], "color": "#FFE2AE", "intensity": 3.4 },
+    "rim": { "position": [3, 5, -4], "color": "#9BCBDA", "intensity": 2.2 },
+    "fill": { "position": [4, 3, 5], "color": "#BBCDD2", "intensity": 0.65 },
+    "bounce": { "sky": "#EBD9BC", "ground": "#69514A", "intensity": 0.55 },
+    "shadowMap": 2048, "shadowRadius": 4, "contactOpacity": 0.32
+  },
+  "values": { "background": [0.12, 0.32], "body": [0.38, 0.68], "focus": [0.76, 0.94] },
+  "materials": {
+    "fur": { "roughness": 0.86, "metalness": 0, "normalStrength": 0.22, "ramp": [0.38, 0.68, 1.0], "rim": 0.18, "wrap": 0.3 },
+    "cloth": { "roughness": 0.94, "metalness": 0, "normalStrength": 0.3, "ramp": [0.4, 0.72, 1.0], "rim": 0.08, "wrap": 0.15 },
+    "ceramic": { "roughness": 0.24, "metalness": 0, "normalStrength": 0.06 },
+    "wood": { "roughness": 0.65, "metalness": 0, "normalStrength": 0.15 },
+    "glass": { "roughness": 0.1, "metalness": 0, "opacity": 0.24 },
+    "metal": { "roughness": 0.32, "metalness": 0.72, "normalStrength": 0.04 },
+    "paper": { "roughness": 0.92, "metalness": 0, "normalStrength": 0.12 },
+    "yarn": { "roughness": 0.96, "metalness": 0, "normalStrength": 0.36 }
+  },
+  "outline": { "color": "#28333B", "pixelWidth": 1.15, "minPixelWidth": 0.7, "maxPixelWidth": 1.6, "faceWeight": 0.45 },
+  "post": { "bloomThreshold": 1.25, "bloomKnee": 0.35, "bloomStrength": 0.18, "aoRadius": 0.35, "aoStrength": 0.35, "lutSize": 16, "vignette": 0.1, "grain": 0.006, "backgroundBlurPixels": 2.5 },
+  "camera": { "heroHeightFraction": [0.24, 0.30], "headSafeMargin": 0.08, "pitchDegrees": 24, "lensMmEquivalent": 60 },
+  "quality": {
+    "high": { "samples": 4, "ao": true, "dof": true, "bloom": true, "shadows": true },
+    "balanced": { "samples": 2, "ao": false, "dof": false, "bloom": true, "shadows": true },
+    "low": { "samples": 0, "ao": false, "dof": false, "bloom": false, "shadows": false }
+  }
+}

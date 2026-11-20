@@ -1,0 +1,403 @@
+{
+  "version": 1,
+  "id": "soot-2",
+  "name": "Black cup",
+  "owner": "soot",
+  "duration": 1200,
+  "impact": 775,
+  "friendly": false,
+  "phases": [
+    {
+      "name": "anticipation",
+      "start": 0,
+      "end": 600
+    },
+    {
+      "name": "release",
+      "start": 600,
+      "end": 775
+    },
+    {
+      "name": "impact",
+      "start": 775,
+      "end": 875
+    },
+    {
+      "name": "dissipate",
+      "start": 875,
+      "end": 1200
+    }
+  ],
+  "layers": [
+    {
+      "name": "ground-decal",
+      "region": [
+        256,
+        256,
+        256,
+        256
+      ],
+      "anchor": "target",
+      "socket": "feet",
+      "blend": "normal",
+      "start": 735,
+      "end": 1200,
+      "size": 1.4,
+      "ease": "out",
+      "keys": [
+        {
+          "t": 735,
+          "x": 0,
+          "y": 0,
+          "sx": 0.35,
+          "sy": 0.35,
+          "rotate": 0,
+          "alpha": 0
+        },
+        {
+          "t": 840,
+          "x": 0,
+          "y": 0,
+          "sx": 1,
+          "sy": 1,
+          "rotate": 0,
+          "alpha": 0.55
+        },
+        {
+          "t": 1200,
+          "x": 0,
+          "y": 0,
+          "sx": 1.2,
+          "sy": 1.2,
+          "rotate": 0,
+          "alpha": 0
+        }
+      ]
+    },
+    {
+      "name": "charge-glow",
+      "region": [
+        0,
+        0,
+        256,
+        256
+      ],
+      "anchor": "caster",
+      "socket": "mainHand",
+      "blend": "screen",
+      "start": 300,
+      "end": 775,
+      "size": 1.05,
+      "ease": "out",
+      "keys": [
+        {
+          "t": 300,
+          "x": 0,
+          "y": 0,
+          "sx": 0.25,
+          "sy": 0.25,
+          "rotate": 0,
+          "alpha": 0
+        },
+        {
+          "t": 600,
+          "x": 0,
+          "y": 0,
+          "sx": 0.7,
+          "sy": 0.7,
+          "rotate": 0,
+          "alpha": 0.65
+        },
+        {
+          "t": 775,
+          "x": 0,
+          "y": 0,
+          "sx": 1.15,
+          "sy": 1.15,
+          "rotate": 0,
+          "alpha": 0
+        }
+      ]
+    },
+    {
+      "name": "trail-smear",
+      "region": [
+        512,
+        0,
+        256,
+        256
+      ],
+      "anchor": "flight",
+      "socket": "vfxOrigin",
+      "blend": "normal",
+      "start": 600,
+      "end": 925,
+      "size": 1.3,
+      "ease": "out",
+      "keys": [
+        {
+          "t": 600,
+          "x": -0.1,
+          "y": 0.04,
+          "sx": 0.5,
+          "sy": 0.5,
+          "rotate": -0.18,
+          "alpha": 0
+        },
+        {
+          "t": 740,
+          "x": 0,
+          "y": 0,
+          "sx": 1,
+          "sy": 1,
+          "rotate": 0,
+          "alpha": 0.8
+        },
+        {
+          "t": 925,
+          "x": 0.08,
+          "y": -0.04,
+          "sx": 1.25,
+          "sy": 1.1,
+          "rotate": 0.12,
+          "alpha": 0
+        }
+      ]
+    },
+    {
+      "name": "core-shape",
+      "region": [
+        256,
+        0,
+        256,
+        256
+      ],
+      "anchor": "flight",
+      "socket": "vfxOrigin",
+      "blend": "normal",
+      "start": 600,
+      "end": 975,
+      "size": 1.45,
+      "ease": "out",
+      "keys": [
+        {
+          "t": 600,
+          "x": -0.12,
+          "y": 0.1,
+          "sx": 0.55,
+          "sy": 0.55,
+          "rotate": -0.4,
+          "alpha": 0
+        },
+        {
+          "t": 759,
+          "x": 0,
+          "y": 0,
+          "sx": 1,
+          "sy": 1,
+          "rotate": 0,
+          "alpha": 1
+        },
+        {
+          "t": 850,
+          "x": 0.08,
+          "y": 0.03,
+          "sx": 1.12,
+          "sy": 1,
+          "rotate": 0.28,
+          "alpha": 0.95
+        },
+        {
+          "t": 975,
+          "x": 0.14,
+          "y": 0.13,
+          "sx": 1.2,
+          "sy": 0.8,
+          "rotate": 0.55,
+          "alpha": 0
+        }
+      ]
+    },
+    {
+      "name": "impact-burst",
+      "region": [
+        768,
+        0,
+        256,
+        256
+      ],
+      "anchor": "target",
+      "socket": "vfxOrigin",
+      "blend": "normal",
+      "start": 775,
+      "end": 1015,
+      "size": 1.12,
+      "ease": "out",
+      "keys": [
+        {
+          "t": 775,
+          "x": 0,
+          "y": 0,
+          "sx": 0.4,
+          "sy": 0.4,
+          "rotate": 0,
+          "alpha": 0
+        },
+        {
+          "t": 810,
+          "x": 0,
+          "y": 0,
+          "sx": 1,
+          "sy": 1,
+          "rotate": 0,
+          "alpha": 1
+        },
+        {
+          "t": 1015,
+          "x": 0.05,
+          "y": 0.03,
+          "sx": 1.18,
+          "sy": 1.1,
+          "rotate": 0,
+          "alpha": 0
+        }
+      ]
+    },
+    {
+      "name": "screen-flash",
+      "region": [
+        512,
+        256,
+        256,
+        256
+      ],
+      "anchor": "target",
+      "socket": "vfxOrigin",
+      "blend": "screen",
+      "start": 775,
+      "end": 845,
+      "size": 0.9,
+      "ease": "out",
+      "keys": [
+        {
+          "t": 775,
+          "x": 0,
+          "y": 0,
+          "sx": 0.5,
+          "sy": 0.5,
+          "rotate": 0,
+          "alpha": 0
+        },
+        {
+          "t": 791,
+          "x": 0,
+          "y": 0,
+          "sx": 1,
+          "sy": 1,
+          "rotate": 0,
+          "alpha": 0.65
+        },
+        {
+          "t": 845,
+          "x": 0,
+          "y": 0,
+          "sx": 1.1,
+          "sy": 1.1,
+          "rotate": 0,
+          "alpha": 0
+        }
+      ],
+      "flash": true
+    },
+    {
+      "name": "sparks",
+      "region": [
+        0,
+        256,
+        256,
+        256
+      ],
+      "anchor": "target",
+      "socket": "vfxOrigin",
+      "blend": "normal",
+      "start": 795,
+      "end": 1160,
+      "size": 1.25,
+      "ease": "out",
+      "keys": [
+        {
+          "t": 795,
+          "x": 0,
+          "y": 0,
+          "sx": 0.45,
+          "sy": 0.45,
+          "rotate": 0,
+          "alpha": 0
+        },
+        {
+          "t": 840,
+          "x": 0,
+          "y": 0,
+          "sx": 0.8,
+          "sy": 0.8,
+          "rotate": 0,
+          "alpha": 0.9
+        },
+        {
+          "t": 1160,
+          "x": 0.05,
+          "y": -0.12,
+          "sx": 1.1,
+          "sy": 1.1,
+          "rotate": 0.3,
+          "alpha": 0
+        }
+      ]
+    },
+    {
+      "name": "residue",
+      "region": [
+        768,
+        256,
+        256,
+        256
+      ],
+      "anchor": "target",
+      "socket": "vfxOrigin",
+      "blend": "normal",
+      "start": 875,
+      "end": 1200,
+      "size": 1.2,
+      "ease": "out",
+      "keys": [
+        {
+          "t": 875,
+          "x": 0,
+          "y": 0,
+          "sx": 0.7,
+          "sy": 0.7,
+          "rotate": 0,
+          "alpha": 0
+        },
+        {
+          "t": 955,
+          "x": 0,
+          "y": 0,
+          "sx": 1,
+          "sy": 1,
+          "rotate": 0,
+          "alpha": 0.55
+        },
+        {
+          "t": 1200,
+          "x": 0.08,
+          "y": -0.18,
+          "sx": 1.15,
+          "sy": 1.15,
+          "rotate": 0.2,
+          "alpha": 0
+        }
+      ]
+    }
+  ]
+}

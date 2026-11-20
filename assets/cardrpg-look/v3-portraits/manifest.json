@@ -1,0 +1,4823 @@
+{
+  "version": 4,
+  "style": "Painted night cafe",
+  "pathBase": "repository-root",
+  "enabledBy": "lookV2 && lookArt=v3; A6 owns UI adoption",
+  "status": "READY_PUPPET_REVIEWED",
+  "portraits": {
+    "mochi": {
+      "id": "mochi",
+      "side": "cat",
+      "portrait": {
+        "1x": "assets/cardrpg-look/v3-portraits/mochi-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/mochi-2x.webp",
+        "display": [
+          256,
+          320
+        ],
+        "sizes": [
+          [
+            256,
+            320
+          ],
+          [
+            512,
+            640
+          ]
+        ]
+      },
+      "provenance": {
+        "source": "assets/source/look-v3/concepts/mochi.png",
+        "sourceSha256": "678241f78c41b3ee88d71498cd4eb50847866021565df8a46c61c1efc6b9fdd8",
+        "crop": [
+          -48,
+          -72,
+          1246,
+          1545
+        ],
+        "method": "Original master crop, alpha composite on authored cafe gradient, Lanczos downsample, WebP92",
+        "deliveredSha256": {
+          "1x": "6088d17f5509ec92631ad403708ebfff95748dcf71b344dce9fa17692d52924a",
+          "2x": "0f69aaa83c47d3334d03ac45dd5ac8e35520fff93a5751f64fb051bc9ee3a3e3"
+        }
+      },
+      "uiPortrait": {
+        "compact": "assets/cardrpg-look/v3-portraits/mochi-ui-56.webp",
+        "1x": "assets/cardrpg-look/v3-portraits/mochi-ui-72.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/mochi-ui-144.webp",
+        "display": [
+          72,
+          72
+        ],
+        "sizes": [
+          [
+            56,
+            56
+          ],
+          [
+            72,
+            72
+          ],
+          [
+            144,
+            144
+          ]
+        ],
+        "usage": "Square face crop for formation/tower slots; object-fit:cover; original card portrait remains available",
+        "provenance": {
+          "source": "assets/source/look-v3/concepts/mochi.png",
+          "sourceSha256": "678241f78c41b3ee88d71498cd4eb50847866021565df8a46c61c1efc6b9fdd8",
+          "crop": [
+            219,
+            -92,
+            979,
+            669
+          ],
+          "method": "Authored face ROI, original alpha composited on cafe colour, Lanczos, WebP92",
+          "author": "tools/cardrpg-look/art-rebuild/pack-ui-portraits.py",
+          "deliveredSha256": {
+            "56": "0037d4f84a482e266b0bb885fe9ae95545371ab0929234b7dc61814241e4a55d",
+            "72": "2794597da145fa6ab87c953a589913325837efddd5462f6f838bdfe4b44ac644",
+            "144": "6cb605d1266da2de45daa2f273b7051e0c27060e9639473b70013b6a15d7004f"
+          }
+        }
+      },
+      "cardArt": {
+        "1x": "assets/cardrpg-look/v3-portraits/mochi-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/mochi-2x.webp",
+        "display": [
+          256,
+          320
+        ],
+        "sizes": [
+          [
+            256,
+            320
+          ],
+          [
+            512,
+            640
+          ]
+        ],
+        "usage": "Full-body recruitment and collection card"
+      },
+      "headPortrait": {
+        "1x": "assets/cardrpg-look/v3-portraits/mochi-head-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/mochi-head-2x.webp",
+        "display": [
+          160,
+          176
+        ],
+        "provenance": {
+          "source": "assets/source/look-v3/concepts/mochi.png",
+          "crop": [
+            168,
+            -20,
+            1007,
+            904
+          ],
+          "method": "Original concept crop, authored cafe background, Lanczos/WebP92",
+          "tool": "tools/cardrpg-look/art-rebuild/puppet/publish-manifest.py"
+        }
+      },
+      "faceIcon": {
+        "1x": "assets/cardrpg-look/v3-portraits/mochi-face-72.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/mochi-face-144.webp",
+        "display": [
+          72,
+          72
+        ],
+        "usage": "Round face icon; transparent outside circle",
+        "provenance": {
+          "source": "assets/cardrpg-look/v3-portraits/mochi-ui-144.webp",
+          "method": "Circular alpha mask on the accepted original face crop; no new generation",
+          "tool": "tools/cardrpg-look/art-rebuild/puppet/publish-manifest.py"
+        }
+      },
+      "puppet": {
+        "rig": "assets/cardrpg-look/v3-puppets/mochi.rig.json",
+        "atlas": "assets/cardrpg-look/v3-puppets/mochi.webp",
+        "motions": [
+          "idle",
+          "attack",
+          "cast",
+          "hurt",
+          "ultimate",
+          "victory",
+          "defeat"
+        ]
+      },
+      "review": "P4/P5 original-concept puppet accepted by Lane B self-review"
+    },
+    "soot": {
+      "id": "soot",
+      "side": "cat",
+      "portrait": {
+        "1x": "assets/cardrpg-look/v3-portraits/soot-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/soot-2x.webp",
+        "display": [
+          256,
+          320
+        ],
+        "sizes": [
+          [
+            256,
+            320
+          ],
+          [
+            512,
+            640
+          ]
+        ]
+      },
+      "provenance": {
+        "source": "assets/source/look-v3/concepts/soot.png",
+        "sourceSha256": "5f50d32658f429991a2903760fc58fed365acea4f73e79ab5b3aaa6cd99e1c84",
+        "crop": [
+          -47,
+          -49,
+          1221,
+          1536
+        ],
+        "method": "Original master crop, alpha composite on authored cafe gradient, Lanczos downsample, WebP92",
+        "deliveredSha256": {
+          "1x": "fa98eb26b34c5312cb6791a16bc1244bd343301ac320a003fbec566cd91adc94",
+          "2x": "f43f501f34acaeb658fbb33d6215a6adea59b38a81eda66307bd44a2d79f37a9"
+        }
+      },
+      "uiPortrait": {
+        "compact": "assets/cardrpg-look/v3-portraits/soot-ui-56.webp",
+        "1x": "assets/cardrpg-look/v3-portraits/soot-ui-72.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/soot-ui-144.webp",
+        "display": [
+          72,
+          72
+        ],
+        "sizes": [
+          [
+            56,
+            56
+          ],
+          [
+            72,
+            72
+          ],
+          [
+            144,
+            144
+          ]
+        ],
+        "usage": "Square face crop for formation/tower slots; object-fit:cover; original card portrait remains available",
+        "provenance": {
+          "source": "assets/source/look-v3/concepts/soot.png",
+          "sourceSha256": "5f50d32658f429991a2903760fc58fed365acea4f73e79ab5b3aaa6cd99e1c84",
+          "crop": [
+            309,
+            49,
+            935,
+            675
+          ],
+          "method": "Authored face ROI, original alpha composited on cafe colour, Lanczos, WebP92",
+          "author": "tools/cardrpg-look/art-rebuild/pack-ui-portraits.py",
+          "deliveredSha256": {
+            "56": "47f65eae1f5c17f0b1e7fd161aaed67993ae5f350e50e2582eb08dec6077296c",
+            "72": "89048f1703c834347a3b9b09fe9b31c88b296f1f595fb455b0b75590bb4f7d77",
+            "144": "a56a64c61e27e1addb013ca92b4bfde6996770bbc86b23bdb11ecf931a9e4e80"
+          }
+        }
+      },
+      "cardArt": {
+        "1x": "assets/cardrpg-look/v3-portraits/soot-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/soot-2x.webp",
+        "display": [
+          256,
+          320
+        ],
+        "sizes": [
+          [
+            256,
+            320
+          ],
+          [
+            512,
+            640
+          ]
+        ],
+        "usage": "Full-body recruitment and collection card"
+      },
+      "headPortrait": {
+        "1x": "assets/cardrpg-look/v3-portraits/soot-head-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/soot-head-2x.webp",
+        "display": [
+          160,
+          176
+        ],
+        "provenance": {
+          "source": "assets/source/look-v3/concepts/soot.png",
+          "crop": [
+            213,
+            3,
+            1044,
+            916
+          ],
+          "method": "Original concept crop, authored cafe background, Lanczos/WebP92",
+          "tool": "tools/cardrpg-look/art-rebuild/puppet/publish-manifest.py"
+        }
+      },
+      "faceIcon": {
+        "1x": "assets/cardrpg-look/v3-portraits/soot-face-72.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/soot-face-144.webp",
+        "display": [
+          72,
+          72
+        ],
+        "usage": "Round face icon; transparent outside circle",
+        "provenance": {
+          "source": "assets/cardrpg-look/v3-portraits/soot-ui-144.webp",
+          "method": "Circular alpha mask on the accepted original face crop; no new generation",
+          "tool": "tools/cardrpg-look/art-rebuild/puppet/publish-manifest.py"
+        }
+      },
+      "puppet": {
+        "rig": "assets/cardrpg-look/v3-puppets/soot.rig.json",
+        "atlas": "assets/cardrpg-look/v3-puppets/soot.webp",
+        "motions": [
+          "idle",
+          "attack",
+          "cast",
+          "hurt",
+          "ultimate",
+          "victory",
+          "defeat"
+        ]
+      },
+      "review": "P4/P5 original-concept puppet accepted by Lane B self-review"
+    },
+    "clover": {
+      "id": "clover",
+      "side": "cat",
+      "portrait": {
+        "1x": "assets/cardrpg-look/v3-portraits/clover-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/clover-2x.webp",
+        "display": [
+          256,
+          320
+        ],
+        "sizes": [
+          [
+            256,
+            320
+          ],
+          [
+            512,
+            640
+          ]
+        ]
+      },
+      "provenance": {
+        "source": "assets/source/look-v3/concepts/clover.png",
+        "sourceSha256": "d1d1305b5b63c4acb4ff543fd0745576f184b868fb85361fd2d93c825a26b7c3",
+        "crop": [
+          70,
+          35,
+          1176,
+          1417
+        ],
+        "method": "Original master crop, alpha composite on authored cafe gradient, Lanczos downsample, WebP92",
+        "deliveredSha256": {
+          "1x": "cef6e1c41bff1b737c430d1b9d00675b81e39ef76a5fd57f72bbbda1e5910fa6",
+          "2x": "5ed423891ffc69279a9cee2131658c7dc7cb42676624836ab8b56c9484590374"
+        }
+      },
+      "uiPortrait": {
+        "compact": "assets/cardrpg-look/v3-portraits/clover-ui-56.webp",
+        "1x": "assets/cardrpg-look/v3-portraits/clover-ui-72.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/clover-ui-144.webp",
+        "display": [
+          72,
+          72
+        ],
+        "sizes": [
+          [
+            56,
+            56
+          ],
+          [
+            72,
+            72
+          ],
+          [
+            144,
+            144
+          ]
+        ],
+        "usage": "Square face crop for formation/tower slots; object-fit:cover; original card portrait remains available",
+        "provenance": {
+          "source": "assets/source/look-v3/concepts/clover.png",
+          "sourceSha256": "d1d1305b5b63c4acb4ff543fd0745576f184b868fb85361fd2d93c825a26b7c3",
+          "crop": [
+            222,
+            -27,
+            1024,
+            774
+          ],
+          "method": "Authored face ROI, original alpha composited on cafe colour, Lanczos, WebP92",
+          "author": "tools/cardrpg-look/art-rebuild/pack-ui-portraits.py",
+          "deliveredSha256": {
+            "56": "3cd355f65c752e4985be1b5e7c514d59a3d8dadbfce3f994e60a537c782f4241",
+            "72": "2a6753f758277d2371220eb258b24c822ca8035239b8075e106e7337677218a4",
+            "144": "89d238a959aeba0a77ddd619f9a01ad59c61041cae108eee62ab06f9a93037ae"
+          }
+        }
+      },
+      "cardArt": {
+        "1x": "assets/cardrpg-look/v3-portraits/clover-card-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/clover-card-2x.webp",
+        "display": [
+          256,
+          320
+        ],
+        "sizes": [
+          [
+            256,
+            320
+          ],
+          [
+            512,
+            640
+          ]
+        ],
+        "usage": "Full-body recruitment and collection card",
+        "provenance": {
+          "source": "assets/source/look-v3/concepts/clover.png",
+          "alphaBounds": [
+            111,
+            111,
+            1135,
+            1493
+          ],
+          "method": "Complete original alpha bounds fitted into512x640 with breathing room; Lanczos/WebP92",
+          "tool": "tools/cardrpg-look/art-rebuild/puppet/publish-manifest.py"
+        }
+      },
+      "headPortrait": {
+        "1x": "assets/cardrpg-look/v3-portraits/clover-head-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/clover-head-2x.webp",
+        "display": [
+          160,
+          176
+        ],
+        "provenance": {
+          "source": "assets/source/look-v3/concepts/clover.png",
+          "crop": [
+            207,
+            87,
+            1089,
+            1057
+          ],
+          "method": "Original concept crop, authored cafe background, Lanczos/WebP92",
+          "tool": "tools/cardrpg-look/art-rebuild/puppet/publish-manifest.py"
+        }
+      },
+      "faceIcon": {
+        "1x": "assets/cardrpg-look/v3-portraits/clover-face-72.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/clover-face-144.webp",
+        "display": [
+          72,
+          72
+        ],
+        "usage": "Round face icon; transparent outside circle",
+        "provenance": {
+          "source": "assets/cardrpg-look/v3-portraits/clover-ui-144.webp",
+          "method": "Circular alpha mask on the accepted original face crop; no new generation",
+          "tool": "tools/cardrpg-look/art-rebuild/puppet/publish-manifest.py"
+        }
+      },
+      "puppet": {
+        "rig": "assets/cardrpg-look/v3-puppets/clover.rig.json",
+        "atlas": "assets/cardrpg-look/v3-puppets/clover.webp",
+        "motions": [
+          "idle",
+          "attack",
+          "cast",
+          "hurt",
+          "ultimate",
+          "victory",
+          "defeat"
+        ]
+      },
+      "review": "P4/P5 original-concept puppet accepted by Lane B self-review"
+    },
+    "panko": {
+      "id": "panko",
+      "side": "cat",
+      "portrait": {
+        "1x": "assets/cardrpg-look/v3-portraits/panko-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/panko-2x.webp",
+        "display": [
+          256,
+          320
+        ],
+        "sizes": [
+          [
+            256,
+            320
+          ],
+          [
+            512,
+            640
+          ]
+        ]
+      },
+      "provenance": {
+        "source": "assets/source/look-v3/concepts/panko.png",
+        "sourceSha256": "4fd72fa7121f735a2ea4bc714e07eed3e298436b0d979536f2e372dba5fa7c49",
+        "crop": [
+          59,
+          33,
+          1308,
+          1595
+        ],
+        "method": "Original master crop, alpha composite on authored cafe gradient, Lanczos downsample, WebP92",
+        "deliveredSha256": {
+          "1x": "e02ccb7574df7fd1f68300da34478a3b745ab989d0b62e8a6bc54d57d66b50ac",
+          "2x": "3c5a5fe8be95063c2ce677ef3115fe0c69f5b34ae43ba9a7d6399bf0a4b2fa37"
+        }
+      },
+      "uiPortrait": {
+        "compact": "assets/cardrpg-look/v3-portraits/panko-ui-56.webp",
+        "1x": "assets/cardrpg-look/v3-portraits/panko-ui-72.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/panko-ui-144.webp",
+        "display": [
+          72,
+          72
+        ],
+        "sizes": [
+          [
+            56,
+            56
+          ],
+          [
+            72,
+            72
+          ],
+          [
+            144,
+            144
+          ]
+        ],
+        "usage": "Square face crop for formation/tower slots; object-fit:cover; original card portrait remains available",
+        "provenance": {
+          "source": "assets/source/look-v3/concepts/panko.png",
+          "sourceSha256": "4fd72fa7121f735a2ea4bc714e07eed3e298436b0d979536f2e372dba5fa7c49",
+          "crop": [
+            259,
+            -32,
+            1108,
+            817
+          ],
+          "method": "Authored face ROI, original alpha composited on cafe colour, Lanczos, WebP92",
+          "author": "tools/cardrpg-look/art-rebuild/pack-ui-portraits.py",
+          "deliveredSha256": {
+            "56": "eb5ab0087e804d0feabf9e134cc2c69f621e51bd3b7df71160b1c2aacea16167",
+            "72": "d970812444cdcdabd35ba20b0c9c1cf2b499abc46887e0f04a497f415f4abc65",
+            "144": "427753bce6fe74adcad694a45ba5068f92e80eb31d2a12cb6bf70e340c3338cf"
+          }
+        }
+      },
+      "cardArt": {
+        "1x": "assets/cardrpg-look/v3-portraits/panko-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/panko-2x.webp",
+        "display": [
+          256,
+          320
+        ],
+        "sizes": [
+          [
+            256,
+            320
+          ],
+          [
+            512,
+            640
+          ]
+        ],
+        "usage": "Full-body recruitment and collection card"
+      },
+      "headPortrait": {
+        "1x": "assets/cardrpg-look/v3-portraits/panko-head-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/panko-head-2x.webp",
+        "display": [
+          160,
+          176
+        ],
+        "provenance": {
+          "source": "assets/source/look-v3/concepts/panko.png",
+          "crop": [
+            219,
+            82,
+            1176,
+            1135
+          ],
+          "method": "Original concept crop, authored cafe background, Lanczos/WebP92",
+          "tool": "tools/cardrpg-look/art-rebuild/puppet/publish-manifest.py"
+        }
+      },
+      "faceIcon": {
+        "1x": "assets/cardrpg-look/v3-portraits/panko-face-72.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/panko-face-144.webp",
+        "display": [
+          72,
+          72
+        ],
+        "usage": "Round face icon; transparent outside circle",
+        "provenance": {
+          "source": "assets/cardrpg-look/v3-portraits/panko-ui-144.webp",
+          "method": "Circular alpha mask on the accepted original face crop; no new generation",
+          "tool": "tools/cardrpg-look/art-rebuild/puppet/publish-manifest.py"
+        }
+      },
+      "puppet": {
+        "rig": "assets/cardrpg-look/v3-puppets/panko.rig.json",
+        "atlas": "assets/cardrpg-look/v3-puppets/panko.webp",
+        "motions": [
+          "idle",
+          "attack",
+          "cast",
+          "hurt",
+          "ultimate",
+          "victory",
+          "defeat"
+        ]
+      },
+      "review": "P4/P5 original-concept puppet accepted by Lane B self-review"
+    },
+    "mallow": {
+      "id": "mallow",
+      "side": "cat",
+      "portrait": {
+        "1x": "assets/cardrpg-look/v3-portraits/mallow-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/mallow-2x.webp",
+        "display": [
+          256,
+          320
+        ],
+        "sizes": [
+          [
+            256,
+            320
+          ],
+          [
+            512,
+            640
+          ]
+        ]
+      },
+      "provenance": {
+        "source": "assets/source/look-v3/concepts/mallow.png",
+        "sourceSha256": "5dfb81646d8154018f5cb2526fb3fdb2d48330d084c780134835225bac5aa478",
+        "crop": [
+          56,
+          32,
+          1346,
+          1644
+        ],
+        "method": "Original master crop, alpha composite on authored cafe gradient, Lanczos downsample, WebP92",
+        "deliveredSha256": {
+          "1x": "1e8cdcaac5cd2ec0ea150d3704e1b924d460546b17677de8ac11a4760db5c2dd",
+          "2x": "0a4a5707c3b4f868e2c16b0ed792e2308f3a76f4038a4f25a8e591921d8cea01"
+        }
+      },
+      "uiPortrait": {
+        "compact": "assets/cardrpg-look/v3-portraits/mallow-ui-56.webp",
+        "1x": "assets/cardrpg-look/v3-portraits/mallow-ui-72.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/mallow-ui-144.webp",
+        "display": [
+          72,
+          72
+        ],
+        "sizes": [
+          [
+            56,
+            56
+          ],
+          [
+            72,
+            72
+          ],
+          [
+            144,
+            144
+          ]
+        ],
+        "usage": "Square face crop for formation/tower slots; object-fit:cover; original card portrait remains available",
+        "provenance": {
+          "source": "assets/source/look-v3/concepts/mallow.png",
+          "sourceSha256": "5dfb81646d8154018f5cb2526fb3fdb2d48330d084c780134835225bac5aa478",
+          "crop": [
+            334,
+            -13,
+            1140,
+            794
+          ],
+          "method": "Authored face ROI, original alpha composited on cafe colour, Lanczos, WebP92",
+          "author": "tools/cardrpg-look/art-rebuild/pack-ui-portraits.py",
+          "deliveredSha256": {
+            "56": "16a2aae445d04b2468b381ba97e8cfcbb040e8f2c4ffbd688dffa640be7e4eae",
+            "72": "7c285c38fa1b5ff233649f6502ee542bae73ef5cd4821529d14be560fa17afd7",
+            "144": "dff0834bb199ab3851c5a1956df20f5f81764cbdd633cd2cc202f7547ed3586f"
+          }
+        }
+      },
+      "cardArt": {
+        "1x": "assets/cardrpg-look/v3-portraits/mallow-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/mallow-2x.webp",
+        "display": [
+          256,
+          320
+        ],
+        "sizes": [
+          [
+            256,
+            320
+          ],
+          [
+            512,
+            640
+          ]
+        ],
+        "usage": "Full-body recruitment and collection card"
+      },
+      "headPortrait": {
+        "1x": "assets/cardrpg-look/v3-portraits/mallow-head-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/mallow-head-2x.webp",
+        "display": [
+          160,
+          176
+        ],
+        "provenance": {
+          "source": "assets/source/look-v3/concepts/mallow.png",
+          "crop": [
+            210,
+            81,
+            1192,
+            1161
+          ],
+          "method": "Original concept crop, authored cafe background, Lanczos/WebP92",
+          "tool": "tools/cardrpg-look/art-rebuild/puppet/publish-manifest.py"
+        }
+      },
+      "faceIcon": {
+        "1x": "assets/cardrpg-look/v3-portraits/mallow-face-72.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/mallow-face-144.webp",
+        "display": [
+          72,
+          72
+        ],
+        "usage": "Round face icon; transparent outside circle",
+        "provenance": {
+          "source": "assets/cardrpg-look/v3-portraits/mallow-ui-144.webp",
+          "method": "Circular alpha mask on the accepted original face crop; no new generation",
+          "tool": "tools/cardrpg-look/art-rebuild/puppet/publish-manifest.py"
+        }
+      },
+      "puppet": {
+        "rig": "assets/cardrpg-look/v3-puppets/mallow.rig.json",
+        "atlas": "assets/cardrpg-look/v3-puppets/mallow.webp",
+        "motions": [
+          "idle",
+          "attack",
+          "cast",
+          "hurt",
+          "ultimate",
+          "victory",
+          "defeat"
+        ]
+      },
+      "review": "P4/P5 original-concept puppet accepted by Lane B self-review"
+    },
+    "cinnamon": {
+      "id": "cinnamon",
+      "side": "cat",
+      "portrait": {
+        "1x": "assets/cardrpg-look/v3-portraits/cinnamon-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/cinnamon-2x.webp",
+        "display": [
+          256,
+          320
+        ],
+        "sizes": [
+          [
+            256,
+            320
+          ],
+          [
+            512,
+            640
+          ]
+        ]
+      },
+      "provenance": {
+        "source": "assets/source/look-v3/concepts/cinnamon.png",
+        "sourceSha256": "8445a0bc9af11304c20f6cdc689d6dccdde35e01556079058a575a899c82be53",
+        "crop": [
+          65,
+          33,
+          1127,
+          1361
+        ],
+        "method": "Original master crop, alpha composite on authored cafe gradient, Lanczos downsample, WebP92",
+        "deliveredSha256": {
+          "1x": "9ed1e3de7a8b5cd1379da049edb2d361b6aa5e8fe4d6e7477bc977649ad06f95",
+          "2x": "3ce81de54478c64194c09061bc739ed6107678cec50e31308bf9772bbab756be"
+        }
+      },
+      "uiPortrait": {
+        "compact": "assets/cardrpg-look/v3-portraits/cinnamon-ui-56.webp",
+        "1x": "assets/cardrpg-look/v3-portraits/cinnamon-ui-72.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/cinnamon-ui-144.webp",
+        "display": [
+          72,
+          72
+        ],
+        "sizes": [
+          [
+            56,
+            56
+          ],
+          [
+            72,
+            72
+          ],
+          [
+            144,
+            144
+          ]
+        ],
+        "usage": "Square face crop for formation/tower slots; object-fit:cover; original card portrait remains available",
+        "provenance": {
+          "source": "assets/source/look-v3/concepts/cinnamon.png",
+          "sourceSha256": "8445a0bc9af11304c20f6cdc689d6dccdde35e01556079058a575a899c82be53",
+          "crop": [
+            194,
+            26,
+            998,
+            831
+          ],
+          "method": "Authored face ROI, original alpha composited on cafe colour, Lanczos, WebP92",
+          "author": "tools/cardrpg-look/art-rebuild/pack-ui-portraits.py",
+          "deliveredSha256": {
+            "56": "e4d28e8aadc7340af0c3cc29fc1d69ef8a4d74b87c30abd4c320c67d31e79194",
+            "72": "6db3576151bb830d70bd425ed50c0f3f9d5530cc9cf78e285960d042cd5cbfab",
+            "144": "e5ab1004700a3f4dab58c5d3ef06ee73e700df7f5d87db8154562e6052017b3b"
+          }
+        }
+      },
+      "cardArt": {
+        "1x": "assets/cardrpg-look/v3-portraits/cinnamon-card-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/cinnamon-card-2x.webp",
+        "display": [
+          256,
+          320
+        ],
+        "sizes": [
+          [
+            256,
+            320
+          ],
+          [
+            512,
+            640
+          ]
+        ],
+        "usage": "Full-body recruitment and collection card",
+        "provenance": {
+          "source": "assets/source/look-v3/concepts/cinnamon.png",
+          "alphaBounds": [
+            104,
+            104,
+            1088,
+            1402
+          ],
+          "method": "Complete original alpha bounds fitted into512x640 with breathing room; Lanczos/WebP92",
+          "tool": "tools/cardrpg-look/art-rebuild/puppet/publish-manifest.py"
+        }
+      },
+      "headPortrait": {
+        "1x": "assets/cardrpg-look/v3-portraits/cinnamon-head-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/cinnamon-head-2x.webp",
+        "display": [
+          160,
+          176
+        ],
+        "provenance": {
+          "source": "assets/source/look-v3/concepts/cinnamon.png",
+          "crop": [
+            238,
+            81,
+            1073,
+            999
+          ],
+          "method": "Original concept crop, authored cafe background, Lanczos/WebP92",
+          "tool": "tools/cardrpg-look/art-rebuild/puppet/publish-manifest.py"
+        }
+      },
+      "faceIcon": {
+        "1x": "assets/cardrpg-look/v3-portraits/cinnamon-face-72.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/cinnamon-face-144.webp",
+        "display": [
+          72,
+          72
+        ],
+        "usage": "Round face icon; transparent outside circle",
+        "provenance": {
+          "source": "assets/cardrpg-look/v3-portraits/cinnamon-ui-144.webp",
+          "method": "Circular alpha mask on the accepted original face crop; no new generation",
+          "tool": "tools/cardrpg-look/art-rebuild/puppet/publish-manifest.py"
+        }
+      },
+      "puppet": {
+        "rig": "assets/cardrpg-look/v3-puppets/cinnamon.rig.json",
+        "atlas": "assets/cardrpg-look/v3-puppets/cinnamon.webp",
+        "motions": [
+          "idle",
+          "attack",
+          "cast",
+          "hurt",
+          "ultimate",
+          "victory",
+          "defeat"
+        ]
+      },
+      "review": "P4/P5 original-concept puppet accepted by Lane B self-review"
+    },
+    "velvet": {
+      "id": "velvet",
+      "side": "cat",
+      "portrait": {
+        "1x": "assets/cardrpg-look/v3-portraits/velvet-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/velvet-2x.webp",
+        "display": [
+          256,
+          320
+        ],
+        "sizes": [
+          [
+            256,
+            320
+          ],
+          [
+            512,
+            640
+          ]
+        ]
+      },
+      "provenance": {
+        "source": "assets/source/look-v3/concepts/velvet.png",
+        "sourceSha256": "5ea9a2cbbc88b1a73a08043dbb6f04c9cd610bd900b8cb7523dc330ba7f8991d",
+        "crop": [
+          55,
+          31,
+          1302,
+          1591
+        ],
+        "method": "Original master crop, alpha composite on authored cafe gradient, Lanczos downsample, WebP92",
+        "deliveredSha256": {
+          "1x": "ead711e59b9978714637145a22fb7f9b480c954df7c4d59183102675872e8705",
+          "2x": "2102030d664b57a9006b47c0ed7621b2cda09e18a4b5ed03879aeafc3394c63d"
+        }
+      },
+      "uiPortrait": {
+        "compact": "assets/cardrpg-look/v3-portraits/velvet-ui-56.webp",
+        "1x": "assets/cardrpg-look/v3-portraits/velvet-ui-72.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/velvet-ui-144.webp",
+        "display": [
+          72,
+          72
+        ],
+        "sizes": [
+          [
+            56,
+            56
+          ],
+          [
+            72,
+            72
+          ],
+          [
+            144,
+            144
+          ]
+        ],
+        "usage": "Square face crop for formation/tower slots; object-fit:cover; original card portrait remains available",
+        "provenance": {
+          "source": "assets/source/look-v3/concepts/velvet.png",
+          "sourceSha256": "5ea9a2cbbc88b1a73a08043dbb6f04c9cd610bd900b8cb7523dc330ba7f8991d",
+          "crop": [
+            385,
+            63,
+            1019,
+            697
+          ],
+          "method": "Authored face ROI, original alpha composited on cafe colour, Lanczos, WebP92",
+          "author": "tools/cardrpg-look/art-rebuild/pack-ui-portraits.py",
+          "deliveredSha256": {
+            "56": "0f1c3ec1305d508f6b728626fa7308b458184301576966264097c17f598756be",
+            "72": "9649cf253d4b98d9d9477c0f3bec6d47ee47f2c9aa17489f657e0d8c16372c26",
+            "144": "65dc1e671ed3dde13ed2cde0ffb6af68d0c61efe6d7adfb6a49babce8923ef2a"
+          }
+        }
+      },
+      "cardArt": {
+        "1x": "assets/cardrpg-look/v3-portraits/velvet-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/velvet-2x.webp",
+        "display": [
+          256,
+          320
+        ],
+        "sizes": [
+          [
+            256,
+            320
+          ],
+          [
+            512,
+            640
+          ]
+        ],
+        "usage": "Full-body recruitment and collection card"
+      },
+      "headPortrait": {
+        "1x": "assets/cardrpg-look/v3-portraits/velvet-head-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/velvet-head-2x.webp",
+        "display": [
+          160,
+          176
+        ],
+        "provenance": {
+          "source": "assets/source/look-v3/concepts/velvet.png",
+          "crop": [
+            190,
+            79,
+            1140,
+            1124
+          ],
+          "method": "Original concept crop, authored cafe background, Lanczos/WebP92",
+          "tool": "tools/cardrpg-look/art-rebuild/puppet/publish-manifest.py"
+        }
+      },
+      "faceIcon": {
+        "1x": "assets/cardrpg-look/v3-portraits/velvet-face-72.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/velvet-face-144.webp",
+        "display": [
+          72,
+          72
+        ],
+        "usage": "Round face icon; transparent outside circle",
+        "provenance": {
+          "source": "assets/cardrpg-look/v3-portraits/velvet-ui-144.webp",
+          "method": "Circular alpha mask on the accepted original face crop; no new generation",
+          "tool": "tools/cardrpg-look/art-rebuild/puppet/publish-manifest.py"
+        }
+      },
+      "puppet": {
+        "rig": "assets/cardrpg-look/v3-puppets/velvet.rig.json",
+        "atlas": "assets/cardrpg-look/v3-puppets/velvet.webp",
+        "motions": [
+          "idle",
+          "attack",
+          "cast",
+          "hurt",
+          "ultimate",
+          "victory",
+          "defeat"
+        ]
+      },
+      "review": "P4/P5 original-concept puppet accepted by Lane B self-review"
+    },
+    "biscuit": {
+      "id": "biscuit",
+      "side": "cat",
+      "portrait": {
+        "1x": "assets/cardrpg-look/v3-portraits/biscuit-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/biscuit-2x.webp",
+        "display": [
+          256,
+          320
+        ],
+        "sizes": [
+          [
+            256,
+            320
+          ],
+          [
+            512,
+            640
+          ]
+        ]
+      },
+      "provenance": {
+        "source": "assets/source/look-v3/concepts/biscuit.png",
+        "sourceSha256": "ae99224ced46fd044d3a84617de6d41606647a79437f3e20bcd1bf7ee7dc263c",
+        "crop": [
+          59,
+          32,
+          1215,
+          1477
+        ],
+        "method": "Original master crop, alpha composite on authored cafe gradient, Lanczos downsample, WebP92",
+        "deliveredSha256": {
+          "1x": "3a5ea1e414599345af603f9f24b7a68aad6826134e53fe401ebe5d0c212a51cb",
+          "2x": "03ab671215cfc600d786f39f5d9d3a4e82f1f43d45d4b1ece6ad3d3e5cfd6df5"
+        }
+      },
+      "uiPortrait": {
+        "compact": "assets/cardrpg-look/v3-portraits/biscuit-ui-56.webp",
+        "1x": "assets/cardrpg-look/v3-portraits/biscuit-ui-72.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/biscuit-ui-144.webp",
+        "display": [
+          72,
+          72
+        ],
+        "sizes": [
+          [
+            56,
+            56
+          ],
+          [
+            72,
+            72
+          ],
+          [
+            144,
+            144
+          ]
+        ],
+        "usage": "Square face crop for formation/tower slots; object-fit:cover; original card portrait remains available",
+        "provenance": {
+          "source": "assets/source/look-v3/concepts/biscuit.png",
+          "sourceSha256": "ae99224ced46fd044d3a84617de6d41606647a79437f3e20bcd1bf7ee7dc263c",
+          "crop": [
+            185,
+            -38,
+            1024,
+            801
+          ],
+          "method": "Authored face ROI, original alpha composited on cafe colour, Lanczos, WebP92",
+          "author": "tools/cardrpg-look/art-rebuild/pack-ui-portraits.py",
+          "deliveredSha256": {
+            "56": "117c5551d58c660eddd80f3ebdeb18fc33dd64755d59f33ce9b0e418508a0981",
+            "72": "f7f6781d4aa7ccf682b166150a98983eb7969cf5774634ef2807714dd191d24f",
+            "144": "94ca78fb1f053fc5c7122d52a9e62e2060e587de8cfd84b64f98f60c0bb574aa"
+          }
+        }
+      },
+      "cardArt": {
+        "1x": "assets/cardrpg-look/v3-portraits/biscuit-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/biscuit-2x.webp",
+        "display": [
+          256,
+          320
+        ],
+        "sizes": [
+          [
+            256,
+            320
+          ],
+          [
+            512,
+            640
+          ]
+        ],
+        "usage": "Full-body recruitment and collection card"
+      },
+      "headPortrait": {
+        "1x": "assets/cardrpg-look/v3-portraits/biscuit-head-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/biscuit-head-2x.webp",
+        "display": [
+          160,
+          176
+        ],
+        "provenance": {
+          "source": "assets/source/look-v3/concepts/biscuit.png",
+          "crop": [
+            242,
+            80,
+            1134,
+            1061
+          ],
+          "method": "Original concept crop, authored cafe background, Lanczos/WebP92",
+          "tool": "tools/cardrpg-look/art-rebuild/puppet/publish-manifest.py"
+        }
+      },
+      "faceIcon": {
+        "1x": "assets/cardrpg-look/v3-portraits/biscuit-face-72.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/biscuit-face-144.webp",
+        "display": [
+          72,
+          72
+        ],
+        "usage": "Round face icon; transparent outside circle",
+        "provenance": {
+          "source": "assets/cardrpg-look/v3-portraits/biscuit-ui-144.webp",
+          "method": "Circular alpha mask on the accepted original face crop; no new generation",
+          "tool": "tools/cardrpg-look/art-rebuild/puppet/publish-manifest.py"
+        }
+      },
+      "puppet": {
+        "rig": "assets/cardrpg-look/v3-puppets/biscuit.rig.json",
+        "atlas": "assets/cardrpg-look/v3-puppets/biscuit.webp",
+        "motions": [
+          "idle",
+          "attack",
+          "cast",
+          "hurt",
+          "ultimate",
+          "victory",
+          "defeat"
+        ]
+      },
+      "review": "P4/P5 original-concept puppet accepted by Lane B self-review"
+    },
+    "brioche": {
+      "id": "brioche",
+      "side": "cat",
+      "portrait": {
+        "1x": "assets/cardrpg-look/v3-portraits/brioche-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/brioche-2x.webp",
+        "display": [
+          256,
+          320
+        ],
+        "sizes": [
+          [
+            256,
+            320
+          ],
+          [
+            512,
+            640
+          ]
+        ]
+      },
+      "provenance": {
+        "source": "assets/source/look-v3/concepts/brioche.png",
+        "sourceSha256": "68ffb23f5c73bfc303fbfc184f687ad45d639dd0f1193fc544391bd846a12d15",
+        "crop": [
+          64,
+          33,
+          1210,
+          1467
+        ],
+        "method": "Original master crop, alpha composite on authored cafe gradient, Lanczos downsample, WebP92",
+        "deliveredSha256": {
+          "1x": "72844ff2bf6c2769bf29a5f3537d0a2a171c534a35cd30f2bed7c4323c48a456",
+          "2x": "554c88a9a7fdf63454a0b50428d640a4ab3c4bd210f18d1ccc25bb9378b1bb3e"
+        }
+      },
+      "uiPortrait": {
+        "compact": "assets/cardrpg-look/v3-portraits/brioche-ui-56.webp",
+        "1x": "assets/cardrpg-look/v3-portraits/brioche-ui-72.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/brioche-ui-144.webp",
+        "display": [
+          72,
+          72
+        ],
+        "sizes": [
+          [
+            56,
+            56
+          ],
+          [
+            72,
+            72
+          ],
+          [
+            144,
+            144
+          ]
+        ],
+        "usage": "Square face crop for formation/tower slots; object-fit:cover; original card portrait remains available",
+        "provenance": {
+          "source": "assets/source/look-v3/concepts/brioche.png",
+          "sourceSha256": "68ffb23f5c73bfc303fbfc184f687ad45d639dd0f1193fc544391bd846a12d15",
+          "crop": [
+            228,
+            -39,
+            1046,
+            779
+          ],
+          "method": "Authored face ROI, original alpha composited on cafe colour, Lanczos, WebP92",
+          "author": "tools/cardrpg-look/art-rebuild/pack-ui-portraits.py",
+          "deliveredSha256": {
+            "56": "52ee2c8bf7511831c8768d244602a9c30bb178c4f89718c31a621a4953cbf33e",
+            "72": "b15bbf122bd44bb08562fcee64d57d9c87c3ae678fa661d656b9d14880347775",
+            "144": "92ea3e5283efe568bee7dbc78717cc1d3c3a1940ae3eae0fca366e0987506c73"
+          }
+        }
+      },
+      "cardArt": {
+        "1x": "assets/cardrpg-look/v3-portraits/brioche-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/brioche-2x.webp",
+        "display": [
+          256,
+          320
+        ],
+        "sizes": [
+          [
+            256,
+            320
+          ],
+          [
+            512,
+            640
+          ]
+        ],
+        "usage": "Full-body recruitment and collection card"
+      },
+      "headPortrait": {
+        "1x": "assets/cardrpg-look/v3-portraits/brioche-head-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/brioche-head-2x.webp",
+        "display": [
+          160,
+          176
+        ],
+        "provenance": {
+          "source": "assets/source/look-v3/concepts/brioche.png",
+          "crop": [
+            229,
+            83,
+            1121,
+            1064
+          ],
+          "method": "Original concept crop, authored cafe background, Lanczos/WebP92",
+          "tool": "tools/cardrpg-look/art-rebuild/puppet/publish-manifest.py"
+        }
+      },
+      "faceIcon": {
+        "1x": "assets/cardrpg-look/v3-portraits/brioche-face-72.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/brioche-face-144.webp",
+        "display": [
+          72,
+          72
+        ],
+        "usage": "Round face icon; transparent outside circle",
+        "provenance": {
+          "source": "assets/cardrpg-look/v3-portraits/brioche-ui-144.webp",
+          "method": "Circular alpha mask on the accepted original face crop; no new generation",
+          "tool": "tools/cardrpg-look/art-rebuild/puppet/publish-manifest.py"
+        }
+      },
+      "puppet": {
+        "rig": "assets/cardrpg-look/v3-puppets/brioche.rig.json",
+        "atlas": "assets/cardrpg-look/v3-puppets/brioche.webp",
+        "motions": [
+          "idle",
+          "attack",
+          "cast",
+          "hurt",
+          "ultimate",
+          "victory",
+          "defeat"
+        ]
+      },
+      "review": "P4/P5 original-concept puppet accepted by Lane B self-review"
+    },
+    "marigold": {
+      "id": "marigold",
+      "side": "cat",
+      "portrait": {
+        "1x": "assets/cardrpg-look/v3-portraits/marigold-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/marigold-2x.webp",
+        "display": [
+          256,
+          320
+        ],
+        "sizes": [
+          [
+            256,
+            320
+          ],
+          [
+            512,
+            640
+          ]
+        ]
+      },
+      "provenance": {
+        "source": "assets/source/look-v3/concepts/marigold.png",
+        "sourceSha256": "055fe9ddf3dc20fe464f8ddc35ce2e407f5aec1d9f64ed24a0794f6363842f63",
+        "crop": [
+          57,
+          33,
+          1337,
+          1634
+        ],
+        "method": "Original master crop, alpha composite on authored cafe gradient, Lanczos downsample, WebP92",
+        "deliveredSha256": {
+          "1x": "c51af29c3322806675c69e4d782333610ec1fc54b3512dee11d20be79069e0fa",
+          "2x": "88fcd65637c3da38d35003bd1ac55fdb695d8df34f7deb42a48b0a3b9442ff47"
+        }
+      },
+      "uiPortrait": {
+        "compact": "assets/cardrpg-look/v3-portraits/marigold-ui-56.webp",
+        "1x": "assets/cardrpg-look/v3-portraits/marigold-ui-72.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/marigold-ui-144.webp",
+        "display": [
+          72,
+          72
+        ],
+        "sizes": [
+          [
+            56,
+            56
+          ],
+          [
+            72,
+            72
+          ],
+          [
+            144,
+            144
+          ]
+        ],
+        "usage": "Square face crop for formation/tower slots; object-fit:cover; original card portrait remains available",
+        "provenance": {
+          "source": "assets/source/look-v3/concepts/marigold.png",
+          "sourceSha256": "055fe9ddf3dc20fe464f8ddc35ce2e407f5aec1d9f64ed24a0794f6363842f63",
+          "crop": [
+            309,
+            39,
+            1085,
+            816
+          ],
+          "method": "Authored face ROI, original alpha composited on cafe colour, Lanczos, WebP92",
+          "author": "tools/cardrpg-look/art-rebuild/pack-ui-portraits.py",
+          "deliveredSha256": {
+            "56": "a21ea61d8c70df6b599cd5332c9ff8a2f222b3a6b5da3fe9da7d91b2b02b94b1",
+            "72": "02ccff97a2b71ed3f87424420591fbb73d075ae636459fc25a2128da49077ebd",
+            "144": "ed7f99bb5304f6c98e0a830f3b3f2c27cff5c9340178112ca54947ae1dff524d"
+          }
+        }
+      },
+      "cardArt": {
+        "1x": "assets/cardrpg-look/v3-portraits/marigold-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/marigold-2x.webp",
+        "display": [
+          256,
+          320
+        ],
+        "sizes": [
+          [
+            256,
+            320
+          ],
+          [
+            512,
+            640
+          ]
+        ],
+        "usage": "Full-body recruitment and collection card"
+      },
+      "headPortrait": {
+        "1x": "assets/cardrpg-look/v3-portraits/marigold-head-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/marigold-head-2x.webp",
+        "display": [
+          160,
+          176
+        ],
+        "provenance": {
+          "source": "assets/source/look-v3/concepts/marigold.png",
+          "crop": [
+            279,
+            81,
+            1255,
+            1155
+          ],
+          "method": "Original concept crop, authored cafe background, Lanczos/WebP92",
+          "tool": "tools/cardrpg-look/art-rebuild/puppet/publish-manifest.py"
+        }
+      },
+      "faceIcon": {
+        "1x": "assets/cardrpg-look/v3-portraits/marigold-face-72.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/marigold-face-144.webp",
+        "display": [
+          72,
+          72
+        ],
+        "usage": "Round face icon; transparent outside circle",
+        "provenance": {
+          "source": "assets/cardrpg-look/v3-portraits/marigold-ui-144.webp",
+          "method": "Circular alpha mask on the accepted original face crop; no new generation",
+          "tool": "tools/cardrpg-look/art-rebuild/puppet/publish-manifest.py"
+        }
+      },
+      "puppet": {
+        "rig": "assets/cardrpg-look/v3-puppets/marigold.rig.json",
+        "atlas": "assets/cardrpg-look/v3-puppets/marigold.webp",
+        "motions": [
+          "idle",
+          "attack",
+          "cast",
+          "hurt",
+          "ultimate",
+          "victory",
+          "defeat"
+        ]
+      },
+      "review": "P4/P5 original-concept puppet accepted by Lane B self-review"
+    },
+    "sorrel": {
+      "id": "sorrel",
+      "side": "cat",
+      "portrait": {
+        "1x": "assets/cardrpg-look/v3-portraits/sorrel-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/sorrel-2x.webp",
+        "display": [
+          256,
+          320
+        ],
+        "sizes": [
+          [
+            256,
+            320
+          ],
+          [
+            512,
+            640
+          ]
+        ]
+      },
+      "provenance": {
+        "source": "assets/source/look-v3/concepts/sorrel.png",
+        "sourceSha256": "864b12a9d850333c35b71033c6e7ed2870af87f7c9d83461fc7995299e03c0b9",
+        "crop": [
+          60,
+          32,
+          1240,
+          1507
+        ],
+        "method": "Original master crop, alpha composite on authored cafe gradient, Lanczos downsample, WebP92",
+        "deliveredSha256": {
+          "1x": "f5bf8088c99f0e079e0a16d20576a6d8e6062f84ab67bac2128d20f662898d75",
+          "2x": "4ec8c6bd5497938b5dab78cbfea5f222c25b8e06de3e02dccff60fcdd2021325"
+        }
+      },
+      "uiPortrait": {
+        "compact": "assets/cardrpg-look/v3-portraits/sorrel-ui-56.webp",
+        "1x": "assets/cardrpg-look/v3-portraits/sorrel-ui-72.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/sorrel-ui-144.webp",
+        "display": [
+          72,
+          72
+        ],
+        "sizes": [
+          [
+            56,
+            56
+          ],
+          [
+            72,
+            72
+          ],
+          [
+            144,
+            144
+          ]
+        ],
+        "usage": "Square face crop for formation/tower slots; object-fit:cover; original card portrait remains available",
+        "provenance": {
+          "source": "assets/source/look-v3/concepts/sorrel.png",
+          "sourceSha256": "864b12a9d850333c35b71033c6e7ed2870af87f7c9d83461fc7995299e03c0b9",
+          "crop": [
+            311,
+            91,
+            989,
+            769
+          ],
+          "method": "Authored face ROI, original alpha composited on cafe colour, Lanczos, WebP92",
+          "author": "tools/cardrpg-look/art-rebuild/pack-ui-portraits.py",
+          "deliveredSha256": {
+            "56": "871d45dea13497f6402c24241edfd78188c7f23eb5d989fcd2546265bedebc1b",
+            "72": "08ab389989e0e4a95161122baf0b8dddf3dec766a6311bf4ab0876983faca53f",
+            "144": "18b2c3aab23de958df40d51234007b352f36e73341d91d2c19fd4c19c1d5a355"
+          }
+        }
+      },
+      "cardArt": {
+        "1x": "assets/cardrpg-look/v3-portraits/sorrel-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/sorrel-2x.webp",
+        "display": [
+          256,
+          320
+        ],
+        "sizes": [
+          [
+            256,
+            320
+          ],
+          [
+            512,
+            640
+          ]
+        ],
+        "usage": "Full-body recruitment and collection card"
+      },
+      "headPortrait": {
+        "1x": "assets/cardrpg-look/v3-portraits/sorrel-head-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/sorrel-head-2x.webp",
+        "display": [
+          160,
+          176
+        ],
+        "provenance": {
+          "source": "assets/source/look-v3/concepts/sorrel.png",
+          "crop": [
+            221,
+            81,
+            1131,
+            1082
+          ],
+          "method": "Original concept crop, authored cafe background, Lanczos/WebP92",
+          "tool": "tools/cardrpg-look/art-rebuild/puppet/publish-manifest.py"
+        }
+      },
+      "faceIcon": {
+        "1x": "assets/cardrpg-look/v3-portraits/sorrel-face-72.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/sorrel-face-144.webp",
+        "display": [
+          72,
+          72
+        ],
+        "usage": "Round face icon; transparent outside circle",
+        "provenance": {
+          "source": "assets/cardrpg-look/v3-portraits/sorrel-ui-144.webp",
+          "method": "Circular alpha mask on the accepted original face crop; no new generation",
+          "tool": "tools/cardrpg-look/art-rebuild/puppet/publish-manifest.py"
+        }
+      },
+      "puppet": {
+        "rig": "assets/cardrpg-look/v3-puppets/sorrel.rig.json",
+        "atlas": "assets/cardrpg-look/v3-puppets/sorrel.webp",
+        "motions": [
+          "idle",
+          "attack",
+          "cast",
+          "hurt",
+          "ultimate",
+          "victory",
+          "defeat"
+        ]
+      },
+      "review": "P4/P5 original-concept puppet accepted by Lane B self-review"
+    },
+    "inkcap": {
+      "id": "inkcap",
+      "side": "cat",
+      "portrait": {
+        "1x": "assets/cardrpg-look/v3-portraits/inkcap-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/inkcap-2x.webp",
+        "display": [
+          256,
+          320
+        ],
+        "sizes": [
+          [
+            256,
+            320
+          ],
+          [
+            512,
+            640
+          ]
+        ]
+      },
+      "provenance": {
+        "source": "assets/source/look-v3/concepts/inkcap.png",
+        "sourceSha256": "a6367681dea480e7014f41a9e8cd3ecb9dddd86afc5e06d66219920fb8b88ea7",
+        "crop": [
+          61,
+          32,
+          1172,
+          1421
+        ],
+        "method": "Original master crop, alpha composite on authored cafe gradient, Lanczos downsample, WebP92",
+        "deliveredSha256": {
+          "1x": "84182480fa2a0e662446c391d75b7499006cb939171aae2bb381f8dfb0cc9cc2",
+          "2x": "1bcd4fed416403c3c6f6e700f5559aa25824836690afcf20766cac8d4f5035a8"
+        }
+      },
+      "uiPortrait": {
+        "compact": "assets/cardrpg-look/v3-portraits/inkcap-ui-56.webp",
+        "1x": "assets/cardrpg-look/v3-portraits/inkcap-ui-72.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/inkcap-ui-144.webp",
+        "display": [
+          72,
+          72
+        ],
+        "sizes": [
+          [
+            56,
+            56
+          ],
+          [
+            72,
+            72
+          ],
+          [
+            144,
+            144
+          ]
+        ],
+        "usage": "Square face crop for formation/tower slots; object-fit:cover; original card portrait remains available",
+        "provenance": {
+          "source": "assets/source/look-v3/concepts/inkcap.png",
+          "sourceSha256": "a6367681dea480e7014f41a9e8cd3ecb9dddd86afc5e06d66219920fb8b88ea7",
+          "crop": [
+            295,
+            128,
+            959,
+            791
+          ],
+          "method": "Authored face ROI, original alpha composited on cafe colour, Lanczos, WebP92",
+          "author": "tools/cardrpg-look/art-rebuild/pack-ui-portraits.py",
+          "deliveredSha256": {
+            "56": "37dc06d7b5597b31cd5e87823a962fe6d93de579f93563c4bd4ace4cc10e6b8c",
+            "72": "7f698a99c1351b1f1fd817521d65401283c72750bc6be0ab62060180211ad556",
+            "144": "f71350645a79785b9571cd74fb6f703978a656777ccc0073a5fe40fd0e5c0abc"
+          }
+        }
+      },
+      "cardArt": {
+        "1x": "assets/cardrpg-look/v3-portraits/inkcap-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/inkcap-2x.webp",
+        "display": [
+          256,
+          320
+        ],
+        "sizes": [
+          [
+            256,
+            320
+          ],
+          [
+            512,
+            640
+          ]
+        ],
+        "usage": "Full-body recruitment and collection card"
+      },
+      "headPortrait": {
+        "1x": "assets/cardrpg-look/v3-portraits/inkcap-head-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/inkcap-head-2x.webp",
+        "display": [
+          160,
+          176
+        ],
+        "provenance": {
+          "source": "assets/source/look-v3/concepts/inkcap.png",
+          "crop": [
+            234,
+            80,
+            1097,
+            1029
+          ],
+          "method": "Original concept crop, authored cafe background, Lanczos/WebP92",
+          "tool": "tools/cardrpg-look/art-rebuild/puppet/publish-manifest.py"
+        }
+      },
+      "faceIcon": {
+        "1x": "assets/cardrpg-look/v3-portraits/inkcap-face-72.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/inkcap-face-144.webp",
+        "display": [
+          72,
+          72
+        ],
+        "usage": "Round face icon; transparent outside circle",
+        "provenance": {
+          "source": "assets/cardrpg-look/v3-portraits/inkcap-ui-144.webp",
+          "method": "Circular alpha mask on the accepted original face crop; no new generation",
+          "tool": "tools/cardrpg-look/art-rebuild/puppet/publish-manifest.py"
+        }
+      },
+      "puppet": {
+        "rig": "assets/cardrpg-look/v3-puppets/inkcap.rig.json",
+        "atlas": "assets/cardrpg-look/v3-puppets/inkcap.webp",
+        "motions": [
+          "idle",
+          "attack",
+          "cast",
+          "hurt",
+          "ultimate",
+          "victory",
+          "defeat"
+        ]
+      },
+      "review": "P4/P5 original-concept puppet accepted by Lane B self-review"
+    },
+    "button-guard": {
+      "id": "button-guard",
+      "side": "enemy",
+      "portrait": {
+        "1x": "assets/cardrpg-look/v3-portraits/button-guard-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/button-guard-2x.webp",
+        "display": [
+          256,
+          320
+        ],
+        "sizes": [
+          [
+            256,
+            320
+          ],
+          [
+            512,
+            640
+          ]
+        ]
+      },
+      "provenance": {
+        "source": "assets/source/look-v3/concepts/button-guard.png",
+        "sourceSha256": "65f77cc29877516a96ead9fba818db3f7e7db2283f938cfacd71d99feaed64f2",
+        "crop": [
+          -48,
+          -53,
+          1257,
+          1579
+        ],
+        "method": "Original master crop, alpha composite on authored cafe gradient, Lanczos downsample, WebP92",
+        "deliveredSha256": {
+          "1x": "65c09b4145b9490547341bebb36e243b422f2d10d65cbc9c602af0f0442f3efe",
+          "2x": "1950bf7d61e87b050dc2ad3fdb98e5c86eca68da8c60df0651505f63e8d68232"
+        }
+      },
+      "uiPortrait": {
+        "compact": "assets/cardrpg-look/v3-portraits/button-guard-ui-56.webp",
+        "1x": "assets/cardrpg-look/v3-portraits/button-guard-ui-72.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/button-guard-ui-144.webp",
+        "display": [
+          72,
+          72
+        ],
+        "sizes": [
+          [
+            56,
+            56
+          ],
+          [
+            72,
+            72
+          ],
+          [
+            144,
+            144
+          ]
+        ],
+        "usage": "Square face crop for formation/tower slots; object-fit:cover; original card portrait remains available",
+        "provenance": {
+          "source": "assets/source/look-v3/concepts/button-guard.png",
+          "sourceSha256": "65f77cc29877516a96ead9fba818db3f7e7db2283f938cfacd71d99feaed64f2",
+          "crop": [
+            211,
+            17,
+            998,
+            804
+          ],
+          "method": "Authored face ROI, original alpha composited on cafe colour, Lanczos, WebP92",
+          "author": "tools/cardrpg-look/art-rebuild/pack-ui-portraits.py",
+          "deliveredSha256": {
+            "56": "efad33727771f896e10d8e2f0a3a365eb521b5ad87c7dcc516806605840cc848",
+            "72": "432dee09630a80fe987300deb059fc09cb6965333ccbe7d43fce412b2770a034",
+            "144": "12c5aadabeba9f0d7b3daba9ef8d5c1bc44f14cd9bc4a0101db3eda412a1769e"
+          }
+        }
+      },
+      "cardArt": {
+        "1x": "assets/cardrpg-look/v3-portraits/button-guard-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/button-guard-2x.webp",
+        "display": [
+          256,
+          320
+        ],
+        "sizes": [
+          [
+            256,
+            320
+          ],
+          [
+            512,
+            640
+          ]
+        ],
+        "usage": "Full-body recruitment and collection card"
+      },
+      "headPortrait": {
+        "1x": "assets/cardrpg-look/v3-portraits/button-guard-head-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/button-guard-head-2x.webp",
+        "display": [
+          160,
+          176
+        ],
+        "provenance": {
+          "source": "assets/source/look-v3/concepts/button-guard.png",
+          "crop": [
+            232,
+            -2,
+            1088,
+            939
+          ],
+          "method": "Original concept crop, authored cafe background, Lanczos/WebP92",
+          "tool": "tools/cardrpg-look/art-rebuild/puppet/publish-manifest.py"
+        }
+      },
+      "faceIcon": {
+        "1x": "assets/cardrpg-look/v3-portraits/button-guard-face-72.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/button-guard-face-144.webp",
+        "display": [
+          72,
+          72
+        ],
+        "usage": "Round face icon; transparent outside circle",
+        "provenance": {
+          "source": "assets/cardrpg-look/v3-portraits/button-guard-ui-144.webp",
+          "method": "Circular alpha mask on the accepted original face crop; no new generation",
+          "tool": "tools/cardrpg-look/art-rebuild/puppet/publish-manifest.py"
+        }
+      },
+      "puppet": {
+        "rig": "assets/cardrpg-look/v3-puppets/button-guard.rig.json",
+        "atlas": "assets/cardrpg-look/v3-puppets/button-guard.webp",
+        "motions": [
+          "idle",
+          "attack",
+          "cast",
+          "hurt",
+          "ultimate",
+          "victory",
+          "defeat"
+        ]
+      },
+      "review": "P4/P5 original-concept puppet accepted by Lane B self-review"
+    },
+    "sock-skipper": {
+      "id": "sock-skipper",
+      "side": "enemy",
+      "portrait": {
+        "1x": "assets/cardrpg-look/v3-portraits/sock-skipper-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/sock-skipper-2x.webp",
+        "display": [
+          256,
+          320
+        ],
+        "sizes": [
+          [
+            256,
+            320
+          ],
+          [
+            512,
+            640
+          ]
+        ]
+      },
+      "provenance": {
+        "source": "assets/source/look-v3/concepts/sock-skipper.png",
+        "sourceSha256": "d7092a8bc5797f8528916d6578dff7ab3739727d573ca4e9822793651113c1f2",
+        "crop": [
+          65,
+          30,
+          948,
+          1133
+        ],
+        "method": "Original master crop, alpha composite on authored cafe gradient, Lanczos downsample, WebP92",
+        "deliveredSha256": {
+          "1x": "4a7973b49687565c95643cec101c8e87e93b09f97e9f225f87c52593a2fa6195",
+          "2x": "c7c6cf1b63bc964381872c5e6169100a5e9b43ad2909cbdc352b582bdf99aaf7"
+        }
+      },
+      "uiPortrait": {
+        "compact": "assets/cardrpg-look/v3-portraits/sock-skipper-ui-56.webp",
+        "1x": "assets/cardrpg-look/v3-portraits/sock-skipper-ui-72.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/sock-skipper-ui-144.webp",
+        "display": [
+          72,
+          72
+        ],
+        "sizes": [
+          [
+            56,
+            56
+          ],
+          [
+            72,
+            72
+          ],
+          [
+            144,
+            144
+          ]
+        ],
+        "usage": "Square face crop for formation/tower slots; object-fit:cover; original card portrait remains available",
+        "provenance": {
+          "source": "assets/source/look-v3/concepts/sock-skipper.png",
+          "sourceSha256": "d7092a8bc5797f8528916d6578dff7ab3739727d573ca4e9822793651113c1f2",
+          "crop": [
+            124,
+            166,
+            922,
+            964
+          ],
+          "method": "Authored face ROI, original alpha composited on cafe colour, Lanczos, WebP92",
+          "author": "tools/cardrpg-look/art-rebuild/pack-ui-portraits.py",
+          "deliveredSha256": {
+            "56": "6d8cfc8aa567097739f48a05483c89abfa9b17ddc6909d1f9435a384aabac272",
+            "72": "989e14d5786fe0c7e6dc799f4c60482faba67648381c1a93073d341df99dc0f0",
+            "144": "0ecfdb4d8755c00a5a850fe62e54ad3b635471651db258cdf271560b93576962"
+          }
+        }
+      },
+      "cardArt": {
+        "1x": "assets/cardrpg-look/v3-portraits/sock-skipper-card-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/sock-skipper-card-2x.webp",
+        "display": [
+          256,
+          320
+        ],
+        "sizes": [
+          [
+            256,
+            320
+          ],
+          [
+            512,
+            640
+          ]
+        ],
+        "usage": "Full-body recruitment and collection card",
+        "provenance": {
+          "source": "assets/source/look-v3/concepts/sock-skipper.png",
+          "alphaBounds": [
+            98,
+            98,
+            915,
+            1326
+          ],
+          "method": "Complete original alpha bounds fitted into512x640 with breathing room; Lanczos/WebP92",
+          "tool": "tools/cardrpg-look/art-rebuild/puppet/publish-manifest.py"
+        }
+      },
+      "headPortrait": {
+        "1x": "assets/cardrpg-look/v3-portraits/sock-skipper-head-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/sock-skipper-head-2x.webp",
+        "display": [
+          160,
+          176
+        ],
+        "provenance": {
+          "source": "assets/source/look-v3/concepts/sock-skipper.png",
+          "crop": [
+            95,
+            77,
+            878,
+            938
+          ],
+          "method": "Original concept crop, authored cafe background, Lanczos/WebP92",
+          "tool": "tools/cardrpg-look/art-rebuild/puppet/publish-manifest.py"
+        }
+      },
+      "faceIcon": {
+        "1x": "assets/cardrpg-look/v3-portraits/sock-skipper-face-72.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/sock-skipper-face-144.webp",
+        "display": [
+          72,
+          72
+        ],
+        "usage": "Round face icon; transparent outside circle",
+        "provenance": {
+          "source": "assets/cardrpg-look/v3-portraits/sock-skipper-ui-144.webp",
+          "method": "Circular alpha mask on the accepted original face crop; no new generation",
+          "tool": "tools/cardrpg-look/art-rebuild/puppet/publish-manifest.py"
+        }
+      },
+      "puppet": {
+        "rig": "assets/cardrpg-look/v3-puppets/sock-skipper.rig.json",
+        "atlas": "assets/cardrpg-look/v3-puppets/sock-skipper.webp",
+        "motions": [
+          "idle",
+          "attack",
+          "cast",
+          "hurt",
+          "ultimate",
+          "victory",
+          "defeat"
+        ]
+      },
+      "review": "P4/P5 original-concept puppet accepted by Lane B self-review"
+    },
+    "spool-ram": {
+      "id": "spool-ram",
+      "side": "enemy",
+      "portrait": {
+        "1x": "assets/cardrpg-look/v3-portraits/spool-ram-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/spool-ram-2x.webp",
+        "display": [
+          256,
+          320
+        ],
+        "sizes": [
+          [
+            256,
+            320
+          ],
+          [
+            512,
+            640
+          ]
+        ]
+      },
+      "provenance": {
+        "source": "assets/source/look-v3/concepts/spool-ram.png",
+        "sourceSha256": "cc5205fa258b4a9c43500087401fa2d3269a333fe047769d0626e92c15e22ecf",
+        "crop": [
+          56,
+          62,
+          1585,
+          1972
+        ],
+        "method": "Original master crop, alpha composite on authored cafe gradient, Lanczos downsample, WebP92",
+        "deliveredSha256": {
+          "1x": "186a23fe1c3d547226c7477aa5bdab7dfe4aa4cf5a1dce96f8d0599dd52bc00b",
+          "2x": "9732689492028edd61a3760287f7649ca003c26febf2a74d741b8b8f3176d06b"
+        }
+      },
+      "uiPortrait": {
+        "compact": "assets/cardrpg-look/v3-portraits/spool-ram-ui-56.webp",
+        "1x": "assets/cardrpg-look/v3-portraits/spool-ram-ui-72.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/spool-ram-ui-144.webp",
+        "display": [
+          72,
+          72
+        ],
+        "sizes": [
+          [
+            56,
+            56
+          ],
+          [
+            72,
+            72
+          ],
+          [
+            144,
+            144
+          ]
+        ],
+        "usage": "Square face crop for formation/tower slots; object-fit:cover; original card portrait remains available",
+        "provenance": {
+          "source": "assets/source/look-v3/concepts/spool-ram.png",
+          "sourceSha256": "cc5205fa258b4a9c43500087401fa2d3269a333fe047769d0626e92c15e22ecf",
+          "crop": [
+            149,
+            168,
+            813,
+            833
+          ],
+          "method": "Authored face ROI, original alpha composited on cafe colour, Lanczos, WebP92",
+          "author": "tools/cardrpg-look/art-rebuild/pack-ui-portraits.py",
+          "deliveredSha256": {
+            "56": "578652862d42b45714c766ef21e9867c1e34e53ce255bb86b134fb3f0c321ba8",
+            "72": "2fd553d9d322516de4133efed7f505d35fb28304a78ae52cd42af067ac59b720",
+            "144": "8884579a02a64cdb5f371797438aa3df2577c4fa610659e913f8b2721f7da65d"
+          }
+        }
+      },
+      "cardArt": {
+        "1x": "assets/cardrpg-look/v3-portraits/spool-ram-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/spool-ram-2x.webp",
+        "display": [
+          256,
+          320
+        ],
+        "sizes": [
+          [
+            256,
+            320
+          ],
+          [
+            512,
+            640
+          ]
+        ],
+        "usage": "Full-body recruitment and collection card"
+      },
+      "headPortrait": {
+        "1x": "assets/cardrpg-look/v3-portraits/spool-ram-head-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/spool-ram-head-2x.webp",
+        "display": [
+          160,
+          176
+        ],
+        "provenance": {
+          "source": "assets/source/look-v3/concepts/spool-ram.png",
+          "crop": [
+            -148,
+            96,
+            1001,
+            1359
+          ],
+          "method": "Original concept crop, authored cafe background, Lanczos/WebP92",
+          "tool": "tools/cardrpg-look/art-rebuild/puppet/publish-manifest.py"
+        }
+      },
+      "faceIcon": {
+        "1x": "assets/cardrpg-look/v3-portraits/spool-ram-face-72.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/spool-ram-face-144.webp",
+        "display": [
+          72,
+          72
+        ],
+        "usage": "Round face icon; transparent outside circle",
+        "provenance": {
+          "source": "assets/cardrpg-look/v3-portraits/spool-ram-ui-144.webp",
+          "method": "Circular alpha mask on the accepted original face crop; no new generation",
+          "tool": "tools/cardrpg-look/art-rebuild/puppet/publish-manifest.py"
+        }
+      },
+      "puppet": {
+        "rig": "assets/cardrpg-look/v3-puppets/spool-ram.rig.json",
+        "atlas": "assets/cardrpg-look/v3-puppets/spool-ram.webp",
+        "motions": [
+          "idle",
+          "attack",
+          "cast",
+          "hurt",
+          "ultimate",
+          "victory",
+          "defeat"
+        ]
+      },
+      "review": "P4/P5 original-concept puppet accepted by Lane B self-review"
+    },
+    "needle-moth": {
+      "id": "needle-moth",
+      "side": "enemy",
+      "portrait": {
+        "1x": "assets/cardrpg-look/v3-portraits/needle-moth-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/needle-moth-2x.webp",
+        "display": [
+          256,
+          320
+        ],
+        "sizes": [
+          [
+            256,
+            320
+          ],
+          [
+            512,
+            640
+          ]
+        ]
+      },
+      "provenance": {
+        "source": "assets/source/look-v3/concepts/needle-moth.png",
+        "sourceSha256": "198696047385c6cd6b1391a26a751877499606889384aab1b71ac34a230aac73",
+        "crop": [
+          49,
+          30,
+          1349,
+          1656
+        ],
+        "method": "Original master crop, alpha composite on authored cafe gradient, Lanczos downsample, WebP92",
+        "deliveredSha256": {
+          "1x": "e6a8237cb19c6f1cd5f15c53e020d584b0d8cd0bff521261dee338bbff1da43d",
+          "2x": "d57d535d4c6ee9c62645d7a4fff25c98e9cfd18e7cb2ff3bd130053bc26145f2"
+        }
+      },
+      "uiPortrait": {
+        "compact": "assets/cardrpg-look/v3-portraits/needle-moth-ui-56.webp",
+        "1x": "assets/cardrpg-look/v3-portraits/needle-moth-ui-72.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/needle-moth-ui-144.webp",
+        "display": [
+          72,
+          72
+        ],
+        "sizes": [
+          [
+            56,
+            56
+          ],
+          [
+            72,
+            72
+          ],
+          [
+            144,
+            144
+          ]
+        ],
+        "usage": "Square face crop for formation/tower slots; object-fit:cover; original card portrait remains available",
+        "provenance": {
+          "source": "assets/source/look-v3/concepts/needle-moth.png",
+          "sourceSha256": "198696047385c6cd6b1391a26a751877499606889384aab1b71ac34a230aac73",
+          "crop": [
+            457,
+            145,
+            941,
+            630
+          ],
+          "method": "Authored face ROI, original alpha composited on cafe colour, Lanczos, WebP92",
+          "author": "tools/cardrpg-look/art-rebuild/pack-ui-portraits.py",
+          "deliveredSha256": {
+            "56": "b08bd53bbbf0c442e47e400d3cdb0576607bb012f3b26d621312bacd21bb2261",
+            "72": "47d83899bf436cbe02f473f9454923b5c7dc13450dabf132885f3142ade436e3",
+            "144": "0a1eb055b1e3d86c03d91f83d3d5dd3f7ed01edbea60c6a8387a197349e9a004"
+          }
+        }
+      },
+      "cardArt": {
+        "1x": "assets/cardrpg-look/v3-portraits/needle-moth-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/needle-moth-2x.webp",
+        "display": [
+          256,
+          320
+        ],
+        "sizes": [
+          [
+            256,
+            320
+          ],
+          [
+            512,
+            640
+          ]
+        ],
+        "usage": "Full-body recruitment and collection card"
+      },
+      "headPortrait": {
+        "1x": "assets/cardrpg-look/v3-portraits/needle-moth-head-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/needle-moth-head-2x.webp",
+        "display": [
+          160,
+          176
+        ],
+        "provenance": {
+          "source": "assets/source/look-v3/concepts/needle-moth.png",
+          "crop": [
+            98,
+            76,
+            1076,
+            1152
+          ],
+          "method": "Original concept crop, authored cafe background, Lanczos/WebP92",
+          "tool": "tools/cardrpg-look/art-rebuild/puppet/publish-manifest.py"
+        }
+      },
+      "faceIcon": {
+        "1x": "assets/cardrpg-look/v3-portraits/needle-moth-face-72.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/needle-moth-face-144.webp",
+        "display": [
+          72,
+          72
+        ],
+        "usage": "Round face icon; transparent outside circle",
+        "provenance": {
+          "source": "assets/cardrpg-look/v3-portraits/needle-moth-ui-144.webp",
+          "method": "Circular alpha mask on the accepted original face crop; no new generation",
+          "tool": "tools/cardrpg-look/art-rebuild/puppet/publish-manifest.py"
+        }
+      },
+      "puppet": {
+        "rig": "assets/cardrpg-look/v3-puppets/needle-moth.rig.json",
+        "atlas": "assets/cardrpg-look/v3-puppets/needle-moth.webp",
+        "motions": [
+          "idle",
+          "attack",
+          "cast",
+          "hurt",
+          "ultimate",
+          "victory",
+          "defeat"
+        ]
+      },
+      "review": "P4/P5 original-concept puppet accepted by Lane B self-review"
+    },
+    "teacup-healer": {
+      "id": "teacup-healer",
+      "side": "enemy",
+      "portrait": {
+        "1x": "assets/cardrpg-look/v3-portraits/teacup-healer-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/teacup-healer-2x.webp",
+        "display": [
+          256,
+          320
+        ],
+        "sizes": [
+          [
+            256,
+            320
+          ],
+          [
+            512,
+            640
+          ]
+        ]
+      },
+      "provenance": {
+        "source": "assets/source/look-v3/concepts/teacup-healer.png",
+        "sourceSha256": "880e9ff3f25b7db6bd54eae33d40bcfd8dbad0868a2f616dc5093b211cc820ac",
+        "crop": [
+          48,
+          35,
+          1346,
+          1657
+        ],
+        "method": "Original master crop, alpha composite on authored cafe gradient, Lanczos downsample, WebP92",
+        "deliveredSha256": {
+          "1x": "26894ef4eb55ad4152bed2306595300bb18025e48259e3a70fc54ab5d5bd9266",
+          "2x": "de5e2d300c9337fd590b95841b12cbfbe39381c6e700320391f252337a3b47e7"
+        }
+      },
+      "uiPortrait": {
+        "compact": "assets/cardrpg-look/v3-portraits/teacup-healer-ui-56.webp",
+        "1x": "assets/cardrpg-look/v3-portraits/teacup-healer-ui-72.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/teacup-healer-ui-144.webp",
+        "display": [
+          72,
+          72
+        ],
+        "sizes": [
+          [
+            56,
+            56
+          ],
+          [
+            72,
+            72
+          ],
+          [
+            144,
+            144
+          ]
+        ],
+        "usage": "Square face crop for formation/tower slots; object-fit:cover; original card portrait remains available",
+        "provenance": {
+          "source": "assets/source/look-v3/concepts/teacup-healer.png",
+          "sourceSha256": "880e9ff3f25b7db6bd54eae33d40bcfd8dbad0868a2f616dc5093b211cc820ac",
+          "crop": [
+            304,
+            74,
+            1017,
+            787
+          ],
+          "method": "Authored face ROI, original alpha composited on cafe colour, Lanczos, WebP92",
+          "author": "tools/cardrpg-look/art-rebuild/pack-ui-portraits.py",
+          "deliveredSha256": {
+            "56": "2d23a0af5f88d291d74e87cecc616a762e075d839086e36b62375c457b8cdb62",
+            "72": "974e2f56d05db53072a0d10aaf82f671d884ae9bc7f70d6abe7b520962d9b33b",
+            "144": "5c50f131bb24626eee350045f761138c3b063fb9219b13b8a1a69ae1b70325d4"
+          }
+        }
+      },
+      "cardArt": {
+        "1x": "assets/cardrpg-look/v3-portraits/teacup-healer-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/teacup-healer-2x.webp",
+        "display": [
+          256,
+          320
+        ],
+        "sizes": [
+          [
+            256,
+            320
+          ],
+          [
+            512,
+            640
+          ]
+        ],
+        "usage": "Full-body recruitment and collection card"
+      },
+      "headPortrait": {
+        "1x": "assets/cardrpg-look/v3-portraits/teacup-healer-head-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/teacup-healer-head-2x.webp",
+        "display": [
+          160,
+          176
+        ],
+        "provenance": {
+          "source": "assets/source/look-v3/concepts/teacup-healer.png",
+          "crop": [
+            181,
+            76,
+            1157,
+            1150
+          ],
+          "method": "Original concept crop, authored cafe background, Lanczos/WebP92",
+          "tool": "tools/cardrpg-look/art-rebuild/puppet/publish-manifest.py"
+        }
+      },
+      "faceIcon": {
+        "1x": "assets/cardrpg-look/v3-portraits/teacup-healer-face-72.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/teacup-healer-face-144.webp",
+        "display": [
+          72,
+          72
+        ],
+        "usage": "Round face icon; transparent outside circle",
+        "provenance": {
+          "source": "assets/cardrpg-look/v3-portraits/teacup-healer-ui-144.webp",
+          "method": "Circular alpha mask on the accepted original face crop; no new generation",
+          "tool": "tools/cardrpg-look/art-rebuild/puppet/publish-manifest.py"
+        }
+      },
+      "puppet": {
+        "rig": "assets/cardrpg-look/v3-puppets/teacup-healer.rig.json",
+        "atlas": "assets/cardrpg-look/v3-puppets/teacup-healer.webp",
+        "motions": [
+          "idle",
+          "attack",
+          "cast",
+          "hurt",
+          "ultimate",
+          "victory",
+          "defeat"
+        ]
+      },
+      "review": "P4/P5 original-concept puppet accepted by Lane B self-review"
+    },
+    "binding-thread": {
+      "id": "binding-thread",
+      "side": "enemy",
+      "portrait": {
+        "1x": "assets/cardrpg-look/v3-portraits/binding-thread-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/binding-thread-2x.webp",
+        "display": [
+          256,
+          320
+        ],
+        "sizes": [
+          [
+            256,
+            320
+          ],
+          [
+            512,
+            640
+          ]
+        ]
+      },
+      "provenance": {
+        "source": "assets/source/look-v3/concepts/binding-thread.png",
+        "sourceSha256": "d41f54790a6a98678fc0a2e2e54ab8e36f2f9e00d87b8ce30326d4dcb0f26658",
+        "crop": [
+          76,
+          36,
+          1108,
+          1326
+        ],
+        "method": "Original master crop, alpha composite on authored cafe gradient, Lanczos downsample, WebP92",
+        "deliveredSha256": {
+          "1x": "1ac617ded37d1b781dda0a0971f371b705ae91fe0424650350b3dcc0eca3cce0",
+          "2x": "0660756fcea0950ceba9be23c87860bd13c2e3391a73f3a79b6e3c4ec9bc72b8"
+        }
+      },
+      "uiPortrait": {
+        "compact": "assets/cardrpg-look/v3-portraits/binding-thread-ui-56.webp",
+        "1x": "assets/cardrpg-look/v3-portraits/binding-thread-ui-72.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/binding-thread-ui-144.webp",
+        "display": [
+          72,
+          72
+        ],
+        "sizes": [
+          [
+            56,
+            56
+          ],
+          [
+            72,
+            72
+          ],
+          [
+            144,
+            144
+          ]
+        ],
+        "usage": "Square face crop for formation/tower slots; object-fit:cover; original card portrait remains available",
+        "provenance": {
+          "source": "assets/source/look-v3/concepts/binding-thread.png",
+          "sourceSha256": "d41f54790a6a98678fc0a2e2e54ab8e36f2f9e00d87b8ce30326d4dcb0f26658",
+          "crop": [
+            288,
+            142,
+            857,
+            712
+          ],
+          "method": "Authored face ROI, original alpha composited on cafe colour, Lanczos, WebP92",
+          "author": "tools/cardrpg-look/art-rebuild/pack-ui-portraits.py",
+          "deliveredSha256": {
+            "56": "5d3db68c613373f4a6b26d3609cf280f1ff762df82c1eb7d9b13e9aed438fb0a",
+            "72": "45cf2727d65571938961a69cf6a74e24b3136987c777c2038dbfee5689a0a2d2",
+            "144": "5ee441a440e6ec025d059782d10d5ac7205b949fc980fe1e5ad54dcffb5df91b"
+          }
+        }
+      },
+      "cardArt": {
+        "1x": "assets/cardrpg-look/v3-portraits/binding-thread-card-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/binding-thread-card-2x.webp",
+        "display": [
+          256,
+          320
+        ],
+        "sizes": [
+          [
+            256,
+            320
+          ],
+          [
+            512,
+            640
+          ]
+        ],
+        "usage": "Full-body recruitment and collection card",
+        "provenance": {
+          "source": "assets/source/look-v3/concepts/binding-thread.png",
+          "alphaBounds": [
+            114,
+            114,
+            1070,
+            1537
+          ],
+          "method": "Complete original alpha bounds fitted into512x640 with breathing room; Lanczos/WebP92",
+          "tool": "tools/cardrpg-look/art-rebuild/puppet/publish-manifest.py"
+        }
+      },
+      "headPortrait": {
+        "1x": "assets/cardrpg-look/v3-portraits/binding-thread-head-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/binding-thread-head-2x.webp",
+        "display": [
+          160,
+          176
+        ],
+        "provenance": {
+          "source": "assets/source/look-v3/concepts/binding-thread.png",
+          "crop": [
+            102,
+            89,
+            1011,
+            1088
+          ],
+          "method": "Original concept crop, authored cafe background, Lanczos/WebP92",
+          "tool": "tools/cardrpg-look/art-rebuild/puppet/publish-manifest.py"
+        }
+      },
+      "faceIcon": {
+        "1x": "assets/cardrpg-look/v3-portraits/binding-thread-face-72.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/binding-thread-face-144.webp",
+        "display": [
+          72,
+          72
+        ],
+        "usage": "Round face icon; transparent outside circle",
+        "provenance": {
+          "source": "assets/cardrpg-look/v3-portraits/binding-thread-ui-144.webp",
+          "method": "Circular alpha mask on the accepted original face crop; no new generation",
+          "tool": "tools/cardrpg-look/art-rebuild/puppet/publish-manifest.py"
+        }
+      },
+      "puppet": {
+        "rig": "assets/cardrpg-look/v3-puppets/binding-thread.rig.json",
+        "atlas": "assets/cardrpg-look/v3-puppets/binding-thread.webp",
+        "motions": [
+          "idle",
+          "attack",
+          "cast",
+          "hurt",
+          "ultimate",
+          "victory",
+          "defeat"
+        ]
+      },
+      "review": "P4/P5 original-concept puppet accepted by Lane B self-review"
+    },
+    "practice-cushion": {
+      "id": "practice-cushion",
+      "side": "enemy",
+      "portrait": {
+        "1x": "assets/cardrpg-look/v3-portraits/practice-cushion-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/practice-cushion-2x.webp",
+        "display": [
+          256,
+          320
+        ],
+        "sizes": [
+          [
+            256,
+            320
+          ],
+          [
+            512,
+            640
+          ]
+        ]
+      },
+      "provenance": {
+        "source": "assets/source/look-v3/concepts/practice-cushion.png",
+        "sourceSha256": "62d2dc7613e576c8a61bbe0bc19bbbc90a3a26ada8d2315c717c63d0825390d6",
+        "crop": [
+          48,
+          35,
+          1342,
+          1652
+        ],
+        "method": "Original master crop, alpha composite on authored cafe gradient, Lanczos downsample, WebP92",
+        "deliveredSha256": {
+          "1x": "d92f450ad7f7494c308bc43d93b11b8079143827de292f4e9664fd45873573a0",
+          "2x": "ce5a3fb7d1dd2d2bf077c62760bb7416c22b158b5ce0fb6cfdeece43003046e2"
+        }
+      },
+      "uiPortrait": {
+        "compact": "assets/cardrpg-look/v3-portraits/practice-cushion-ui-56.webp",
+        "1x": "assets/cardrpg-look/v3-portraits/practice-cushion-ui-72.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/practice-cushion-ui-144.webp",
+        "display": [
+          72,
+          72
+        ],
+        "sizes": [
+          [
+            56,
+            56
+          ],
+          [
+            72,
+            72
+          ],
+          [
+            144,
+            144
+          ]
+        ],
+        "usage": "Square face crop for formation/tower slots; object-fit:cover; original card portrait remains available",
+        "provenance": {
+          "source": "assets/source/look-v3/concepts/practice-cushion.png",
+          "sourceSha256": "62d2dc7613e576c8a61bbe0bc19bbbc90a3a26ada8d2315c717c63d0825390d6",
+          "crop": [
+            195,
+            152,
+            1195,
+            1151
+          ],
+          "method": "Authored face ROI, original alpha composited on cafe colour, Lanczos, WebP92",
+          "author": "tools/cardrpg-look/art-rebuild/pack-ui-portraits.py",
+          "deliveredSha256": {
+            "56": "7fccd0e77501265839d98ff50be306e2209f9eac8ac90b8b7e954dc5f2ca7996",
+            "72": "1afe68a511139cfb8e7c1de5f4285cc144b20f913df2f0d4c9d3a6716fd41f77",
+            "144": "4bb77c1a9ada3e31804ee227eaebcaeff828a69158721a4ef76124420fc93b9f"
+          }
+        }
+      },
+      "cardArt": {
+        "1x": "assets/cardrpg-look/v3-portraits/practice-cushion-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/practice-cushion-2x.webp",
+        "display": [
+          256,
+          320
+        ],
+        "sizes": [
+          [
+            256,
+            320
+          ],
+          [
+            512,
+            640
+          ]
+        ],
+        "usage": "Full-body recruitment and collection card"
+      },
+      "headPortrait": {
+        "1x": "assets/cardrpg-look/v3-portraits/practice-cushion-head-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/practice-cushion-head-2x.webp",
+        "display": [
+          160,
+          176
+        ],
+        "provenance": {
+          "source": "assets/source/look-v3/concepts/practice-cushion.png",
+          "crop": [
+            181,
+            76,
+            1154,
+            1147
+          ],
+          "method": "Original concept crop, authored cafe background, Lanczos/WebP92",
+          "tool": "tools/cardrpg-look/art-rebuild/puppet/publish-manifest.py"
+        }
+      },
+      "faceIcon": {
+        "1x": "assets/cardrpg-look/v3-portraits/practice-cushion-face-72.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/practice-cushion-face-144.webp",
+        "display": [
+          72,
+          72
+        ],
+        "usage": "Round face icon; transparent outside circle",
+        "provenance": {
+          "source": "assets/cardrpg-look/v3-portraits/practice-cushion-ui-144.webp",
+          "method": "Circular alpha mask on the accepted original face crop; no new generation",
+          "tool": "tools/cardrpg-look/art-rebuild/puppet/publish-manifest.py"
+        }
+      },
+      "puppet": {
+        "rig": "assets/cardrpg-look/v3-puppets/practice-cushion.rig.json",
+        "atlas": "assets/cardrpg-look/v3-puppets/practice-cushion.webp",
+        "motions": [
+          "idle",
+          "attack",
+          "cast",
+          "hurt",
+          "ultimate",
+          "victory",
+          "defeat"
+        ]
+      },
+      "review": "P4/P5 original-concept puppet accepted by Lane B self-review"
+    },
+    "pollen-scout": {
+      "id": "pollen-scout",
+      "side": "enemy",
+      "portrait": {
+        "1x": "assets/cardrpg-look/v3-portraits/pollen-scout-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/pollen-scout-2x.webp",
+        "display": [
+          256,
+          320
+        ],
+        "sizes": [
+          [
+            256,
+            320
+          ],
+          [
+            512,
+            640
+          ]
+        ]
+      },
+      "provenance": {
+        "source": "assets/source/look-v3/concepts/pollen-scout.png",
+        "sourceSha256": "7fa9e1437877c28452b402ba1631869c484055b01b3cb2b55b9ec61ef4301b58",
+        "crop": [
+          53,
+          45,
+          1500,
+          1853
+        ],
+        "method": "Original master crop, alpha composite on authored cafe gradient, Lanczos downsample, WebP92",
+        "deliveredSha256": {
+          "1x": "9c2689eb985601ffb1603408f3291b7fd936470236e1ccfa37fd87b353178d4a",
+          "2x": "556639de724967020ef287ce1a18e920b19d7e78b651763f21cac34e65819ce6"
+        }
+      },
+      "uiPortrait": {
+        "compact": "assets/cardrpg-look/v3-portraits/pollen-scout-ui-56.webp",
+        "1x": "assets/cardrpg-look/v3-portraits/pollen-scout-ui-72.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/pollen-scout-ui-144.webp",
+        "display": [
+          72,
+          72
+        ],
+        "sizes": [
+          [
+            56,
+            56
+          ],
+          [
+            72,
+            72
+          ],
+          [
+            144,
+            144
+          ]
+        ],
+        "usage": "Square face crop for formation/tower slots; object-fit:cover; original card portrait remains available",
+        "provenance": {
+          "source": "assets/source/look-v3/concepts/pollen-scout.png",
+          "sourceSha256": "7fa9e1437877c28452b402ba1631869c484055b01b3cb2b55b9ec61ef4301b58",
+          "crop": [
+            416,
+            107,
+            1137,
+            828
+          ],
+          "method": "Authored face ROI, original alpha composited on cafe colour, Lanczos, WebP92",
+          "author": "tools/cardrpg-look/art-rebuild/pack-ui-portraits.py",
+          "deliveredSha256": {
+            "56": "afc83bafa9765a383f971569b4346ee5eac6056b9981dddf36e4f04c00cfe0a8",
+            "72": "d2982c3cc3227e9d0edb4d455d926a578a03bb6eb729e1cdbd65f46d49682459",
+            "144": "32184e6597ecbc417a6f8cf7a7907498352ea8899c27b9a3179fd1c36c470852"
+          }
+        }
+      },
+      "cardArt": {
+        "1x": "assets/cardrpg-look/v3-portraits/pollen-scout-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/pollen-scout-2x.webp",
+        "display": [
+          256,
+          320
+        ],
+        "sizes": [
+          [
+            256,
+            320
+          ],
+          [
+            512,
+            640
+          ]
+        ],
+        "usage": "Full-body recruitment and collection card"
+      },
+      "headPortrait": {
+        "1x": "assets/cardrpg-look/v3-portraits/pollen-scout-head-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/pollen-scout-head-2x.webp",
+        "display": [
+          160,
+          176
+        ],
+        "provenance": {
+          "source": "assets/source/look-v3/concepts/pollen-scout.png",
+          "crop": [
+            264,
+            87,
+            1351,
+            1283
+          ],
+          "method": "Original concept crop, authored cafe background, Lanczos/WebP92",
+          "tool": "tools/cardrpg-look/art-rebuild/puppet/publish-manifest.py"
+        }
+      },
+      "faceIcon": {
+        "1x": "assets/cardrpg-look/v3-portraits/pollen-scout-face-72.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/pollen-scout-face-144.webp",
+        "display": [
+          72,
+          72
+        ],
+        "usage": "Round face icon; transparent outside circle",
+        "provenance": {
+          "source": "assets/cardrpg-look/v3-portraits/pollen-scout-ui-144.webp",
+          "method": "Circular alpha mask on the accepted original face crop; no new generation",
+          "tool": "tools/cardrpg-look/art-rebuild/puppet/publish-manifest.py"
+        }
+      },
+      "puppet": {
+        "rig": "assets/cardrpg-look/v3-puppets/pollen-scout.rig.json",
+        "atlas": "assets/cardrpg-look/v3-puppets/pollen-scout.webp",
+        "motions": [
+          "idle",
+          "attack",
+          "cast",
+          "hurt",
+          "ultimate",
+          "victory",
+          "defeat"
+        ]
+      },
+      "review": "P4/P5 original-concept puppet accepted by Lane B self-review"
+    },
+    "crumb-sentinel": {
+      "id": "crumb-sentinel",
+      "side": "enemy",
+      "portrait": {
+        "1x": "assets/cardrpg-look/v3-portraits/crumb-sentinel-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/crumb-sentinel-2x.webp",
+        "display": [
+          256,
+          320
+        ],
+        "sizes": [
+          [
+            256,
+            320
+          ],
+          [
+            512,
+            640
+          ]
+        ]
+      },
+      "provenance": {
+        "source": "assets/source/look-v3/concepts/crumb-sentinel.png",
+        "sourceSha256": "c1d7d45550c86f2b57885b41887cf21421b2c8465fd83f0672a85d3ce675511a",
+        "crop": [
+          51,
+          39,
+          1423,
+          1754
+        ],
+        "method": "Original master crop, alpha composite on authored cafe gradient, Lanczos downsample, WebP92",
+        "deliveredSha256": {
+          "1x": "fc7929669b9065005f8ee633ca4af2b8583d14b657bce2825dd92c6e4fea2580",
+          "2x": "fdeba8992ce308ec1519c00b65006464a604c85bf9a718bf8adddbf79317336c"
+        }
+      },
+      "uiPortrait": {
+        "compact": "assets/cardrpg-look/v3-portraits/crumb-sentinel-ui-56.webp",
+        "1x": "assets/cardrpg-look/v3-portraits/crumb-sentinel-ui-72.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/crumb-sentinel-ui-144.webp",
+        "display": [
+          72,
+          72
+        ],
+        "sizes": [
+          [
+            56,
+            56
+          ],
+          [
+            72,
+            72
+          ],
+          [
+            144,
+            144
+          ]
+        ],
+        "usage": "Square face crop for formation/tower slots; object-fit:cover; original card portrait remains available",
+        "provenance": {
+          "source": "assets/source/look-v3/concepts/crumb-sentinel.png",
+          "sourceSha256": "c1d7d45550c86f2b57885b41887cf21421b2c8465fd83f0672a85d3ce675511a",
+          "crop": [
+            251,
+            131,
+            1223,
+            1103
+          ],
+          "method": "Authored face ROI, original alpha composited on cafe colour, Lanczos, WebP92",
+          "author": "tools/cardrpg-look/art-rebuild/pack-ui-portraits.py",
+          "deliveredSha256": {
+            "56": "fc2389eea9f662e8292f10a97d93806a2cb40c7f8c6001806e80c777af78af0c",
+            "72": "d5f73c489e4e471ba1f4a088b102786d7c051fc2dc75e9d24a53cccb56518d08",
+            "144": "2cb9ff695000df4fee1dd06d567dc7cb168533806d6fe63717aab046054c4a96"
+          }
+        }
+      },
+      "cardArt": {
+        "1x": "assets/cardrpg-look/v3-portraits/crumb-sentinel-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/crumb-sentinel-2x.webp",
+        "display": [
+          256,
+          320
+        ],
+        "sizes": [
+          [
+            256,
+            320
+          ],
+          [
+            512,
+            640
+          ]
+        ],
+        "usage": "Full-body recruitment and collection card"
+      },
+      "headPortrait": {
+        "1x": "assets/cardrpg-look/v3-portraits/crumb-sentinel-head-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/crumb-sentinel-head-2x.webp",
+        "display": [
+          160,
+          176
+        ],
+        "provenance": {
+          "source": "assets/source/look-v3/concepts/crumb-sentinel.png",
+          "crop": [
+            147,
+            82,
+            1179,
+            1217
+          ],
+          "method": "Original concept crop, authored cafe background, Lanczos/WebP92",
+          "tool": "tools/cardrpg-look/art-rebuild/puppet/publish-manifest.py"
+        }
+      },
+      "faceIcon": {
+        "1x": "assets/cardrpg-look/v3-portraits/crumb-sentinel-face-72.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/crumb-sentinel-face-144.webp",
+        "display": [
+          72,
+          72
+        ],
+        "usage": "Round face icon; transparent outside circle",
+        "provenance": {
+          "source": "assets/cardrpg-look/v3-portraits/crumb-sentinel-ui-144.webp",
+          "method": "Circular alpha mask on the accepted original face crop; no new generation",
+          "tool": "tools/cardrpg-look/art-rebuild/puppet/publish-manifest.py"
+        }
+      },
+      "puppet": {
+        "rig": "assets/cardrpg-look/v3-puppets/crumb-sentinel.rig.json",
+        "atlas": "assets/cardrpg-look/v3-puppets/crumb-sentinel.webp",
+        "motions": [
+          "idle",
+          "attack",
+          "cast",
+          "hurt",
+          "ultimate",
+          "victory",
+          "defeat"
+        ]
+      },
+      "review": "P4/P5 original-concept puppet accepted by Lane B self-review"
+    },
+    "rain-spool": {
+      "id": "rain-spool",
+      "side": "enemy",
+      "portrait": {
+        "1x": "assets/cardrpg-look/v3-portraits/rain-spool-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/rain-spool-2x.webp",
+        "display": [
+          256,
+          320
+        ],
+        "sizes": [
+          [
+            256,
+            320
+          ],
+          [
+            512,
+            640
+          ]
+        ]
+      },
+      "provenance": {
+        "source": "assets/source/look-v3/concepts/rain-spool.png",
+        "sourceSha256": "d241fcf0e3999527f32c6a1f4aa0b23702787c096def43750edcae58afdd4d37",
+        "crop": [
+          55,
+          61,
+          1558,
+          1939
+        ],
+        "method": "Original master crop, alpha composite on authored cafe gradient, Lanczos downsample, WebP92",
+        "deliveredSha256": {
+          "1x": "54731a2a20c55e0c8bf56e41927d8cd6c1428192647355f4b7e1352f2a01db43",
+          "2x": "0890bda4e6f62b9ec7bf2cc191db3d5f68912b72b568255a82553f867f3f323b"
+        }
+      },
+      "uiPortrait": {
+        "compact": "assets/cardrpg-look/v3-portraits/rain-spool-ui-56.webp",
+        "1x": "assets/cardrpg-look/v3-portraits/rain-spool-ui-72.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/rain-spool-ui-144.webp",
+        "display": [
+          72,
+          72
+        ],
+        "sizes": [
+          [
+            56,
+            56
+          ],
+          [
+            72,
+            72
+          ],
+          [
+            144,
+            144
+          ]
+        ],
+        "usage": "Square face crop for formation/tower slots; object-fit:cover; original card portrait remains available",
+        "provenance": {
+          "source": "assets/source/look-v3/concepts/rain-spool.png",
+          "sourceSha256": "d241fcf0e3999527f32c6a1f4aa0b23702787c096def43750edcae58afdd4d37",
+          "crop": [
+            257,
+            161,
+            938,
+            842
+          ],
+          "method": "Authored face ROI, original alpha composited on cafe colour, Lanczos, WebP92",
+          "author": "tools/cardrpg-look/art-rebuild/pack-ui-portraits.py",
+          "deliveredSha256": {
+            "56": "e157037cb7dc1b9e70ff551fd23ede5a63151d5d4d9c0e6826e27a4c797069ea",
+            "72": "647b618a974e33aeefd4f659925930ae89e95c113738e642fe2e681588927b25",
+            "144": "d30318b74240a7aa0d6d616b87dacc87ecbcc02de1c46277e2d32d3fbafdcad2"
+          }
+        }
+      },
+      "cardArt": {
+        "1x": "assets/cardrpg-look/v3-portraits/rain-spool-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/rain-spool-2x.webp",
+        "display": [
+          256,
+          320
+        ],
+        "sizes": [
+          [
+            256,
+            320
+          ],
+          [
+            512,
+            640
+          ]
+        ],
+        "usage": "Full-body recruitment and collection card"
+      },
+      "headPortrait": {
+        "1x": "assets/cardrpg-look/v3-portraits/rain-spool-head-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/rain-spool-head-2x.webp",
+        "display": [
+          160,
+          176
+        ],
+        "provenance": {
+          "source": "assets/source/look-v3/concepts/rain-spool.png",
+          "crop": [
+            -113,
+            94,
+            1016,
+            1336
+          ],
+          "method": "Original concept crop, authored cafe background, Lanczos/WebP92",
+          "tool": "tools/cardrpg-look/art-rebuild/puppet/publish-manifest.py"
+        }
+      },
+      "faceIcon": {
+        "1x": "assets/cardrpg-look/v3-portraits/rain-spool-face-72.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/rain-spool-face-144.webp",
+        "display": [
+          72,
+          72
+        ],
+        "usage": "Round face icon; transparent outside circle",
+        "provenance": {
+          "source": "assets/cardrpg-look/v3-portraits/rain-spool-ui-144.webp",
+          "method": "Circular alpha mask on the accepted original face crop; no new generation",
+          "tool": "tools/cardrpg-look/art-rebuild/puppet/publish-manifest.py"
+        }
+      },
+      "puppet": {
+        "rig": "assets/cardrpg-look/v3-puppets/rain-spool.rig.json",
+        "atlas": "assets/cardrpg-look/v3-puppets/rain-spool.webp",
+        "motions": [
+          "idle",
+          "attack",
+          "cast",
+          "hurt",
+          "ultimate",
+          "victory",
+          "defeat",
+          "boss-idle"
+        ]
+      },
+      "review": "P4/P5 original-concept puppet accepted by Lane B self-review"
+    },
+    "yarn-giant": {
+      "id": "yarn-giant",
+      "side": "enemy",
+      "portrait": {
+        "1x": "assets/cardrpg-look/v3-portraits/yarn-giant-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/yarn-giant-2x.webp",
+        "display": [
+          256,
+          320
+        ],
+        "sizes": [
+          [
+            256,
+            320
+          ],
+          [
+            512,
+            640
+          ]
+        ]
+      },
+      "provenance": {
+        "source": "assets/source/look-v3/concepts/yarn-giant.png",
+        "sourceSha256": "227e47d33b48776cebe5b255e3f202d4821d15a8264be4f90fbbac39e21883db",
+        "crop": [
+          -52,
+          -59,
+          1352,
+          1696
+        ],
+        "method": "Original master crop, alpha composite on authored cafe gradient, Lanczos downsample, WebP92",
+        "deliveredSha256": {
+          "1x": "e8472a2f9f5cf834b2ca96ec00cfe5bfedf7108f7923fa1d7896b10926f0808c",
+          "2x": "e88985f7799340d33c894da5f960a455937739771582854299f29a46dd41f3f1"
+        }
+      },
+      "uiPortrait": {
+        "compact": "assets/cardrpg-look/v3-portraits/yarn-giant-ui-56.webp",
+        "1x": "assets/cardrpg-look/v3-portraits/yarn-giant-ui-72.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/yarn-giant-ui-144.webp",
+        "display": [
+          72,
+          72
+        ],
+        "sizes": [
+          [
+            56,
+            56
+          ],
+          [
+            72,
+            72
+          ],
+          [
+            144,
+            144
+          ]
+        ],
+        "usage": "Square face crop for formation/tower slots; object-fit:cover; original card portrait remains available",
+        "provenance": {
+          "source": "assets/source/look-v3/concepts/yarn-giant.png",
+          "sourceSha256": "227e47d33b48776cebe5b255e3f202d4821d15a8264be4f90fbbac39e21883db",
+          "crop": [
+            273,
+            -53,
+            1027,
+            700
+          ],
+          "method": "Authored face ROI, original alpha composited on cafe colour, Lanczos, WebP92",
+          "author": "tools/cardrpg-look/art-rebuild/pack-ui-portraits.py",
+          "deliveredSha256": {
+            "56": "650490a3a9e532c49d0a246b954eb6ae7a1956d0c1a564e84e6cb8ceb13c104f",
+            "72": "6d69310479076aed71148e26c6e806598ee6e14f9aa62e1c8635d48723de4439",
+            "144": "73d82fdeaa6bf7180ef803da33c6209531e0b406cbc074520c8b47bc6726956e"
+          }
+        }
+      },
+      "cardArt": {
+        "1x": "assets/cardrpg-look/v3-portraits/yarn-giant-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/yarn-giant-2x.webp",
+        "display": [
+          256,
+          320
+        ],
+        "sizes": [
+          [
+            256,
+            320
+          ],
+          [
+            512,
+            640
+          ]
+        ],
+        "usage": "Full-body recruitment and collection card"
+      },
+      "headPortrait": {
+        "1x": "assets/cardrpg-look/v3-portraits/yarn-giant-head-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/yarn-giant-head-2x.webp",
+        "display": [
+          160,
+          176
+        ],
+        "provenance": {
+          "source": "assets/source/look-v3/concepts/yarn-giant.png",
+          "crop": [
+            66,
+            -12,
+            984,
+            998
+          ],
+          "method": "Original concept crop, authored cafe background, Lanczos/WebP92",
+          "tool": "tools/cardrpg-look/art-rebuild/puppet/publish-manifest.py"
+        }
+      },
+      "faceIcon": {
+        "1x": "assets/cardrpg-look/v3-portraits/yarn-giant-face-72.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/yarn-giant-face-144.webp",
+        "display": [
+          72,
+          72
+        ],
+        "usage": "Round face icon; transparent outside circle",
+        "provenance": {
+          "source": "assets/cardrpg-look/v3-portraits/yarn-giant-ui-144.webp",
+          "method": "Circular alpha mask on the accepted original face crop; no new generation",
+          "tool": "tools/cardrpg-look/art-rebuild/puppet/publish-manifest.py"
+        }
+      },
+      "puppet": {
+        "rig": "assets/cardrpg-look/v3-puppets/yarn-giant.rig.json",
+        "atlas": "assets/cardrpg-look/v3-puppets/yarn-giant.webp",
+        "motions": [
+          "idle",
+          "attack",
+          "cast",
+          "hurt",
+          "ultimate",
+          "victory",
+          "defeat",
+          "boss-idle"
+        ]
+      },
+      "review": "P4/P5 original-concept puppet accepted by Lane B self-review"
+    },
+    "kettle-knight": {
+      "id": "kettle-knight",
+      "side": "enemy",
+      "portrait": {
+        "1x": "assets/cardrpg-look/v3-portraits/kettle-knight-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/kettle-knight-2x.webp",
+        "display": [
+          256,
+          320
+        ],
+        "sizes": [
+          [
+            256,
+            320
+          ],
+          [
+            512,
+            640
+          ]
+        ]
+      },
+      "provenance": {
+        "source": "assets/source/look-v3/concepts/kettle-knight.png",
+        "sourceSha256": "a669c0aa2b005a0d63b6b7feccdd14ee779d60a87f06178770819a289412dc83",
+        "crop": [
+          51,
+          37,
+          1430,
+          1761
+        ],
+        "method": "Original master crop, alpha composite on authored cafe gradient, Lanczos downsample, WebP92",
+        "deliveredSha256": {
+          "1x": "b3eb66a7a4a3d0a9773d0f9a69ed96a83d6d3d5742280aef97fbf1f1d7354eda",
+          "2x": "013a66fefdf3f20f0aede6666f776b5935f6feb9529b19a8cee46fa6e3c91a51"
+        }
+      },
+      "uiPortrait": {
+        "compact": "assets/cardrpg-look/v3-portraits/kettle-knight-ui-56.webp",
+        "1x": "assets/cardrpg-look/v3-portraits/kettle-knight-ui-72.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/kettle-knight-ui-144.webp",
+        "display": [
+          72,
+          72
+        ],
+        "sizes": [
+          [
+            56,
+            56
+          ],
+          [
+            72,
+            72
+          ],
+          [
+            144,
+            144
+          ]
+        ],
+        "usage": "Square face crop for formation/tower slots; object-fit:cover; original card portrait remains available",
+        "provenance": {
+          "source": "assets/source/look-v3/concepts/kettle-knight.png",
+          "sourceSha256": "a669c0aa2b005a0d63b6b7feccdd14ee779d60a87f06178770819a289412dc83",
+          "crop": [
+            289,
+            126,
+            1192,
+            1029
+          ],
+          "method": "Authored face ROI, original alpha composited on cafe colour, Lanczos, WebP92",
+          "author": "tools/cardrpg-look/art-rebuild/pack-ui-portraits.py",
+          "deliveredSha256": {
+            "56": "63e5ddb108a4a30e51c7c3ed1e5bfd97382d326da25f4459bcfc277ee4177a0f",
+            "72": "06ebf81550b2e077a9ad7f91bff62287677547164746a337a312a253700ffc5b",
+            "144": "b55e4a4c9f835f155ca3cb8e72e001088bfff9ca627b98e65c831954a44ddc0f"
+          }
+        }
+      },
+      "cardArt": {
+        "1x": "assets/cardrpg-look/v3-portraits/kettle-knight-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/kettle-knight-2x.webp",
+        "display": [
+          256,
+          320
+        ],
+        "sizes": [
+          [
+            256,
+            320
+          ],
+          [
+            512,
+            640
+          ]
+        ],
+        "usage": "Full-body recruitment and collection card"
+      },
+      "headPortrait": {
+        "1x": "assets/cardrpg-look/v3-portraits/kettle-knight-head-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/kettle-knight-head-2x.webp",
+        "display": [
+          160,
+          176
+        ],
+        "provenance": {
+          "source": "assets/source/look-v3/concepts/kettle-knight.png",
+          "crop": [
+            207,
+            81,
+            1244,
+            1221
+          ],
+          "method": "Original concept crop, authored cafe background, Lanczos/WebP92",
+          "tool": "tools/cardrpg-look/art-rebuild/puppet/publish-manifest.py"
+        }
+      },
+      "faceIcon": {
+        "1x": "assets/cardrpg-look/v3-portraits/kettle-knight-face-72.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/kettle-knight-face-144.webp",
+        "display": [
+          72,
+          72
+        ],
+        "usage": "Round face icon; transparent outside circle",
+        "provenance": {
+          "source": "assets/cardrpg-look/v3-portraits/kettle-knight-ui-144.webp",
+          "method": "Circular alpha mask on the accepted original face crop; no new generation",
+          "tool": "tools/cardrpg-look/art-rebuild/puppet/publish-manifest.py"
+        }
+      },
+      "puppet": {
+        "rig": "assets/cardrpg-look/v3-puppets/kettle-knight.rig.json",
+        "atlas": "assets/cardrpg-look/v3-puppets/kettle-knight.webp",
+        "motions": [
+          "idle",
+          "attack",
+          "cast",
+          "hurt",
+          "ultimate",
+          "victory",
+          "defeat",
+          "boss-idle"
+        ]
+      },
+      "review": "P4/P5 original-concept puppet accepted by Lane B self-review"
+    },
+    "pantry-crown": {
+      "id": "pantry-crown",
+      "side": "enemy",
+      "portrait": {
+        "1x": "assets/cardrpg-look/v3-portraits/pantry-crown-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/pantry-crown-2x.webp",
+        "display": [
+          256,
+          320
+        ],
+        "sizes": [
+          [
+            256,
+            320
+          ],
+          [
+            512,
+            640
+          ]
+        ]
+      },
+      "provenance": {
+        "source": "assets/source/look-v3/concepts/pantry-crown.png",
+        "sourceSha256": "64c679596a74b7686035f4a74e055a324b652d81133ac216e07270b123291837",
+        "crop": [
+          57,
+          33,
+          1321,
+          1612
+        ],
+        "method": "Original master crop, alpha composite on authored cafe gradient, Lanczos downsample, WebP92",
+        "deliveredSha256": {
+          "1x": "b3d752c090196542cfe7efb73044dd88ee7a04fd4edd4f9a430fdef46d814a9b",
+          "2x": "534ed33773a85972764c02e5b362ccf4be0382d4fa3529ef3b09efa6899ad944"
+        }
+      },
+      "uiPortrait": {
+        "compact": "assets/cardrpg-look/v3-portraits/pantry-crown-ui-56.webp",
+        "1x": "assets/cardrpg-look/v3-portraits/pantry-crown-ui-72.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/pantry-crown-ui-144.webp",
+        "display": [
+          72,
+          72
+        ],
+        "sizes": [
+          [
+            56,
+            56
+          ],
+          [
+            72,
+            72
+          ],
+          [
+            144,
+            144
+          ]
+        ],
+        "usage": "Square face crop for formation/tower slots; object-fit:cover; original card portrait remains available",
+        "provenance": {
+          "source": "assets/source/look-v3/concepts/pantry-crown.png",
+          "sourceSha256": "64c679596a74b7686035f4a74e055a324b652d81133ac216e07270b123291837",
+          "crop": [
+            203,
+            110,
+            1175,
+            1083
+          ],
+          "method": "Authored face ROI, original alpha composited on cafe colour, Lanczos, WebP92",
+          "author": "tools/cardrpg-look/art-rebuild/pack-ui-portraits.py",
+          "deliveredSha256": {
+            "56": "300fbbd300f5edfcea212199b22b9458902d9c5d669ab78376fbce226d1b50e0",
+            "72": "28123ab5b964bfd7fdf7b8528159a1ca7682d608aea5b89b965cfa5b0a53fcc5",
+            "144": "e24d5d62f417a7a74d1fe49e57c06cdfc28f468e1f9b7020e57e9e9914d4756f"
+          }
+        }
+      },
+      "cardArt": {
+        "1x": "assets/cardrpg-look/v3-portraits/pantry-crown-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/pantry-crown-2x.webp",
+        "display": [
+          256,
+          320
+        ],
+        "sizes": [
+          [
+            256,
+            320
+          ],
+          [
+            512,
+            640
+          ]
+        ],
+        "usage": "Full-body recruitment and collection card"
+      },
+      "headPortrait": {
+        "1x": "assets/cardrpg-look/v3-portraits/pantry-crown-head-1x.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/pantry-crown-head-2x.webp",
+        "display": [
+          160,
+          176
+        ],
+        "provenance": {
+          "source": "assets/source/look-v3/concepts/pantry-crown.png",
+          "crop": [
+            193,
+            81,
+            1158,
+            1142
+          ],
+          "method": "Original concept crop, authored cafe background, Lanczos/WebP92",
+          "tool": "tools/cardrpg-look/art-rebuild/puppet/publish-manifest.py"
+        }
+      },
+      "faceIcon": {
+        "1x": "assets/cardrpg-look/v3-portraits/pantry-crown-face-72.webp",
+        "2x": "assets/cardrpg-look/v3-portraits/pantry-crown-face-144.webp",
+        "display": [
+          72,
+          72
+        ],
+        "usage": "Round face icon; transparent outside circle",
+        "provenance": {
+          "source": "assets/cardrpg-look/v3-portraits/pantry-crown-ui-144.webp",
+          "method": "Circular alpha mask on the accepted original face crop; no new generation",
+          "tool": "tools/cardrpg-look/art-rebuild/puppet/publish-manifest.py"
+        }
+      },
+      "puppet": {
+        "rig": "assets/cardrpg-look/v3-puppets/pantry-crown.rig.json",
+        "atlas": "assets/cardrpg-look/v3-puppets/pantry-crown.webp",
+        "motions": [
+          "idle",
+          "attack",
+          "cast",
+          "hurt",
+          "ultimate",
+          "victory",
+          "defeat",
+          "boss-idle"
+        ]
+      },
+      "review": "P4/P5 original-concept puppet accepted by Lane B self-review"
+    }
+  },
+  "skills": {
+    "mochi-1": {
+      "id": "mochi-1",
+      "icon1x": "assets/cardrpg-look/v3-portraits/skill-mochi-1-1x.webp",
+      "icon2x": "assets/cardrpg-look/v3-portraits/skill-mochi-1-2x.webp",
+      "display": [
+        64,
+        64
+      ],
+      "provenance": {
+        "source": "assets/cardrpg-look/v3-vfx/mochi-light.webp",
+        "sourceSha256": "fc67b00a1fba221f1b0fcc9ebba5e754338069e2aabd84874e23e95ebe10d13b",
+        "tile": 3,
+        "deliveredSha256": {
+          "1x": "197779de4da6ee4c64ffea217ac779aaa71e93f182cf9aa9949bd50dd616ae1c",
+          "2x": "f778b7cf67c035b33ec2cdd1ffd404449277c4fda80160689bd4bbc06e989bbf"
+        }
+      }
+    },
+    "mochi-2": {
+      "id": "mochi-2",
+      "icon1x": "assets/cardrpg-look/v3-portraits/skill-mochi-2-1x.webp",
+      "icon2x": "assets/cardrpg-look/v3-portraits/skill-mochi-2-2x.webp",
+      "display": [
+        64,
+        64
+      ],
+      "provenance": {
+        "source": "assets/cardrpg-look/v3-vfx/mochi-light.webp",
+        "sourceSha256": "fc67b00a1fba221f1b0fcc9ebba5e754338069e2aabd84874e23e95ebe10d13b",
+        "tile": 0,
+        "deliveredSha256": {
+          "1x": "327d19c53ce98eed006ffa0b739dab8cce4735cb3b7f87ca7c016a49418b02f1",
+          "2x": "6fa9d479a2c323132e1312c126fa8b9d16c8be438b55dd684fdf835249ff1f50"
+        }
+      }
+    },
+    "mochi-3": {
+      "id": "mochi-3",
+      "icon1x": "assets/cardrpg-look/v3-portraits/skill-mochi-3-1x.webp",
+      "icon2x": "assets/cardrpg-look/v3-portraits/skill-mochi-3-2x.webp",
+      "display": [
+        64,
+        64
+      ],
+      "provenance": {
+        "source": "assets/cardrpg-look/v3-vfx/mochi-light.webp",
+        "sourceSha256": "fc67b00a1fba221f1b0fcc9ebba5e754338069e2aabd84874e23e95ebe10d13b",
+        "tile": 1,
+        "deliveredSha256": {
+          "1x": "8e61d1aac5ccf943b728c39f7d1342f789b6264bfad6a9224300672a324c32ec",
+          "2x": "3b7c387584314e627b6adaaf49e23c0a401ceb961a95a82fd5c5982fe2066dd6"
+        }
+      }
+    },
+    "mochi-4": {
+      "id": "mochi-4",
+      "icon1x": "assets/cardrpg-look/v3-portraits/skill-mochi-4-1x.webp",
+      "icon2x": "assets/cardrpg-look/v3-portraits/skill-mochi-4-2x.webp",
+      "display": [
+        64,
+        64
+      ],
+      "provenance": {
+        "source": "assets/cardrpg-look/v3-vfx/mochi-light.webp",
+        "sourceSha256": "fc67b00a1fba221f1b0fcc9ebba5e754338069e2aabd84874e23e95ebe10d13b",
+        "tile": 2,
+        "deliveredSha256": {
+          "1x": "4fd8a42206f3a683fa54830289f776c10aa4d93e39bd9bff1807bd40616eed6c",
+          "2x": "932d9dfd303c2938e3352b793a510c9643d02bd8184b7e25f7a19ad822f07b2e"
+        }
+      }
+    },
+    "mochi-passive": {
+      "id": "mochi-passive",
+      "icon1x": "assets/cardrpg-look/v3-portraits/skill-mochi-passive-1x.webp",
+      "icon2x": "assets/cardrpg-look/v3-portraits/skill-mochi-passive-2x.webp",
+      "display": [
+        64,
+        64
+      ],
+      "provenance": {
+        "source": "assets/cardrpg-look/v3-vfx/mochi-light.webp",
+        "sourceSha256": "fc67b00a1fba221f1b0fcc9ebba5e754338069e2aabd84874e23e95ebe10d13b",
+        "tile": 0,
+        "deliveredSha256": {
+          "1x": "27efb14fdb521b1fe713756dba546f652ce2585a9affb4016a93430a2315dbfb",
+          "2x": "7efa9292c62c668c30709a2c86f6c58ed02d7894a2f15f1d1098581e02913053"
+        }
+      }
+    },
+    "soot-1": {
+      "id": "soot-1",
+      "icon1x": "assets/cardrpg-look/v3-portraits/skill-soot-1-1x.webp",
+      "icon2x": "assets/cardrpg-look/v3-portraits/skill-soot-1-2x.webp",
+      "display": [
+        64,
+        64
+      ],
+      "provenance": {
+        "source": "assets/cardrpg-look/v3-vfx/soot-light.webp",
+        "sourceSha256": "4caae0aa19fd0b48966db055cf9c3f8adfa63ddb7e85ba01551bd7856da0ec9b",
+        "tile": 3,
+        "deliveredSha256": {
+          "1x": "29f9d1d27aed3c266ccc9036495a01d3b077d1425d5385fe5e759dd2f9b28801",
+          "2x": "c44110b8b25bf5a291e551ecd6009853bcde622d50e833007f00c54fad84fca0"
+        }
+      }
+    },
+    "soot-2": {
+      "id": "soot-2",
+      "icon1x": "assets/cardrpg-look/v3-portraits/skill-soot-2-1x.webp",
+      "icon2x": "assets/cardrpg-look/v3-portraits/skill-soot-2-2x.webp",
+      "display": [
+        64,
+        64
+      ],
+      "provenance": {
+        "source": "assets/cardrpg-look/v3-vfx/soot-light.webp",
+        "sourceSha256": "4caae0aa19fd0b48966db055cf9c3f8adfa63ddb7e85ba01551bd7856da0ec9b",
+        "tile": 0,
+        "deliveredSha256": {
+          "1x": "73ef3301ca9c74c9f4fc5dd279a01b154c9e494641666cd902921d8339eeacd0",
+          "2x": "8bc019d5c5225b476da899c0f86f6601344fc09a49d7243406215da400c1f150"
+        }
+      }
+    },
+    "soot-3": {
+      "id": "soot-3",
+      "icon1x": "assets/cardrpg-look/v3-portraits/skill-soot-3-1x.webp",
+      "icon2x": "assets/cardrpg-look/v3-portraits/skill-soot-3-2x.webp",
+      "display": [
+        64,
+        64
+      ],
+      "provenance": {
+        "source": "assets/cardrpg-look/v3-vfx/soot-light.webp",
+        "sourceSha256": "4caae0aa19fd0b48966db055cf9c3f8adfa63ddb7e85ba01551bd7856da0ec9b",
+        "tile": 1,
+        "deliveredSha256": {
+          "1x": "826d65ed9ed80052d377c19cecba28e69df455daea7dbe359ea23b8956e65708",
+          "2x": "f26bb12a900f9fb05965d903fe78491d535d406b2064d917106ee1f58121f9ed"
+        }
+      }
+    },
+    "soot-4": {
+      "id": "soot-4",
+      "icon1x": "assets/cardrpg-look/v3-portraits/skill-soot-4-1x.webp",
+      "icon2x": "assets/cardrpg-look/v3-portraits/skill-soot-4-2x.webp",
+      "display": [
+        64,
+        64
+      ],
+      "provenance": {
+        "source": "assets/cardrpg-look/v3-vfx/soot-light.webp",
+        "sourceSha256": "4caae0aa19fd0b48966db055cf9c3f8adfa63ddb7e85ba01551bd7856da0ec9b",
+        "tile": 2,
+        "deliveredSha256": {
+          "1x": "5c6b2a2b6ca4515d52cf355bb72797dc2d673b81ea4365e44e566b7fce9eca91",
+          "2x": "5f2a6ddf45ac0b4987dc3034fdec9ddf0ba2f3e760343814274030ad50cad76b"
+        }
+      }
+    },
+    "soot-passive": {
+      "id": "soot-passive",
+      "icon1x": "assets/cardrpg-look/v3-portraits/skill-soot-passive-1x.webp",
+      "icon2x": "assets/cardrpg-look/v3-portraits/skill-soot-passive-2x.webp",
+      "display": [
+        64,
+        64
+      ],
+      "provenance": {
+        "source": "assets/cardrpg-look/v3-vfx/soot-light.webp",
+        "sourceSha256": "4caae0aa19fd0b48966db055cf9c3f8adfa63ddb7e85ba01551bd7856da0ec9b",
+        "tile": 0,
+        "deliveredSha256": {
+          "1x": "f8f575939800e511d136e621f38de70b59c2811aa056a2febf7de8628f281cae",
+          "2x": "aa14fe9ea2b7489e98cbb4b9a1db8ff57cca7623556bcb5163ec698be90b2bb3"
+        }
+      }
+    },
+    "clover-1": {
+      "id": "clover-1",
+      "icon1x": "assets/cardrpg-look/v3-portraits/skill-clover-1-1x.webp",
+      "icon2x": "assets/cardrpg-look/v3-portraits/skill-clover-1-2x.webp",
+      "display": [
+        64,
+        64
+      ],
+      "provenance": {
+        "source": "assets/cardrpg-look/v3-vfx/clover-light.webp",
+        "sourceSha256": "bdf7e30d3d8b957ad7478301715880f9dafb54c6f732d3a4c9901bb579aa66b6",
+        "tile": 3,
+        "deliveredSha256": {
+          "1x": "2eacc8d783da3670f8e12f898a68c42a69baf45b981ac8dc0361ce99ab5f4a49",
+          "2x": "363145431e0fcc65cd00ced2e59c692e38a2bdfe1820434b85fae2af0d749802"
+        }
+      }
+    },
+    "clover-2": {
+      "id": "clover-2",
+      "icon1x": "assets/cardrpg-look/v3-portraits/skill-clover-2-1x.webp",
+      "icon2x": "assets/cardrpg-look/v3-portraits/skill-clover-2-2x.webp",
+      "display": [
+        64,
+        64
+      ],
+      "provenance": {
+        "source": "assets/cardrpg-look/v3-vfx/clover-light.webp",
+        "sourceSha256": "bdf7e30d3d8b957ad7478301715880f9dafb54c6f732d3a4c9901bb579aa66b6",
+        "tile": 0,
+        "deliveredSha256": {
+          "1x": "856245077b1e57d7c0cb7b2ec79239baf2ba4c91ea26f148ae452f236d21476c",
+          "2x": "20a5015ef8855162bf67fbddceb7560344540f06d7d51e82ea9b209e265c336a"
+        }
+      }
+    },
+    "clover-3": {
+      "id": "clover-3",
+      "icon1x": "assets/cardrpg-look/v3-portraits/skill-clover-3-1x.webp",
+      "icon2x": "assets/cardrpg-look/v3-portraits/skill-clover-3-2x.webp",
+      "display": [
+        64,
+        64
+      ],
+      "provenance": {
+        "source": "assets/cardrpg-look/v3-vfx/clover-light.webp",
+        "sourceSha256": "bdf7e30d3d8b957ad7478301715880f9dafb54c6f732d3a4c9901bb579aa66b6",
+        "tile": 1,
+        "deliveredSha256": {
+          "1x": "a5de0b24fe359feee190db61b57af9779535110e0b6c99f08524dafba44fa4b2",
+          "2x": "0da9abaae5e7b9bad4ba783447891752d6900f620c8055a6673e643d1f07db74"
+        }
+      }
+    },
+    "clover-4": {
+      "id": "clover-4",
+      "icon1x": "assets/cardrpg-look/v3-portraits/skill-clover-4-1x.webp",
+      "icon2x": "assets/cardrpg-look/v3-portraits/skill-clover-4-2x.webp",
+      "display": [
+        64,
+        64
+      ],
+      "provenance": {
+        "source": "assets/cardrpg-look/v3-vfx/clover-light.webp",
+        "sourceSha256": "bdf7e30d3d8b957ad7478301715880f9dafb54c6f732d3a4c9901bb579aa66b6",
+        "tile": 2,
+        "deliveredSha256": {
+          "1x": "4d9bbefc65a2fd3b5639281febd88fcb58707ddd8a484eab1cb642a0703578b6",
+          "2x": "b18dbb8007904560a85188b84ee41f2af414ca5bd616a8140cf23cce30c50de1"
+        }
+      }
+    },
+    "clover-passive": {
+      "id": "clover-passive",
+      "icon1x": "assets/cardrpg-look/v3-portraits/skill-clover-passive-1x.webp",
+      "icon2x": "assets/cardrpg-look/v3-portraits/skill-clover-passive-2x.webp",
+      "display": [
+        64,
+        64
+      ],
+      "provenance": {
+        "source": "assets/cardrpg-look/v3-vfx/clover-light.webp",
+        "sourceSha256": "bdf7e30d3d8b957ad7478301715880f9dafb54c6f732d3a4c9901bb579aa66b6",
+        "tile": 0,
+        "deliveredSha256": {
+          "1x": "cc3e3a6bedc1702904f7079d6c889d5b2e55f14f2e4b603f92749583af8a1fdd",
+          "2x": "fa3667a956365fde455a68dc289084d42e825e495dd9c6bd94e6ebe11b1d64f8"
+        }
+      }
+    },
+    "panko-1": {
+      "id": "panko-1",
+      "icon1x": "assets/cardrpg-look/v3-portraits/skill-panko-1-1x.webp",
+      "icon2x": "assets/cardrpg-look/v3-portraits/skill-panko-1-2x.webp",
+      "display": [
+        64,
+        64
+      ],
+      "provenance": {
+        "source": "assets/cardrpg-look/v3-vfx/panko-light.webp",
+        "sourceSha256": "41d044486fac77681e3221a9d8cf0f367053d1e63bc3e5273a1eea6ca26d3ce6",
+        "tile": 3,
+        "deliveredSha256": {
+          "1x": "506bfcbb3094af6d55463bf61652366bfc0d930cb755e9f6819dc4c8a9ee44fb",
+          "2x": "d8f8f8eedb335ee0ee9104a8f303e665f4e6268a812cf9d9c3707f7f3192ccfc"
+        }
+      }
+    },
+    "panko-2": {
+      "id": "panko-2",
+      "icon1x": "assets/cardrpg-look/v3-portraits/skill-panko-2-1x.webp",
+      "icon2x": "assets/cardrpg-look/v3-portraits/skill-panko-2-2x.webp",
+      "display": [
+        64,
+        64
+      ],
+      "provenance": {
+        "source": "assets/cardrpg-look/v3-vfx/panko-light.webp",
+        "sourceSha256": "41d044486fac77681e3221a9d8cf0f367053d1e63bc3e5273a1eea6ca26d3ce6",
+        "tile": 0,
+        "deliveredSha256": {
+          "1x": "f44dc47a8e4e4a10c16d81eb348cd0faef2d0a57c55c89e6163a27edad023d4f",
+          "2x": "4bcb47f9bad130132245e98e9dca7fe012d327e5795959bb513f16edde0f9448"
+        }
+      }
+    },
+    "panko-3": {
+      "id": "panko-3",
+      "icon1x": "assets/cardrpg-look/v3-portraits/skill-panko-3-1x.webp",
+      "icon2x": "assets/cardrpg-look/v3-portraits/skill-panko-3-2x.webp",
+      "display": [
+        64,
+        64
+      ],
+      "provenance": {
+        "source": "assets/cardrpg-look/v3-vfx/panko-light.webp",
+        "sourceSha256": "41d044486fac77681e3221a9d8cf0f367053d1e63bc3e5273a1eea6ca26d3ce6",
+        "tile": 1,
+        "deliveredSha256": {
+          "1x": "f8f079e39a0b6fa5ece22f31942d891cce4b648ec221b71ac2893972640ba129",
+          "2x": "e600af8e2e41bfe56e5cd127fc29ae06a6ea2696f1e46561ec058142ef9e6a52"
+        }
+      }
+    },
+    "panko-4": {
+      "id": "panko-4",
+      "icon1x": "assets/cardrpg-look/v3-portraits/skill-panko-4-1x.webp",
+      "icon2x": "assets/cardrpg-look/v3-portraits/skill-panko-4-2x.webp",
+      "display": [
+        64,
+        64
+      ],
+      "provenance": {
+        "source": "assets/cardrpg-look/v3-vfx/panko-light.webp",
+        "sourceSha256": "41d044486fac77681e3221a9d8cf0f367053d1e63bc3e5273a1eea6ca26d3ce6",
+        "tile": 2,
+        "deliveredSha256": {
+          "1x": "4b09792fb12900f500fd0cc0e53ec6723cd4ac2f3e803e0fde5f7d0a8e1aaa2a",
+          "2x": "6983d48629c0b42c2b692e4243bd623029c415edce029d0fe632e83201188564"
+        }
+      }
+    },
+    "panko-passive": {
+      "id": "panko-passive",
+      "icon1x": "assets/cardrpg-look/v3-portraits/skill-panko-passive-1x.webp",
+      "icon2x": "assets/cardrpg-look/v3-portraits/skill-panko-passive-2x.webp",
+      "display": [
+        64,
+        64
+      ],
+      "provenance": {
+        "source": "assets/cardrpg-look/v3-vfx/panko-light.webp",
+        "sourceSha256": "41d044486fac77681e3221a9d8cf0f367053d1e63bc3e5273a1eea6ca26d3ce6",
+        "tile": 0,
+        "deliveredSha256": {
+          "1x": "2517f0a5b158986e00a413becd5c3a7df919c018643118a3cac1a8595cabf016",
+          "2x": "fbcf314ecba5621ff376f9550161c893b0a56a40e487b3ee78b1fcff6031b404"
+        }
+      }
+    },
+    "mallow-1": {
+      "id": "mallow-1",
+      "icon1x": "assets/cardrpg-look/v3-portraits/skill-mallow-1-1x.webp",
+      "icon2x": "assets/cardrpg-look/v3-portraits/skill-mallow-1-2x.webp",
+      "display": [
+        64,
+        64
+      ],
+      "provenance": {
+        "source": "assets/cardrpg-look/v3-vfx/mallow-light.webp",
+        "sourceSha256": "55a23511a1fea1e047ae0172d2f8cf6dcdf8435cd3dcc55f0002a624d1af1c18",
+        "tile": 3,
+        "deliveredSha256": {
+          "1x": "84732cfa6ae85a1edb476330f7f66807a76414caa9517807a12deafefbbabd9d",
+          "2x": "1014b42364e38752c0ada2e844a35bee91e20fad112104d446ffad39a380fb80"
+        }
+      }
+    },
+    "mallow-2": {
+      "id": "mallow-2",
+      "icon1x": "assets/cardrpg-look/v3-portraits/skill-mallow-2-1x.webp",
+      "icon2x": "assets/cardrpg-look/v3-portraits/skill-mallow-2-2x.webp",
+      "display": [
+        64,
+        64
+      ],
+      "provenance": {
+        "source": "assets/cardrpg-look/v3-vfx/mallow-light.webp",
+        "sourceSha256": "55a23511a1fea1e047ae0172d2f8cf6dcdf8435cd3dcc55f0002a624d1af1c18",
+        "tile": 0,
+        "deliveredSha256": {
+          "1x": "b8eb897a9670561512e8c01091a22cd9e3bfbf1118ec634f9ff11175db65e315",
+          "2x": "59b773627441ff1294b1ee8af89d864bd335555409c7e7e8755b90de7ec98052"
+        }
+      }
+    },
+    "mallow-3": {
+      "id": "mallow-3",
+      "icon1x": "assets/cardrpg-look/v3-portraits/skill-mallow-3-1x.webp",
+      "icon2x": "assets/cardrpg-look/v3-portraits/skill-mallow-3-2x.webp",
+      "display": [
+        64,
+        64
+      ],
+      "provenance": {
+        "source": "assets/cardrpg-look/v3-vfx/mallow-light.webp",
+        "sourceSha256": "55a23511a1fea1e047ae0172d2f8cf6dcdf8435cd3dcc55f0002a624d1af1c18",
+        "tile": 1,
+        "deliveredSha256": {
+          "1x": "5241bce2e9ad250f6cada72752670653e63c5a0241f3e010891ef4e3d9f84a90",
+          "2x": "b7c4f45bd5ad99c56347e7f818b995f9d7d24173b11965053d2c039a7bf06867"
+        }
+      }
+    },
+    "mallow-4": {
+      "id": "mallow-4",
+      "icon1x": "assets/cardrpg-look/v3-portraits/skill-mallow-4-1x.webp",
+      "icon2x": "assets/cardrpg-look/v3-portraits/skill-mallow-4-2x.webp",
+      "display": [
+        64,
+        64
+      ],
+      "provenance": {
+        "source": "assets/cardrpg-look/v3-vfx/mallow-light.webp",
+        "sourceSha256": "55a23511a1fea1e047ae0172d2f8cf6dcdf8435cd3dcc55f0002a624d1af1c18",
+        "tile": 2,
+        "deliveredSha256": {
+          "1x": "47d262626f5cb61bdf3faff26dce9b2cb9021f594bbaca92befc70f4cc9251a3",
+          "2x": "6c5b5ffaf9c5d3ee913fb6977a0d374f6d3d28897bf21898b47eeb96a3ff576b"
+        }
+      }
+    },
+    "mallow-passive": {
+      "id": "mallow-passive",
+      "icon1x": "assets/cardrpg-look/v3-portraits/skill-mallow-passive-1x.webp",
+      "icon2x": "assets/cardrpg-look/v3-portraits/skill-mallow-passive-2x.webp",
+      "display": [
+        64,
+        64
+      ],
+      "provenance": {
+        "source": "assets/cardrpg-look/v3-vfx/mallow-light.webp",
+        "sourceSha256": "55a23511a1fea1e047ae0172d2f8cf6dcdf8435cd3dcc55f0002a624d1af1c18",
+        "tile": 0,
+        "deliveredSha256": {
+          "1x": "70005118e1ac510a21f087e95eeffdbca130d021ad9f7d2c99789ed0b0005b7f",
+          "2x": "222a53a3db2ed35095850420b0e40a392e64420ef06e93682f0cd185df9fb634"
+        }
+      }
+    },
+    "cinnamon-1": {
+      "id": "cinnamon-1",
+      "icon1x": "assets/cardrpg-look/v3-portraits/skill-cinnamon-1-1x.webp",
+      "icon2x": "assets/cardrpg-look/v3-portraits/skill-cinnamon-1-2x.webp",
+      "display": [
+        64,
+        64
+      ],
+      "provenance": {
+        "source": "assets/cardrpg-look/v3-vfx/cinnamon-light.webp",
+        "sourceSha256": "4ed61e6f82ba7980e9390a6b8eeee33f96a53f6fa0697e2395ef9219cd60c322",
+        "tile": 3,
+        "deliveredSha256": {
+          "1x": "a3429f6296b9b3737f34d26d2145d73997a9398767076e54db48bb96737b2234",
+          "2x": "06f91ebcdaa64c97a4cb2122a0e1c8693d908289b3545bad631ee2162c3d1be6"
+        }
+      }
+    },
+    "cinnamon-2": {
+      "id": "cinnamon-2",
+      "icon1x": "assets/cardrpg-look/v3-portraits/skill-cinnamon-2-1x.webp",
+      "icon2x": "assets/cardrpg-look/v3-portraits/skill-cinnamon-2-2x.webp",
+      "display": [
+        64,
+        64
+      ],
+      "provenance": {
+        "source": "assets/cardrpg-look/v3-vfx/cinnamon-light.webp",
+        "sourceSha256": "4ed61e6f82ba7980e9390a6b8eeee33f96a53f6fa0697e2395ef9219cd60c322",
+        "tile": 0,
+        "deliveredSha256": {
+          "1x": "4e9e94c3f452ab3e25b0beb3ce330a04e223b08084393037225e7cf7fd080537",
+          "2x": "85c5cb53e01e7b700b3448b16b5a95b0521e529c5c11136a21cc46c98d84c570"
+        }
+      }
+    },
+    "cinnamon-3": {
+      "id": "cinnamon-3",
+      "icon1x": "assets/cardrpg-look/v3-portraits/skill-cinnamon-3-1x.webp",
+      "icon2x": "assets/cardrpg-look/v3-portraits/skill-cinnamon-3-2x.webp",
+      "display": [
+        64,
+        64
+      ],
+      "provenance": {
+        "source": "assets/cardrpg-look/v3-vfx/cinnamon-light.webp",
+        "sourceSha256": "4ed61e6f82ba7980e9390a6b8eeee33f96a53f6fa0697e2395ef9219cd60c322",
+        "tile": 1,
+        "deliveredSha256": {
+          "1x": "79122ac7dc55c55651af5f8af2b8de2fa9a12a61fed412fd249050aae08124aa",
+          "2x": "c5a918a22f7cae4baa07c814c6740259bc093bd08ea05775d4fbd06a0de1c9f2"
+        }
+      }
+    },
+    "cinnamon-4": {
+      "id": "cinnamon-4",
+      "icon1x": "assets/cardrpg-look/v3-portraits/skill-cinnamon-4-1x.webp",
+      "icon2x": "assets/cardrpg-look/v3-portraits/skill-cinnamon-4-2x.webp",
+      "display": [
+        64,
+        64
+      ],
+      "provenance": {
+        "source": "assets/cardrpg-look/v3-vfx/cinnamon-light.webp",
+        "sourceSha256": "4ed61e6f82ba7980e9390a6b8eeee33f96a53f6fa0697e2395ef9219cd60c322",
+        "tile": 2,
+        "deliveredSha256": {
+          "1x": "3af278dd29a3de62698c02ef854165f62c22e5ba0dbb3de38481509a06bc5daa",
+          "2x": "6a829a6ef99759a1674da4abfaedf42a00cf1e4599f47fb6155d664b6b5a53d9"
+        }
+      }
+    },
+    "cinnamon-passive": {
+      "id": "cinnamon-passive",
+      "icon1x": "assets/cardrpg-look/v3-portraits/skill-cinnamon-passive-1x.webp",
+      "icon2x": "assets/cardrpg-look/v3-portraits/skill-cinnamon-passive-2x.webp",
+      "display": [
+        64,
+        64
+      ],
+      "provenance": {
+        "source": "assets/cardrpg-look/v3-vfx/cinnamon-light.webp",
+        "sourceSha256": "4ed61e6f82ba7980e9390a6b8eeee33f96a53f6fa0697e2395ef9219cd60c322",
+        "tile": 0,
+        "deliveredSha256": {
+          "1x": "e7daeec722c431497492e3eb65b2aa0142a2f6d0b8382194c3c42d33060c8a7a",
+          "2x": "291fee325a6147bd5bbd6c9a5a2a292e3cc0957a4bcb04df9a154161fca37043"
+        }
+      }
+    },
+    "velvet-1": {
+      "id": "velvet-1",
+      "icon1x": "assets/cardrpg-look/v3-portraits/skill-velvet-1-1x.webp",
+      "icon2x": "assets/cardrpg-look/v3-portraits/skill-velvet-1-2x.webp",
+      "display": [
+        64,
+        64
+      ],
+      "provenance": {
+        "source": "assets/cardrpg-look/v3-vfx/velvet-light.webp",
+        "sourceSha256": "ebddad09da78228338f3f1b12e721fdf4d29dc5afab087e89a4108b64d869658",
+        "tile": 3,
+        "deliveredSha256": {
+          "1x": "cd31999b51e3b0f9e800a38cddfe33b78f2d82b558052d508f5588e202cac424",
+          "2x": "1b56cd1b95e84903d87df47c99125a002bbfdd7fd7ba629591b22da02b8d268c"
+        }
+      }
+    },
+    "velvet-2": {
+      "id": "velvet-2",
+      "icon1x": "assets/cardrpg-look/v3-portraits/skill-velvet-2-1x.webp",
+      "icon2x": "assets/cardrpg-look/v3-portraits/skill-velvet-2-2x.webp",
+      "display": [
+        64,
+        64
+      ],
+      "provenance": {
+        "source": "assets/cardrpg-look/v3-vfx/velvet-light.webp",
+        "sourceSha256": "ebddad09da78228338f3f1b12e721fdf4d29dc5afab087e89a4108b64d869658",
+        "tile": 0,
+        "deliveredSha256": {
+          "1x": "21d04443aa9b18979397da146e41d5cbd251d0bbb30183f674931ab64506be28",
+          "2x": "a3499c2cc84c64fb4e7a80ca0102491231784c6ca25d80ee755b01f73f3dbcc8"
+        }
+      }
+    },
+    "velvet-3": {
+      "id": "velvet-3",
+      "icon1x": "assets/cardrpg-look/v3-portraits/skill-velvet-3-1x.webp",
+      "icon2x": "assets/cardrpg-look/v3-portraits/skill-velvet-3-2x.webp",
+      "display": [
+        64,
+        64
+      ],
+      "provenance": {
+        "source": "assets/cardrpg-look/v3-vfx/velvet-light.webp",
+        "sourceSha256": "ebddad09da78228338f3f1b12e721fdf4d29dc5afab087e89a4108b64d869658",
+        "tile": 1,
+        "deliveredSha256": {
+          "1x": "9666728fadcc001868692b11291581ab4e58ceb79d915460dfacd1dcaf5b9e26",
+          "2x": "0a35f86e5d6b1118d8b82763d5e79e66009039cd7fcc02a0581bd73a9b8444e7"
+        }
+      }
+    },
+    "velvet-4": {
+      "id": "velvet-4",
+      "icon1x": "assets/cardrpg-look/v3-portraits/skill-velvet-4-1x.webp",
+      "icon2x": "assets/cardrpg-look/v3-portraits/skill-velvet-4-2x.webp",
+      "display": [
+        64,
+        64
+      ],
+      "provenance": {
+        "source": "assets/cardrpg-look/v3-vfx/velvet-light.webp",
+        "sourceSha256": "ebddad09da78228338f3f1b12e721fdf4d29dc5afab087e89a4108b64d869658",
+        "tile": 2,
+        "deliveredSha256": {
+          "1x": "ec6ca42a15a56fbcb79bc7867bee9eafdf1f147d4cbf2e28b521109efa3b6b26",
+          "2x": "802d9b4e92741a84c20376a81a022aec6ca40598400845413d56f92e56dc0319"
+        }
+      }
+    },
+    "velvet-passive": {
+      "id": "velvet-passive",
+      "icon1x": "assets/cardrpg-look/v3-portraits/skill-velvet-passive-1x.webp",
+      "icon2x": "assets/cardrpg-look/v3-portraits/skill-velvet-passive-2x.webp",
+      "display": [
+        64,
+        64
+      ],
+      "provenance": {
+        "source": "assets/cardrpg-look/v3-vfx/velvet-light.webp",
+        "sourceSha256": "ebddad09da78228338f3f1b12e721fdf4d29dc5afab087e89a4108b64d869658",
+        "tile": 0,
+        "deliveredSha256": {
+          "1x": "53089140e54e3597b580ad4b2d0b7a9ab39832867e750d012492bcfbe024efdc",
+          "2x": "cadffb8d4731bf7bd55b6dd189f91626ac3eb0dfcd45dfce4b12502f994b124c"
+        }
+      }
+    },
+    "biscuit-1": {
+      "id": "biscuit-1",
+      "icon1x": "assets/cardrpg-look/v3-portraits/skill-biscuit-1-1x.webp",
+      "icon2x": "assets/cardrpg-look/v3-portraits/skill-biscuit-1-2x.webp",
+      "display": [
+        64,
+        64
+      ],
+      "provenance": {
+        "source": "assets/cardrpg-look/v3-vfx/biscuit-light.webp",
+        "sourceSha256": "81bbcbbf6a14922f0ba7bb4999f9bd91f0801af9625c6944d3c1b05e7f325ff5",
+        "tile": 3,
+        "deliveredSha256": {
+          "1x": "c7b021975b8d1e906d20e143f83afa48ca8eeaf100bab317eb58f36a0b6794f8",
+          "2x": "4aa6a5b4512e8a4820eb217e2c7d85c3836bb511ea2453fd3e1984f7152e2684"
+        }
+      }
+    },
+    "biscuit-2": {
+      "id": "biscuit-2",
+      "icon1x": "assets/cardrpg-look/v3-portraits/skill-biscuit-2-1x.webp",
+      "icon2x": "assets/cardrpg-look/v3-portraits/skill-biscuit-2-2x.webp",
+      "display": [
+        64,
+        64
+      ],
+      "provenance": {
+        "source": "assets/cardrpg-look/v3-vfx/biscuit-light.webp",
+        "sourceSha256": "81bbcbbf6a14922f0ba7bb4999f9bd91f0801af9625c6944d3c1b05e7f325ff5",
+        "tile": 0,
+        "deliveredSha256": {
+          "1x": "9235e43e3e09d6a6df5f9dbb496dca4cff3c1d701901f8b6b5e874584cbd4073",
+          "2x": "77f3e4dce28d4f9e856faddfa3cf8ab677128f1c02b8f27ea0d194965a54b7ab"
+        }
+      }
+    },
+    "biscuit-3": {
+      "id": "biscuit-3",
+      "icon1x": "assets/cardrpg-look/v3-portraits/skill-biscuit-3-1x.webp",
+      "icon2x": "assets/cardrpg-look/v3-portraits/skill-biscuit-3-2x.webp",
+      "display": [
+        64,
+        64
+      ],
+      "provenance": {
+        "source": "assets/cardrpg-look/v3-vfx/biscuit-light.webp",
+        "sourceSha256": "81bbcbbf6a14922f0ba7bb4999f9bd91f0801af9625c6944d3c1b05e7f325ff5",
+        "tile": 1,
+        "deliveredSha256": {
+          "1x": "e003687328fed9bcc7c7ca8b4d1b75d00f6dd3234ef7507f22a037031d768623",
+          "2x": "3147183351aabfbd4a59e9ade7124048c104eb87b67b90632c21d81b265eece8"
+        }
+      }
+    },
+    "biscuit-4": {
+      "id": "biscuit-4",
+      "icon1x": "assets/cardrpg-look/v3-portraits/skill-biscuit-4-1x.webp",
+      "icon2x": "assets/cardrpg-look/v3-portraits/skill-biscuit-4-2x.webp",
+      "display": [
+        64,
+        64
+      ],
+      "provenance": {
+        "source": "assets/cardrpg-look/v3-vfx/biscuit-light.webp",
+        "sourceSha256": "81bbcbbf6a14922f0ba7bb4999f9bd91f0801af9625c6944d3c1b05e7f325ff5",
+        "tile": 2,
+        "deliveredSha256": {
+          "1x": "31a401c1a77cf41f6911328cddb278d920582a15247543c2bdd55d57a18011bc",
+          "2x": "098fd920c9ee71e2113a6f9a01cae93c81e105c85f907aa854f868211c5b86c9"
+        }
+      }
+    },
+    "biscuit-passive": {
+      "id": "biscuit-passive",
+      "icon1x": "assets/cardrpg-look/v3-portraits/skill-biscuit-passive-1x.webp",
+      "icon2x": "assets/cardrpg-look/v3-portraits/skill-biscuit-passive-2x.webp",
+      "display": [
+        64,
+        64
+      ],
+      "provenance": {
+        "source": "assets/cardrpg-look/v3-vfx/biscuit-light.webp",
+        "sourceSha256": "81bbcbbf6a14922f0ba7bb4999f9bd91f0801af9625c6944d3c1b05e7f325ff5",
+        "tile": 0,
+        "deliveredSha256": {
+          "1x": "9b49f84421cd8a9fb98b1e3e8c2c66cdb327f2bc2b677ae121230b1fd3076a54",
+          "2x": "68fc4d7299a712c61a8457ef83c7428d39346331de06b31c21b3de5086a87718"
+        }
+      }
+    },
+    "brioche-1": {
+      "id": "brioche-1",
+      "icon1x": "assets/cardrpg-look/v3-portraits/skill-brioche-1-1x.webp",
+      "icon2x": "assets/cardrpg-look/v3-portraits/skill-brioche-1-2x.webp",
+      "display": [
+        64,
+        64
+      ],
+      "provenance": {
+        "source": "assets/cardrpg-look/v3-vfx/brioche-light.webp",
+        "sourceSha256": "e435c14d128930d41ea6e79aec2c5a3389420717543c11473db850d02d47a98a",
+        "tile": 3,
+        "deliveredSha256": {
+          "1x": "14845cd4fb2af4a8c21593ee451da85fba30612a570789a144a2a08efa9d6472",
+          "2x": "0a2a1ebf05977f8ff2f1400115fae25583d84f40f95556990ee2d3b0aaf639be"
+        }
+      }
+    },
+    "brioche-2": {
+      "id": "brioche-2",
+      "icon1x": "assets/cardrpg-look/v3-portraits/skill-brioche-2-1x.webp",
+      "icon2x": "assets/cardrpg-look/v3-portraits/skill-brioche-2-2x.webp",
+      "display": [
+        64,
+        64
+      ],
+      "provenance": {
+        "source": "assets/cardrpg-look/v3-vfx/brioche-light.webp",
+        "sourceSha256": "e435c14d128930d41ea6e79aec2c5a3389420717543c11473db850d02d47a98a",
+        "tile": 0,
+        "deliveredSha256": {
+          "1x": "75dcbac06492d082cc0c8295aa99cb651d87b81e03819150e5f1ed74a96cd104",
+          "2x": "7b47e779ecfaeec767d77fb0d7a45949afd052a6e5794ebb886b3f2d047edf04"
+        }
+      }
+    },
+    "brioche-3": {
+      "id": "brioche-3",
+      "icon1x": "assets/cardrpg-look/v3-portraits/skill-brioche-3-1x.webp",
+      "icon2x": "assets/cardrpg-look/v3-portraits/skill-brioche-3-2x.webp",
+      "display": [
+        64,
+        64
+      ],
+      "provenance": {
+        "source": "assets/cardrpg-look/v3-vfx/brioche-light.webp",
+        "sourceSha256": "e435c14d128930d41ea6e79aec2c5a3389420717543c11473db850d02d47a98a",
+        "tile": 1,
+        "deliveredSha256": {
+          "1x": "d0f567ba26b89bf3afd7527a9de51e603b764b60994e6e8c985d5825cccbd4b4",
+          "2x": "9d9ec9637152a4e9e7bcaafe260c4b201fd342bce3b0f72476638c404dddfcd6"
+        }
+      }
+    },
+    "brioche-4": {
+      "id": "brioche-4",
+      "icon1x": "assets/cardrpg-look/v3-portraits/skill-brioche-4-1x.webp",
+      "icon2x": "assets/cardrpg-look/v3-portraits/skill-brioche-4-2x.webp",
+      "display": [
+        64,
+        64
+      ],
+      "provenance": {
+        "source": "assets/cardrpg-look/v3-vfx/brioche-light.webp",
+        "sourceSha256": "e435c14d128930d41ea6e79aec2c5a3389420717543c11473db850d02d47a98a",
+        "tile": 2,
+        "deliveredSha256": {
+          "1x": "923863652f08a277e1526250130f63504822bf7506ef14cb56d00e7192413756",
+          "2x": "5b7d9787ccf4e0bc9e0bcca919be6a12fa32814a769f56c7fd68f2e8f28c0bd5"
+        }
+      }
+    },
+    "brioche-passive": {
+      "id": "brioche-passive",
+      "icon1x": "assets/cardrpg-look/v3-portraits/skill-brioche-passive-1x.webp",
+      "icon2x": "assets/cardrpg-look/v3-portraits/skill-brioche-passive-2x.webp",
+      "display": [
+        64,
+        64
+      ],
+      "provenance": {
+        "source": "assets/cardrpg-look/v3-vfx/brioche-light.webp",
+        "sourceSha256": "e435c14d128930d41ea6e79aec2c5a3389420717543c11473db850d02d47a98a",
+        "tile": 0,
+        "deliveredSha256": {
+          "1x": "1500f6d50b5c6b878f3faf643a13fc177131eb08122be3fa9a8038f4f3c34da3",
+          "2x": "a46e64a5635fc4d5f7f70e4ca116c48d81c1353c4b673eea4658c004b20bad84"
+        }
+      }
+    },
+    "marigold-1": {
+      "id": "marigold-1",
+      "icon1x": "assets/cardrpg-look/v3-portraits/skill-marigold-1-1x.webp",
+      "icon2x": "assets/cardrpg-look/v3-portraits/skill-marigold-1-2x.webp",
+      "display": [
+        64,
+        64
+      ],
+      "provenance": {
+        "source": "assets/cardrpg-look/v3-vfx/marigold-light.webp",
+        "sourceSha256": "efa6810431bdf53e5cb8e6210887fc4ed830213c5819dceb14e6f19987e4f20f",
+        "tile": 3,
+        "deliveredSha256": {
+          "1x": "e10f76c5a883388fa7fbeed43cc2f5f0991c10e1c032006c3c332300eb7492cf",
+          "2x": "76377258b38b2c2424f3a6cfe3af67a3f1ccec96a63d932226641b60adb8b485"
+        }
+      }
+    },
+    "marigold-2": {
+      "id": "marigold-2",
+      "icon1x": "assets/cardrpg-look/v3-portraits/skill-marigold-2-1x.webp",
+      "icon2x": "assets/cardrpg-look/v3-portraits/skill-marigold-2-2x.webp",
+      "display": [
+        64,
+        64
+      ],
+      "provenance": {
+        "source": "assets/cardrpg-look/v3-vfx/marigold-light.webp",
+        "sourceSha256": "efa6810431bdf53e5cb8e6210887fc4ed830213c5819dceb14e6f19987e4f20f",
+        "tile": 0,
+        "deliveredSha256": {
+          "1x": "7dcbec13ad3eb9a88e8257bf42ab7b6ab4dbae23ed9bfb6209ce171cbea58325",
+          "2x": "505389d6d2ea1b065422be7ab814bcd1edfcaa821890171d6d1951e13890b5f4"
+        }
+      }
+    },
+    "marigold-3": {
+      "id": "marigold-3",
+      "icon1x": "assets/cardrpg-look/v3-portraits/skill-marigold-3-1x.webp",
+      "icon2x": "assets/cardrpg-look/v3-portraits/skill-marigold-3-2x.webp",
+      "display": [
+        64,
+        64
+      ],
+      "provenance": {
+        "source": "assets/cardrpg-look/v3-vfx/marigold-light.webp",
+        "sourceSha256": "efa6810431bdf53e5cb8e6210887fc4ed830213c5819dceb14e6f19987e4f20f",
+        "tile": 1,
+        "deliveredSha256": {
+          "1x": "bdf7d3f16b28afb03393981e14c4b3600fc2e66a97fbbc7665422b616e64476c",
+          "2x": "2b5293854e7a0c51e88af25eda9cf9aa692bd56824229a741fd0198c68431a30"
+        }
+      }
+    },
+    "marigold-4": {
+      "id": "marigold-4",
+      "icon1x": "assets/cardrpg-look/v3-portraits/skill-marigold-4-1x.webp",
+      "icon2x": "assets/cardrpg-look/v3-portraits/skill-marigold-4-2x.webp",
+      "display": [
+        64,
+        64
+      ],
+      "provenance": {
+        "source": "assets/cardrpg-look/v3-vfx/marigold-light.webp",
+        "sourceSha256": "efa6810431bdf53e5cb8e6210887fc4ed830213c5819dceb14e6f19987e4f20f",
+        "tile": 2,
+        "deliveredSha256": {
+          "1x": "178d16e0e64e7b122eb116ca5a527f60ac1ba85babdd9d3a2bebd0bc93777068",
+          "2x": "1471aa6893a25d05e882c9285277f54ff190e176f3cd1b0decbeb2254df4a5e6"
+        }
+      }
+    },
+    "marigold-passive": {
+      "id": "marigold-passive",
+      "icon1x": "assets/cardrpg-look/v3-portraits/skill-marigold-passive-1x.webp",
+      "icon2x": "assets/cardrpg-look/v3-portraits/skill-marigold-passive-2x.webp",
+      "display": [
+        64,
+        64
+      ],
+      "provenance": {
+        "source": "assets/cardrpg-look/v3-vfx/marigold-light.webp",
+        "sourceSha256": "efa6810431bdf53e5cb8e6210887fc4ed830213c5819dceb14e6f19987e4f20f",
+        "tile": 0,
+        "deliveredSha256": {
+          "1x": "a373415d1e09cb01acc93bad924683ee6525f9ad9ce72fe9e82df0146505f24b",
+          "2x": "2752df7ba19954c69a555cee06d3f5dff12cecd9e96b7096219e5ccf8be5d906"
+        }
+      }
+    },
+    "sorrel-1": {
+      "id": "sorrel-1",
+      "icon1x": "assets/cardrpg-look/v3-portraits/skill-sorrel-1-1x.webp",
+      "icon2x": "assets/cardrpg-look/v3-portraits/skill-sorrel-1-2x.webp",
+      "display": [
+        64,
+        64
+      ],
+      "provenance": {
+        "source": "assets/cardrpg-look/v3-vfx/sorrel-light.webp",
+        "sourceSha256": "18e166d47d652ca332709b960e4ba3461025f745fa038fb1aa3fdde231dd01a8",
+        "tile": 3,
+        "deliveredSha256": {
+          "1x": "eda88ff5e01e48383382da34b590a86cb61f41e6ac185953d473e1b79d3ebf0f",
+          "2x": "0e49ac40c8e2cb712b7e6d042702fe9274c3770d55a1ab4a918818e8fb52ab82"
+        }
+      }
+    },
+    "sorrel-2": {
+      "id": "sorrel-2",
+      "icon1x": "assets/cardrpg-look/v3-portraits/skill-sorrel-2-1x.webp",
+      "icon2x": "assets/cardrpg-look/v3-portraits/skill-sorrel-2-2x.webp",
+      "display": [
+        64,
+        64
+      ],
+      "provenance": {
+        "source": "assets/cardrpg-look/v3-vfx/sorrel-light.webp",
+        "sourceSha256": "18e166d47d652ca332709b960e4ba3461025f745fa038fb1aa3fdde231dd01a8",
+        "tile": 0,
+        "deliveredSha256": {
+          "1x": "d77f3c109696261f462a1ead0801df6ccf020f06f4da83203c0380f63d7e5158",
+          "2x": "aeb2b11015cf22e62d27e82adb1289fd01280e1c8b0e87a9134b3d99ec193d9d"
+        }
+      }
+    },
+    "sorrel-3": {
+      "id": "sorrel-3",
+      "icon1x": "assets/cardrpg-look/v3-portraits/skill-sorrel-3-1x.webp",
+      "icon2x": "assets/cardrpg-look/v3-portraits/skill-sorrel-3-2x.webp",
+      "display": [
+        64,
+        64
+      ],
+      "provenance": {
+        "source": "assets/cardrpg-look/v3-vfx/sorrel-light.webp",
+        "sourceSha256": "18e166d47d652ca332709b960e4ba3461025f745fa038fb1aa3fdde231dd01a8",
+        "tile": 1,
+        "deliveredSha256": {
+          "1x": "053510622a4c6ab1c57e0a6782f01ec5c9dc9e1b9a9091ed5436922a29b593fa",
+          "2x": "3906ed18d6bfde514fb93dbb05b09d2980c199069c956e0a5f855fb092edb0ee"
+        }
+      }
+    },
+    "sorrel-4": {
+      "id": "sorrel-4",
+      "icon1x": "assets/cardrpg-look/v3-portraits/skill-sorrel-4-1x.webp",
+      "icon2x": "assets/cardrpg-look/v3-portraits/skill-sorrel-4-2x.webp",
+      "display": [
+        64,
+        64
+      ],
+      "provenance": {
+        "source": "assets/cardrpg-look/v3-vfx/sorrel-light.webp",
+        "sourceSha256": "18e166d47d652ca332709b960e4ba3461025f745fa038fb1aa3fdde231dd01a8",
+        "tile": 2,
+        "deliveredSha256": {
+          "1x": "5102bafb77a2045e852aeecf0d551cd9afcdbdde12c63b0c550ab44eaa023300",
+          "2x": "fec048c5c65acca79acc533adea2daec995af341bc2ec9fa50bad64969ae89d9"
+        }
+      }
+    },
+    "sorrel-passive": {
+      "id": "sorrel-passive",
+      "icon1x": "assets/cardrpg-look/v3-portraits/skill-sorrel-passive-1x.webp",
+      "icon2x": "assets/cardrpg-look/v3-portraits/skill-sorrel-passive-2x.webp",
+      "display": [
+        64,
+        64
+      ],
+      "provenance": {
+        "source": "assets/cardrpg-look/v3-vfx/sorrel-light.webp",
+        "sourceSha256": "18e166d47d652ca332709b960e4ba3461025f745fa038fb1aa3fdde231dd01a8",
+        "tile": 0,
+        "deliveredSha256": {
+          "1x": "e0dd14867c07933497988952711365dd93d479236946062064bbea494c818174",
+          "2x": "9e3f484d54c74dd42150dbf8ae3df2f7a4fb9503f15f50e1fc1a3d1e5de4912f"
+        }
+      }
+    },
+    "inkcap-1": {
+      "id": "inkcap-1",
+      "icon1x": "assets/cardrpg-look/v3-portraits/skill-inkcap-1-1x.webp",
+      "icon2x": "assets/cardrpg-look/v3-portraits/skill-inkcap-1-2x.webp",
+      "display": [
+        64,
+        64
+      ],
+      "provenance": {
+        "source": "assets/cardrpg-look/v3-vfx/inkcap-light.webp",
+        "sourceSha256": "d24d6aa4fd4e2021b9c15ddc26c093421e6e1482799f22d8edf698571d21d388",
+        "tile": 3,
+        "deliveredSha256": {
+          "1x": "09a0143c509ba6f92310ab24e368c43260abed07328222b896a8402788394600",
+          "2x": "4dc3c71cbbe6edca96173a267ac2a2d55371a0a5b3840961d37e4395171a6d7c"
+        }
+      }
+    },
+    "inkcap-2": {
+      "id": "inkcap-2",
+      "icon1x": "assets/cardrpg-look/v3-portraits/skill-inkcap-2-1x.webp",
+      "icon2x": "assets/cardrpg-look/v3-portraits/skill-inkcap-2-2x.webp",
+      "display": [
+        64,
+        64
+      ],
+      "provenance": {
+        "source": "assets/cardrpg-look/v3-vfx/inkcap-light.webp",
+        "sourceSha256": "d24d6aa4fd4e2021b9c15ddc26c093421e6e1482799f22d8edf698571d21d388",
+        "tile": 0,
+        "deliveredSha256": {
+          "1x": "d9be615c9aec059fe2a5db4dbb099663279e01ae1e4d141c6eb7b0ff37e6345f",
+          "2x": "58aec4cf67fd6a040fd26772b44f556345753e7beae23ad9eda103e16f10ca51"
+        }
+      }
+    },
+    "inkcap-3": {
+      "id": "inkcap-3",
+      "icon1x": "assets/cardrpg-look/v3-portraits/skill-inkcap-3-1x.webp",
+      "icon2x": "assets/cardrpg-look/v3-portraits/skill-inkcap-3-2x.webp",
+      "display": [
+        64,
+        64
+      ],
+      "provenance": {
+        "source": "assets/cardrpg-look/v3-vfx/inkcap-light.webp",
+        "sourceSha256": "d24d6aa4fd4e2021b9c15ddc26c093421e6e1482799f22d8edf698571d21d388",
+        "tile": 1,
+        "deliveredSha256": {
+          "1x": "729a1749da6645db469da671b9effc9b6e283ee4f2150c5172e0a1fda10a5494",
+          "2x": "d99af8e91e158d7c8a6950b043a3bee6e011393e526f35899fe6028bddf2a328"
+        }
+      }
+    },
+    "inkcap-4": {
+      "id": "inkcap-4",
+      "icon1x": "assets/cardrpg-look/v3-portraits/skill-inkcap-4-1x.webp",
+      "icon2x": "assets/cardrpg-look/v3-portraits/skill-inkcap-4-2x.webp",
+      "display": [
+        64,
+        64
+      ],
+      "provenance": {
+        "source": "assets/cardrpg-look/v3-vfx/inkcap-light.webp",
+        "sourceSha256": "d24d6aa4fd4e2021b9c15ddc26c093421e6e1482799f22d8edf698571d21d388",
+        "tile": 2,
+        "deliveredSha256": {
+          "1x": "70e9c9ee960c814618533b078a3fa3d782d2b67b0c21a0b33402872413bdd6d4",
+          "2x": "0bea05bde49263cfd6b387d1dcfc81fe9e36ada31e66d49a7674ff48627f42ff"
+        }
+      }
+    },
+    "inkcap-passive": {
+      "id": "inkcap-passive",
+      "icon1x": "assets/cardrpg-look/v3-portraits/skill-inkcap-passive-1x.webp",
+      "icon2x": "assets/cardrpg-look/v3-portraits/skill-inkcap-passive-2x.webp",
+      "display": [
+        64,
+        64
+      ],
+      "provenance": {
+        "source": "assets/cardrpg-look/v3-vfx/inkcap-light.webp",
+        "sourceSha256": "d24d6aa4fd4e2021b9c15ddc26c093421e6e1482799f22d8edf698571d21d388",
+        "tile": 0,
+        "deliveredSha256": {
+          "1x": "1a64da0c864ec3a44b492d67bdb6afb7b65baa2c9a6dc5d9ee7cac6e7e07d51d",
+          "2x": "49a51d24a884f0318de6f8e326cf362ae70b2bc575ee1ea1d4fe10e1c8a7f982"
+        }
+      }
+    }
+  },
+  "frames": {
+    "common": {
+      "id": "common",
+      "plate1x": "assets/cardrpg-look/v3-portraits/frame-common-1x.webp",
+      "plate2x": "assets/cardrpg-look/v3-portraits/frame-common-2x.webp",
+      "display": [
+        256,
+        320
+      ],
+      "provenance": {
+        "tool": "Authored Pillow geometry",
+        "author": "tools/cardrpg-look/art-rebuild/pack-portraits.py",
+        "authorSha256": "4f941bf71bdd8676d21b8dac8730d5500d54f561d6d8f329609a7f1eb6928a81",
+        "deliveredSha256": {
+          "1x": "81da7f55f8fb8c646267143b497bedccca0afec24b68394a93829d7fbad8285d",
+          "2x": "0fc21361b50e63ecd2e4594baba309e4dae0b153b942cb28fb687caab4b876b1"
+        }
+      }
+    },
+    "rare": {
+      "id": "rare",
+      "plate1x": "assets/cardrpg-look/v3-portraits/frame-rare-1x.webp",
+      "plate2x": "assets/cardrpg-look/v3-portraits/frame-rare-2x.webp",
+      "display": [
+        256,
+        320
+      ],
+      "provenance": {
+        "tool": "Authored Pillow geometry",
+        "author": "tools/cardrpg-look/art-rebuild/pack-portraits.py",
+        "authorSha256": "4f941bf71bdd8676d21b8dac8730d5500d54f561d6d8f329609a7f1eb6928a81",
+        "deliveredSha256": {
+          "1x": "5692b4ecd9db85a704582cfbe2e7fafd7056bf3e231775c0af58d30b54b71c1f",
+          "2x": "2d2574233b4d6e69cc8088e7c184033f6135c209fd34076ab28010b016c0bb95"
+        }
+      }
+    },
+    "epic": {
+      "id": "epic",
+      "plate1x": "assets/cardrpg-look/v3-portraits/frame-epic-1x.webp",
+      "plate2x": "assets/cardrpg-look/v3-portraits/frame-epic-2x.webp",
+      "display": [
+        256,
+        320
+      ],
+      "provenance": {
+        "tool": "Authored Pillow geometry",
+        "author": "tools/cardrpg-look/art-rebuild/pack-portraits.py",
+        "authorSha256": "4f941bf71bdd8676d21b8dac8730d5500d54f561d6d8f329609a7f1eb6928a81",
+        "deliveredSha256": {
+          "1x": "30744c44ae14cb4050c41c74d6c90bcfd9799e0ab105b07009e4f561188ef735",
+          "2x": "53dea47f2542037f03b86e6a09e2a275bc511e6e3ba8715fba9ed1097776bc43"
+        }
+      }
+    },
+    "legendary": {
+      "id": "legendary",
+      "plate1x": "assets/cardrpg-look/v3-portraits/frame-legendary-1x.webp",
+      "plate2x": "assets/cardrpg-look/v3-portraits/frame-legendary-2x.webp",
+      "display": [
+        256,
+        320
+      ],
+      "provenance": {
+        "tool": "Authored Pillow geometry",
+        "author": "tools/cardrpg-look/art-rebuild/pack-portraits.py",
+        "authorSha256": "4f941bf71bdd8676d21b8dac8730d5500d54f561d6d8f329609a7f1eb6928a81",
+        "deliveredSha256": {
+          "1x": "70980d811733f90ef3092da0e8c9adbf10321e8cbaad1830801b1c5070ef0ed8",
+          "2x": "151be581db0bfa78cc8a20c8d756c4264b3e5ff2f22161c6bd47102ceca41a6f"
+        }
+      }
+    }
+  },
+  "sourcePolicy": "All25puppets and matching portraits derive from the same original concepts;60skillicons derive from original VFX masters. No new generation or external art.",
+  "updatedAt": "2026-11-10T18:00:04.066862+00:00",
+  "formats": [
+    "puppet",
+    "cardArt",
+    "headPortrait",
+    "uiPortrait",
+    "faceIcon",
+    "skills"
+  ]
+}

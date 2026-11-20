@@ -1,0 +1,58 @@
+/* The tip box lives in the cafe's free right-hand corner. */
+.uv-app[data-a6=true] .a6-idle.a6-tip-corner {
+ right:3%;top:42%;width:242px;gap:9px;justify-items:stretch;
+ .uv-tips {position:static;display:grid;justify-items:center;gap:0;width:100%;padding:0;border:0;border-radius:12px;background:none;box-shadow:none;color:#ffeac5;opacity:1}
+ .uv-tips .a6-tip-illustration {width:172px;height:120px;padding:0;border:0;border-radius:0;background:none;box-shadow:none;filter:drop-shadow(0 5px 6px #271c2944)}
+ .a6-tip-sparkle {opacity:.15}
+ &[data-ready=true] .a6-tip-sparkle {opacity:1}
+ .a6-tip-sign {display:grid;justify-items:center;gap:6px;width:100%;padding:10px 12px 9px;border:1px solid #c8a063;border-radius:10px;background:linear-gradient(110deg,#684833,#372a30);box-shadow:0 4px 0 #2b2024,inset 0 0 0 3px #fff0c00a;text-shadow:0 1px 2px #251c24}
+ .a6-tip-sign>b {font:700 21px var(--font-display);padding:0;background:none;color:#ffe2a4}
+ .a6-tip-sign>small {font-size:13px;padding:0;background:none;color:#edd2a7}
+ progress {width:100%;height:8px;accent-color:#efbf67}
+ .a6-tip-amounts {display:flex;flex-wrap:wrap;justify-content:center;gap:4px 10px;font-size:13px;color:#fff0ce;line-height:1.35}
+ .a6-tip-amounts>span {white-space:nowrap}
+ .a6-tip-status {font-size:14px;font-weight:700;color:#edce9f;line-height:1.3}
+ &[data-ready=true] .a6-tip-status {color:#ffdf85}
+ &[data-ready=true] .a6-tip-sign {border-color:#f8d18a;box-shadow:0 4px 0 #2b2024,0 0 15px #ffc86b22}
+ .a6-fast-reward {display:flex;justify-content:space-between;align-items:center;gap:8px;width:100%;min-height:44px;padding:8px 10px;font-size:14px;border:1px solid #c8a063;border-radius:9px;background:linear-gradient(#f7dfae,#c89d60);color:#55381f;box-shadow:0 3px 0 #62442f}
+ .a6-fast-reward>b {font-size:14px}.a6-fast-reward>small {font-size:13px;color:#604124;white-space:nowrap}
+ .a6-fast-reward:is(:disabled,[data-ready=false]) {opacity:1;background:linear-gradient(#685446,#4f4039);color:#dfc5a0;border-color:#8c7357;box-shadow:0 3px 0 #30242a}.a6-fast-reward:is(:disabled,[data-ready=false])>small {color:#d0b99b}
+ .a6-idle-feedback {top:55px;bottom:auto;left:50%;transform:translateX(-50%);white-space:nowrap;padding:7px 14px;border:1px solid #f3d195;background:#4b352c;color:#ffe8b3;font-size:15px;z-index:1}
+ .uv-tips:focus-visible,.a6-fast-reward:focus-visible {outline:3px solid #ffe6a6;outline-offset:5px}
+ &[data-reduced=true] * {animation:none!important;transition:none!important}
+ @media(max-height:780px) {top:41%;width:236px;.uv-tips .a6-tip-illustration {width:130px;height:85px}.a6-tip-sign {gap:4px;padding:8px 10px}.a6-tip-sign>b {font-size:20px}.a6-fast-reward {min-height:42px}}
+ @media(prefers-reduced-motion:reduce) {* {animation:none!important;transition:none!important}}
+}
+
+.uv-app[data-a6=true] .a6-tip-review {
+ width:min(860px,calc(100vw - 48px));max-width:none;max-height:calc(100dvh - 48px);margin:auto;padding:22px;overflow:auto;
+ border:2px solid #b89358;border-radius:18px;background:linear-gradient(130deg,#fff3d7,#e8d0a4);color:#443023;box-shadow:0 20px 70px #24191eb3;
+ &::backdrop {background:#201721ad;backdrop-filter:blur(4px)}
+ >header {display:flex;align-items:center;gap:18px;margin-bottom:16px}
+ >header>.a6-tip-illustration {width:92px;height:70px;flex:none}
+ >header>div {flex:1;min-width:0}
+ h2 {margin:4px 0;font-size:28px;color:#443023}
+ h3 {margin:0;font-size:23px;color:#443023}
+ small {font-size:12px;letter-spacing:.08em;color:#79542f}
+ p {font-size:14px;line-height:1.45;color:#63452e;margin:8px 0}
+ button {min-height:44px;padding:8px 14px;font-size:15px;color:#573921;background:#f3d799;border:1px solid #b99a64;box-shadow:0 3px 0 #9a7645;scroll-margin:8px}
+ button:disabled {opacity:1;color:#79684d;background:#ddcfb1;box-shadow:none;border-color:#b7a180}
+ .a6-tip-review-cards {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+ article {display:flex;flex-direction:column;min-width:0;padding:18px;border:1px solid #bca275;border-radius:12px;background:#fff5dc99}
+ article[data-selected=true] {border-color:#9c7139;box-shadow:inset 0 0 0 2px #c5a76755}
+ article>button {margin-top:auto;width:100%}
+ article>div {padding-bottom:14px}
+ table {width:100%;border-collapse:collapse;font-size:15px;color:#493422;font-variant-numeric:tabular-nums}
+ caption {position:absolute;width:1px;height:1px;padding:0;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+ th,td {padding:8px 4px;text-align:right;border-bottom:1px solid #cdb68d}
+ th:first-child {text-align:left}
+ thead th {font-size:13px;font-weight:600;color:#745435}
+ tbody th {font-weight:600;color:#63452e}
+ tbody td:last-child {font-weight:800;color:#4a6233}
+ .a6-tip-consequence {font-weight:700;color:#53391f;margin-top:14px}
+ .a6-tip-limit,.a6-tip-reason {color:#854931}
+ .a6-tip-receipt {min-height:21px;margin:14px 0 0;color:#486233;font-weight:700}
+ :focus-visible {outline:3px solid #8966b5;outline-offset:3px}
+ @media(max-height:760px) {padding:16px;>header{margin-bottom:12px}article{padding:14px}h2{font-size:26px}p{margin:6px 0}th,td{padding:6px 4px}}
+ @media(max-width:640px) {.a6-tip-review-cards{grid-template-columns:1fr}>header{flex-wrap:wrap}>header>.a6-tip-illustration{display:none}h2{font-size:23px}}
+}

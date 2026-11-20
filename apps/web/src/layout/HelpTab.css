@@ -6,7 +6,7 @@
   gap: var(--sp-4, 16px);
   max-width: 65ch;
   color: var(--text, #fff3e0);
-  font-family: var(--font-body, 'DM Sans', system-ui, sans-serif);
+  
   font-size: var(--fs-sm, .875rem);
   line-height: 1.5;
   padding: 0;
@@ -24,7 +24,7 @@
 
 .help-panel-title {
   margin: 0;
-  font-family: var(--font-display, 'Pixelify Sans', monospace);
+  
   font-size: var(--fs-lg, 1.25rem);
   color: var(--gold, #ffb86b);
   letter-spacing: 0.02em;
@@ -34,7 +34,7 @@
 
 .help-panel-desc {
   margin: 0;
-  font-family: var(--font-body, 'DM Sans', sans-serif);
+  
   font-size: var(--fs-sm, .875rem);
   color: var(--muted, #c3aed0);
   line-height: 1.4;
@@ -52,7 +52,7 @@
 
 .help-v2-section h3 {
   margin: 0;
-  font-family: var(--font-display, 'Pixelify Sans', monospace);
+  
   font-size: var(--fs-md, 1rem);
   color: var(--gold, #ffb86b);
   letter-spacing: 0.02em;
@@ -89,7 +89,7 @@
 }
 
 .help-v2-term {
-  font-family: var(--font-display, 'Pixelify Sans', monospace);
+  
   font-weight: 700;
   font-size: var(--fs-sm, .875rem);
   color: var(--accent, #ffb86b);
@@ -97,13 +97,13 @@
 
 .help-v2-def {
   margin: 0;
-  font-family: var(--font-body, 'DM Sans', sans-serif);
+  
   font-size: var(--fs-xs, .75rem);
   color: var(--muted, #c3aed0);
 }
 
 .help-v2-code {
-  font-family: var(--font-num, 'JetBrains Mono', monospace);
+  
   font-size: var(--fs-xs, .75rem);
   background: var(--surface, #2a1f36);
   padding: 2px 6px;
@@ -119,7 +119,7 @@
   width: 100%;
   max-width: 240px;
   min-height: var(--tap, 44px);
-  font-family: var(--font-display, 'Pixelify Sans', monospace);
+  
   font-size: var(--fs-sm, .875rem);
   font-weight: 700;
   text-transform: uppercase;
@@ -138,7 +138,7 @@
 .help-columns { display:grid; grid-template-columns:260px minmax(0,1fr); gap:var(--sp-4,16px); flex:1; min-height:350px; }
 .help-topic-list,.help-answer { padding:var(--sp-4,16px); background:var(--surface); border:2px solid var(--border); box-shadow:var(--pixel-shadow); min-width:0; }
 .help-topic-list { display:flex; flex-direction:column; align-items:stretch; gap:var(--sp-2,8px); }
-.help-topic-list label { font-family:var(--font-display); }
+.help-topic-list label {  }
 .help-topic-list input { width:100%; box-sizing:border-box; padding:var(--sp-2,8px); color:var(--text); background:var(--bg); border:2px solid var(--border); font:inherit; }
 .help-topic-count { color:var(--muted); font-size:var(--fs-xs,.75rem); }
 .help-topic-list button { display:flex; justify-content:space-between; gap:var(--sp-2,8px); text-align:left; background:transparent; color:var(--text); border:0; border-bottom:1px dashed var(--border); padding:var(--sp-2,8px) 0; font:inherit; cursor:pointer; }

@@ -1,0 +1,213 @@
+{
+  "version": 2,
+  "id": "brioche",
+  "method": "A2 R-c small original-palette paint with annotated prop separation",
+  "images": [
+    {
+      "name": "foot-l",
+      "sourcePart": "foot-l",
+      "file": "foot-l.png",
+      "filledInteriorPixels": 0
+    },
+    {
+      "name": "body",
+      "sourcePart": "body",
+      "file": "body.png",
+      "filledInteriorPixels": 1500
+    },
+    {
+      "name": "arm-r",
+      "sourcePart": "arm-r",
+      "file": "arm-r.png",
+      "filledInteriorPixels": 0
+    },
+    {
+      "name": "head",
+      "sourcePart": "head",
+      "file": "head.png",
+      "filledInteriorPixels": 0
+    },
+    {
+      "name": "arm-l",
+      "sourcePart": "arm-l",
+      "file": "arm-l.png",
+      "filledInteriorPixels": 4754
+    },
+    {
+      "name": "tail",
+      "sourcePart": "tail",
+      "file": "tail.png",
+      "filledInteriorPixels": 0
+    },
+    {
+      "name": "foot-r",
+      "sourcePart": "foot-r",
+      "file": "foot-r.png",
+      "filledInteriorPixels": 0
+    },
+    {
+      "name": "eye_l",
+      "sourcePart": "head",
+      "file": "eye_l.png",
+      "rect": [
+        191,
+        190,
+        100,
+        81
+      ],
+      "slot": "eye_l",
+      "visible": true,
+      "bone": "head"
+    },
+    {
+      "name": "eye_r",
+      "sourcePart": "head",
+      "file": "eye_r.png",
+      "rect": [
+        341,
+        174,
+        56,
+        66
+      ],
+      "slot": "eye_r",
+      "visible": true,
+      "bone": "head"
+    },
+    {
+      "name": "eye_l_closed",
+      "sourcePart": "head",
+      "file": "eye_l_closed.png",
+      "rect": [
+        191,
+        190,
+        100,
+        81
+      ],
+      "slot": "eye_l",
+      "visible": false,
+      "bone": "head"
+    },
+    {
+      "name": "eye_r_closed",
+      "sourcePart": "head",
+      "file": "eye_r_closed.png",
+      "rect": [
+        341,
+        174,
+        56,
+        66
+      ],
+      "slot": "eye_r",
+      "visible": false,
+      "bone": "head"
+    },
+    {
+      "name": "mouth_neutral",
+      "sourcePart": "head",
+      "file": "mouth_neutral.png",
+      "rect": [
+        285,
+        249,
+        91,
+        41
+      ],
+      "slot": "mouth",
+      "visible": true,
+      "bone": "head"
+    },
+    {
+      "name": "mouth_open",
+      "sourcePart": "head",
+      "file": "mouth_open.png",
+      "rect": [
+        285,
+        249,
+        91,
+        41
+      ],
+      "slot": "mouth",
+      "visible": false,
+      "bone": "head"
+    },
+    {
+      "name": "mouth_shout",
+      "sourcePart": "head",
+      "file": "mouth_shout.png",
+      "rect": [
+        285,
+        249,
+        91,
+        41
+      ],
+      "slot": "mouth",
+      "visible": false,
+      "bone": "head"
+    },
+    {
+      "name": "weapon",
+      "sourcePart": "arm-l",
+      "file": "weapon.png",
+      "slot": "weapon",
+      "visible": true,
+      "grip": [
+        0.48,
+        0.42
+      ],
+      "bone": "weapon",
+      "hand": "hand_l",
+      "behind": "arm-l"
+    },
+    {
+      "name": "hidden-tail",
+      "sourcePart": "tail",
+      "file": "hidden-tail.png",
+      "rect": [
+        -8,
+        57,
+        88,
+        106
+      ],
+      "slot": "hidden-tail",
+      "visible": true,
+      "bone": "tail_1",
+      "behind": "tail",
+      "paint": "Original sampled cloth/fur hidden joint substrate; 12px minimum intended overlap"
+    },
+    {
+      "name": "hidden-arm-l",
+      "sourcePart": "arm-l",
+      "file": "hidden-arm-l.png",
+      "rect": [
+        58,
+        241,
+        93,
+        61
+      ],
+      "slot": "hidden-arm-l",
+      "visible": true,
+      "bone": "arm_upper_l",
+      "behind": "arm-l",
+      "paint": "Original sampled cloth/fur hidden joint substrate; 12px minimum intended overlap"
+    },
+    {
+      "name": "hidden-body",
+      "sourcePart": "body",
+      "file": "hidden-body.png",
+      "rect": [
+        343,
+        141,
+        163,
+        211
+      ],
+      "slot": "hidden-body",
+      "visible": true,
+      "bone": "torso",
+      "behind": "body",
+      "paint": "Original sampled cloth/fur hidden joint substrate; 12px minimum intended overlap"
+    }
+  ],
+  "faceSeed": 2911,
+  "jointOverlapRequired": 12,
+  "weaponRequired": true,
+  "hiddenJointPaint": []
+}

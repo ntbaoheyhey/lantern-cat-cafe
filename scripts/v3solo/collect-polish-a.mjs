@@ -1,0 +1,27 @@
+/** Close A's original polish audit against current measurements, never old suite flags. */
+import {readFileSync,writeFileSync,mkdirSync} from 'node:fs';
+import {execFileSync} from 'node:child_process';
+import {createHash} from 'node:crypto';
+import {checkCard,evidenceMeta,format} from '../v3a2/check-gates.mjs';
+const base='reports/v3-battle/a2',read=p=>JSON.parse(readFileSync(p,'utf8'));
+const signed=path=>({path,sha256:createHash('sha256').update(readFileSync(path)).digest('hex')});
+const cards=['G0','R','F1','F2','M1','M2','V1','V2','V3','T1'];
+const gates=cards.flatMap(id=>checkCard(id));
+if(gates.some(r=>!r.pass))throw Error('A core card remains open: '+gates.filter(r=>!r.pass).map(r=>r.id));
+const original=read('reports/v3-solo/Q0-A-GATES.json');
+const baseline=Array.isArray(original)?original:Object.values(original.cards??{}).flat();
+const before=baseline.filter(r=>r.id?.includes('motion-energy')||r.id?.endsWith('.e2e'));
+const after=gates.filter(r=>r.id.includes('motion-energy')||r.id.endsWith('.e2e'));
+const revisions=['af1e1fdf3','770aab169','25de0255a','d685ffdf1','954414a69','0018a05f8','9e6c48006','4d3c27e1c','7f6808420','5acebec5a'];
+const commits=revisions.map(r=>execFileSync('git',['rev-parse',r],{encoding:'utf8'}).trim());
+const items=Array.from({length:10},(_,i)=>({id:`P${i+1}`,sourceCommit:commits[i],evidence:signed(`${base}/${i?`P${i+1}/metrics.json`:'M1/metrics.json'}`)}));
+const perf=read(`${base}/P10/after.json`),suite=read(`${base}/P/suite.json`);
+if(!['typecheckExit','unitExit','e2eExit','parityExit'].every(k=>suite[k]===0))throw Error('Current full suite incomplete');
+if(perf.rows.length!==6||perf.rows.some(r=>!r.parity||r.errors.length))throw Error('Performance fixture failure');
+mkdirSync(`${base}/P`,{recursive:true});
+const revisit={_meta:evidenceMeta(),before,after,partialCardsRemaining:0,method:'New methods from Q3/Q7: grounded caster recovery and damage debris for every actor; camera-aligned effect masks and independent plate articulation. Review uses the current unchanged lane checker. Earlier failed attempts stay in P1/ATTEMPTS.md.',gates,comparisons:['Q7/compare-wave1-contact.jpg','V1/compare-brioche-ult.png'].map(p=>signed(`${base}/${p}`))};
+writeFileSync(`${base}/P1/REVISIT.json`,JSON.stringify(revisit,null,2)+'\n');
+const result={_meta:evidenceMeta(),completedItems:items.length,separateCommits:new Set(commits).size,itemsWithEvidence:items.length,partialCardsRemaining:0,secondCameraVariants:read(`${base}/P2/metrics.json`).variants,lowFpsAt4xCpu:Math.min(...perf.rows.filter(r=>r.quality==='low').map(r=>r.fps)),highFpsMin:Math.min(...perf.rows.filter(r=>r.quality==='high').map(r=>r.fps)),profile:perf.profile,items,suite,performance:signed(`${base}/P10/after.json`),revisit:signed(`${base}/P1/REVISIT.json`)};
+writeFileSync(`${base}/P/metrics.json`,JSON.stringify(result,null,2)+'\n');
+writeFileSync(`${base}/P/current-core-gates.log`,gates.map(format).join('\n')+'\n');
+console.log(JSON.stringify({items:result.completedItems,low4x:result.lowFpsAt4xCpu,high:result.highFpsMin,coreGates:gates.length,partialCardsRemaining:0}));

@@ -3,7 +3,7 @@ import { useLayoutEffect, useRef, useSyncExternalStore } from 'react';
 import type { IconName } from '../art/pixelIcons';
 import { PixelIcon } from '../art/pixelIcons';
 import { LABELS } from '../theme/labels';
-import { closeHelp, getHelpOpen, openHelp, subscribeHelp } from './helpStore';
+import { closeHelp, getHelpOpen, isAutomaticHelp, openHelp, subscribeHelp } from './helpStore';
 import { Modal } from '../ui';
 import './onboarding.css';
 
@@ -53,9 +53,9 @@ export function setOpener(el: HTMLElement | null): void {
 }
 
 /** The How to play dialog. Opens on the first visit and from the "?" button. */
-export function HowToPlay({ mode = 'classic' }: { mode?: 'classic' | 'v2' } = {}) {
+export function HowToPlay({ mode = 'classic', autoShow = true }: { mode?: 'classic' | 'v2'; autoShow?: boolean } = {}) {
   const steps = mode === 'v2' ? V2_STEPS : STEPS;
-  const open = useSyncExternalStore(subscribeHelp, getHelpOpen);
+  const open = useSyncExternalStore(subscribeHelp, () => (autoShow || !isAutomaticHelp()) && getHelpOpen());
   const returnFocus = useRef<HTMLElement | null>(null);
   const start = useRef<HTMLButtonElement>(null);
 

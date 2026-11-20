@@ -1,0 +1,123 @@
+{
+  "version": 2,
+  "id": "marigold-ult",
+  "unit": "marigold",
+  "title": "Tea blossom",
+  "width": 1280,
+  "height": 720,
+  "fps": 30,
+  "frames": 68,
+  "signature": {
+    "element": {
+      "palette": [
+        "#ffffc9",
+        "#eacb68",
+        "#313525"
+      ],
+      "grade": "sun-tea"
+    },
+    "camera": "drop_from_above",
+    "motif": "paper-cranes",
+    "target": "all-allies",
+    "soundKit": "petal-harp"
+  },
+  "layers": [
+    {
+      "type": "background",
+      "start": 0,
+      "end": 68
+    },
+    {
+      "type": "animated-environment",
+      "start": 0,
+      "end": 68
+    },
+    {
+      "type": "light-shafts",
+      "start": 30,
+      "end": 68
+    },
+    {
+      "type": "speed-lines",
+      "start": 0,
+      "end": 68
+    },
+    {
+      "type": "caster",
+      "start": 0,
+      "end": 68
+    },
+    {
+      "type": "painted-motif",
+      "start": 0,
+      "end": 68,
+      "source": "../motifs/marigold.png"
+    },
+    {
+      "type": "ground-glyph",
+      "start": 0,
+      "end": 68
+    },
+    {
+      "type": "particles",
+      "start": 0,
+      "end": 68,
+      "count": 480
+    },
+    {
+      "type": "painted-layer",
+      "start": 12,
+      "end": 68,
+      "source": "/assets/cardrpg-look/vfx-layered/marigold-4.webp",
+      "region": [
+        256,
+        0,
+        256,
+        256
+      ]
+    },
+    {
+      "type": "impact-frame",
+      "start": 55,
+      "end": 56
+    },
+    {
+      "type": "closing-flash",
+      "start": 64,
+      "end": 68
+    }
+  ],
+  "composition": {
+    "background": "sunburst",
+    "camera": "crane-ascent",
+    "focus": [
+      810,
+      350
+    ],
+    "motifSize": 1350,
+    "casterX": 300,
+    "casterFoot": 720,
+    "casterHeight": 590,
+    "casterEnter": -600,
+    "casterTilt": -0.04,
+    "motifTilt": 0.015,
+    "particle": "petal",
+    "casterBehind": false,
+    "seed": 36,
+    "impactDark": true
+  },
+  "beats": [
+    {
+      "name": "entrance",
+      "frame": 12
+    },
+    {
+      "name": "build",
+      "frame": 35
+    },
+    {
+      "name": "climax",
+      "frame": 54
+    }
+  ]
+}

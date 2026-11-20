@@ -1,0 +1,240 @@
+{
+  "version": 2,
+  "id": "velvet",
+  "method": "A2 R-c small original-palette paint with annotated prop separation",
+  "images": [
+    {
+      "name": "foot-l",
+      "sourcePart": "foot-l",
+      "file": "foot-l.png",
+      "filledInteriorPixels": 0
+    },
+    {
+      "name": "body",
+      "sourcePart": "body",
+      "file": "body.png",
+      "filledInteriorPixels": 646
+    },
+    {
+      "name": "arm-r",
+      "sourcePart": "arm-r",
+      "file": "arm-r.png",
+      "filledInteriorPixels": 381
+    },
+    {
+      "name": "head",
+      "sourcePart": "head",
+      "file": "head.png",
+      "filledInteriorPixels": 4
+    },
+    {
+      "name": "arm-l",
+      "sourcePart": "arm-l",
+      "file": "arm-l.png",
+      "filledInteriorPixels": 0
+    },
+    {
+      "name": "tail",
+      "sourcePart": "tail",
+      "file": "tail.png",
+      "filledInteriorPixels": 3
+    },
+    {
+      "name": "foot-r",
+      "sourcePart": "foot-r",
+      "file": "foot-r.png",
+      "filledInteriorPixels": 0
+    },
+    {
+      "name": "eye_l",
+      "sourcePart": "head",
+      "file": "eye_l.png",
+      "rect": [
+        103,
+        121,
+        88,
+        68
+      ],
+      "slot": "eye_l",
+      "visible": true,
+      "bone": "head"
+    },
+    {
+      "name": "eye_r",
+      "sourcePart": "head",
+      "file": "eye_r.png",
+      "rect": [
+        227,
+        118,
+        56,
+        70
+      ],
+      "slot": "eye_r",
+      "visible": true,
+      "bone": "head"
+    },
+    {
+      "name": "eye_l_closed",
+      "sourcePart": "head",
+      "file": "eye_l_closed.png",
+      "rect": [
+        103,
+        121,
+        88,
+        68
+      ],
+      "slot": "eye_l",
+      "visible": false,
+      "bone": "head"
+    },
+    {
+      "name": "eye_r_closed",
+      "sourcePart": "head",
+      "file": "eye_r_closed.png",
+      "rect": [
+        227,
+        118,
+        56,
+        70
+      ],
+      "slot": "eye_r",
+      "visible": false,
+      "bone": "head"
+    },
+    {
+      "name": "mouth_neutral",
+      "sourcePart": "head",
+      "file": "mouth_neutral.png",
+      "rect": [
+        183,
+        187,
+        66,
+        31
+      ],
+      "slot": "mouth",
+      "visible": true,
+      "bone": "head"
+    },
+    {
+      "name": "mouth_open",
+      "sourcePart": "head",
+      "file": "mouth_open.png",
+      "rect": [
+        183,
+        187,
+        66,
+        31
+      ],
+      "slot": "mouth",
+      "visible": false,
+      "bone": "head"
+    },
+    {
+      "name": "mouth_shout",
+      "sourcePart": "head",
+      "file": "mouth_shout.png",
+      "rect": [
+        183,
+        187,
+        66,
+        31
+      ],
+      "slot": "mouth",
+      "visible": false,
+      "bone": "head"
+    },
+    {
+      "name": "weapon",
+      "sourcePart": "arm-r",
+      "file": "weapon.png",
+      "slot": "weapon",
+      "visible": true,
+      "grip": [
+        0.4,
+        0.37
+      ],
+      "bone": "weapon",
+      "hand": "hand_r",
+      "behind": "arm-r"
+    },
+    {
+      "name": "hidden-arm-r",
+      "sourcePart": "arm-r",
+      "file": "hidden-arm-r.png",
+      "rect": [
+        28,
+        219,
+        145,
+        129
+      ],
+      "slot": "hidden-arm-r",
+      "visible": true,
+      "bone": "arm_upper_r",
+      "behind": "arm-r",
+      "paint": "Original sampled cloth/fur hidden joint substrate; 12px minimum intended overlap"
+    },
+    {
+      "name": "hidden-body",
+      "sourcePart": "body",
+      "file": "hidden-body.png",
+      "rect": [
+        470,
+        165,
+        100,
+        117
+      ],
+      "slot": "hidden-body",
+      "visible": true,
+      "bone": "torso",
+      "behind": "body",
+      "paint": "Original sampled cloth/fur hidden joint substrate; 12px minimum intended overlap"
+    }
+  ],
+  "faceSeed": 2317,
+  "jointOverlapRequired": 12,
+  "weaponRequired": true,
+  "hiddenJointPaint": [
+    {
+      "pose": "attack",
+      "part": "arm-r",
+      "erodedHolePixels": 1,
+      "radius": 14
+    },
+    {
+      "pose": "attack",
+      "part": "arm-r",
+      "erodedHolePixels": 15,
+      "radius": 14
+    },
+    {
+      "pose": "cast",
+      "part": "arm-r",
+      "erodedHolePixels": 2,
+      "radius": 14
+    },
+    {
+      "pose": "hit",
+      "part": "body",
+      "erodedHolePixels": 16,
+      "radius": 14
+    },
+    {
+      "pose": "death",
+      "part": "body",
+      "erodedHolePixels": 9,
+      "radius": 14
+    },
+    {
+      "pose": "stunned",
+      "part": "body",
+      "erodedHolePixels": 16,
+      "radius": 14
+    },
+    {
+      "pose": "enter",
+      "part": "body",
+      "erodedHolePixels": 19,
+      "radius": 14
+    }
+  ]
+}

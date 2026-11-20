@@ -97,15 +97,17 @@ it('uses fixture HUD values and exposes the gated hint', () => {
   const hud = screen.getByRole('region', { name: 'Cat status' });
   expect(hud.textContent).toContain('20');
   expect(screen.getByLabelText('Cat Keys 2 of 5')).toBeTruthy();
-  expect(screen.getByTestId('next-hint').textContent).toContain('Equip better gear');
+  expect(screen.getByTestId('next-hint').textContent).toContain('power wall');
+  fireEvent.click(within(screen.getByTestId('next-hint')).getByRole('button'));
+  expect(screen.getByRole('tabpanel', { name: 'Bag' })).toBeTruthy();
 });
 it('shows class selection only while the authoritative class is null', () => {
   stageState = sampleServerStateV2({ classId: null });
   const view = render(<App />);
   expect(screen.getByTestId('class-picker')).toBeTruthy();
   fireEvent.click(screen.getByTestId('class-picker-choose-button'));
-  fireEvent.click(screen.getByTestId('class-picker-confirm-button'));
-  expect(stageLoop.chooseClass).toHaveBeenCalledWith('warrior');
+  expect(screen.queryByTestId('class-picker-confirm-button')).toBeNull();
+  expect(stageLoop.chooseClass).toHaveBeenCalledExactlyOnceWith('warrior');
   stageState = sampleServerStateV2(); view.rerender(<App />);
   expect(screen.queryByTestId('class-picker')).toBeNull();
   expect(screen.getByTestId('game-canvas')).toBeTruthy();

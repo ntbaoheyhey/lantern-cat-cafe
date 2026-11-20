@@ -1,0 +1,29 @@
+/* Home entry signs stay readable without hiding the original crew art. */
+.uv-app[data-a6=true] {
+ .uv-hotspot {min-height:44px;padding:9px 16px;font-size:14px;line-height:1.3;border-radius:8px 8px 13px 13px;border:1px solid #e2bd7b;background:linear-gradient(#745337,#42302e);box-shadow:inset 0 0 0 3px #372930,0 4px 0 #261e27,0 7px 16px #1d18264d}
+ .uv-hotspot:before {content:'';position:absolute;top:-11px;left:15px;right:15px;height:11px;background:linear-gradient(90deg,#dfb870 0 2px,transparent 2px calc(100% - 2px),#dfb870 calc(100% - 2px));pointer-events:none}
+ .uv-hotspot:after {border-top-color:#e2bd7b}
+ .uv-hotspot small {font-size:14px;line-height:1.3;color:#f7dbad}
+ .uv-recruit-hotspot {top:32%}
+ .a6-next-goal small,.uv-home-title small {font-size:13px}
+}
+
+/* A small shelf reminder beside Patrol, after the first three guided actions. */
+.uv-app[data-a6=true] .a6-patrol-gear {
+ width:250px;max-width:23vw;flex:0 1 250px;min-width:0;
+ >button,>div {display:grid;gap:3px;width:100%;min-height:82px;padding:10px 18px;text-align:left;border:1px solid #c4b780;border-radius:12px;background:linear-gradient(120deg,#4c513d,#333c31);color:#f7ebc9;box-shadow:0 4px 0 #23271f,inset 0 0 0 3px #c8c38d12}
+ small {font-size:11px;letter-spacing:.07em;line-height:1.3;color:#e0d9b2}
+ strong {font:700 21px/1.2 var(--font-display);color:#fff0b6}
+ span {font-size:14px;line-height:1.3}
+ >div {border-color:#8e9a74;box-shadow:none}
+ @media(max-width:1100px) {max-width:20vw;>button,>div {padding:9px 12px}strong {font-size:18px}}
+}
+.uv-app[data-a6=true]:not(:has(.uv-sheet)) .a6-unlock-toast {
+ left:49%;right:auto;top:88px;bottom:auto;transform:none;width:370px;max-width:31vw;padding:12px;display:grid;grid-template-columns:26px minmax(0,1fr) 44px;gap:12px;align-items:center;
+ >span {font-size:28px}
+ >div {min-width:0}
+ small {font-size:13px;line-height:1.3}
+ strong {display:block;font-size:18px;line-height:1.25;margin-top:3px}
+ p {font-size:14px;line-height:1.4;margin:5px 0 0}
+ button {min-width:44px;min-height:44px;padding:7px;font-size:18px}
+}

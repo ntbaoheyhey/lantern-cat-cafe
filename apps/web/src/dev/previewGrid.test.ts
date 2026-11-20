@@ -5,7 +5,8 @@ describe('previewGrid', () => {
   it('covers class x armor set x rarity x animation when nothing is filtered', () => {
     const g = previewGrid({ cls: 'all', gear: 'all', rarity: 'all', anim: 'all' });
     expect(g.rows).toHaveLength(7 * 2 * 5);
-    expect(g.anims).toHaveLength(6);
+    expect(g.anims).toEqual(expect.arrayContaining(['idle', 'walk', 'attack', 'hurt', 'defeat', 'victory', 'nap', 'equip']));
+    expect(g.anims).toHaveLength(8);
     expect(new Set(g.rows.map((r) => r.label)).size).toBe(g.rows.length);
   });
 

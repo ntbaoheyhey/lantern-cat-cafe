@@ -1,0 +1,19 @@
+# Optional authoritative campaign
+
+`CHAIN_CAMPAIGN_ENABLED=0` and `VITE_CHAIN_CAMPAIGN=0` remain the defaults. The new `chain-campaign` Edge Function validates the existing SIWE session and accepts at most1024 UTF-8 bytes. A source policy for `campaign-journal-v1` must explicitly match the generated rules hash. Migration900 creates tables and functions but inserts no policy or grant.
+
+The Campaign tab owns a fresh server starter for each existing player/wallet binding. It uses the repository's real A6 battle/run/equipment rules. Offline progress is a separate save and cannot be imported as evidence. No CHAIN change to C2 battle stats or drop rates is included. The API supports route choice, automatic battle resolution, reward choice, level, equip, salvage, idle collection and permanent export; the compact UI exposes route/crew/export. Custom tactical loadouts and equipment management can be added to the same strict command surface.
+
+Each mutation carries a UUID and expected revision. A database row lock arbitrates concurrent commands. Its transaction checks wallet/rules/revision, removes the earned unused item, calls the immutable source adapter, increments revision and records the response. An ingest failure rolls everything back. Same-ID retries recover the original result; changed payloads and competing stale commands fail. The browser stores pending nonsecret command intent before sending; a network failure retains it across reloads. An explicit projection hides seeds, origins, full saves, future choices and battle internals.
+
+Export requires an Epic+ catalog item earned at level2+, no active run and no equipped copy. It permanently removes the instance; the player explicitly acknowledges normalization to minimum rolls and no enhancements. It grants a sealable inventory receipt, not a free NFT. The existing seal service charges the immutable quote, mints through the existing ERC1155 and prevents duplicate copies. Chain balances then determine ownership; cosmetics confer no combat stats.
+
+Six starts per UTC day count abandoned runs as well as completed runs. This bounds seed sampling and compute for one account; it is not a human identity proof or a population supply ceiling. Existing three-seal/day limits, level rules and market cooldowns remain in effect. No extra per-battle YARN reward is introduced.
+
+`node tools/chain/campaign-manifest.mjs --check` rejects stale code fingerprints. To update rules, regenerate the manifest, test the resulting save compatibility and explicitly migrate the policy/saves together; merely changing an environment variable must not reset progress. Saved receipts remain available for response recovery. Do not insert a public enabled policy until the deployment uses that exact manifest.
+
+Evidence: journal and service unit tests, PostgreSQL17 eight-session positive/negative row-lock controls, browser campaign-to-trade test with deliberate response loss, and the14-day source study. This is local evidence. No public campaign endpoint, voluntary use or two-minute hosted timing is claimed.
+
+## V4 source fingerprint transition
+
+The17November manifest binds159source files to `1ce8f46d7bd5e346e4d66964d61157dae07df1b3fdd26550f8746450ca641c82`, replacing stale `ba1bf19667c03038f77cda94c8998b9baa2659d1381ef7cb99b56cc55bb96eea`. Run `node tools/chain/campaign-manifest.mjs --check` before deployment. Regeneration itself enables no authority. With issuers disabled, the existing user-run `prepare-v3-demo.mjs` emits the explicit source-policy transition inside its reviewed budget transaction. It rejects an old saved campaign before any changes; do not relabel or reset old journals. A deployment with old campaigns needs a separately reviewed state migration. Fresh/current campaigns use the normal transaction. QA-6 local evidence is `reports/v4-ship/S11/campaign-policy-check-1.json`; no hosted migration was executed.

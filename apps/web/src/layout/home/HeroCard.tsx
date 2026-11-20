@@ -1,7 +1,7 @@
 import React from 'react';
 import { v2 } from '@taskbar-hero/game-rules';
 import type { ServerStateV2 } from '../../api/GameApiV2';
-import { CatPortrait } from '../../CatPortrait';
+import { MochiPortrait } from '../../visual/MochiPortrait';
 import { formatStat, statLabel } from '../itemView';
 
 export interface HeroCardProps {
@@ -23,7 +23,7 @@ export function HeroCard({ state }: HeroCardProps) {
     <div className="home-card home-card--hero" data-testid="home-hero-card">
       <div className="home-card__header">
         <div className="home-hero-card__avatar">
-          <CatPortrait size={64} />
+          <MochiPortrait size={96} />
         </div>
         <div className="home-hero-card__meta">
           <h2 className="home-card__title" data-testid="hero-card-name">{catName}</h2>

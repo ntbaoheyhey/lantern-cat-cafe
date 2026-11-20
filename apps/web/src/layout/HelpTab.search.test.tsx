@@ -1,10 +1,9 @@
 // @vitest-environment jsdom
-import { readFileSync } from 'node:fs';
+import inventory from './__fixtures__/help-strings.json';
 import { cleanup, fireEvent, render, screen } from '@testing-library/react';
 import { afterEach, beforeEach, expect, it, vi } from 'vitest';
 import { withConfigV2 } from '../../../../packages/game-rules/src/v2/sim/config';
 import { HelpTab } from './HelpTab';
-const inventory = JSON.parse(readFileSync('../../reports/redesign/CXU4/help-strings.json', 'utf8')) as Record<string, string[]>;
 beforeEach(() => vi.stubEnv('VITE_GAME_V2', '1'));
 afterEach(() => { cleanup(); vi.unstubAllEnvs(); });
 const compact = (value: string) => value.replace(/\s+/g, ' ').trim();

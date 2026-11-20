@@ -1,0 +1,30 @@
+{
+  "id": "button-guard",
+  "role": "guard",
+  "height": 1.65,
+  "neck": 0.69,
+  "arms": {
+    "x": 0.27,
+    "bottom": 0.2,
+    "top": 0.66
+  },
+  "feet": 0.15,
+  "rigLimits": {
+    "head": 0.07,
+    "tail": 0,
+    "ear": 0,
+    "arm": 0.09,
+    "foot": 0.04
+  },
+  "material": {
+    "metallic": 0,
+    "roughness": 0.88,
+    "discardGeneratedPBR": true,
+    "toon": true
+  },
+  "ratio": 0.22,
+  "error": 0.006,
+  "textureSize": 1024,
+  "reviewStatus": "DRAFT: source bounds and motion must be reviewed before install",
+  "design": "Use original dark-red/brass albedo; restrained rigid head, arm and foot modules, no skin stretching."
+}

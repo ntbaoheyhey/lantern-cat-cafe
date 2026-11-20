@@ -1,3 +1,6 @@
+import { useEffect, useRef } from 'react';
+import '../visual/scene.css';
+import '../visual/visual.css';
 import React, { type CSSProperties, type ReactNode } from 'react';
 import { Rail } from './Rail';
 import { Hud, type HudProps } from './Hud';
@@ -27,12 +30,19 @@ export function ScreenFrame({
   dataShortLandscape,
   children,
 }: ScreenFrameProps) {
+  const host = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const sync = () => { if (host.current) host.current.dataset.visualPaused = String(document.hidden); };
+    sync(); document.addEventListener('visibilitychange', sync);
+    return () => document.removeEventListener('visibilitychange', sync);
+  }, []);
   const currentDef = SCREEN_REGISTRY.find((s) => s.id === activeScreen);
   const showRail = showRailProp !== undefined ? showRailProp && (currentDef?.rail ?? true) : (currentDef ? currentDef.rail : true);
   const showHud = Boolean(hudProps);
 
   return (
     <div
+      ref={host}
       className="app-shell v2-shell"
       data-game-v2="stage-v2-enabled"
       data-active-screen={activeScreen}

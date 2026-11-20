@@ -1,0 +1,3043 @@
+{
+ "generated": "2026-11-19",
+ "assumptions": {
+  "weeks": 52,
+  "startAccounts": 1000,
+  "newAccountsPerWeek": 150,
+  "testerSlots": 500,
+  "deedSupply": 3000,
+  "priceEpicYarn": 10,
+  "priceRefUsd": 0.05,
+  "avaxUsd": 20,
+  "yarnListingShare": 0.5,
+  "encounterMix": {
+   "battle": 0.78,
+   "elite": 0.18,
+   "boss": 0.04
+  },
+  "stampsPerPull": 150,
+  "types": {
+   "casual": {
+    "days": 4,
+    "wins": 8,
+    "stamps": 260,
+    "boss": 0.6,
+    "lv15": 3,
+    "withdraw": 0.3,
+    "fuse": 0.5,
+    "seal": 0.1,
+    "cosmetic": 0.25,
+    "payer": 0.03,
+    "ret": [
+     0.4,
+     0.94
+    ],
+    "hours": 2
+   },
+   "regular": {
+    "days": 6,
+    "wins": 16,
+    "stamps": 400,
+    "boss": 0.9,
+    "lv15": 2,
+    "withdraw": 0.5,
+    "fuse": 0.7,
+    "seal": 0.25,
+    "cosmetic": 0.45,
+    "payer": 0.08,
+    "ret": [
+     0.55,
+     0.96
+    ],
+    "hours": 6
+   },
+   "heavy": {
+    "days": 7,
+    "wins": 30,
+    "stamps": 480,
+    "boss": 1,
+    "lv15": 1,
+    "withdraw": 0.7,
+    "fuse": 0.9,
+    "seal": 0.5,
+    "cosmetic": 0.7,
+    "payer": 0.2,
+    "ret": [
+     0.8,
+     0.98
+    ],
+    "hours": 21
+   },
+   "bot": {
+    "days": 7,
+    "wins": 40,
+    "stamps": 480,
+    "boss": 1,
+    "lv15": 1,
+    "withdraw": 1,
+    "fuse": 0,
+    "seal": 0.9,
+    "cosmetic": 0,
+    "payer": 0,
+    "ret": [
+     1,
+     1
+    ],
+    "hours": 28
+   }
+  }
+ },
+ "chain": {
+  "testerGrant": 20,
+  "baseRoutineCap": 12,
+  "healthThreshold": 0.8,
+  "contractSeasonWeeks": 13,
+  "marketFee": 0.05,
+  "marketBurnShare": 0.4,
+  "dripAvax": 0.05
+ },
+ "guard": {
+  "launchAllowance": 2000,
+  "backingBp": 9000
+ },
+ "gacha": {
+  "cat": {
+   "pullsPerLegendary": 41.73998267105526,
+   "effectiveRate": 0.02395784415822131
+  },
+  "gear": {
+   "pullsPerLegendary": 37.04867055499879,
+   "effectiveRate": 0.02699152182844183
+  }
+ },
+ "results": [
+  {
+   "id": "balanced",
+   "policy": "contract-only",
+   "mix": "balanced",
+   "demand": 1,
+   "bots": 0.05,
+   "accounts": 8650,
+   "deeds": 3000,
+   "ledger": {
+    "claims": 58897.787,
+    "tester": 10000,
+    "withdrawNet": 48897.787,
+    "burnSeal": 37739,
+    "burnFusion": 98478,
+    "burnCraft": 23716,
+    "burnMarket": 31.2,
+    "retained": 16299.263,
+    "rebate": 22274,
+    "treasuryYarnSold": 125708.3,
+    "marketVolumeYarnEq": 3120,
+    "treasuryFeeYarnEq": 93.6,
+    "dripAvax": 432.5,
+    "requestedNet": 48897.787,
+    "deniedByGuard": 0,
+    "botNet": 7920.713,
+    "sealedStock": 2591,
+    "sealedTotal": 2903,
+    "fusedInputs": 16413,
+    "fusions": 5471,
+    "epicsDropped": 374538,
+    "legendaryDropped": 1240,
+    "legendaryTailored": 59295,
+    "legendaryFused": 5471,
+    "skins": 805,
+    "spoolOutstanding": 37632.25,
+    "gachaPulls": 1372352
+   },
+   "burnTotal": 159964.2,
+   "burnPerClaim": 2.716,
+   "routineBurnPerClaim": 3.271,
+   "withdrawFill": 1,
+   "botShareOfWithdrawals": 0.162,
+   "heavyCasualWeeklyReward": 2.07,
+   "fusedPerSealed": 5.65,
+   "byType": {
+    "casual": {
+     "accounts": 3097,
+     "spoolPerActiveWeek": 0.648,
+     "spoolPerHour": 0.3241,
+     "medianFirstLegendaryDay": 11,
+     "shareWithLegendaryBy8Weeks": 1
+    },
+    "regular": {
+     "accounts": 3821,
+     "spoolPerActiveWeek": 1.05,
+     "spoolPerHour": 0.175,
+     "medianFirstLegendaryDay": 8,
+     "shareWithLegendaryBy8Weeks": 1
+    },
+    "heavy": {
+     "accounts": 1321,
+     "spoolPerActiveWeek": 1.344,
+     "spoolPerHour": 0.064,
+     "medianFirstLegendaryDay": 7,
+     "shareWithLegendaryBy8Weeks": 1
+    },
+    "bot": {
+     "accounts": 411,
+     "spoolPerActiveWeek": 1.41,
+     "spoolPerHour": 0.0504,
+     "medianFirstLegendaryDay": 7,
+     "shareWithLegendaryBy8Weeks": 1
+    }
+   },
+   "revenueUsd": {
+    "treasuryYarnSales": 6285.41,
+    "marketFeesTreasury": 4.68,
+    "sponsorGasCost": -8650
+   },
+   "humansEverActive": 8068,
+   "gates": {
+    "burn>=claims": true,
+    "fairness": true,
+    "item-sink": true,
+    "progress": true,
+    "rewards-flow": true
+   },
+   "weekly": [
+    {
+     "week": 1,
+     "active": 564,
+     "claims": 10000,
+     "burn": 2247.8,
+     "wkClaims": 0,
+     "wkBurn": 2247.8,
+     "multiplier": 1,
+     "sealedStock": 5,
+     "deeds": 170
+    },
+    {
+     "week": 4,
+     "active": 731,
+     "claims": 11220.7,
+     "burn": 7164.7,
+     "wkClaims": 498.08,
+     "wkBurn": 1661.6,
+     "multiplier": 1,
+     "sealedStock": 59,
+     "deeds": 698
+    },
+    {
+     "week": 8,
+     "active": 941,
+     "claims": 14008.4,
+     "burn": 14186,
+     "wkClaims": 715.59,
+     "wkBurn": 1927.3,
+     "multiplier": 1,
+     "sealedStock": 146,
+     "deeds": 1368
+    },
+    {
+     "week": 12,
+     "active": 1098,
+     "claims": 17704.03,
+     "burn": 22353.5,
+     "wkClaims": 1001.99,
+     "wkBurn": 2260.4,
+     "multiplier": 1,
+     "sealedStock": 254,
+     "deeds": 1952
+    },
+    {
+     "week": 16,
+     "active": 1297,
+     "claims": 22280.67,
+     "burn": 31911.7,
+     "wkClaims": 1134.99,
+     "wkBurn": 2470.9,
+     "multiplier": 1,
+     "sealedStock": 387,
+     "deeds": 2540
+    },
+    {
+     "week": 20,
+     "active": 1479,
+     "claims": 27633.99,
+     "burn": 43101.3,
+     "wkClaims": 1326.57,
+     "wkBurn": 3049.3,
+     "multiplier": 1,
+     "sealedStock": 539,
+     "deeds": 3000
+    },
+    {
+     "week": 24,
+     "active": 1605,
+     "claims": 33008.74,
+     "burn": 55278.8,
+     "wkClaims": 1297.6,
+     "wkBurn": 3239.1,
+     "multiplier": 1,
+     "sealedStock": 704,
+     "deeds": 3000
+    },
+    {
+     "week": 28,
+     "active": 1699,
+     "claims": 37828.8,
+     "burn": 68919.7,
+     "wkClaims": 1152.03,
+     "wkBurn": 3786.8,
+     "multiplier": 1,
+     "sealedStock": 892,
+     "deeds": 3000
+    },
+    {
+     "week": 32,
+     "active": 1783,
+     "claims": 42226.89,
+     "burn": 82770.3,
+     "wkClaims": 982.1,
+     "wkBurn": 3337.4,
+     "multiplier": 1,
+     "sealedStock": 1119,
+     "deeds": 3000
+    },
+    {
+     "week": 36,
+     "active": 1866,
+     "claims": 46142.56,
+     "burn": 97578.1,
+     "wkClaims": 844.24,
+     "wkBurn": 3309.7,
+     "multiplier": 1,
+     "sealedStock": 1391,
+     "deeds": 3000
+    },
+    {
+     "week": 40,
+     "active": 1962,
+     "claims": 49788.85,
+     "burn": 112552.3,
+     "wkClaims": 792.96,
+     "wkBurn": 3807.3,
+     "multiplier": 1,
+     "sealedStock": 1644,
+     "deeds": 3000
+    },
+    {
+     "week": 44,
+     "active": 2053,
+     "claims": 53084.04,
+     "burn": 127408.8,
+     "wkClaims": 668.51,
+     "wkBurn": 3856.2,
+     "multiplier": 1,
+     "sealedStock": 1922,
+     "deeds": 3000
+    },
+    {
+     "week": 48,
+     "active": 2180,
+     "claims": 56085.76,
+     "burn": 143807.2,
+     "wkClaims": 726.78,
+     "wkBurn": 4052.5,
+     "multiplier": 1,
+     "sealedStock": 2279,
+     "deeds": 3000
+    },
+    {
+     "week": 52,
+     "active": 2238,
+     "claims": 58897.79,
+     "burn": 159964.2,
+     "wkClaims": 609.35,
+     "wkBurn": 3831.4,
+     "multiplier": 1,
+     "sealedStock": 2591,
+     "deeds": 3000
+    }
+   ]
+  },
+  {
+   "id": "balanced",
+   "policy": "burn-backed",
+   "mix": "balanced",
+   "demand": 1,
+   "bots": 0.05,
+   "accounts": 8650,
+   "deeds": 3000,
+   "ledger": {
+    "claims": 58033.962,
+    "tester": 10000,
+    "withdrawNet": 48033.962,
+    "burnSeal": 39793,
+    "burnFusion": 102186,
+    "burnCraft": 23284,
+    "burnMarket": 29.8,
+    "retained": 16011.321,
+    "rebate": 21873.4,
+    "treasuryYarnSold": 131003.075,
+    "marketVolumeYarnEq": 2980,
+    "treasuryFeeYarnEq": 89.4,
+    "dripAvax": 432.5,
+    "requestedNet": 51464.362,
+    "deniedByGuard": 3430.4,
+    "botNet": 7208.913,
+    "sealedStock": 2763,
+    "sealedTotal": 3061,
+    "fusedInputs": 17031,
+    "fusions": 5677,
+    "epicsDropped": 373023,
+    "legendaryDropped": 1233,
+    "legendaryTailored": 59070,
+    "legendaryFused": 5677,
+    "skins": 832,
+    "spoolOutstanding": 37809.7,
+    "gachaPulls": 1364418.667
+   },
+   "burnTotal": 165292.8,
+   "burnPerClaim": 2.848,
+   "routineBurnPerClaim": 3.441,
+   "withdrawFill": 0.933,
+   "botShareOfWithdrawals": 0.15,
+   "heavyCasualWeeklyReward": 2.14,
+   "fusedPerSealed": 5.56,
+   "byType": {
+    "casual": {
+     "accounts": 3071,
+     "spoolPerActiveWeek": 0.633,
+     "spoolPerHour": 0.3163,
+     "medianFirstLegendaryDay": 11,
+     "shareWithLegendaryBy8Weeks": 1
+    },
+    "regular": {
+     "accounts": 3903,
+     "spoolPerActiveWeek": 1.052,
+     "spoolPerHour": 0.1753,
+     "medianFirstLegendaryDay": 8,
+     "shareWithLegendaryBy8Weeks": 1
+    },
+    "heavy": {
+     "accounts": 1292,
+     "spoolPerActiveWeek": 1.354,
+     "spoolPerHour": 0.0645,
+     "medianFirstLegendaryDay": 7,
+     "shareWithLegendaryBy8Weeks": 1
+    },
+    "bot": {
+     "accounts": 384,
+     "spoolPerActiveWeek": 1.411,
+     "spoolPerHour": 0.0504,
+     "medianFirstLegendaryDay": 8,
+     "shareWithLegendaryBy8Weeks": 1
+    }
+   },
+   "revenueUsd": {
+    "treasuryYarnSales": 6550.15,
+    "marketFeesTreasury": 4.47,
+    "sponsorGasCost": -8650
+   },
+   "humansEverActive": 8108,
+   "gates": {
+    "burn>=claims": true,
+    "fairness": true,
+    "item-sink": true,
+    "progress": true,
+    "rewards-flow": true
+   },
+   "weekly": [
+    {
+     "week": 1,
+     "active": 564,
+     "claims": 10000,
+     "burn": 2247.8,
+     "wkClaims": 0,
+     "wkBurn": 2247.8,
+     "multiplier": 1,
+     "sealedStock": 5,
+     "deeds": 170
+    },
+    {
+     "week": 4,
+     "active": 741,
+     "claims": 10000,
+     "burn": 7030.9,
+     "wkClaims": 0,
+     "wkBurn": 1537.6,
+     "multiplier": 1,
+     "sealedStock": 32,
+     "deeds": 715
+    },
+    {
+     "week": 8,
+     "active": 918,
+     "claims": 12679.28,
+     "burn": 13016.5,
+     "wkClaims": 981.9,
+     "wkBurn": 1685.4,
+     "multiplier": 1,
+     "sealedStock": 121,
+     "deeds": 1362
+    },
+    {
+     "week": 12,
+     "active": 1140,
+     "claims": 16718.28,
+     "burn": 21240,
+     "wkClaims": 1066.08,
+     "wkBurn": 2397,
+     "multiplier": 1,
+     "sealedStock": 233,
+     "deeds": 1956
+    },
+    {
+     "week": 16,
+     "active": 1335,
+     "claims": 21424.94,
+     "burn": 31952.8,
+     "wkClaims": 1242.64,
+     "wkBurn": 2821.2,
+     "multiplier": 1,
+     "sealedStock": 402,
+     "deeds": 2547
+    },
+    {
+     "week": 20,
+     "active": 1470,
+     "claims": 26794.91,
+     "burn": 44105.2,
+     "wkClaims": 1162.51,
+     "wkBurn": 3301.6,
+     "multiplier": 1,
+     "sealedStock": 577,
+     "deeds": 3000
+    },
+    {
+     "week": 24,
+     "active": 1562,
+     "claims": 32163.06,
+     "burn": 56477.7,
+     "wkClaims": 1231.31,
+     "wkBurn": 3100.4,
+     "multiplier": 1,
+     "sealedStock": 769,
+     "deeds": 3000
+    },
+    {
+     "week": 28,
+     "active": 1700,
+     "claims": 37138.7,
+     "burn": 70747.6,
+     "wkClaims": 1196.41,
+     "wkBurn": 4004,
+     "multiplier": 1,
+     "sealedStock": 987,
+     "deeds": 3000
+    },
+    {
+     "week": 32,
+     "active": 1754,
+     "claims": 41482.32,
+     "burn": 85821.6,
+     "wkClaims": 1033.68,
+     "wkBurn": 4104.3,
+     "multiplier": 1,
+     "sealedStock": 1244,
+     "deeds": 3000
+    },
+    {
+     "week": 36,
+     "active": 1909,
+     "claims": 45582.71,
+     "burn": 101248,
+     "wkClaims": 917.7,
+     "wkBurn": 4044.3,
+     "multiplier": 1,
+     "sealedStock": 1527,
+     "deeds": 3000
+    },
+    {
+     "week": 40,
+     "active": 1994,
+     "claims": 49115.19,
+     "burn": 117075.4,
+     "wkClaims": 759.55,
+     "wkBurn": 4355.8,
+     "multiplier": 1,
+     "sealedStock": 1821,
+     "deeds": 3000
+    },
+    {
+     "week": 44,
+     "active": 2073,
+     "claims": 52418.77,
+     "burn": 132318.3,
+     "wkClaims": 769.24,
+     "wkBurn": 3861.1,
+     "multiplier": 1,
+     "sealedStock": 2107,
+     "deeds": 3000
+    },
+    {
+     "week": 48,
+     "active": 2104,
+     "claims": 55348.04,
+     "burn": 148585.3,
+     "wkClaims": 606,
+     "wkBurn": 3895,
+     "multiplier": 1,
+     "sealedStock": 2433,
+     "deeds": 3000
+    },
+    {
+     "week": 52,
+     "active": 2219,
+     "claims": 58033.96,
+     "burn": 165292.8,
+     "wkClaims": 569.38,
+     "wkBurn": 4346.5,
+     "multiplier": 1,
+     "sealedStock": 2763,
+     "deeds": 3000
+    }
+   ]
+  },
+  {
+   "id": "casual-heavy",
+   "policy": "contract-only",
+   "mix": "casual-heavy",
+   "demand": 1,
+   "bots": 0.03,
+   "accounts": 8650,
+   "deeds": 3000,
+   "ledger": {
+    "claims": 42942.612,
+    "tester": 10000,
+    "withdrawNet": 32942.612,
+    "burnSeal": 21125,
+    "burnFusion": 57744,
+    "burnCraft": 13960,
+    "burnMarket": 28.3,
+    "retained": 10980.871,
+    "rebate": 13145.8,
+    "treasuryYarnSold": 70374.85,
+    "marketVolumeYarnEq": 2830,
+    "treasuryFeeYarnEq": 84.9,
+    "dripAvax": 432.5,
+    "requestedNet": 32942.612,
+    "deniedByGuard": 0,
+    "botNet": 5168.688,
+    "sealedStock": 1342,
+    "sealedTotal": 1625,
+    "fusedInputs": 9624,
+    "fusions": 3208,
+    "epicsDropped": 251377,
+    "legendaryDropped": 834,
+    "legendaryTailored": 41860,
+    "legendaryFused": 3208,
+    "skins": 529,
+    "spoolOutstanding": 30684.683,
+    "gachaPulls": 910834.133
+   },
+   "burnTotal": 92857.3,
+   "burnPerClaim": 2.162,
+   "routineBurnPerClaim": 2.819,
+   "withdrawFill": 1,
+   "botShareOfWithdrawals": 0.157,
+   "heavyCasualWeeklyReward": 2.27,
+   "fusedPerSealed": 5.92,
+   "byType": {
+    "casual": {
+     "accounts": 5201,
+     "spoolPerActiveWeek": 0.649,
+     "spoolPerHour": 0.3244,
+     "medianFirstLegendaryDay": 11,
+     "shareWithLegendaryBy8Weeks": 1
+    },
+    "regular": {
+     "accounts": 2582,
+     "spoolPerActiveWeek": 1.184,
+     "spoolPerHour": 0.1973,
+     "medianFirstLegendaryDay": 8,
+     "shareWithLegendaryBy8Weeks": 1
+    },
+    "heavy": {
+     "accounts": 621,
+     "spoolPerActiveWeek": 1.47,
+     "spoolPerHour": 0.07,
+     "medianFirstLegendaryDay": 7,
+     "shareWithLegendaryBy8Weeks": 1
+    },
+    "bot": {
+     "accounts": 246,
+     "spoolPerActiveWeek": 1.429,
+     "spoolPerHour": 0.051,
+     "medianFirstLegendaryDay": 8,
+     "shareWithLegendaryBy8Weeks": 1
+    }
+   },
+   "revenueUsd": {
+    "treasuryYarnSales": 3518.74,
+    "marketFeesTreasury": 4.24,
+    "sponsorGasCost": -8650
+   },
+   "humansEverActive": 8216,
+   "gates": {
+    "burn>=claims": true,
+    "fairness": true,
+    "item-sink": true,
+    "progress": true,
+    "rewards-flow": true
+   },
+   "weekly": [
+    {
+     "week": 1,
+     "active": 498,
+     "claims": 10000,
+     "burn": 1202.3,
+     "wkClaims": 0,
+     "wkBurn": 1202.3,
+     "multiplier": 1,
+     "sealedStock": 0,
+     "deeds": 78
+    },
+    {
+     "week": 4,
+     "active": 625,
+     "claims": 10685.91,
+     "burn": 4407.9,
+     "wkClaims": 276.15,
+     "wkBurn": 1116.8,
+     "multiplier": 1,
+     "sealedStock": 9,
+     "deeds": 479
+    },
+    {
+     "week": 8,
+     "active": 796,
+     "claims": 12428.08,
+     "burn": 8815.7,
+     "wkClaims": 445.23,
+     "wkBurn": 1214,
+     "multiplier": 1,
+     "sealedStock": 28,
+     "deeds": 1065
+    },
+    {
+     "week": 12,
+     "active": 942,
+     "claims": 14928.64,
+     "burn": 14224.1,
+     "wkClaims": 626.61,
+     "wkBurn": 1502,
+     "multiplier": 1,
+     "sealedStock": 90,
+     "deeds": 1642
+    },
+    {
+     "week": 16,
+     "active": 1107,
+     "claims": 17931.09,
+     "burn": 19873.7,
+     "wkClaims": 774.2,
+     "wkBurn": 1383.5,
+     "multiplier": 1,
+     "sealedStock": 152,
+     "deeds": 2255
+    },
+    {
+     "week": 20,
+     "active": 1153,
+     "claims": 21559.82,
+     "burn": 26382.4,
+     "wkClaims": 838.69,
+     "wkBurn": 1623.3,
+     "multiplier": 1,
+     "sealedStock": 239,
+     "deeds": 2844
+    },
+    {
+     "week": 24,
+     "active": 1263,
+     "claims": 25259.82,
+     "burn": 33807.9,
+     "wkClaims": 862.34,
+     "wkBurn": 1841.4,
+     "multiplier": 1,
+     "sealedStock": 340,
+     "deeds": 3000
+    },
+    {
+     "week": 28,
+     "active": 1373,
+     "claims": 28591.11,
+     "burn": 41627.5,
+     "wkClaims": 699.94,
+     "wkBurn": 2115.4,
+     "multiplier": 1,
+     "sealedStock": 462,
+     "deeds": 3000
+    },
+    {
+     "week": 32,
+     "active": 1433,
+     "claims": 31746.2,
+     "burn": 49718,
+     "wkClaims": 701.65,
+     "wkBurn": 1897.6,
+     "multiplier": 1,
+     "sealedStock": 581,
+     "deeds": 3000
+    },
+    {
+     "week": 36,
+     "active": 1469,
+     "claims": 34440.25,
+     "burn": 57665.9,
+     "wkClaims": 547.38,
+     "wkBurn": 2065.3,
+     "multiplier": 1,
+     "sealedStock": 721,
+     "deeds": 3000
+    },
+    {
+     "week": 40,
+     "active": 1514,
+     "claims": 36849.59,
+     "burn": 65364,
+     "wkClaims": 536.74,
+     "wkBurn": 1933.2,
+     "multiplier": 1,
+     "sealedStock": 861,
+     "deeds": 3000
+    },
+    {
+     "week": 44,
+     "active": 1653,
+     "claims": 39039.86,
+     "burn": 74379.4,
+     "wkClaims": 496.56,
+     "wkBurn": 2082.3,
+     "multiplier": 1,
+     "sealedStock": 1024,
+     "deeds": 3000
+    },
+    {
+     "week": 48,
+     "active": 1626,
+     "claims": 41080.42,
+     "burn": 83479.5,
+     "wkClaims": 454.14,
+     "wkBurn": 2338.4,
+     "multiplier": 1,
+     "sealedStock": 1179,
+     "deeds": 3000
+    },
+    {
+     "week": 52,
+     "active": 1703,
+     "claims": 42942.61,
+     "burn": 92857.3,
+     "wkClaims": 403.21,
+     "wkBurn": 2321.5,
+     "multiplier": 1,
+     "sealedStock": 1342,
+     "deeds": 3000
+    }
+   ]
+  },
+  {
+   "id": "casual-heavy",
+   "policy": "burn-backed",
+   "mix": "casual-heavy",
+   "demand": 1,
+   "bots": 0.03,
+   "accounts": 8650,
+   "deeds": 3000,
+   "ledger": {
+    "claims": 41826.362,
+    "tester": 10000,
+    "withdrawNet": 31826.362,
+    "burnSeal": 22464,
+    "burnFusion": 59850,
+    "burnCraft": 13564,
+    "burnMarket": 27.7,
+    "retained": 10608.788,
+    "rebate": 12768.9,
+    "treasuryYarnSold": 73914.525,
+    "marketVolumeYarnEq": 2770,
+    "treasuryFeeYarnEq": 83.1,
+    "dripAvax": 432.5,
+    "requestedNet": 36604.487,
+    "deniedByGuard": 4778.125,
+    "botNet": 4547.737,
+    "sealedStock": 1451,
+    "sealedTotal": 1728,
+    "fusedInputs": 9975,
+    "fusions": 3325,
+    "epicsDropped": 244410,
+    "legendaryDropped": 805,
+    "legendaryTailored": 40861,
+    "legendaryFused": 3325,
+    "skins": 543,
+    "spoolOutstanding": 30270.967,
+    "gachaPulls": 884736.533
+   },
+   "burnTotal": 95905.7,
+   "burnPerClaim": 2.293,
+   "routineBurnPerClaim": 3.013,
+   "withdrawFill": 0.869,
+   "botShareOfWithdrawals": 0.143,
+   "heavyCasualWeeklyReward": 2.26,
+   "fusedPerSealed": 5.77,
+   "byType": {
+    "casual": {
+     "accounts": 5291,
+     "spoolPerActiveWeek": 0.657,
+     "spoolPerHour": 0.3284,
+     "medianFirstLegendaryDay": 11,
+     "shareWithLegendaryBy8Weeks": 1
+    },
+    "regular": {
+     "accounts": 2549,
+     "spoolPerActiveWeek": 1.188,
+     "spoolPerHour": 0.198,
+     "medianFirstLegendaryDay": 8,
+     "shareWithLegendaryBy8Weeks": 1
+    },
+    "heavy": {
+     "accounts": 578,
+     "spoolPerActiveWeek": 1.487,
+     "spoolPerHour": 0.0708,
+     "medianFirstLegendaryDay": 7,
+     "shareWithLegendaryBy8Weeks": 1
+    },
+    "bot": {
+     "accounts": 232,
+     "spoolPerActiveWeek": 1.433,
+     "spoolPerHour": 0.0512,
+     "medianFirstLegendaryDay": 8,
+     "shareWithLegendaryBy8Weeks": 1
+    }
+   },
+   "revenueUsd": {
+    "treasuryYarnSales": 3695.73,
+    "marketFeesTreasury": 4.15,
+    "sponsorGasCost": -8650
+   },
+   "humansEverActive": 8196,
+   "gates": {
+    "burn>=claims": true,
+    "fairness": true,
+    "item-sink": true,
+    "progress": true,
+    "rewards-flow": true
+   },
+   "weekly": [
+    {
+     "week": 1,
+     "active": 498,
+     "claims": 10000,
+     "burn": 1202.3,
+     "wkClaims": 0,
+     "wkBurn": 1202.3,
+     "multiplier": 1,
+     "sealedStock": 0,
+     "deeds": 78
+    },
+    {
+     "week": 4,
+     "active": 606,
+     "claims": 10000,
+     "burn": 4251.8,
+     "wkClaims": 0,
+     "wkBurn": 1021.1,
+     "multiplier": 1,
+     "sealedStock": 11,
+     "deeds": 464
+    },
+    {
+     "week": 8,
+     "active": 768,
+     "claims": 10000,
+     "burn": 8333.2,
+     "wkClaims": 0,
+     "wkBurn": 1132.6,
+     "multiplier": 1,
+     "sealedStock": 26,
+     "deeds": 1048
+    },
+    {
+     "week": 12,
+     "active": 948,
+     "claims": 12861.16,
+     "burn": 13206.4,
+     "wkClaims": 713.79,
+     "wkBurn": 1329.6,
+     "multiplier": 1,
+     "sealedStock": 88,
+     "deeds": 1664
+    },
+    {
+     "week": 16,
+     "active": 1044,
+     "claims": 16151.11,
+     "burn": 18975.6,
+     "wkClaims": 769.83,
+     "wkBurn": 1573.7,
+     "multiplier": 1,
+     "sealedStock": 159,
+     "deeds": 2256
+    },
+    {
+     "week": 20,
+     "active": 1159,
+     "claims": 20008.41,
+     "burn": 25480.7,
+     "wkClaims": 1039.45,
+     "wkBurn": 1709.3,
+     "multiplier": 1,
+     "sealedStock": 231,
+     "deeds": 2817
+    },
+    {
+     "week": 24,
+     "active": 1216,
+     "claims": 23694.77,
+     "burn": 32686.2,
+     "wkClaims": 829.68,
+     "wkBurn": 2069.6,
+     "multiplier": 1,
+     "sealedStock": 341,
+     "deeds": 3000
+    },
+    {
+     "week": 28,
+     "active": 1314,
+     "claims": 27114.24,
+     "burn": 40655.2,
+     "wkClaims": 715.44,
+     "wkBurn": 2092.5,
+     "multiplier": 1,
+     "sealedStock": 468,
+     "deeds": 3000
+    },
+    {
+     "week": 32,
+     "active": 1429,
+     "claims": 30390.57,
+     "burn": 48708.3,
+     "wkClaims": 731.63,
+     "wkBurn": 2324.2,
+     "multiplier": 1,
+     "sealedStock": 593,
+     "deeds": 3000
+    },
+    {
+     "week": 36,
+     "active": 1496,
+     "claims": 33260.29,
+     "burn": 57791.1,
+     "wkClaims": 643.9,
+     "wkBurn": 2412.3,
+     "multiplier": 1,
+     "sealedStock": 744,
+     "deeds": 3000
+    },
+    {
+     "week": 40,
+     "active": 1536,
+     "claims": 35805.62,
+     "burn": 67341.4,
+     "wkClaims": 602.93,
+     "wkBurn": 2254.5,
+     "multiplier": 1,
+     "sealedStock": 915,
+     "deeds": 3000
+    },
+    {
+     "week": 44,
+     "active": 1563,
+     "claims": 38005.55,
+     "burn": 76730.9,
+     "wkClaims": 464.81,
+     "wkBurn": 2282.3,
+     "multiplier": 1,
+     "sealedStock": 1099,
+     "deeds": 3000
+    },
+    {
+     "week": 48,
+     "active": 1592,
+     "claims": 40019.07,
+     "burn": 86065.4,
+     "wkClaims": 425.63,
+     "wkBurn": 2528.3,
+     "multiplier": 1,
+     "sealedStock": 1269,
+     "deeds": 3000
+    },
+    {
+     "week": 52,
+     "active": 1618,
+     "claims": 41826.36,
+     "burn": 95905.7,
+     "wkClaims": 322.39,
+     "wkBurn": 2764.7,
+     "multiplier": 1,
+     "sealedStock": 1451,
+     "deeds": 3000
+    }
+   ]
+  },
+  {
+   "id": "farmer-heavy",
+   "policy": "contract-only",
+   "mix": "farmer-heavy",
+   "demand": 1,
+   "bots": 0.2,
+   "accounts": 8650,
+   "deeds": 3000,
+   "ledger": {
+    "claims": 80826.25,
+    "tester": 10000,
+    "withdrawNet": 70826.25,
+    "burnSeal": 45331,
+    "burnFusion": 114786,
+    "burnCraft": 25863,
+    "burnMarket": 31.1,
+    "retained": 23608.75,
+    "rebate": 24250.65,
+    "treasuryYarnSold": 150808.887,
+    "marketVolumeYarnEq": 3110,
+    "treasuryFeeYarnEq": 93.3,
+    "dripAvax": 432.5,
+    "requestedNet": 70826.25,
+    "deniedByGuard": 0,
+    "botNet": 30341.275,
+    "sealedStock": 3176,
+    "sealedTotal": 3487,
+    "fusedInputs": 19131,
+    "fusions": 6377,
+    "epicsDropped": 616082,
+    "legendaryDropped": 2075,
+    "legendaryTailored": 94703,
+    "legendaryFused": 6377,
+    "skins": 914,
+    "spoolOutstanding": 52023.7,
+    "gachaPulls": 2303790.4
+   },
+   "burnTotal": 186011.1,
+   "burnPerClaim": 2.301,
+   "routineBurnPerClaim": 2.626,
+   "withdrawFill": 1,
+   "botShareOfWithdrawals": 0.428,
+   "heavyCasualWeeklyReward": 1.8,
+   "fusedPerSealed": 5.49,
+   "byType": {
+    "casual": {
+     "accounts": 1782,
+     "spoolPerActiveWeek": 0.646,
+     "spoolPerHour": 0.323,
+     "medianFirstLegendaryDay": 11,
+     "shareWithLegendaryBy8Weeks": 1
+    },
+    "regular": {
+     "accounts": 3407,
+     "spoolPerActiveWeek": 0.969,
+     "spoolPerHour": 0.1615,
+     "medianFirstLegendaryDay": 8,
+     "shareWithLegendaryBy8Weeks": 1
+    },
+    "heavy": {
+     "accounts": 1681,
+     "spoolPerActiveWeek": 1.166,
+     "spoolPerHour": 0.0555,
+     "medianFirstLegendaryDay": 7,
+     "shareWithLegendaryBy8Weeks": 1
+    },
+    "bot": {
+     "accounts": 1780,
+     "spoolPerActiveWeek": 1.279,
+     "spoolPerHour": 0.0457,
+     "medianFirstLegendaryDay": 8,
+     "shareWithLegendaryBy8Weeks": 1
+    }
+   },
+   "revenueUsd": {
+    "treasuryYarnSales": 7540.44,
+    "marketFeesTreasury": 4.66,
+    "sponsorGasCost": -8650
+   },
+   "humansEverActive": 6758,
+   "gates": {
+    "burn>=claims": true,
+    "fairness": true,
+    "item-sink": true,
+    "progress": true,
+    "rewards-flow": true
+   },
+   "weekly": [
+    {
+     "week": 1,
+     "active": 666,
+     "claims": 10000,
+     "burn": 3172.4,
+     "wkClaims": 0,
+     "wkBurn": 3172.4,
+     "multiplier": 1,
+     "sealedStock": 86,
+     "deeds": 349
+    },
+    {
+     "week": 4,
+     "active": 861,
+     "claims": 11827.75,
+     "burn": 8463.6,
+     "wkClaims": 621.08,
+     "wkBurn": 1809.9,
+     "multiplier": 1,
+     "sealedStock": 147,
+     "deeds": 902
+    },
+    {
+     "week": 8,
+     "active": 1166,
+     "claims": 15428.31,
+     "burn": 15849.9,
+     "wkClaims": 930.76,
+     "wkBurn": 1991.6,
+     "multiplier": 1,
+     "sealedStock": 250,
+     "deeds": 1564
+    },
+    {
+     "week": 12,
+     "active": 1498,
+     "claims": 20677.97,
+     "burn": 25814.3,
+     "wkClaims": 1331.24,
+     "wkBurn": 2603.7,
+     "multiplier": 1,
+     "sealedStock": 400,
+     "deeds": 2171
+    },
+    {
+     "week": 16,
+     "active": 1733,
+     "claims": 27050.52,
+     "burn": 37188.9,
+     "wkClaims": 1658.11,
+     "wkBurn": 2966.8,
+     "multiplier": 1,
+     "sealedStock": 565,
+     "deeds": 2793
+    },
+    {
+     "week": 20,
+     "active": 2027,
+     "claims": 34264.69,
+     "burn": 50481.8,
+     "wkClaims": 1715.02,
+     "wkBurn": 4021.9,
+     "multiplier": 1,
+     "sealedStock": 754,
+     "deeds": 3000
+    },
+    {
+     "week": 24,
+     "active": 2181,
+     "claims": 41441.24,
+     "burn": 64916.6,
+     "wkClaims": 1589,
+     "wkBurn": 3762.5,
+     "multiplier": 1,
+     "sealedStock": 970,
+     "deeds": 3000
+    },
+    {
+     "week": 28,
+     "active": 2436,
+     "claims": 48180.04,
+     "burn": 80191.8,
+     "wkClaims": 1546.04,
+     "wkBurn": 3743.4,
+     "multiplier": 1,
+     "sealedStock": 1210,
+     "deeds": 3000
+    },
+    {
+     "week": 32,
+     "active": 2577,
+     "claims": 54576.9,
+     "burn": 95660.4,
+     "wkClaims": 1456.26,
+     "wkBurn": 4178.1,
+     "multiplier": 1,
+     "sealedStock": 1469,
+     "deeds": 3000
+    },
+    {
+     "week": 36,
+     "active": 2850,
+     "claims": 60549.22,
+     "burn": 112202.6,
+     "wkClaims": 1316.57,
+     "wkBurn": 4558.7,
+     "multiplier": 1,
+     "sealedStock": 1740,
+     "deeds": 3000
+    },
+    {
+     "week": 40,
+     "active": 3019,
+     "claims": 66027.75,
+     "burn": 129835.6,
+     "wkClaims": 1262.55,
+     "wkBurn": 4777.5,
+     "multiplier": 1,
+     "sealedStock": 2056,
+     "deeds": 3000
+    },
+    {
+     "week": 44,
+     "active": 3143,
+     "claims": 71153.14,
+     "burn": 148354.7,
+     "wkClaims": 1048.61,
+     "wkBurn": 4689.7,
+     "multiplier": 1,
+     "sealedStock": 2410,
+     "deeds": 3000
+    },
+    {
+     "week": 48,
+     "active": 3345,
+     "claims": 76108.65,
+     "burn": 167147.5,
+     "wkClaims": 1064.49,
+     "wkBurn": 5046.7,
+     "multiplier": 1,
+     "sealedStock": 2787,
+     "deeds": 3000
+    },
+    {
+     "week": 52,
+     "active": 3516,
+     "claims": 80826.25,
+     "burn": 186011.1,
+     "wkClaims": 971.15,
+     "wkBurn": 4670.4,
+     "multiplier": 1,
+     "sealedStock": 3176,
+     "deeds": 3000
+    }
+   ]
+  },
+  {
+   "id": "farmer-heavy",
+   "policy": "burn-backed",
+   "mix": "farmer-heavy",
+   "demand": 1,
+   "bots": 0.2,
+   "accounts": 8650,
+   "deeds": 3000,
+   "ledger": {
+    "claims": 79833,
+    "tester": 10000,
+    "withdrawNet": 69833,
+    "burnSeal": 47060,
+    "burnFusion": 118638,
+    "burnCraft": 24740,
+    "burnMarket": 27.6,
+    "retained": 23277.667,
+    "rebate": 23195.7,
+    "treasuryYarnSold": 156343.137,
+    "marketVolumeYarnEq": 2760,
+    "treasuryFeeYarnEq": 82.8,
+    "dripAvax": 432.5,
+    "requestedNet": 75223.15,
+    "deniedByGuard": 5390.15,
+    "botNet": 30763.637,
+    "sealedStock": 3344,
+    "sealedTotal": 3620,
+    "fusedInputs": 19773,
+    "fusions": 6591,
+    "epicsDropped": 614256,
+    "legendaryDropped": 1996,
+    "legendaryTailored": 94336,
+    "legendaryFused": 6591,
+    "skins": 922,
+    "spoolOutstanding": 52089.017,
+    "gachaPulls": 2295052.8
+   },
+   "burnTotal": 190465.6,
+   "burnPerClaim": 2.386,
+   "routineBurnPerClaim": 2.727,
+   "withdrawFill": 0.928,
+   "botShareOfWithdrawals": 0.441,
+   "heavyCasualWeeklyReward": 1.79,
+   "fusedPerSealed": 5.46,
+   "byType": {
+    "casual": {
+     "accounts": 1782,
+     "spoolPerActiveWeek": 0.653,
+     "spoolPerHour": 0.3267,
+     "medianFirstLegendaryDay": 11,
+     "shareWithLegendaryBy8Weeks": 1
+    },
+    "regular": {
+     "accounts": 3446,
+     "spoolPerActiveWeek": 0.974,
+     "spoolPerHour": 0.1623,
+     "medianFirstLegendaryDay": 9,
+     "shareWithLegendaryBy8Weeks": 1
+    },
+    "heavy": {
+     "accounts": 1678,
+     "spoolPerActiveWeek": 1.166,
+     "spoolPerHour": 0.0555,
+     "medianFirstLegendaryDay": 7,
+     "shareWithLegendaryBy8Weeks": 1
+    },
+    "bot": {
+     "accounts": 1744,
+     "spoolPerActiveWeek": 1.28,
+     "spoolPerHour": 0.0457,
+     "medianFirstLegendaryDay": 8,
+     "shareWithLegendaryBy8Weeks": 1
+    }
+   },
+   "revenueUsd": {
+    "treasuryYarnSales": 7817.16,
+    "marketFeesTreasury": 4.14,
+    "sponsorGasCost": -8650
+   },
+   "humansEverActive": 6782,
+   "gates": {
+    "burn>=claims": true,
+    "fairness": true,
+    "item-sink": true,
+    "progress": true,
+    "rewards-flow": true
+   },
+   "weekly": [
+    {
+     "week": 1,
+     "active": 666,
+     "claims": 10000,
+     "burn": 3172.4,
+     "wkClaims": 0,
+     "wkBurn": 3172.4,
+     "multiplier": 1,
+     "sealedStock": 86,
+     "deeds": 349
+    },
+    {
+     "week": 4,
+     "active": 888,
+     "claims": 10000,
+     "burn": 8097.3,
+     "wkClaims": 0,
+     "wkBurn": 1389.1,
+     "multiplier": 1,
+     "sealedStock": 136,
+     "deeds": 916
+    },
+    {
+     "week": 8,
+     "active": 1197,
+     "claims": 14602.55,
+     "burn": 15078.9,
+     "wkClaims": 1104.45,
+     "wkBurn": 2090.3,
+     "multiplier": 1,
+     "sealedStock": 253,
+     "deeds": 1540
+    },
+    {
+     "week": 12,
+     "active": 1429,
+     "claims": 19901.54,
+     "burn": 23809.1,
+     "wkClaims": 1259.21,
+     "wkBurn": 2247.3,
+     "multiplier": 1,
+     "sealedStock": 390,
+     "deeds": 2175
+    },
+    {
+     "week": 16,
+     "active": 1693,
+     "claims": 26270.45,
+     "burn": 34527,
+     "wkClaims": 1511.95,
+     "wkBurn": 2723.5,
+     "multiplier": 1,
+     "sealedStock": 552,
+     "deeds": 2814
+    },
+    {
+     "week": 20,
+     "active": 2004,
+     "claims": 33445.19,
+     "burn": 47847.4,
+     "wkClaims": 1634.54,
+     "wkBurn": 3694.3,
+     "multiplier": 1,
+     "sealedStock": 760,
+     "deeds": 3000
+    },
+    {
+     "week": 24,
+     "active": 2211,
+     "claims": 40462.92,
+     "burn": 62597.8,
+     "wkClaims": 1588.6,
+     "wkBurn": 3638.2,
+     "multiplier": 1,
+     "sealedStock": 983,
+     "deeds": 3000
+    },
+    {
+     "week": 28,
+     "active": 2455,
+     "claims": 47184.46,
+     "burn": 78508.5,
+     "wkClaims": 1505.16,
+     "wkBurn": 4044.6,
+     "multiplier": 1,
+     "sealedStock": 1250,
+     "deeds": 3000
+    },
+    {
+     "week": 32,
+     "active": 2609,
+     "claims": 53532.97,
+     "burn": 95580.3,
+     "wkClaims": 1383.81,
+     "wkBurn": 4399.4,
+     "multiplier": 1,
+     "sealedStock": 1543,
+     "deeds": 3000
+    },
+    {
+     "week": 36,
+     "active": 2792,
+     "claims": 59381.85,
+     "burn": 112898.6,
+     "wkClaims": 1268.42,
+     "wkBurn": 4473.4,
+     "multiplier": 1,
+     "sealedStock": 1861,
+     "deeds": 3000
+    },
+    {
+     "week": 40,
+     "active": 3009,
+     "claims": 64942.95,
+     "burn": 131384.7,
+     "wkClaims": 1207.69,
+     "wkBurn": 4531.2,
+     "multiplier": 1,
+     "sealedStock": 2201,
+     "deeds": 3000
+    },
+    {
+     "week": 44,
+     "active": 3154,
+     "claims": 70201.64,
+     "burn": 149964,
+     "wkClaims": 1149.74,
+     "wkBurn": 4345.4,
+     "multiplier": 1,
+     "sealedStock": 2550,
+     "deeds": 3000
+    },
+    {
+     "week": 48,
+     "active": 3329,
+     "claims": 75168.8,
+     "burn": 169535.6,
+     "wkClaims": 1091.53,
+     "wkBurn": 5033.8,
+     "multiplier": 1,
+     "sealedStock": 2918,
+     "deeds": 3000
+    },
+    {
+     "week": 52,
+     "active": 3478,
+     "claims": 79833,
+     "burn": 190465.6,
+     "wkClaims": 991.89,
+     "wkBurn": 5102.1,
+     "multiplier": 1,
+     "sealedStock": 3344,
+     "deeds": 3000
+    }
+   ]
+  },
+  {
+   "id": "half-demand",
+   "policy": "contract-only",
+   "mix": "balanced",
+   "demand": 0.5,
+   "bots": 0.05,
+   "accounts": 8650,
+   "deeds": 3000,
+   "ledger": {
+    "claims": 54151.537,
+    "tester": 10000,
+    "withdrawNet": 44151.537,
+    "burnSeal": 14638,
+    "burnFusion": 28548,
+    "burnCraft": 14035,
+    "burnMarket": 8.4,
+    "retained": 14717.179,
+    "rebate": 13266.05,
+    "treasuryYarnSold": 30368.5,
+    "marketVolumeYarnEq": 840,
+    "treasuryFeeYarnEq": 25.2,
+    "dripAvax": 432.5,
+    "requestedNet": 44151.537,
+    "deniedByGuard": 0,
+    "botNet": 8465.063,
+    "sealedStock": 1042,
+    "sealedTotal": 1126,
+    "fusedInputs": 4758,
+    "fusions": 1586,
+    "epicsDropped": 381203,
+    "legendaryDropped": 1271,
+    "legendaryTailored": 60263,
+    "legendaryFused": 1586,
+    "skins": 595,
+    "spoolOutstanding": 38174.783,
+    "gachaPulls": 1399480.533
+   },
+   "burnTotal": 57229.4,
+   "burnPerClaim": 1.057,
+   "routineBurnPerClaim": 1.296,
+   "withdrawFill": 1,
+   "botShareOfWithdrawals": 0.192,
+   "heavyCasualWeeklyReward": 2.18,
+   "fusedPerSealed": 4.23,
+   "byType": {
+    "casual": {
+     "accounts": 3042,
+     "spoolPerActiveWeek": 0.616,
+     "spoolPerHour": 0.3082,
+     "medianFirstLegendaryDay": 10,
+     "shareWithLegendaryBy8Weeks": 1
+    },
+    "regular": {
+     "accounts": 3842,
+     "spoolPerActiveWeek": 1.041,
+     "spoolPerHour": 0.1734,
+     "medianFirstLegendaryDay": 9,
+     "shareWithLegendaryBy8Weeks": 1
+    },
+    "heavy": {
+     "accounts": 1349,
+     "spoolPerActiveWeek": 1.342,
+     "spoolPerHour": 0.0639,
+     "medianFirstLegendaryDay": 7,
+     "shareWithLegendaryBy8Weeks": 1
+    },
+    "bot": {
+     "accounts": 417,
+     "spoolPerActiveWeek": 1.409,
+     "spoolPerHour": 0.0503,
+     "medianFirstLegendaryDay": 7,
+     "shareWithLegendaryBy8Weeks": 1
+    }
+   },
+   "revenueUsd": {
+    "treasuryYarnSales": 1518.42,
+    "marketFeesTreasury": 1.26,
+    "sponsorGasCost": -8650
+   },
+   "humansEverActive": 8055,
+   "gates": {
+    "burn>=claims": true,
+    "fairness": true,
+    "item-sink": true,
+    "progress": true,
+    "rewards-flow": true
+   },
+   "weekly": [
+    {
+     "week": 1,
+     "active": 543,
+     "claims": 10000,
+     "burn": 1158.5,
+     "wkClaims": 0,
+     "wkBurn": 1158.5,
+     "multiplier": 1,
+     "sealedStock": 15,
+     "deeds": 167
+    },
+    {
+     "week": 4,
+     "active": 711,
+     "claims": 11106.03,
+     "burn": 4000.7,
+     "wkClaims": 430.8,
+     "wkBurn": 731.7,
+     "multiplier": 1,
+     "sealedStock": 35,
+     "deeds": 693
+    },
+    {
+     "week": 8,
+     "active": 938,
+     "claims": 13545.64,
+     "burn": 7202,
+     "wkClaims": 657.75,
+     "wkBurn": 595.1,
+     "multiplier": 1,
+     "sealedStock": 66,
+     "deeds": 1360
+    },
+    {
+     "week": 12,
+     "active": 1149,
+     "claims": 16989.33,
+     "burn": 10242.9,
+     "wkClaims": 839.66,
+     "wkBurn": 863.1,
+     "multiplier": 1,
+     "sealedStock": 97,
+     "deeds": 1952
+    },
+    {
+     "week": 16,
+     "active": 1323,
+     "claims": 21192.27,
+     "burn": 13709.1,
+     "wkClaims": 1031.78,
+     "wkBurn": 926,
+     "multiplier": 0.7628,
+     "sealedStock": 147,
+     "deeds": 2535
+    },
+    {
+     "week": 20,
+     "active": 1452,
+     "claims": 25894.5,
+     "burn": 17835.9,
+     "wkClaims": 1085.41,
+     "wkBurn": 943.4,
+     "multiplier": 0.7628,
+     "sealedStock": 198,
+     "deeds": 3000
+    },
+    {
+     "week": 24,
+     "active": 1606,
+     "claims": 30665.77,
+     "burn": 22509.2,
+     "wkClaims": 1119.4,
+     "wkBurn": 1166.2,
+     "multiplier": 0.7628,
+     "sealedStock": 284,
+     "deeds": 3000
+    },
+    {
+     "week": 28,
+     "active": 1706,
+     "claims": 34894.1,
+     "burn": 27164.5,
+     "wkClaims": 930.4,
+     "wkBurn": 1045.1,
+     "multiplier": 0.7628,
+     "sealedStock": 376,
+     "deeds": 3000
+    },
+    {
+     "week": 32,
+     "active": 1872,
+     "claims": 38901.07,
+     "burn": 32388.6,
+     "wkClaims": 895.05,
+     "wkBurn": 1340,
+     "multiplier": 0.7628,
+     "sealedStock": 485,
+     "deeds": 3000
+    },
+    {
+     "week": 36,
+     "active": 1879,
+     "claims": 42418.59,
+     "burn": 37162.7,
+     "wkClaims": 773.2,
+     "wkBurn": 1088,
+     "multiplier": 0.7628,
+     "sealedStock": 593,
+     "deeds": 3000
+    },
+    {
+     "week": 40,
+     "active": 2012,
+     "claims": 45681.24,
+     "burn": 42075.1,
+     "wkClaims": 721.19,
+     "wkBurn": 1216.2,
+     "multiplier": 0.7628,
+     "sealedStock": 707,
+     "deeds": 3000
+    },
+    {
+     "week": 44,
+     "active": 2019,
+     "claims": 48649.51,
+     "burn": 46973.4,
+     "wkClaims": 650.96,
+     "wkBurn": 1257,
+     "multiplier": 0.7628,
+     "sealedStock": 821,
+     "deeds": 3000
+    },
+    {
+     "week": 48,
+     "active": 2175,
+     "claims": 51511.66,
+     "burn": 51936.8,
+     "wkClaims": 634.51,
+     "wkBurn": 1192.2,
+     "multiplier": 0.7628,
+     "sealedStock": 929,
+     "deeds": 3000
+    },
+    {
+     "week": 52,
+     "active": 2140,
+     "claims": 54151.54,
+     "burn": 57229.4,
+     "wkClaims": 551.96,
+     "wkBurn": 1231.2,
+     "multiplier": 0.7628,
+     "sealedStock": 1042,
+     "deeds": 3000
+    }
+   ]
+  },
+  {
+   "id": "half-demand",
+   "policy": "burn-backed",
+   "mix": "balanced",
+   "demand": 0.5,
+   "bots": 0.05,
+   "accounts": 8650,
+   "deeds": 3000,
+   "ledger": {
+    "claims": 46747.087,
+    "tester": 10000,
+    "withdrawNet": 36747.087,
+    "burnSeal": 13624,
+    "burnFusion": 29484,
+    "burnCraft": 10056,
+    "burnMarket": 8.8,
+    "retained": 12249.029,
+    "rebate": 9517.5,
+    "treasuryYarnSold": 32848.263,
+    "marketVolumeYarnEq": 880,
+    "treasuryFeeYarnEq": 26.4,
+    "dripAvax": 432.5,
+    "requestedNet": 70544.213,
+    "deniedByGuard": 33797.125,
+    "botNet": 8374.65,
+    "sealedStock": 960,
+    "sealedTotal": 1048,
+    "fusedInputs": 4914,
+    "fusions": 1638,
+    "epicsDropped": 379159,
+    "legendaryDropped": 1208,
+    "legendaryTailored": 59818,
+    "legendaryFused": 1638,
+    "skins": 997,
+    "spoolOutstanding": 39647.367,
+    "gachaPulls": 1385921.067
+   },
+   "burnTotal": 53172.8,
+   "burnPerClaim": 1.137,
+   "routineBurnPerClaim": 1.447,
+   "withdrawFill": 0.521,
+   "botShareOfWithdrawals": 0.228,
+   "heavyCasualWeeklyReward": 2.16,
+   "fusedPerSealed": 4.69,
+   "byType": {
+    "casual": {
+     "accounts": 3094,
+     "spoolPerActiveWeek": 0.624,
+     "spoolPerHour": 0.312,
+     "medianFirstLegendaryDay": 10,
+     "shareWithLegendaryBy8Weeks": 1
+    },
+    "regular": {
+     "accounts": 3848,
+     "spoolPerActiveWeek": 1.046,
+     "spoolPerHour": 0.1744,
+     "medianFirstLegendaryDay": 9,
+     "shareWithLegendaryBy8Weeks": 1
+    },
+    "heavy": {
+     "accounts": 1313,
+     "spoolPerActiveWeek": 1.345,
+     "spoolPerHour": 0.064,
+     "medianFirstLegendaryDay": 8,
+     "shareWithLegendaryBy8Weeks": 1
+    },
+    "bot": {
+     "accounts": 395,
+     "spoolPerActiveWeek": 1.409,
+     "spoolPerHour": 0.0503,
+     "medianFirstLegendaryDay": 8,
+     "shareWithLegendaryBy8Weeks": 1
+    }
+   },
+   "revenueUsd": {
+    "treasuryYarnSales": 1642.41,
+    "marketFeesTreasury": 1.32,
+    "sponsorGasCost": -8650
+   },
+   "humansEverActive": 8087,
+   "gates": {
+    "burn>=claims": true,
+    "fairness": true,
+    "item-sink": true,
+    "progress": true,
+    "rewards-flow": true
+   },
+   "weekly": [
+    {
+     "week": 1,
+     "active": 543,
+     "claims": 10000,
+     "burn": 1158.5,
+     "wkClaims": 0,
+     "wkBurn": 1158.5,
+     "multiplier": 1,
+     "sealedStock": 15,
+     "deeds": 167
+    },
+    {
+     "week": 4,
+     "active": 751,
+     "claims": 10000,
+     "burn": 4145.5,
+     "wkClaims": 0,
+     "wkBurn": 871.5,
+     "multiplier": 1,
+     "sealedStock": 38,
+     "deeds": 698
+    },
+    {
+     "week": 8,
+     "active": 973,
+     "claims": 10000,
+     "burn": 7023.4,
+     "wkClaims": 0,
+     "wkBurn": 855.5,
+     "multiplier": 1,
+     "sealedStock": 77,
+     "deeds": 1343
+    },
+    {
+     "week": 12,
+     "active": 1127,
+     "claims": 10268.6,
+     "burn": 9255.2,
+     "wkClaims": 268.6,
+     "wkBurn": 653.1,
+     "multiplier": 1,
+     "sealedStock": 111,
+     "deeds": 1964
+    },
+    {
+     "week": 16,
+     "active": 1326,
+     "claims": 14935.35,
+     "burn": 12211.6,
+     "wkClaims": 719.44,
+     "wkBurn": 750,
+     "multiplier": 1,
+     "sealedStock": 169,
+     "deeds": 2566
+    },
+    {
+     "week": 20,
+     "active": 1418,
+     "claims": 18258.6,
+     "burn": 15923.5,
+     "wkClaims": 878.59,
+     "wkBurn": 951.4,
+     "multiplier": 1,
+     "sealedStock": 225,
+     "deeds": 3000
+    },
+    {
+     "week": 24,
+     "active": 1620,
+     "claims": 21283.09,
+     "burn": 19364.9,
+     "wkClaims": 886.9,
+     "wkBurn": 984.2,
+     "multiplier": 1,
+     "sealedStock": 273,
+     "deeds": 3000
+    },
+    {
+     "week": 28,
+     "active": 1684,
+     "claims": 26405.05,
+     "burn": 23492.2,
+     "wkClaims": 1526.47,
+     "wkBurn": 971.1,
+     "multiplier": 1,
+     "sealedStock": 335,
+     "deeds": 3000
+    },
+    {
+     "week": 32,
+     "active": 1835,
+     "claims": 30600.2,
+     "burn": 27885.6,
+     "wkClaims": 1228.5,
+     "wkBurn": 1217,
+     "multiplier": 1,
+     "sealedStock": 410,
+     "deeds": 3000
+    },
+    {
+     "week": 36,
+     "active": 1885,
+     "claims": 34503.89,
+     "burn": 32514.8,
+     "wkClaims": 873.74,
+     "wkBurn": 1077,
+     "multiplier": 1,
+     "sealedStock": 503,
+     "deeds": 3000
+    },
+    {
+     "week": 40,
+     "active": 2073,
+     "claims": 38179,
+     "burn": 37508.1,
+     "wkClaims": 836.85,
+     "wkBurn": 1385,
+     "multiplier": 1,
+     "sealedStock": 596,
+     "deeds": 3000
+    },
+    {
+     "week": 44,
+     "active": 2075,
+     "claims": 41393.22,
+     "burn": 42849.6,
+     "wkClaims": 698.05,
+     "wkBurn": 1387.1,
+     "multiplier": 1,
+     "sealedStock": 729,
+     "deeds": 3000
+    },
+    {
+     "week": 48,
+     "active": 2120,
+     "claims": 44130.8,
+     "burn": 47966.6,
+     "wkClaims": 578.34,
+     "wkBurn": 1294,
+     "multiplier": 1,
+     "sealedStock": 842,
+     "deeds": 3000
+    },
+    {
+     "week": 52,
+     "active": 2176,
+     "claims": 46747.09,
+     "burn": 53172.8,
+     "wkClaims": 589.29,
+     "wkBurn": 1310,
+     "multiplier": 1,
+     "sealedStock": 960,
+     "deeds": 3000
+    }
+   ]
+  },
+  {
+   "id": "low-demand",
+   "policy": "contract-only",
+   "mix": "balanced",
+   "demand": 0.1,
+   "bots": 0.05,
+   "accounts": 8650,
+   "deeds": 3000,
+   "ledger": {
+    "claims": 38415.222,
+    "tester": 10000,
+    "withdrawNet": 28415.222,
+    "burnSeal": 3237,
+    "burnFusion": 5508,
+    "burnCraft": 2676,
+    "burnMarket": 1.2,
+    "retained": 9471.741,
+    "rebate": 2542.2,
+    "treasuryYarnSold": 1502.175,
+    "marketVolumeYarnEq": 120,
+    "treasuryFeeYarnEq": 3.6,
+    "dripAvax": 432.5,
+    "requestedNet": 28415.222,
+    "deniedByGuard": 0,
+    "botNet": 7345.084,
+    "sealedStock": 237,
+    "sealedTotal": 249,
+    "fusedInputs": 918,
+    "fusions": 306,
+    "epicsDropped": 380931,
+    "legendaryDropped": 1279,
+    "legendaryTailored": 60189,
+    "legendaryFused": 306,
+    "skins": 269,
+    "spoolOutstanding": 52151.654,
+    "gachaPulls": 1398986.133
+   },
+   "burnTotal": 11422.2,
+   "burnPerClaim": 0.297,
+   "routineBurnPerClaim": 0.402,
+   "withdrawFill": 1,
+   "botShareOfWithdrawals": 0.258,
+   "heavyCasualWeeklyReward": 2.1,
+   "fusedPerSealed": 3.69,
+   "byType": {
+    "casual": {
+     "accounts": 3061,
+     "spoolPerActiveWeek": 0.636,
+     "spoolPerHour": 0.3181,
+     "medianFirstLegendaryDay": 11,
+     "shareWithLegendaryBy8Weeks": 1
+    },
+    "regular": {
+     "accounts": 3852,
+     "spoolPerActiveWeek": 1.04,
+     "spoolPerHour": 0.1734,
+     "medianFirstLegendaryDay": 9,
+     "shareWithLegendaryBy8Weeks": 1
+    },
+    "heavy": {
+     "accounts": 1306,
+     "spoolPerActiveWeek": 1.337,
+     "spoolPerHour": 0.0637,
+     "medianFirstLegendaryDay": 8,
+     "shareWithLegendaryBy8Weeks": 1
+    },
+    "bot": {
+     "accounts": 431,
+     "spoolPerActiveWeek": 1.407,
+     "spoolPerHour": 0.0503,
+     "medianFirstLegendaryDay": 8,
+     "shareWithLegendaryBy8Weeks": 1
+    }
+   },
+   "revenueUsd": {
+    "treasuryYarnSales": 75.11,
+    "marketFeesTreasury": 0.18,
+    "sponsorGasCost": -8650
+   },
+   "humansEverActive": 8041,
+   "gates": {
+    "burn>=claims": false,
+    "fairness": true,
+    "item-sink": true,
+    "progress": true,
+    "rewards-flow": true
+   },
+   "weekly": [
+    {
+     "week": 1,
+     "active": 533,
+     "claims": 10000,
+     "burn": 369.3,
+     "wkClaims": 0,
+     "wkBurn": 369.3,
+     "multiplier": 1,
+     "sealedStock": 16,
+     "deeds": 166
+    },
+    {
+     "week": 4,
+     "active": 704,
+     "claims": 10995.1,
+     "burn": 1198.7,
+     "wkClaims": 362.51,
+     "wkBurn": 280.3,
+     "multiplier": 1,
+     "sealedStock": 25,
+     "deeds": 680
+    },
+    {
+     "week": 8,
+     "active": 935,
+     "claims": 13131.36,
+     "burn": 2042,
+     "wkClaims": 573.9,
+     "wkBurn": 231,
+     "multiplier": 1,
+     "sealedStock": 39,
+     "deeds": 1340
+    },
+    {
+     "week": 12,
+     "active": 1155,
+     "claims": 16049.39,
+     "burn": 2968,
+     "wkClaims": 703.81,
+     "wkBurn": 250,
+     "multiplier": 1,
+     "sealedStock": 53,
+     "deeds": 1933
+    },
+    {
+     "week": 16,
+     "active": 1313,
+     "claims": 19626.5,
+     "burn": 3871,
+     "wkClaims": 852.04,
+     "wkBurn": 227,
+     "multiplier": 0.2303,
+     "sealedStock": 66,
+     "deeds": 2579
+    },
+    {
+     "week": 20,
+     "active": 1463,
+     "claims": 23669.29,
+     "burn": 4720,
+     "wkClaims": 927.28,
+     "wkBurn": 203,
+     "multiplier": 0.2303,
+     "sealedStock": 77,
+     "deeds": 3000
+    },
+    {
+     "week": 24,
+     "active": 1569,
+     "claims": 27586.68,
+     "burn": 5659,
+     "wkClaims": 836.11,
+     "wkBurn": 221,
+     "multiplier": 0.2303,
+     "sealedStock": 92,
+     "deeds": 3000
+    },
+    {
+     "week": 28,
+     "active": 1690,
+     "claims": 30571.42,
+     "burn": 6655,
+     "wkClaims": 470.16,
+     "wkBurn": 213,
+     "multiplier": 0.069,
+     "sealedStock": 118,
+     "deeds": 3000
+    },
+    {
+     "week": 32,
+     "active": 1803,
+     "claims": 32472.27,
+     "burn": 7487.1,
+     "wkClaims": 441.08,
+     "wkBurn": 213,
+     "multiplier": 0.069,
+     "sealedStock": 129,
+     "deeds": 3000
+    },
+    {
+     "week": 36,
+     "active": 1926,
+     "claims": 34231.46,
+     "burn": 8443.1,
+     "wkClaims": 434.68,
+     "wkBurn": 249,
+     "multiplier": 0.069,
+     "sealedStock": 155,
+     "deeds": 3000
+    },
+    {
+     "week": 40,
+     "active": 2048,
+     "claims": 35729.06,
+     "burn": 9298.2,
+     "wkClaims": 259.49,
+     "wkBurn": 197,
+     "multiplier": 0.0435,
+     "sealedStock": 179,
+     "deeds": 3000
+    },
+    {
+     "week": 44,
+     "active": 2124,
+     "claims": 36682.71,
+     "burn": 10108.2,
+     "wkClaims": 228.99,
+     "wkBurn": 196,
+     "multiplier": 0.0435,
+     "sealedStock": 199,
+     "deeds": 3000
+    },
+    {
+     "week": 48,
+     "active": 2174,
+     "claims": 37580.36,
+     "burn": 10820.2,
+     "wkClaims": 219.6,
+     "wkBurn": 121,
+     "multiplier": 0.0435,
+     "sealedStock": 221,
+     "deeds": 3000
+    },
+    {
+     "week": 52,
+     "active": 2124,
+     "claims": 38415.22,
+     "burn": 11422.2,
+     "wkClaims": 201.61,
+     "wkBurn": 138,
+     "multiplier": 0.0435,
+     "sealedStock": 237,
+     "deeds": 3000
+    }
+   ]
+  },
+  {
+   "id": "low-demand",
+   "policy": "burn-backed",
+   "mix": "balanced",
+   "demand": 0.1,
+   "bots": 0.05,
+   "accounts": 8650,
+   "deeds": 3000,
+   "ledger": {
+    "claims": 20067.376,
+    "tester": 10000,
+    "withdrawNet": 10067.376,
+    "burnSeal": 1703,
+    "burnFusion": 4536,
+    "burnCraft": 1340,
+    "burnMarket": 1.5,
+    "retained": 3355.792,
+    "rebate": 1273,
+    "treasuryYarnSold": 1737.055,
+    "marketVolumeYarnEq": 150,
+    "treasuryFeeYarnEq": 4.5,
+    "dripAvax": 432.5,
+    "requestedNet": 76758.708,
+    "deniedByGuard": 66691.332,
+    "botNet": 3042.175,
+    "sealedStock": 116,
+    "sealedTotal": 131,
+    "fusedInputs": 756,
+    "fusions": 252,
+    "epicsDropped": 378400,
+    "legendaryDropped": 1280,
+    "legendaryTailored": 59942,
+    "legendaryFused": 252,
+    "skins": 635,
+    "spoolOutstanding": 70805.398,
+    "gachaPulls": 1386818.667
+   },
+   "burnTotal": 7580.5,
+   "burnPerClaim": 0.378,
+   "routineBurnPerClaim": 0.753,
+   "withdrawFill": 0.131,
+   "botShareOfWithdrawals": 0.302,
+   "heavyCasualWeeklyReward": 2.13,
+   "fusedPerSealed": 5.77,
+   "byType": {
+    "casual": {
+     "accounts": 3118,
+     "spoolPerActiveWeek": 0.63,
+     "spoolPerHour": 0.3149,
+     "medianFirstLegendaryDay": 11,
+     "shareWithLegendaryBy8Weeks": 1
+    },
+    "regular": {
+     "accounts": 3803,
+     "spoolPerActiveWeek": 1.043,
+     "spoolPerHour": 0.1739,
+     "medianFirstLegendaryDay": 9,
+     "shareWithLegendaryBy8Weeks": 1
+    },
+    "heavy": {
+     "accounts": 1314,
+     "spoolPerActiveWeek": 1.345,
+     "spoolPerHour": 0.0641,
+     "medianFirstLegendaryDay": 8,
+     "shareWithLegendaryBy8Weeks": 1
+    },
+    "bot": {
+     "accounts": 415,
+     "spoolPerActiveWeek": 1.409,
+     "spoolPerHour": 0.0503,
+     "medianFirstLegendaryDay": 8,
+     "shareWithLegendaryBy8Weeks": 1
+    }
+   },
+   "revenueUsd": {
+    "treasuryYarnSales": 86.85,
+    "marketFeesTreasury": 0.22,
+    "sponsorGasCost": -8650
+   },
+   "humansEverActive": 8066,
+   "gates": {
+    "burn>=claims": false,
+    "fairness": true,
+    "item-sink": true,
+    "progress": true,
+    "rewards-flow": false
+   },
+   "weekly": [
+    {
+     "week": 1,
+     "active": 533,
+     "claims": 10000,
+     "burn": 369.3,
+     "wkClaims": 0,
+     "wkBurn": 369.3,
+     "multiplier": 1,
+     "sealedStock": 16,
+     "deeds": 166
+    },
+    {
+     "week": 4,
+     "active": 727,
+     "claims": 10000,
+     "burn": 1107.6,
+     "wkClaims": 0,
+     "wkBurn": 212.2,
+     "multiplier": 1,
+     "sealedStock": 27,
+     "deeds": 680
+    },
+    {
+     "week": 8,
+     "active": 956,
+     "claims": 10000,
+     "burn": 1946.9,
+     "wkClaims": 0,
+     "wkBurn": 340,
+     "multiplier": 1,
+     "sealedStock": 39,
+     "deeds": 1351
+    },
+    {
+     "week": 12,
+     "active": 1172,
+     "claims": 10000,
+     "burn": 2775.3,
+     "wkClaims": 0,
+     "wkBurn": 213.1,
+     "multiplier": 1,
+     "sealedStock": 49,
+     "deeds": 1980
+    },
+    {
+     "week": 16,
+     "active": 1351,
+     "claims": 12420.78,
+     "burn": 3527.3,
+     "wkClaims": 92.79,
+     "wkBurn": 116,
+     "multiplier": 0.3808,
+     "sealedStock": 55,
+     "deeds": 2606
+    },
+    {
+     "week": 20,
+     "active": 1465,
+     "claims": 12914.06,
+     "burn": 4062.5,
+     "wkClaims": 125,
+     "wkBurn": 139.1,
+     "multiplier": 0.3808,
+     "sealedStock": 62,
+     "deeds": 3000
+    },
+    {
+     "week": 24,
+     "active": 1581,
+     "claims": 13305.82,
+     "burn": 4515.5,
+     "wkClaims": 103.31,
+     "wkBurn": 132,
+     "multiplier": 0.3808,
+     "sealedStock": 69,
+     "deeds": 3000
+    },
+    {
+     "week": 28,
+     "active": 1710,
+     "claims": 15743.36,
+     "burn": 4986.5,
+     "wkClaims": 671.46,
+     "wkBurn": 134,
+     "multiplier": 0.2269,
+     "sealedStock": 74,
+     "deeds": 3000
+    },
+    {
+     "week": 32,
+     "active": 1837,
+     "claims": 16200.55,
+     "burn": 5513.5,
+     "wkClaims": 103.62,
+     "wkBurn": 137,
+     "multiplier": 0.2269,
+     "sealedStock": 81,
+     "deeds": 3000
+    },
+    {
+     "week": 36,
+     "active": 1951,
+     "claims": 16689.95,
+     "burn": 6055.5,
+     "wkClaims": 120.41,
+     "wkBurn": 105,
+     "multiplier": 0.2269,
+     "sealedStock": 91,
+     "deeds": 3000
+    },
+    {
+     "week": 40,
+     "active": 2006,
+     "claims": 17701.79,
+     "burn": 6469.5,
+     "wkClaims": 728.94,
+     "wkBurn": 119,
+     "multiplier": 0.1336,
+     "sealedStock": 97,
+     "deeds": 3000
+    },
+    {
+     "week": 44,
+     "active": 2098,
+     "claims": 19406.57,
+     "burn": 6869.5,
+     "wkClaims": 122.32,
+     "wkBurn": 152,
+     "multiplier": 0.1336,
+     "sealedStock": 105,
+     "deeds": 3000
+    },
+    {
+     "week": 48,
+     "active": 2125,
+     "claims": 19791.28,
+     "burn": 7300.5,
+     "wkClaims": 76.02,
+     "wkBurn": 94,
+     "multiplier": 0.1336,
+     "sealedStock": 112,
+     "deeds": 3000
+    },
+    {
+     "week": 52,
+     "active": 2213,
+     "claims": 20067.38,
+     "burn": 7580.5,
+     "wkClaims": 65.73,
+     "wkBurn": 37,
+     "multiplier": 0.1336,
+     "sealedStock": 116,
+     "deeds": 3000
+    }
+   ]
+  },
+  {
+   "id": "half-bots",
+   "policy": "contract-only",
+   "mix": "farmer-heavy",
+   "demand": 1,
+   "bots": 0.5,
+   "accounts": 8650,
+   "deeds": 3000,
+   "ledger": {
+    "claims": 100306.425,
+    "tester": 10000,
+    "withdrawNet": 90306.425,
+    "burnSeal": 33202,
+    "burnFusion": 78624,
+    "burnCraft": 15603,
+    "burnMarket": 19.7,
+    "retained": 30102.142,
+    "rebate": 14637.35,
+    "treasuryYarnSold": 103963.137,
+    "marketVolumeYarnEq": 1970,
+    "treasuryFeeYarnEq": 59.1,
+    "dripAvax": 432.5,
+    "requestedNet": 90306.425,
+    "deniedByGuard": 0,
+    "botNet": 66589.837,
+    "sealedStock": 2357,
+    "sealedTotal": 2554,
+    "fusedInputs": 13104,
+    "fusions": 4368,
+    "epicsDropped": 932814,
+    "legendaryDropped": 3079,
+    "legendaryTailored": 141761,
+    "legendaryFused": 4368,
+    "skins": 533,
+    "spoolOutstanding": 77065.533,
+    "gachaPulls": 3530574.933
+   },
+   "burnTotal": 127448.7,
+   "burnPerClaim": 1.271,
+   "routineBurnPerClaim": 1.411,
+   "withdrawFill": 1,
+   "botShareOfWithdrawals": 0.737,
+   "heavyCasualWeeklyReward": 1.68,
+   "fusedPerSealed": 5.13,
+   "byType": {
+    "casual": {
+     "accounts": 1071,
+     "spoolPerActiveWeek": 0.628,
+     "spoolPerHour": 0.3141,
+     "medianFirstLegendaryDay": 11,
+     "shareWithLegendaryBy8Weeks": 1
+    },
+    "regular": {
+     "accounts": 2206,
+     "spoolPerActiveWeek": 0.943,
+     "spoolPerHour": 0.1572,
+     "medianFirstLegendaryDay": 8,
+     "shareWithLegendaryBy8Weeks": 1
+    },
+    "heavy": {
+     "accounts": 1088,
+     "spoolPerActiveWeek": 1.055,
+     "spoolPerHour": 0.0502,
+     "medianFirstLegendaryDay": 7,
+     "shareWithLegendaryBy8Weeks": 1
+    },
+    "bot": {
+     "accounts": 4285,
+     "spoolPerActiveWeek": 1.19,
+     "spoolPerHour": 0.0425,
+     "medianFirstLegendaryDay": 8,
+     "shareWithLegendaryBy8Weeks": 1
+    }
+   },
+   "revenueUsd": {
+    "treasuryYarnSales": 5198.16,
+    "marketFeesTreasury": 2.95,
+    "sponsorGasCost": -8650
+   },
+   "humansEverActive": 4289,
+   "gates": {
+    "burn>=claims": true,
+    "fairness": true,
+    "item-sink": true,
+    "progress": true,
+    "rewards-flow": true
+   },
+   "weekly": [
+    {
+     "week": 1,
+     "active": 772,
+     "claims": 10000,
+     "burn": 3945.3,
+     "wkClaims": 0,
+     "wkBurn": 3945.3,
+     "multiplier": 1,
+     "sealedStock": 196,
+     "deeds": 564
+    },
+    {
+     "week": 4,
+     "active": 1120,
+     "claims": 12561.93,
+     "burn": 8268.8,
+     "wkClaims": 883.8,
+     "wkBurn": 1309.5,
+     "multiplier": 1,
+     "sealedStock": 262,
+     "deeds": 1121
+    },
+    {
+     "week": 8,
+     "active": 1505,
+     "claims": 17166.83,
+     "burn": 12931.3,
+     "wkClaims": 1207.25,
+     "wkBurn": 1328.5,
+     "multiplier": 1,
+     "sealedStock": 317,
+     "deeds": 1775
+    },
+    {
+     "week": 12,
+     "active": 1923,
+     "claims": 23399.22,
+     "burn": 19281.6,
+     "wkClaims": 1601.59,
+     "wkBurn": 1904.6,
+     "multiplier": 1,
+     "sealedStock": 420,
+     "deeds": 2367
+    },
+    {
+     "week": 16,
+     "active": 2290,
+     "claims": 31286.31,
+     "burn": 26365.9,
+     "wkClaims": 1977.22,
+     "wkBurn": 1833.2,
+     "multiplier": 1,
+     "sealedStock": 527,
+     "deeds": 2966
+    },
+    {
+     "week": 20,
+     "active": 2678,
+     "claims": 39779.79,
+     "burn": 34647,
+     "wkClaims": 1959.97,
+     "wkBurn": 1991,
+     "multiplier": 1,
+     "sealedStock": 671,
+     "deeds": 3000
+    },
+    {
+     "week": 24,
+     "active": 3060,
+     "claims": 48098.46,
+     "burn": 44560.6,
+     "wkClaims": 1902.89,
+     "wkBurn": 2526.5,
+     "multiplier": 1,
+     "sealedStock": 834,
+     "deeds": 3000
+    },
+    {
+     "week": 28,
+     "active": 3362,
+     "claims": 56228.25,
+     "burn": 54727.2,
+     "wkClaims": 1877.44,
+     "wkBurn": 2794,
+     "multiplier": 1,
+     "sealedStock": 1013,
+     "deeds": 3000
+    },
+    {
+     "week": 32,
+     "active": 3751,
+     "claims": 64054.32,
+     "burn": 66023.1,
+     "wkClaims": 1776.04,
+     "wkBurn": 2907.2,
+     "multiplier": 1,
+     "sealedStock": 1209,
+     "deeds": 3000
+    },
+    {
+     "week": 36,
+     "active": 4076,
+     "claims": 71747.67,
+     "burn": 77527.8,
+     "wkClaims": 1811.47,
+     "wkBurn": 2875.2,
+     "multiplier": 1,
+     "sealedStock": 1412,
+     "deeds": 3000
+    },
+    {
+     "week": 40,
+     "active": 4424,
+     "claims": 79140.7,
+     "burn": 89282.7,
+     "wkClaims": 1615.31,
+     "wkBurn": 3170.2,
+     "multiplier": 1,
+     "sealedStock": 1627,
+     "deeds": 3000
+    },
+    {
+     "week": 44,
+     "active": 4716,
+     "claims": 86292.3,
+     "burn": 101136.9,
+     "wkClaims": 1608.71,
+     "wkBurn": 2995.3,
+     "multiplier": 1,
+     "sealedStock": 1847,
+     "deeds": 3000
+    },
+    {
+     "week": 48,
+     "active": 5111,
+     "claims": 93428.76,
+     "burn": 114689.4,
+     "wkClaims": 1580.44,
+     "wkBurn": 3484.1,
+     "multiplier": 1,
+     "sealedStock": 2113,
+     "deeds": 3000
+    },
+    {
+     "week": 52,
+     "active": 5397,
+     "claims": 100306.43,
+     "burn": 127448.7,
+     "wkClaims": 1515.79,
+     "wkBurn": 3023.3,
+     "multiplier": 1,
+     "sealedStock": 2357,
+     "deeds": 3000
+    }
+   ]
+  },
+  {
+   "id": "half-bots",
+   "policy": "burn-backed",
+   "mix": "farmer-heavy",
+   "demand": 1,
+   "bots": 0.5,
+   "accounts": 8650,
+   "deeds": 3000,
+   "ledger": {
+    "claims": 96789.85,
+    "tester": 10000,
+    "withdrawNet": 86789.85,
+    "burnSeal": 33449,
+    "burnFusion": 81000,
+    "burnCraft": 12476,
+    "burnMarket": 18.1,
+    "retained": 28929.95,
+    "rebate": 11723.4,
+    "treasuryYarnSold": 106703.137,
+    "marketVolumeYarnEq": 1810,
+    "treasuryFeeYarnEq": 54.3,
+    "dripAvax": 432.5,
+    "requestedNet": 146519.588,
+    "deniedByGuard": 59729.737,
+    "botNet": 66616.662,
+    "sealedStock": 2392,
+    "sealedTotal": 2573,
+    "fusedInputs": 13500,
+    "fusions": 4500,
+    "epicsDropped": 927858,
+    "legendaryDropped": 2974,
+    "legendaryTailored": 141090,
+    "legendaryFused": 4500,
+    "skins": 673,
+    "spoolOutstanding": 76542.467,
+    "gachaPulls": 3511418.133
+   },
+   "burnTotal": 126943.1,
+   "burnPerClaim": 1.312,
+   "routineBurnPerClaim": 1.463,
+   "withdrawFill": 0.592,
+   "botShareOfWithdrawals": 0.768,
+   "heavyCasualWeeklyReward": 1.69,
+   "fusedPerSealed": 5.25,
+   "byType": {
+    "casual": {
+     "accounts": 1055,
+     "spoolPerActiveWeek": 0.625,
+     "spoolPerHour": 0.3127,
+     "medianFirstLegendaryDay": 11,
+     "shareWithLegendaryBy8Weeks": 1
+    },
+    "regular": {
+     "accounts": 2223,
+     "spoolPerActiveWeek": 0.946,
+     "spoolPerHour": 0.1577,
+     "medianFirstLegendaryDay": 8,
+     "shareWithLegendaryBy8Weeks": 1
+    },
+    "heavy": {
+     "accounts": 1080,
+     "spoolPerActiveWeek": 1.055,
+     "spoolPerHour": 0.0502,
+     "medianFirstLegendaryDay": 7,
+     "shareWithLegendaryBy8Weeks": 1
+    },
+    "bot": {
+     "accounts": 4292,
+     "spoolPerActiveWeek": 1.191,
+     "spoolPerHour": 0.0425,
+     "medianFirstLegendaryDay": 8,
+     "shareWithLegendaryBy8Weeks": 1
+    }
+   },
+   "revenueUsd": {
+    "treasuryYarnSales": 5335.16,
+    "marketFeesTreasury": 2.71,
+    "sponsorGasCost": -8650
+   },
+   "humansEverActive": 4291,
+   "gates": {
+    "burn>=claims": true,
+    "fairness": true,
+    "item-sink": true,
+    "progress": true,
+    "rewards-flow": true
+   },
+   "weekly": [
+    {
+     "week": 1,
+     "active": 772,
+     "claims": 10000,
+     "burn": 3945.3,
+     "wkClaims": 0,
+     "wkBurn": 3945.3,
+     "multiplier": 1,
+     "sealedStock": 196,
+     "deeds": 564
+    },
+    {
+     "week": 4,
+     "active": 1076,
+     "claims": 10000,
+     "burn": 8195,
+     "wkClaims": 0,
+     "wkBurn": 1127.2,
+     "multiplier": 1,
+     "sealedStock": 251,
+     "deeds": 1126
+    },
+    {
+     "week": 8,
+     "active": 1508,
+     "claims": 13899.29,
+     "burn": 13349.5,
+     "wkClaims": 1116.48,
+     "wkBurn": 1233.3,
+     "multiplier": 1,
+     "sealedStock": 325,
+     "deeds": 1772
+    },
+    {
+     "week": 12,
+     "active": 1894,
+     "claims": 18616.46,
+     "burn": 18530.6,
+     "wkClaims": 1226.95,
+     "wkBurn": 1395.2,
+     "multiplier": 1,
+     "sealedStock": 407,
+     "deeds": 2368
+    },
+    {
+     "week": 16,
+     "active": 2290,
+     "claims": 26646.12,
+     "burn": 25333.7,
+     "wkClaims": 1568.25,
+     "wkBurn": 1770.4,
+     "multiplier": 1,
+     "sealedStock": 526,
+     "deeds": 2972
+    },
+    {
+     "week": 20,
+     "active": 2647,
+     "claims": 32936.16,
+     "burn": 32632.6,
+     "wkClaims": 1718.12,
+     "wkBurn": 2044.2,
+     "multiplier": 1,
+     "sealedStock": 642,
+     "deeds": 3000
+    },
+    {
+     "week": 24,
+     "active": 3005,
+     "claims": 40968.62,
+     "burn": 41931.5,
+     "wkClaims": 2282.24,
+     "wkBurn": 2578.2,
+     "multiplier": 1,
+     "sealedStock": 804,
+     "deeds": 3000
+    },
+    {
+     "week": 28,
+     "active": 3423,
+     "claims": 51475.59,
+     "burn": 52618.5,
+     "wkClaims": 2578.4,
+     "wkBurn": 2766.3,
+     "multiplier": 1,
+     "sealedStock": 1016,
+     "deeds": 3000
+    },
+    {
+     "week": 32,
+     "active": 3771,
+     "claims": 60443.59,
+     "burn": 64071.1,
+     "wkClaims": 1966.85,
+     "wkBurn": 3177.3,
+     "multiplier": 1,
+     "sealedStock": 1222,
+     "deeds": 3000
+    },
+    {
+     "week": 36,
+     "active": 3988,
+     "claims": 68130.99,
+     "burn": 75393.3,
+     "wkClaims": 1681.15,
+     "wkBurn": 2740.1,
+     "multiplier": 1,
+     "sealedStock": 1430,
+     "deeds": 3000
+    },
+    {
+     "week": 40,
+     "active": 4380,
+     "claims": 75539.3,
+     "burn": 87609.2,
+     "wkClaims": 1651.99,
+     "wkBurn": 3436.3,
+     "multiplier": 1,
+     "sealedStock": 1657,
+     "deeds": 3000
+    },
+    {
+     "week": 44,
+     "active": 4757,
+     "claims": 82715.6,
+     "burn": 100648.9,
+     "wkClaims": 1582.69,
+     "wkBurn": 3341,
+     "multiplier": 1,
+     "sealedStock": 1893,
+     "deeds": 3000
+    },
+    {
+     "week": 48,
+     "active": 5042,
+     "claims": 89808.1,
+     "burn": 113668,
+     "wkClaims": 1577.06,
+     "wkBurn": 3352.4,
+     "multiplier": 1,
+     "sealedStock": 2136,
+     "deeds": 3000
+    },
+    {
+     "week": 52,
+     "active": 5410,
+     "claims": 96789.85,
+     "burn": 126943.1,
+     "wkClaims": 1572.34,
+     "wkBurn": 3204.4,
+     "multiplier": 1,
+     "sealedStock": 2392,
+     "deeds": 3000
+    }
+   ]
+  }
+ ]
+}

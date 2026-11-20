@@ -4,11 +4,29 @@
   "version": "0.0.0",
   "packageManager": "pnpm@10.28.0",
   "scripts": {
+    "demo": "node tools/gameplay-demo.mjs",
     "gen:deno": "node scripts/gen-deno-json.mjs",
-    "test": "node --test scripts/*.test.mjs && pnpm -r test",
+    "test": "node --test scripts/*.test.mjs scripts/v3b2/*.test.mjs tools/cardrpg-c2/*.test.mjs tools/chain/economy-lab/*.test.mjs && pnpm -r --workspace-concurrency=1 test",
+    "test:v3b2": "node --test scripts/v3b2/*.test.mjs",
+    "gates:v3b2": "node scripts/v3b2/check-gates.mjs --write",
+    "econ:lab": "node tools/chain/economy-lab/index.mjs",
     "lint": "pnpm -r lint",
     "build": "pnpm -r build",
     "typecheck": "pnpm -r typecheck",
-    "onchain-proof": "node scripts/onchain-proof.mjs"
+    "onchain-proof": "node scripts/onchain-proof.mjs",
+    "art:generate": "python3 -B tools/art/visual.py && python3 -B tools/art/gameplay.py && python3 -B tools/art/gameplay-items.py && python3 -B tools/art/gameplay-relics.py && node tools/art/gameplay-sheets.mjs && python3 -B tools/art/gameplay2.py && python3 -B tools/art/squad.py",
+    "art:check": "python3 -B tools/art/visual.py --check && python3 -B tools/art/gameplay.py --check && python3 -B tools/art/gameplay-items.py --check && python3 -B tools/art/gameplay-relics.py --check && node tools/art/gameplay-sheets.mjs --check && python3 -B tools/art/gameplay2.py --check && python3 -B tools/art/squad.py --check",
+    "art:turn3d": "node tools/art3d/build.mjs",
+    "chain:local": "node tools/chain/local.mjs",
+    "chain:test": "node tools/chain/browser-tests.mjs",
+    "demo:play": "node tools/demo-play.mjs",
+    "cine:render": "node tools/cinematic-compositor/render.mjs",
+    "art:signatures": "node scripts/art/signature-check.mjs",
+    "rig:build": "node scripts/art/build-spine.mjs",
+    "rig:qa": "node scripts/art/rig-qa.mjs"
+  },
+  "devDependencies": {
+    "pngjs": "7.0.0",
+    "sharp": "0.34.5"
   }
 }

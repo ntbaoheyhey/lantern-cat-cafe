@@ -1,0 +1,83 @@
+{
+  "at": "2026-11-15T11:40:52.524Z",
+  "rows": [
+    {
+      "method": "all-three",
+      "cases": [
+        {
+          "name": "valid boss",
+          "want": "PASS",
+          "actual": "OPEN"
+        },
+        {
+          "name": "oversized boss",
+          "want": "FAIL",
+          "actual": "OPEN"
+        },
+        {
+          "name": "wrong fixture only",
+          "want": "OPEN",
+          "actual": "OPEN"
+        },
+        {
+          "name": "missing",
+          "want": "OPEN",
+          "actual": "OPEN"
+        }
+      ],
+      "correct": 2
+    },
+    {
+      "method": "any-fixture",
+      "cases": [
+        {
+          "name": "valid boss",
+          "want": "PASS",
+          "actual": "PASS"
+        },
+        {
+          "name": "oversized boss",
+          "want": "FAIL",
+          "actual": "FAIL"
+        },
+        {
+          "name": "wrong fixture only",
+          "want": "OPEN",
+          "actual": "PASS"
+        },
+        {
+          "name": "missing",
+          "want": "OPEN",
+          "actual": "OPEN"
+        }
+      ],
+      "correct": 3
+    },
+    {
+      "method": "explicit-boss",
+      "cases": [
+        {
+          "name": "valid boss",
+          "want": "PASS",
+          "actual": "PASS"
+        },
+        {
+          "name": "oversized boss",
+          "want": "FAIL",
+          "actual": "FAIL"
+        },
+        {
+          "name": "wrong fixture only",
+          "want": "OPEN",
+          "actual": "OPEN"
+        },
+        {
+          "name": "missing",
+          "want": "OPEN",
+          "actual": "OPEN"
+        }
+      ],
+      "correct": 4
+    }
+  ]
+}

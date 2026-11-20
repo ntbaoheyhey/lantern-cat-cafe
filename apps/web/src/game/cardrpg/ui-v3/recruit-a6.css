@@ -1,0 +1,116 @@
+/* The invitation counter is a stage. Draws have already committed before it opens. */
+.uv-app[data-a6=true] .uv-recruit[data-a6=true] {
+ .uv-recruit-layout {grid-template-columns:270px minmax(0,1fr);gap:18px}
+ .uv-recruit-counter {background:linear-gradient(140deg,#fff4d8,#dfbe8d);border:1px solid #b48a51;box-shadow:inset 0 0 0 3px #fff5db88;padding:16px}
+ .uv-recruit-counter>h2 {font:700 30px var(--font-display)}
+ .uv-recruit-counter>strong {font-size:25px;color:#95601f}
+ .uv-recruit-buttons button {min-height:44px;font-size:14px}
+ .uv-recruit-buttons .cr-primary {font-size:17px}
+ .a6-recruit-purchases button {width:100%}
+ .a6-recruit-purchases .a6-recruit-quote p {margin:5px 0 0;font-size:12px;line-height:1.35;color:#59452f}
+ .a6-recruit-quote ul {margin:4px 0;padding-left:16px;font-size:12px;line-height:1.35;color:#82452e}
+ .uv-recruit-counter .a6-recruit-limits {font-size:12px;line-height:1.45;color:#664b2e}
+ .a6-recruit-purchases button:disabled {opacity:1;color:#79664a!important;background:#deceb0!important;border-color:#baa07a!important;box-shadow:none;text-shadow:none}
+ .uv-recruit-portrait>.a6-gear-art {width:100%;height:100%;object-fit:contain}
+ .uv-recruit-welcome>.a6-gear-art {width:300px;height:330px;filter:drop-shadow(0 12px 14px #17111e)}
+ .a6-recruit-highlight .uv-recruit-portrait>.a6-gear-art {width:350px;height:350px}
+ .uv-pity {color:#79509c;border-color:#ba995e}
+ .uv-odds>p {color:#60472e}
+ .uv-odds table {font-size:11px}
+ .uv-odds th {text-transform:capitalize}
+ .uv-recruit-stage {--look-paper:#f3d5a3;--look-cream:#fff0d0;min-height:530px;align-self:stretch;border:2px solid #b18a54;border-radius:17px;padding:42px 18px 15px;background:radial-gradient(ellipse at 50% 35%,#775b60,#3a2c3a 55%,#211e2a);color:#fff1d3;box-shadow:inset 0 0 0 4px #e7bd7229,inset 0 -40px 70px #18121f}
+ .uv-recruit-stage::before {content:"";position:absolute;inset:9px;border:1px solid #e2b56c50;border-radius:10px;pointer-events:none}
+ .uv-recruit-stage button {color:#fff1d0;background:#483140;border-color:#c49a5f}
+ .uv-reveal-toolbar {z-index:5;top:15px;left:24px;right:24px;color:#efc98c;font-size:13px}
+ .uv-reveal-toolbar button {padding:8px 16px;min-height:40px}
+ .uv-recruit-welcome img {height:330px;width:300px;filter:drop-shadow(0 12px 14px #17111e)}
+ .uv-recruit-welcome h2 {font-size:36px;color:#ffe2a3}
+ .uv-recruit-welcome p {font-size:15px;color:#e6cdad}
+ .a6-recruit-batch {min-height:430px;padding:16px 0 0}
+ .a6-recruit-batch>p {margin:6px 0 22px;color:#f9dfb0;font:22px var(--font-display)}
+ .a6-recruit-cards {gap:14px;perspective:1200px}
+ .a6-recruit-cards article,.uv-recruit-summary article {position:relative;border:2px solid var(--reveal-color);border-radius:12px 12px 7px 7px;background:radial-gradient(ellipse at 50% 20%,color-mix(in srgb,var(--reveal-color) 42%,#49313c),#2c2535 90%);box-shadow:inset 0 0 0 3px #fff1cb22,0 7px 15px #15101e80;overflow:hidden}
+ .a6-recruit-cards article::before,.uv-recruit-summary article::before {content:"";background:url(/icons/season.svg) center/contain no-repeat;width:18px;height:18px;position:absolute;top:4px;right:7px;color:var(--reveal-color);font-size:17px;z-index:1}
+ .a6-recruit-back {height:175px;position:relative;border:1px solid #d8ad5f55;margin:6px;border-radius:8px;background:repeating-linear-gradient(45deg,#d7b05e08 0 1px,transparent 1px 12px)}
+ .a6-recruit-back::before {content:"";width:65px;height:65px;position:absolute;border:2px double var(--reveal-color);transform:rotate(45deg);top:39px;box-shadow:0 0 20px color-mix(in srgb,var(--reveal-color) 20%,transparent)}
+ .a6-recruit-back span {font-size:52px;z-index:1;text-shadow:0 0 14px var(--reveal-color)}
+ .a6-recruit-back b {font:700 12px var(--font-display);letter-spacing:.06em;margin-top:14px}
+ .a6-recruit-seal article {box-shadow:0 0 28px color-mix(in srgb,var(--reveal-color) 55%,transparent),inset 0 0 15px #ffffff22}
+ .a6-recruit-burst article {padding:7px 5px;transform-origin:center;animation:a6-invitation-flip .45s both;animation-delay:var(--card-delay)}
+ .a6-recruit-cards .uv-recruit-portrait,.a6-recruit-cards .uv-recruit-portrait img {height:116px;width:100%;object-fit:contain}
+ .a6-reward-rarity {display:block;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--reveal-color);font-weight:800}
+ .a6-reward-stars {display:block;font-size:15px;color:#ffd16e;line-height:1.1;margin:3px 0}
+ .a6-recruit-cards h2 {font:700 19px var(--font-display)!important;color:#fff1d5;margin:4px 0!important}
+ .a6-new-stamp {display:inline-block;border:1px solid #f5ca7b;background:#b94e39;color:#fff4d3!important;padding:2px 12px;border-radius:4px;transform:rotate(-4deg);font-weight:800}
+ .a6-shard-reward {color:#e8d5fa!important;font-size:11px}
+ .a6-recruit-highlight {position:relative;min-width:360px;z-index:1}
+ .a6-recruit-highlight .uv-recruit-portrait {height:auto;filter:drop-shadow(0 10px 18px #131021) drop-shadow(0 0 22px color-mix(in srgb,var(--reveal-color) 40%,transparent))}
+ .a6-recruit-highlight .uv-recruit-portrait img {width:350px;height:350px;max-height:none}
+ .a6-recruit-highlight>.a6-reward-rarity {font-size:18px;letter-spacing:.24em;margin-top:6px}
+ .a6-recruit-highlight>small:first-child {font-size:13px;color:#f5d4a4;letter-spacing:.24em}
+ .a6-recruit-highlight h2 {font:700 48px var(--font-display)!important;color:#fff1d2;border-block:1px solid var(--reveal-color);min-width:300px;padding:9px 40px;margin:8px 0!important;background:linear-gradient(90deg,transparent,#4d3247,transparent)}
+ .a6-recruit-highlight>.a6-new-stamp {font-size:19px;padding:4px 21px;margin:8px}
+ .a6-reveal-flavour {font-size:13px;text-transform:uppercase;letter-spacing:.22em;color:#dfc59e;margin:8px}
+ .uv-recruit-stage[data-splash=true] {position:fixed;inset:0;z-index:150;border:0;border-radius:0;padding:30px;background:radial-gradient(ellipse at 50% 45%,color-mix(in srgb,var(--reveal-color) 40%,#3d2d47),#231d31 60%,#141320);animation:a6-splash-enter .2s ease-out}
+ .uv-recruit-stage[data-splash=true]::before {inset:26px;border:1px solid var(--reveal-color);border-radius:0;opacity:.6}
+ .uv-recruit-stage[data-splash=true]::after {content:"";position:absolute;width:70vh;height:70vh;max-width:800px;max-height:800px;left:50%;top:42%;transform:translate(-50%,-50%);border-radius:50%;background:repeating-conic-gradient(from 0deg,transparent 0deg 15deg,color-mix(in srgb,var(--reveal-color) 13%,transparent) 17deg 19deg,transparent 21deg 30deg);mask-image:radial-gradient(black 10%,transparent 70%);pointer-events:none}
+ .uv-recruit-stage[data-splash=true] .uv-reveal-toolbar {left:48px;right:48px;top:42px}
+ .uv-recruit-stage[data-splash=true] .a6-recruit-highlight .uv-recruit-portrait img {height:min(46vh,460px);width:400px}
+ .uv-recruit-stage[data-splash=true] .a6-recruit-batch {padding:0;min-height:0}
+ .uv-recruit-stage[data-splash=true] .a6-recruit-highlight h2 {font-size:58px!important}
+ .a6-reveal-particles {position:absolute;inset:0;pointer-events:none;z-index:-1}
+ .a6-reveal-particles i {position:absolute;left:50%;top:38%;color:var(--reveal-color);font-size:18px;font-style:normal;animation:a6-reveal-spark 1.4s ease-out both;animation-delay:var(--spark-delay)}
+ .uv-recruit-summary {max-height:none;overflow:visible;gap:12px;margin:12px 0;width:100%}
+ .uv-recruit-summary article {padding:7px 5px 9px;min-width:0}
+ .uv-recruit-summary .uv-recruit-portrait,.uv-recruit-summary .uv-recruit-portrait img {height:120px;width:100%;object-fit:contain}
+ .uv-recruit-summary h2 {font:700 19px var(--font-display);color:#fff1d3;margin:4px 0;overflow-wrap:normal}
+ .uv-recruit-summary small {font-size:10px;color:var(--reveal-color)}
+ .uv-recruit-summary .a6-new-stamp,.uv-recruit-summary .a6-shard-reward {font-size:11px;margin:3px 0 0}
+ .uv-recruit-summary article[data-rarity=legendary]::after {content:"";position:absolute;inset:-40%;pointer-events:none;background:linear-gradient(115deg,transparent 42%,#fff6c255 50%,transparent 58%);animation:a6-card-shine 5s infinite}
+ .uv-recruit-summary:has(article:only-child) {max-width:260px}
+ .uv-recruit-summary:has(article:only-child) .uv-recruit-portrait,.uv-recruit-summary:has(article:only-child) img {height:240px}
+ .uv-recruit-stage>h2 {font:700 30px var(--font-display);color:#ffe6b0}
+ .uv-recruit-stage>.uv-recruit-summary+button {margin-top:6px;min-width:210px}
+ @media(max-height:780px) {
+  .uv-recruit-layout {grid-template-columns:260px minmax(0,1fr);gap:14px}
+  .uv-recruit-stage {min-height:414px;padding:37px 14px 10px;align-self:start}
+  .uv-recruit-counter {padding:12px}
+  .uv-recruit-counter>h2 {display:block;font-size:23px}
+  .uv-recruit-buttons button {min-height:38px;font-size:13px}
+  .uv-odds {font-size:11px}
+  .uv-odds th,.uv-odds td {padding:2px}
+  .uv-odds>p {font-size:11px}
+  .uv-recruit-welcome img {height:255px;width:250px}
+  .uv-recruit-welcome>.a6-gear-art {height:255px;width:250px}
+  .a6-recruit-highlight .uv-recruit-portrait>.a6-gear-art {height:240px;width:240px}
+  .uv-recruit-summary article[data-kind=gear] .uv-recruit-portrait {height:65px}
+  .a6-recruit-batch {min-height:350px;padding:0}
+  .a6-recruit-batch>p {margin:4px 0 12px;font-size:18px}
+  .a6-recruit-back {height:126px}
+  .a6-recruit-back::before {top:23px;height:48px;width:48px}
+  .a6-recruit-back span {font-size:38px}
+  .a6-recruit-cards {gap:9px}
+  .a6-recruit-cards .uv-recruit-portrait,.a6-recruit-cards .uv-recruit-portrait img {height:83px}
+  .a6-recruit-cards h2 {font-size:16px!important}
+  .a6-recruit-highlight .uv-recruit-portrait img {height:240px;width:240px}
+  .a6-recruit-highlight h2 {font-size:36px!important;padding:5px 25px}
+  .a6-recruit-highlight>.a6-reward-rarity {font-size:14px}
+  .uv-recruit-stage[data-splash=true] {padding:20px}
+  .uv-recruit-stage[data-splash=true] .a6-recruit-highlight h2 {font-size:48px!important}
+  .uv-recruit-summary {gap:9px;margin:7px 0}
+  .uv-recruit-summary .uv-recruit-portrait,.uv-recruit-summary .uv-recruit-portrait img {height:85px}
+  .uv-recruit-summary h2 {font-size:16px;margin:3px 0}
+  .uv-recruit-summary .a6-reward-stars {font-size:12px;margin:2px}
+  .uv-recruit-summary p {font-size:10px}
+  .uv-recruit-summary small {font-size:9px}
+  .uv-recruit-summary article {padding:5px 3px}
+  .uv-recruit-stage>h2 {font-size:25px;margin:0}
+ }
+}
+@keyframes a6-invitation-flip {from{opacity:0;transform:rotateY(-90deg) scale(.88)}to{opacity:1;transform:none}}
+@keyframes a6-reveal-spark {from{opacity:0;transform:rotate(var(--spark-angle)) translateY(30px) scale(.3)}30%{opacity:1}to{opacity:0;transform:rotate(var(--spark-angle)) translateY(calc(-1 * var(--spark-radius))) scale(.8)}}
+@keyframes a6-splash-enter {from{opacity:0}to{opacity:1}}
+.uv-app[data-a6=true] .uv-recruit[data-reduced=true] * {animation:none!important;transition:none!important}
+.uv-app[data-a6=true]>.uv-recruit .uv-recruit-stage[data-splash=true] {height:100dvh;width:100vw;min-height:100dvh;max-height:none;align-self:auto;z-index:200}
+.uv-app[data-a6=true] .uv-recruit[data-a6=true] .uv-odds :is(th,td) {color:#60472e}
+.uv-app[data-a6=true] .uv-recruit[data-a6=true] .uv-recruit-stage[data-beat=summary] {align-self:start}

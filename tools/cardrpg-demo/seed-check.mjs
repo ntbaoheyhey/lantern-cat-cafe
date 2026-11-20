@@ -1,0 +1,4 @@
+// Records tutorial seed trials. These are selected replay examples, not a win-rate estimate.
+import {loadRules} from '../cardrpg-sim/load.mjs';
+const {rules:r,vite,load}=await loadRules(), e=await load('packages/game-rules/src/squad/turn/engine.ts');
+const rows=[];for(const seed of [1,2,3,4,5,11]){let s=r.createStarterAccount(11);s=r.applyCommand(s,{type:'pull',bannerId:'cats-standard',count:1,seed:101}).state;const x=r.startBattle(s,seed);if(!x.ok)throw Error(x.error.message);const b=x.value.battle;e.beginRun(b);for(let i=0;i<3000&&!b.result;i++){if(b.run.stage==='loot'){e.chooseLoot(b,b.run.loot[0]);continue}if(b.run.stage==='rest'){e.autoEquipGear(b);e.continueRun(b);continue}e.startTurn(b);if(b.phase==='choose'){const c=e.getAutoAction(b,'auto');if(c&&e.chooseAction(b,c))e.resolveAction(b)}e.endTurn(b)}rows.push({seed,result:b.result});}console.log(JSON.stringify(rows,null,2));await vite.close();

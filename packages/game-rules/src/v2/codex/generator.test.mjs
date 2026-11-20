@@ -1,5 +1,6 @@
 import { spawnSync } from 'node:child_process';
 import { existsSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
+import { tmpdir } from 'node:os';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { describe, expect, it } from 'vitest';
@@ -22,7 +23,7 @@ describe('offline Compendium generator and provenance', () => {
   });
 
   it('runs outside the repo root, twice with all Node network entry points disabled, and writes identical JSON', () => {
-    const scratch = mkdtempSync(join(root, 'reports/scorecard/CXL1/generator-'));
+    const scratch = mkdtempSync(join(tmpdir(), 'taskbar-hero-codex-generator-'));
     try {
       const guard = join(scratch, 'offline.cjs');
       writeFileSync(guard, `const fail = () => { throw new Error('Network forbidden in offline generator'); };

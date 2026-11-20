@@ -1,0 +1,14 @@
+import {mkdir,writeFile} from 'node:fs/promises';import {resolve} from 'node:path';import assert from 'node:assert/strict';import sharp from 'sharp';
+import {root,evidenceMeta} from './check-gates.mjs';import {chromium,openFixture,config} from './browser-fixture.mjs';
+const out=resolve(root,'reports/v3-battle/a2/P7');await mkdir(out,{recursive:true});const browser=await chromium.launch({headless:true,args:['--use-angle=metal']});
+try{
+ const {page,errors}=await openFixture(browser,config.fixtures[0]);
+ const found=await page.evaluate(()=>{const m=window.__depthReview;for(let i=0;i<2000&&!m.battle.result;i++){m.paused=false;m.step();m.paused=true;if(m.plan?.finalHit||m.roundPlan?.finalHit){if(!m.plan?.finalHit)m.finishMoment();return true;}m.finishMoment();if(m.plan)m.finishMoment();}return false;});assert.ok(found);
+ const rows=await page.evaluate(()=>{const m=window.__depthReview,p=m.plan,before=JSON.stringify(m.battle),start=Math.max(0,p.beats[2].start-80),rows=[];for(const speed of [1,2,3]){m.state.settings.speed=speed;m.state.settings.reducedMotion=false;m.animationAt=start;m.paused=false;m.tick(500,performance.now()+speed*1000);m.paused=true;const at=m.animationAt;m.tick(200,performance.now()+speed*1000+200);rows.push({speed,start,at,authoredAdvance:at-start,realMilliseconds:500,pausedAt:m.animationAt,unchanged:before===JSON.stringify(m.battle)});}return rows;});
+ for(const r of rows){assert.ok(Math.abs(r.authoredAdvance-200)<.001);assert.equal(r.pausedAt,r.at);assert.ok(r.unchanged);}const shots=[];
+ for(const slow of [false,true])for(const wall of [0,100,250,500]){
+  await page.evaluate(async({slow,wall})=>{const {advanceBattleClock}=await import('/src/game/cardrpg/battle-v3/final-hit.ts');const m=window.__depthReview,s=window.__depthScene,p=m.plan,start=Math.max(0,p.beats[2].start-80);m.state.settings.speed=1;m.animationAt=advanceBattleClock({...p,finalHit:slow},start,wall,false);s.render({...s.view(),fixedTime:15+wall/1000,paused:true},0);},{slow,wall});await page.clock.runFor(1);shots.push(await sharp(await page.screenshot()).resize(320,180).png().toBuffer());
+ }
+ await sharp({create:{width:1280,height:388,channels:3,background:'#171620'}}).composite([{input:Buffer.from('<svg width="1280" height="28"><text x="12" y="20" font-size="17" fill="white">Same resolved last hit: original clock / 0.4x contact — wall time 0, 100, 250, 500 ms</text></svg>'),left:0,top:0},...shots.map((input,i)=>({input,left:i%4*320,top:28+Math.floor(i/4)*180}))]).png().toFile(resolve(out,'compare-last-hit.png'));
+ assert.deepEqual(errors,[]);await writeFile(resolve(out,'metrics.json'),JSON.stringify({_meta:evidenceMeta(),rows,errors},null,2)+'\n');console.log('PASS: final hit advances200ms in500ms at all3 speeds; pause and combat unchanged');
+}finally{await browser.close();}

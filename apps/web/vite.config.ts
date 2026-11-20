@@ -1,10 +1,14 @@
+import { pixelPackingPlugin } from '../../tools/cardrpg-big/pixel-packing.mjs';
+import { excludeUnusedPosters } from '../../tools/v5int/build-asset-exclusions.mjs';
 import react from '@vitejs/plugin-react';
 import { defineConfig } from 'vitest/config';
 
 export default defineConfig({
-  plugins: [react()],
+  plugins: [react(), pixelPackingPlugin(), excludeUnusedPosters()],
   build: {
     chunkSizeWarningLimit: 1500, // Phaser is ~1.2 MB minified
+    // Catalog URL maps are eager; fetch only the images a scene actually displays.
+    assetsInlineLimit: (filePath) => /\/assets\/(?:cardrpg-look\/(?:icons|portraits|v3-portraits)|cardrpg-a6\/illustrations)\//.test(filePath.replace(/\\/g, '/')) ? false : undefined,
     rollupOptions: {
       output: {
         // Separate cacheable vendor chunks: an app-code change no longer re-downloads them.
@@ -18,5 +22,11 @@ export default defineConfig({
       },
     },
   },
-  test: { environment: 'jsdom', include: ['src/**/*.test.{ts,tsx}'] },
+  test: {
+    environment: 'jsdom',
+    include: ['src/**/*.test.{ts,tsx}'],
+    // Bound jsdom workers so concurrent suites do not starve DOM assertions
+    // and cold lazy imports of CPU time on shared development machines.
+    maxWorkers: 2,
+  },
 });

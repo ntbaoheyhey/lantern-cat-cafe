@@ -1,3 +1,5 @@
+import { RarityMark } from '../gameplay/RarityMark';
+import { Art2Image } from '../art/Art2';
 import { useId, useState, type ReactNode } from 'react';
 import type { Rarity } from '@taskbar-hero/game-rules';
 import { formatEther } from 'viem';
@@ -47,7 +49,7 @@ function ContractLinks({ nft, market }: { nft: string; market: string }) {
 export function MarketGate({ nft, market, children }: { nft: string; market: string; children: ReactNode }) {
   return <div className="market market-gate"><div className="market-cols">
     <section className="market-card market-list-card"><h2>Relic market</h2><p className="market-hint">{MARKET_TESTNET}. On-chain Relics only.</p>
-      <EmptyState title="Your Relic shelf" illustration={<PixelIcon name="shop" size={6} />}>{children}</EmptyState>
+      <EmptyState title="Your Relic shelf" illustration={<><PixelIcon name="shop" size={6} /><Art2Image id="no-wallet" /></>}>{children}</EmptyState>
     </section>
     <aside className="market-card"><h3>Avalanche Fuji</h3><p className="market-hint">Chain 43113</p>
       <p>Relics are ERC-1155 collectibles. Equipment stays in your Bag.</p>
@@ -84,7 +86,7 @@ export function MarketView(props: MarketViewProps) {
           </div>
           <p className="market-hint">Prices are in {MARKET_TESTNET}. Select a listing to inspect it.</p>
           {props.readFailed ? null : props.loadingListings ? <p role="status">Loading listings…</p> : rows.length === 0 ?
-            <EmptyState title={filter === 'all' ? 'No active listings' : 'No matching listings'}><p data-testid="listings-empty">{filter === 'all' ? 'No Relics for sale right now.' : 'Try another rarity or show all Relics.'}</p></EmptyState> :
+            <EmptyState title={filter === 'all' ? 'No active listings' : 'No matching listings'} illustration={<Art2Image id="market-empty" />}><p data-testid="listings-empty">{filter === 'all' ? 'No Relics for sale right now.' : 'Try another rarity or show all Relics.'}</p></EmptyState> :
             <div className="market-table-wrap" tabIndex={0} role="region" aria-label="Scrollable Relic listings"><table className="market-table" data-testid="listings" aria-label="Relic market listings">
               <thead><tr><th scope="col" aria-label="Artwork" />{columns.map(column => <th key={column.key} scope="col" aria-sort={sort === column.key ? direction === 'asc' ? 'ascending' : 'descending' : 'none'}>
                 <button type="button" className="market-sort" aria-label={`Sort by ${column.label.toLowerCase()}`} onClick={() => sortBy(column.key)}>{column.label}{sort === column.key && <span aria-hidden="true"> {direction === 'asc' ? '↑' : '↓'}</span>}</button>
@@ -108,7 +110,8 @@ export function MarketView(props: MarketViewProps) {
           <button type="button" aria-pressed={mode === 'sell'} onClick={() => setMode('sell')}>Sell a Relic</button>
         </div>
         {mode === 'inspect' ? <section className="market-card market-detail-card" aria-label="Listing details">
-          {selected ? <><div className="market-detail-hero">{rarity ? <img src={relicImageUrl(selected.relicId)} alt={listingName(selected)} width={64} height={64} /> : <PixelIcon name="bag" size={6} />}<div><h3>{listingName(selected)}</h3><p>{rarity ? capitalize(rarity) : 'Unknown Relic'}</p></div></div>
+          {selected ? <><div className="market-detail-hero">{rarity ? <img src={relicImageUrl(selected.relicId)} alt={listingName(selected)} width={96} height={96} /> : <PixelIcon name="bag" size={6} />}<div><h3>{listingName(selected)}</h3><p>{rarity && <RarityMark rarity={rarity} />} {rarity ? capitalize(rarity) : 'Unknown Relic'}</p></div></div>
+            <p className="relic-provenance">Cat Relic #{selected.relicId.toString()} · <a href={`/relics/${selected.relicId.toString()}.json`} target="_blank" rel="noreferrer">Metadata</a></p><p className="market-hint">Collectible · No combat-stat bonus</p>
             <div className="market-facts-scroll" tabIndex={0} role="region" aria-label="Scrollable listing facts"><dl className="market-facts"><div><dt>Listing</dt><dd>#{selected.id.toString()}</dd></div><div><dt>Token</dt><dd data-testid="token-id">#{selected.relicId.toString()}</dd></div><div><dt>Quantity</dt><dd>{selected.amount.toString()}</dd></div><div><dt>Total price</dt><dd data-testid="market-detail-price">{formatEther(selected.price)} AVAX</dd></div><div><dt>Seller</dt><dd title={selected.seller}>{isOwnListing(selected, props.address) ? 'You' : shortAddress(selected.seller)}</dd></div><div><dt>RelicNFT</dt><dd title={props.nft} data-testid="contract-addr">{shortAddress(props.nft)}</dd></div></dl></div>
             {isOwnListing(selected, props.address) ? <button type="button" className="forge-btn" disabled={!!props.busy} onClick={() => props.onCancel(selected)}>Cancel</button> : <button type="button" className="forge-btn pixel-btn" disabled={!!props.busy} onClick={() => props.onBuy(selected)}>Buy</button>}
           </> : <EmptyState title="Inspect a Relic">Select a listing to see its on-chain details.</EmptyState>}

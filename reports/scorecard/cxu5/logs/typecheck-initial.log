@@ -1,8 +1,0 @@
-
-> @taskbar-hero/web@0.0.0 typecheck /Users/bao/.codex/worktrees/mega-cxu5/taskbar-hero/apps/web
-> tsc --noEmit
-
-src/layout/boss/mapDetails.ts(11,68): error TS2339: Property 'timeoutMs' does not exist on type '{ readonly attackIntervalMs: 1500; readonly windupMs: 400; readonly bigEveryMs: 6000; readonly bigWindupMs: 1000; readonly bigMultiplier: 2.5; readonly maxMs: 60000; readonly keyCost: 1; readonly lossCooldownSeconds: 60; readonly chapterHpMul: readonly [...]; readonly chapterAtkMul: readonly [...]; readonly firstCle...'.
-/Users/bao/.codex/worktrees/mega-cxu5/taskbar-hero/apps/web:
- ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @taskbar-hero/web@0.0.0 typecheck: `tsc --noEmit`
-Exit status 2

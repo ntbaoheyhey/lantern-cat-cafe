@@ -1,6 +1,6 @@
 # Taskbar Hero — nine-slide outline (DRAFT)
 
-No slides have been published or submitted. Intended for a short owner-recorded pitch; use only evidence labelled for its exact release. The final organizer rubric/weights and team names are owner-confirmed placeholders.
+No slides have been published or submitted. Intended for a short owner-recorded pitch; use only evidence labelled for its exact release. The supplied planning rubric is Technical25, Avalanche Integration25, Creativity15, Impact15, Pitch10, UI/UX+Demo10; organizer confirmation and team names remain owner-controlled. [Three-minute narration](submission/pitch-3-minute.md) maps the claims to those categories.
 
 ## Slide 1 — A game beside everyday work
 
@@ -30,11 +30,11 @@ Show the local catalog with explicit opt-in. 12 stats, 15 items, 5 qualities, 7 
 
 ## Slide 7 — Evidence that can be reproduced
 
-Use the archived 6144d42 receipt only with its version label: 2,490 package unit cases and 323 browser cases per desktop size, plus live identity/health/guest checks. Distinguish local mocks, local server tests, public RPC reads and real transactions. Replace counts only from a new verified receipt.
+Use the exact candidate head and current counts from [release evidence](release-status.md). Keep historical 6144d42 counts and screenshots explicitly historical. Distinguish local mocks, local server tests, public RPC reads and real transactions; no final candidate deployment or new transaction is claimed.
 
 ## Slide 8 — Current limits and next work
 
-Disclose #244's missing deployed-source backup/restore, pending timed/funded proof and UI work still in progress. Keep P2 mechanics/default-OFF work conditional on the agreed gates. Do not promise a live backend rollout or public repository.
+Disclose #244's missing deployed-source backup/restore, pending released recording/funded proof and the deployment-capacity hold. Keep P2 mechanics/default-OFF work conditional on the agreed gates. Do not promise a live backend rollout or public repository.
 
 ## Slide 9 — The invitation
 

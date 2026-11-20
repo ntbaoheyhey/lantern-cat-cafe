@@ -1,7 +1,13 @@
+import { CraftResult } from '../gameplay/CraftResult';
+import { GuestCoach, isNewGuest } from '../gameplay/GuestCoach';
+import { journeyGoals } from '../gameplay/goals';
+import { cafeEnabled } from '../cafe/save';
+import '../gameplay/gameplay.css';
 import {
   lazy,
   Suspense,
   useEffect,
+  useLayoutEffect,
   useRef,
   useReducer,
   useState,
@@ -10,7 +16,7 @@ import {
   type ReactNode,
 } from 'react';
 import type { GainsV2, ItemV2, GearSlotId } from '../api/GameApiV2';
-import { v2 } from '@taskbar-hero/game-rules';
+import { CONFIG, v2 } from '@taskbar-hero/game-rules';
 import { useAccount } from 'wagmi';
 import type { RelicVoucher } from '@taskbar-hero/api-contract';
 import { MintPanel } from '../forge/MintPanel';
@@ -22,6 +28,7 @@ import { createEquipQueueV2, forgeRelicForWalletV2, getGameLoopV2, useGameSnapsh
 import { useSyncStatusV2 } from '../game/v2/useSyncStatus';
 import { bossPresentation, INITIAL_BOSS_PRESENTATION } from './bossPresentation';
 import { usePrefersReducedMotion } from '../motion/reducedMotion';
+import { useMotionCue } from '../motion/useMotionCue';
 import { ClassPicker, STARTER_CLASSES } from './classpicker/ClassPicker';
 import { LandingHero } from './LandingHero';
 import { HeroCard } from './home/HeroCard';
@@ -31,7 +38,6 @@ import { EventLog } from './home/EventLog';
 import type { LoopEventV2 } from '../game/v2/events';
 import './home/home.css';
 import { BossMapScreen } from './boss/BossMapScreen';
-import { bossGateStatus } from './boss/bossGate';
 import { ForgePanel } from './forge/ForgePanel';
 import { WelcomeBack } from './loot/WelcomeBack';
 import { LootSummary } from './loot/LootSummary';
@@ -41,19 +47,23 @@ import { HowToPlay } from '../onboarding/HowToPlay';
 import { PixelIcon, type IconName } from '../art/pixelIcons';
 import { TabIcon } from './tabIcons';
 import { BagPanel } from './bag/BagPanel';
-import { equipBest } from './bag/equipRules';
 import { HeroScreen } from './character/HeroScreen';
 import { MarketTab } from '../market/MarketTab';
 import { HelpTab } from './HelpTab';
 import { FujiProofPanel } from '../chain-proof/FujiProofPanel';
 import { desktopStageMetrics, layoutKind, stageHeight, stageZoom, useViewport } from './metrics';
-import { itemName, rarityLabel } from './itemView';
+import { itemName, itemIconName, rarityLabel } from './itemView';
+import { V2PixelIcon } from '../art/v2Icons';
 import { getBlockReason } from '../v2text/blockReasons';
 import { ScreenFrame } from '../shell/ScreenFrame';
 import { SCREEN_REGISTRY, RAIL_SCREENS, type ScreenId, tabNameToScreenId } from '../nav/screens';
+import { Banner } from '../ui';
 import './layout.css';
 
 const OriginalCatalog = lazy(() => import('../original-preview/OriginalCatalog'));
+const Art2Preview = lazy(() => import('../art/Art2Preview'));
+const FeatureSamples = lazy(() => import('../runes/FeatureSamples'));
+const CafeAdventure = lazy(() => import('../cafe/CafeAdventure'));
 
 export type StageTabName = 'Character' | 'Bag' | 'Boss' | 'Forge' | 'Market' | 'Help';
 
@@ -87,12 +97,14 @@ export interface StageLayoutProps {
 
 export function StageLayout({ initialScreen }: StageLayoutProps = {}) {
   const { width, height } = useViewport();
+  const [newGuest] = useState(isNewGuest);
   const kind = layoutKind(width);
   const loop = getGameLoopV2();
   const equipQueue = useRef<ReturnType<typeof createEquipQueueV2> | null>(null);
   const wallet = useAccount();
   const [voucher, setVoucher] = useState<RelicVoucher | null>(null);
   const [mintedNonce, setMintedNonce] = useState<string | null>(null);
+  const mintCue = useMotionCue<HTMLParagraphElement>(mintedNonce, 'relic');
   const [unreported, setUnreported] = useState<UnreportedMint | null>(loadUnreported);
   const [savingMint, setSavingMint] = useState(false);
   const [classChoiceError, setClassChoiceError] = useState<string | null>(null);
@@ -103,6 +115,7 @@ export function StageLayout({ initialScreen }: StageLayoutProps = {}) {
   const syncStatus = presentation.hold?.syncStatus ?? liveSyncStatus;
   const bossRequest = useRef(false);
   const mode = useGameModeV2();
+  const [adventure, setAdventure] = useState(() => cafeEnabled(window.location.search, true));
   const state = snapshot.state;
   const classId = state?.cat.classId;
 
@@ -116,7 +129,8 @@ export function StageLayout({ initialScreen }: StageLayoutProps = {}) {
   });
   const [visited, setVisited] = useState<Set<ScreenId>>(() => new Set<ScreenId>(['home', 'hero']));
 
-  useEffect(() => {
+  // Keep the confirmed class screen painted until Home is ready in the same frame.
+  useLayoutEffect(() => {
     if (initialScreen) {
       setScreen(initialScreen);
     } else if (state && !state.cat.classId) {
@@ -243,7 +257,7 @@ export function StageLayout({ initialScreen }: StageLayoutProps = {}) {
     if (!fromArrowNav) {
       requestAnimationFrame(() => {
         const panel = document.getElementById(`panel-${newScreen}`);
-        if (panel) {
+        if (panel && !panel.contains(document.activeElement)) {
           const focusable = panel.querySelector<HTMLElement>(
             'button:not([disabled]), [href], input:not([type="hidden"]), textarea, [tabindex="0"]'
           );
@@ -310,34 +324,10 @@ export function StageLayout({ initialScreen }: StageLayoutProps = {}) {
     } finally { bossRequest.current = false; }
   };
 
-  const upgrades = state ? equipBest(state) : [];
-  const bossStatus = state ? bossGateStatus(state, state.progress.chapter, Math.floor(Date.now() / 1000)) : null;
-  const isBossReady = bossStatus?.kind === 'ready';
 
-  let hintText: string;
-  let handleHintAction: () => void;
-
-  if (upgrades.length > 0) {
-    hintText = state?.progress.gated
-      ? `Equip best (+${upgrades.length}) · Equip better gear`
-      : `Equip best (+${upgrades.length})`;
-    handleHintAction = () => {
-      handleSelectScreen('bag');
-      if (presentation.hold) return;
-      upgrades.forEach((u) => equipQueue.current?.equip(u.itemId, u.slot));
-    };
-  } else if (isBossReady) {
-    hintText = 'Boss ready';
-    handleHintAction = () => {
-      handleSelectScreen('map');
-    };
-  } else {
-    const gated = state?.progress.gated;
-    hintText = `Next: ${gated ? 'Equip better gear to keep exploring' : 'Explore the chapter and challenge its boss'}`;
-    handleHintAction = () => {
-      handleSelectScreen(gated ? 'bag' : 'map');
-    };
-  }
+  const goals = state ? journeyGoals(state) : null;
+  const hintText = goals?.now.text ?? 'Choose a class to begin';
+  const handleHintAction = () => handleSelectScreen(goals?.now.screen ?? 'class');
 
   const showRail = !['landing', 'class'].includes(screen);
   const showChrome = screen !== 'landing' && screen !== 'class';
@@ -417,13 +407,16 @@ export function StageLayout({ initialScreen }: StageLayoutProps = {}) {
               state,
               power: stats ? Math.round(v2.powerRating(stats)) : 0,
               syncStatus,
-              hintText,
-              onHintAction: handleHintAction,
+              hintText: adventure && mode.demo && !phone && screen === 'home' ? 'Return to the main game' : hintText,
+              onHintAction: adventure && mode.demo && !phone && screen === 'home' ? () => setAdventure(false) : handleHintAction,
+              sampleAdventure: adventure && mode.demo && !phone && screen === 'home',
               mode,
             }
           : null
       }
     >
+      {showChrome && classId && <GuestCoach enabled={newGuest && mode.demo} onNavigate={handleSelectScreen} />}
+      {mode.notice && <Banner tone="warning" data-testid="session-expired-notice">{mode.notice}</Banner>}
       {!state && (screen === 'market' || screen === 'help' || screen === 'class') && loadingNotice}
       {snapshot.loadFailed && (
         <p role="alert" className="v2-alert">
@@ -432,7 +425,7 @@ export function StageLayout({ initialScreen }: StageLayoutProps = {}) {
       )}
 
       {notice && (
-        <p role="status" className="v2-action-notice">
+        <p ref={mintCue} role="status" className="v2-action-notice motion-cue" data-mint-confirmed={mintedNonce ? 'true' : undefined}>
           {notice}
           <button aria-label="Dismiss message" onClick={() => setNotice('')}>
             ×
@@ -499,6 +492,7 @@ export function StageLayout({ initialScreen }: StageLayoutProps = {}) {
         >
           {state && !classId ? (
             <ClassPicker
+              directStart={!classId}
               classes={STARTER_CLASSES}
               error={classChoiceError}
               locked={snapshot.busy !== null}
@@ -520,7 +514,9 @@ export function StageLayout({ initialScreen }: StageLayoutProps = {}) {
           style={{ display: screen === 'home' ? 'flex' : 'none' }}
         >
           {state && classId ? (
-            phone ? (
+            adventure && mode.demo && !phone ? (
+              <Suspense fallback={<p role="status">Opening the cafe…</p>}><CafeAdventure active={screen === 'home'} onExit={() => setAdventure(false)} /></Suspense>
+            ) : phone ? (
               <>
                 <div role="region" aria-label="Game stage" className="v2-stage">
                   <StageCanvas
@@ -694,13 +690,7 @@ export function StageLayout({ initialScreen }: StageLayoutProps = {}) {
                     craftResultId={crafted?.id}
                     craftResult={
                       crafted ? (
-                        <div className="forge-reveal" role="status" data-testid="craft-result">
-                          <strong>
-                            Crafted: {rarityLabel(crafted.rarity)} {itemName(crafted.itemKey)}
-                          </strong>{' '}
-                          (level {crafted.level}). It is in your Bag. Gear is not tradable; only Relics from the Relic
-                          tab can be listed in the Market.
-                        </div>
+                        <CraftResult item={crafted} />
                       ) : null
                     }
                     relicFooter={relicFooter}
@@ -740,7 +730,7 @@ export function StageLayout({ initialScreen }: StageLayoutProps = {}) {
           <div id="panel-Help" className="v2-tabpanel">
             <h2 className="v2-tabpanel-title">Help</h2>
             <div className="v2-panel-body-inner">
-              <HelpTab additionalTabs={[{ id: 'on-chain-proof', label: 'On-chain proof', lazy: true, content: <FujiProofPanel enabled={screen === 'help'} /> }, { id: 'original-catalog', label: 'Catalog preview', lazy: true, content: <Suspense fallback={<p role="status">Loading catalog…</p>}><OriginalCatalog /></Suspense> }]} />
+              <HelpTab additionalTabs={[{ id: 'on-chain-proof', label: 'On-chain proof', lazy: true, content: <FujiProofPanel enabled={screen === 'help'} /> }, { id: 'original-catalog', label: 'Catalog preview', lazy: true, content: <Suspense fallback={<p role="status">Loading catalog…</p>}><OriginalCatalog /></Suspense> }, ...(CONFIG.features.originalEconomy ? [{ id: 'art-samples', label: 'Art samples', lazy: true, content: <Suspense fallback={<p role="status">Loading art…</p>}><Art2Preview /></Suspense> }, { id: 'feature-samples', label: 'Feature samples', lazy: true, content: <Suspense fallback={<p role="status">Loading samples…</p>}><FeatureSamples /></Suspense> }] : [])]} />
             </div>
           </div>
         </div>
@@ -770,7 +760,7 @@ export function StageLayout({ initialScreen }: StageLayoutProps = {}) {
         </nav>
       )}
 
-      <HowToPlay mode="v2" />
+      <HowToPlay mode="v2" autoShow={false} />
     </ScreenFrame>
   );
 }

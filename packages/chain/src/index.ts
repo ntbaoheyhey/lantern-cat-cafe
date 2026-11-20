@@ -3,18 +3,21 @@ import anvil from '../deployments/31337.json';
 
 import { ANVIL_CHAIN_ID, FUJI_CHAIN_ID } from './constants';
 
-export { relicMarketAbi, relicNftAbi } from './abi';
+export { relicForgeAbi, relicMarketAbi, relicNftAbi, yarnTokenAbi, relicMarketV2Abi, seasonRewardsAbi } from './abi';
 export * from './constants';
+export * from './cosmetics';
+export * from './forge';
 
 export type Address = `0x${string}`;
 
 export interface Addresses {
   RelicNFT: Address | undefined;
   RelicMarket: Address | undefined;
+  YarnToken?: Address; RelicMarketV2?: Address; SeasonRewards?: Address; RelicForge?: Address;
 }
 
 // Files written by contracts/script/Deploy.s.sol. An empty string means "not deployed yet".
-const deployments: Record<number, { RelicNFT: string; RelicMarket: string }> = {
+const deployments: Record<number, { RelicNFT: string; RelicMarket: string } & Partial<Record<'YarnToken'|'RelicMarketV2'|'SeasonRewards'|'RelicForge', string>>> = {
   [FUJI_CHAIN_ID]: fuji,
   [ANVIL_CHAIN_ID]: anvil,
 };
@@ -28,5 +31,13 @@ export function getAddresses(chainId: number): Addresses {
   return {
     RelicNFT: d ? asAddress(d.RelicNFT) : undefined,
     RelicMarket: d ? asAddress(d.RelicMarket) : undefined,
+    ...Object.fromEntries((['YarnToken','RelicMarketV2','SeasonRewards','RelicForge'] as const).flatMap(key => {
+      const value = d?.[key] && asAddress(d[key]!);
+      return value ? [[key, value]] : [];
+    })),
   };
 }
+export {readSealPolicy,sealPrice,type SealPricePolicy} from './seal';
+export type {CampaignCommand,CampaignRequest,CampaignView,CampaignResponse} from './campaign';
+
+export type {CampaignRewardKind,CampaignRewardQuote} from './rewards';

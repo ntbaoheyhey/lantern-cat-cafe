@@ -1,0 +1,56 @@
+/** Measure text actually painted inside the viewport, including open overlays. */
+export function measureScreen() {
+  const visibleRect = rect => rect.width > 0 && rect.height > 0 && rect.bottom > 0 && rect.right > 0 && rect.left < innerWidth && rect.top < innerHeight;
+  const painted = element => {
+    if (!element || !element.getClientRects().length) return false;
+    for (let p = element; p; p = p.parentElement) {
+      const s = getComputedStyle(p);
+      if (s.display === 'none' || s.visibility === 'hidden' || Number(s.opacity) === 0) return false;
+      // Native closed details can retain text Range rectangles in Chromium.
+      // Only its first summary is painted, even if elementFromPoint lands on
+      // that same details ancestor.
+      if (p.tagName === 'DETAILS' && !p.open && !p.querySelector(':scope > summary')?.contains(element)) return false;
+    }
+    return [...element.getClientRects()].some(visibleRect);
+  };
+  const uncovered = (element, rect) => {
+    const x = Math.max(0,Math.min(innerWidth-1,(Math.max(0,rect.left)+Math.min(innerWidth,rect.right))/2));
+    const y = Math.max(0,Math.min(innerHeight-1,(Math.max(0,rect.top)+Math.min(innerHeight,rect.bottom))/2));
+    const top = document.elementFromPoint(x,y);
+    return top && (element.contains(top) || top.contains(element));
+  };
+  const walker = document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);
+  const texts=[],fonts=new Set();
+  for(let node; (node=walker.nextNode());) {
+    const parent=node.parentElement;
+    if(!painted(parent)||parent.closest('script,style,option,noscript'))continue;
+    const range=document.createRange();range.selectNodeContents(node);
+    const rectangles=[...range.getClientRects()].filter(visibleRect);
+    if(!rectangles.some(r=>uncovered(parent,r)))continue;
+    const text=node.textContent.trim();if(!text)continue;
+    texts.push(text);fonts.add(getComputedStyle(parent).fontFamily);
+  }
+  const controls=[...document.querySelectorAll('button,a,summary,input,select,[role="button"]')].filter(e=>painted(e)&&uncovered(e,e.getBoundingClientRect())).map(e=>({
+    tag:e.tagName.toLowerCase(),label:e.getAttribute('aria-label')||e.textContent.trim(),text:e.textContent.trim(),
+    icon:!!e.querySelector('img,svg,canvas,.uv-icon,.game-icon'),disabled:!!e.disabled,
+    bounds:{x:Math.round(e.getBoundingClientRect().x),y:Math.round(e.getBoundingClientRect().y),width:Math.round(e.getBoundingClientRect().width),height:Math.round(e.getBoundingClientRect().height)}
+  }));
+  // Document width can stay fixed while a panel clips its own controls.
+  const modal=[...document.querySelectorAll('dialog:modal')].at(-1)||[...document.querySelectorAll('[role="dialog"][aria-modal="true"]')].filter(e=>e.checkVisibility({checkOpacity:true,checkVisibilityCSS:true})).at(-1);
+  const horizontalClippedControls=[...(modal||document).querySelectorAll('button,a,summary,input,select')].filter(painted).flatMap(e=>{
+    const r=e.getBoundingClientRect();let left=0,right=innerWidth,top=0,bottom=innerHeight;
+    for(let parent=e.parentElement;parent&&parent!==document.body&&parent!==document.documentElement;parent=parent.parentElement){
+      const s=getComputedStyle(parent),b=parent.getBoundingClientRect();
+      if(/hidden|clip|auto|scroll/.test(s.overflowX)){left=Math.max(left,b.left+parent.clientLeft);right=Math.min(right,b.left+parent.clientLeft+parent.clientWidth);}
+      if(/hidden|clip|auto|scroll/.test(s.overflowY)){top=Math.max(top,b.top+parent.clientTop);bottom=Math.min(bottom,b.top+parent.clientTop+parent.clientHeight);}
+    }
+    if(r.bottom<=top||r.top>=bottom||r.left>=left-2&&r.right<=right+2)return [];
+    const clippedRect={left:Math.max(left,r.left),right:Math.min(right,r.right),top:Math.max(top,r.top),bottom:Math.min(bottom,r.bottom)};
+    if(clippedRect.right>clippedRect.left&&!uncovered(e,clippedRect))return [];
+    return [{label:e.getAttribute('aria-label')||e.textContent.trim(),selector:e.tagName.toLowerCase()+'.'+e.className,bounds:{left:r.left,right:r.right},available:{left,right}}];
+  });
+  return {horizontalClippedControls,visibleWords:texts.reduce((n,t)=>n+(t.match(/\p{L}+(?:['’]\p{L}+)*/gu)||[]).length,0),
+    plainTextButtons:controls.filter(c=>['button','summary'].includes(c.tag)&&!c.icon&&/\p{L}/u.test(c.text)).length,
+    iconTiles:controls.filter(c=>c.icon).length,texts,fonts:[...fonts],controls,
+    horizontalOverflow:document.documentElement.scrollWidth>innerWidth};
+}

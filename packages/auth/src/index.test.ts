@@ -3,6 +3,7 @@ import { privateKeyToAccount } from "viem/accounts";
 import { createSiweMessage } from "viem/siwe";
 import { beforeEach, describe, expect, it } from "vitest";
 import {
+  allowedDomains,
   AuthError,
   type AuthErrorCode,
   FUJI_CHAIN_ID,
@@ -183,6 +184,20 @@ describe("verifySignIn", () => {
     const localDeps = { ...deps(), config: { domain: "localhost:5173", jwtSecret: SECRET } };
     const req = await signIn({ overrides: { domain: "localhost:5173", uri: "http://localhost:5173" } });
     expect((await verifySignIn(localDeps, req)).wallet).toBe(alice.address.toLowerCase());
+  });
+
+  it("accepts each host of a comma-separated SIWE_DOMAIN list", async () => {
+    const multi = { ...deps(), config: { domain: `${DOMAIN}, 127.0.0.1:6301`, jwtSecret: SECRET } };
+    expect((await verifySignIn(multi, await signIn())).wallet).toBe(alice.address.toLowerCase());
+    const local = await signIn({ overrides: { domain: "127.0.0.1:6301", uri: "http://127.0.0.1:6301" } });
+    expect((await verifySignIn(multi, local)).wallet).toBe(alice.address.toLowerCase());
+  });
+
+  it("refuses unlisted hosts and a uri on a different listed host", async () => {
+    const multi = { ...deps(), config: { domain: `${DOMAIN},127.0.0.1:6301`, jwtSecret: SECRET } };
+    await expectCode(verifySignIn(multi, await signIn({ overrides: { domain: "evil.test", uri: "https://evil.test" } })), "wrong_domain");
+    await expectCode(verifySignIn(multi, await signIn({ overrides: { domain: "127.0.0.1:6301", uri: `https://${DOMAIN}` } })), "wrong_uri");
+    expect(allowedDomains(" A.test ,, b.test:1 ")).toEqual(["a.test", "b.test:1"]);
   });
 
   it("refuses notBefore in the future beyond the skew", async () => {

@@ -1,0 +1,3 @@
+Fixture attempt1 completed ON route generation but called V4-only commitPreparation for an OFF battle. Original source/log retained. Retry only guards this command by run.gameplayV4, as production DepthModel.fight does. No runtime, registered input, seed, rule, numeric gate or UI draft changed. Fixture generation is not acceptance sampling.
+
+Before any ON prototype browser checks, static App inspection corrected the order probe to the actual .dp-page wrapper. The old before capture remains valid for its independent measured reward y954.25px, but its unused order booleans are not evidence. Contrast scope excludes disabled controls and their children; disabled-control contrast is not claimed. Original browser source and registration retained. No samples or source changed.

@@ -19,7 +19,7 @@
 .ui-toast[data-tone=success] { border-color:var(--good); }
 .ui-toast[data-tone=warning],.ui-banner[data-tone=warning] { border-color:var(--key); }
 .ui-toast[data-tone=error],.ui-banner[data-tone=error],.ui-banner[data-tone=offline] { border-color:var(--bad); }
-.ui-toast strong { font-family:var(--font-display); }
+.ui-toast strong {  }
 .ui-toast span,.ui-banner-message { flex:1; overflow-wrap:anywhere; }
 .ui-toast button { border:1px solid var(--border); background:var(--surface); color:var(--text); width:36px; min-height:36px; flex-shrink:0; cursor:pointer; }
 .ui-empty { display:grid; place-content:center; justify-items:center; gap:var(--sp-3,12px); padding:var(--sp-5,24px); text-align:center; color:var(--muted); }

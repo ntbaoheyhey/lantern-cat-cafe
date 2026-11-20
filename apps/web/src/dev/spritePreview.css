@@ -1,6 +1,6 @@
 /* Dev-only sprite preview (/?dev=sprites). */
 .sprite-preview { padding: 16px; color: var(--text); background: var(--bg); min-height: 100vh; }
-.sprite-preview h1 { font-family: var(--font-display); color: var(--accent); margin: 0 0 4px; }
+.sprite-preview h1 {  color: var(--accent); margin: 0 0 4px; }
 .sprite-preview p { margin: 0 0 12px; color: var(--muted); max-width: 70ch; }
 .sprite-controls { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: end; margin-bottom: 12px; }
 .sprite-controls label { display: flex; flex-direction: column; gap: 2px; font: 0.75rem var(--font-num); color: var(--muted); }

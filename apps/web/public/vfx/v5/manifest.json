@@ -1,0 +1,686 @@
+{
+  "ambience-dust-motes": {
+    "file": "ambience-dust-motes.webp",
+    "cols": 4,
+    "rows": 4,
+    "frameMs": 80,
+    "blend": "add",
+    "anchor": "ground",
+    "sizePx": 256
+  },
+  "ambience-light-shafts": {
+    "file": "ambience-light-shafts.webp",
+    "cols": 4,
+    "rows": 4,
+    "frameMs": 90,
+    "blend": "add",
+    "anchor": "ground",
+    "sizePx": 256
+  },
+  "aura-attack-buff": {
+    "file": "aura-attack-buff.webp",
+    "cols": 4,
+    "rows": 4,
+    "frameMs": 50,
+    "blend": "add",
+    "anchor": "caster",
+    "sizePx": 256
+  },
+  "aura-fire-buff": {
+    "file": "aura-fire-buff.webp",
+    "cols": 4,
+    "rows": 4,
+    "frameMs": 50,
+    "blend": "add",
+    "anchor": "caster",
+    "sizePx": 256
+  },
+  "aura-heal-regen": {
+    "file": "aura-heal-regen.webp",
+    "cols": 4,
+    "rows": 4,
+    "frameMs": 50,
+    "blend": "add",
+    "anchor": "caster",
+    "sizePx": 256
+  },
+  "aura-shield-ward": {
+    "file": "aura-shield-ward.webp",
+    "cols": 4,
+    "rows": 4,
+    "frameMs": 50,
+    "blend": "add",
+    "anchor": "caster",
+    "sizePx": 256
+  },
+  "clover-anticipation": {
+    "file": "clover-anticipation.webp",
+    "cols": 1,
+    "rows": 1,
+    "frameMs": 50,
+    "blend": "add",
+    "anchor": "caster",
+    "sizePx": 256
+  },
+  "clover-crit-burst": {
+    "file": "clover-crit-burst.webp",
+    "cols": 4,
+    "rows": 4,
+    "frameMs": 40,
+    "blend": "add",
+    "anchor": "target",
+    "sizePx": 256
+  },
+  "clover-decal": {
+    "file": "clover-decal.webp",
+    "cols": 1,
+    "rows": 1,
+    "frameMs": 50,
+    "blend": "add",
+    "anchor": "ground",
+    "sizePx": 512
+  },
+  "clover-impact": {
+    "file": "clover-impact.webp",
+    "cols": 4,
+    "rows": 4,
+    "frameMs": 40,
+    "blend": "add",
+    "anchor": "target",
+    "sizePx": 128
+  },
+  "clover-particle-1": {
+    "file": "clover-particle-1.webp",
+    "cols": 1,
+    "rows": 1,
+    "frameMs": 50,
+    "blend": "add",
+    "anchor": "target",
+    "sizePx": 128
+  },
+  "clover-particle-2": {
+    "file": "clover-particle-2.webp",
+    "cols": 1,
+    "rows": 1,
+    "frameMs": 50,
+    "blend": "add",
+    "anchor": "target",
+    "sizePx": 128
+  },
+  "clover-particle-3": {
+    "file": "clover-particle-3.webp",
+    "cols": 1,
+    "rows": 1,
+    "frameMs": 50,
+    "blend": "add",
+    "anchor": "target",
+    "sizePx": 128
+  },
+  "clover-projectile": {
+    "file": "clover-projectile.webp",
+    "cols": 1,
+    "rows": 1,
+    "frameMs": 50,
+    "blend": "add",
+    "anchor": "caster",
+    "sizePx": 256
+  },
+  "clover-ult-charge": {
+    "file": "clover-ult-charge.webp",
+    "cols": 4,
+    "rows": 4,
+    "frameMs": 50,
+    "blend": "add",
+    "anchor": "caster",
+    "sizePx": 256
+  },
+  "clover-ult-release": {
+    "file": "clover-ult-release.webp",
+    "cols": 4,
+    "rows": 4,
+    "frameMs": 40,
+    "blend": "add",
+    "anchor": "target",
+    "sizePx": 256
+  },
+  "crit-impact-burst": {
+    "file": "crit-impact-burst.webp",
+    "cols": 4,
+    "rows": 4,
+    "frameMs": 40,
+    "blend": "add",
+    "anchor": "target",
+    "sizePx": 128
+  },
+  "crit-spark-flare": {
+    "file": "crit-spark-flare.webp",
+    "cols": 1,
+    "rows": 1,
+    "frameMs": 50,
+    "blend": "add",
+    "anchor": "target",
+    "sizePx": 256
+  },
+  "enemy-death-dissolve": {
+    "file": "enemy-death-dissolve.webp",
+    "cols": 1,
+    "rows": 1,
+    "frameMs": 50,
+    "blend": "normal",
+    "anchor": "target",
+    "sizePx": 512
+  },
+  "enemy-hit-spark-1": {
+    "file": "enemy-hit-spark-1.webp",
+    "cols": 1,
+    "rows": 1,
+    "frameMs": 40,
+    "blend": "add",
+    "anchor": "target",
+    "sizePx": 128
+  },
+  "enemy-hit-spark-2": {
+    "file": "enemy-hit-spark-2.webp",
+    "cols": 1,
+    "rows": 1,
+    "frameMs": 40,
+    "blend": "add",
+    "anchor": "target",
+    "sizePx": 128
+  },
+  "enemy-hit-spark-3": {
+    "file": "enemy-hit-spark-3.webp",
+    "cols": 1,
+    "rows": 1,
+    "frameMs": 40,
+    "blend": "add",
+    "anchor": "target",
+    "sizePx": 128
+  },
+  "hit-stop-flash-gold": {
+    "file": "hit-stop-flash-gold.webp",
+    "cols": 1,
+    "rows": 1,
+    "frameMs": 50,
+    "blend": "add",
+    "anchor": "target",
+    "sizePx": 256
+  },
+  "hit-stop-flash-white": {
+    "file": "hit-stop-flash-white.webp",
+    "cols": 1,
+    "rows": 1,
+    "frameMs": 50,
+    "blend": "add",
+    "anchor": "target",
+    "sizePx": 256
+  },
+  "impact-burst-gen": {
+    "anchor": "target",
+    "blend": "add",
+    "cols": 4,
+    "file": "impact-burst-gen.webp",
+    "frameMs": 50,
+    "rows": 4,
+    "sizePx": 256
+  },
+  "impact-burst-proc": {
+    "anchor": "target",
+    "blend": "add",
+    "cols": 4,
+    "file": "impact-burst-proc.webp",
+    "frameMs": 50,
+    "rows": 4,
+    "sizePx": 128
+  },
+  "mochi-anticipation": {
+    "file": "mochi-anticipation.webp",
+    "cols": 1,
+    "rows": 1,
+    "frameMs": 50,
+    "blend": "add",
+    "anchor": "caster",
+    "sizePx": 256
+  },
+  "mochi-crit-burst": {
+    "file": "mochi-crit-burst.webp",
+    "cols": 4,
+    "rows": 4,
+    "frameMs": 40,
+    "blend": "add",
+    "anchor": "target",
+    "sizePx": 256
+  },
+  "mochi-decal": {
+    "file": "mochi-decal.webp",
+    "cols": 1,
+    "rows": 1,
+    "frameMs": 50,
+    "blend": "add",
+    "anchor": "ground",
+    "sizePx": 512
+  },
+  "mochi-impact": {
+    "file": "mochi-impact.webp",
+    "cols": 4,
+    "rows": 4,
+    "frameMs": 40,
+    "blend": "add",
+    "anchor": "target",
+    "sizePx": 128
+  },
+  "mochi-particle-1": {
+    "file": "mochi-particle-1.webp",
+    "cols": 1,
+    "rows": 1,
+    "frameMs": 50,
+    "blend": "add",
+    "anchor": "target",
+    "sizePx": 128
+  },
+  "mochi-particle-2": {
+    "file": "mochi-particle-2.webp",
+    "cols": 1,
+    "rows": 1,
+    "frameMs": 50,
+    "blend": "add",
+    "anchor": "target",
+    "sizePx": 128
+  },
+  "mochi-particle-3": {
+    "file": "mochi-particle-3.webp",
+    "cols": 1,
+    "rows": 1,
+    "frameMs": 50,
+    "blend": "add",
+    "anchor": "target",
+    "sizePx": 128
+  },
+  "mochi-slash": {
+    "file": "mochi-slash.webp",
+    "cols": 4,
+    "rows": 4,
+    "frameMs": 40,
+    "blend": "add",
+    "anchor": "caster",
+    "sizePx": 128
+  },
+  "mochi-ult-charge": {
+    "file": "mochi-ult-charge.webp",
+    "cols": 4,
+    "rows": 4,
+    "frameMs": 50,
+    "blend": "add",
+    "anchor": "caster",
+    "sizePx": 256
+  },
+  "mochi-ult-release": {
+    "file": "mochi-ult-release.webp",
+    "cols": 4,
+    "rows": 4,
+    "frameMs": 40,
+    "blend": "add",
+    "anchor": "caster",
+    "sizePx": 256
+  },
+  "panko-anticipation": {
+    "file": "panko-anticipation.webp",
+    "cols": 1,
+    "rows": 1,
+    "frameMs": 50,
+    "blend": "add",
+    "anchor": "caster",
+    "sizePx": 256
+  },
+  "panko-crit-burst": {
+    "file": "panko-crit-burst.webp",
+    "cols": 4,
+    "rows": 4,
+    "frameMs": 40,
+    "blend": "add",
+    "anchor": "target",
+    "sizePx": 256
+  },
+  "panko-decal": {
+    "file": "panko-decal.webp",
+    "cols": 1,
+    "rows": 1,
+    "frameMs": 50,
+    "blend": "add",
+    "anchor": "ground",
+    "sizePx": 512
+  },
+  "panko-impact": {
+    "file": "panko-impact.webp",
+    "cols": 4,
+    "rows": 4,
+    "frameMs": 40,
+    "blend": "add",
+    "anchor": "target",
+    "sizePx": 128
+  },
+  "panko-particle-1": {
+    "file": "panko-particle-1.webp",
+    "cols": 1,
+    "rows": 1,
+    "frameMs": 50,
+    "blend": "add",
+    "anchor": "target",
+    "sizePx": 128
+  },
+  "panko-particle-2": {
+    "file": "panko-particle-2.webp",
+    "cols": 1,
+    "rows": 1,
+    "frameMs": 50,
+    "blend": "add",
+    "anchor": "target",
+    "sizePx": 128
+  },
+  "panko-particle-3": {
+    "file": "panko-particle-3.webp",
+    "cols": 1,
+    "rows": 1,
+    "frameMs": 50,
+    "blend": "add",
+    "anchor": "target",
+    "sizePx": 128
+  },
+  "panko-slash": {
+    "file": "panko-slash.webp",
+    "cols": 4,
+    "rows": 4,
+    "frameMs": 40,
+    "blend": "add",
+    "anchor": "caster",
+    "sizePx": 128
+  },
+  "panko-ult-charge": {
+    "file": "panko-ult-charge.webp",
+    "cols": 4,
+    "rows": 4,
+    "frameMs": 50,
+    "blend": "add",
+    "anchor": "caster",
+    "sizePx": 256
+  },
+  "panko-ult-release": {
+    "file": "panko-ult-release.webp",
+    "cols": 4,
+    "rows": 4,
+    "frameMs": 40,
+    "blend": "add",
+    "anchor": "target",
+    "sizePx": 256
+  },
+  "plate-damage-crit": {
+    "file": "plate-damage-crit.webp",
+    "cols": 1,
+    "rows": 1,
+    "frameMs": 50,
+    "blend": "add",
+    "anchor": "target",
+    "sizePx": 256
+  },
+  "plate-damage-normal": {
+    "file": "plate-damage-normal.webp",
+    "cols": 1,
+    "rows": 1,
+    "frameMs": 50,
+    "blend": "add",
+    "anchor": "target",
+    "sizePx": 256
+  },
+  "plate-heal-glow": {
+    "file": "plate-heal-glow.webp",
+    "cols": 1,
+    "rows": 1,
+    "frameMs": 50,
+    "blend": "add",
+    "anchor": "target",
+    "sizePx": 256
+  },
+  "soot-anticipation": {
+    "file": "soot-anticipation.webp",
+    "cols": 1,
+    "rows": 1,
+    "frameMs": 50,
+    "blend": "add",
+    "anchor": "caster",
+    "sizePx": 256
+  },
+  "soot-crit-burst": {
+    "file": "soot-crit-burst.webp",
+    "cols": 4,
+    "rows": 4,
+    "frameMs": 40,
+    "blend": "add",
+    "anchor": "target",
+    "sizePx": 256
+  },
+  "soot-decal": {
+    "file": "soot-decal.webp",
+    "cols": 1,
+    "rows": 1,
+    "frameMs": 50,
+    "blend": "add",
+    "anchor": "ground",
+    "sizePx": 512
+  },
+  "soot-impact": {
+    "file": "soot-impact.webp",
+    "cols": 4,
+    "rows": 4,
+    "frameMs": 40,
+    "blend": "add",
+    "anchor": "target",
+    "sizePx": 128
+  },
+  "soot-particle-1": {
+    "file": "soot-particle-1.webp",
+    "cols": 1,
+    "rows": 1,
+    "frameMs": 50,
+    "blend": "add",
+    "anchor": "target",
+    "sizePx": 128
+  },
+  "soot-particle-2": {
+    "file": "soot-particle-2.webp",
+    "cols": 1,
+    "rows": 1,
+    "frameMs": 50,
+    "blend": "add",
+    "anchor": "target",
+    "sizePx": 128
+  },
+  "soot-particle-3": {
+    "file": "soot-particle-3.webp",
+    "cols": 1,
+    "rows": 1,
+    "frameMs": 50,
+    "blend": "add",
+    "anchor": "target",
+    "sizePx": 128
+  },
+  "soot-projectile": {
+    "file": "soot-projectile.webp",
+    "cols": 1,
+    "rows": 1,
+    "frameMs": 50,
+    "blend": "add",
+    "anchor": "caster",
+    "sizePx": 256
+  },
+  "soot-ult-charge": {
+    "file": "soot-ult-charge.webp",
+    "cols": 4,
+    "rows": 4,
+    "frameMs": 50,
+    "blend": "add",
+    "anchor": "caster",
+    "sizePx": 256
+  },
+  "soot-ult-release": {
+    "file": "soot-ult-release.webp",
+    "cols": 4,
+    "rows": 4,
+    "frameMs": 40,
+    "blend": "add",
+    "anchor": "target",
+    "sizePx": 256
+  },
+  "status-burn-loop": {
+    "file": "status-burn-loop.webp",
+    "cols": 4,
+    "rows": 4,
+    "frameMs": 50,
+    "blend": "add",
+    "anchor": "target",
+    "sizePx": 128
+  },
+  "status-poison-loop": {
+    "file": "status-poison-loop.webp",
+    "cols": 4,
+    "rows": 4,
+    "frameMs": 60,
+    "blend": "add",
+    "anchor": "target",
+    "sizePx": 128
+  },
+  "status-slow-loop": {
+    "file": "status-slow-loop.webp",
+    "cols": 4,
+    "rows": 4,
+    "frameMs": 70,
+    "blend": "add",
+    "anchor": "target",
+    "sizePx": 128
+  },
+  "status-stun-loop": {
+    "file": "status-stun-loop.webp",
+    "cols": 4,
+    "rows": 4,
+    "frameMs": 50,
+    "blend": "add",
+    "anchor": "target",
+    "sizePx": 128
+  },
+  "util-glow-dot-128": {
+    "file": "util-glow-dot-128.webp",
+    "cols": 1,
+    "rows": 1,
+    "frameMs": 50,
+    "blend": "add",
+    "anchor": "target",
+    "sizePx": 128
+  },
+  "util-glow-dot-64": {
+    "file": "util-glow-dot-64.webp",
+    "cols": 1,
+    "rows": 1,
+    "frameMs": 50,
+    "blend": "add",
+    "anchor": "target",
+    "sizePx": 64
+  },
+  "util-heal-plus": {
+    "file": "util-heal-plus.webp",
+    "cols": 1,
+    "rows": 1,
+    "frameMs": 50,
+    "blend": "add",
+    "anchor": "target",
+    "sizePx": 128
+  },
+  "util-leaf-particle": {
+    "file": "util-leaf-particle.webp",
+    "cols": 1,
+    "rows": 1,
+    "frameMs": 50,
+    "blend": "add",
+    "anchor": "target",
+    "sizePx": 128
+  },
+  "util-noise-tile": {
+    "file": "util-noise-tile.webp",
+    "cols": 1,
+    "rows": 1,
+    "frameMs": 50,
+    "blend": "normal",
+    "anchor": "target",
+    "sizePx": 256
+  },
+  "util-shield-hex-ripple": {
+    "file": "util-shield-hex-ripple.webp",
+    "cols": 4,
+    "rows": 4,
+    "frameMs": 40,
+    "blend": "add",
+    "anchor": "caster",
+    "sizePx": 128
+  },
+  "util-star-sparkle": {
+    "file": "util-star-sparkle.webp",
+    "cols": 4,
+    "rows": 4,
+    "frameMs": 50,
+    "blend": "add",
+    "anchor": "target",
+    "sizePx": 128
+  },
+  "vignette-damage-red": {
+    "file": "vignette-damage-red.webp",
+    "cols": 1,
+    "rows": 1,
+    "frameMs": 50,
+    "blend": "add",
+    "anchor": "target",
+    "sizePx": 512
+  },
+  "vignette-heal-green": {
+    "file": "vignette-heal-green.webp",
+    "cols": 1,
+    "rows": 1,
+    "frameMs": 50,
+    "blend": "add",
+    "anchor": "target",
+    "sizePx": 512
+  },
+  "vignette-ult-gold": {
+    "file": "vignette-ult-gold.webp",
+    "cols": 1,
+    "rows": 1,
+    "frameMs": 50,
+    "blend": "add",
+    "anchor": "target",
+    "sizePx": 512
+  },
+  "yarn-giant-charge-swirl": {
+    "file": "yarn-giant-charge-swirl.webp",
+    "cols": 4,
+    "rows": 4,
+    "frameMs": 50,
+    "blend": "add",
+    "anchor": "caster",
+    "sizePx": 128
+  },
+  "yarn-giant-ground-crack": {
+    "file": "yarn-giant-ground-crack.webp",
+    "cols": 1,
+    "rows": 1,
+    "frameMs": 50,
+    "blend": "add",
+    "anchor": "ground",
+    "sizePx": 512
+  },
+  "yarn-giant-shockwave-ring": {
+    "file": "yarn-giant-shockwave-ring.webp",
+    "cols": 4,
+    "rows": 4,
+    "frameMs": 40,
+    "blend": "add",
+    "anchor": "target",
+    "sizePx": 128
+  }
+}

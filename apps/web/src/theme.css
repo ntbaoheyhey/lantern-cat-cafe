@@ -47,21 +47,21 @@
   --hud-height: 56px;
 }
 body {
-  font-family: var(--font-body);
+  
   font-size: var(--fs-sm, .875rem);
   line-height: 1.5;
 }
-h1, h2, h3, .tab, .toggle { font-family: var(--font-display); }
+h1, h2, h3, .tab, .toggle {  }
 h1, h2, h3 { letter-spacing: .02em; }
 h1 { font-size: var(--fs-xl, 1.5rem); }
 h2 { font-size: var(--fs-lg, 1.25rem); }
 h3 { font-size: var(--fs-md, 1rem); }
 .num, [data-num] {
-  font-family: var(--font-num);
+  
   font-variant-numeric: tabular-nums;
 }
 .label-uppercase {
-  font-family: var(--font-display);
+  
   font-size: var(--fs-xs, .75rem);
   letter-spacing: .06em;
   text-transform: uppercase;
@@ -139,4 +139,4 @@ a { color: var(--accent); text-underline-offset: 3px; }
 .toggle[aria-expanded='true'] { color: var(--on-accent); }
 .forge-btn:not(.forge-go), .help-start { color: var(--on-accent); border-radius: 0; border: var(--pixel-border); box-shadow: 0 3px 0 #000; }
 .inv-slot, .forge-result, .forge-today, .boss-outcome { border-radius: 0; border-width: 2px; box-shadow: var(--pixel-shadow); }
-.hud { color: var(--gold); font-family: var(--font-num); }
+.hud { color: var(--gold);  }

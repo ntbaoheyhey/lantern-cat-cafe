@@ -1,0 +1,165 @@
+/* Evening Atelier: presentation only. Keep the approved rail/HUD geometry. */
+@import './tokens.css';
+.app-shell[data-has-rail=true] {
+  --bg:var(--v-ink); --surface:var(--v-night); --surface-2:var(--v-dusk); --surface-3:var(--v-slate);
+  --border:var(--v-slate); --text:var(--v-paper); --muted:var(--v-common);
+  --accent:var(--v-gold); --gold:var(--v-gold); --on-accent:var(--v-ink); --focus:var(--v-cream);
+  --rarity-rare-text:var(--v-rare);
+  --rarity-epic-text:var(--v-epic);
+  --pixel-shadow:0 4px 0 var(--v-coffee),0 12px 24px #12152244;
+  background:var(--v-ink);
+}
+.app-shell[data-has-rail=true] .shell-body { background:var(--v-ink); }
+.app-shell[data-has-rail=true] .shell-rail { background:linear-gradient(90deg,var(--v-coffee),var(--v-night)); border-right-color:var(--v-wood); }
+.app-shell[data-has-rail=true] .shell-hud { background:linear-gradient(var(--v-dusk),var(--v-night)); box-shadow:inset 0 1px #8495ae33,0 2px 12px #12152255; border-bottom-color:var(--v-wood); }
+.app-shell[data-has-rail=true] .shell-context { background:var(--v-night); border-bottom-color:var(--v-wood); gap:12px; }
+.visual-build-label { color:var(--muted); font:11px/1.3 var(--font-body); letter-spacing:.02em; white-space:nowrap; margin-right:auto; }
+.app-shell[data-has-rail=true] .hud-chip { background:var(--v-ink); border-color:var(--v-slate); box-shadow:inset 0 -2px var(--v-coffee); }
+.app-shell[data-has-rail=true] .hud-chip-val { color:var(--v-cream); }
+.app-shell[data-has-rail=true] .v2-hint { border-color:var(--v-woodLight); background:var(--v-walnut); }
+.app-shell[data-has-rail=true] :is(.home-card,.forge-card,.bag-main,.bag-detail,.detail-item-card,.market-card,.boss-gate-panel,.character-card,.pixel-card) {
+  background:var(--v-night);
+  border-color:var(--v-slate); border-top-color:var(--v-mist);
+  box-shadow:inset 0 1px #fff1d60b,0 3px 0 var(--v-coffee),0 10px 22px #12152240;
+}
+.app-shell[data-has-rail=true] :is(.home-card__title,.forge-section-title,.detail-title h3,.market-card h3) { color:var(--v-cream); }
+.app-shell[data-has-rail=true] :is(.home-card__header,.detail-section,.forge-confirm-box) { border-color:var(--v-slate); }
+.app-shell[data-has-rail=true] .home-card--hero { background:var(--v-night); border-top-color:var(--v-copper); }
+.app-shell[data-has-rail=true] .home-card--hero .home-card__header { gap:10px; }
+.app-shell[data-has-rail=true] .home-hero-card__avatar { width:96px; height:96px; background:radial-gradient(ellipse,#f5cb7b25,transparent 70%); border:0; }
+.app-shell[data-has-rail=true] .home-hero-card__meta { min-width:0; }
+.app-shell[data-has-rail=true] .home-hero-card__meta h2 { font-size:24px; }
+.app-shell[data-has-rail=true] .home-hero-card__power { color:var(--v-gold); font-size:12px; }
+.app-shell[data-has-rail=true] .home-hero-stat-row { padding-block:3px; }
+.app-shell[data-has-rail=true] .home-card__subtitle { color:var(--v-mist);  font-size:11px; letter-spacing:.12em; text-transform:uppercase; }
+.app-shell[data-has-rail=true] .home-stage-wrap { border-color:var(--v-woodLight); background:var(--v-night); box-shadow:inset 0 0 0 3px var(--v-coffee),0 12px 26px #12152270; }
+.app-shell .v2-stage-art { isolation:isolate; }
+.app-shell .stage-progress { z-index:4; inset:10px 12px auto; }
+.app-shell .stage-progress > span { background:var(--v-ink); border:1px solid var(--v-slate); border-radius:0; padding:5px 8px; color:var(--v-paper); }
+.app-shell .stage-preview { z-index:4; background:var(--v-ink); border-left:2px solid var(--v-gold); padding:4px 7px; bottom:6px; }
+.app-shell .stage-moment { background:var(--v-ink); border:1px solid var(--v-woodLight); }
+.app-shell .stage-moment:empty { border:0; }
+.app-shell .home-col--center > :last-child { border-top-color:var(--v-woodLight); }
+.app-shell[data-has-rail=true] button { transition:background-color 140ms,border-color 140ms,box-shadow 140ms; }
+.app-shell[data-has-rail=true] button:not(:disabled):hover { border-color:var(--v-gold); }
+.app-shell[data-has-rail=true] :is(.pixel-btn,.forge-btn-primary,.detail-actions button):not(:disabled):active { transform:translateY(1px); }
+.app-shell[data-has-rail=true] :is(.pixel-btn,.forge-btn-primary) { background:var(--v-cream); color:var(--v-ink); box-shadow:inset 0 2px var(--v-paper),0 3px var(--v-rust); border-color:var(--v-coffee); }
+.app-shell[data-has-rail=true] .rail-item[aria-selected=true] { background:linear-gradient(90deg,var(--v-wood),var(--v-night)); border-color:var(--v-woodLight); box-shadow:inset 3px 0 var(--v-gold); }
+/* A clear stage for collectible art; each quality has a text label as well. */
+.app-shell [data-rarity=common], .app-shell .rarity-common { --quality:var(--v-common); }
+.app-shell [data-rarity=uncommon], .app-shell .rarity-uncommon { --quality:var(--v-sage); }
+.app-shell [data-rarity=rare], .app-shell .rarity-rare { --quality:var(--v-rare); }
+.app-shell [data-rarity=epic], .app-shell .rarity-epic { --quality:var(--v-epic); }
+.app-shell [data-rarity=legendary], .app-shell .rarity-legendary { --quality:var(--v-gold); }
+.app-shell[data-has-rail=true] :is(.bag-tile,.detail-art,.relic-tile,.forge-preview-art) {
+  position:relative; isolation:isolate; background:radial-gradient(ellipse at 50% 60%,color-mix(in srgb,var(--quality,var(--v-gold)) 22%,transparent),transparent 70%),var(--v-ink);
+  box-shadow:inset 0 0 0 2px var(--v-ink),inset 0 0 0 3px color-mix(in srgb,var(--quality,var(--v-common)) 30%,transparent),0 4px 0 var(--v-coffee);
+}
+.app-shell :is(.bag-tile,.detail-art)[data-rarity=epic]::after,
+.app-shell :is(.bag-tile,.detail-art)[data-rarity=legendary]::after {
+  content:''; position:absolute; inset:3px; pointer-events:none; background:linear-gradient(115deg,transparent 40%,#fff1d627 49%,transparent 58%); background-size:300% 100%; animation:atelier-shimmer 8s ease-in-out infinite;
+}
+.app-shell :is(.bag-tile,.detail-art)[data-rarity=legendary]::before { content:'✦'; position:absolute; right:3px; top:0; font-size:12px; color:var(--v-gold); text-shadow:-25px 29px var(--v-cream); animation:atelier-spark 5s ease-in-out infinite; }
+.app-shell .bag-card.selected { background:var(--v-dusk); box-shadow:inset 0 0 0 2px var(--v-gold); }
+.app-shell .bag-empty { background:linear-gradient(135deg,var(--v-dusk),var(--v-night)); }
+.app-shell .detail-art { min-width:80px; width:80px; height:80px; display:grid; place-items:center; }
+.app-shell .detail-art > * { transform:scale(2); image-rendering:pixelated; }
+.app-shell .detail-head { align-items:center; gap:14px; }
+/* The forge gets its own warm light and a small, physical workshop. */
+.app-shell[data-has-rail=true] .forge-col-centre {
+  background:var(--v-walnut)!important;
+  border-color:var(--v-woodLight); border-top-color:var(--v-copper); box-shadow:inset 0 0 0 3px var(--v-coffee),0 6px 0 var(--v-coffee);
+}
+.app-shell .forge-preview-slot { position:relative; width:100%; isolation:isolate; }
+.forge-hearth { display:block; position:absolute; width:320px; height:240px; image-rendering:pixelated; left:50%; bottom:-35px; transform:translateX(-50%); z-index:-1; pointer-events:none; }
+.app-shell .forge-preview-art { background:radial-gradient(ellipse,#f5cb7b33,transparent 65%); border-color:var(--v-copper); box-shadow:0 0 35px #f5cb7b20,inset 0 0 0 3px var(--v-ink); }
+.app-shell .forge-candidate-preview { position:relative; z-index:1; background:var(--v-night); padding:8px; border:1px solid var(--v-wood); }
+.app-shell .forge-preview-name { color:var(--v-cream); }
+.app-shell .forge-result-reveal { position:relative; overflow:hidden; background:radial-gradient(ellipse at top,#f5cb7b30,transparent 65%),var(--v-night); border-color:var(--v-gold); box-shadow:0 0 24px #f5cb7b16; }
+.app-shell .forge-result-reveal::after { content:''; position:absolute; inset:0; background:linear-gradient(115deg,transparent 40%,#fff1d62b 49%,transparent 58%); background-size:300% 100%; animation:atelier-reveal 700ms ease-out both; pointer-events:none; }
+.app-shell .forge-result-reveal:has(.rarity-epic,.rarity-legendary) { box-shadow:0 0 30px #f5cb7b40,inset 0 0 0 2px var(--v-gold); }
+.app-shell .market-detail-hero { padding:12px; background:radial-gradient(ellipse at 20% 50%,#f5cb7b22,transparent 70%),var(--v-ink); border:1px solid var(--v-woodLight); }
+.app-shell .market-detail-hero img { width:96px; height:96px; image-rendering:pixelated; padding:8px; box-sizing:content-box; background:radial-gradient(ellipse,#f5cb7b30,transparent 70%); }
+.app-shell .market-table td:first-child img { width:40px; height:40px; image-rendering:pixelated; margin-right:8px; }
+.app-shell .market-table tr.selected td { background:var(--v-wood); border-block-color:var(--v-gold); }
+.app-shell .market-relics img { image-rendering:pixelated; }
+.app-shell .boss-arena-stage { border:2px solid var(--v-copper); border-radius:0; box-shadow:inset 0 0 0 2px var(--v-ink),0 6px 0 var(--v-coffee); }
+.app-shell .boss-arena { padding:12px; background:var(--v-night); border:1px solid var(--v-woodLight); }
+.app-shell .v2-fight-result { background:radial-gradient(ellipse at 50% 30%,#121522d9,#121522f5); }
+@keyframes atelier-shimmer { 0%,75%{background-position:100% 0} 100%{background-position:0 0} }
+@keyframes atelier-spark { 0%,100%{opacity:.3} 50%{opacity:1} }
+@keyframes atelier-reveal { 0%{opacity:0;background-position:100% 0} 25%{opacity:1} 100%{opacity:0;background-position:0 0} }
+@media(min-width:1280px) { .app-shell .home-card--hero { padding:10px 12px; } }
+@media(prefers-reduced-motion:reduce) {
+  .app-shell[data-has-rail=true] *, .app-shell[data-has-rail=true] *::before, .app-shell[data-has-rail=true] *::after { transition:none!important; }
+  .app-shell :is(.bag-tile,.detail-art)::after,.app-shell :is(.bag-tile,.detail-art)::before,.app-shell .forge-result-reveal::after { animation:none!important; opacity:0; }
+}
+
+/* The hearth stays on the same integer grid as its 3x item. */
+.app-shell .forge-preview-slot { height:200px; min-height:200px; margin-bottom:12px; border:0; background:none; box-shadow:none; }
+.app-shell .forge-preview-art { transform:translateY(-48px); }
+.app-shell .forge-hearth { width:480px; height:360px; bottom:-22px; }
+.app-shell .forge-preview-art .forge-frame { opacity:.25; }
+.app-shell .forge-preview-glyph { filter:drop-shadow(0 0 12px #f5cb7b55); }
+.app-shell .forge-preview-glyph > * { transform:scale(2); image-rendering:pixelated; }
+.app-shell .forge-preview-slot::before { content:''; position:absolute; inset:0; z-index:-1; background:radial-gradient(ellipse at 50% 45%,#f5cb7b22,transparent 55%); }
+.app-shell .forge-col-centre:has(.forge-result-reveal) .forge-preview-slot { height:130px; min-height:130px; }
+.app-shell .forge-col-centre[data-crafting=true] .forge-preview-art { animation:atelier-anticipate 480ms ease-in-out infinite alternate; }
+.app-shell .forge-result-reveal:has([data-rarity=epic],[data-rarity=legendary]) { border-color:var(--v-epic); box-shadow:0 0 28px #cfadf533,inset 0 0 0 2px var(--v-epic); }
+.app-shell .forge-result-reveal:has([data-rarity=legendary]) { border-color:var(--v-gold); box-shadow:0 0 36px #f5cb7b44,inset 0 0 0 2px var(--v-gold); }
+.app-shell .forge-result-reveal:has([data-rarity=legendary])::before { content:'✦'; float:right; color:var(--v-gold); font-size:24px; }
+/* Small, local fanfare: it never covers controls or changes layout. */
+.app-shell .hud-chip { position:relative; }
+.visual-gain { position:absolute; right:8px; top:22px; z-index:8; padding:2px 5px; color:var(--v-gold); background:var(--v-ink); border:1px solid var(--v-woodLight); font:12px var(--font-num); pointer-events:none; animation:atelier-gain 900ms ease-out both; }
+.app-shell .loot-item-art { position:relative; isolation:isolate; background:radial-gradient(ellipse,#f5cb7b35,transparent 65%); }
+.app-shell .loot-item-tile { background:var(--v-dusk); }
+.app-shell .loot-line-levelup { position:relative; }
+.app-shell .loot-line-levelup::after { content:''; position:absolute; inset:0; border:2px solid var(--v-gold); pointer-events:none; animation:atelier-ring 480ms ease-out both; }
+.app-shell .boss-map-card { background:var(--v-night); border-color:var(--v-slate); border-top-color:var(--v-mist); }
+@keyframes atelier-anticipate { from{filter:brightness(1);transform:translateY(-48px) scale(.98)} to{filter:brightness(1.18);transform:translateY(-48px) scale(1.02)} }
+@keyframes atelier-gain { 0%{opacity:0;transform:translate(-4px,4px)} 20%{opacity:1;transform:translate(0,0)} 80%{opacity:1} 100%{opacity:0;transform:translate(2px,-10px)} }
+@keyframes atelier-ring { from{opacity:.8;transform:scale(1)} to{opacity:0;transform:scale(1.06)} }
+@media(prefers-reduced-motion:reduce) {
+  .app-shell .forge-col-centre[data-crafting=true] .forge-preview-art { animation:none!important; }
+  .visual-gain { animation:none; }
+  .app-shell .loot-line-levelup::after { animation:none; display:none; }
+  .app-shell[data-has-rail=true] :is(.pixel-btn,.forge-btn-primary,.detail-actions button):active { transform:none; }
+}
+
+/* Cold-review corrections: readable art, a complete hearth and quiet arena controls. */
+@media(min-width:1280px) {
+  .app-shell .bag-icon > * { transform:scale(2); image-rendering:pixelated; }
+  .app-shell .home-stage-wrap::before { content:'CAT CAFÉ QUEST  /  EVENING PATROL'; position:absolute; top:10px; left:12px; z-index:4; color:var(--v-gold); font:11px var(--font-body); letter-spacing:.12em; }
+}
+.app-shell .forge-col-centre:has(.forge-result-reveal) .forge-hearth { width:320px; height:240px; bottom:-18px; }
+.app-shell .forge-col-centre:has(.forge-result-reveal) .forge-preview-art { transform:translateY(-18px); }
+.app-shell .forge-result-reveal { flex-shrink:0; padding:12px; }
+.app-shell .forge-reveal { font-size:13px; line-height:1.5; }
+.app-shell .forge-reveal strong { display:block; color:var(--v-cream); font-size:16px; }
+.app-shell .market-table th:first-child, .app-shell .market-table td:first-child { width:56px; min-width:56px; padding-inline:8px; }
+.app-shell .market-table td:first-child img { display:block; margin:0; }
+.app-shell .boss-arena { display:grid; gap:12px; }
+.app-shell .boss-arena p { margin:0; font-size:13px; color:var(--v-common); }
+.app-shell .boss-arena p[role=status] { color:var(--v-cream); }
+.app-shell .boss-arena button { background:var(--v-dusk); color:var(--v-paper); border:1px solid var(--v-slate);  }
+
+@media(min-width:1280px) { .app-shell .boss-arena-stage { width:768px; height:288px; aspect-ratio:auto; margin-inline:auto; } }
+@media(min-width:1920px) { .app-shell .boss-arena { max-width:1060px; } .app-shell .boss-arena-stage { width:1024px; height:384px; } }
+
+.app-shell[data-has-rail=true] .bag-equip-best.pixel-btn { background:var(--surface-2); color:var(--v-paper); box-shadow:inset 0 1px #8495ae33,0 3px var(--v-coffee); }
+/* Tooltip hints anchor to the original chip wrapper, not the painted recess. */
+.app-shell .hud-power-chip { position:static; }
+
+.app-shell .forge-rarity-btn:is(:hover,[aria-pressed=true]), .app-shell .forge-slot-btn:is(:hover,[aria-pressed=true]) { background:var(--v-dusk); }
+.app-shell .hero-paper-doll { background:var(--v-night); border-color:var(--v-woodLight); box-shadow:inset 0 3px var(--v-wood),0 4px var(--v-coffee); }
+.app-shell .forge-reveal { display:flex; align-items:center; gap:12px; text-align:left; }
+.app-shell .forge-reveal-art { display:grid; place-items:center; flex:none; width:64px; height:64px; border:1px solid var(--quality); background:var(--v-ink); box-shadow:inset 0 0 0 3px var(--v-dusk); }
+.app-shell .forge-reveal strong { font-size:14px; }
+.app-shell .forge-reveal small { display:block; color:var(--v-common); font-size:12px; line-height:1.4; margin-top:4px; }
+.atelier-arena-heading { display:flex; justify-content:space-between; align-items:center; gap:16px; }
+.atelier-arena-heading > span { color:var(--v-common); font:12px var(--font-body); }
+.atelier-arena-heading h2 { margin:0; color:var(--v-gold); font:700 22px var(--font-display); }
+.atelier-arena-health { display:flex; justify-content:space-between; }
+.atelier-arena-health strong { color:var(--v-cream); font:14px var(--font-num); margin-left:6px; }
+.app-shell .forge-preview-art { border:0; box-shadow:none; background:none; }
+.app-shell .forge-preview-art .forge-frame { visibility:hidden; }

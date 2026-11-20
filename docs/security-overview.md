@@ -1,6 +1,6 @@
-# Security overview
+# Security overview — DRAFT
 
-Taskbar Hero separates local guest play, authenticated server state and Fuji transactions. This is a source based overview, not a production penetration-test report. [Current evidence and limits](../reports/n2-security-docs.md) distinguish checked-in protections from deployed verification.
+Taskbar Hero separates local guest play, authenticated server state and Fuji transactions. This source overview describes integrated candidate `1eefc3e`; live remains `340f88b`. It is not a production penetration-test report. [Current evidence and limits](../reports/n2-security-docs.md) distinguish checked-in protections from deployed verification.
 
 ## Sign-in and identity
 
@@ -34,6 +34,15 @@ Help's public proof panel reads Fuji 43113 at the configured NFT `0xB1a1edb7A75D
 
 The [Deno import guard](../scripts/check-deno-imports.mjs) resolves each function's transitive imports with its own map; [deno-imports.test.ts](../supabase/tests/src/deno-imports.test.ts) detects missing map edges. The historical extensionless-import defect is repaired in merged source. [Bundle scanning](../scripts/check-bundle.mjs) rejects secret-looking output; it is a limited check, not a guarantee against every leak.
 
-PR #244 remains unmerged: a complete deployed Supabase function backup and tested restore path are unavailable. CLI export failed with UnsafeFunctionDownloadPathError. Partial files do not form a rollback bundle. The [owner recovery step](https://github.com/ntbaoheyhey/taskbar-hero/blob/ai/codex-mega-ledger/reports/OPTIONAL-USER-STEPS.md) requires supported recovery of source, dependencies and import maps, then local restoration testing. No backend deployment/migration or production flag change is authorized here.
+PR #244 remains unmerged: a complete deployed Supabase function backup and tested restore path are unavailable. CLI export failed with UnsafeFunctionDownloadPathError. Partial files do not form a rollback bundle. The [owner recovery step](https://github.com/ntbaoheyhey/taskbar-hero/blob/ai/codex-ui-ledger/reports/OPTIONAL-USER-STEPS.md) requires supported recovery of source, dependencies and import maps, then local restoration testing. No backend deployment/migration or production flag change is authorized here.
 
 Merged code, limited live health checks and deployed-source identity are separate claims. Live function identity, full policy enforcement and a fresh funded wallet journey remain NOT VERIFIED. This overview neither certifies an audit nor clears #244. See the [security test matrix](security-test-matrix.md) for source coverage and gaps.
+
+As of the [November 4 release check](release-status.md), two earlier public nonce HTTP 200 probes 628.63 seconds apart cleared the availability hold. The historical 502 cause remains unproven. Draft #269 adds nonce failure handling and client guidance; its edge source is not deployed, and this overview does not attribute those protections to production. Deployment capacity separately holds the frontend release.
+
+
+## Candidate nonce and user recovery behavior
+
+The integrated #269 source initializes nonce dependencies inside the request boundary. Missing configuration or a rejected database dependency returns a CORS-readable 503 with a 30-second Retry-After, no successful nonce response and a generic error. The browser retries only nonce issuance on bounded network/5xx failures, honors a supplied Retry-After by stopping, and never retries signed verification. These are source/local-test claims; the edge source is **not deployed**. A platform cold-start or indefinitely stalled upstream is not proven solved by a caught exception.
+
+Local route-mocked checks cover persistent dismissible wallet errors, expiry explanation, Enter/Escape/Cancel focus return, wrong-network guidance, connected HUD wrapping, offline and API 503. Synthetic wallets never sign. The integrated accessibility gate additionally checks Home semantics, empty Bag keyboard access, reward contrast and Forge confirmations. The [release receipt](release-status.md) retains failing earlier heads as well as final results.

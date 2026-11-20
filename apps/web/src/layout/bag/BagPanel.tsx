@@ -1,4 +1,7 @@
-import { useId, useRef, useState } from 'react';
+import { GearDecision, KeyItemStats } from '../../gameplay/GearDecision';
+import { RarityMark } from '../../gameplay/RarityMark';
+import { Art2Image } from '../../art/Art2';
+import { useEffect, useId, useRef, useState } from 'react';
 import type { GearSlotId, ItemV2, ServerStateV2 } from '../../api/GameApiV2';
 import type { ScreenId } from '../../nav/screens';
 import { ItemIcon } from '../ItemIcon';
@@ -14,6 +17,7 @@ import { compareItems, itemLines } from './compare';
 import { BAG_SORTS, sortBag, type BagSort } from './bagSort';
 import { equipBest, equipBlock } from './equipRules';
 import { ActionNotice } from '../notice/ActionNotice';
+import { scrollBoundaryKey } from '../../ui/scrollBoundaryKey';
 import './bag.css';
 
 /** The counter turns into a warning from this share of the bag limit. */
@@ -86,6 +90,14 @@ export function BagPanel({
   const [filter, setFilter] = useState<BagFilter>('all');
   const [selectedId, setSelectedId] = useState<string | null>(null);
 
+  const known = useRef(new Set(state.inventory.map(i => i.id)));
+  const [newIds, setNewIds] = useState<Set<string>>(new Set());
+  useEffect(() => {
+    const added = state.inventory.filter(i => !known.current.has(i.id));
+    known.current = new Set(state.inventory.map(i => i.id));
+    if (added.length) setNewIds(previous => new Set([...previous, ...added.map(i => i.id)]));
+  }, [state.inventory]);
+  const selectItem = (id: string) => { setSelectedId(id); setNewIds(previous => { const next = new Set(previous); next.delete(id); return next; }); };
   const slotRefs = useRef<(HTMLButtonElement | null)[]>([]);
 
   // The grid contains stored items; the authoritative capacity includes worn gear too.
@@ -137,7 +149,7 @@ export function BagPanel({
       case ' ': {
         e.preventDefault();
         const currentItem = filteredItems[index];
-        if (currentItem) setSelectedId(currentItem.id);
+        if (currentItem) selectItem(currentItem.id);
         return;
       }
       default:
@@ -202,7 +214,7 @@ export function BagPanel({
                 className="pixel-btn pixel-btn--secondary bag-equip-best"
                 disabled={upgrades.length === 0 || isLoopBusy}
                 aria-busy={isBusyEquip ? 'true' : 'false'}
-                title={upgrades.length === 0 ? 'Nothing in the bag is better than what you wear' : undefined}
+                title={upgrades.length === 0 ? 'No higher total item-stat score than what you wear' : 'Ranks total item stats, with percentages weighted ×100. Compare Offence and Survival before choosing.'}
                 onClick={() => upgrades.forEach((u) => onEquip(u.itemId, u.slot))}
               >
                 {isBusyEquip && <span className="btn-spinner" aria-hidden="true" />}
@@ -214,15 +226,16 @@ export function BagPanel({
           {upgrades.length === 0 && (
             <div className="bag-equip-note-row">
               <span className="bag-equip-best-note" data-testid="block-reason-equip-best">
-                Best gear already equipped
+                No higher total-stat score
               </span>
             </div>
           )}
 
           {/* Grid Area */}
-          <div className="bag-grid-container">
+          <div className="bag-grid-container" role="region" aria-label="Scrollable bag slots" tabIndex={0} onKeyDown={scrollBoundaryKey}>
             {bag.length === 0 && (
               <div className="bag-empty" data-testid="bag-empty">
+                <Art2Image id="bag-empty" />
                 <p>Your bag is empty.</p>
                 <p className="bag-empty-hint">Defeat monsters or visit the Forge to obtain gear.</p>
               </div>
@@ -241,7 +254,7 @@ export function BagPanel({
                     data-rarity={item.rarity}
                     aria-label={cardLabel(item)}
                     aria-pressed={item.id === selected?.id}
-                    onClick={() => setSelectedId(item.id)}
+                    onClick={() => selectItem(item.id)}
                     onKeyDown={(e) => handleSlotKeyDown(e, index)}
                     ref={(el) => {
                       slotRefs.current[index] = el;
@@ -266,7 +279,7 @@ export function BagPanel({
                           </svg>
                         </span>
                       )}
-                      <span className="bag-level">Lv {item.level}</span>
+                      <RarityMark rarity={item.rarity} />{newIds.has(item.id) && <span className="bag-new">New</span>}<span className="bag-level">Lv {item.level}</span>
                     </span>
                   </button>
                 </li>
@@ -358,7 +371,7 @@ function ItemDetail({
             data-rarity={item.rarity}
             style={{ borderColor: rarityColor(item.rarity) }}
           >
-            <ItemIcon item={item} size={2} />
+            <ItemIcon item={item} size={4} />
           </span>
           <div className="detail-title">
             <h3>{itemName(item.itemKey)}</h3>
@@ -368,7 +381,7 @@ function ItemDetail({
                 data-rarity={item.rarity}
                 style={{ borderColor: rarityColor(item.rarity) }}
               >
-                {RARITY_LABEL[item.rarity] ?? item.rarity}
+                <RarityMark rarity={item.rarity} /> {RARITY_LABEL[item.rarity] ?? item.rarity}
               </span>
               <span className="detail-meta">
                 Lv {item.level} · {SLOT_LABEL[item.slot] ?? item.slot}
@@ -377,6 +390,7 @@ function ItemDetail({
           </div>
         </div>
 
+        <KeyItemStats item={item} />
         <div className="detail-section">
           <h4 className="detail-section-heading">Stats</h4>
           <ul className="detail-lines" aria-label="Item lines">
@@ -453,6 +467,7 @@ function ItemDetail({
       </div>
       <div className="compare pixel-card">
         <h4>Compare with equipped</h4>
+        <GearDecision state={state} item={item} />
         <div className="compare-cols">
           <div className="compare-col current">
             <span className="compare-col-heading">Current</span>

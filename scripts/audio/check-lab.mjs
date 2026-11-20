@@ -1,0 +1,20 @@
+import {createRequire} from 'node:module';import {readFileSync,writeFileSync} from 'node:fs';import {createHash} from 'node:crypto';import assert from 'node:assert/strict';
+const require=createRequire(new URL('../../apps/web/package.json',import.meta.url)),{chromium}=require('@playwright/test'),B='reports/v3-shell/b2',url='http://127.0.0.1:5995/docs/audio-lab/index.html',errors=[],lines=[];
+const browser=await chromium.launch({headless:true,args:['--autoplay-policy=no-user-gesture-required']}),p=await browser.newPage({viewport:{width:1280,height:720}});
+p.on('pageerror',e=>errors.push(e.message));p.on('console',m=>{if(m.type()==='error')errors.push(m.text());});
+let seed=20261113;const random=()=>{seed=(Math.imul(seed,1664525)+1013904223)>>>0;return seed/2**32;};
+try{
+ await p.goto(url);await p.waitForFunction(()=>window.__audioLab);const mapped=[...new Set(JSON.parse(readFileSync(`${B}/SOUND-MAP.json`)).rows.map(r=>r.cueId))];
+ const listed=await p.locator('[data-cue]').evaluateAll(rows=>rows.map(r=>r.dataset.cue)),missingCueIds=mapped.filter(id=>!listed.includes(id));assert.equal(missingCueIds.length,0);lines.push(`PASS ${listed.length}/${mapped.length} mapped cues listed`);
+ const candidates=mapped.filter(id=>/^(ui\.|hit\.|kit\.|status\.|currency\.|item\.|tx\.|fusion\.)/.test(id)),chosen=[];
+ while(chosen.length<20){const id=candidates[Math.floor(random()*candidates.length)];if(!chosen.includes(id))chosen.push(id);}
+ for(const id of chosen){await p.locator('#filter').fill(id);const button=p.locator('[data-play]').filter({hasText:'Play'}).and(p.locator(`[data-play="${id}"]`));await button.click();await p.waitForFunction(id=>window.__audioLab.plays.some(r=>r.id===id),id);lines.push('PASS played '+id);}
+ await p.locator('#filter').fill('hit.blunt');const randomise=p.locator('[data-randomise="hit.blunt"]');await randomise.click();await p.waitForFunction(()=>!document.querySelector('[data-randomise="hit.blunt"]').disabled);
+ const hits=await p.evaluate(()=>window.__audioLab.plays.filter(r=>r.id==='hit.blunt').slice(-10));assert(hits.every((hit,i)=>!i||hit.layers.every((layer,j)=>layer.variantId!==hits[i-1].layers[j].variantId)));lines.push('PASS randomise 10x produces nonrepeating variants for every hit layer');
+ await p.getByRole('button',{name:'Stop all',exact:true}).click();
+ for(const cat of await p.locator('[data-voice]').evaluateAll(rows=>rows.map(r=>r.dataset.voice))){await p.getByRole('textbox',{name:`${cat} preview text`,exact:true}).fill('Ready for tea!');await p.locator(`[data-voice="${cat}"]`).click();await p.waitForFunction(cat=>window.__audioLab.preview.renders.some(r=>r.cat===cat),cat);await p.waitForTimeout(150);const rms=await p.evaluate(()=>{const m=window.__audioLab.preview.meter,a=new Float32Array(m.fftSize);m.getFloatTimeDomainData(a);return Math.sqrt(a.reduce((s,v)=>s+v*v,0)/a.length);});assert(rms>.00001,`${cat} preview is silent`);lines.push(`PASS editable voice ${cat}; output RMS ${rms.toFixed(5)}`);}
+ await p.getByRole('button',{name:'Stop all',exact:true}).click();await p.locator('#filter').fill('');await p.evaluate(()=>window.scrollTo(0,0));await p.screenshot({path:`${B}/shots/audio-lab.png`});
+ errors.push(...await p.evaluate(()=>window.__audioLab.errors));assert.equal(errors.length,0,errors.join('\n'));
+ const log=`${B}/tests/s7-static-browser.log`;writeFileSync(log,lines.join('\n')+'\n');const result={url,mappedCueCount:mapped.length,listedCueCount:listed.length,missingCueIds,playedCueIds:chosen,errors,log:{path:log,sha256:createHash('sha256').update(readFileSync(log)).digest('hex')},randomize:hits,voicePreviews:await p.evaluate(()=>window.__audioLab.preview.renders)};
+ writeFileSync(`${B}/AUDIO-LAB.json`,JSON.stringify(result,null,2)+'\n');console.log(`${lines.length} checks pass; ${listed.length} cues; 20 random plays; 12 editable voices.`);
+}catch(error){writeFileSync(`${B}/tests/s7-static-failure.log`,lines.join('\n')+'\n'+error.stack+'\n'+errors.join('\n'));throw error;}finally{await browser.close();}

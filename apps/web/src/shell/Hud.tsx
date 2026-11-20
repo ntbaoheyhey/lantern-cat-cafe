@@ -1,4 +1,8 @@
+import '../gameplay/gameplay.css';
+import { journeyGoals } from '../gameplay/goals';
 import React from 'react';
+import { ResourceGain } from '../visual/ResourceGain';
+import { MotionNumber } from '../motion/MotionNumber';
 import type { ServerStateV2 } from '../api/GameApiV2';
 import type { SyncStatusV2 } from '../game/v2/syncStatus';
 import { v2 } from '@taskbar-hero/game-rules';
@@ -17,6 +21,7 @@ export interface HudProps {
   hintText?: string;
   onHintAction?: () => void;
   mode?: { demo: boolean; notice: string | null };
+  sampleAdventure?: boolean;
 }
 
 export function Hud({
@@ -26,7 +31,9 @@ export function Hud({
   hintText,
   onHintAction,
   mode,
+  sampleAdventure = false,
 }: HudProps) {
+  const goals = sampleAdventure ? { soon: 'Sample: assemble a set', later: 'Sample: finish the journal' } : journeyGoals(state);
   const catKeyDef = v2.MATERIALS.find((m) => m.id === 'catKey');
   const maxKeys = catKeyDef ? catKeyDef.maxStack : 5;
   const title = <h1 className="v2-title">Taskbar Hero</h1>;
@@ -46,7 +53,7 @@ export function Hud({
   return (
     <>
       <header data-testid="hud" className="shell-hud v2-topbar">
-        <div className="hud-left hud-bar" role="region" aria-label="Cat status">
+        <div className="hud-left hud-bar" role="region" aria-label={sampleAdventure ? 'Main game cat status' : 'Cat status'}>
           <div className="hud-bar__layout">
             <div className="hud-currencies hud-stacks-list" role="list" aria-label="Currencies and keys">
               <div
@@ -55,9 +62,9 @@ export function Hud({
                 role="listitem"
                 aria-label={`Fish ${state.currencies.fish.toLocaleString('en-US')}`}
               >
-                <PixelIcon name="fish" size={2} />
+                <ResourceGain value={state.currencies.fish} /><PixelIcon name="fish" size={2} />
                 <span className="hud-chip-label" aria-hidden="true">Fish</span>
-                <span className="hud-chip-val num" aria-hidden="true">{state.currencies.fish.toLocaleString('en-US')}</span>
+                <span className="hud-chip-val num" aria-hidden="true"><MotionNumber value={state.currencies.fish} /></span>
               </div>
 
               <div
@@ -66,9 +73,9 @@ export function Hud({
                 role="listitem"
                 aria-label={`Yarn ${state.currencies.yarn.toLocaleString('en-US')}`}
               >
-                <PixelIcon name="yarn" size={2} />
+                <ResourceGain value={state.currencies.yarn} /><PixelIcon name="yarn" size={2} />
                 <span className="hud-chip-label" aria-hidden="true">Yarn</span>
-                <span className="hud-chip-val num" aria-hidden="true">{state.currencies.yarn.toLocaleString('en-US')}</span>
+                <span className="hud-chip-val num" aria-hidden="true"><MotionNumber value={state.currencies.yarn} /></span>
               </div>
 
               <div
@@ -122,7 +129,7 @@ export function Hud({
           </div>
         </div>
       </header>
-      <div className="shell-context">{title}{guidance}</div>
+      <div className="shell-context">{title}<span className="visual-build-label">Candidate build, not live.</span><div className="journey-horizons" aria-label="Goal ladder"><span><b>Soon</b>{goals.soon}</span><span><b>Later</b>{goals.later}</span></div>{guidance}</div>
     </>
   );
 }

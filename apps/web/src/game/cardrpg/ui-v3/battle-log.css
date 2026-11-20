@@ -1,0 +1,44 @@
+.uv-app .uv-battle-log {
+ position:fixed;inset:0;margin:auto;box-sizing:border-box;width:min(1080px,calc(100vw - 64px));height:min(660px,calc(100dvh - 96px));max-width:none;max-height:none;padding:0;overflow:hidden;pointer-events:auto;color:#543925;border:2px solid #c7a366;border-radius:18px;background:#f6e8c9;box-shadow:0 18px 70px #1c132bb3,inset 0 0 0 5px #fff2d4;
+ &::backdrop {background:#171420b3;backdrop-filter:blur(3px)}
+ &[open] {display:flex;flex-direction:column}
+ .a6-log-header {display:flex;align-items:center;justify-content:space-between;gap:24px;flex:none;padding:20px 26px;border-bottom:2px solid #bb9159;background:linear-gradient(105deg,#5e3d32,#352536);color:#ffedca}
+ .a6-log-header small {font-size:14px;letter-spacing:.1em;color:#f1ca8c}
+ h2 {margin:5px 0 0;font:700 30px/1.2 Georgia,serif;color:#ffedca}
+ .a6-log-header button {min-height:44px;padding:9px 20px;border:1px solid #e4bf7a;border-radius:9px;background:linear-gradient(#ffedbe,#d8b06b);box-shadow:0 3px 0 #211927;color:#483020;font-size:15px;font-weight:800}
+ .a6-log-book {display:grid;grid-template-columns:255px minmax(0,1fr);min-height:0;flex:1;padding:18px;gap:0}
+ .a6-log-cover {position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:22px 18px;text-align:center;overflow:hidden;border:1px solid #b39059;border-radius:9px 0 0 9px;background:radial-gradient(ellipse at 50% 35%,#b78a58,#5e4138 75%);color:#fff0cf;box-shadow:inset -9px 0 12px #261d2766}
+ .a6-log-cover:before {content:'';position:absolute;inset:10px;border:1px solid #ead0a04d;border-radius:5px;pointer-events:none}
+ .a6-log-cover img {width:100%;height:245px;min-height:0;object-fit:contain;filter:drop-shadow(0 9px 7px #221b2677)}
+ .a6-log-cover b {font:700 25px Georgia,serif;color:#ffe8ba}
+ .a6-log-cover p {margin:8px 0 0;font-size:14px;line-height:1.45;color:#fff0d2}
+ .a6-log-seal {position:absolute;top:17px;right:18px;color:#ffde9b;font-size:23px}
+ .a6-log-page {display:flex;flex-direction:column;min-height:0;min-width:0;padding:0 22px 0 28px;border:1px solid #cfb27b;border-left:0;border-radius:0 9px 9px 0;background:linear-gradient(90deg,#dbc79a,#fff3d9 25px,#f8eacb);box-shadow:inset 0 0 0 5px #fff3d259}
+ .a6-log-count {flex:none;padding:18px 0 14px;border-bottom:1px solid #bfa16e;color:#715335;font-size:14px;font-weight:700}
+ .a6-log-events {min-height:0;overflow:auto;overscroll-behavior:contain;scrollbar-gutter:stable;padding:0 12px 18px 0}
+ .a6-log-round h3 {margin:20px 0 8px;font:700 19px Georgia,serif;color:#755033;border-bottom:1px solid #cab28a;padding-bottom:8px}
+ .a6-log-round ol {list-style:none;margin:0;padding:0}
+ .a6-log-round li {display:grid;grid-template-columns:20px minmax(0,1fr);gap:10px;padding:9px 0;border-bottom:1px dashed #b5945f55}
+ .a6-log-round li>span {color:#957243;font-size:20px;line-height:1.35}
+ .a6-log-context {display:block;margin-bottom:2px;color:#755033;font-size:13px;line-height:1.45;overflow-wrap:anywhere}
+ .a6-log-round p {margin:0;color:#543925;font-size:15px;line-height:1.55;overflow-wrap:anywhere}
+ .a6-log-empty {display:flex;flex-direction:column;align-items:center;justify-content:center;flex:1;min-height:0;padding:22px;text-align:center}
+ .a6-log-empty>span {font-size:65px;line-height:1;color:#b58243}
+ .a6-log-empty h3 {font:700 27px/1.25 Georgia,serif;color:#68452e;margin:18px 0 12px}
+ .a6-log-empty p {max-width:380px;margin:6px 0;color:#715135;font-size:16px;line-height:1.5}
+ :focus-visible {outline:3px solid #b87a2b;outline-offset:3px}
+ .a6-log-events:focus-visible {outline-offset:-3px}
+}
+@media(max-height:760px) {
+ .uv-app .uv-battle-log {height:calc(100dvh - 80px);width:min(1020px,calc(100vw - 64px))}
+ .uv-app .uv-battle-log .a6-log-header {padding:15px 24px}
+ .uv-app .uv-battle-log .a6-log-book {padding:14px;grid-template-columns:220px minmax(0,1fr)}
+ .uv-app .uv-battle-log .a6-log-cover img {height:220px}
+}
+@media(max-width:640px) {
+ .uv-app .uv-battle-log {width:calc(100vw - 24px);height:calc(100dvh - 32px)}
+ .uv-app .uv-battle-log .a6-log-header {padding:12px 16px}
+ .uv-app .uv-battle-log .a6-log-book {grid-template-columns:minmax(0,1fr)}
+ .uv-app .uv-battle-log .a6-log-cover {display:none}
+ .uv-app .uv-battle-log .a6-log-page {border-left:1px solid #cfb27b;border-radius:8px;padding:0 18px}
+}

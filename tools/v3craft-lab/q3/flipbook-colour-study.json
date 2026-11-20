@@ -1,0 +1,60 @@
+{
+  "at": "2026-11-15T14:02:27.768Z",
+  "method": "Actual D1 paint/chips rendered at256px on a fixed540px crop; linear GPU comparison after texture replay over same background.",
+  "swatchPixel": [
+    64,
+    26,
+    13,
+    128
+  ],
+  "expectedSwatch": [
+    64,
+    26,
+    13,
+    128
+  ],
+  "rows": [
+    {
+      "sourceMs": 400,
+      "method": "naive-raw-as-sRGB",
+      "supportPixels": 8536,
+      "meanLinearRgbError255": 39.3364964073727,
+      "maxChannelError255": 77
+    },
+    {
+      "sourceMs": 400,
+      "method": "unpremultiply-linear-then-sRGB",
+      "supportPixels": 8536,
+      "meanLinearRgbError255": 0.2609731333958138,
+      "maxChannelError255": 2
+    },
+    {
+      "sourceMs": 800,
+      "method": "naive-raw-as-sRGB",
+      "supportPixels": 6645,
+      "meanLinearRgbError255": 39.021118635565585,
+      "maxChannelError255": 102
+    },
+    {
+      "sourceMs": 800,
+      "method": "unpremultiply-linear-then-sRGB",
+      "supportPixels": 6645,
+      "meanLinearRgbError255": 0.2673187860546777,
+      "maxChannelError255": 2
+    },
+    {
+      "sourceMs": 1400,
+      "method": "naive-raw-as-sRGB",
+      "supportPixels": 3417,
+      "meanLinearRgbError255": 39.65369232270022,
+      "maxChannelError255": 101
+    },
+    {
+      "sourceMs": 1400,
+      "method": "unpremultiply-linear-then-sRGB",
+      "supportPixels": 3417,
+      "meanLinearRgbError255": 0.2752902155887231,
+      "maxChannelError255": 2
+    }
+  ]
+}

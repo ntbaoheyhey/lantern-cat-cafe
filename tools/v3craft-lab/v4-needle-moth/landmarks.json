@@ -1,0 +1,215 @@
+{
+  "K0Head": [
+    254,
+    298
+  ],
+  "definition": "Highest point of main wedge-shaped head, excluding antennae, to pointed chin above rose scarf; fixed on first coordinate study before generation.",
+  "uncertaintyPx": 2,
+  "input": "apps/web/public/units/needle-moth/runtime.webp",
+  "sourceSize": [
+    640,
+    640
+  ],
+  "opaqueBounds": [
+    116,
+    190,
+    524,
+    600
+  ],
+  "seen": "Original seen previously; first coordinate study seen16Nov13:05UTC.",
+  "K1-A1Head": [
+    489,
+    589
+  ],
+  "K1-A1Definition": "Highest main wedge-head cap edge to pointed dark chin above the scarf; fixed on first10px coordinate crop before measuring.",
+  "K1-A2": {
+    "headTop": 518,
+    "headChin": 607,
+    "uncertaintyPx": 2,
+    "note": "Fixed from first A2 source-coordinate crop before measurement; main wedge excludes antennae and scarf."
+  },
+  "K1-A3": {
+    "headTop": 493,
+    "headChin": 612,
+    "uncertaintyPx": 2,
+    "note": "Fixed from first overview and enlarged 5px coordinate crop before measurement; cap edge to pointed cloth chin, excluding scarf shadow."
+  },
+  "K1-A4": {
+    "headTop": 494,
+    "headChin": 605,
+    "uncertaintyPx": 2,
+    "note": "Fixed on first5px source-coordinate crop; main cap edge to cloth chin, excluding dark scarf shadow."
+  },
+  "K1-A5": {
+    "headTop": 501,
+    "headChin": 600,
+    "uncertaintyPx": 2,
+    "note": "Fixed on first5px source-coordinate crop; main cloth cap to cloth chin, excluding the extended dark scarf/neck shadow."
+  },
+  "K0Sockets": {
+    "space": "original640canvas; add256 for normalized canvas",
+    "face": [
+      249,
+      254,
+      70,
+      44
+    ],
+    "mainHand": [
+      208,
+      328
+    ],
+    "offHand": [
+      332,
+      443
+    ],
+    "weaponTip": [
+      238,
+      576
+    ],
+    "vfxOrigin": [
+      238,
+      576
+    ],
+    "head": [
+      284,
+      277
+    ],
+    "chest": [
+      280,
+      355
+    ],
+    "note": "Fixed from new full XY socket study16Nov13:45UTC; prior K0 head254..298 unchanged."
+  },
+  "K1-A6": {
+    "headTop": 489,
+    "headChin": 596,
+    "uncertaintyPx": 2,
+    "note": "Fixed on first5px source-coordinate crop before measurement; main cloth cap and pointed cloth chin, not the scarf/neck shadow."
+  },
+  "K2-A1": {
+    "headTop": 488,
+    "headChin": 580,
+    "uncertaintyPx": 2,
+    "note": "Fixed from first5px coordinate crop before measurement: highest wedge cap edge to lower pointed cloth outline, excluding scarf and antennae."
+  },
+  "K4-A1": {
+    "headTop": 475,
+    "headChin": 558,
+    "uncertaintyPx": 2,
+    "note": "Fixed from first5px coordinate crop before measurement. Main cap to cloth chin; independently rejected for screen-right facing."
+  },
+  "K1-A6Sockets": {
+    "face": [
+      470,
+      489,
+      154,
+      107
+    ],
+    "mainHand": [
+      777,
+      524
+    ],
+    "offHand": [
+      549,
+      687
+    ],
+    "head": [
+      546,
+      546
+    ],
+    "chest": [
+      575,
+      746
+    ],
+    "weaponTip": [
+      203.0,
+      822.0
+    ],
+    "vfxOrigin": [
+      203.0,
+      822.0
+    ],
+    "space": "raw candidate pixels; transform with fixed scale/offset",
+    "note": "Manual face and hand positions from first source-coordinate/pose views; leading needle tip from leftmost opaque needle pixels. Lab socket audit still required."
+  },
+  "K2-A1Sockets": {
+    "face": [
+      547,
+      488,
+      167,
+      92
+    ],
+    "mainHand": [
+      391,
+      608
+    ],
+    "offHand": [
+      718,
+      637
+    ],
+    "head": [
+      632,
+      538
+    ],
+    "chest": [
+      648,
+      709
+    ],
+    "weaponTip": [
+      36.0,
+      609.0
+    ],
+    "vfxOrigin": [
+      36.0,
+      609.0
+    ],
+    "space": "raw candidate pixels; transform with fixed scale/offset",
+    "note": "Manual face and hand positions from first source-coordinate/pose views; leading needle tip from leftmost opaque needle pixels. Lab socket audit still required."
+  },
+  "K4-A2": {
+    "headTop": 454,
+    "headChin": 548,
+    "uncertaintyPx": 2,
+    "note": "Fixed on first5px coordinate crop before measurement; main cap to pointed cloth chin, excluding dark neck/scarf below. Left-facing identity corrected."
+  },
+  "K4-A3": {
+    "headTop": 448,
+    "headChin": 548,
+    "uncertaintyPx": 2,
+    "note": "Fixed on first5px source-coordinate crop before measurement; cap top to cloth chin excluding neck/scarf shadow."
+  },
+  "K4-A3Sockets": {
+    "face": [
+      681,
+      448,
+      205,
+      100
+    ],
+    "mainHand": [
+      724,
+      715
+    ],
+    "offHand": [
+      773,
+      628
+    ],
+    "weaponTip": [
+      390,
+      1049
+    ],
+    "vfxOrigin": [
+      390,
+      1049
+    ],
+    "head": [
+      784,
+      507
+    ],
+    "chest": [
+      690,
+      726
+    ],
+    "space": "raw candidate pixels; transform with fixed scale/offset",
+    "note": "Coordinates from first full guard preview and head crop; K4 is a non-emitting hit pose; socket visual audit pending."
+  }
+}

@@ -1,0 +1,793 @@
+{
+  "version": 1,
+  "generatedAt": "2026-11-13",
+  "policy": "Original text prompts and explicitly listed project-original input images only. Never reference-game images. Outputs use a 2x export canvas; source dimensions and any upscaling remain disclosed.",
+  "assets": [
+    {
+      "id": "panel-gold",
+      "family": "chrome",
+      "prompt": "Use case: stylized-concept. Asset type: one reusable painted UI panel frame for the original game Lantern Cat Caf\u00e9. Create a single square ornate gold-bevel rectangular frame, front-facing and perfectly symmetric, with compact curled leaf-and-paw details in all four corners. Broad straight edge stretches suitable for a nine-slice UI border; frame stays within the outer 12% on each edge, leaving the central 76% empty and genuinely transparent. Hand-painted chunky fantasy game finish, warm honey gold highlights from upper left, deep plum edge shadows, subtle worn bronze texture, small teal enamel insets at corner centers. Entire outside and center transparent; no background, no labels, no lettering, no UI content, no watermark. Original design from this text alone, no reference images. Square 1024px asset, keep all edges fully inside canvas with a narrow transparent safety margin.",
+      "transparent": true,
+      "width": 1024,
+      "height": 1024,
+      "displayWidth": 512,
+      "displayHeight": 512,
+      "slice": 256
+    },
+    {
+      "id": "ribbon-title",
+      "family": "chrome",
+      "prompt": "Use case: stylized-concept. Asset type: chrome. Original Lantern Cat Caf\u00e9 painted game UI asset, based only on this text. Chunky tactile storybook fantasy art, dark plum outlines, honey-gold beveled metal, teal enamel, warm upper-left light, clear silhouette at small scale, no letters, no watermark, no copied game art. One wide deep-plum fabric ribbon, curled tails at both ends and gold stitched edges. A subtly glowing teal paw medallion at its left fold. Empty broad center for a live heading. No writing. Front-facing symmetrical design. Genuinely transparent background; entire object inside canvas with 7% transparent margin. Desired aspect 768:192.",
+      "transparent": true,
+      "width": 768,
+      "height": 192,
+      "displayWidth": 384,
+      "displayHeight": 96,
+      "slice": 90,
+      "exports": [
+        {
+          "id": "ribbon-small",
+          "width": 384,
+          "height": 96
+        },
+        {
+          "id": "ribbon-medium",
+          "width": 640,
+          "height": 160
+        },
+        {
+          "id": "ribbon-large",
+          "width": 960,
+          "height": 240
+        }
+      ]
+    },
+    {
+      "id": "tab-strip",
+      "family": "chrome",
+      "prompt": "Use case: stylized-concept. Asset type: chrome. Original Lantern Cat Caf\u00e9 painted game UI asset, based only on this text. Chunky tactile storybook fantasy art, dark plum outlines, honey-gold beveled metal, teal enamel, warm upper-left light, clear silhouette at small scale, no letters, no watermark, no copied game art. One long low carved walnut tab-rail base, dark navy inset and gold bevel along top and bottom; five small empty raised separators along the rail, no text. Flat front view, ornamental paw at both ends. Genuinely transparent background; entire object inside canvas with 7% transparent margin. Desired aspect 1024:128.",
+      "transparent": true,
+      "width": 1024,
+      "height": 128,
+      "displayWidth": 512,
+      "displayHeight": 64,
+      "slice": 55
+    },
+    {
+      "id": "button-primary-normal",
+      "family": "button",
+      "prompt": "Use case: stylized-concept. Asset type: button. Original Lantern Cat Caf\u00e9 painted game UI asset, based only on this text. Chunky tactile storybook fantasy art, dark plum outlines, honey-gold beveled metal, teal enamel, warm upper-left light, clear silhouette at small scale, no letters, no watermark, no copied game art. One wide blank rectangular game button with softly rounded corners, glowing orange enamel and honey-gold rim. Thick raised bevel with gentle shine. Plain stretchable center and compact corners for nine-slice scaling. No symbols or words. Genuinely transparent background; entire object inside canvas with 7% transparent margin. Desired aspect 512:160.",
+      "transparent": true,
+      "width": 512,
+      "height": 160,
+      "displayWidth": 256,
+      "displayHeight": 80,
+      "slice": 65
+    },
+    {
+      "id": "button-primary-hover",
+      "family": "button",
+      "prompt": "Use case: precise-object-edit. Edit our own original button. Preserve its exact outside silhouette, dimensions, corner decorations, material colors, and transparent background. Change only the lighting and face depth to the requested interaction state. Use case: stylized-concept. Asset type: button. Original Lantern Cat Caf\u00e9 painted game UI asset, based only on this text. Chunky tactile storybook fantasy art, dark plum outlines, honey-gold beveled metal, teal enamel, warm upper-left light, clear silhouette at small scale, no letters, no watermark, no copied game art. One wide blank rectangular game button with softly rounded corners, glowing orange enamel and honey-gold rim. Bright edge gleam and slightly elevated face. Plain stretchable center and compact corners for nine-slice scaling. No symbols or words. Genuinely transparent background; entire object inside canvas with 7% transparent margin. Desired aspect 512:160.",
+      "transparent": true,
+      "width": 512,
+      "height": 160,
+      "displayWidth": 256,
+      "displayHeight": 80,
+      "slice": 65,
+      "referenceOwn": "assets/v3-shell/b2/sources/button-primary-normal.png"
+    },
+    {
+      "id": "button-primary-pressed",
+      "family": "button",
+      "prompt": "Use case: precise-object-edit. Edit our own original button. Preserve its exact outside silhouette, dimensions, corner decorations, material colors, and transparent background. Change only the lighting and face depth to the requested interaction state. Use case: stylized-concept. Asset type: button. Original Lantern Cat Caf\u00e9 painted game UI asset, based only on this text. Chunky tactile storybook fantasy art, dark plum outlines, honey-gold beveled metal, teal enamel, warm upper-left light, clear silhouette at small scale, no letters, no watermark, no copied game art. One wide blank rectangular game button with softly rounded corners, glowing orange enamel and honey-gold rim. Inset depressed face with deep top shadow. Plain stretchable center and compact corners for nine-slice scaling. No symbols or words. Genuinely transparent background; entire object inside canvas with 7% transparent margin. Desired aspect 512:160.",
+      "transparent": true,
+      "width": 512,
+      "height": 160,
+      "displayWidth": 256,
+      "displayHeight": 80,
+      "slice": 65,
+      "referenceOwn": "assets/v3-shell/b2/sources/button-primary-normal.png"
+    },
+    {
+      "id": "button-secondary-normal",
+      "family": "button",
+      "prompt": "Use case: stylized-concept. Asset type: button. Original Lantern Cat Caf\u00e9 painted game UI asset, based only on this text. Chunky tactile storybook fantasy art, dark plum outlines, honey-gold beveled metal, teal enamel, warm upper-left light, clear silhouette at small scale, no letters, no watermark, no copied game art. One wide blank rectangular game button with softly rounded corners, muted antique gold enamel and dark bronze rim. Thick raised bevel with gentle shine. Plain stretchable center and compact corners for nine-slice scaling. No symbols or words. Genuinely transparent background; entire object inside canvas with 7% transparent margin. Desired aspect 512:160.",
+      "transparent": true,
+      "width": 512,
+      "height": 160,
+      "displayWidth": 256,
+      "displayHeight": 80,
+      "slice": 65
+    },
+    {
+      "id": "button-secondary-hover",
+      "family": "button",
+      "prompt": "Use case: precise-object-edit. Edit our own original button. Preserve its exact outside silhouette, dimensions, corner decorations, material colors, and transparent background. Change only the lighting and face depth to the requested interaction state. Use case: stylized-concept. Asset type: button. Original Lantern Cat Caf\u00e9 painted game UI asset, based only on this text. Chunky tactile storybook fantasy art, dark plum outlines, honey-gold beveled metal, teal enamel, warm upper-left light, clear silhouette at small scale, no letters, no watermark, no copied game art. One wide blank rectangular game button with softly rounded corners, muted antique gold enamel and dark bronze rim. Bright edge gleam and slightly elevated face. Plain stretchable center and compact corners for nine-slice scaling. No symbols or words. Genuinely transparent background; entire object inside canvas with 7% transparent margin. Desired aspect 512:160.",
+      "transparent": true,
+      "width": 512,
+      "height": 160,
+      "displayWidth": 256,
+      "displayHeight": 80,
+      "slice": 65,
+      "referenceOwn": "assets/v3-shell/b2/sources/button-secondary-normal.png"
+    },
+    {
+      "id": "button-secondary-pressed",
+      "family": "button",
+      "prompt": "Use case: precise-object-edit. Edit our own original button. Preserve its exact outside silhouette, dimensions, corner decorations, material colors, and transparent background. Change only the lighting and face depth to the requested interaction state. Use case: stylized-concept. Asset type: button. Original Lantern Cat Caf\u00e9 painted game UI asset, based only on this text. Chunky tactile storybook fantasy art, dark plum outlines, honey-gold beveled metal, teal enamel, warm upper-left light, clear silhouette at small scale, no letters, no watermark, no copied game art. One wide blank rectangular game button with softly rounded corners, muted antique gold enamel and dark bronze rim. Inset depressed face with deep top shadow. Plain stretchable center and compact corners for nine-slice scaling. No symbols or words. Genuinely transparent background; entire object inside canvas with 7% transparent margin. Desired aspect 512:160.",
+      "transparent": true,
+      "width": 512,
+      "height": 160,
+      "displayWidth": 256,
+      "displayHeight": 80,
+      "slice": 65,
+      "referenceOwn": "assets/v3-shell/b2/sources/button-secondary-normal.png"
+    },
+    {
+      "id": "button-disabled-normal",
+      "family": "button",
+      "prompt": "Use case: stylized-concept. Asset type: button. Original Lantern Cat Caf\u00e9 painted game UI asset, based only on this text. Chunky tactile storybook fantasy art, dark plum outlines, honey-gold beveled metal, teal enamel, warm upper-left light, clear silhouette at small scale, no letters, no watermark, no copied game art. One wide blank rectangular game button with softly rounded corners, matte slate-grey enamel and pewter rim. Thick raised bevel with gentle shine. Plain stretchable center and compact corners for nine-slice scaling. No symbols or words. Genuinely transparent background; entire object inside canvas with 7% transparent margin. Desired aspect 512:160.",
+      "transparent": true,
+      "width": 512,
+      "height": 160,
+      "displayWidth": 256,
+      "displayHeight": 80,
+      "slice": 65
+    },
+    {
+      "id": "button-disabled-hover",
+      "family": "button",
+      "prompt": "Use case: precise-object-edit. Edit our own original button. Preserve its exact outside silhouette, dimensions, corner decorations, material colors, and transparent background. Change only the lighting and face depth to the requested interaction state. Use case: stylized-concept. Asset type: button. Original Lantern Cat Caf\u00e9 painted game UI asset, based only on this text. Chunky tactile storybook fantasy art, dark plum outlines, honey-gold beveled metal, teal enamel, warm upper-left light, clear silhouette at small scale, no letters, no watermark, no copied game art. One wide blank rectangular game button with softly rounded corners, matte slate-grey enamel and pewter rim. Bright edge gleam and slightly elevated face. Plain stretchable center and compact corners for nine-slice scaling. No symbols or words. Genuinely transparent background; entire object inside canvas with 7% transparent margin. Desired aspect 512:160.",
+      "transparent": true,
+      "width": 512,
+      "height": 160,
+      "displayWidth": 256,
+      "displayHeight": 80,
+      "slice": 65,
+      "referenceOwn": "assets/v3-shell/b2/sources/button-disabled-normal.png"
+    },
+    {
+      "id": "button-disabled-pressed",
+      "family": "button",
+      "prompt": "Use case: precise-object-edit. Edit our own original button. Preserve its exact outside silhouette, dimensions, corner decorations, material colors, and transparent background. Change only the lighting and face depth to the requested interaction state. Use case: stylized-concept. Asset type: button. Original Lantern Cat Caf\u00e9 painted game UI asset, based only on this text. Chunky tactile storybook fantasy art, dark plum outlines, honey-gold beveled metal, teal enamel, warm upper-left light, clear silhouette at small scale, no letters, no watermark, no copied game art. One wide blank rectangular game button with softly rounded corners, matte slate-grey enamel and pewter rim. Inset depressed face with deep top shadow. Plain stretchable center and compact corners for nine-slice scaling. No symbols or words. Genuinely transparent background; entire object inside canvas with 7% transparent margin. Desired aspect 512:160.",
+      "transparent": true,
+      "width": 512,
+      "height": 160,
+      "displayWidth": 256,
+      "displayHeight": 80,
+      "slice": 65,
+      "referenceOwn": "assets/v3-shell/b2/sources/button-disabled-normal.png"
+    },
+    {
+      "id": "tile-common",
+      "family": "rarity-frame",
+      "prompt": "Use case: stylized-concept. Asset type: rarity-frame. Original Lantern Cat Caf\u00e9 painted game UI asset, based only on this text. Chunky tactile storybook fantasy art, dark plum outlines, honey-gold beveled metal, teal enamel, warm upper-left light, clear silhouette at small scale, no letters, no watermark, no copied game art. One square empty item-tile frame, slate grey enameled rim with simple iron corners; thick bevel, clean transparent square center occupying 76% of canvas. Strictly front-facing, no object inside. Genuinely transparent background; entire object inside canvas with 7% transparent margin. Desired aspect 256:256.",
+      "transparent": true,
+      "width": 256,
+      "height": 256,
+      "displayWidth": 128,
+      "displayHeight": 128,
+      "slice": 48
+    },
+    {
+      "id": "tile-uncommon",
+      "family": "rarity-frame",
+      "prompt": "Use case: stylized-concept. Asset type: rarity-frame. Original Lantern Cat Caf\u00e9 painted game UI asset, based only on this text. Chunky tactile storybook fantasy art, dark plum outlines, honey-gold beveled metal, teal enamel, warm upper-left light, clear silhouette at small scale, no letters, no watermark, no copied game art. One square empty item-tile frame, leaf green enameled rim with little leaf corners; thick bevel, clean transparent square center occupying 76% of canvas. Strictly front-facing, no object inside. Genuinely transparent background; entire object inside canvas with 7% transparent margin. Desired aspect 256:256.",
+      "transparent": true,
+      "width": 256,
+      "height": 256,
+      "displayWidth": 128,
+      "displayHeight": 128,
+      "slice": 48
+    },
+    {
+      "id": "tile-rare",
+      "family": "rarity-frame",
+      "prompt": "Use case: stylized-concept. Asset type: rarity-frame. Original Lantern Cat Caf\u00e9 painted game UI asset, based only on this text. Chunky tactile storybook fantasy art, dark plum outlines, honey-gold beveled metal, teal enamel, warm upper-left light, clear silhouette at small scale, no letters, no watermark, no copied game art. One square empty item-tile frame, sapphire blue enameled rim with tiny cut crystal corners; thick bevel, clean transparent square center occupying 76% of canvas. Strictly front-facing, no object inside. Genuinely transparent background; entire object inside canvas with 7% transparent margin. Desired aspect 256:256.",
+      "transparent": true,
+      "width": 256,
+      "height": 256,
+      "displayWidth": 128,
+      "displayHeight": 128,
+      "slice": 48
+    },
+    {
+      "id": "tile-epic",
+      "family": "rarity-frame",
+      "prompt": "Use case: stylized-concept. Asset type: rarity-frame. Original Lantern Cat Caf\u00e9 painted game UI asset, based only on this text. Chunky tactile storybook fantasy art, dark plum outlines, honey-gold beveled metal, teal enamel, warm upper-left light, clear silhouette at small scale, no letters, no watermark, no copied game art. One square empty item-tile frame, violet enameled rim with crescent corner filigree; thick bevel, clean transparent square center occupying 76% of canvas. Strictly front-facing, no object inside. Genuinely transparent background; entire object inside canvas with 7% transparent margin. Desired aspect 256:256.",
+      "transparent": true,
+      "width": 256,
+      "height": 256,
+      "displayWidth": 128,
+      "displayHeight": 128,
+      "slice": 48
+    },
+    {
+      "id": "tile-legendary",
+      "family": "rarity-frame",
+      "prompt": "Use case: stylized-concept. Asset type: rarity-frame. Original Lantern Cat Caf\u00e9 painted game UI asset, based only on this text. Chunky tactile storybook fantasy art, dark plum outlines, honey-gold beveled metal, teal enamel, warm upper-left light, clear silhouette at small scale, no letters, no watermark, no copied game art. One square empty item-tile frame, gold enameled rim with small sunburst corners; thick bevel, clean transparent square center occupying 76% of canvas. Strictly front-facing, no object inside. Genuinely transparent background; entire object inside canvas with 7% transparent margin. Desired aspect 256:256.",
+      "transparent": true,
+      "width": 256,
+      "height": 256,
+      "displayWidth": 128,
+      "displayHeight": 128,
+      "slice": 48
+    },
+    {
+      "id": "tile-mythic",
+      "family": "rarity-frame",
+      "prompt": "Use case: stylized-concept. Asset type: rarity-frame. Original Lantern Cat Caf\u00e9 painted game UI asset, based only on this text. Chunky tactile storybook fantasy art, dark plum outlines, honey-gold beveled metal, teal enamel, warm upper-left light, clear silhouette at small scale, no letters, no watermark, no copied game art. One square empty item-tile frame, ruby red and bright gold enameled rim with ornate flame corners; thick bevel, clean transparent square center occupying 76% of canvas. Strictly front-facing, no object inside. Genuinely transparent background; entire object inside canvas with 7% transparent margin. Desired aspect 256:256.",
+      "transparent": true,
+      "width": 256,
+      "height": 256,
+      "displayWidth": 128,
+      "displayHeight": 128,
+      "slice": 48
+    },
+    {
+      "id": "tag-new",
+      "family": "corner-tag",
+      "prompt": "Use case: stylized-concept. Asset type: corner-tag. Original Lantern Cat Caf\u00e9 painted game UI asset, based only on this text. Chunky tactile storybook fantasy art, dark plum outlines, honey-gold beveled metal, teal enamel, warm upper-left light, clear silhouette at small scale, no letters, no watermark, no copied game art. One small corner badge, a tiny red wax seal with a gold four-point glint; compact readable painted symbol, no words. Genuinely transparent background; entire object inside canvas with 7% transparent margin. Desired aspect 96:96.",
+      "transparent": true,
+      "width": 96,
+      "height": 96,
+      "displayWidth": 48,
+      "displayHeight": 48
+    },
+    {
+      "id": "tag-shard",
+      "family": "corner-tag",
+      "prompt": "Use case: stylized-concept. Asset type: corner-tag. Original Lantern Cat Caf\u00e9 painted game UI asset, based only on this text. Chunky tactile storybook fantasy art, dark plum outlines, honey-gold beveled metal, teal enamel, warm upper-left light, clear silhouette at small scale, no letters, no watermark, no copied game art. One small corner badge, a tiny violet fractured crystal with a gold binding; compact readable painted symbol, no words. Genuinely transparent background; entire object inside canvas with 7% transparent margin. Desired aspect 96:96.",
+      "transparent": true,
+      "width": 96,
+      "height": 96,
+      "displayWidth": 48,
+      "displayHeight": 48
+    },
+    {
+      "id": "tag-sealed",
+      "family": "corner-tag",
+      "prompt": "Use case: stylized-concept. Asset type: corner-tag. Original Lantern Cat Caf\u00e9 painted game UI asset, based only on this text. Chunky tactile storybook fantasy art, dark plum outlines, honey-gold beveled metal, teal enamel, warm upper-left light, clear silhouette at small scale, no letters, no watermark, no copied game art. One small corner badge, two interlocking gold chain links on a teal wax stamp; compact readable painted symbol, no words. Genuinely transparent background; entire object inside canvas with 7% transparent margin. Desired aspect 96:96.",
+      "transparent": true,
+      "width": 96,
+      "height": 96,
+      "displayWidth": 48,
+      "displayHeight": 48
+    },
+    {
+      "id": "tag-need",
+      "family": "corner-tag",
+      "prompt": "Use case: stylized-concept. Asset type: corner-tag. Original Lantern Cat Caf\u00e9 painted game UI asset, based only on this text. Chunky tactile storybook fantasy art, dark plum outlines, honey-gold beveled metal, teal enamel, warm upper-left light, clear silhouette at small scale, no letters, no watermark, no copied game art. One small corner badge, a tiny coral upward chevron on a dark plum badge; compact readable painted symbol, no words. Genuinely transparent background; entire object inside canvas with 7% transparent margin. Desired aspect 96:96.",
+      "transparent": true,
+      "width": 96,
+      "height": 96,
+      "displayWidth": 48,
+      "displayHeight": 48
+    },
+    {
+      "id": "tag-equipped",
+      "family": "corner-tag",
+      "prompt": "Use case: stylized-concept. Asset type: corner-tag. Original Lantern Cat Caf\u00e9 painted game UI asset, based only on this text. Chunky tactile storybook fantasy art, dark plum outlines, honey-gold beveled metal, teal enamel, warm upper-left light, clear silhouette at small scale, no letters, no watermark, no copied game art. One small corner badge, a tiny teal shield with a gold check-shaped inlay; compact readable painted symbol, no words. Genuinely transparent background; entire object inside canvas with 7% transparent margin. Desired aspect 96:96.",
+      "transparent": true,
+      "width": 96,
+      "height": 96,
+      "displayWidth": 48,
+      "displayHeight": 48
+    },
+    {
+      "id": "hero-pedestal",
+      "family": "prop",
+      "prompt": "Use case: stylized-concept. Asset type: prop. Original Lantern Cat Caf\u00e9 painted game UI asset, based only on this text. Chunky tactile storybook fantasy art, dark plum outlines, honey-gold beveled metal, teal enamel, warm upper-left light, clear silhouette at small scale, no letters, no watermark, no copied game art. One broad round walnut-and-brass display pedestal, viewed slightly from above, teal velvet top, paw engravings around its thick rim, warm gold rim light. Empty top for a standing hero; no character. Genuinely transparent background; entire object inside canvas with 7% transparent margin. Desired aspect 768:384.",
+      "transparent": true,
+      "width": 768,
+      "height": 384,
+      "displayWidth": 384,
+      "displayHeight": 192
+    },
+    {
+      "id": "constellation-node",
+      "family": "prop",
+      "prompt": "Use case: stylized-concept. Asset type: prop. Original Lantern Cat Caf\u00e9 painted game UI asset, based only on this text. Chunky tactile storybook fantasy art, dark plum outlines, honey-gold beveled metal, teal enamel, warm upper-left light, clear silhouette at small scale, no letters, no watermark, no copied game art. One gold-ringed five-point star set into a teal gemstone, radiant but compact, small curved gold connectors at left and right. A single upgrade node, empty transparent surround. Genuinely transparent background; entire object inside canvas with 7% transparent margin. Desired aspect 128:128.",
+      "transparent": true,
+      "width": 128,
+      "height": 128,
+      "displayWidth": 64,
+      "displayHeight": 64
+    },
+    {
+      "id": "radial-burst",
+      "family": "effect",
+      "prompt": "Use case: stylized-concept. Asset type: effect. Original Lantern Cat Caf\u00e9 painted game UI asset, based only on this text. Chunky tactile storybook fantasy art, dark plum outlines, honey-gold beveled metal, teal enamel, warm upper-left light, clear silhouette at small scale, no letters, no watermark, no copied game art. One broad warm golden radial light burst, layered translucent painted rays and soft scattered sparkles radiating from a clear center. No sun object, no circle outline, no text; alpha fades at outer edges. Genuinely transparent background; entire object inside canvas with 7% transparent margin. Desired aspect 1024:1024.",
+      "transparent": true,
+      "width": 1024,
+      "height": 1024,
+      "displayWidth": 512,
+      "displayHeight": 512
+    },
+    {
+      "id": "title-victory",
+      "family": "title-plate",
+      "prompt": "Use case: stylized-concept. Asset type: title-plate. Original Lantern Cat Caf\u00e9 painted game UI asset, based only on this text. Chunky tactile storybook fantasy art, dark plum outlines, honey-gold beveled metal, teal enamel, warm upper-left light, clear silhouette at small scale, no letters, no watermark, no copied game art. One wide triumphant coral ribbon, gold sunburst and two laurel sprigs. Exact text \"VICTORY\" centered in heavy rounded fantasy display lettering, gold-to-cream fill with deep plum outline. Only this text; fully legible and correctly spelled. Genuinely transparent background; entire object inside canvas with 7% transparent margin. Desired aspect 768:256.",
+      "transparent": true,
+      "width": 768,
+      "height": 256,
+      "displayWidth": 384,
+      "displayHeight": 128
+    },
+    {
+      "id": "title-defeat",
+      "family": "title-plate",
+      "prompt": "Use case: stylized-concept. Asset type: title-plate. Original Lantern Cat Caf\u00e9 painted game UI asset, based only on this text. Chunky tactile storybook fantasy art, dark plum outlines, honey-gold beveled metal, teal enamel, warm upper-left light, clear silhouette at small scale, no letters, no watermark, no copied game art. One wide dignified dark-plum ribbon, cool silver rim and gently lowered leaf sprigs. Exact text \"DEFEAT\" centered in heavy rounded fantasy display lettering, gold-to-cream fill with deep plum outline. Only this text; fully legible and correctly spelled. Genuinely transparent background; entire object inside canvas with 7% transparent margin. Desired aspect 768:256.",
+      "transparent": true,
+      "width": 768,
+      "height": 256,
+      "displayWidth": 384,
+      "displayHeight": 128
+    },
+    {
+      "id": "title-level-up",
+      "family": "title-plate",
+      "prompt": "Use case: stylized-concept. Asset type: title-plate. Original Lantern Cat Caf\u00e9 painted game UI asset, based only on this text. Chunky tactile storybook fantasy art, dark plum outlines, honey-gold beveled metal, teal enamel, warm upper-left light, clear silhouette at small scale, no letters, no watermark, no copied game art. One wide teal ribbon, gold shooting stars and warm glow. Exact text \"LEVEL UP\" centered in heavy rounded fantasy display lettering, gold-to-cream fill with deep plum outline. Only this text; fully legible and correctly spelled. Genuinely transparent background; entire object inside canvas with 7% transparent margin. Desired aspect 768:256.",
+      "transparent": true,
+      "width": 768,
+      "height": 256,
+      "displayWidth": 384,
+      "displayHeight": 128
+    },
+    {
+      "id": "guide-welcome",
+      "family": "mascot",
+      "prompt": "Use case: stylized-concept. Asset type: mascot. Original Lantern Cat Caf\u00e9 painted game UI asset, based only on this text. Chunky tactile storybook fantasy art, dark plum outlines, honey-gold beveled metal, teal enamel, warm upper-left light, clear silhouette at small scale, no letters, no watermark, no copied game art. The same original caf\u00e9 guide: small chubby cinnamon-and-cream tabby cat, cream muzzle and chest, round green eyes, short round ears, curled striped tail, teal barista apron with brass paw clasp, little gold bell at neck. No hat, no weapon. Single full-body pose, waving the right paw warmly, body leaning slightly as though peeking around a UI panel edge. No panel in the image. A small blank cream speech bubble near the head, with dark plum outline; leave its interior empty for live text. Genuinely transparent background; entire object inside canvas with 7% transparent margin. Desired aspect 512:640.",
+      "transparent": true,
+      "width": 512,
+      "height": 640,
+      "displayWidth": 256,
+      "displayHeight": 320
+    },
+    {
+      "id": "guide-point",
+      "family": "mascot",
+      "prompt": "Use case: identity-preserve. Edit our own original caf\u00e9 guide image. Preserve the exact cat identity, fur pattern, face, apron, bell, painted texture, and speech-bubble style. Change only the pose to the requested action; keep a transparent background. Use case: stylized-concept. Asset type: mascot. Original Lantern Cat Caf\u00e9 painted game UI asset, based only on this text. Chunky tactile storybook fantasy art, dark plum outlines, honey-gold beveled metal, teal enamel, warm upper-left light, clear silhouette at small scale, no letters, no watermark, no copied game art. The same original caf\u00e9 guide: small chubby cinnamon-and-cream tabby cat, cream muzzle and chest, round green eyes, short round ears, curled striped tail, teal barista apron with brass paw clasp, little gold bell at neck. No hat, no weapon. Single full-body pose, pointing left with one paw, eyes looking left, body leaning slightly as though peeking around a UI panel edge. No panel in the image. A small blank cream speech bubble near the head, with dark plum outline; leave its interior empty for live text. Genuinely transparent background; entire object inside canvas with 7% transparent margin. Desired aspect 512:640.",
+      "transparent": true,
+      "width": 512,
+      "height": 640,
+      "displayWidth": 256,
+      "displayHeight": 320,
+      "referenceOwn": "assets/v3-shell/b2/sources/guide-welcome.png"
+    },
+    {
+      "id": "guide-explain",
+      "family": "mascot",
+      "prompt": "Use case: identity-preserve. Edit our own original caf\u00e9 guide image. Preserve the exact cat identity, fur pattern, face, apron, bell, painted texture, and speech-bubble style. Change only the pose to the requested action; keep a transparent background. Use case: stylized-concept. Asset type: mascot. Original Lantern Cat Caf\u00e9 painted game UI asset, based only on this text. Chunky tactile storybook fantasy art, dark plum outlines, honey-gold beveled metal, teal enamel, warm upper-left light, clear silhouette at small scale, no letters, no watermark, no copied game art. The same original caf\u00e9 guide: small chubby cinnamon-and-cream tabby cat, cream muzzle and chest, round green eyes, short round ears, curled striped tail, teal barista apron with brass paw clasp, little gold bell at neck. No hat, no weapon. Single full-body pose, holding an open blank little guidebook, body leaning slightly as though peeking around a UI panel edge. No panel in the image. A small blank cream speech bubble near the head, with dark plum outline; leave its interior empty for live text. Genuinely transparent background; entire object inside canvas with 7% transparent margin. Desired aspect 512:640.",
+      "transparent": true,
+      "width": 512,
+      "height": 640,
+      "displayWidth": 256,
+      "displayHeight": 320,
+      "referenceOwn": "assets/v3-shell/b2/sources/guide-welcome.png"
+    },
+    {
+      "id": "guide-celebrate",
+      "family": "mascot",
+      "prompt": "Use case: identity-preserve. Edit our own original caf\u00e9 guide image. Preserve the exact cat identity, fur pattern, face, apron, bell, painted texture, and speech-bubble style. Change only the pose to the requested action; keep a transparent background. Use case: stylized-concept. Asset type: mascot. Original Lantern Cat Caf\u00e9 painted game UI asset, based only on this text. Chunky tactile storybook fantasy art, dark plum outlines, honey-gold beveled metal, teal enamel, warm upper-left light, clear silhouette at small scale, no letters, no watermark, no copied game art. The same original caf\u00e9 guide: small chubby cinnamon-and-cream tabby cat, cream muzzle and chest, round green eyes, short round ears, curled striped tail, teal barista apron with brass paw clasp, little gold bell at neck. No hat, no weapon. Single full-body pose, both paws raised, delighted open smile, body leaning slightly as though peeking around a UI panel edge. No panel in the image. A small blank cream speech bubble near the head, with dark plum outline; leave its interior empty for live text. Genuinely transparent background; entire object inside canvas with 7% transparent margin. Desired aspect 512:640.",
+      "transparent": true,
+      "width": 512,
+      "height": 640,
+      "displayWidth": 256,
+      "displayHeight": 320,
+      "referenceOwn": "assets/v3-shell/b2/sources/guide-welcome.png"
+    },
+    {
+      "id": "guide-comfort",
+      "family": "mascot",
+      "prompt": "Use case: identity-preserve. Edit our own original caf\u00e9 guide image. Preserve the exact cat identity, fur pattern, face, apron, bell, painted texture, and speech-bubble style. Change only the pose to the requested action; keep a transparent background. Use case: stylized-concept. Asset type: mascot. Original Lantern Cat Caf\u00e9 painted game UI asset, based only on this text. Chunky tactile storybook fantasy art, dark plum outlines, honey-gold beveled metal, teal enamel, warm upper-left light, clear silhouette at small scale, no letters, no watermark, no copied game art. The same original caf\u00e9 guide: small chubby cinnamon-and-cream tabby cat, cream muzzle and chest, round green eyes, short round ears, curled striped tail, teal barista apron with brass paw clasp, little gold bell at neck. No hat, no weapon. Single full-body pose, gentle reassuring smile, paws together, body leaning slightly as though peeking around a UI panel edge. No panel in the image. A small blank cream speech bubble near the head, with dark plum outline; leave its interior empty for live text. Genuinely transparent background; entire object inside canvas with 7% transparent margin. Desired aspect 512:640.",
+      "transparent": true,
+      "width": 512,
+      "height": 640,
+      "displayWidth": 256,
+      "displayHeight": 320,
+      "referenceOwn": "assets/v3-shell/b2/sources/guide-welcome.png"
+    },
+    {
+      "id": "guide-shop",
+      "family": "mascot",
+      "prompt": "Use case: identity-preserve. Edit our own original caf\u00e9 guide image. Preserve the exact cat identity, fur pattern, face, apron, bell, painted texture, and speech-bubble style. Change only the pose to the requested action; keep a transparent background. Use case: stylized-concept. Asset type: mascot. Original Lantern Cat Caf\u00e9 painted game UI asset, based only on this text. Chunky tactile storybook fantasy art, dark plum outlines, honey-gold beveled metal, teal enamel, warm upper-left light, clear silhouette at small scale, no letters, no watermark, no copied game art. The same original caf\u00e9 guide: small chubby cinnamon-and-cream tabby cat, cream muzzle and chest, round green eyes, short round ears, curled striped tail, teal barista apron with brass paw clasp, little gold bell at neck. No hat, no weapon. Single full-body pose, holding a small brass tray with a teacup, body leaning slightly as though peeking around a UI panel edge. No panel in the image. A small blank cream speech bubble near the head, with dark plum outline; leave its interior empty for live text. Genuinely transparent background; entire object inside canvas with 7% transparent margin. Desired aspect 512:640.",
+      "transparent": true,
+      "width": 512,
+      "height": 640,
+      "displayWidth": 256,
+      "displayHeight": 320,
+      "referenceOwn": "assets/v3-shell/b2/sources/guide-welcome.png"
+    },
+    {
+      "id": "backdrop-shop",
+      "family": "backdrop",
+      "prompt": "Use case: stylized-concept. Asset type: backdrop. Original Lantern Cat Caf\u00e9 painted game UI asset, based only on this text. Chunky tactile storybook fantasy art, dark plum outlines, honey-gold beveled metal, teal enamel, warm upper-left light, clear silhouette at small scale, no letters, no watermark, no copied game art. A wide 16:9 environment painting of a cozy moonlit cat caf\u00e9 shop counter, walnut shelves with lanterns, sealed invitations, folded fabric and glass jars; amber lights on both edges, wide uncluttered dark counter at bottom; no characters. No interface, typography, letters, numbers or humans. Strong storybook depth and painterly textures; center must support clearly readable UI objects. Full-bleed scene with no border. Desired aspect 2560:1440.",
+      "transparent": false,
+      "width": 2560,
+      "height": 1440,
+      "displayWidth": 1280,
+      "displayHeight": 720
+    },
+    {
+      "id": "backdrop-workshop",
+      "family": "backdrop",
+      "prompt": "Use case: stylized-concept. Asset type: backdrop. Original Lantern Cat Caf\u00e9 painted game UI asset, based only on this text. Chunky tactile storybook fantasy art, dark plum outlines, honey-gold beveled metal, teal enamel, warm upper-left light, clear silhouette at small scale, no letters, no watermark, no copied game art. A wide 16:9 environment painting of a cozy midnight craft workshop, warm brass anvil at left, tidy tools and thread spools on side walls, cold blue moon window at right, broad empty workbench below, quiet dark central wall. No interface, typography, letters, numbers or humans. Strong storybook depth and painterly textures; center must support clearly readable UI objects. Full-bleed scene with no border. Desired aspect 2560:1440.",
+      "transparent": false,
+      "width": 2560,
+      "height": 1440,
+      "displayWidth": 1280,
+      "displayHeight": 720
+    },
+    {
+      "id": "backdrop-pantry",
+      "family": "backdrop",
+      "prompt": "Use case: stylized-concept. Asset type: backdrop. Original Lantern Cat Caf\u00e9 painted game UI asset, based only on this text. Chunky tactile storybook fantasy art, dark plum outlines, honey-gold beveled metal, teal enamel, warm upper-left light, clear silhouette at small scale, no letters, no watermark, no copied game art. A wide 16:9 environment painting of a warm wooden caf\u00e9 pantry at night, shelves along both edges holding fish tins, herb jars, folded towels, a teapot and wicker baskets; broad dark open center and empty counter foreground. No interface, typography, letters, numbers or humans. Strong storybook depth and painterly textures; center must support clearly readable UI objects. Full-bleed scene with no border. Desired aspect 2560:1440.",
+      "transparent": false,
+      "width": 2560,
+      "height": 1440,
+      "displayWidth": 1280,
+      "displayHeight": 720
+    },
+    {
+      "id": "backdrop-garden",
+      "family": "backdrop",
+      "prompt": "Use case: stylized-concept. Asset type: backdrop. Original Lantern Cat Caf\u00e9 painted game UI asset, based only on this text. Chunky tactile storybook fantasy art, dark plum outlines, honey-gold beveled metal, teal enamel, warm upper-left light, clear silhouette at small scale, no letters, no watermark, no copied game art. A wide 16:9 environment painting of a peaceful lantern garden at night, glowing amber paper lanterns among teal leaves and white flowers, crescent moon, little stone path and circular stepping stones, quiet indigo space in the center. No interface, typography, letters, numbers or humans. Strong storybook depth and painterly textures; center must support clearly readable UI objects. Full-bleed scene with no border. Desired aspect 2560:1440.",
+      "transparent": false,
+      "width": 2560,
+      "height": 1440,
+      "displayWidth": 1280,
+      "displayHeight": 720
+    },
+    {
+      "id": "backdrop-parchment",
+      "family": "backdrop",
+      "prompt": "Use case: stylized-concept. Asset type: backdrop. Original Lantern Cat Caf\u00e9 painted game UI asset, based only on this text. Chunky tactile storybook fantasy art, dark plum outlines, honey-gold beveled metal, teal enamel, warm upper-left light, clear silhouette at small scale, no letters, no watermark, no copied game art. A wide 16:9 environment painting of an original blank enchanted map parchment on a walnut desk, curled gold-beige edges, subtle hand-painted forests, tiny hills and rivers only around the outer margins; large clean tan central area for live route nodes, no labels or route lines. No interface, typography, letters, numbers or humans. Strong storybook depth and painterly textures; center must support clearly readable UI objects. Full-bleed scene with no border. Desired aspect 2560:1440.",
+      "transparent": false,
+      "width": 2560,
+      "height": 1440,
+      "displayWidth": 1280,
+      "displayHeight": 720
+    },
+    {
+      "id": "icon-fish",
+      "family": "icon",
+      "prompt": "Use case: stylized-concept. Asset type: icon. Original Lantern Cat Caf\u00e9 painted game UI asset, based only on this text. Chunky tactile storybook fantasy art, dark plum outlines, honey-gold beveled metal, teal enamel, warm upper-left light, clear silhouette at small scale, no letters, no watermark, no copied game art. One isolated painted inventory/navigation icon depicting two silver-blue fish with warm gold highlights. Three-quarter view, object fills about 75% of square canvas, simple readable silhouette, no extra scenery, no text. Genuinely transparent background; entire object inside canvas with 7% transparent margin. Desired aspect 160:160.",
+      "transparent": true,
+      "width": 160,
+      "height": 160,
+      "displayWidth": 80,
+      "displayHeight": 80
+    },
+    {
+      "id": "icon-thread",
+      "family": "icon",
+      "prompt": "Use case: stylized-concept. Asset type: icon. Original Lantern Cat Caf\u00e9 painted game UI asset, based only on this text. Chunky tactile storybook fantasy art, dark plum outlines, honey-gold beveled metal, teal enamel, warm upper-left light, clear silhouette at small scale, no letters, no watermark, no copied game art. One isolated painted inventory/navigation icon depicting a chunky spool of cream sewing thread and a gold needle. Three-quarter view, object fills about 75% of square canvas, simple readable silhouette, no extra scenery, no text. Genuinely transparent background; entire object inside canvas with 7% transparent margin. Desired aspect 160:160.",
+      "transparent": true,
+      "width": 160,
+      "height": 160,
+      "displayWidth": 80,
+      "displayHeight": 80
+    },
+    {
+      "id": "icon-bell",
+      "family": "icon",
+      "prompt": "Use case: stylized-concept. Asset type: icon. Original Lantern Cat Caf\u00e9 painted game UI asset, based only on this text. Chunky tactile storybook fantasy art, dark plum outlines, honey-gold beveled metal, teal enamel, warm upper-left light, clear silhouette at small scale, no letters, no watermark, no copied game art. One isolated painted inventory/navigation icon depicting a rounded golden caf\u00e9 bell with a red ribbon. Three-quarter view, object fills about 75% of square canvas, simple readable silhouette, no extra scenery, no text. Genuinely transparent background; entire object inside canvas with 7% transparent margin. Desired aspect 160:160.",
+      "transparent": true,
+      "width": 160,
+      "height": 160,
+      "displayWidth": 80,
+      "displayHeight": 80
+    },
+    {
+      "id": "icon-spool",
+      "family": "icon",
+      "prompt": "Use case: stylized-concept. Asset type: icon. Original Lantern Cat Caf\u00e9 painted game UI asset, based only on this text. Chunky tactile storybook fantasy art, dark plum outlines, honey-gold beveled metal, teal enamel, warm upper-left light, clear silhouette at small scale, no letters, no watermark, no copied game art. One isolated painted inventory/navigation icon depicting a teal-bound magical spool with a crescent glimmer. Three-quarter view, object fills about 75% of square canvas, simple readable silhouette, no extra scenery, no text. Genuinely transparent background; entire object inside canvas with 7% transparent margin. Desired aspect 160:160.",
+      "transparent": true,
+      "width": 160,
+      "height": 160,
+      "displayWidth": 80,
+      "displayHeight": 80
+    },
+    {
+      "id": "icon-yarn",
+      "family": "icon",
+      "prompt": "Use case: stylized-concept. Asset type: icon. Original Lantern Cat Caf\u00e9 painted game UI asset, based only on this text. Chunky tactile storybook fantasy art, dark plum outlines, honey-gold beveled metal, teal enamel, warm upper-left light, clear silhouette at small scale, no letters, no watermark, no copied game art. One isolated painted inventory/navigation icon depicting one round gold coin embossed with a curled yarn-ball emblem. Three-quarter view, object fills about 75% of square canvas, simple readable silhouette, no extra scenery, no text. Genuinely transparent background; entire object inside canvas with 7% transparent margin. Desired aspect 160:160.",
+      "transparent": true,
+      "width": 160,
+      "height": 160,
+      "displayWidth": 80,
+      "displayHeight": 80
+    },
+    {
+      "id": "icon-star-thread",
+      "family": "icon",
+      "prompt": "Use case: stylized-concept. Asset type: icon. Original Lantern Cat Caf\u00e9 painted game UI asset, based only on this text. Chunky tactile storybook fantasy art, dark plum outlines, honey-gold beveled metal, teal enamel, warm upper-left light, clear silhouette at small scale, no letters, no watermark, no copied game art. One isolated painted inventory/navigation icon depicting a coil of glowing violet thread around a gold star. Three-quarter view, object fills about 75% of square canvas, simple readable silhouette, no extra scenery, no text. Genuinely transparent background; entire object inside canvas with 7% transparent margin. Desired aspect 160:160.",
+      "transparent": true,
+      "width": 160,
+      "height": 160,
+      "displayWidth": 80,
+      "displayHeight": 80
+    },
+    {
+      "id": "icon-boss-seal",
+      "family": "icon",
+      "prompt": "Use case: stylized-concept. Asset type: icon. Original Lantern Cat Caf\u00e9 painted game UI asset, based only on this text. Chunky tactile storybook fantasy art, dark plum outlines, honey-gold beveled metal, teal enamel, warm upper-left light, clear silhouette at small scale, no letters, no watermark, no copied game art. One isolated painted inventory/navigation icon depicting a red wax paw seal with tiny gold horns. Three-quarter view, object fills about 75% of square canvas, simple readable silhouette, no extra scenery, no text. Genuinely transparent background; entire object inside canvas with 7% transparent margin. Desired aspect 160:160.",
+      "transparent": true,
+      "width": 160,
+      "height": 160,
+      "displayWidth": 80,
+      "displayHeight": 80
+    },
+    {
+      "id": "icon-deed",
+      "family": "icon",
+      "prompt": "Use case: stylized-concept. Asset type: icon. Original Lantern Cat Caf\u00e9 painted game UI asset, based only on this text. Chunky tactile storybook fantasy art, dark plum outlines, honey-gold beveled metal, teal enamel, warm upper-left light, clear silhouette at small scale, no letters, no watermark, no copied game art. One isolated painted inventory/navigation icon depicting a rolled cream caf\u00e9 deed scroll tied with teal ribbon and gold paw seal. Three-quarter view, object fills about 75% of square canvas, simple readable silhouette, no extra scenery, no text. Genuinely transparent background; entire object inside canvas with 7% transparent margin. Desired aspect 160:160.",
+      "transparent": true,
+      "width": 160,
+      "height": 160,
+      "displayWidth": 80,
+      "displayHeight": 80
+    },
+    {
+      "id": "icon-gear",
+      "family": "icon",
+      "prompt": "Use case: stylized-concept. Asset type: icon. Original Lantern Cat Caf\u00e9 painted game UI asset, based only on this text. Chunky tactile storybook fantasy art, dark plum outlines, honey-gold beveled metal, teal enamel, warm upper-left light, clear silhouette at small scale, no letters, no watermark, no copied game art. One isolated painted inventory/navigation icon depicting a small dark steel chestplate with brass paw buckle. Three-quarter view, object fills about 75% of square canvas, simple readable silhouette, no extra scenery, no text. Genuinely transparent background; entire object inside canvas with 7% transparent margin. Desired aspect 160:160.",
+      "transparent": true,
+      "width": 160,
+      "height": 160,
+      "displayWidth": 80,
+      "displayHeight": 80
+    },
+    {
+      "id": "icon-shard",
+      "family": "icon",
+      "prompt": "Use case: stylized-concept. Asset type: icon. Original Lantern Cat Caf\u00e9 painted game UI asset, based only on this text. Chunky tactile storybook fantasy art, dark plum outlines, honey-gold beveled metal, teal enamel, warm upper-left light, clear silhouette at small scale, no letters, no watermark, no copied game art. One isolated painted inventory/navigation icon depicting three violet crystal shards with warm cut highlights. Three-quarter view, object fills about 75% of square canvas, simple readable silhouette, no extra scenery, no text. Genuinely transparent background; entire object inside canvas with 7% transparent margin. Desired aspect 160:160.",
+      "transparent": true,
+      "width": 160,
+      "height": 160,
+      "displayWidth": 80,
+      "displayHeight": 80
+    },
+    {
+      "id": "icon-potion",
+      "family": "icon",
+      "prompt": "Use case: stylized-concept. Asset type: icon. Original Lantern Cat Caf\u00e9 painted game UI asset, based only on this text. Chunky tactile storybook fantasy art, dark plum outlines, honey-gold beveled metal, teal enamel, warm upper-left light, clear silhouette at small scale, no letters, no watermark, no copied game art. One isolated painted inventory/navigation icon depicting a squat teal potion bottle with cork and gold leaf tag. Three-quarter view, object fills about 75% of square canvas, simple readable silhouette, no extra scenery, no text. Genuinely transparent background; entire object inside canvas with 7% transparent margin. Desired aspect 160:160.",
+      "transparent": true,
+      "width": 160,
+      "height": 160,
+      "displayWidth": 80,
+      "displayHeight": 80
+    },
+    {
+      "id": "icon-supply",
+      "family": "icon",
+      "prompt": "Use case: stylized-concept. Asset type: icon. Original Lantern Cat Caf\u00e9 painted game UI asset, based only on this text. Chunky tactile storybook fantasy art, dark plum outlines, honey-gold beveled metal, teal enamel, warm upper-left light, clear silhouette at small scale, no letters, no watermark, no copied game art. One isolated painted inventory/navigation icon depicting a wicker lunch basket containing a fish bun and tiny flask. Three-quarter view, object fills about 75% of square canvas, simple readable silhouette, no extra scenery, no text. Genuinely transparent background; entire object inside canvas with 7% transparent margin. Desired aspect 160:160.",
+      "transparent": true,
+      "width": 160,
+      "height": 160,
+      "displayWidth": 80,
+      "displayHeight": 80
+    },
+    {
+      "id": "icon-team",
+      "family": "icon",
+      "prompt": "Use case: stylized-concept. Asset type: icon. Original Lantern Cat Caf\u00e9 painted game UI asset, based only on this text. Chunky tactile storybook fantasy art, dark plum outlines, honey-gold beveled metal, teal enamel, warm upper-left light, clear silhouette at small scale, no letters, no watermark, no copied game art. One isolated painted inventory/navigation icon depicting three differently colored cat-head miniature figurines grouped together. Three-quarter view, object fills about 75% of square canvas, simple readable silhouette, no extra scenery, no text. Genuinely transparent background; entire object inside canvas with 7% transparent margin. Desired aspect 160:160.",
+      "transparent": true,
+      "width": 160,
+      "height": 160,
+      "displayWidth": 80,
+      "displayHeight": 80
+    },
+    {
+      "id": "icon-cats",
+      "family": "icon",
+      "prompt": "Use case: stylized-concept. Asset type: icon. Original Lantern Cat Caf\u00e9 painted game UI asset, based only on this text. Chunky tactile storybook fantasy art, dark plum outlines, honey-gold beveled metal, teal enamel, warm upper-left light, clear silhouette at small scale, no letters, no watermark, no copied game art. One isolated painted inventory/navigation icon depicting one cream cat portrait medallion in a gold round frame. Three-quarter view, object fills about 75% of square canvas, simple readable silhouette, no extra scenery, no text. Genuinely transparent background; entire object inside canvas with 7% transparent margin. Desired aspect 160:160.",
+      "transparent": true,
+      "width": 160,
+      "height": 160,
+      "displayWidth": 80,
+      "displayHeight": 80
+    },
+    {
+      "id": "icon-bag",
+      "family": "icon",
+      "prompt": "Use case: stylized-concept. Asset type: icon. Original Lantern Cat Caf\u00e9 painted game UI asset, based only on this text. Chunky tactile storybook fantasy art, dark plum outlines, honey-gold beveled metal, teal enamel, warm upper-left light, clear silhouette at small scale, no letters, no watermark, no copied game art. One isolated painted inventory/navigation icon depicting a plum canvas backpack with teal flap and brass clasp. Three-quarter view, object fills about 75% of square canvas, simple readable silhouette, no extra scenery, no text. Genuinely transparent background; entire object inside canvas with 7% transparent margin. Desired aspect 160:160.",
+      "transparent": true,
+      "width": 160,
+      "height": 160,
+      "displayWidth": 80,
+      "displayHeight": 80
+    },
+    {
+      "id": "icon-forge",
+      "family": "icon",
+      "prompt": "Use case: stylized-concept. Asset type: icon. Original Lantern Cat Caf\u00e9 painted game UI asset, based only on this text. Chunky tactile storybook fantasy art, dark plum outlines, honey-gold beveled metal, teal enamel, warm upper-left light, clear silhouette at small scale, no letters, no watermark, no copied game art. One isolated painted inventory/navigation icon depicting a small brass hammer resting on an iron anvil. Three-quarter view, object fills about 75% of square canvas, simple readable silhouette, no extra scenery, no text. Genuinely transparent background; entire object inside canvas with 7% transparent margin. Desired aspect 160:160.",
+      "transparent": true,
+      "width": 160,
+      "height": 160,
+      "displayWidth": 80,
+      "displayHeight": 80
+    },
+    {
+      "id": "icon-invite",
+      "family": "icon",
+      "prompt": "Use case: stylized-concept. Asset type: icon. Original Lantern Cat Caf\u00e9 painted game UI asset, based only on this text. Chunky tactile storybook fantasy art, dark plum outlines, honey-gold beveled metal, teal enamel, warm upper-left light, clear silhouette at small scale, no letters, no watermark, no copied game art. One isolated painted inventory/navigation icon depicting a cream invitation envelope with coral ribbon and gold paw seal. Three-quarter view, object fills about 75% of square canvas, simple readable silhouette, no extra scenery, no text. Genuinely transparent background; entire object inside canvas with 7% transparent margin. Desired aspect 160:160.",
+      "transparent": true,
+      "width": 160,
+      "height": 160,
+      "displayWidth": 80,
+      "displayHeight": 80
+    },
+    {
+      "id": "icon-market",
+      "family": "icon",
+      "prompt": "Use case: stylized-concept. Asset type: icon. Original Lantern Cat Caf\u00e9 painted game UI asset, based only on this text. Chunky tactile storybook fantasy art, dark plum outlines, honey-gold beveled metal, teal enamel, warm upper-left light, clear silhouette at small scale, no letters, no watermark, no copied game art. One isolated painted inventory/navigation icon depicting a miniature wooden market stall with teal-and-cream canopy. Three-quarter view, object fills about 75% of square canvas, simple readable silhouette, no extra scenery, no text. Genuinely transparent background; entire object inside canvas with 7% transparent margin. Desired aspect 160:160.",
+      "transparent": true,
+      "width": 160,
+      "height": 160,
+      "displayWidth": 80,
+      "displayHeight": 80
+    },
+    {
+      "id": "icon-season",
+      "family": "icon",
+      "prompt": "Use case: stylized-concept. Asset type: icon. Original Lantern Cat Caf\u00e9 painted game UI asset, based only on this text. Chunky tactile storybook fantasy art, dark plum outlines, honey-gold beveled metal, teal enamel, warm upper-left light, clear silhouette at small scale, no letters, no watermark, no copied game art. One isolated painted inventory/navigation icon depicting a golden crescent moon embracing four tiny seasonal leaves. Three-quarter view, object fills about 75% of square canvas, simple readable silhouette, no extra scenery, no text. Genuinely transparent background; entire object inside canvas with 7% transparent margin. Desired aspect 160:160.",
+      "transparent": true,
+      "width": 160,
+      "height": 160,
+      "displayWidth": 80,
+      "displayHeight": 80
+    },
+    {
+      "id": "icon-wallet",
+      "family": "icon",
+      "prompt": "Use case: stylized-concept. Asset type: icon. Original Lantern Cat Caf\u00e9 painted game UI asset, based only on this text. Chunky tactile storybook fantasy art, dark plum outlines, honey-gold beveled metal, teal enamel, warm upper-left light, clear silhouette at small scale, no letters, no watermark, no copied game art. One isolated painted inventory/navigation icon depicting a small plum leather purse with gold clasp and a teal coin peeking out. Three-quarter view, object fills about 75% of square canvas, simple readable silhouette, no extra scenery, no text. Genuinely transparent background; entire object inside canvas with 7% transparent margin. Desired aspect 160:160.",
+      "transparent": true,
+      "width": 160,
+      "height": 160,
+      "displayWidth": 80,
+      "displayHeight": 80
+    },
+    {
+      "id": "icon-economy",
+      "family": "icon",
+      "prompt": "Use case: stylized-concept. Asset type: icon. Original Lantern Cat Caf\u00e9 painted game UI asset, based only on this text. Chunky tactile storybook fantasy art, dark plum outlines, honey-gold beveled metal, teal enamel, warm upper-left light, clear silhouette at small scale, no letters, no watermark, no copied game art. One isolated painted inventory/navigation icon depicting a balance scale with a gold coin pan and a thread spool pan. Three-quarter view, object fills about 75% of square canvas, simple readable silhouette, no extra scenery, no text. Genuinely transparent background; entire object inside canvas with 7% transparent margin. Desired aspect 160:160.",
+      "transparent": true,
+      "width": 160,
+      "height": 160,
+      "displayWidth": 80,
+      "displayHeight": 80
+    },
+    {
+      "id": "icon-guide",
+      "family": "icon",
+      "prompt": "Use case: stylized-concept. Asset type: icon. Original Lantern Cat Caf\u00e9 painted game UI asset, based only on this text. Chunky tactile storybook fantasy art, dark plum outlines, honey-gold beveled metal, teal enamel, warm upper-left light, clear silhouette at small scale, no letters, no watermark, no copied game art. One isolated painted inventory/navigation icon depicting an open cream illustrated book with a teal bookmark and gold paw cover. Three-quarter view, object fills about 75% of square canvas, simple readable silhouette, no extra scenery, no text. Genuinely transparent background; entire object inside canvas with 7% transparent margin. Desired aspect 160:160.",
+      "transparent": true,
+      "width": 160,
+      "height": 160,
+      "displayWidth": 80,
+      "displayHeight": 80
+    },
+    {
+      "id": "icon-settings",
+      "family": "icon",
+      "prompt": "Use case: stylized-concept. Asset type: icon. Original Lantern Cat Caf\u00e9 painted game UI asset, based only on this text. Chunky tactile storybook fantasy art, dark plum outlines, honey-gold beveled metal, teal enamel, warm upper-left light, clear silhouette at small scale, no letters, no watermark, no copied game art. One isolated painted inventory/navigation icon depicting a brass cogwheel with a teal central jewel. Three-quarter view, object fills about 75% of square canvas, simple readable silhouette, no extra scenery, no text. Genuinely transparent background; entire object inside canvas with 7% transparent margin. Desired aspect 160:160.",
+      "transparent": true,
+      "width": 160,
+      "height": 160,
+      "displayWidth": 80,
+      "displayHeight": 80
+    },
+    {
+      "id": "icon-chapter",
+      "family": "icon",
+      "prompt": "Use case: stylized-concept. Asset type: icon. Original Lantern Cat Caf\u00e9 painted game UI asset, based only on this text. Chunky tactile storybook fantasy art, dark plum outlines, honey-gold beveled metal, teal enamel, warm upper-left light, clear silhouette at small scale, no letters, no watermark, no copied game art. One isolated painted inventory/navigation icon depicting a curled parchment map with a tiny lantern marker. Three-quarter view, object fills about 75% of square canvas, simple readable silhouette, no extra scenery, no text. Genuinely transparent background; entire object inside canvas with 7% transparent margin. Desired aspect 160:160.",
+      "transparent": true,
+      "width": 160,
+      "height": 160,
+      "displayWidth": 80,
+      "displayHeight": 80
+    },
+    {
+      "id": "icon-quest",
+      "family": "icon",
+      "prompt": "Use case: stylized-concept. Asset type: icon. Original Lantern Cat Caf\u00e9 painted game UI asset, based only on this text. Chunky tactile storybook fantasy art, dark plum outlines, honey-gold beveled metal, teal enamel, warm upper-left light, clear silhouette at small scale, no letters, no watermark, no copied game art. One isolated painted inventory/navigation icon depicting a small wooden noticeboard with a cream checklist parchment and red seal, no writing. Three-quarter view, object fills about 75% of square canvas, simple readable silhouette, no extra scenery, no text. Genuinely transparent background; entire object inside canvas with 7% transparent margin. Desired aspect 160:160.",
+      "transparent": true,
+      "width": 160,
+      "height": 160,
+      "displayWidth": 80,
+      "displayHeight": 80
+    },
+    {
+      "id": "icon-event",
+      "family": "icon",
+      "prompt": "Use case: stylized-concept. Asset type: icon. Original Lantern Cat Caf\u00e9 painted game UI asset, based only on this text. Chunky tactile storybook fantasy art, dark plum outlines, honey-gold beveled metal, teal enamel, warm upper-left light, clear silhouette at small scale, no letters, no watermark, no copied game art. One isolated painted inventory/navigation icon depicting a small festive lantern with coral ribbon and gold sparkle. Three-quarter view, object fills about 75% of square canvas, simple readable silhouette, no extra scenery, no text. Genuinely transparent background; entire object inside canvas with 7% transparent margin. Desired aspect 160:160.",
+      "transparent": true,
+      "width": 160,
+      "height": 160,
+      "displayWidth": 80,
+      "displayHeight": 80
+    },
+    {
+      "id": "icon-mint",
+      "family": "icon",
+      "prompt": "Use case: stylized-concept. Asset type: icon. Original Lantern Cat Caf\u00e9 painted game UI asset, based only on this text. Chunky tactile storybook fantasy art, dark plum outlines, honey-gold beveled metal, teal enamel, warm upper-left light, clear silhouette at small scale, no letters, no watermark, no copied game art. One isolated painted inventory/navigation icon depicting a small gold coin emerging from a teal minting stamp. Three-quarter view, object fills about 75% of square canvas, simple readable silhouette, no extra scenery, no text. Genuinely transparent background; entire object inside canvas with 7% transparent margin. Desired aspect 160:160.",
+      "transparent": true,
+      "width": 160,
+      "height": 160,
+      "displayWidth": 80,
+      "displayHeight": 80
+    },
+    {
+      "id": "icon-withdraw",
+      "family": "icon",
+      "prompt": "Use case: stylized-concept. Asset type: icon. Original Lantern Cat Caf\u00e9 painted game UI asset, based only on this text. Chunky tactile storybook fantasy art, dark plum outlines, honey-gold beveled metal, teal enamel, warm upper-left light, clear silhouette at small scale, no letters, no watermark, no copied game art. One isolated painted inventory/navigation icon depicting a glass savings jar with gold coins flowing into a small open pouch. Three-quarter view, object fills about 75% of square canvas, simple readable silhouette, no extra scenery, no text. Genuinely transparent background; entire object inside canvas with 7% transparent margin. Desired aspect 160:160.",
+      "transparent": true,
+      "width": 160,
+      "height": 160,
+      "displayWidth": 80,
+      "displayHeight": 80
+    },
+    {
+      "id": "icon-seal",
+      "family": "icon",
+      "prompt": "Use case: stylized-concept. Asset type: icon. Original Lantern Cat Caf\u00e9 painted game UI asset, based only on this text. Chunky tactile storybook fantasy art, dark plum outlines, honey-gold beveled metal, teal enamel, warm upper-left light, clear silhouette at small scale, no letters, no watermark, no copied game art. One isolated painted inventory/navigation icon depicting a brass wax seal press above a teal paw-stamped wax disk. Three-quarter view, object fills about 75% of square canvas, simple readable silhouette, no extra scenery, no text. Genuinely transparent background; entire object inside canvas with 7% transparent margin. Desired aspect 160:160.",
+      "transparent": true,
+      "width": 160,
+      "height": 160,
+      "displayWidth": 80,
+      "displayHeight": 80
+    },
+    {
+      "id": "icon-fuse",
+      "family": "icon",
+      "prompt": "Use case: stylized-concept. Asset type: icon. Original Lantern Cat Caf\u00e9 painted game UI asset, based only on this text. Chunky tactile storybook fantasy art, dark plum outlines, honey-gold beveled metal, teal enamel, warm upper-left light, clear silhouette at small scale, no letters, no watermark, no copied game art. One isolated painted inventory/navigation icon depicting three small violet crystals converging above a golden forge bowl. Three-quarter view, object fills about 75% of square canvas, simple readable silhouette, no extra scenery, no text. Genuinely transparent background; entire object inside canvas with 7% transparent margin. Desired aspect 160:160.",
+      "transparent": true,
+      "width": 160,
+      "height": 160,
+      "displayWidth": 80,
+      "displayHeight": 80
+    },
+    {
+      "id": "icon-list",
+      "family": "icon",
+      "prompt": "Use case: stylized-concept. Asset type: icon. Original Lantern Cat Caf\u00e9 painted game UI asset, based only on this text. Chunky tactile storybook fantasy art, dark plum outlines, honey-gold beveled metal, teal enamel, warm upper-left light, clear silhouette at small scale, no letters, no watermark, no copied game art. One isolated painted inventory/navigation icon depicting a cream sale tag tied to a miniature gold-framed relic. Three-quarter view, object fills about 75% of square canvas, simple readable silhouette, no extra scenery, no text. Genuinely transparent background; entire object inside canvas with 7% transparent margin. Desired aspect 160:160.",
+      "transparent": true,
+      "width": 160,
+      "height": 160,
+      "displayWidth": 80,
+      "displayHeight": 80
+    },
+    {
+      "id": "icon-buy",
+      "family": "icon",
+      "prompt": "Use case: stylized-concept. Asset type: icon. Original Lantern Cat Caf\u00e9 painted game UI asset, based only on this text. Chunky tactile storybook fantasy art, dark plum outlines, honey-gold beveled metal, teal enamel, warm upper-left light, clear silhouette at small scale, no letters, no watermark, no copied game art. One isolated painted inventory/navigation icon depicting an open paw-shaped leather glove receiving a gold coin. Three-quarter view, object fills about 75% of square canvas, simple readable silhouette, no extra scenery, no text. Genuinely transparent background; entire object inside canvas with 7% transparent margin. Desired aspect 160:160.",
+      "transparent": true,
+      "width": 160,
+      "height": 160,
+      "displayWidth": 80,
+      "displayHeight": 80
+    },
+    {
+      "id": "icon-history",
+      "family": "icon",
+      "prompt": "Use case: stylized-concept. Asset type: icon. Original Lantern Cat Caf\u00e9 painted game UI asset, based only on this text. Chunky tactile storybook fantasy art, dark plum outlines, honey-gold beveled metal, teal enamel, warm upper-left light, clear silhouette at small scale, no letters, no watermark, no copied game art. One isolated painted inventory/navigation icon depicting a closed plum ledger with a brass clasp and teal ribbon. Three-quarter view, object fills about 75% of square canvas, simple readable silhouette, no extra scenery, no text. Genuinely transparent background; entire object inside canvas with 7% transparent margin. Desired aspect 160:160.",
+      "transparent": true,
+      "width": 160,
+      "height": 160,
+      "displayWidth": 80,
+      "displayHeight": 80
+    },
+    {
+      "id": "icon-sound",
+      "family": "icon",
+      "prompt": "Use case: stylized-concept. Asset type: icon. Original Lantern Cat Caf\u00e9 painted game UI asset, based only on this text. Chunky tactile storybook fantasy art, dark plum outlines, honey-gold beveled metal, teal enamel, warm upper-left light, clear silhouette at small scale, no letters, no watermark, no copied game art. One isolated painted inventory/navigation icon depicting a small brass gramophone horn on a teal base. Three-quarter view, object fills about 75% of square canvas, simple readable silhouette, no extra scenery, no text. Genuinely transparent background; entire object inside canvas with 7% transparent margin. Desired aspect 160:160.",
+      "transparent": true,
+      "width": 160,
+      "height": 160,
+      "displayWidth": 80,
+      "displayHeight": 80
+    }
+  ]
+}

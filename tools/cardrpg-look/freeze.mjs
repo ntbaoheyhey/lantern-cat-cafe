@@ -1,0 +1,26 @@
+// Run only after committed L7 UI/source checks and personal screenshot review.
+import {readFile,writeFile,access} from 'node:fs/promises';
+import {createHash} from 'node:crypto';
+import assert from 'node:assert/strict';
+const out='reports/cardrpg-look/validation/l7';
+const hash=bytes=>createHash('sha256').update(bytes).digest('hex');
+const json=async path=>JSON.parse(await readFile(path));
+assert(!await access(`${out}/freeze.json`).then(()=>true,()=>false),'Preserve the existing final freeze; never silently replace it');
+const build=await json('docs/cardrpg-look/build.json');
+assert.equal(build.runtimeDirty,false);assert(build.bytes<=32000000);
+assert.equal(hash(await readFile('docs/cardrpg-look/index.html')),build.sha256);
+for(const [path,want]of Object.entries(build.sourceHashes))assert.equal(hash(await readFile(path)),want,path);
+const gates=await json(`${out}/source-gates.json`);
+assert.deepEqual(gates.map(row=>row.name),['typecheck','lint','unit','build','e2e']);
+for(const row of gates)assert.equal(row.code,0,row.name);
+const types=await json(`${out}/demo-types.json`);assert.equal(types.code,0);
+const ui=await json(`${out}/atelier/checks.json`);
+assert.equal(ui.sha256,build.sha256);assert.equal(ui.passed,true);assert.equal(ui.units.length,25);assert.equal(ui.stages.length,9);assert.equal(ui.configs.length,6);
+const review=await json(`${out}/review-acceptance.json`);
+assert.equal(review.artifact,build.sha256);assert.equal(review.personallyViewed,true);
+assert.equal(review.units,25);assert.equal(review.stages,9);assert.equal(review.desktopConfigurations,6);
+assert((await readFile(review.notes,'utf8')).length>500);
+const inputs=[`${out}/source-gates.json`,`${out}/demo-types.json`,`${out}/atelier/checks.json`,`${out}/review-acceptance.json`,review.notes];
+const evidenceHashes={};for(const path of inputs)evidenceHashes[path]=hash(await readFile(path));
+await writeFile(`${out}/freeze.json`,JSON.stringify({at:new Date().toISOString(),sourceAccepted:true,source:build.head,artifact:'docs/cardrpg-look/index.html',sha256:build.sha256,bytes:build.bytes,sourceHashes:build.sourceHashes,evidenceHashes,limits:review.limits??[]},null,2)+'\n',{flag:'wx'});
+console.log(JSON.stringify({acceptedSource:build.head,artifact:build.sha256,bytes:build.bytes}));

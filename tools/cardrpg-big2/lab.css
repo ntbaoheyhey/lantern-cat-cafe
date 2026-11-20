@@ -1,0 +1,20 @@
+.b2-lab{position:absolute;inset:0;z-index:60;overflow:auto;background:#211f2b;color:#f7efdf;font:14px/1.5 system-ui}.b2-lab-heading{display:flex;justify-content:space-between;align-items:center;padding:20px 5%;border-bottom:1px solid #6e604f}.b2-lab h1{margin:3px 0;font:32px Georgia}.b2-lab h2{font:23px Georgia}.b2-lab small{color:#c1b6a2}.b2-lab button,.b2-lab input,.b2-lab select{font:inherit}.b2-lab button{padding:9px 15px;border:1px solid #93764e;border-radius:8px;background:#453a33;color:#fff3db;cursor:pointer}.b2-lab-prep{max-width:940px;margin:28px auto;padding:0 24px}.b2-lab-settings{display:flex;gap:18px;margin:22px 0}.b2-lab-settings label{display:grid;gap:5px}.b2-lab-settings input,.b2-lab-settings select{padding:8px;background:#302b37;color:#fff;border:1px solid #82725f;border-radius:7px}.b2-master{display:flex;gap:10px;font-weight:700;margin:22px 0}.b2-lab fieldset{border:1px solid #675a4e;border-radius:12px;display:grid;grid-template-columns:repeat(3,1fr);gap:20px;padding:20px}.b2-lab fieldset label{display:grid;grid-template-columns:20px 1fr;gap:8px}.b2-lab fieldset span{grid-column:2;color:#c9c0b3}.b2-lab fieldset:disabled{opacity:.55}.b2-lab .b2-fight{margin:24px 0;background:#dfbc7e;color:#292431;display:block;font-weight:700}.b2-lab-result{padding:16px 24px;border-radius:10px;background:#2d3938;margin-bottom:20px}.b2-lab .dp-battle{position:fixed;inset:0}.b2-lab-live{position:fixed;bottom:4px;left:10px;right:10px;z-index:70;pointer-events:none;max-height:98px;overflow:hidden;padding:5px 10px;border-radius:7px;background:#211f2bf0;font-size:11px}.b2-lab-live p{margin:2px 0}.b2-lab-entry{position:fixed;right:14px;bottom:14px;z-index:45;border:1px solid #b99a6a;border-radius:9px;background:#302a3b;color:#f8dfac;padding:10px 16px;font:14px system-ui;cursor:pointer}.b2-lab .dp-feel-lab{display:none}
+
+.b2-demo-lab-open .cr-content{position:relative}.b2-demo-lab-open .dp-page{visibility:hidden}.b2-lab .dp-battle{z-index:65}.b2-lab-live{bottom:104px;max-height:88px;left:200px;right:200px}.b2-lab:has(.dp-battle:not(.dp-hidden)) .b2-lab-heading{visibility:hidden}body:has(.dp-battle:not(.dp-hidden)) .b2-lab-entry{display:none}@media(max-height:650px){.b2-lab-prep{margin:12px auto}.b2-lab-heading{padding:10px 4%}.b2-lab-settings{margin:10px 0}.b2-master{margin:10px 0}.b2-lab fieldset{padding:12px;gap:10px}.b2-lab-live{bottom:92px}}
+
+/* Isolate the lab's controls from the main game's column-label/min-height rules. */
+.b2-lab label.b2-master{display:flex;flex-direction:row;align-items:center;justify-content:flex-start;gap:10px;color:#f7efdf;font-size:14px;margin:16px 0}
+.b2-lab input[type=checkbox]{appearance:auto;flex:none;width:17px;height:17px;min-height:0;margin:0;padding:0;accent-color:#dfbc7e;align-self:start}
+.b2-lab .b2-master input[type=checkbox]{align-self:center}
+.b2-lab fieldset label{align-content:start;align-items:start;color:#f7efdf;font-size:13px}
+.b2-lab fieldset label input{grid-column:1;grid-row:1;margin-top:2px}
+.b2-lab fieldset label b{grid-column:2;grid-row:1}
+.b2-lab fieldset label span{grid-column:2;grid-row:2;font-size:12px}
+.b2-lab fieldset:disabled{opacity:1;border-color:#554b46}
+.b2-lab fieldset:disabled input{opacity:.45}
+.b2-lab fieldset:disabled label b{color:#c4b8a8}
+.b2-lab .b2-lab-result{margin:0 0 18px;padding:12px 20px;border:1px solid #6d8e7c}
+.b2-lab-result h2{margin:0 0 5px}.b2-lab-result p{margin:0 0 4px}
+.b2-lab-prep>p{margin:12px 0}.b2-lab .b2-fight{margin:18px 0 12px}
+.b2-lab-note{display:block;max-width:800px;font-size:11px;line-height:1.5}
+@media(max-height:650px){.b2-lab label.b2-master{margin:10px 0}.b2-lab fieldset{gap:12px}.b2-lab .b2-lab-result{margin-bottom:10px}}

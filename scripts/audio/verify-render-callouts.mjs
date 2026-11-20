@@ -1,0 +1,33 @@
+/** Verify callout coverage from the same complete browser output used by S5. */
+import assert from 'node:assert/strict';
+import {readFileSync,writeFileSync} from 'node:fs';
+import {createHash} from 'node:crypto';
+import {gunzipSync} from 'node:zlib';
+import {resolve} from 'node:path';
+import {assertUnchanged} from './runtime-signature.mjs';
+const trial=process.argv[2];
+assert(trial&&/^[A-Za-z0-9-]+$/.test(trial),'Supply the measured mix trial');
+const base='reports/v3-shell/b2',metricPath=`${base}/mix/${trial}-battle.json`;
+const metric=JSON.parse(readFileSync(metricPath));
+const sign=path=>({path,sha256:createHash('sha256').update(readFileSync(path)).digest('hex')});
+assert(metric.durationSeconds>=180&&!metric.diagnostic,'A complete production mix is required');
+assert.equal(sign(metric.runtime.path).sha256,metric.runtime.sha256);
+const runtimeRoot=resolve(process.env.AUDIO_RUNTIME_ROOT||'work/v3solo-integration');
+assertUnchanged(runtimeRoot,metric.runtimeSources);
+const runtime=JSON.parse(gunzipSync(readFileSync(metric.runtime.path)));
+assert.equal(runtime.errors.length,0);
+const end=runtime.ended*1000-1500;
+const casts=runtime.hits.filter(h=>h.result==='cast'&&/^ult\..+\.(charge|release)$/.test(h.id)&&h.at<end);
+const unused=runtime.hits.filter(h=>h.result==='played'&&/^voice\..+\.ult\.(charge|release)$/.test(h.id));
+const comparisons=casts.map(cast=>{
+ const [,unit,phase]=/^ult\.(.+)\.(charge|release)$/.exec(cast.id),cue=`voice.${unit}.ult.${phase}`;
+ const voice=unused.filter(h=>h.id===cue&&h.at>=cast.at-100&&h.at<cast.at+1500).sort((a,b)=>Math.abs(a.at-cast.at)-Math.abs(b.at-cast.at))[0];
+ if(voice)unused.splice(unused.indexOf(voice),1);
+ return {cast,voice,missing:!voice,ducked:voice?.duckDb===-8};
+});
+const logPath=`${base}/q5/${trial}-callout-coverage.json`;
+writeFileSync(logPath,JSON.stringify({trial,metric:sign(metricPath),runtime:metric.runtime,runtimeSources:metric.runtimeSources,comparisons},null,2)+'\n');
+const result={trial,durationSeconds:metric.durationSeconds,ultimateCasts:casts.length,chargeCasts:casts.filter(c=>c.id.endsWith('.charge')).length,releaseCasts:casts.filter(c=>c.id.endsWith('.release')).length,missing:comparisons.filter(c=>c.missing).length,duckedCasts:comparisons.filter(c=>c.ducked).length,maxVoiceConcurrency:Math.max(...runtime.hits.map(h=>h.voice??0)),errors:runtime.errors,log:sign(logPath),runtimeSources:metric.runtimeSources,method:'Every observed ultimate charge/release in the full S5 production capture must match a unique played voice with ducking; final decode grace excluded. Runtime and log hashes verified.'};
+writeFileSync(`${base}/VOICE-CALLOUTS-BATTLE.json`,JSON.stringify(result,null,2)+'\n');
+assert(casts.length>0&&result.missing===0&&result.duckedCasts===casts.length&&result.maxVoiceConcurrency<=1,'Current battle callout coverage failed');
+console.log(JSON.stringify({casts:casts.length,missing:result.missing,ducked:result.duckedCasts,seconds:result.durationSeconds}));

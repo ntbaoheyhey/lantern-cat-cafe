@@ -47,7 +47,7 @@
 
 .v2-character-name {
   margin: 0;
-  font-family: var(--font-display, 'Pixelify Sans', monospace);
+  
   font-size: var(--fs-lg, 1.25rem);
   line-height: 1.2;
   color: var(--text, #fff3e0);
@@ -59,7 +59,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: var(--sp-1, 4px) var(--sp-2, 8px);
-  font-family: var(--font-body, 'DM Sans', sans-serif);
+  
   font-size: var(--fs-sm, 0.875rem);
   color: var(--muted, #c3aed0);
   line-height: 1.2;
@@ -91,7 +91,7 @@
 
 .xp-text {
   margin: 0;
-  font-family: var(--font-num, 'JetBrains Mono', monospace);
+  
   font-size: var(--fs-xs, 0.75rem);
   color: var(--muted, #c3aed0);
   line-height: 1;
@@ -128,7 +128,7 @@
   padding: 0;
   display: grid;
   place-items: center;
-  font-family: var(--font-num, 'JetBrains Mono', monospace);
+  
   font-size: var(--fs-xs, 0.75rem);
   color: var(--text, #fff3e0);
   background: var(--surface-2, #3a2c4a);
@@ -183,7 +183,7 @@
   background: var(--bg, #1a1220);
   border: 1px solid #000;
   padding: 1px 2px;
-  font-family: var(--font-num, 'JetBrains Mono', monospace);
+  
   font-size: 12px;
   line-height: 1;
   color: var(--muted, #c3aed0);
@@ -206,7 +206,7 @@
 }
 
 .slot-name {
-  font-family: var(--font-display, 'Pixelify Sans', monospace);
+  
   font-size: var(--fs-xs, 0.75rem);
   color: var(--muted, #c3aed0);
   line-height: 1.2;
@@ -248,7 +248,7 @@
 
 .stats dt {
   margin: 0;
-  font-family: var(--font-display, 'Pixelify Sans', monospace);
+  
   font-size: var(--fs-xs, 0.75rem);
   text-transform: uppercase;
   color: var(--muted, #c3aed0);
@@ -257,7 +257,7 @@
 
 .stats dd {
   margin: 0;
-  font-family: var(--font-num, 'JetBrains Mono', monospace);
+  
   font-size: var(--fs-sm, 0.875rem);
   font-variant-numeric: tabular-nums;
   font-weight: 700;
@@ -277,14 +277,14 @@
 }
 
 .stats .power dt {
-  font-family: var(--font-display, 'Pixelify Sans', monospace);
+  
   font-size: var(--fs-md, 1rem);
   text-transform: uppercase;
   color: var(--muted, #c3aed0);
 }
 
 .stats .power dd {
-  font-family: var(--font-num, 'JetBrains Mono', monospace);
+  
   font-size: var(--fs-lg, 1.25rem);
   font-weight: 700;
   color: var(--accent, #ffb86b);
@@ -292,7 +292,7 @@
 
 .stats-hint {
   margin: 0;
-  font-family: var(--font-body, 'DM Sans', sans-serif);
+  
   color: var(--muted, #c3aed0);
   font-size: var(--fs-sm, 0.875rem);
 }
@@ -320,7 +320,7 @@
 .hero-sheet { display:grid; grid-template-columns:minmax(280px,1fr) minmax(230px,1fr) minmax(240px,.8fr); gap:var(--sp-4,16px); flex:1; min-height:420px; }
 .hero-sheet > .action-notice { grid-column:1/-1; }
 .hero-paper-doll { position:relative; min-height:420px; background:radial-gradient(circle,var(--surface-3),var(--surface) 70%); border:2px solid var(--border); box-shadow:var(--pixel-shadow); }
-.hero-cat { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:var(--sp-3,12px); font-family:var(--font-display); color:var(--muted); pointer-events:none; }
+.hero-cat { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:var(--sp-3,12px);  color:var(--muted); pointer-events:none; }
 .hero-paper-doll .slot-cell { position:absolute; width:60px; transform:translate(-50%,-50%); }
 .hero-paper-doll [data-slot=weapon] { left:12%; top:28%; }
 .hero-paper-doll [data-slot=helmet] { left:50%; top:10%; }
@@ -338,7 +338,7 @@
 .hero-progress h3 { margin:0; font:700 var(--fs-md,1rem) var(--font-display); color:var(--text); }
 .hero-power { font:700 var(--fs-3xl,2.25rem) var(--font-num); color:var(--accent); }
 .hero-breakdown { display:flex; flex-wrap:wrap; gap:var(--sp-3,12px); margin:0; font-size:var(--fs-sm,.875rem); }
-.hero-breakdown dd { margin:0; font-family:var(--font-num); }
+.hero-breakdown dd { margin:0;  }
 .hero-breakdown dt,.hero-power-note { color:var(--muted); }
 .hero-power-note { font-size:var(--fs-xs,.75rem); line-height:1.5; margin:0 0 var(--sp-3,12px); }
 .hero-progress .xp-bar { height:12px; }

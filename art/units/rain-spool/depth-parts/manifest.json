@@ -1,0 +1,205 @@
+{
+  "version": 2,
+  "id": "rain-spool",
+  "method": "A2 R-c small original-palette paint with annotated prop separation",
+  "images": [
+    {
+      "name": "foot-l",
+      "sourcePart": "foot-l",
+      "file": "foot-l.png",
+      "filledInteriorPixels": 0
+    },
+    {
+      "name": "body",
+      "sourcePart": "body",
+      "file": "body.png",
+      "filledInteriorPixels": 0
+    },
+    {
+      "name": "arm-r",
+      "sourcePart": "arm-r",
+      "file": "arm-r.png",
+      "filledInteriorPixels": 0
+    },
+    {
+      "name": "head",
+      "sourcePart": "head",
+      "file": "head.png",
+      "filledInteriorPixels": 1127
+    },
+    {
+      "name": "arm-l",
+      "sourcePart": "arm-l",
+      "file": "arm-l.png",
+      "filledInteriorPixels": 0
+    },
+    {
+      "name": "tail",
+      "sourcePart": "tail",
+      "file": "tail.png",
+      "filledInteriorPixels": 0
+    },
+    {
+      "name": "cape",
+      "sourcePart": "cape",
+      "file": "cape.png",
+      "filledInteriorPixels": 13
+    },
+    {
+      "name": "foot-r",
+      "sourcePart": "foot-r",
+      "file": "foot-r.png",
+      "filledInteriorPixels": 0
+    },
+    {
+      "name": "eye_l",
+      "sourcePart": "head",
+      "file": "eye_l.png",
+      "rect": [
+        169,
+        222,
+        54,
+        59
+      ],
+      "slot": "eye_l",
+      "visible": true,
+      "bone": "head"
+    },
+    {
+      "name": "eye_r",
+      "sourcePart": "head",
+      "file": "eye_r.png",
+      "rect": [
+        267,
+        220,
+        58,
+        59
+      ],
+      "slot": "eye_r",
+      "visible": true,
+      "bone": "head"
+    },
+    {
+      "name": "eye_l_closed",
+      "sourcePart": "head",
+      "file": "eye_l_closed.png",
+      "rect": [
+        169,
+        222,
+        54,
+        59
+      ],
+      "slot": "eye_l",
+      "visible": false,
+      "bone": "head"
+    },
+    {
+      "name": "eye_r_closed",
+      "sourcePart": "head",
+      "file": "eye_r_closed.png",
+      "rect": [
+        267,
+        220,
+        58,
+        59
+      ],
+      "slot": "eye_r",
+      "visible": false,
+      "bone": "head"
+    },
+    {
+      "name": "mouth_neutral",
+      "sourcePart": "head",
+      "file": "mouth_neutral.png",
+      "rect": [
+        216,
+        283,
+        60,
+        30
+      ],
+      "slot": "mouth",
+      "visible": true,
+      "bone": "head"
+    },
+    {
+      "name": "mouth_open",
+      "sourcePart": "head",
+      "file": "mouth_open.png",
+      "rect": [
+        216,
+        283,
+        60,
+        30
+      ],
+      "slot": "mouth",
+      "visible": false,
+      "bone": "head"
+    },
+    {
+      "name": "mouth_shout",
+      "sourcePart": "head",
+      "file": "mouth_shout.png",
+      "rect": [
+        216,
+        283,
+        60,
+        30
+      ],
+      "slot": "mouth",
+      "visible": false,
+      "bone": "head"
+    },
+    {
+      "name": "hidden-body",
+      "sourcePart": "body",
+      "file": "hidden-body.png",
+      "rect": [
+        195,
+        218,
+        424,
+        191
+      ],
+      "slot": "hidden-body",
+      "visible": true,
+      "bone": "torso",
+      "behind": "body",
+      "paint": "Original sampled cloth/fur hidden joint substrate; 12px minimum intended overlap"
+    },
+    {
+      "name": "hidden-tail",
+      "sourcePart": "tail",
+      "file": "hidden-tail.png",
+      "rect": [
+        41,
+        64,
+        196,
+        93
+      ],
+      "slot": "hidden-tail",
+      "visible": true,
+      "bone": "tail_1",
+      "behind": "tail",
+      "paint": "Original sampled cloth/fur hidden joint substrate; 12px minimum intended overlap"
+    },
+    {
+      "name": "hidden-arm-l",
+      "sourcePart": "arm-l",
+      "file": "hidden-arm-l.png",
+      "rect": [
+        0,
+        0,
+        171,
+        212
+      ],
+      "slot": "hidden-arm-l",
+      "visible": true,
+      "bone": "arm_upper_l",
+      "behind": "arm-l",
+      "paint": "Original material extension, 4 master pixels, to complete the measured shoulder overlap"
+    }
+  ],
+  "faceSeed": 5729,
+  "jointOverlapRequired": 12,
+  "weaponRequired": false,
+  "hiddenJointPaint": []
+}
