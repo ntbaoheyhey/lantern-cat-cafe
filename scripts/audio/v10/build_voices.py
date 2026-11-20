@@ -3,8 +3,10 @@ import numpy as np,soundfile as sf,torch,pyloudnorm as pyln
 from kokoro import KPipeline
 D='/tmp/v10-voice';os.makedirs(D+'/raw',exist_ok=True);os.makedirs(D+'/fx',exist_ok=True)
 cast=json.load(open(__file__.rsplit('/',1)[0]+'/lines.json'))
-pipe=KPipeline(lang_code='a')
+pipes={'a':KPipeline(lang_code='a')}
+ONLY=set(sys.argv[1:])
 def voice(spec):
+  pipe=pipes.setdefault(spec.get('lang','a'),None) or pipes.__setitem__(spec['lang'],KPipeline(lang_code=spec['lang'])) or pipes[spec['lang']]
   v=pipe.load_voice(spec['voice'])
   if 'blend' in spec:
     b=pipe.load_voice(spec['blend'][0]);w=spec['blend'][1];v=v*(1-w)+b*w
@@ -15,7 +17,8 @@ def trim(a,sr,db=-42):
 meter=pyln.Meter(48000,block_size=0.2)
 rows=[]
 for unit,spec in cast.items():
-  vt=voice(spec)
+  if ONLY and unit not in ONLY:continue
+  vt=voice(spec);pipe=pipes[spec.get('lang','a')]
   for event,lines in spec['lines'].items():
     for i,text in enumerate(lines):
       shout=event in('ult.release','ult') and i==0 or text.endswith('!!')
@@ -49,4 +52,4 @@ for unit,spec in cast.items():
       sf.write(fx,x.astype(np.float32),sr,subtype='FLOAT')
       rows.append({'unit':unit,'event':event,'i':i,'text':text,'file':fx,'dur':len(x)/sr})
       print(name,round(len(x)/sr,2),text,flush=True)
-json.dump(rows,open(D+'/rows.json','w'),indent=1)
+json.dump(rows,open(D+(f'/rows-{"-".join(sorted(ONLY))}.json' if ONLY else '/rows.json'),'w'),indent=1)

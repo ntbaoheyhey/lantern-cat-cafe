@@ -153,6 +153,7 @@ events(['cats'],{'legacy-voice-demo':'voice.meow'});
 events(['home'],{'legacy-cafe-bed':'ambience.cafe'});
 events(['chapter-map','battle-prep','battle'],{'chapter-one':'ambience.chapter-1','chapter-two':'ambience.chapter-2','chapter-three':'ambience.chapter-3'});
 events(['boss'],{'dawn-harmonics':'music.boss.dawn'});
+events(['boss'],{'boss-intro-yarn-giant':'ui.boss-intro.yarn-giant','boss-intro-rain-spool':'ui.boss-intro.rain-spool','boss-intro-pantry-crown':'ui.boss-intro.pantry-crown'});
 events(['gacha-reveal'],{'legacy-reveal-sting':'music.reveal'});
 events(['invitations','gacha-rates','gacha-reveal','gacha-results'],{'invitation-score':'music.gacha'});
 events(['forge-enhance'],{'legacy-forge-fail':'ui.forge-fail'});

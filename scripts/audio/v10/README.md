@@ -29,3 +29,10 @@ venv/bin/python pack_voices.py /tmp/v10-voice/rows.json
 venv/bin/python build_ult_sfx.py && node ../../../tools/v5int/audio-delivery.mjs
 venv/bin/python preview.py /tmp/preview   # full ultimate mixdowns for review
 ```
+
+## Follow-up (same day)
+- Voices for Rain Spool, Pantry Crown, Spool Ram, Kettle Knight, Pollen Scout, Crumb Sentinel (30 takes, all pass the Whisper gate).
+- `build_stings.py`: victory fanfare, defeat sting, and one boss-intro sting each for Yarn Giant, Rain Spool and Pantry Crown.
+- `battle-v3/battle-audio.ts` plays the boss sting once when a boss battle opens and the victory/defeat sting
+  (plus a surviving cat's victory line) when the field is decided.
+- Engine: death/victory lines skip the 7 s voice cadence; the cast fallback waits 1.5 s so it never talks over a name shout.

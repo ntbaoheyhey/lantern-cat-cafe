@@ -1,5 +1,5 @@
 {
- "tool": "Kokoro-82M v1.0 (hexgrad/Kokoro-82M, Apache-2.0) via kokoro 0.9.4 Python package, voices am_michael/am_fenrir/am_onyx/am_puck/af_heart",
+ "tool": "Kokoro-82M v1.0 (hexgrad/Kokoro-82M, Apache-2.0) via kokoro 0.9.4 Python package; voices per unit in lines.json",
  "post": "ffmpeg rubberband pitch, EQ, compressor, short room echo; pyloudnorm to -16 LUFS (-14 for ultimate shouts)",
  "qa": "faster-whisper small.en transcript per take; takes under 0.66 word match re-written or dropped",
  "takes": [
@@ -569,6 +569,216 @@
    "text": "My threads... come undone...",
    "asr": "My threats come undone.",
    "asrScore": 0.75
+  },
+  {
+   "unit": "rain-spool",
+   "cue": "voice.rain-spool.ult.charge",
+   "text": "The clouds are mine!",
+   "asr": "The clouds are mine.",
+   "asrScore": 1.0
+  },
+  {
+   "unit": "rain-spool",
+   "cue": "voice.rain-spool.ult.release",
+   "text": "Cloudburst!",
+   "asr": "Cloudburst",
+   "asrScore": 1.0
+  },
+  {
+   "unit": "rain-spool",
+   "cue": "voice.rain-spool.skill.enemy:rain-spool:basic",
+   "text": "Go under!",
+   "asr": "Go Under",
+   "asrScore": 1.0
+  },
+  {
+   "unit": "rain-spool",
+   "cue": "voice.rain-spool.skill.enemy:rain-spool",
+   "text": "Rain on all of you!",
+   "asr": "Rain on all of you.",
+   "asrScore": 1.0
+  },
+  {
+   "unit": "rain-spool",
+   "cue": "voice.rain-spool.death",
+   "text": "The storm... passes...",
+   "asr": "The storm passes.",
+   "asrScore": 1.0
+  },
+  {
+   "unit": "pantry-crown",
+   "cue": "voice.pantry-crown.ult.charge",
+   "text": "Bow before the banquet!",
+   "asr": "Bow before the banquets.",
+   "asrScore": 0.75
+  },
+  {
+   "unit": "pantry-crown",
+   "cue": "voice.pantry-crown.ult.release",
+   "text": "The banquet is empty!",
+   "asr": "The banquet is empty.",
+   "asrScore": 1.0
+  },
+  {
+   "unit": "pantry-crown",
+   "cue": "voice.pantry-crown.skill.enemy:pantry-crown:basic",
+   "text": "On your knees!",
+   "asr": "on your knees",
+   "asrScore": 1.0
+  },
+  {
+   "unit": "pantry-crown",
+   "cue": "voice.pantry-crown.skill.enemy:pantry-crown",
+   "text": "Your plates are empty!",
+   "asr": "Your plates are empty.",
+   "asrScore": 1.0
+  },
+  {
+   "unit": "pantry-crown",
+   "cue": "voice.pantry-crown.death",
+   "text": "My feast... is over...",
+   "asr": "My feast is over.",
+   "asrScore": 1.0
+  },
+  {
+   "unit": "spool-ram",
+   "cue": "voice.spool-ram.ult.charge",
+   "text": "Out of my way!",
+   "asr": "Out of my way!",
+   "asrScore": 1.0
+  },
+  {
+   "unit": "spool-ram",
+   "cue": "voice.spool-ram.ult.release",
+   "text": "Ram through!",
+   "asr": "RAM THROUGH",
+   "asrScore": 1.0
+  },
+  {
+   "unit": "spool-ram",
+   "cue": "voice.spool-ram.skill.enemy:spool-ram:basic",
+   "text": "Coming through!",
+   "asr": "Coming through",
+   "asrScore": 1.0
+  },
+  {
+   "unit": "spool-ram",
+   "cue": "voice.spool-ram.skill.enemy:spool-ram",
+   "text": "Nothing stops me!",
+   "asr": "Nothing stops me.",
+   "asrScore": 1.0
+  },
+  {
+   "unit": "spool-ram",
+   "cue": "voice.spool-ram.death",
+   "text": "Unspooled...",
+   "asr": "Unspooled",
+   "asrScore": 1.0
+  },
+  {
+   "unit": "kettle-knight",
+   "cue": "voice.kettle-knight.ult.charge",
+   "text": "Steam and steel!",
+   "asr": "Steam & Steel",
+   "asrScore": 0.6666666666666666
+  },
+  {
+   "unit": "kettle-knight",
+   "cue": "voice.kettle-knight.ult.release",
+   "text": "Boiling point!",
+   "asr": "Boiling point.",
+   "asrScore": 1.0
+  },
+  {
+   "unit": "kettle-knight",
+   "cue": "voice.kettle-knight.skill.enemy:kettle-knight:basic",
+   "text": "Have at you!",
+   "asr": "Have at you.",
+   "asrScore": 1.0
+  },
+  {
+   "unit": "kettle-knight",
+   "cue": "voice.kettle-knight.skill.enemy:kettle-knight",
+   "text": "Feel the heat!",
+   "asr": "Feel the heat.",
+   "asrScore": 1.0
+  },
+  {
+   "unit": "kettle-knight",
+   "cue": "voice.kettle-knight.death",
+   "text": "Gone... cold...",
+   "asr": "Gone cold.",
+   "asrScore": 1.0
+  },
+  {
+   "unit": "pollen-scout",
+   "cue": "voice.pollen-scout.ult.charge",
+   "text": "Bloom, little threads!",
+   "asr": "Bloom little threads.",
+   "asrScore": 1.0
+  },
+  {
+   "unit": "pollen-scout",
+   "cue": "voice.pollen-scout.ult.release",
+   "text": "Pollen storm!",
+   "asr": "pollen storm",
+   "asrScore": 1.0
+  },
+  {
+   "unit": "pollen-scout",
+   "cue": "voice.pollen-scout.skill.enemy:pollen-scout:basic",
+   "text": "Got you!",
+   "asr": "Got you.",
+   "asrScore": 1.0
+  },
+  {
+   "unit": "pollen-scout",
+   "cue": "voice.pollen-scout.skill.enemy:pollen-scout",
+   "text": "Plant it!",
+   "asr": "plant it",
+   "asrScore": 1.0
+  },
+  {
+   "unit": "pollen-scout",
+   "cue": "voice.pollen-scout.death",
+   "text": "Wilted...",
+   "asr": "Wilted",
+   "asrScore": 1.0
+  },
+  {
+   "unit": "crumb-sentinel",
+   "cue": "voice.crumb-sentinel.ult.charge",
+   "text": "Sugar overload!",
+   "asr": "Sugar overload.",
+   "asrScore": 1.0
+  },
+  {
+   "unit": "crumb-sentinel",
+   "cue": "voice.crumb-sentinel.ult.release",
+   "text": "Sugar burst!",
+   "asr": "Sugar burst.",
+   "asrScore": 1.0
+  },
+  {
+   "unit": "crumb-sentinel",
+   "cue": "voice.crumb-sentinel.skill.enemy:crumb-sentinel:basic",
+   "text": "Stop right there!",
+   "asr": "Stop right there.",
+   "asrScore": 1.0
+  },
+  {
+   "unit": "crumb-sentinel",
+   "cue": "voice.crumb-sentinel.skill.enemy:crumb-sentinel",
+   "text": "Crumbs everywhere!",
+   "asr": "crumbs everywhere",
+   "asrScore": 1.0
+  },
+  {
+   "unit": "crumb-sentinel",
+   "cue": "voice.crumb-sentinel.death",
+   "text": "I'm... crumbling...",
+   "asr": "I'm crumbling.",
+   "asrScore": 1.0
   }
  ]
 }

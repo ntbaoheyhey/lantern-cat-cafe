@@ -7,6 +7,7 @@ import {advanceBattleClock} from './final-hit';
 // Opening skills begin shortly after the field appears. Leave their seven-second
 // mixer cooldown intact before requesting optional party chatter.
 const FIRST_BARK_MS=8000;
+const BOSS_STINGS=new Set(['yarn-giant','rain-spool','pantry-crown']);
 export interface FiredCue {cue:AudioCue;at:number;planId:number|string|null;skillId:string;tier:string;actorId:string;role:CueRole;targetId?:string;voicePhase?:string}
 /** One battle-owned scheduler. B retains all decoding, mixing and voice synthesis. */
 export class BattleAudio {
@@ -14,7 +15,7 @@ export class BattleAudio {
  private battle:unknown;private lastPlan:unknown;private fired=new Set<number>();private track:TimelineCue[]=[];
  private statuses=new Map<string,Set<BodyStatus>>();private lastWall:number|undefined;private elapsed=0;private nextBark=FIRST_BARK_MS;private barks=0;
  private capture=false;private impacts:number[]=[];private pending:{event:FiredCue;options:CueOptions}[]=[];
- private voiceRoster='';
+ private voiceRoster='';private introDone=false;private outcome=false;
  constructor(private play:(id:AudioCue,options?:CueOptions)=>void=playCue){}
  /** Deterministic evidence swaps the audio bridge for a recorder, never a second AudioContext. */
  setCapture(enabled:boolean){this.capture=enabled;}
@@ -31,7 +32,23 @@ export class BattleAudio {
   if(view.battleKey!==this.battle){
    this.battle=view.battleKey;this.lastPlan=null;this.statuses.clear();this.fired.clear();this.track=[];this.events.length=0;
    this.elapsed=0;this.nextBark=FIRST_BARK_MS;this.barks=0;this.lastWall=undefined;this.pending=[];this.impacts=[];
-   this.voiceRoster='';
+   this.voiceRoster='';this.introDone=false;this.outcome=false;
+  }
+  if(!this.introDone&&!view.galleryPreview){
+   // V10: a chapter boss announces itself once per battle with its own sting.
+   this.introDone=true;const boss=view.actors.map(a=>view.models?.[a.id]??a.cardRpg?.cardId??a.id).find(id=>BOSS_STINGS.has(id));
+   if(boss)this.send({at:0,planId:null,skillId:'',tier:'',actorId:boss,cue:`ui.boss-intro.${boss}`,role:'cut'},{priority:60});
+  }
+  if(!this.outcome&&!view.galleryPreview&&view.actors.length){
+   // V10: one fanfare when the field is decided (wave clear, boss down) or a defeat sting.
+   const alive=(side:string)=>view.actors.filter(a=>a.side===side&&a.hp>0);
+   const won=view.actors.some(a=>a.side==='enemy')&&!alive('enemy').length,lost=view.actors.some(a=>a.side==='party')&&!alive('party').length;
+   if(won||lost){
+    this.outcome=true;const cat=alive('party')[0],owner=cat&&(view.models?.[cat.id]??cat.cardRpg?.cardId);
+    const ctx={at:this.elapsed/1000,planId:null,skillId:won?'victory':'defeat',tier:'',actorId:cat?.id??''};
+    this.send({...ctx,cue:won?'music.victory':'music.defeat',role:'cut'},{priority:95});
+    if(won&&owner)this.send({...ctx,cue:`voice.${owner}.victory`,role:'voice'},{priority:100});
+   }
   }
   if(!this.capture&&typeof window!=='undefined'){
    const bridge=window.__thAudio,roster=view.actors.map(actor=>view.models?.[actor.id]??actor.cardRpg?.cardId??actor.id),key=roster.join('|');
