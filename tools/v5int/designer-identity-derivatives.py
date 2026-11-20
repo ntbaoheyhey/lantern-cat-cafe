@@ -118,6 +118,27 @@ def look_variants(cat, body, face_bg):
     return out
 
 
+LEGACY = ['assets/cardrpg/portraits/{c}.png', 'assets/cardrpg3/portraits/{c}.webp',
+          'assets/cardrpg-look/portraits/{c}-1x.webp', 'assets/cardrpg-look/portraits/{c}-2x.webp']
+
+
+def legacy_fullbody(cat, body):
+    """Older full-body portrait sets still imported by the full game screens: same canvas, designer body."""
+    for pattern in LEGACY:
+        path = ROOT / pattern.format(c=cat)
+        if not path.exists():
+            continue
+        w, h = Image.open(path).size
+        s = min(w * 0.92 / body.width, h * 0.92 / body.height)
+        fit = body.resize((round(body.width * s), round(body.height * s)), Image.LANCZOS)
+        canvas = Image.new('RGBA', (w, h), (0, 0, 0, 0))
+        canvas.alpha_composite(fit, ((w - fit.width) // 2, h - fit.height - round(h * 0.04)))
+        if path.suffix == '.png':
+            save(canvas, path, optimize=True)
+        else:
+            save(canvas, path, quality=90, method=6)
+
+
 def save(im, path, **kw):
     path.parent.mkdir(parents=True, exist_ok=True)
     im.save(path, **kw)
@@ -163,6 +184,7 @@ def build():
         ftile.alpha_composite(face)
         save(ftile.convert('RGB'), A6 / f'{cat}-face.webp', quality=92, method=6)
         look_variants(cat, body, tone['face'])
+        legacy_fullbody(cat, body)
         made[cat] = (pad, tile, ftile)
     COMPACT.write_text(json.dumps(compact, indent=2) + '\n')
     update_manifests()
