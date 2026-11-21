@@ -20,7 +20,7 @@ function resetTimeText(now: Date = new Date(), timeZone?: string): string {
   return `${vietnam}, ${local} your time`;
 }
 
-/** Cat Café Quest display names. Internal ids (gold, shards, bossKey, slot and rarity keys) never change. */
+/** Lantern Cat Café display names. Internal ids (gold, shards, bossKey, slot and rarity keys) never change. */
 export const LABELS = {
   hero: 'Mochi',
   gold: 'Fish',

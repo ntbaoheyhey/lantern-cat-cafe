@@ -33,7 +33,7 @@ it('renders the page above the strip with title, copy, Mochi card, and next-step
   render(<App />);
 
   // Title in display font
-  const title = screen.getByRole('heading', { level: 1, name: 'Taskbar Hero' });
+  const title = screen.getByRole('heading', { level: 1, name: 'Lantern Cat Café' });
   expect(title).toBeTruthy();
 
   // One line of copy

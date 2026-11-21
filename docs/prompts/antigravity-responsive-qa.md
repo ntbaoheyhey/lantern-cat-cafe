@@ -2,7 +2,7 @@
 
 # Paste into Antigravity: A-R1 responsive QA
 
-You are doing independent responsive-window QA for ntbaoheyhey/taskbar-hero. The user made Codex temporary coordinator and will paste this prompt manually. Preserve your original Claude instructions; this is a bounded additional card, not permission to override them.
+You are doing independent responsive-window QA for ntbaoheyhey/lantern-cat-cafe. The user made Codex temporary coordinator and will paste this prompt manually. Preserve your original Claude instructions; this is a bounded additional card, not permission to override them.
 
 Read docs/responsive-coordination.md and reports/responsive-window.md from ai/codex-responsive-window. Gate: report exists with STATUS: PARTIAL or DONE for read-only QA. Fetch latest main explicitly (`git fetch origin +main:refs/remotes/origin/main`) and the responsive branch into an explicit remote-tracking ref. Record its full SHA before reviewing. If the gate or your original permissions conflict, publish STATUS: BLOCKED and explain; do not silently expand scope.
 

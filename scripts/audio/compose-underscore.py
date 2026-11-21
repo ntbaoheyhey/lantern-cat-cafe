@@ -68,7 +68,7 @@ def main():
     catalog=json.loads((ROOT/'assets/audio-sources/CATALOG.json').read_text())
     licenses=json.loads((ROOT/'apps/web/public/audio/LICENSES.json').read_text())
     manifest=json.loads((ROOT/'apps/web/public/audio/manifest.json').read_text())
-    url='https://github.com/ntbaoheyhey/taskbar-hero/blob/codex/v3-shell-2026-11-13/scripts/audio/compose-underscore.py'
+    url='https://github.com/ntbaoheyhey/lantern-cat-cafe/blob/codex/v3-shell-2026-11-13/scripts/audio/compose-underscore.py'
     for kind in ['battle','boss']:
         pcm=score(kind);path=dest/f'original-{kind}-underscore.flac'
         subprocess.run(['ffmpeg','-v','error','-y','-f','f32le','-ar',str(RATE),'-ac','2','-i','pipe:0','-af','loudnorm=I=-16:TP=-3.5:LRA=9','-ar',str(RATE),str(path)],input=pcm.tobytes(),check=True)

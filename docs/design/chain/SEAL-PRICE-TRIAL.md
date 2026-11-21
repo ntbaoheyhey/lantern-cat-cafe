@@ -18,7 +18,7 @@ The grant-inclusive conservation bound remains: `claims = burned + retained wall
 
 ## Local proof and reproduction
 
-`node tools/chain/check-seal-trial.mjs` starts disposable Anvil43113 and uses only public development keys. One real tester claim funds two fixture-authorized Epic seals, the irreversible forge, a permanent room style and the authoritative judge Star Thread. It checks18 burned,2 retained, one bound ornament, one style, one sealed thread, consumed source copies and idempotent recovery. [SEAL-TRIAL-LOCAL.json](../../../reports/chain/SEAL-TRIAL-LOCAL.json) contains the local transaction evidence. The synthetic source fixture is explicitly not campaign authority or a human trial.
+`node tools/chain/check-seal-trial.mjs` starts disposable Anvil43113 and uses only public development keys. One real tester claim funds two fixture-authorized Epic seals, the irreversible forge, a permanent room style and the authoritative judge Star Thread. It checks18 burned,2 retained, one bound ornament, one style, one sealed thread, consumed source copies and idempotent recovery. [SEAL-TRIAL-LOCAL.json](https://github.com/ntbaoheyhey/lantern-cat-cafe/blob/d89b61ab3ddd73659f45158d1abe5835b9445b81/reports/chain/SEAL-TRIAL-LOCAL.json) contains the local transaction evidence. The synthetic source fixture is explicitly not campaign authority or a human trial.
 
 `pnpm chain:test` verifies the original policy; `CHAIN_SEAL_PRICE_TRIAL=1 pnpm chain:test` verifies the candidate on a fresh chain. Both exercise altered-quote rejection before any debit, recovery and exact on-chain balances. SQL tests cover pending reservations across activation and rollback. These commands never use public wallet keys.
 

@@ -158,7 +158,7 @@ are unchanged. Baseline was measured on origin/main `21fec3e` with only the same
 measurement hooks/test installed. Set `G1_BASELINE=1` only when measuring that
 baseline; it records rather than enforces the new leak/rebuild thresholds.
 
-`reports/g1-speed/metrics.json` retains baseline and latest after measurements.
+[reports/g1-speed/metrics.json](https://github.com/ntbaoheyhey/lantern-cat-cafe/blob/d89b61ab3ddd73659f45158d1abe5835b9445b81/reports/g1-speed/metrics.json) retains baseline and latest after measurements.
 The CDP run collects garbage before each sample, records actual document visibility
 listeners and Performance metrics, and exercises 12 alternating resizes plus three
 hidden/visible cycles (also resizing while hidden). Visibility events are synthesized

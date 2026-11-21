@@ -178,7 +178,7 @@ const sourceHashes = Object.fromEntries(Object.entries(build.sourceHashes).filte
   /^apps\/web\/src\/game\/squad\/turn3d\/card-(?:motion|roster|enemy|boss).*\.ts$/.test(file)));
 await writeFile(process.env.BIG_PROVENANCE || 'assets/provenance/cardrpg-big2-motion-batch1.json', JSON.stringify({
   tool: 'Runtime procedural keyframe authoring, createCardClips and tools/cardrpg-big2/motion-measure.mjs',
-  authorship: 'Original authored gestures on the existing original Taskbar Hero rigid-node rigs',
+  authorship: 'Original authored gestures on the existing original Lantern Cat Café rigid-node rigs',
   artifactSha256: receipt.sha256, buildReceipt: buildPath, sources: sourceHashes,
   sampledKeys: 41, interpolation: 'Smoothstep between authored pose keys, quaternion tracks',
   secondaryMotion: { lagFraction: .06, weights: { tailTip: .55, tailMid: .4, other: .24 } },

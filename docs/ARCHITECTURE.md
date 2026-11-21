@@ -1,6 +1,6 @@
 # Architecture
 
-Current desktop integration: `codex/v5-int-2026-11-17`, 17 November 2026. [Run the game](../README.md) · [Validation and limits](../reports/v5/CXI/I-C.md) · [Owner deployment and Fuji proof](../reports/v5/CXI/NEEDS-USER-VI.md).
+The hosted campaign runs in desktop Chrome and uses the deployed Fuji contracts. [Play and architecture overview](../README.md) · [Live transaction evidence](avalanche/LIVE-E2E.md)
 
 ## Runtime map
 
@@ -51,7 +51,7 @@ Missing wallets offer Core/MetaMask or free play. Sign-in connection failures of
 
 ## Public deployment evidence
 
-The [Fuji registry](../packages/chain/deployments/43113.json) lists RelicNFT, RelicMarket, YarnToken, RelicMarketV2 and SeasonRewards. [PUBLIC-FUJI.json](../reports/v5/CXI/PUBLIC-FUJI.json) records nonempty bytecode for those addresses at block 61,234,900. Bytecode presence, verified source, a successful guest transfer and a complete hosted game journey are separate claims. Only the first is established by that read-only check. The isolated Anvil proof is labelled local, even though its chain ID is also 43113.
+The [Fuji registry](../packages/chain/deployments/43113.json) lists the five deployed contracts. The [21 November live record](avalanche/LIVE-E2E.md) includes guest funding, mint, listing, purchase and withdrawal receipts. Local Anvil fixtures use a separate deployment.
 
 ## Server-authoritative boundary and Avalanche flow
 

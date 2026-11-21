@@ -13,7 +13,7 @@
 
 ## 1. Executive Summary & Verdict
 
-The live production deployment of **Taskbar Hero (Cat Café Quest)** was audited from the perspective of a first-time hackathon judge evaluating the game against the instructions in `docs/demo-script.md`.
+The live production deployment of **Lantern Cat Café (Cat Café Quest)** was audited from the perspective of a first-time hackathon judge evaluating the game against the instructions in `docs/demo-script.md`.
 
 ### Core Verdict
 1. **Redesign Deployment Status**: **100% VERIFIED LIVE**
@@ -161,11 +161,11 @@ REVISED:
 
 ### Line 85-86 (Section 3: Video Script Scene 1)
 CURRENT:
-| **0:00 - 0:12** | Full desktop screen showing a productivity app or web article, with the Taskbar Hero bottom strip quietly running. Mochi trots across the screen fighting yarn balls. |
+| **0:00 - 0:12** | Full desktop screen showing a productivity app or web article, with the Lantern Cat Café bottom strip quietly running. Mochi trots across the screen fighting yarn balls. |
 | **0:12 - 0:30** | Zoom in to the bottom strip. Point mouse to the HUD: Fish (gold), Yarn (shards), and Cat Keys incrementing. Click **WalletButton** ("Connect wallet" -> "Sign in" via SIWE). |
 
 REVISED:
-| **0:00 - 0:12** | Full desktop screen showing a productivity app or web article, with the Taskbar Hero bottom strip quietly running. (If opening fresh, click "Start playing" on the onboarding dialog). Mochi trots across the screen fighting yarn balls. |
+| **0:00 - 0:12** | Full desktop screen showing a productivity app or web article, with the Lantern Cat Café bottom strip quietly running. (If opening fresh, click "Start playing" on the onboarding dialog). Mochi trots across the screen fighting yarn balls. |
 | **0:12 - 0:30** | Zoom in to the bottom strip. Point mouse to the HUD counters (Fish, Yarn, Cat Key). Note: on mobile <=560px, labels collapse to icon chips. Click **WalletButton** ("Connect wallet" -> "Sign in" via SIWE; if no wallet is installed, button links to Core Wallet). |
 
 ---

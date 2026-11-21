@@ -1,8 +1,7 @@
 # Avalanche integration and evidence
 
-Taskbar Hero's repo targets Avalanche Fuji, chain ID **43113**.
-Open the [generated live proof](../reports/chain-proof.md) for its timestamp,
-checks, event table, and complete JSON. A failed check means **NOT VERIFIED**.
+Lantern Cat Café's repo targets Avalanche Fuji, chain ID **43113**.
+The [live evidence](avalanche/LIVE-E2E.md) includes funded guest mints and completed sales. The [README](../README.md#how-avalanche-is-used) links the hosted Chapter 1 mint and the five verified contracts.
 
 ## V4 configured contracts and proof scope
 
@@ -20,7 +19,7 @@ RelicForge is an optional local fixture; it is absent from this public registry.
 
 ## V4 evidence that can be reproduced
 
-[Public counter recovery](../reports/v4-ship/S4/counter-recovery.json) covers the four real Fuji counters, an aged cache, request failure, reload and recovery. The recorded public-log checks cover five configured contracts and RPC-verified receipts. These are read-only checks, not a completed sponsored public journey or a public-latency measurement.
+[Public counter recovery](https://github.com/ntbaoheyhey/lantern-cat-cafe/blob/d89b61ab3ddd73659f45158d1abe5835b9445b81/reports/v4-ship/S4/counter-recovery.json) covers the four real Fuji counters, an aged cache, request failure, reload and recovery. The recorded public-log checks cover five configured contracts and RPC-verified receipts. These are read-only checks, not a completed sponsored public journey or a public-latency measurement.
 
 The [local harness](../scripts/v4ship/journey-run.mjs) drives guest, battle, reward, workshop, boss and wallet proof against disposable Anvil/SQL. Before rollback, an independent verifier compares every observed receipt's successful status, hash, payer, fee and block against the local RPC. It checks at least five action types and that the guest wallet's observed receipts appear in history. The twenty-run completion report is separate from production rehearsal.
 

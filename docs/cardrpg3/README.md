@@ -1,4 +1,4 @@
-# Taskbar Hero · bản demo tích hợp
+# Lantern Cat Café · bản demo tích hợp
 REFERENCE: tools/cardrpg-big/build.mjs, reports/cardrpg-big/memory/PROMPT.md, reports/cardrpg-big/integration/delivery/source-acceptance.json
 
 Mở [index.html](index.html) trực tiếp trong trình duyệt. File LOOK L0 chứa game và tài nguyên offline, 24.026.508 byte; SHA-256 `f1234525fb744d0b318c2ea65727256cfb71fc6cc31c2380cf6fac93941a0f56`. [Baseline v1](baseline-v1.html) giữ nguyên 23.937.000 byte/SHA `9a5f6ebb`. Bản cũ vẫn ở [cardrpg2](../cardrpg2/index.html), và mốc ba mèo đầu ở [slice.html](slice.html).
@@ -23,9 +23,9 @@ REFERENCE: tools/cardrpg-big/offline.tsx, apps/web/src/game/cardrpg/depth/LabEvi
 ## Baseline đã xác minh
 REFERENCE: reports/cardrpg-big/integration/delivery/{source-acceptance,postcapture-source}.json, reports/cardrpg-big/integration/F7-GATES.md
 
-Nguồn tích hợp `a106dfca`, [draft #358](https://github.com/ntbaoheyhey/taskbar-hero/pull/358), đã qua typecheck/lint/build,1.730test web,1.020test luật và421E2E. Gallery được kiểm tra ở1280×720,1440×900,1024×600; mọi160ảnh so sánh giải mã offline. Baseline đã có14video và review; hình ảnh vẫn chưa đạt. Ma trận cuối chỉ chạy trên final lookV2. Chi tiết được cập nhật trong [báo cáo](../../reports/cardrpg-big/CARDRPG-BIG-REPORT.md).
+Nguồn tích hợp `a106dfca`, [draft #358](https://github.com/ntbaoheyhey/lantern-cat-cafe/pull/358), đã qua typecheck/lint/build,1.730test web,1.020test luật và421E2E. Gallery được kiểm tra ở1280×720,1440×900,1024×600; mọi160ảnh so sánh giải mã offline. Baseline đã có14video và review; hình ảnh vẫn chưa đạt. Ma trận cuối chỉ chạy trên final lookV2. Chi tiết được cập nhật trong [báo cáo](https://github.com/ntbaoheyhey/lantern-cat-cafe/blob/d89b61ab3ddd73659f45158d1abe5835b9445b81/reports/cardrpg-big/CARDRPG-BIG-REPORT.md).
 
-Độ nét, dải kích thước nhân vật, một số cổng khựng và phân tầng trang bị còn thiếu ở các mốc đã đo. Xem [F7 gates](../../reports/cardrpg-big/integration/F7-GATES.md) để phân biệt đạt, chưa đo và chưa đạt.
+Độ nét, dải kích thước nhân vật, một số cổng khựng và phân tầng trang bị còn thiếu ở các mốc đã đo. Xem [F7 gates](https://github.com/ntbaoheyhey/lantern-cat-cafe/blob/d89b61ab3ddd73659f45158d1abe5835b9445b81/reports/cardrpg-big/integration/F7-GATES.md) để phân biệt đạt, chưa đo và chưa đạt.
 
 ## LOOK integration preview
 REFERENCE: ../../reports/cardrpg-big/look-ui/PLAN.md; ../../tools/cardrpg-big/build.mjs
@@ -34,7 +34,7 @@ The current main demo adopts the published L0 palette/helper and A's original me
 
 Build this explicit LOOK preview with `BIG_LOOK_V2=1 BIG_PYTHON=/path/to/python-with-Pillow node tools/cardrpg-big/build.mjs`. Set `BIG_OUTPUT_DIR=docs/cardrpg-look` to build a separate preview without replacing this one. Without `BIG_LOOK_V2=1`, the offline build starts with LOOK off. Keep `baseline-v1.html` unchanged.
 
-Sparse checkouts must restore the tracked comparison evidence (93rows/160images); the builder refuses an incomplete set. Current acceptance and exact artifact hashes are in `reports/cardrpg-big/look-ui/`; old receipts still describe their original artifacts.
+Sparse checkouts must restore the tracked comparison evidence (93rows/160images); the builder refuses an incomplete set. Current acceptance and exact artifact hashes are in [reports/cardrpg-big/look-ui/](https://github.com/ntbaoheyhey/lantern-cat-cafe/tree/d89b61ab3ddd73659f45158d1abe5835b9445b81/reports/cardrpg-big/look-ui); old receipts still describe their original artifacts.
 
 ## LOOK L0 đã xác minh
 REFERENCE: ../../reports/cardrpg-big/look-ui/L0-CHECKPOINT.md; ../../reports/cardrpg-big/look-ui/l0-checkpoint-audit.json

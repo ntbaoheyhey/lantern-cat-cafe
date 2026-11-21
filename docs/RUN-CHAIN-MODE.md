@@ -1,6 +1,6 @@
 # Record the V9 demo on Avalanche Fuji
 
-From the repository root, after `pnpm install --frozen-lockfile` and the owner setup below, run:
+The hosted campaign is available in [desktop Chrome](https://lantern-cat-cafe.vercel.app/). For a local recording, from the repository root, after `pnpm install --frozen-lockfile` and the owner setup below, run:
 
 ```sh
 node tools/v5int/run-chain-mode.mjs
@@ -28,7 +28,7 @@ The recording command supplies `VITE_CHAIN_DEMO=1` and `VITE_CHAIN_MODE=fuji`. C
 
 ## Owner setup: backend and sponsor
 
-Only the owner manages accounts, secrets, deployment and funding. Apply the repository's existing Supabase migrations and deploy `auth-nonce`, `auth-verify`, `guest-drip` and `chain-judge` (the hosted `chain-judge` of 12 Nov answers `judge_unavailable` for the V9 `finale` action; see [the live check](avalanche/LIVE-E2E.md)) with `verify_jwt=false` as specified in `supabase/config.toml`. The functions validate their own SIWE session JWTs. The V9 `chain-judge` source uses the same three-cat demo seed as the browser; no client save or claimed win is accepted as mint authority.
+The production backend supports the hosted game and the local recording origin. Its functions validate SIWE sessions. The chain judge replays the three-cat reward trial before issuing a voucher. The following settings document the configuration for operators. [21 November live proof](avalanche/LIVE-E2E.md)
 
 Set these in the **server's secret environment**, never in `apps/web/.env.local` or a `VITE_` variable:
 
@@ -42,10 +42,10 @@ Set these in the **server's secret environment**, never in `apps/web/.env.local`
 | `GUEST_DRIP_ENABLED` | `1` |
 | `CHAIN_JUDGE_ENABLED` | `1` |
 | `FUJI_RPC_URL` | `https://api.avax-test.network/ext/bc/C/rpc` |
-| `SIWE_DOMAIN` | `taskbarhero-eight.vercel.app,127.0.0.1:6301` (comma-separated hosts; needs the `auth-verify` from this branch, deploy it **before** changing the value) |
-| `SIWE_ALLOWED_ORIGIN` | `https://taskbarhero-eight.vercel.app,http://127.0.0.1:6301` |
+| `SIWE_DOMAIN` | `lantern-cat-cafe.vercel.app,taskbarhero-eight.vercel.app,127.0.0.1:6301` (comma-separated hosts) |
+| `SIWE_ALLOWED_ORIGIN` | `https://lantern-cat-cafe.vercel.app,https://taskbarhero-eight.vercel.app,http://127.0.0.1:6301` |
 
-`guest-drip` refuses a grant that would leave the sponsor under **1 AVAX** (`sponsor_low`), so keep the sponsor at **2 AVAX or more** before recording. Check it on [Snowtrace](https://testnet.snowtrace.io/address/0x5eC838ECcc4eC6B6707b6479394E9E6CEEA0B000). The drip sends **0.05 test AVAX per new guest** and retains the existing database caps and idempotency. The sponsor needs enough test AVAX for the transfer and gas. Keys, sponsor funding, server deployment and a fresh real mint are owner work. No new service subscription or paid API is needed.
+`guest-drip` refuses a grant that would leave the sponsor under **1 AVAX** (`sponsor_low`), so keep the sponsor at **2 AVAX or more** before recording. Check it on [Snowtrace](https://testnet.snowtrace.io/address/0x5eC838ECcc4eC6B6707b6479394E9E6CEEA0B000). The drip sends **0.05 test AVAX per new guest** and retains the existing database caps and idempotency. The sponsor needs enough test AVAX for the transfer and gas. The operator maintains the sponsor balance. No new service subscription or paid API is needed.
 
 For the owner-run funding proof, sign in as the recording guest, then set these variables in the owner's local shell:
 
@@ -69,7 +69,7 @@ node tools/v5int/run-chain-mode.mjs --fixture
 
 Finish the boss and choose **Preview receipt fixture**. The toast visibly says **Fixture — Relic mint preview**, **not submitted**, and **No transaction or ownership is claimed**. It has no explorer link and is never stored as a real receipt. The Collection still supports public Fuji reads by address. A configured live build that cannot mint exposes the same labelled preview after showing its error; no silent fallback fabricates a transaction.
 
-At the CXI checkpoint on 19 November 2026, this worktree had no Supabase configuration or owner-funded sponsor session. The fixture was used for UI review; the fresh real mint screenshot remains owner-dependent.
+At the CXI checkpoint on 19 November 2026, this worktree had no Supabase configuration or owner-funded sponsor session. That fixture was used for UI review. The subsequent hosted Chapter 1 mint is [visible on Snowtrace](https://testnet.snowtrace.io/tx/0x566fe1355cad0c4b71dcab6daa8c0f23fe94282e7f601d2f16700800ddf47c56).
 
 ## Verified Fuji contracts
 

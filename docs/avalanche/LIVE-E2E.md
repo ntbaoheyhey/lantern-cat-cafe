@@ -1,5 +1,9 @@
 # Live Avalanche Fuji check — 21 November 2026 (full sale)
 
+The hosted campaign also minted Moon Collar (Relic #3) after the Chapter 1 guardian in desktop Chrome. The Fuji receipt shows a successful ERC-1155 mint of one item in block **61,409,492**. [Hosted campaign receipt](https://testnet.snowtrace.io/tx/0x566fe1355cad0c4b71dcab6daa8c0f23fe94282e7f601d2f16700800ddf47c56)
+
+## Boss run with a funded guest
+
 After the owner funded the café sponsor (2.35 AVAX at 02:35 UTC), the whole judge path ran again against the deployed backend with no mocks: guest SIWE sign-in, server-replayed boss battle (`chain-judge` action `boss`), café gas, mint, list, a second guest buys, the seller withdraws. Raw proof: [`live-e2e-2026-11-21.json`](live-e2e-2026-11-21.json).
 
 | Step | Payer | Confirmed in | Transaction |
@@ -14,7 +18,7 @@ After the owner funded the café sponsor (2.35 AVAX at 02:35 UTC), the whole jud
 
 Market split for the 0.001 AVAX sale (listing #5): fee 0.00005 AVAX, of which 0.00002 burned and 0.00003 to treasury; seller received 0.00095 AVAX. Final ownership: buyer 1, seller 0.
 
-## After the owner redeploy (02:40 UTC): in-game finale reward from the local recording host
+## Finale run from the local recording host
 
 The owner redeployed `auth-verify`, `chain-judge` and `guest-drip` from `main` and set `SIWE_DOMAIN` / `SIWE_ALLOWED_ORIGIN` to include `127.0.0.1:6301` (CORS preflight now reflects `http://127.0.0.1:6301`). The same run with `--action finale --domain 127.0.0.1:6301`, the exact path the V9 judge reward and the Chapter 1 guardian offer use, minted the Moon Collar (Relic #3, rarity 2) and sold it (listing #6). Proof: [`live-e2e-2026-11-21-finale.json`](live-e2e-2026-11-21-finale.json).
 
@@ -43,7 +47,7 @@ A fresh in-memory guest wallet signed in with SIWE for `taskbarhero-eight.vercel
 | `RelicNFT.setApprovalForAll` (market) | guest | [0x56c1daf3…](https://testnet.snowtrace.io/tx/0x56c1daf315c14f9d85c4aec5cd62d972485d528d4d88b5c62c3ed776abfc3821) |
 | `RelicMarketV2.list` (listing #4, 0.001 AVAX) | guest | [0xefe712af…](https://testnet.snowtrace.io/tx/0xefe712af32bfc68f18ef24be6b7180ff59a673e9db880172ed336b8fc8e6c5e8) |
 
-Each step confirmed in about 4–5 seconds. Listing #4 is still open on RelicMarketV2; any Fuji wallet (including the recording guest in the Market tab) can buy it.
+Each step confirmed in about 4–5 seconds. Listing #4 was open on RelicMarketV2 at the time of that check.
 
 The buy step did not run: the second café grant was refused. The script now funds the buyer from the seller instead, so a full run needs only one grant.
 
@@ -64,4 +68,4 @@ Already working and confirmed: SIWE sign-in against the live backend, server-sig
 LIVE_FUJI=YES node tools/fuji/live-e2e.mjs --out docs/avalanche/live-e2e-$(date -u +%F).json
 ```
 
-Use `--action finale` after `chain-judge` is redeployed (default is `finale`; pass `--action boss` against the old deployment). Guest keys are generated in memory and never written. Grants are limited to 3 per network address per 24 h and 50 per day overall.
+The default action is `finale`. Pass `--action boss` to run the separate boss trial. Guest keys are generated in memory and never written. Grants are limited to 3 per network address per 24 h and 50 per day overall.

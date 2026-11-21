@@ -1,8 +1,8 @@
-# Patterns chosen for Taskbar Hero
+# Patterns chosen for Lantern Cat Café
 
 Research date: 2026-11-05 UTC. Decisions are original synthesis, not claims that every reference uses every mechanic. Sources and confidence live in [RESEARCH.md](RESEARCH.md), [sources.json](sources.json), and [research-matrix.json](research-matrix.json). No reference art, layouts, icons, text or numerical tables are imported.
 
-| Common mechanism | Decision | Taskbar Hero implementation / reason |
+| Common mechanism | Decision | Lantern Cat Café implementation / reason |
 | --- | --- | --- |
 | Distinct frontline, damage and support jobs | KEEP | Three cats: guardian, witch, alchemist. Each has a basic, two skills and an ultimate. |
 | A compact readable battle state | KEEP | Numbered rounds, committed enemy intents, target rows, finite charge and cooldowns. B owns presentation. |

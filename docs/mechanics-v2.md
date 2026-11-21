@@ -1,6 +1,6 @@
 # Cat RPG v2 — Game Mechanics Specification
 
-A 5-minute technical reference for judges evaluating **Taskbar Hero (Cat RPG v2: Cat Café Quest)**.
+A 5-minute technical reference for judges evaluating **Lantern Cat Café (Cat RPG v2: Cat Café Quest)**.
 This document formalizes the complete server-authoritative, deterministic, and bounded game rules as executed in production code.
 
 ---

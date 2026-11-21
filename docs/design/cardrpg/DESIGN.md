@@ -1,4 +1,4 @@
-# Taskbar Hero Card RPG design bible
+# Lantern Cat Café Card RPG design bible
 
 Status: implemented local systems with explicitly labelled future content. Contract: `packages/game-rules/src/cardrpg/contract.ts`; tuning: `packages/game-rules/src/cardrpg/config.ts`. Runtime exports: `@taskbar-hero/game-rules/cardrpg`. Source imports and every state transition are pure; the caller holds in-memory state. This is an unsaved prototype, not a launch economy.
 

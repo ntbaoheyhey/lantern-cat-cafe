@@ -1,10 +1,12 @@
 # Historical video script — DRAFT, 145 seconds maximum planned runtime
 
+> Archived material from an earlier build. See the [current game and submission evidence](../README.md).
+
 This retained script predates the integrated candidate. Use the current [90-second shot list](submission/shot-list-90-second.md) and [3-minute pitch](submission/pitch-3-minute.md) for the refreshed packet. Vietnamese narration with English subtitles. This is a recording plan, not a completed video or timed QA result. The earlier CXU3/CXC2 readiness wait is superseded by the deployment-capacity hold. Follow the [release status](release-status.md), then verify the final live head before recording. A prepared guest profile must be earned through ordinary play and disclosed. Never seed fake wins, currencies, wallet balances or transactions for a live claim.
 
 | Time | Shot/action | Vietnamese narration | English subtitle |
 |---|---|---|---|
-|00:00–00:15|Landing; choose Play as guest|Đây là Taskbar Hero, trò chơi nhập vai nhàn rỗi trên máy tính. Bạn có thể bắt đầu bằng chế độ khách, không cần ví.|Taskbar Hero is a desktop idle RPG. Start as a guest without a wallet.|
+|00:00–00:15|Landing; choose Play as guest|Đây là Lantern Cat Café, trò chơi nhập vai nhàn rỗi trên máy tính. Bạn có thể bắt đầu bằng chế độ khách, không cần ví.|Lantern Cat Café is a desktop idle RPG. Start as a guest without a wallet.|
 |00:15–00:30|Class choice; confirm|Chọn một trong ba lớp khởi đầu. Chú mèo tự chiến đấu và nhận tiến trình theo nhịp của trò chơi.|Choose one of three starter classes. Your cat fights and earns progress automatically.|
 |00:30–00:50|Home and a real idle claim|Trong chế độ khách, dữ liệu nằm trong trình duyệt. Bản trình diễn này dùng tiến trình đã kiếm được trước đó; chúng tôi không tua đồng hồ hay tạo phần thưởng giả.|Guest data is local. This demonstration uses progress earned beforehand, without clock changes or fabricated rewards.|
 |00:50–01:05|Map; actual Fight/Skip replay/Collect only if ready|Bản đồ cho biết điều kiện đánh trùm. Khóa chỉ bị tiêu khi thắng. Nếu chưa đủ điều kiện, giao diện giải thích rõ thay vì báo một chiến thắng chưa xảy ra.|The map explains boss requirements. A key is spent on a win. Locked states are shown honestly.|
@@ -18,6 +20,6 @@ Total planned duration: 145 seconds. No claim that a completed capture currently
 
 If the boss/craft is blocked or a transaction is unavailable, show that state and retain the limitation; do not splice a local fixture into footage labelled live. The separate 3-minute QA route is Landing→Guest→Class→Idle→Boss→Forge→Bag→On-chain proof→Market at both 1280×720 and 1600×900. A failed demo step stops further merges until handled under the shared protocol. The funded mint/list/buy run needs separate actual Fuji receipts; no hashes are invented here.
 
-Baseline media: [manifest](../reports/submission/evidence/media-manifest.json), recorded at 6144d42 before the current UI refresh. Keep it labelled historical; current live media is linked from the release status. Refresh the final recording packet again after the held stack lands. Owner records the final video, checks Vietnamese timing/English subtitles and inserts the final URL; this task does not upload or submit it.
+Baseline media: [manifest](https://github.com/ntbaoheyhey/lantern-cat-cafe/blob/d89b61ab3ddd73659f45158d1abe5835b9445b81/reports/submission/evidence/media-manifest.json), recorded at 6144d42 before the current UI refresh. Keep it labelled historical; current live media is linked from the release status. Refresh the final recording packet again after the held stack lands. Owner records the final video, checks Vietnamese timing/English subtitles and inserts the final URL; this task does not upload or submit it.
 
 The optional catalog shot also needs UI confirmation that the icons have painted; one earlier baseline capture was excluded for this reason. No UI or art source was changed by SYSTEM.

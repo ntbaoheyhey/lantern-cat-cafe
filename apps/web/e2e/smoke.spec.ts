@@ -11,7 +11,7 @@ test('strip renders a canvas and the panel opens and closes', async ({ page }) =
 
   await page.goto('/');
   await page.getByRole('button', { name: 'Start playing' }).click();
-  await expect(page.getByRole('heading', { name: 'Taskbar Hero' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Lantern Cat Café' })).toBeVisible();
 
   const canvas = page.locator('.strip canvas');
   await expect(canvas).toHaveCount(1);

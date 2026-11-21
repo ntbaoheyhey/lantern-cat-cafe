@@ -1,14 +1,12 @@
 # Submission README Sections
 
 ## Pitch
-The Lantern Cat Cafe is the last lit shop on a street that the Tangle—the Yarn Giant born from tasks abandoned on your taskbar—is knotting up. Lead your cosy cat trio (Mochi, Clover, and Soot) into tactical card battles to protect the warmth of the cafe. Relics earned are cafe memories the Tangle cannot erase because they live forever on Avalanche.
+The Lantern Cat Café is the last lit shop on a street that the Tangle—the Yarn Giant born from tasks abandoned on your taskbar—is knotting up. Lead your cosy cat trio (Mochi, Clover, and Soot) into tactical card battles to protect the warmth of the cafe. Relics earned are cafe memories the Tangle cannot erase because they live forever on Avalanche.
 
 ## How to Play
-1. **Choose Your Trio**: Field Mochi (tank with shield and lantern), Clover (healer with teapot), and Soot (mage in purple cloak).
-2. **Tactical Card Battle**: Battle runs off-chain through deterministic TypeScript rules and Three.js visuals. Spend stamina to play shield slams, teapot brews, and ember spells.
-3. **Build Ultimate Momentum**: Fill hero energy gauges through synergistic plays and hit-stop timing.
-4. **Unleash Ultimates**: Trigger Mochi's "Last Lantern Vow", Clover's "Fourleaf Spring Brew", and Soot's "Chimney Comet" to shatter enemy waves.
-5. **Conquer the Yarn Giant**: Defeat the towering boss to rescue the street and claim an on-chain memory voucher.
+1. Open [the live game](https://lantern-cat-cafe.vercel.app/) in desktop Chrome and choose **Play free**.
+2. Lead Mochi, Clover and Soot through Chapter 1. The cats attack automatically. Tap a glowing portrait to use that cat’s ultimate, or enable **Auto**.
+3. Defeat the Yarn Giant and select **Keep as Relic** to mint Moon Collar on Avalanche Fuji. The receipt shows the transaction on Snowtrace.
 
 ## How Avalanche is Used
 Combat runs fully off-chain in deterministic TypeScript and Three.js; Avalanche Fuji provides verifiable ownership and post-battle settlement without network latency during combat.
@@ -26,7 +24,7 @@ Combat runs fully off-chain in deterministic TypeScript and Three.js; Avalanche 
 ## Architecture
 - **Client & Presentation**: Browser-based responsive client built with React, Three.js, and Phaser, utilizing custom animated 2D/3D cut-ins and Spine character rigs.
 - **Deterministic Game Rules**: Off-chain shared TypeScript simulation engine powering turn queues, status effects, damage mitigation, and combat resolution.
-- **Sound Engine & Audio Delivery**: Web Audio API engine with dynamic combat music ducking, 12 discrete ultimate audio layers (-16 LUFS peak), and CC0/CC-BY music beds.
+- **Sound Engine & Audio Delivery**: Web Audio API engine with dynamic combat music ducking, 12 ultimate audio layers, and CC0/CC-BY music beds.
 - **Avalanche Fuji Smart Contracts**: Solidity contracts deployed on Avalanche Fuji (C-Chain 43113) interfacing through Viem and Wagmi for voucher minting and token balances.
 
 ## Credits

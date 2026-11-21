@@ -16,7 +16,7 @@ try{
  const nonce=await local.modules.issueNonce(local.authDeps);
  // Use the public SIWE verifier with an Anvil-only guest key.
  const {createSiweMessage}=require('viem/siwe');
- const signed=createSiweMessage({domain:'127.0.0.1:5995',address:guest.address,nonce:nonce.nonce,chainId:43113,uri:'http://127.0.0.1:5995',version:'1',statement:'Sign in to Taskbar Hero.',issuedAt:new Date(),expirationTime:new Date(Date.now()+600000)});
+ const signed=createSiweMessage({domain:'127.0.0.1:5995',address:guest.address,nonce:nonce.nonce,chainId:43113,uri:'http://127.0.0.1:5995',version:'1',statement:'Sign in to Lantern Cat Cafe.',issuedAt:new Date(),expirationTime:new Date(Date.now()+600000)});
  const auth=await local.modules.verifySignIn(local.authDeps,{message:signed,signature:await guest.signMessage({message:signed})});
  const session=await local.modules.verifySessionToken(auth.token,{jwtSecret:local.authDeps.config.jwtSecret});
  const p=session.sub,call=(command,id=crypto.randomUUID())=>local.economy(p,guest.address,{id,command});

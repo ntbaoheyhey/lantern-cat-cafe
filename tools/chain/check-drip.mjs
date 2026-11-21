@@ -8,7 +8,7 @@ try {
   };
   const user=devAccount(8), nonce=(await post('auth-nonce',{})).nonce;
   // Use the production EIP-4361 parser/verifier over HTTP.
-  const message=`127.0.0.1:5980 wants you to sign in with your Ethereum account:\n${user.address}\n\nSign in to Taskbar Hero.\n\nURI: ${localOrigin}\nVersion: 1\nChain ID: 43113\nNonce: ${nonce}\nIssued At: ${new Date().toISOString()}\nExpiration Time: ${new Date(Date.now()+600000).toISOString()}`;
+  const message=`127.0.0.1:5980 wants you to sign in with your Ethereum account:\n${user.address}\n\nSign in to Lantern Cat Cafe.\n\nURI: ${localOrigin}\nVersion: 1\nChain ID: 43113\nNonce: ${nonce}\nIssued At: ${new Date().toISOString()}\nExpiration Time: ${new Date(Date.now()+600000).toISOString()}`;
   const session=await post('auth-verify',{message,signature:await user.signMessage({message})});
   const refused=async(name,body,status,error)=>{
     const response=await fetch(`${localApi}/functions/v1/${name}`,{method:'POST',headers:{'content-type':'application/json',authorization:`Bearer ${session.token}`},body:typeof body==='string'?body:JSON.stringify(body)});

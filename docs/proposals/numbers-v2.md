@@ -338,7 +338,7 @@ T2_SCENARIO=content T2_KILLS='[18,38,26,30,30]' T2_BANDS_OUT=/tmp/t2-38 node pac
 T2_SCENARIO=content T2_KILLS='[18,39,81,150,200]' T2_BANDS_OUT=/tmp/t2-content node packages/game-rules/src/v2/sim/measure.mjs
 ```
 
-The CLI writes JSON observations and Markdown band tables to the supplied temporary prefix, verifies exact config restoration, and writes nothing into production files. It uses the web package’s existing Vite dependency to load TypeScript. No test retry, timeout or skip is involved. Raw per-seed chapter durations are pasted in [the T2 mission report](../../reports/t2-numbers-e2e.md).
+The CLI writes JSON observations and Markdown band tables to the supplied temporary prefix, verifies exact config restoration, and writes nothing into production files. It uses the web package’s existing Vite dependency to load TypeScript. No test retry, timeout or skip is involved. Raw per-seed chapter durations are pasted in [the T2 mission report](https://github.com/ntbaoheyhey/lantern-cat-cafe/blob/d89b61ab3ddd73659f45158d1abe5835b9445b81/reports/t2-numbers-e2e.md).
 
 ## Signature
 

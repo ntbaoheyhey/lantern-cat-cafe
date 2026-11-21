@@ -62,7 +62,7 @@ test('Conditional samples have no nodes or image requests when the shared flag i
   const art: string[] = [];
   page.on('request', request => { if (request.url().includes('/ui-art2/')) art.push(request.url()); });
   await page.goto('/feature-fixture/e2e/fixtures/feature-samples.html?off');
-  await expect(page.getByRole('heading', { name: 'Taskbar Hero', exact: true })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Lantern Cat Café', exact: true })).toBeVisible();
   await expect(page.getByRole('region', { name: 'Future feature samples' })).toHaveCount(0);
   await expect(page.locator('[data-art2]')).toHaveCount(0);
   expect(art).toEqual([]);

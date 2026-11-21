@@ -1,6 +1,6 @@
 # Runbook
 
-Operating the live Taskbar Hero. Values (keys, tokens) are never written here; only variable names. Setup of secrets is in [go-live](go-live.md), contract deployment in [deploy](deploy.md).
+Operating the live Lantern Cat Café. Values (keys, tokens) are never written here; only variable names. Setup of secrets is in [go-live](go-live.md), contract deployment in [deploy](deploy.md).
 
 ## Live check
 

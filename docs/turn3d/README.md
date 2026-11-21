@@ -46,7 +46,7 @@ Full MIT license text for Three, React and React DOM is included in the HTML.
 ## Evidence and recommendation
 
 - 578 rules / 1556 web / 421 inherited E2E tests pass. Rules retain two expected
-  failures and eleven skips. Full counts/log hashes: `reports/turn3d/PROOF-NOTES.md`.
+  failures and eleven skips. Full counts/log hashes: [reports/turn3d/PROOF-NOTES.md](https://github.com/ntbaoheyhey/lantern-cat-cafe/blob/d89b61ab3ddd73659f45158d1abe5835b9445b81/reports/turn3d/PROOF-NOTES.md).
 - 175/175 repeated deterministic effect-frame hashes match. Twelve GLB rebuild hashes
   match; 120 clips, 2,073,028 raw / 539,750 gzip model bytes, all triangle budgets met.
 - Ultimate + six enemies on this M3 Pro/Metal: p95 16.7 ms at both target sizes;
@@ -58,9 +58,9 @@ Full MIT license text for Three, React and React DOM is included in the HTML.
   Campaign balance remains easy and the 6–8 minute human pacing target is unproven.
   No real audio; some melee effects share shapes. Keep demo-only for now.
 
-Raw test output is archived in `reports/turn3d/raw/test-logs.tar.gz` with hashes in
+Raw test output is archived in [reports/turn3d/raw/test-logs.tar.gz](https://github.com/ntbaoheyhey/lantern-cat-cafe/blob/d89b61ab3ddd73659f45158d1abe5835b9445b81/reports/turn3d/raw/test-logs.tar.gz) with hashes in
 `test-logs-index.json`; extract it to inspect the original logs. Browser evidence and
-live video are in `reports/turn3d/shots/` and `reports/turn3d/video/`.
+live video are in [reports/turn3d/shots/](https://github.com/ntbaoheyhey/lantern-cat-cafe/tree/d89b61ab3ddd73659f45158d1abe5835b9445b81/reports/turn3d/shots) and [reports/turn3d/video/](https://github.com/ntbaoheyhey/lantern-cat-cafe/tree/d89b61ab3ddd73659f45158d1abe5835b9445b81/reports/turn3d/video).
 
-[Final report on the ledger branch](https://github.com/ntbaoheyhey/taskbar-hero/blob/ai/codex-ui-ledger/reports/turn3d/TURN3D-REPORT.md).
+[Final report on the ledger branch](https://github.com/ntbaoheyhey/lantern-cat-cafe/blob/ai/codex-ui-ledger/reports/turn3d/TURN3D-REPORT.md).
 No merge, deployment, server grants, migrations, secrets or chain integration.

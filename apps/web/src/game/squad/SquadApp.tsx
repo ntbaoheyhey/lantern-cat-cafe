@@ -63,7 +63,7 @@ export default function SquadApp({ offline = false }: { offline?: boolean }) {
     </aside>
     <div className="sq-main">
       <header className="sq-topbar">
-        <div><p className="sq-eyebrow">Cat Cafe Quest <span> / Combat study 01</span></p><h1>The last lantern</h1></div>
+        <div><p className="sq-eyebrow">Lantern Cat Café <span> / Combat study 01</span></p><h1>The last lantern</h1></div>
         <div className="sq-hud"><span>Guest squad <b>3 cats</b></span><span>Fish found <b>{b.fishFound} <small>cosmetic</small></b></span><span>Run time <b>{(b.time / 1000).toFixed(1)}s</b></span></div>
       </header>
       <p className="sq-prototype">{LABEL}</p>

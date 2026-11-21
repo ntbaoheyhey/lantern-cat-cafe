@@ -127,7 +127,7 @@ Fallback D if S1-S3 are not done by 14 Nov: V0 + snag/bitter/splash + retarget ~
 
 ## User amendment — skill design optimisation, 2026-11-09
 
-Authority: `reports/cardrpg-big/skills-v5/ADDENDUM-SKILLDESIGN.md`, timestamp03:40UTC as supplied by the user. These amendments resolve design gaps; original acceptance gates and denominators are unchanged. All changes require skillsV5; fallback behavior stays byte-identical.
+Authority: [reports/cardrpg-big/skills-v5/ADDENDUM-SKILLDESIGN.md](https://github.com/ntbaoheyhey/lantern-cat-cafe/blob/d89b61ab3ddd73659f45158d1abe5835b9445b81/reports/cardrpg-big/skills-v5/ADDENDUM-SKILLDESIGN.md), timestamp03:40UTC as supplied by the user. These amendments resolve design gaps; original acceptance gates and denominators are unchanged. All changes require skillsV5; fallback behavior stays byte-identical.
 
 - Cinnamon **Comfort cup** heals the weakest living ally80 and grants1Warm; adjacent living allies receive40% of that heal (base32). Warm remains on the main patient. New ally-splash landing order is weakest patient then adjacent formation neighbors. Bitter and normal heal modifiers apply per recipient.
 - Cinnamon **Second serving** revives a fallen ally at40%HP once per battle when available. With no available revive it heals every living ally35 and grants1Warm each. The old revive-only kit left a skill unused in healthy battles and had no multi-ally skill; the revised kit visibly sustains Burn crews without requiring artificial casualties.

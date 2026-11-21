@@ -43,7 +43,7 @@ const message = createSiweMessage({
   nonce,
   issuedAt: new Date(),
   expirationTime: new Date(Date.now() + 10 * 60_000), // the app uses 10 minutes
-  statement: "Sign in to Taskbar Hero.",
+  statement: "Sign in to Lantern Cat Cafe.",
 });
 const signature = await walletClient.signMessage({ account: address, message });
 const { data: session } = await anon.functions.invoke("auth-verify", { body: { message, signature } });
@@ -80,9 +80,9 @@ Deno imports `packages/auth/src/index.ts` by relative path. That file has no rel
 
 Edge Function secrets (see `.env.example`):
 
-- `SIWE_DOMAIN`: the web app's host, e.g. `localhost:5173` locally. A comma-separated list accepts each host (for example `taskbarhero-eight.vercel.app,127.0.0.1:6301`); the message `uri` host must still equal the message's own `domain`.
+- `SIWE_DOMAIN`: the web app's host, e.g. `localhost:5173` locally. A comma-separated list accepts each host (for example `lantern-cat-cafe.vercel.app,taskbarhero-eight.vercel.app,127.0.0.1:6301`); the message `uri` host must still equal the message's own `domain`.
 - `AUTH_JWT_SECRET`: our session-signing secret, at least 32 bytes (`openssl rand -base64 48`). Hosted Supabase refuses custom secrets that start with `SUPABASE_`, so this is the one to set; `SUPABASE_JWT_SECRET` is read first when present.
-- `SIWE_ALLOWED_ORIGIN` (required for browsers): comma-separated list of exact origins, e.g. `https://taskbarhero-eight.vercel.app,http://localhost:5173`. The request `Origin` is reflected only if listed; if the variable is missing or the origin is not listed, no `Access-Control-Allow-Origin` header is sent (fail closed).
+- `SIWE_ALLOWED_ORIGIN` (required for browsers): comma-separated list of exact origins, e.g. `https://lantern-cat-cafe.vercel.app,https://taskbarhero-eight.vercel.app,http://127.0.0.1:6301`. The request `Origin` is reflected only if listed; if the variable is missing or the origin is not listed, no `Access-Control-Allow-Origin` header is sent (fail closed).
 - `SUPABASE_URL` and `SUPABASE_SERVICE_ROLE_KEY` are provided by the platform.
 
 Functions are deployed with `--no-verify-jwt` (also in `supabase/config.toml`): the gateway does not check the `Authorization` header, because the functions verify our own session JWT themselves. See [go-live](go-live.md) for all secrets.

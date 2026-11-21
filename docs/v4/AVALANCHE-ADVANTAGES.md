@@ -1,6 +1,6 @@
 # Avalanche in Lantern Café
 
-Verified 16 November 2026. Source IDs resolve to [the source catalog](../../reports/v4-ship/LEARN/sources.json). Network samples are observations, not performance promises.
+Verified 16 November 2026. Source IDs resolve to [the source catalog](https://github.com/ntbaoheyhey/lantern-cat-cafe/blob/d89b61ab3ddd73659f45158d1abe5835b9445b81/reports/v4-ship/LEARN/sources.json). Network samples are observations, not performance promises.
 
 A guest should play immediately, then see a real relic transaction with its measured wait, AVAX fee, payer and explorer link. Our submitted build uses Fuji C-Chain. A dedicated Lantern Café L1 and verifiable randomness remain roadmap work; neither is deployed by this lane.
 
@@ -8,9 +8,9 @@ A guest should play immediately, then see a real relic transaction with its meas
 
 | Observation | Result | Evidence |
 |---|---:|---|
-| Existing Fuji contracts with bytecode |5/5|[Fuji probe](../../reports/v4-ship/S1/fuji-readonly.json)|
+| Existing Fuji contracts with bytecode |5/5|[Fuji probe](https://github.com/ntbaoheyhey/lantern-cat-cafe/blob/d89b61ab3ddd73659f45158d1abe5835b9445b81/reports/v4-ship/S1/fuji-readonly.json)|
 | Fuji recent block gaps,20 samples |median 900 ms|S1-PROBE|
-| Mainnet C-Chain gaps,20 samples |median 701 ms|[Mainnet probe](../../reports/v4-ship/S1/mainnet-readonly.json)|
+| Mainnet C-Chain gaps,20 samples |median 701 ms|[Mainnet probe](https://github.com/ntbaoheyhey/lantern-cat-cafe/blob/d89b61ab3ddd73659f45158d1abe5835b9445b81/reports/v4-ship/S1/mainnet-readonly.json)|
 | Fuji instantaneous gas quote |160 wei/gas|S1-PROBE|
 | Mainnet instantaneous gas quote |7,500,000,150 wei/gas|S1-MAINNET-PROBE|
 | Ten historical Fuji network receipts |median fee0.000000000012000000AVAX|S1-PROBE; not game/sponsored receipts|

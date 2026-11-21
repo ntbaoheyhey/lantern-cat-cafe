@@ -1,10 +1,10 @@
-# Taskbar Hero: Lantern Cat Cafe - 3-Minute Trailer Script
+# Lantern Cat Café - 3-Minute Trailer Script
 
 [0:00-0:10] (Mochi ultimate hook: shield slam, lantern flare, golden dome, gold shockwave. No voice.)
 
 [0:10-0:16] Outside, night falls over an abandoned street.
 [0:16-0:22] Every unfinished chore on your taskbar has woven together into the Tangle.
-[0:22-0:30] Only one shop remains lit against the dark: the Lantern Cat Cafe.
+[0:22-0:30] Only one shop remains lit against the dark: the Lantern Cat Café.
 
 [0:30-0:37] Meet your trio of feline defenders.
 [0:37-0:44] Mochi stands in front, wielding his sturdy shield and warm brass lantern.
@@ -25,4 +25,4 @@
 [2:22-2:30] The wider game ecosystem includes YARN ERC-20 tokens and trading, verifiable on Snowtrace.
 
 [2:30-2:40] Built with responsive web graphics and verified smart contracts on Avalanche.
-[2:40-2:50] Defend the cafe and keep the lanterns burning. Play Taskbar Hero in your browser today.
+[2:40-2:50] Defend the cafe and keep the lanterns burning. Play Lantern Cat Café in your browser today.

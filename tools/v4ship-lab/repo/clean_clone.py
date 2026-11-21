@@ -16,7 +16,7 @@ head = subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=root, text=True
 method = os.environ.get('V4_CLONE_METHOD', 'remote')
 if method not in ['remote', 'published-local']:
     raise RuntimeError('Choose remote or published-local clone transport')
-remote = 'https://github.com/ntbaoheyhey/taskbar-hero.git'
+remote = 'https://github.com/ntbaoheyhey/lantern-cat-cafe.git'
 out.mkdir(parents=True)
 clone = Path(tempfile.mkdtemp(prefix='v4ship-clean-')) / 'repo'
 env = {k: v for k, v in os.environ.items() if k in ['PATH', 'HOME', 'TMPDIR', 'PNPM_HOME', 'XDG_CACHE_HOME', 'LANG']}

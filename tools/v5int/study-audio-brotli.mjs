@@ -28,7 +28,7 @@ for(const group of groups){
  variants.push({url:group.url,format:'brotli',base64:br.toString('base64'),expected:sha(bytes),length:bytes.length});
  await writeFile(resolve(out,group.url.split('/').at(-1)+'.br'),br);
 }
-const probe=Buffer.from('Taskbar Hero exact-byte compression probe. '.repeat(32));
+const probe=Buffer.from('Lantern Cat Café exact-byte compression probe. '.repeat(32));
 variants.unshift({url:'probe-gzip',format:'gzip',base64:gzipSync(probe).toString('base64'),expected:sha(probe),length:probe.length});
 const engines=[];
 for(const [name,type] of [['chromium',chromium],['webkit',webkit]]){

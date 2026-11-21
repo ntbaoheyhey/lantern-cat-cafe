@@ -40,7 +40,7 @@ for (const entry of RAIL_SCREENS) it(`${entry.label} frame keeps one heading and
   render(<ScreenFrame activeScreen={entry.id} onSelectScreen={vi.fn()} hudProps={{ state: sampleServerStateV2(), power: 42 }}>
     <section id={`panel-${entry.id}`} role="tabpanel" aria-label={entry.label}>Screen content fixture</section>
   </ScreenFrame>);
-  expect(screen.getAllByRole('heading', { level: 1, name: 'Taskbar Hero' })).toHaveLength(1);
+  expect(screen.getAllByRole('heading', { level: 1, name: 'Lantern Cat Café' })).toHaveLength(1);
   expect(screen.getByTestId('rail').querySelectorAll('[aria-current="page"]')).toHaveLength(1);
   expect(screen.getByTestId(`nav-${entry.id}`).getAttribute('aria-current')).toBe('page');
   expect(within(screen.getByRole('main')).getByRole('tabpanel', { name: entry.label })).toBeTruthy();
@@ -52,7 +52,7 @@ for (const id of ['landing', 'class'] as const) it(`${id} frame remains named wi
   render(<ScreenFrame activeScreen={id} onSelectScreen={vi.fn()} hudProps={null}>Entry fixture</ScreenFrame>);
   expect(screen.queryByTestId('rail')).toBeNull();
   expect(screen.queryByTestId('hud')).toBeNull();
-  expect(screen.getAllByRole('heading', { level: 1, name: 'Taskbar Hero' })).toHaveLength(1);
+  expect(screen.getAllByRole('heading', { level: 1, name: 'Lantern Cat Café' })).toHaveLength(1);
   expect(screen.getByRole('main')).toBeTruthy();
 });
 

@@ -1,4 +1,4 @@
-# Extending Taskbar Hero
+# Extending Lantern Cat Café
 
 Checklists for the five changes people make most often. Each step names the file to touch, and each checklist ends with the check that fails if you miss something. Where nothing catches a missed step, it says so.
 

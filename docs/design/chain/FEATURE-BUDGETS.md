@@ -1,6 +1,6 @@
 # Feature budgets — Fuji only, 2026-11-12
 
-Testnet — no real value. This is a concrete design table, not an enabled payout promise. Existing deployed amounts stay unchanged. Local styles and finite forge are implemented behind separate flags; public activation remains deferred. Routine sources stay disabled. Research:E1, E14–E18 and T1–T8; conditional measurement:[supply study](../../../reports/chain/SUPPLY-STUDY.md); experiment:[720 runs](../../chain/balance-study.html).
+Testnet — no real value. This is a concrete design table, not an enabled payout promise. Existing deployed amounts stay unchanged. Local styles and finite forge are implemented behind separate flags; public activation remains deferred. Routine sources stay disabled. Research:E1, E14–E18 and T1–T8; conditional measurement:[supply study](https://github.com/ntbaoheyhey/lantern-cat-cafe/blob/d89b61ab3ddd73659f45158d1abe5835b9445b81/reports/chain/SUPPLY-STUDY.md); experiment:[720 runs](../../chain/balance-study.html).
 
 | Feature | YARN amount | Cadence / limit | Destination / status | Reason |
 |---|---:|---|---|---|

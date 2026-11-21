@@ -1,4 +1,6 @@
-# Taskbar Hero — Demo Script & Judge Walkthrough
+# Lantern Cat Café — Demo Script & Judge Walkthrough
+
+> Archived material from an earlier build. See the [current game and submission evidence](../README.md).
 
 A comprehensive presentation guide for the **Avalanche Team1 Vietnam UniHack 2026** judges. This document provides:
 1. A **30-second elevator pitch** for instant clarity.
@@ -56,7 +58,7 @@ The Cat Café Quest UI uses cozy, thematic names for player-facing elements whil
 
 ## 2. The 30-Second Elevator Pitch
 
-> *"Most Web3 games push every single micro-action onto the blockchain or distract players with speculative token dumps, creating high gas friction and ruined game loops. **Taskbar Hero** reimagines Web3 gaming as an ambient idle RPG that lives in a thin strip at the bottom of your screen.*
+> *"Most Web3 games push every single micro-action onto the blockchain or distract players with speculative token dumps, creating high gas friction and ruined game loops. **Lantern Cat Café** reimagines Web3 gaming as an ambient idle RPG that lives in a thin strip at the bottom of your screen.*
 >
 > *Your cat hero, Mochi, fights quietly in the background while you work, gathering Fish and Yarn with zero gas and zero popups. When you beat the daily boss and forge a rare Relic, that milestone is verified off-chain by server-signed EIP-712 vouchers and minted as a true ERC-1155 NFT on Avalanche Fuji.*
 >
@@ -82,15 +84,15 @@ TIMECODE SUMMARY:
 
 | Timecode | Visual / On-Screen Action | Spoken Voiceover Narration | Production Notes |
 | :--- | :--- | :--- | :--- |
-| **0:00 - 0:12** | Full desktop screen showing a productivity app or web article, with the Taskbar Hero bottom strip quietly running. Mochi trots across the screen fighting yarn balls. | *"Welcome to Taskbar Hero. Right now, on the bottom strip of my web browser, my cat hero Mochi is fighting enemies and collecting loot while I do my normal work."* | Show full 1280px screen to highlight the ambient nature of the game strip. |
-| **0:12 - 0:30** | Zoom in to the bottom strip. Point mouse to the HUD: Fish (gold), Yarn (shards), and Cat Keys incrementing. Click **WalletButton** ("Connect wallet" -> "Sign in" via SIWE). | *"Unlike traditional Web3 games that bombard you with wallet signatures every time you kill a mob, Taskbar Hero runs everyday progression off-chain with zero gas fees. Our wallet connects seamlessly using SIWE on Avalanche Fuji."* | Smooth zoom to the strip. Show Core / MetaMask SIWE signature taking < 2 seconds. |
+| **0:00 - 0:12** | Full desktop screen showing a productivity app or web article, with the Lantern Cat Café bottom strip quietly running. Mochi trots across the screen fighting yarn balls. | *"Welcome to Lantern Cat Café. Right now, on the bottom strip of my web browser, my cat hero Mochi is fighting enemies and collecting loot while I do my normal work."* | Show full 1280px screen to highlight the ambient nature of the game strip. |
+| **0:12 - 0:30** | Zoom in to the bottom strip. Point mouse to the HUD: Fish (gold), Yarn (shards), and Cat Keys incrementing. Click **WalletButton** ("Connect wallet" -> "Sign in" via SIWE). | *"Unlike traditional Web3 games that bombard you with wallet signatures every time you kill a mob, Lantern Cat Café runs everyday progression off-chain with zero gas fees. Our wallet connects seamlessly using SIWE on Avalanche Fuji."* | Smooth zoom to the strip. Show Core / MetaMask SIWE signature taking < 2 seconds. |
 | **0:30 - 0:48** | Click the **Menu** button. The game panel slides open showing the **Café Board** and tabs. Switch to **Inventory**. Click **Upgrade** on the Feather Wand using accumulated Fish. Power stat increases. | *"Opening the game panel reveals our Café Board. In the Inventory tab, we equip gear drops and spend accumulated Fish to upgrade our Feather Wand and Cat Ears, boosting our Cat Power."* | Emphasize that gear upgrades are instant, responsive, and gasless. |
 | **0:48 - 1:05** | Switch to the **Boss** tab. Level 1: Yarn Giant. Click the **Fight** button. Replay animates with damage numbers, critical hits, and synchronized health bars. Outcome: "Victory! You beat Yarn Giant. Cat Key earned!" | *"Once prepared, we challenge the daily boss—the Yarn Giant. Combat is computed deterministically on Supabase Edge Functions using shared TypeScript rules, and replayed in the client. Defeating the boss grants us our coveted Cat Key."* | Point out: server decides truth, client displays replay; prevents browser memory hacks. |
 | **1:05 - 1:25** | Click the **Forge** tab. Show the cost (30 Yarn + 1 Cat Key) and current odds (60% Common, 28% Rare, 10% Epic, 2% Legendary). Click **Forge**. The card rises with the pixel reveal animation. A Rare Silver Bell emerges! | *"Now for the magic. In the Forge, we combine 30 Yarn and 1 Cat Key. The server verifies our inventory and generates an EIP-712 typed voucher binding our wallet, the Relic ID, rarity, and an unspent nonce. We just forged a Rare Silver Bell!"* | The 2.5s reveal animation (`ForgeReveal.tsx`) creates anticipation and highlights pixel art. |
 | **1:25 - 1:55** | The **MintPanel** appears. Click **Mint to wallet**. Core/MetaMask pops up with the transaction to `RelicNFT` on Avalanche Fuji. Click confirm. Transaction confirms in ~1.5 seconds. Link opens on Snowtrace showing `RelicForged` event. | *"We click 'Mint to wallet'. Our wallet submits `mint(voucher, signature)` directly to the RelicNFT contract on Avalanche Fuji. In less than two seconds, Avalanche finalizes the block! RelicNFT verifies the signature, caller, and nonce, permanently minting our ERC-1155 token."* | Highlight the Snowtrace tab showing contract address `0xB1a1edb7A75Db6e7067E747ddee32B39c2296f2D`. |
 | **1:55 - 2:15** | Switch to the **Market** tab. "My Relics" updates showing 1x Silver Bell. Select the Silver Bell, set amount to 1, enter price "0.05", and click **List**. Approve and list transactions complete. | *"In the Market tab, our on-chain inventory updates directly from Fuji. To sell our Silver Bell, we enter a price of 0.05 test AVAX and click List. Our RelicMarket contract takes custody in escrow with zero platform fees."* | Show how `balanceOfBatch` reflects holdings without any centralized intermediary. |
 | **2:15 - 2:35** | Show the listed Silver Bell appear in the active market order book. Click **Buy** on an active listing (or show cancel flow returning the Relic). Show payment routed directly in native AVAX. | *"Any player on Avalanche Fuji can now buy this listing. The RelicMarket contract uses checks-effects-interactions, pushing native AVAX directly to the seller while transferring the NFT to the buyer in a single atomic transaction."* | Point to contract address `0x10fcC46e439d3E31Fb1720B337C45CadB9b2ff93` on Snowtrace. |
-| **2:35 - 3:00** | Pan out to show the whole system: the ambient strip at the bottom, the contract explorer tabs, and the architecture diagram. | *"Taskbar Hero demonstrates how Avalanche makes Web3 gaming viable: lightning-fast sub-second finality, negligible gas fees, robust EIP-712 security, and zero speculative tokenomics. It's a game you can actually play every day. Thank you!"* | End on live site URL and Github repository links. |
+| **2:35 - 3:00** | Pan out to show the whole system: the ambient strip at the bottom, the contract explorer tabs, and the architecture diagram. | *"Lantern Cat Café demonstrates how Avalanche makes Web3 gaming viable: lightning-fast sub-second finality, negligible gas fees, robust EIP-712 security, and zero speculative tokenomics. It's a game you can actually play every day. Thank you!"* | End on live site URL and Github repository links. |
 
 ---
 
@@ -100,10 +102,10 @@ TIMECODE SUMMARY:
 *Pacing: 5 minutes total + 2-3 minutes Q&A.*
 
 ### Stage 1: The Ambient Gaming Philosophy (0:00 - 1:00)
-- **Action**: Share desktop screen with your browser window displaying a normal desktop page and Taskbar Hero anchored along the bottom strip (`apps/web/src/GameCanvas.tsx`).
+- **Action**: Share desktop screen with your browser window displaying a normal desktop page and Lantern Cat Café anchored along the bottom strip (`apps/web/src/GameCanvas.tsx`).
 - **Narrative**:
   - *"Judges, modern gamers spend hours at their desks working or studying, but full-screen Web3 games demand constant attention, heavy gas expenditure, and repetitive wallet popups."*
-  - *"Taskbar Hero solves this by bringing the idle RPG genre to a native browser strip. Notice Mochi the cat running smoothly across the bottom. The game loop uses Phaser graphics drawn at runtime, quietly gathering Fish (our gold currency) and Yarn (shards) while consuming minimal CPU and zero gas."*
+  - *"Lantern Cat Café solves this by bringing the idle RPG genre to a native browser strip. Notice Mochi the cat running smoothly across the bottom. The game loop uses Phaser graphics drawn at runtime, quietly gathering Fish (our gold currency) and Yarn (shards) while consuming minimal CPU and zero gas."*
   - Point to the bottom-right HUD: Show Fish, Yarn, and Cat Keys updating.
   - Point to **WalletButton**: Show the clean SIWE (Sign-In with Ethereum) authentication flow. *"We don't need a custom account abstraction relayer or custodial server. We use standard SIWE on Avalanche Fuji (Chain ID 43113) to establish a tamper-proof session."*
 
@@ -152,7 +154,7 @@ TIMECODE SUMMARY:
 ### Stage 5: Why Avalanche? & Technical Wrap-Up (4:15 - 5:00)
 - **Action**: Display the system architecture diagram and the verified Snowtrace contracts.
 - **Narrative**:
-  - *"To summarize, Taskbar Hero demonstrates the ideal Web3 game architecture on Avalanche:*
+  - *"To summarize, Lantern Cat Café demonstrates the ideal Web3 game architecture on Avalanche:*
     1. *High-frequency, low-stakes idle actions stay off-chain for an ambient, gas-free user experience.*
     2. *Genuine milestones become verifiable digital assets on Avalanche Fuji.*
     3. *Avalanche's sub-second finality and minimal transaction fees make minting and trading seamless.*
@@ -268,7 +270,7 @@ flowchart TD
 
 ## 7. Anticipated Judge Questions & Technical Answers
 
-### Q1: "Why not build Taskbar Hero on a dedicated Avalanche L1 (Subnet) instead of Fuji C-Chain?"
+### Q1: "Why not build Lantern Cat Café on a dedicated Avalanche L1 (Subnet) instead of Fuji C-Chain?"
 > **Answer**:  
 > *"Fuji C-Chain is the perfect starting environment for UniHack because it offers immediate EVM tooling, public block explorers, and zero deployment friction. However, our architecture is specifically designed for a custom Avalanche L1: our shared rules engine in `packages/game-rules` can easily migrate high-frequency state updates to an Avalanche Subnet with custom gas rules, while using Avalanche Teleporter (AWM) to bridge minted Relic NFTs back to the C-Chain for liquidity."*
 
@@ -278,7 +280,7 @@ flowchart TD
 > *1. **Gas and storage efficiency**: Multiple players can own copies of the same Relic tier (e.g. Common Paw Charm or Legendary Golden Maneki) under pinned token IDs (1 through 4), reducing contract deployment overhead and storage footprint.*  
 > *2. **Batch operations**: RelicNFT supports `balanceOfBatch`, allowing the client in `MarketTab.tsx` to query all four Relic balances in a single RPC call, avoiding multiple network round-trips."*
 
-### Q3: "Why is there no fungible ERC-20 token in Taskbar Hero?"
+### Q3: "Why is there no fungible ERC-20 token in Lantern Cat Café?"
 > **Answer**:  
 > *"Almost every Web3 game that failed over the last three years collapsed because of inflationary fungible token death-spirals. Players treat tokens as speculative yield rather than playing for fun. We intentionally made Fish (gold) an off-chain progression mechanic with zero financialization. By restricting blockchain elements solely to rare, earned ERC-1155 Relic collectibles and settling trades in native AVAX, we build a sustainable, collectible-driven economy."*
 
@@ -298,7 +300,7 @@ Print or keep this card open during presentation:
 
 ```
 ========================================================================
-TASKBAR HERO — PRESENTER CHEAT SHEET
+LANTERN CAT CAFÉ — PRESENTER CHEAT SHEET
 ========================================================================
 Live Demo URL : https://taskbarhero-eight.vercel.app
 Chain ID      : 43113 (Avalanche Fuji Testnet)

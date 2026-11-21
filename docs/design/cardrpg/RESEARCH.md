@@ -4,7 +4,7 @@ Access date: 2026-11-05 UTC (local date 2026-11-06 during continuation). Coverag
 
 Every game row includes core loop, session estimate, battle, stats/formula style, roles, team/positions, skill resources, slots, tiers/colour treatment, affixes/sets, upgrades, duplicates, banners/odds/pity, currencies, daily/weekly, PvE/PvP/social, retention, monetisation, praise and friction. `field_evidence` separates source-supported mechanisms from unverified model synthesis and estimates. A source next to a game does **not** verify every field. Session durations are estimates, exact live numeric tables are deliberately not asserted when unavailable, and player praise/friction is a design hypothesis unless tied to the RPGFan review or a developer's explicit feedback report. Current popularity, retention and market prices were not measured.
 
-Research focuses on mechanisms and causal risks, not cloning. No source art was downloaded, no reference art went to a generator, and no names, icons, layouts or exact numerical tables from other games enter Taskbar Hero. Names below identify research subjects only. Original design choices and numbers live in PATTERNS.md and DESIGN.md.
+Research focuses on mechanisms and causal risks, not cloning. No source art was downloaded, no reference art went to a generator, and no names, icons, layouts or exact numerical tables from other games enter Lantern Cat Café. Names below identify research subjects only. Original design choices and numbers live in PATTERNS.md and DESIGN.md.
 
 ## Mechanism comparison and decisions
 
@@ -51,11 +51,11 @@ Squad games converge on role clarity, collection, build targets and recurring go
 
 The on-chain cases identify **mechanisms that may support collectible usefulness**, not evidence of guaranteed price preservation: finite issuance, edition disclosure, actual play utility, access without an initial purchase, transparent circulation accounting, and sinks that do not require perpetual player growth. Issuance above consumption, reward-production assets, bots and dependency on new entrants are plausible failure pressures. Axie's own historical imbalance disclosure is a measured issuer statement; Crabada's closure is a reported event. Neither proves a universal one-factor causal theory of market collapse. Fixed supply cannot create demand or guarantee value.
 
-Taskbar Hero therefore separates its unlimited playable content from the future scarce collectible identity. The deterministic recipe uses service/quest/boss-earned resources; no random pull is necessary to earn design eligibility. The present code simulates caps, and the existing chain contract does not enforce them. These boundaries are part of the design, not footnotes claiming a production economy.
+Lantern Cat Café therefore separates its unlimited playable content from the future scarce collectible identity. The deterministic recipe uses service/quest/boss-earned resources; no random pull is necessary to earn design eligibility. The present code simulates caps, and the existing chain contract does not enforce them. These boundaries are part of the design, not footnotes claiming a production economy.
 
 ## Regulation and fairness review
 
-| Jurisdiction / platform | Scoped finding | Taskbar Hero consequence | Source |
+| Jurisdiction / platform | Scoped finding | Lantern Cat Café consequence | Source |
 | --- | --- | --- | --- |
 | Belgium | The 2018 regulator assessment treats examined paid random-item mechanics as gambling concerns. It is a historical report, not a new universal ruling on every NFT game. | Eliminate consideration/payment for draws, not merely add an odds label. Any paid variant needs jurisdiction-specific review. | [Commission report translation](https://www.skadden.com/-/media/files/publications/2019/08/video-gaming-egaming-law-update/fn12_onderzoeksrapportlootboxenengelspublicatie.pdf) |
 | Netherlands | The 9 March 2022 Council of State decision overturned the FIFA penalty in its factual wider-game context. It is not blanket approval of standalone chance prizes. | Do not describe the Netherlands as universally banning or permitting loot boxes. Avoid paid/tradeable draws. | [Judgment 202005769/1/A3](https://www.raadvanstate.nl/uitspraken/@130150/202005769-1-a3/) |

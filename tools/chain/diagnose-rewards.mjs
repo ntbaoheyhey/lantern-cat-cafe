@@ -65,7 +65,7 @@ async function main() {
     for(const account of accounts) {
       const row={wallet:account.address};report.checks.push(row);
       const {nonce}=await post('auth-nonce');
-      const message=createSiweMessage({address:account.address,domain:new URL(origin).host,uri:origin,version:'1',chainId:43113,nonce,statement:'Sign in to Taskbar Hero.',issuedAt:new Date(),expirationTime:new Date(Date.now()+600000)});
+      const message=createSiweMessage({address:account.address,domain:new URL(origin).host,uri:origin,version:'1',chainId:43113,nonce,statement:'Sign in to Lantern Cat Cafe.',issuedAt:new Date(),expirationTime:new Date(Date.now()+600000)});
       const session=await post('auth-verify',{message,signature:await account.signMessage({message})});
       if(dry)await post('chain-judge',{action:'pass'},session.token);
       const reward=await post('chain-items',{action:'reward'},session.token);

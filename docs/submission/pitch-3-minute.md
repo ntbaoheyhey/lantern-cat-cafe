@@ -6,7 +6,7 @@ Target: about 411 spoken words plus screen changes. Rehearse with the actual rec
 
 ## 0:00–0:25 — Problem and promise (Impact 15, Creativity 15)
 
-Taskbar Hero is a desktop idle RPG starring a cat adventurer. We want the first experience to be a game: choose a class, watch the cat fight, and understand the next goal. You can start as a guest without connecting a wallet. Progress and rewards arrive through ordinary play. We have no adoption or retention figures to claim yet; this is a working prototype with a measurable first-play path.
+Lantern Cat Café is a desktop idle RPG starring a cat adventurer. We want the first experience to be a game: choose a class, watch the cat fight, and understand the next goal. You can start as a guest without connecting a wallet. Progress and rewards arrive through ordinary play. We have no adoption or retention figures to claim yet; this is a working prototype with a measurable first-play path.
 
 ## 0:25–1:00 — Play and interface (UI/UX + Demo 10)
 

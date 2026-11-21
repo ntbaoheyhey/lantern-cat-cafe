@@ -57,7 +57,7 @@ Six papers are verified by publisher/university records: Zendle & Cairns 2018, D
 12. **The cafe respects absence.** A capped shift, achievable daily board and persistent collection milestones offer several reasons to return without compulsory attendance. V4-SAP, prior onboarding research; 45-day heavy/casual earned ratio <=3x is our target.
 13. **An outcome should end when its meaning is clear.** Boss phases mark progress; linked adds retire with the boss; result names observed shield/heal/status contributions without pretending correlation proves the win. V4-JAFFE and prior game-feel work; real x1 timings, no post-boss cleanup.
 
-## 5. What makes Taskbar Hero OURS
+## 5. What makes Lantern Cat Café OURS
 
 The team is an evening cafe shift: doorway protection, kettle support and table clearing are coherent jobs. Each cat has an original primary crew job worth two marks and a secondary job worth one. A four-mark threshold is therefore reachable by a three-cat team; activation still requires at least two cats. A standing service plan changes automatic focus and rescue priorities. The player sees both its intended benefit in Prepare and its observed contribution after combat.
 

@@ -1,4 +1,4 @@
-# Taskbar Hero economy and YARN tokenomics
+# Lantern Cat Café economy and YARN tokenomics
 
 **Testnet only: YARN on Avalanche Fuji has no real value.** Every number below is read from code, not retyped:
 game rules from [`economy-v3.ts`](../packages/game-rules/src/cardrpg/economy-v3.ts) and

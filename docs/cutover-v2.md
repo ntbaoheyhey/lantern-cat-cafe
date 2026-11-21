@@ -380,5 +380,5 @@ wiring, live latency, chain reads and minting remain outside this rehearsal.
 The local rehearsal passed (82 s, 11 journeys). It also showed this runbook is stale in places:
 the v2 SQL is already live, the Founder migration branch no longer exists on the remote, and the
 switch is the `VITE_GAME_V2` build variable (see `apps/web/src/layout/flag.ts`), not a code
-change. Read [reports/C3.md](../reports/C3.md) for the corrections and the go/no-go checklist
+change. Read [reports/C3.md](https://github.com/ntbaoheyhey/lantern-cat-cafe/blob/d89b61ab3ddd73659f45158d1abe5835b9445b81/reports/C3.md) for the corrections and the go/no-go checklist
 before using Steps 2, 4 and Section 5.

@@ -1,5 +1,7 @@
 # 90-second recording shot list — DRAFT, not recorded or submitted
 
+> Archived material from an earlier build. See the [current game and submission evidence](../../README.md).
+
 Record at 1280×720 or 1600×900. Show a persistent caption: **Local candidate 1eefc3e — not deployed** until a release is independently verified. Use a fresh guest profile, normal clock and no seeded save. Never present stocked QA fixtures, mocked wallet state or gallery samples as earned live progress. Recording and upload remain pending.
 
 | Time | Screen and action | Claim / evidence boundary |

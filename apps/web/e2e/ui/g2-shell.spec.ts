@@ -55,7 +55,7 @@ test.describe('G2 Shell: 100dvh Window Fit & Responsiveness', () => {
       await page.setViewportSize({ width: vp.width, height: vp.height });
       await page.goto('/');
 
-      await expect(page.getByRole('heading', { level: 1, name: 'Taskbar Hero' })).toBeVisible();
+      await expect(page.getByRole('heading', { level: 1, name: 'Lantern Cat Café' })).toBeVisible();
       await expect(page.getByRole('region', { name: 'Game stage' })).toBeVisible();
 
       // Assert no document scrolling in normal play

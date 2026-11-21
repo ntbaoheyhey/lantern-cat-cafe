@@ -33,7 +33,7 @@ function ClassicLayout() {
     <>
       <main className="page">
         <header className="page-header">
-          <h1 className="page-title">Taskbar Hero</h1>
+          <h1 className="page-title">Lantern Cat Café</h1>
           <p className="page-copy">
             Your cat fights on its own. Collect fish, upgrade gear, beat the bosses.
           </p>

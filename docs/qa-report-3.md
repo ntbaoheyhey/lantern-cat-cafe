@@ -13,7 +13,7 @@
 
 ## Executive Summary & Verification of Round 2 Fixes
 
-Round 3 browser QA performed a full regression and visual audit on the live deployment of **Taskbar Hero (Cat Café Quest)**, verifying the Round 2 findings and validating all static NFT relic metadata and images on Avalanche Fuji.
+Round 3 browser QA performed a full regression and visual audit on the live deployment of **Lantern Cat Café (Cat Café Quest)**, verifying the Round 2 findings and validating all static NFT relic metadata and images on Avalanche Fuji.
 
 ### Verification of Specific Round 2 Fix Targets:
 
@@ -71,7 +71,7 @@ Round 3 browser QA performed a full regression and visual audit on the live depl
 | How to Play Dialog | 320px & 390px | Tested dialog layout responsiveness on mobile screens. | Fits cleanly within screen boundaries (`width: 300px` at 320px, `width: 370px` at 390px) with zero horizontal overflow. | info | ![Mobile 320px How to Play](qa-screenshots-3/320px-how-to-play.png) |
 | How to Play Dismissal | All | Dismissed dialog via Start Playing, Close (×), Escape key, and backdrop click. | Modal closes cleanly across all dismissal triggers. Active focus transfers reliably back to the Menu button (`.toggle`). | info | ![Focus After Escape](qa-screenshots-3/focus-after-escape.png) |
 | How to Play Reopen | All | Clicked `? How to play` button located in the drawer tab list. | Reopens modal at any time; closing it returns focus directly to the Help button. | info | ![Reopened How to Play](qa-screenshots-3/1280px-how-to-play-reopened.png) |
-| Café Board | All | Inspected page layout above the strip across all viewports. | Features "Taskbar Hero" heading, Mochi portrait card (Power: 30, Boss Level: 1), Today's Quest card, and Relic Shelf. Stacks cleanly on mobile without horizontal scroll. | info | ![Desktop Cafe Board](qa-screenshots-3/1280px-cafe-page.png) |
+| Café Board | All | Inspected page layout above the strip across all viewports. | Features "Lantern Cat Café" heading, Mochi portrait card (Power: 30, Boss Level: 1), Today's Quest card, and Relic Shelf. Stacks cleanly on mobile without horizontal scroll. | info | ![Desktop Cafe Board](qa-screenshots-3/1280px-cafe-page.png) |
 | Café Board Next Step | All | Clicked the "TRY THE BOSS →" recommendation button on the Café board. | Automatically expands drawer panel and switches active tab to Boss. | info | ![Next Step Clicked](qa-screenshots-3/cafe-board-next-step-clicked.png) |
 | Inventory Tab | All | Inspected starter equipment in Inventory tab. | Displays 4 starter items (Feather Wand, Cat Ears, Cat Collar, Cat Bell) with rarity badges, power stats, and total Cat Power calculation (30). | info | ![Desktop Inventory](qa-screenshots-3/1280px-tab-inventory.png) |
 | Inventory Gear Upgrade | All | Verified upgrade button and power increments upon spending Fish. | Feather Wand upgrade button enables when Fish >= 25, incrementing item level and total Cat Power. | info | ![Inventory Upgraded](qa-screenshots-3/inventory-after-upgrade.png) |

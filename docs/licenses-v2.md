@@ -34,7 +34,7 @@ This document catalogues every external and internal asset source used by Cat RP
 ## Audit Verdict & Provenance Verification
 
 - **Total Assets Audited**: 100% of files under `apps/web/src/art` and `apps/web/public`.
-- **Original Assets**: All sprites, frames, icons, backdrops, and relic SVGs are proprietary original work created specifically for Taskbar Hero / Cat RPG v2 by the project authors and generation scripts (`scripts/gen-og.mjs`, `scripts/gen-relics.mjs`).
+- **Original Assets**: All sprites, frames, icons, backdrops, and relic SVGs are proprietary original work created specifically for Lantern Cat Café / Cat RPG v2 by the project authors and generation scripts (`scripts/gen-og.mjs`, `scripts/gen-relics.mjs`).
 - **External Web Fonts**: Exactly three fonts loaded via Google Fonts under SIL Open Font License 1.1 (`DM Sans`, `JetBrains Mono`, `Pixelify Sans`).
 - **Unknown Origins / Flags**: **0 assets with unknown origin.** There are zero third-party sprite packs or unattributed media files. No submission risk.
 

@@ -6,7 +6,7 @@ import { LABELS } from '../theme/labels';
 import { relicImageUrl } from './marketText';
 
 const PUBLIC = resolve(__dirname, '../../public');
-const SITE = 'https://taskbarhero-eight.vercel.app';
+const IMAGE_ORIGIN = 'https://taskbarhero-eight.vercel.app';
 
 describe.each(CONFIG.rarities.map((rarity) => [rarity, relicIdFor(rarity)] as const))('%s relic (id %i)', (rarity, id) => {
   const hexName = `${id.toString(16).padStart(64, '0')}.json`;
@@ -20,10 +20,10 @@ describe.each(CONFIG.rarities.map((rarity) => [rarity, relicIdFor(rarity)] as co
     const name = rarity.charAt(0).toUpperCase() + rarity.slice(1);
     const meta = read(`${id}.json`);
     expect(meta.name).toBe(LABELS.relics[rarity]);
-    expect(meta.description).toMatch(/Taskbar Hero/);
+    expect(meta.description).toMatch(/Lantern Cat Café/);
     expect(meta.description).toMatch(/Fuji testnet/);
-    expect(meta.image).toBe(`${SITE}${relicImageUrl(id)}`);
-    expect(meta.external_url).toBe(SITE);
+    expect(meta.image).toBe(`${IMAGE_ORIGIN}${relicImageUrl(id)}`);
+    expect(meta.external_url).toBe('https://lantern-cat-cafe.vercel.app');
     expect(meta.attributes).toEqual([{ trait_type: 'Rarity', value: name }]);
   });
 

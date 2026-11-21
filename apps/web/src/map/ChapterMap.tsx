@@ -102,7 +102,7 @@ export function ChapterMap({
       {(
       <div className="v2-map-header">
         <h2 className="v2-map-title">World Map</h2>
-        <span className="v2-map-subtitle">Cat Café Quest Chapters</span>
+        <span className="v2-map-subtitle">Lantern Cat Café Chapters</span>
       </div>
       )}
 

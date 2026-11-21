@@ -34,12 +34,12 @@ export function LandingHero({ onStart, onStartGuest, onHelp }: LandingHeroProps)
           {/* Network pill */}
           <div className="landing__network-pill" data-testid="landing-network-pill">
             <span className="landing__network-dot" aria-hidden="true" />
-            <span>Candidate build, not live.</span>
+            <span>Classic game mode</span>
           </div>
 
           {/* Title */}
           <div id="landing-title" className="landing__title" role="heading" aria-level={2}>
-            Taskbar<br />Hero
+            Lantern <br />Cat Café
           </div>
 
           {/* Promise copy */}

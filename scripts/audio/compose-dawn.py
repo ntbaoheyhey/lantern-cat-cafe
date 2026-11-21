@@ -30,7 +30,7 @@ out=ROOT/'apps/web/public/audio'
 manifest=json.loads((out/'manifest.json').read_text())
 licences=json.loads((out/'LICENSES.json').read_text())
 script=Path(__file__)
-url='https://github.com/ntbaoheyhey/taskbar-hero/blob/codex/v3-shell-2026-11-13/scripts/audio/compose-dawn.py'
+url='https://github.com/ntbaoheyhey/lantern-cat-cafe/blob/codex/v3-shell-2026-11-13/scripts/audio/compose-dawn.py'
 for extension,codec in [('webm','libopus'),('mp3','libmp3lame')]:
     path=out/f'score-dawn.{extension}'
     subprocess.run(['ffmpeg','-v','error','-y','-f','f32le','-ar',str(RATE),'-ac','1','-i','pipe:0',
