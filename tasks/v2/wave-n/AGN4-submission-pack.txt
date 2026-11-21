@@ -1,0 +1,46 @@
+MISSION AGN4 - Submission pack: README for judges, slide text, video script, Builder Pass, docs pass
+Tool: Antigravity | Model: strongest, medium reasoning | Branch: ai/antigravity-n4-submission
+Base: origin/main AFTER Claude says AGN3's report is pushed (start), and rebase once more after Claude says
+CXN6 is merged (another pass: update numbers and links, then push again)
+Report: reports/n4-submission.md | No PR, no merge, no Actions, no deploy, no submission, no repo visibility change.
+Follow the wave N additions and the shared rules appended below. Git author ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com>. ALWAYS push the report.
+
+WHY
+UniHack submission = GitHub repo + slides + 2-3 minute demo video. Online round: Technical Implementation 25 +
+Avalanche Integration 25. Final: Creativity 15, Impact 15, Pitch 10, UI/UX+Demo 10. The user records the video
+and submits; you prepare every word they need.
+
+READ FIRST
+README.md, docs/submission.md, docs/judge-walkthrough.md, docs/avalanche-integration.md, docs/security-overview.md,
+docs/mechanics-v2.md, docs/pitch-outline.md, reports/pitch-v2.md, docs/demo-script-v2.md, reports/p1-live-qa.md,
+docs/release-notes.md (after CXN6), docs/licenses-v2.md.
+
+PIECE 1 - README.md top (first screen a judge sees)
+One-line pitch; live link; 3 screenshots from AGN3; "For judges" box with 4 links (judge walkthrough, Avalanche
+proof `node scripts/fuji-proof.mjs`, security overview, release notes); stack line; Fuji contract addresses with
+Routescan links; how to run locally in 4 commands. Keep the rest of the README below, trimmed of stale text.
+PIECE 2 - docs/pitch-slides.md: 8-10 slides as markdown (title, 3-5 bullets, speaker note, suggested image path per
+slide): problem, game, how it plays, on-chain Relics (mint + market on Fuji), architecture, security, tests/quality
+numbers, demo, roadmap after the contest (M-D3 list, mainnet only after the contest), team. Claude turns it into the deck.
+PIECE 3 - docs/video-script.md: 2 min 30 s max, a table: time, what is on screen, what the user says (Vietnamese
+voice-over line AND English subtitle line), which clip/screenshot. Must show: sign-in with wallet, idle progress, forge,
+mint on Fuji, Routescan proof, market, one security beat (429 notice or wrong-wallet guard).
+PIECE 4 - docs/submission.md: fill every fact you can verify from the repo (links, addresses, test counts); keep
+TODO-OWNER lines for what only the user knows (deadline confirmation, team, student IDs). Add the Builder Pass side
+quest checklist (5 tasks; mark which are already met from repo evidence, else TODO-OWNER).
+PIECE 5 - Docs pass: docs/licenses-v2.md lists every third-party asset with its license (grep assets folders;
+anything without a license = finding, do not delete it). node scripts/check-links.mjs: aim for zero broken links;
+fix broken links in docs you touch.
+
+YOUR ZONE: README.md, docs/submission.md, docs/pitch-slides.md (new), docs/video-script.md (new), docs/licenses-v2.md,
+docs/judge-walkthrough.md (links only), reports/n4-*.
+HARD STOPS: shared rules Tier 3; never claim a feature, number or test count that the repo or a report does not show;
+nothing copied from the Steam game Taskbar Hero (original content only).
+
+TEST CASES
+T1 every number in README/slides/submission (tests, contracts, addresses) has a source line in the report.
+T2 check-links: count before and after (no new failures; target 0). T3 video script total <= 150 s (sum the table).
+T4 slides 8-10, each <= 5 bullets. T5 no secret, private key or personal ID in any file (grep pasted).
+T6 docs-only: install + gen:deno drift + check-links ("full suite skipped: docs only").
+
+ACCEPTANCE: T1-T6; report lists every TODO-OWNER line the user must fill.

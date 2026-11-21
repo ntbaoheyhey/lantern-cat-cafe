@@ -1,0 +1,200 @@
+MISSION CXN3 - Cut-over truth: make the runbook match reality, add read-only live checks
+Tool: Codex | Model: strongest, medium reasoning | Branch: ai/codex-n3-cutover-truth
+Base: origin/main AFTER Claude says CXN2 is merged
+Report: reports/n3-cutover-truth.md | No PR, no merge, no Actions, no deploy, no live database writes.
+Follow the wave N additions and the shared rules appended below. Git author ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com>. ALWAYS push the report.
+
+WHY
+reports/C3.md found that docs/cutover-v2.md is stale: the v2 SQL is already live, the switch is the Vercel
+env var VITE_GAME_V2 (not a code flag), the Founder batch draft no longer exists, and check-live.mjs does not
+check v2 routes. Before the live play-through (AGN3) the user needs one short, true checklist and a script
+that says "live is healthy" without any secret.
+
+READ FIRST
+reports/C3.md (whole "Gaps found" and "Go / no-go" sections), docs/cutover-v2.md, docs/go-live.md,
+docs/runbook.md, docs/deploy.md, scripts/check-live.mjs, apps/web/src/layout/flag.ts,
+supabase/migrations/ (list), supabase/functions/_shared/v2/http.ts.
+
+PIECE 1 - Rewrite docs/cutover-v2.md (keep the file name; replace stale steps, keep a short "History" note)
+1. Reality section: v2 schema live since 26 Oct, integrity migration 27 Oct; VITE_GAME_V2=1 is the switch
+   (Vercel env + redeploy); D8 Founder batch DROPPED (decision 31 Oct, plan wave-n section 4).
+2. Pending live migrations table, generated from supabase/migrations: every file newer than
+   20261102000000, in order, with "apply by hand in the SQL editor BEFORE deploying functions" and why
+   (20261104 limiter fails closed with 503). Include CXN1's file if present.
+3. Deploy step: the exact `supabase functions deploy ...` command from docs/deploy.md, plus
+   "run node scripts/check-deno-imports.mjs first".
+4. Go / no-go checklist from C3, updated (remove Founder, remove the code-flag flip).
+5. Rollback: env var to 0 + redeploy, or Promote the previous Vercel deployment; keep v2 rows; the SQL
+   rollback only before real players exist.
+Keep docs/go-live.md and docs/runbook.md consistent (fix contradictions, link to cutover-v2.md).
+
+PIECE 2 - docs/proposals/sql/check-live-schema.sql (read-only; the user pastes it into the SQL editor)
+One query that returns one row per expected object with present true/false: the 6 v2 tables, the integrity
+objects (v2_action_results, v2_craft_once, v2_boss_fight_once, v2_action_result), the siwe_nonces policy,
+the budget tables and v2_take_budgets, game_voucher_cancel_reissue, the 'cancelled' status in
+relic_vouchers_status_check, and CXN1's function if any. Only SELECT from pg_catalog / information_schema.
+Must contain no INSERT/UPDATE/DELETE/ALTER/CREATE/DROP/GRANT. Prove it runs on PGlite with all migrations
+applied (all true) and with only up to 20261102 applied (the new ones false).
+
+PIECE 3 - scripts/check-live.mjs: add read-only v2 checks (no secret, no sign-in)
+For each v2 function URL (from the existing config in the script): OPTIONS returns 2xx with CORS headers;
+POST without a session returns 401 (not 500, not 503: a 503 means the budgets migration is missing, print
+that hint); oversized body returns 413 or 400. Add a `--v2` flag that runs only these. Never send a JWT or
+any key except the public anon key the script already uses. Unit-test the result classifier with fake
+responses (no network in tests).
+
+YOUR ZONE: docs/cutover-v2.md, docs/go-live.md, docs/runbook.md, docs/deploy.md (link only),
+docs/proposals/sql/check-live-schema.sql (new), scripts/check-live.mjs and a test next to it or under
+supabase/tests/**, reports/n3-*.
+HARD STOPS: shared rules Tier 3; you never run check-live against live with any credential beyond what the
+script already reads; you never apply SQL anywhere except PGlite.
+
+TEST CASES
+T1 cutover-v2.md has no mention of a code flag flip or of ai/codex-v29-founder-grant except in History.
+T2 the pending-migrations table lists exactly the files newer than 20261102000000 on your branch.
+T3 check-live-schema.sql: PGlite with all migrations -> every row true; with migrations up to 20261102 -> the
+   newer objects false. A grep test proves no write keyword in the file.
+T4 classifier tests: 401 -> ok, 503 -> "budgets migration missing?" hint, 500 -> fail, network error -> fail.
+T5 `node scripts/check-live.mjs --v2` run against the live site: paste output (read-only). If the deploy is
+   still broken, record the failures as findings, not as your bug.
+T6 check-links: no new broken links. T7 full shared-rules suite green (docs+scripts change: run install,
+   gen:deno drift, typecheck, lint, test).
+
+ACCEPTANCE: T1-T7; the user can follow cutover-v2.md top to bottom without asking a question.
+
+=== WAVE N ADDITIONS (31 Oct 2026, living draft). Read these first; the wave S shared rules below still apply. ===
+
+1. Mission overrides win. If your mission card says a Tier 3 file is in YOUR ZONE (for example one
+   new migration file, or a signed config number), that one item is allowed for this mission only.
+   Everything else in Tier 3 stays a hard stop.
+2. Migrations: a new migration file goes in supabase/migrations/ ONLY if your card allows it. Name
+   it with the next free timestamp after the newest file there. It must be additive, idempotent,
+   wrapped in begin/commit, revoke from public/anon/authenticated and grant to service_role. Never
+   apply it to any live database. Put "APPLY BEFORE DEPLOY: <file>" as the second line of your report.
+3. Deno import map: every Edge Function has supabase/functions/<fn>/deno.json generated by
+   `pnpm gen:deno`. If you add or rename a file under packages/** that an Edge Function imports,
+   run `pnpm gen:deno` and commit the deno.json changes. `git diff --exit-code -- supabase/functions`
+   after gen:deno must be clean. (A missing map entry broke the live deploy on 30 Oct.)
+4. GitHub Actions: do not run or trigger workflows. Verify locally. If `scripts/verify-pr.sh` is
+   available, run it without --comment and paste its summary.
+5. Secrets: never paste, log, commit or echo a database URL, password, service-role key, private key
+   or JWT. If you meet one in a file or log, write "SECRET FOUND: <file>:<line>, masked" in the report
+   and do not copy it. Never ask the user for one.
+6. Live systems: read-only. You may read https://taskbarhero-eight.vercel.app and the public Fuji
+   RPC. You may not call Supabase admin APIs, deploy, change Vercel, or send a transaction, unless
+   the card says so (only AGN3 plays live with its own throwaway test wallet).
+7. Language: write code, docs and reports in plain English. Keep existing Vietnamese text as is.
+8. Before you finish, re-read your card's TEST CASES list and mark each one PASS / FAIL / NOT
+   VERIFIED in the report. A test case you did not run is NOT VERIFIED, never PASS.
+
+=== SHARED RULES (wave S, 2026-10-26). Apply to this whole assignment. ===
+
+WHO YOU ARE AND HOW MUCH ROOM YOU HAVE
+This is a MISSION, not a micro-task: several related pieces of work that you own end to end. You are
+expected to think first, read the code, implement, run the app, run every check, find problems,
+fix them, and verify the fix - all inside this one assignment. Do not hand work back unless a HARD
+STOP below truly blocks you. Finishing 4 of 5 pieces with honest reporting beats stopping at piece 1.
+
+REPO AND BRANCH
+- Repo ntbaoheyhey/taskbar-hero (private). Work in a clean checkout.
+- Always: `git fetch origin +main:refs/remotes/origin/main` then create your branch FROM origin/main:
+  `git checkout -B <branch named in the mission> origin/main`. Never base on another agent's branch.
+- Push only your own branch: `git push -u origin <branch>`. No pull request, no merge, no GitHub
+  Actions run, no deploy (Vercel / Supabase functions / Sites), no change to any Site's audience.
+- Git author must be `ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com>`. Check with
+  `git log --format='%an <%ae>' origin/main..HEAD`; fix with `git commit --amend --reset-author --no-edit`.
+
+TOOLING (this is where several earlier runs died - follow it exactly)
+- pnpm must be 10.28.0. `corepack enable && corepack prepare pnpm@10.28.0 --activate`, then check
+  `pnpm --version`. If corepack is unavailable, prefix EVERY pnpm command with `npx -y pnpm@10.28.0`.
+  Paste the version line in your report.
+- Install with `CI=true pnpm install --frozen-lockfile` from the repo root.
+- If the installer asks to approve build scripts, or it modifies `pnpm-workspace.yaml` /
+  `pnpm-lock.yaml` as a side effect: run `git checkout -- pnpm-workspace.yaml pnpm-lock.yaml`,
+  continue, and note it in the report. This is NOT a blocker and NOT a scope violation.
+- Node 20+. Playwright: Chromium is preinstalled in some environments at /opt/pw-browsers; if the
+  browsers are missing use `PLAYWRIGHT_BROWSERS_PATH=/opt/pw-browsers` or `npx playwright install chromium`.
+- The browser suite runs from `apps/web`: `pnpm test:e2e`. It builds two sites and serves them on
+  ports 4173 (classic) and 4174 (v2, built with VITE_GAME_V2=1). Only one suite can run at a time
+  per machine. Before a run, kill leftovers: `pkill -f "vite preview" || true`. If a run is
+  cancelled, kill orphans before the next one or the next run tests a stale build.
+- v2 UI runs with `VITE_GAME_V2=1` and EMPTY `VITE_SUPABASE_URL` / `VITE_SUPABASE_ANON_KEY`
+  (demo mode, browser-local saves). Screenshots are written only when `SCREENSHOTS=1`.
+  After any e2e run, `git status --short reports/` must show only your own report files; revert
+  others with `git checkout -- <file>` and delete stray new PNGs.
+
+SCOPE: THREE TIERS INSTEAD OF ONE STOP
+Tier 1 - your zone. The files your mission names. Change them freely.
+Tier 2 - adjacent files, allowed WITH a note. If finishing your mission needs a change in a file
+  outside your zone that is NOT a hard stop below, make the smallest correct change and list it in
+  the report under "Tier 2 changes" with one line of why. This explicitly includes:
+    - an existing test whose assertion encodes the OLD behaviour your mission deliberately changes
+      (update the assertion, show old -> new in the report; never delete or skip the test);
+    - a test helper, fixture, mock or Playwright/vitest config file that has to learn about your change;
+    - a type, barrel export or small shared util you must extend.
+  Do not use Tier 2 to redesign anything, to reformat files, or to touch another mission's zone
+  (the zone list in your mission says which zones belong to other agents).
+Tier 3 - HARD STOPS. Never touch, in any mission:
+    contracts/** and anything Solidity; authentication / SIWE code (supabase/functions/auth-*,
+    supabase/functions/_shared/auth.ts, apps/web/src/wallet/siwe.ts, authApi.ts);
+    secrets, .env files, credentials; supabase/migrations/** and any DB schema change; applying a
+    migration or any write to the live database; packages/game-rules/src/v2/config.ts numbers and
+    content numbers; the signature line of docs/proposals/numbers-v2.md; .github/**; dependency
+    additions/removals in any package.json; making the repo public; the contest submission.
+  If a mission tells you to PROPOSE a change in a hard-stop area, write the proposal as a NEW file
+  under docs/proposals/ or as a migration file under docs/proposals/sql/ - never under
+  supabase/migrations/ - and never apply it.
+  Only a hard stop justifies BLOCKED. Anything else: solve it and report what you did.
+
+QUALITY RULES
+- Never skip, disable, weaken, `.only`, `.skip` or delete a test. Never raise a timeout or edit a
+  golden/snapshot number to hide a failure. If a test is genuinely flaky, fix the measurement
+  (e.g. best-of-N) and keep the threshold, and say so.
+- Keep every `data-testid`, role, aria-label, accessible name, tab order and visible string that a
+  test reads, unless your mission says to change it (then update the test too, Tier 2).
+- No new font, dependency or remote asset. No game logic, store, API or number change unless the
+  mission says so.
+- `prefers-reduced-motion: reduce` must mean no movement (opacity-only fades are fine).
+- The classic build must keep working: `VITE_GAME_V2=0 pnpm --filter @taskbar-hero/web build` and the
+  `classic` Playwright project must pass.
+
+VERIFICATION YOU MUST ACTUALLY RUN (paste real output, summary lines are enough for long logs)
+  CI=true pnpm install --frozen-lockfile
+  pnpm gen:deno && git diff --exit-code -- supabase/functions
+  pnpm typecheck
+  pnpm lint
+  pnpm test
+  pnpm build
+  cd apps/web && pnpm test:e2e      # whenever your diff touches apps/web/**, packages/** or a lockfile
+Plus every extra command your mission lists. A docs-only diff (docs/** and reports/** only) needs
+only install + gen:deno drift + the mission's own checks; write "full suite skipped: docs only".
+Known pre-existing failure you do NOT have to fix unless your mission says so:
+`node scripts/check-links.mjs` reports ~58 broken links on main (mostly docs/dry-run-report.md).
+Treat it as a baseline: compare your count to main's count and make sure you added none.
+
+LOOK AND FEEL (any mission that touches the UI)
+One look, "cozy cat cafe at night": dark plum surfaces from theme.css (--bg, --surface, --surface-2,
+--surface-3, --border); cream/white only for modal dialogs and the loot/chest card; --accent only on
+the ONE primary action per view and on the active tab; the pixel frame only on interactive or framed
+objects; --font-display for headings/tabs/buttons, --font-body for sentences, --font-num for numbers;
+spacing and size tokens with fallbacks, e.g. var(--sp-3, 12px), var(--tap, 44px).
+Evidence viewports: 1600x900, 1280x720, 390x844, 320x568 light; 1280x720 and 390x844 dark.
+PNG under 200 KB, at most 16 per mission, under reports/<id>/.
+
+REPORT - THE ONLY SIGNAL THE USER AND THE REVIEWER GET
+ALWAYS write the report file your mission names and push it, even if you are blocked or failed.
+First line exactly one of: `STATUS: DONE` / `PARTIAL` / `BLOCKED` / `FAILED`
+(PARTIAL is a normal, respected outcome: say which pieces are done and which are not.)
+Then, in this order:
+ 1. Per piece of the mission: what you did, PASS/FAIL/NOT VERIFIED per acceptance line.
+ 2. Problems you FOUND and problems you FIXED, with the root cause in one sentence each.
+ 3. Tier 2 changes, one line of why each.
+ 4. `git diff --stat origin/main...HEAD` and `git diff --name-only origin/main...HEAD`.
+ 5. Every check above with its real output. Never claim a check you did not run.
+ 6. "NOT verified": what you could not check and why (no live DB, no wallet, etc.). NOT VERIFIED is
+    an accepted outcome; a false PASS is not.
+ 7. Anything you think the humans should decide, and anything suspicious you noticed outside your zone
+    (do not fix it; list it - this list is valuable).
+ 8. Branch name, commit hashes, how to reproduce your evidence.
+If you cannot push the task branch, push a report-only branch `<branch>-report` from origin/main
+containing just the report. End your answer with one line: branch, commit, report path, status.

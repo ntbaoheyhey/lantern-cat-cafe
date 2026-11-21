@@ -1,0 +1,42 @@
+MISSION AGN3 - Play the live game like a judge, then refresh the screenshots and clips
+Tool: Antigravity | Model: strongest agentic/browser model, high effort | Branch: ai/antigravity-n3-live-qa
+Base: origin/main AFTER Claude says "live gate L is open" (deploy fixed, migrations applied, CXN1-3 + AGN1 merged
+and deployed, check-live --v2 green, user said go)
+Report: reports/p1-live-qa.md + reports/p1-live-qa/ (findings.json, screenshots, clips) | No PR, no merge, no deploy,
+no sharing change. Follow the wave N additions and the shared rules appended below.
+Git author ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com>. ALWAYS push the report.
+(This replaces wave-s AGP1; same report path so CXN6 can find it.)
+
+WHY
+The live site is what judges open. Nobody has played it end to end as a stranger since the security changes.
+
+PIECE 1 - Live walkthrough (writes only to YOUR OWN throwaway test account)
+Create a NEW Fuji test wallet in a fresh browser profile (Chrome/Brave/Edge, not Safari). Never the owner's
+wallet. Never put a private key or seed phrase in any file, log, screenshot or report. Get free test AVAX from
+the official Avalanche Fuji faucet. On https://taskbarhero-eight.vercel.app play 30 minutes:
+sign in; choose class; idle; hide the tab 6 minutes and return; claim; Equip best; craft; salvage; lock; boss
+(win and lose if possible); forge a Relic; mint it; list it on the market; buy it from a second test wallet if you can;
+try minting from the wrong wallet (expect AGN1's message); click one action very fast 20 times (expect the 429
+notice, not an error page).
+For each step record: result line, time from click to result (Performance panel or a stopwatch), console errors
+verbatim, screenshot. Every confusing moment is a finding: id, step, severity (blocker/major/minor/cosmetic),
+what happened, expected, screenshot, file guess.
+PIECE 2 - Six sizes: 1440x900, 1280x720, 1024x600, 390x844, 320x568, 844x390: no page scroll in normal play,
+every action reachable, nothing clipped. Real phone if you have one.
+PIECE 3 - Media kit from the live build: refresh the T3 screenshots and the two clips (same names and limits as
+reports/t3-demo-media.md), plus 3 new shots: Relic on Routescan, the 429 notice, the security-overview page.
+Update docs/demo-script-v2.md timings if the flow changed.
+PIECE 4 - reports/p1-live-qa/findings.json in the same format as reports/s3-qa (array of findings with the fields
+above) so Codex CXN6 can fix them in one pass. Validate it with `node -e "JSON.parse(require('fs').readFileSync(...))"`.
+
+YOUR ZONE: reports/p1-live-qa*, docs/demo-script-v2.md, media files the T3 report lists. No source changes: list
+bugs, do not fix them.
+HARD STOPS: shared rules Tier 3; no transaction from any wallet but your own test wallets; no Supabase/Vercel
+dashboard; no owner account.
+
+TEST CASES
+T1 every walkthrough step has a result line and a time. T2 console errors pasted verbatim (or "none").
+T3 six-size table filled. T4 media within T3 limits (sizes pasted). T5 findings.json parses and every finding has
+all fields. T6 the report and screenshots contain no private key, seed phrase or full JWT (say you checked).
+
+ACCEPTANCE: T1-T6.

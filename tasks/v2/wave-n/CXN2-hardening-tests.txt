@@ -1,0 +1,73 @@
+MISSION CXN2 - Hardening tests: Deno import guard, concurrency gaps, RLS on new tables, contract replay test
+Tool: Codex | Model: strongest, high reasoning | Branch: ai/codex-n2-hardening-tests
+Base: origin/main AFTER Claude says CXN1 is merged
+Report: reports/n2-hardening-tests.md | No PR, no merge, no Actions, no deploy, no live database writes, no transaction.
+Follow the wave N additions and the shared rules appended below. Git author ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com>. ALWAYS push the report.
+
+WHY
+The online round scores Technical Implementation (25) and Avalanche Integration (25). Tests are the proof.
+This mission adds tests and one guard script. It does NOT change product behaviour. If a new test fails
+because the product is wrong, do not fix the product: keep the test, mark it with a clear "KNOWN DEFECT"
+comment using `it.fails(...)` ONLY for that case, and list it first in the report so Claude can write a fix card.
+
+READ FIRST
+docs/security-test-matrix.md (rows marked GAP), supabase/tests/src/concurrency.test.ts,
+supabase/tests/v2/security-races.test.ts, supabase/tests/v2/request-budgets.test.ts,
+supabase/tests/src/voucher-cancel.test.ts, scripts/gen-deno-json.mjs, contracts/test/RelicNFT.t.sol.
+
+PIECE 1 - Deno import guard (stops the 30 Oct deploy failure from coming back)
+1. New script scripts/check-deno-imports.mjs (Node, no new dependency). For every
+   supabase/functions/<fn>/index.ts: walk the import graph the way Deno will (bare specifiers through that
+   function's deno.json "imports" map, relative specifiers resolved from the importing file). Every
+   relative specifier inside packages/** must either end in .ts or have an exact key in the map. Print each
+   unresolved import as "<fn>: <importer> -> <specifier>" and exit 1; exit 0 when clean.
+2. Add a Vitest test supabase/tests/src/deno-imports.test.ts that runs the script and expects exit 0.
+3. Prove it: on a scratch copy, delete the api-contract/src/v2 key from one deno.json and show the script
+   exits 1 naming that import (paste output; do not commit the broken file).
+4. If the deploy-fix PR already added an equivalent check, extend that one instead and say so.
+
+PIECE 2 - Concurrency and replay gaps (supabase/tests, in-memory store and PGlite)
+Add only cases that are not already covered (check the files above first; list the existing test you
+relied on for anything you skip):
+- parallel v2-claim x5 for one player pays once; parallel v2-craft with the same requestId spends once;
+- parallel relic-mint-report with the same tx hash from two players: only the voucher owner is credited;
+- parallel relic-forge right after expiry (uses CXN1's race guard): one issued voucher, no double signature;
+- request budgets: 20 parallel calls on one route never admit more than the burst; budgets of player A never
+  charge player B; Retry-After header is an integer >= 1 on 429; missing v2_take_budgets -> 503 (fail closed).
+
+PIECE 3 - RLS and grants on the three newest migrations (PGlite, all migrations applied in order)
+For 20261103 (siwe_nonces), 20261104 (request budgets tables and v2_take_budgets), 20261106
+(game_voucher_cancel_reissue) and CXN1's migration if present:
+- RLS is enabled on every new table; anon and authenticated cannot select/insert/update/delete;
+- every new function: anon and authenticated get permission denied; service_role can execute;
+- a generic test that lists ALL public tables and fails if any has RLS disabled (with an allowlist that is
+  empty unless a table is truly public; explain any entry).
+
+PIECE 4 - Contract-side voucher replay (Foundry; this ONE new file is allowed)
+New contracts/test/VoucherReplay.t.sol only (do not edit any other file under contracts/):
+mint with a valid voucher; the same voucher again reverts; the same nonce with another relicId reverts;
+expired voucher reverts; voucher signed by a non-signer reverts; voucher for player A sent by player B
+reverts (NotVoucherPlayer); after owner cancelNonce, that voucher reverts. Run `cd contracts && forge test`.
+If Foundry is not installed, try `curl -L https://foundry.paradigm.xyz | bash && foundryup`; if that is not
+possible, write the file, mark Piece 4 NOT VERIFIED, and say so.
+
+PIECE 5 - Update docs/security-test-matrix.md
+Rows 9, 20, 21 are no longer GAP (C4 #212, C6 #215, C7 #216, CXN1): point them at the real tests. Add rows
+for the import guard, RLS-on-all-tables and the Foundry replay test. Per-IP limits stay a documented GAP
+(decision U-5: not before the contest). Update "Result of the last run" with your real numbers.
+
+YOUR ZONE (Tier 1)
+scripts/check-deno-imports.mjs (new), new test files under supabase/tests/**, helpers in supabase/tests/**,
+contracts/test/VoucherReplay.t.sol (new), docs/security-test-matrix.md, reports/n2-*.
+OTHER ZONES: Antigravity AGN2 edits docs/security-overview.md, auth.md, abuse-controls.md,
+judge-walkthrough.md, security-review-2026-10.md; do not touch them. No product code changes.
+
+TEST CASES
+T1 check-deno-imports exits 0 on your branch. T2 it exits 1 on a broken map and names the import.
+T3 each Piece 2 case passes (one line per case in the report). T4 each Piece 3 assertion passes.
+T5 RLS-on-all-tables test passes with an empty allowlist (or each entry explained).
+T6 forge test: all VoucherReplay cases pass (or NOT VERIFIED with the reason).
+T7 every link in docs/security-test-matrix.md resolves (node scripts/check-links.mjs, no new failures).
+T8 full shared-rules suite green; any it.fails test listed as KNOWN DEFECT first in the report.
+
+ACCEPTANCE: T1-T8; no product file changed (`git diff --name-only origin/main...HEAD` shows only the zone).

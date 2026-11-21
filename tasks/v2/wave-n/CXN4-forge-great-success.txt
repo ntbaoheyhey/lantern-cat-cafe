@@ -1,0 +1,47 @@
+MISSION CXN4 (OPTIONAL) - Forge "great success"
+Tool: Codex | Model: strongest, high reasoning | Branch: ai/codex-n4-great-success
+Base: origin/main AFTER Claude says CXN3 is merged AND the user has signed decision M-D1
+Paste ONLY if docs/proposals/forge-great-success.md has a filled "Signed:" line (Claude adds it when the user
+answers). If it is not signed, SKIP this mission; nothing waits for it.
+Report: reports/n4-great-success.md | No PR, no merge, no Actions, no deploy, no live database writes.
+Follow the wave N additions and the shared rules appended below. Git author ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com>. ALWAYS push the report.
+
+WHY
+A rare "Great craft!" moment makes forging exciting in the demo. It must stay server-authoritative,
+deterministic and fair.
+
+READ FIRST
+docs/proposals/forge-great-success.md (the SIGNED section wins over the rest), packages/game-rules/src/v2/forge/craft.ts,
+packages/game-rules/src/v2/config.ts, packages/game-rules/src/v2/content/stats.ts, the v2-craft Edge Function
+path (supabase/functions/_shared/v2/**, read only unless Tier 2), apps/web/src/forge/ForgeReveal.tsx,
+docs/mechanics-v2.md and its drift test packages/game-rules/src/v2/content/mechanics-doc.test.ts.
+
+PIECES
+1. Config: add ONLY the signed chances (per rarity) and the signed line rule (Option A or B) to
+   packages/game-rules/src/v2/config.ts. This one edit of config.ts is allowed for this mission. No other number.
+2. Rules: in craft(), draw the great-success trial from the SAME seeded RNG the craft already uses, AFTER all
+   existing draws, so every existing roll for a given seed is unchanged (only an extra draw at the end). Apply
+   the signed line rule (cap 4). Record `greatSuccess: true` on the item object. If storing it would need a
+   new DB column, do NOT add one: keep it inside the existing item JSON; if that is impossible, stop that piece
+   and report BLOCKED for it.
+3. Server: the Edge Function must use the rules function (no client trust). Run `pnpm gen:deno`.
+4. UI: ForgeReveal.tsx shows "Great craft! Extra bonus line" with the existing reveal; reduced motion = no
+   movement. Keep every testid.
+5. Docs: add a short "Great success" part to docs/mechanics-v2.md and extend the drift test so the doc numbers
+   equal config.
+
+YOUR ZONE: packages/game-rules/src/v2/config.ts (signed numbers only), packages/game-rules/src/v2/forge/**,
+packages/game-rules/src/v2/state/** if the item type needs the flag, apps/web/src/forge/ForgeReveal.tsx and its
+styles/tests, docs/mechanics-v2.md, mechanics-doc.test.ts, generated deno.json, reports/n4-*.
+Tier 2 with a note: the v2 craft Edge Function glue if it must pass the flag through.
+
+TEST CASES
+T1 for 1,000 fixed seeds, every existing field of a crafted item equals main's result (only greatSuccess and
+   the extra line may differ). T2 observed great-success rate over 100,000 seeds per rarity within +-0.5
+   percentage points of the signed chance. T3 line count never exceeds 4; Option rule respected per rarity.
+T4 server craft and client preview agree for the same seed. T5 ForgeReveal shows the note only when
+greatSuccess; reduced-motion snapshot has no transform animation. T6 mechanics-doc drift test passes.
+T7 balance: run the existing sim; report 2-week power change vs main (proposal said +1.2% to +2.8%).
+T8 full shared-rules suite incl. e2e green.
+
+ACCEPTANCE: T1-T8; no number other than the signed ones changed (`git diff origin/main -- packages/game-rules/src/v2/config.ts` pasted).
