@@ -14,7 +14,19 @@ After the owner funded the café sponsor (2.35 AVAX at 02:35 UTC), the whole jud
 
 Market split for the 0.001 AVAX sale (listing #5): fee 0.00005 AVAX, of which 0.00002 burned and 0.00003 to treasury; seller received 0.00095 AVAX. Final ownership: buyer 1, seller 0.
 
-Still open: the hosted `chain-judge` is the 12 Nov build, so the in-game `finale` reward (Relic #3) needs the redeploy below; `boss` works today.
+## After the owner redeploy (02:40 UTC): in-game finale reward from the local recording host
+
+The owner redeployed `auth-verify`, `chain-judge` and `guest-drip` from `main` and set `SIWE_DOMAIN` / `SIWE_ALLOWED_ORIGIN` to include `127.0.0.1:6301` (CORS preflight now reflects `http://127.0.0.1:6301`). The same run with `--action finale --domain 127.0.0.1:6301`, the exact path the V9 judge reward and the Chapter 1 guardian offer use, minted the Moon Collar (Relic #3, rarity 2) and sold it (listing #6). Proof: [`live-e2e-2026-11-21-finale.json`](live-e2e-2026-11-21-finale.json).
+
+| Step | Payer | Confirmed in | Transaction |
+| --- | --- | --- | --- |
+| Café gas (guest-drip) | sponsor | 6624 ms | [0x01a25bac…](https://testnet.snowtrace.io/tx/0x01a25bac1ff843f530810abd76bca8a78cbccdb95f0af3ab8ec4f6b43aecf1c2) |
+| RelicNFT.mint | seller | 4130 ms | [0x229595d6…](https://testnet.snowtrace.io/tx/0x229595d646a870f1c832e20afa671af819d04ea49590d868f190cad57898ff15) |
+| RelicNFT.setApprovalForAll | seller | 4647 ms | [0x90978a85…](https://testnet.snowtrace.io/tx/0x90978a85ca822de56d73225aab089e109c558cd9c8bdcf8197797f8b86488962) |
+| RelicMarketV2.list | seller | 2267 ms | [0xf29d14fa…](https://testnet.snowtrace.io/tx/0xf29d14fa20b80ed2a7bd0675d398b7f96ce89a33d28637a537ca109863815396) |
+| Seller funds buyer gas | seller | 4706 ms | [0xeebbec09…](https://testnet.snowtrace.io/tx/0xeebbec09df3e344a87040909f739459d7ed1409cb3673be41fbcce015906bef8) |
+| RelicMarketV2.buy | buyer | 4668 ms | [0x119b1df9…](https://testnet.snowtrace.io/tx/0x119b1df911379c7cf3dda5029c4a8158c25cc22d22d8fca647bb404533a6a455) |
+| RelicMarketV2.withdraw | seller | 4568 ms | [0xa92dc46a…](https://testnet.snowtrace.io/tx/0xa92dc46a1f353db779de9b5080f6dc4b18cdf17c3965b26866be1952d28dcf0c) |
 
 ## Earlier check — 19 November 2026
 
