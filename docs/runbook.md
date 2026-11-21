@@ -2,13 +2,29 @@
 
 Operating the live Taskbar Hero. Values (keys, tokens) are never written here; only variable names. Setup of secrets is in [go-live](go-live.md), contract deployment in [deploy](deploy.md).
 
+Release order and rollback: [v2 cut-over checklist](cutover-v2.md). The v2 switch is Vercel
+Production `VITE_GAME_V2=1` plus redeploy; rollback uses `0` plus redeploy or Promote. Keep v2 rows.
+Optional release operations follow **user-approved mission section 7**, using existing CLI access
+only after local score/merge gates and live prerequisites pass. Keep backend-dependent features
+default-OFF; missing access uses local PGlite/demo proof and optional steps. CXN3 P/B permits only
+read-only live probes, with no deployment or live setting changes.
+
 ## Live check
 
 ```sh
 node scripts/check-live.mjs
 ```
 
-Node 20 or newer, no install. It prints PASS or FAIL per check and exits non-zero if any fails. It checks: the site loads; each of the 9 Edge Functions refuses an anonymous POST with a 4xx (`auth-nonce` is public and answers 200); `relics/1..4.json`, their images and the 64-hex path wallets request; and read-only Fuji calls (chain id, RelicNFT code, `signer()`, `owner()`, `uri(1)` pointing at the site, `RelicMarket.relicNFT()`). Contract addresses are read from `README.md`.
+Node 20 or newer, no install. It prints PASS or FAIL per check and exits non-zero if any fails. It checks: the site loads; each of the 9 classic/shared Edge Functions refuses an anonymous POST with a 4xx (`auth-nonce` is public and answers 200); `relics/1..4.json`, their images and the 64-hex path wallets request; and read-only Fuji calls (chain id, RelicNFT code, `signer()`, `owner()`, `uri(1)` pointing at the site, `RelicMarket.relicNFT()`). Contract addresses are read from `README.md`.
+
+The default run also includes all nine v2 routes. For only the 27 unsigned v2 probes, run
+`node scripts/check-live.mjs --v2`: preflight 2xx with CORS, unsigned POST 401, oversized JSON 413/400.
+No key or session is sent. The existing script reads no anon key. Current handlers authenticate
+before body parsing, so oversized unsigned requests can fail this strict check with 401. Missing
+budget SQL affects authenticated requests; an unsigned 401 cannot confirm that SQL is installed.
+With authorized catalog access, run the [read-only catalog query](proposals/sql/check-live-schema.sql) in the SQL editor,
+then follow the [migration order](cutover-v2.md#2-check-the-live-schema-then-apply-pending-migrations).
+The default legacy `auth-nonce` probe issues a challenge; `--v2` avoids it.
 
 Optional overrides: `SITE_URL`, `SUPABASE_URL`, `FUJI_RPC_URL`. If a run behind a proxy shows `fetch failed`, the machine cannot reach the host (on Node 22 try `NODE_USE_ENV_PROXY=1`).
 
@@ -17,6 +33,7 @@ Reading a failure:
 | Failing check | Likely cause | Go to |
 | --- | --- | --- |
 | site loads, relic json or image | Vercel deployment failed, was paused, or hit its cap | [Vercel cap](#vercel-cap-or-failed-deploy) |
+| v2 returns 503 | budgets migration missing? Check the catalog and function logs; other counter-store failures can also cause 503 | [Migration order](cutover-v2.md#2-check-the-live-schema-then-apply-pending-migrations) |
 | function returns 5xx or does not answer | functions not deployed, or the project is paused | [Paused Supabase project](#paused-supabase-project), [Redeploy functions](#redeploy-the-edge-functions) |
 | function returns 2xx where 4xx is expected | `verify_jwt` or auth changed; investigate before demo | [Redeploy functions](#redeploy-the-edge-functions) |
 | `uri(1)` not the site | metadata URI not set, or the site URL changed | [Set the metadata URI](#set-the-metadata-uri) |
@@ -36,7 +53,15 @@ Do this the day before, then again 30 minutes before.
 
 ## Redeploy the Edge Functions
 
-Automatic: a merge to `main` that changes function code runs `.github/workflows/deploy-functions.yml`. By hand: GitHub **Actions > Deploy Edge Functions > Run workflow** on `main`. The repo secret `SUPABASE_ACCESS_TOKEN` must exist (without it the job only prints "Deploy skipped"). Afterwards run the live check.
+Under section 7, confirm the local score/merge gates and additive/reversible migration prerequisites
+first, run `node scripts/check-deno-imports.mjs`, then use the exact
+[optional deployment command](cutover-v2.md#3-deploy-the-verified-functions-optional-section-7).
+No existing CLI credentials means keep the deployment optional and verification local. The current
+missing manual rollback files remain an explicit no-go condition in that checklist. BASE0 repaired
+the `index` import-map aliases; re-run the guard on the release commit because generation without
+drift does not prove import resolution.
+The existing automatic workflow can deploy changed bundles on `main` when its repo secret is
+configured, but do not dispatch Actions for this release. Afterwards run the live checks.
 
 Function secrets (set in the Supabase dashboard, **Edge Functions > Secrets**; never in git): `AUTH_JWT_SECRET`, `GAME_SEED_SECRET`, `SIWE_DOMAIN`, `SIWE_ALLOWED_ORIGIN`, `VOUCHER_SIGNER_PRIVATE_KEY`, `FUJI_RPC_URL` (optional). New values apply to the next request without a redeploy. Changing `AUTH_JWT_SECRET` signs everyone out.
 
@@ -59,7 +84,7 @@ Do this if `VOUCHER_SIGNER_PRIVATE_KEY` may have leaked, or on a schedule.
 Free Supabase projects pause after a period of inactivity (check the current policy in the dashboard). Symptoms: every function check fails, the game shows connection errors, sign-in fails.
 
 1. Open the Supabase dashboard, select project `qoalewtxflagoprrxrgh`, and use **Restore project**. Data is kept; restoring takes a few minutes.
-2. Run `node scripts/check-live.mjs`. If functions still fail, run the Deploy Edge Functions workflow by hand.
+2. Run `node scripts/check-live.mjs`. If functions still fail, follow the manual deployment procedure above after checking migrations.
 3. Prevent it before a demo: open the live site and sign in a few days ahead, and check the dashboard the day before.
 4. If it cannot be restored in time, run the demo from demo mode (see the checklist).
 

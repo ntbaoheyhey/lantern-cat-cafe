@@ -1,0 +1,146 @@
+UTC 2026-11-01T08:04:26.281226+00:00
+scratch cwd: .cxn3-mutant-cw957s39/supabase/tests
+$ pnpm exec vitest run src/live-schema.test.ts --reporter verbose --silent=false
+mutation: docs/proposals/sql/check-live-schema.sql
+BEFORE: ('public.cat_state')
+AFTER: ('public.players')
+expected failing test: all 17 expected objects are present
+
+ RUN  v5.0.5 /Users/bao/.codex/worktrees/mega-cxn3/taskbar-hero/.cxn3-mutant-cw957s39/supabase/tests
+
+stdout | src/live-schema.test.ts > the pending migrations upgrade the Nov 2 snapshot and can be replayed locally
+local upgrade pass 1: 20261103000000_siwe_nonces_server_only.sql
+
+stdout | src/live-schema.test.ts > the pending migrations upgrade the Nov 2 snapshot and can be replayed locally
+local upgrade pass 1: 20261104000000_v2_request_budgets.sql
+
+stdout | src/live-schema.test.ts > the pending migrations upgrade the Nov 2 snapshot and can be replayed locally
+local upgrade pass 1: 20261106000000_voucher_cancel_reissue.sql
+
+stdout | src/live-schema.test.ts > the pending migrations upgrade the Nov 2 snapshot and can be replayed locally
+local upgrade pass 1: 20261107000000_voucher_race_guard.sql
+
+ ✓ src/live-schema.test.ts > is one catalog-only inventory with no write keywords, even in comments 2ms
+ × src/live-schema.test.ts > all 17 expected objects are present with all migrations 8ms
+   → expected [ …(17) ] to deeply equal [ …(17) ]
+ × src/live-schema.test.ts > only the seven newer objects are false through 20261102 2ms
+   → expected [ …(17) ] to deeply equal [ …(17) ]
+ × src/live-schema.test.ts > the pending migrations upgrade the Nov 2 snapshot and can be replayed locally 125ms
+   → expected [ { …(2) }, { …(2) }, { …(2) }, …(14) ] to deeply equal [ { …(2) }, { …(2) }, { …(2) }, …(14) ]
+
+ Test Files  1 failed (1)
+      Tests  3 failed | 1 passed (4)
+   Start at  15:04:24
+   Duration  1.84s (tests 97%, import 1%, transform 1%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/live-schema.test.ts > all 17 expected objects are present with all migrations
+AssertionError: expected [ …(17) ] to deeply equal [ …(17) ]
+
+- Expected
++ Received
+
+@@ -9,11 +9,11 @@
+    "function public.v2_take_budgets(jsonb)",
+    "policy public.siwe_nonces.siwe_nonces_server_only",
+    "table private.v2_request_budgets",
+    "table public.boss_clears",
+    "table public.boss_fights",
+-   "table public.cat_state",
+    "table public.founder_grants",
+    "table public.items",
+    "table public.player_stacks",
++   "table public.players",
+    "table public.v2_action_results",
+  ]
+
+ ❯ src/live-schema.test.ts:54:35
+     52|   expect(rows).toHaveLength(17);
+     53|   expect(new Set(rows.map(r => r.object)).size).toBe(17);
+     54|   expect(rows.map(r => r.object)).toEqual(expectedObjects);
+       |                                   ^
+     55|   expect(rows.filter(r => !r.present)).toEqual([]);
+     56|   console.log(`live-schema all migrations: ${rows.length}/${rows.lengt…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯
+
+ FAIL  src/live-schema.test.ts > only the seven newer objects are false through 20261102
+AssertionError: expected [ …(17) ] to deeply equal [ …(17) ]
+
+- Expected
++ Received
+
+@@ -9,11 +9,11 @@
+    "function public.v2_take_budgets(jsonb)",
+    "policy public.siwe_nonces.siwe_nonces_server_only",
+    "table private.v2_request_budgets",
+    "table public.boss_clears",
+    "table public.boss_fights",
+-   "table public.cat_state",
+    "table public.founder_grants",
+    "table public.items",
+    "table public.player_stacks",
++   "table public.players",
+    "table public.v2_action_results",
+  ]
+
+ ❯ src/live-schema.test.ts:62:35
+     60|   const { rows } = await old.query<{ object: string; present: boolean …
+     61|   expect(rows).toHaveLength(17);
+     62|   expect(rows.map(r => r.object)).toEqual(expectedObjects);
+       |                                   ^
+     63|   expect(rows.filter(r => !r.present).map(r => r.object)).toEqual([
+     64|     "constraint public.relic_vouchers.relic_vouchers_status_check allo…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/3]⎯
+
+ FAIL  src/live-schema.test.ts > the pending migrations upgrade the Nov 2 snapshot and can be replayed locally
+AssertionError: expected [ { …(2) }, { …(2) }, { …(2) }, …(14) ] to deeply equal [ { …(2) }, { …(2) }, { …(2) }, …(14) ]
+
+- Expected
++ Received
+
+@@ -46,23 +46,23 @@
+    {
+      "object": "table public.boss_fights",
+      "present": true,
+    },
+    {
+-     "object": "table public.cat_state",
+-     "present": true,
+-   },
+-   {
+      "object": "table public.founder_grants",
+      "present": true,
+    },
+    {
+      "object": "table public.items",
+      "present": true,
+    },
+    {
+      "object": "table public.player_stacks",
++     "present": true,
++   },
++   {
++     "object": "table public.players",
+      "present": true,
+    },
+    {
+      "object": "table public.v2_action_results",
+      "present": true,
+
+ ❯ src/live-schema.test.ts:84:47
+     82|         console.log(`local upgrade pass ${pass}: ${file}`);
+     83|       }
+     84|       expect((await upgrade.query(sql)).rows).toEqual(expectedObjects.…
+       |                                               ^
+     85|     }
+     86|   } finally { await upgrade.close(); }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/3]⎯
+
+
+EXIT_CODE=1
+KILLED=True

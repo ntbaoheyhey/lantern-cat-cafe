@@ -1,0 +1,144 @@
+$ python3 reports/scorecard/cxn3/audit.py
+Tier 1	docs/cutover-v2.md
+Tier 1	docs/deploy.md
+Tier 1	docs/go-live.md
+Tier 1	docs/proposals/sql/check-live-schema.sql
+Tier 1	docs/runbook.md
+Tier 1	reports/n3-cutover-truth.md
+Tier 1	reports/n3-cutover-truth/checks/classifier.log
+Tier 1	reports/n3-cutover-truth/checks/deno-imports.log
+Tier 1	reports/n3-cutover-truth/checks/live-v2.log
+Tier 1	reports/n3-cutover-truth/checks/schema.log
+Tier 1	reports/scorecard/cxn3/audit.py
+Tier 1	reports/scorecard/cxn3/build-status.md
+Tier 1	reports/scorecard/cxn3/check-links-baseline.py
+Tier 1	reports/scorecard/cxn3/import-diagnostic.py
+Tier 1	reports/scorecard/cxn3/logs/classifier-before.log
+Tier 1	reports/scorecard/cxn3/logs/classifier.log
+Tier 1	reports/scorecard/cxn3/logs/deno-drift.log
+Tier 1	reports/scorecard/cxn3/logs/deno-imports.log
+Tier 1	reports/scorecard/cxn3/logs/flag-defaults.log
+Tier 1	reports/scorecard/cxn3/logs/gen-deno.log
+Tier 1	reports/scorecard/cxn3/logs/import-diagnostic-initial.log
+Tier 1	reports/scorecard/cxn3/logs/import-diagnostic.log
+Tier 1	reports/scorecard/cxn3/logs/install.log
+Tier 1	reports/scorecard/cxn3/logs/integrity.log
+Tier 1	reports/scorecard/cxn3/logs/links-current-initial.log
+Tier 1	reports/scorecard/cxn3/logs/links-current.log
+Tier 1	reports/scorecard/cxn3/logs/links-main.log
+Tier 1	reports/scorecard/cxn3/logs/links-reports.log
+Tier 1	reports/scorecard/cxn3/logs/links-touched-initial.log
+Tier 1	reports/scorecard/cxn3/logs/links-touched.log
+Tier 1	reports/scorecard/cxn3/logs/live-v2.log
+Tier 1	reports/scorecard/cxn3/logs/mutation-anonymous-500.log
+Tier 1	reports/scorecard/cxn3/logs/mutation-budget-hint.log
+Tier 1	reports/scorecard/cxn3/logs/mutation-control-node.log
+Tier 1	reports/scorecard/cxn3/logs/mutation-control-schema.log
+Tier 1	reports/scorecard/cxn3/logs/mutation-cors-origin.log
+Tier 1	reports/scorecard/cxn3/logs/mutation-missing-cxn1-signature.log
+Tier 1	reports/scorecard/cxn3/logs/mutation-missing-migration.log
+Tier 1	reports/scorecard/cxn3/logs/mutation-missing-route.log
+Tier 1	reports/scorecard/cxn3/logs/mutation-network-pass.log
+Tier 1	reports/scorecard/cxn3/logs/mutation-oversized-401.log
+Tier 1	reports/scorecard/cxn3/logs/mutation-small-body.log
+Tier 1	reports/scorecard/cxn3/logs/mutation-user-only-authority.log
+Tier 1	reports/scorecard/cxn3/logs/mutation-wrong-existing-table.log
+Tier 1	reports/scorecard/cxn3/logs/mutations.json
+Tier 1	reports/scorecard/cxn3/logs/schema.log
+Tier 1	reports/scorecard/cxn3/logs/secret-scan.log
+Tier 1	reports/scorecard/cxn3/logs/sql-no-writes.log
+Tier 1	reports/scorecard/cxn3/logs/syntax.log
+Tier 1	reports/scorecard/cxn3/logs/target-typecheck.log
+Tier 1	reports/scorecard/cxn3/logs/tooling.log
+Tier 1	reports/scorecard/cxn3/logs/whitespace-raw.log
+Tier 1	reports/scorecard/cxn3/mutations.py
+Tier 1	scripts/check-live.mjs
+Tier 1	scripts/check-live.test.mjs
+Tier 1	supabase/tests/src/live-schema.test.ts
+
+source/docs whitespace (raw logs retain terminal whitespace)
+$ git diff --check origin/main -- . :(exclude)reports/scorecard/cxn3/logs
+EXIT_CODE=0
+protected/product files unchanged from main
+$ git diff --exit-code origin/main -- supabase/functions supabase/migrations packages .github .env .env.example pnpm-lock.yaml pnpm-workspace.yaml apps/web
+EXIT_CODE=0
+checker unchanged from P/B starting head
+$ git diff --exit-code 458eebd -- scripts/check-live.mjs
+EXIT_CODE=0
+Unfiltered whitespace check exit 2: Node assertion reporter emits indented blank lines in raw mutation logs. Preserved as raw evidence; see whitespace-raw.log. Source/docs check above exits 0.
+Integrity pattern hits in changed source/test files (full added-file content):
+scripts/check-live.mjs:62: console.log — CLI health-check output; existing non-browser reporting
+scripts/check-live.mjs:95: console.log — CLI health-check output; existing non-browser reporting
+scripts/check-live.mjs:181: console.log — CLI health-check output; existing non-browser reporting
+supabase/tests/src/live-schema.test.ts:56: console.log — test-only evidence output; no product console logging
+supabase/tests/src/live-schema.test.ts:57: console.log — test-only evidence output; no product console logging
+supabase/tests/src/live-schema.test.ts:72: console.log — test-only evidence output; no product console logging
+supabase/tests/src/live-schema.test.ts:73: console.log — test-only evidence output; no product console logging
+supabase/tests/src/live-schema.test.ts:82: console.log — test-only evidence output; no product console logging
+No skip/only/fixme/retry/timeout/loosened expectation or deleted test file in the delta. Network assertions retained for anonymous and extended to options/oversized. Exact SQL identities are added, with existing 17-row and seven-absent assertions retained.
+Intentional weak predicates occur only as mutant strings and raw failure logs under reports/scorecard/cxn3, never in production/test implementations.
+$ git diff --stat origin/main
+ docs/cutover-v2.md                                 | 540 +++++++--------------
+ docs/deploy.md                                     |   5 +
+ docs/go-live.md                                    |  40 +-
+ docs/proposals/sql/check-live-schema.sql           |  43 ++
+ docs/runbook.md                                    |  30 +-
+ reports/n3-cutover-truth.md                        | 114 +++++
+ reports/n3-cutover-truth/checks/classifier.log     |  43 ++
+ reports/n3-cutover-truth/checks/deno-imports.log   |  80 +++
+ reports/n3-cutover-truth/checks/live-v2.log        |  33 ++
+ reports/n3-cutover-truth/checks/schema.log         |  17 +
+ reports/scorecard/cxn3/audit.py                    |  80 +++
+ reports/scorecard/cxn3/build-status.md             |  68 +++
+ reports/scorecard/cxn3/check-links-baseline.py     |  50 ++
+ reports/scorecard/cxn3/import-diagnostic.py        |  51 ++
+ reports/scorecard/cxn3/logs/classifier-before.log  |  47 ++
+ reports/scorecard/cxn3/logs/classifier.log         |  48 ++
+ reports/scorecard/cxn3/logs/deno-drift.log         |   4 +
+ reports/scorecard/cxn3/logs/deno-imports.log       |  84 ++++
+ reports/scorecard/cxn3/logs/flag-defaults.log      |  24 +
+ reports/scorecard/cxn3/logs/gen-deno.log           |   9 +
+ .../cxn3/logs/import-diagnostic-initial.log        | 137 ++++++
+ reports/scorecard/cxn3/logs/import-diagnostic.log  | 105 ++++
+ reports/scorecard/cxn3/logs/install.log            |  17 +
+ reports/scorecard/cxn3/logs/integrity.log          | 142 ++++++
+ .../scorecard/cxn3/logs/links-current-initial.log  |  25 +
+ reports/scorecard/cxn3/logs/links-current.log      |  19 +
+ reports/scorecard/cxn3/logs/links-main.log         |  19 +
+ reports/scorecard/cxn3/logs/links-reports.log      |   6 +
+ .../scorecard/cxn3/logs/links-touched-initial.log  |  12 +
+ reports/scorecard/cxn3/logs/links-touched.log      |   8 +
+ reports/scorecard/cxn3/logs/live-v2.log            |  37 ++
+ .../scorecard/cxn3/logs/mutation-anonymous-500.log |  75 +++
+ .../scorecard/cxn3/logs/mutation-budget-hint.log   |  77 +++
+ .../scorecard/cxn3/logs/mutation-control-node.log  |  49 ++
+ .../cxn3/logs/mutation-control-schema.log          |  82 ++++
+ .../scorecard/cxn3/logs/mutation-cors-origin.log   |  77 +++
+ .../cxn3/logs/mutation-missing-cxn1-signature.log  | 129 +++++
+ .../cxn3/logs/mutation-missing-migration.log       |  83 ++++
+ .../scorecard/cxn3/logs/mutation-missing-route.log |  98 ++++
+ .../scorecard/cxn3/logs/mutation-network-pass.log  |  82 ++++
+ .../scorecard/cxn3/logs/mutation-oversized-401.log |  77 +++
+ .../scorecard/cxn3/logs/mutation-small-body.log    |  73 +++
+ .../cxn3/logs/mutation-user-only-authority.log     | 219 +++++++++
+ .../cxn3/logs/mutation-wrong-existing-table.log    | 146 ++++++
+ reports/scorecard/cxn3/logs/mutations.json         | 155 ++++++
+ reports/scorecard/cxn3/logs/schema.log             |  81 ++++
+ reports/scorecard/cxn3/logs/secret-scan.log        |   4 +
+ reports/scorecard/cxn3/logs/sql-no-writes.log      |   4 +
+ reports/scorecard/cxn3/logs/syntax.log             |   4 +
+ reports/scorecard/cxn3/logs/target-typecheck.log   |   8 +
+ reports/scorecard/cxn3/logs/tooling.log            |   5 +
+ reports/scorecard/cxn3/logs/whitespace-raw.log     |  83 ++++
+ reports/scorecard/cxn3/mutations.py                |  95 ++++
+ scripts/check-live.mjs                             |  49 +-
+ scripts/check-live.test.mjs                        | 100 ++++
+ supabase/tests/src/live-schema.test.ts             |  87 ++++
+ 56 files changed, 3492 insertions(+), 387 deletions(-)
+
+$ git show-ref refs/heads/ai/codex-n3-cutover-truth
+139abbeabea203e1b08167e55c12349850c7dacb refs/heads/ai/codex-n3-cutover-truth
+
+$ git branch --show-current
+(empty means detached)
+EXIT_CODE=0

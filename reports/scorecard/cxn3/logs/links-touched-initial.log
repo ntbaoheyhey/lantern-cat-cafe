@@ -1,0 +1,12 @@
+$ node scripts/check-links.mjs docs/cutover-v2.md docs/go-live.md docs/runbook.md docs/deploy.md
+UTC 2026-11-01T08:03:26.081096+00:00
+Checked 4 markdown files and 42 links/paths.
+
+Found 1 broken link(s) or path(s) on disk:
+
+  docs/cutover-v2.md:101 [backticked repo path]
+    Target: `./index`
+    Not found: index
+
+
+EXIT_CODE=1
