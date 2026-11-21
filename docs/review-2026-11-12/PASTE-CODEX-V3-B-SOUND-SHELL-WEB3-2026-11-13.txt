@@ -1,0 +1,138 @@
+PASTE-CODEX-V3-B-SOUND-SHELL-WEB3-2026-11-13  (Session B of 2: audio, fonts, icons, web3 landing + home, tutorial, economy v3)
+=================================================================================================================
+
+
+USER DECISIONS (final, 13 Nov 2026; these override anything below)
+- Audio: FREE sources only (CC0/OFL/Pixabay/Kenney/Sonniss + the cat-speak synth). No ElevenLabs, no Suno, no paid tool. Ignore any "DUYET AUDIO TRA PHI" rule below.
+- Economy v3: implement the planner recommendations as written (Deed only gates withdrawing, Spool 25% withdraw fee, rarer gacha with pity, 4-week seasons, Bells-only randomness).
+- Pilot reviews are auto-approved by the user; never wait for a review.
+- CI: local runs only (GitHub Actions is blocked). Every gate means a local run.
+- Deploy is done by the user on 20 Nov from USER-DEPLOY-VI.md; keep that file accurate and step-by-step in Vietnamese.
+
+HOW TO USE THIS PROMPT
+- Paste this whole file into a NEW Codex session. If the session dies, is cut, or says "context too long", open a new session and paste THIS SAME FILE again. It resumes from disk. Never ask the user to "continue"; never wait for a reply.
+- You are Codex. Work alone. Do NOT start subagents, helper agents, or parallel `codex exec` (max 4 model-request threads on the account; session A uses one). Local scripts that make no model requests are fine.
+- Language: code, docs and reports in English. The user summary file STATUS-VI.md in Vietnamese. In-game text: English UI with short words (max 25 words per screen, existing B2 word budget), Vietnamese only where it already exists.
+
+0. RESUME PROTOCOL (do this first, every time)
+-------------------------------------------------
+0.1 Worktree: /Users/bao/taskbar-hero-chain (already has node_modules; reuse it, do NOT create another worktree).
+    First run only (if reports/v3-shell/ does not exist yet): the CHAIN lane was paused with possibly uncommitted work on branch codex/chain-2026-11-12 (see reports/chain/HANDOFF.md). Run `git status --short | wc -l`. If > 0: run `pnpm -r typecheck` and the chain unit tests (`pnpm chain:test` or the narrowest equivalent listed in reports/chain/HANDOFF.md), then commit ONLY CHAIN files (never supabase/.temp, never secrets, never .env*) as "CHAIN: save paused work before V3" and push to origin codex/chain-2026-11-12. If tests fail, commit anyway on that branch with "[tests failing: <names>]" in the message so nothing is lost, and note it in DECISIONS.md.
+    Then: `git fetch origin codex/cardrpg-integrate-2026-11-12` and `git switch -c codex/v3-shell-2026-11-13 origin/codex/cardrpg-integrate-2026-11-12`; then `git merge origin/codex/chain-2026-11-12`. Timebox conflict resolution to 45 minutes; if it is not clean by then, abort the merge, stay on the integrate base (it already contains CHAIN READY 394cf606) and cherry-pick only the CHAIN commits you need later. Log it.
+    Later runs: `git switch codex/v3-shell-2026-11-13`.
+0.2 State folder: reports/v3-shell/ with QUEUE.md, HANDOFF.md (max 40 lines: NOW / NEXT 1-3 / LAST GOOD COMMIT / OPEN), DECISIONS.md, DISK-LOG.md, INBOX.md (user corrections; read after every card), STATUS-VI.md (Vietnamese, max 30 lines), NEEDS-USER.md. If missing, create and write QUEUE.md from section 5 with all cards "todo". If present: read HANDOFF + QUEUE + INBOX only, run `git status`, finish or revert half-done edits, continue at the first card not "done".
+0.3 STOP: if STOP-V3B exists in the worktree root, write HANDOFF.md and stop. Otherwise never stop until QUEUE.md is empty or 19 Nov 2026 12:00 UTC (freeze). Checkpoints and pushes are not stopping points.
+0.4 Context diet: no whole images/base64/long logs in the conversation; `| tail -n 40`; screenshots <= 1280 px, max 4 per look. Commit after every card ("V3B <card>: <what>"), push `git push -u origin codex/v3-shell-2026-11-13` (retry 3x).
+0.5 Self-repair loop: find -> diagnose (2 lines in HANDOFF) -> fix -> re-run the failing check only. Max 4 attempts per problem, then change method (log why), after 2 methods mark PARTIAL and move on; revisit PARTIAL cards once at the end.
+0.6 Research and own initiatives are pre-approved: log in DECISIONS.md and continue. Hard limits in section 2 never change.
+
+1. DISK CHECK AND CLEANUP (first step of EVERY session)
+--------------------------------------------------------
+1.1 Print `df -h /System/Volumes/Data | tail -1` and `du -sh /Users/bao/taskbar-hero* /Users/bao/art/* /Users/bao/tools/* 2>/dev/null | sort -h | tail -25`.
+1.2 Delete WITHOUT asking: in THIS worktree apps/web/dist*, playwright-report/, test-results/, *.trace.zip, .vite caches, Anvil/forge `cache/` and `out/` only if they rebuild with `forge build`; downloaded audio/font ZIP archives after you extracted the files you keep.
+1.3 Do NOT delete other worktrees (session A owns that cleanup), /Users/bao/art/look-v3, /Users/bao/tools/psd-split, the designer Desktop folder, anything of other projects, the zaic runner. Never `pkill`/`killall`; kill only PIDs you started (list them in HANDOFF). Ports for this session: 5994-5997 and Anvil 8546.
+1.4 Write DISK-LOG.md (before/after free space, what was deleted). If free space < 15 GB after cleanup, put it in STATUS-VI.md as a user item and keep audio sources as compressed files only.
+
+2. HARD LIMITS
+--------------
+- Original art only; never feed any reference image or video frame of another game to a generator. Record tool + prompt + licence for every asset (assets/provenance.json; audio in apps/web/public/audio/LICENSES.json with source URL, licence, author, date).
+- Audio and fonts must have a licence that allows commercial use: CC0, SIL OFL, Pixabay Content License, Kenney (CC0), Sonniss GDC bundle licence (royalty-free; not for AI training). No "non-commercial" or "attribution unknown" files. No ripped game audio. Paid AI tools (ElevenLabs, Suno) ONLY if reports/v3-shell/INBOX.md contains the user's approval line "DUYET AUDIO TRA PHI"; until then use the free path.
+- No secrets in files, logs or chat. No deploys, no main merges, no contract deployments, no live migrations: user-only (NEEDS-USER.md). Keep every new on-chain feature behind a default-off flag that the demo build turns on (VITE_CHAIN_DEMO etc.).
+- Random outcomes (gacha) are paid ONLY with bound in-game currency, NEVER with YARN or any transferable asset. Publish odds next to every random button (gacha, enhancement, fusion).
+- Do not edit files owned by session A (section 3.3). Write requests in reports/v3-shell/REQUESTS-TO-A.md.
+
+3. CONTEXT
+----------
+3.1 Product: Taskbar Hero / Lantern Cat Café, a turn-based squad card RPG of cats defending a café at night, on Avalanche Fuji. Contest: Avalanche Team1 Vietnam UniHack. Submission deadline 21 Nov 2026; Demo Day 30 Nov. Screening = Technical 25 + Avalanche integration 25; final = Creativity 15, Impact 15, Pitch 10, UI/UX+Demo 10. The user's priority: beautiful battle + effects + SOUND first, then a game that clearly looks and behaves like a blockchain game.
+3.2 What exists (branch codex/cardrpg-integrate-2026-11-12, draft #442; CHAIN lane draft #441):
+    - Shell: a web-app layout (left sidebar nav, serif headings, system fonts, unicode glyph icons like ♧ ◇ ✉). Looks like a dashboard, not a game.
+    - Audio: only WebAudio oscillator beeps (apps/web/src/game/squad/turn3d/audio.ts). No audio files.
+    - Tutorial: "Try the practice table / Watch a battle now / Skip lesson" plus a field guide; does not teach the systems.
+    - Chain on Fuji (deployed by the user; addresses in reports/chain/INBOX.md and the registry): RelicNFT (ERC-1155 voucher mint) 0xB1a1edb7A75Db6e7067E747ddee32B39c2296f2D, RelicMarket v1 0x10fcC46e439d3E31Fb1720B337C45CadB9b2ff93, plus V2: YarnToken (ERC-20, 1B fixed, burnable), RelicMarketV2 (5% fee: 2% burn, 3% treasury), SeasonRewards (signed weekly claims + auto-cut controller). Public Fuji smoke passed (18 receipts). Guest burner wallet + gas drip + Judge pass exist. SIWE sign-in exists.
+    - Economy problems (CHAIN's own simulator): burn/emission fails (claims/burn 2.4-2.8); only 2 sinks; tradable gear is a canonical minimum roll so nobody needs to buy it; Relics have no use; first Legendary day 11 for casual and heavy alike; cat gacha too generous (effective Legendary 6.6%); 9 soft currencies.
+3.3 File ownership:
+    - Session B (you) owns: apps/web/src/audio/**, apps/web/public/audio/**, apps/web/src/ui/typography.*, apps/web/public/fonts/**, apps/web/public/icons/**, all non-battle screens (landing, sign-in, home/café hub, team, cats, bag, forge, gacha/invitations, market, season, economy page, field guide/tutorial), apps/web/src/game/cardrpg/chain/**, packages/game-rules economy tables (gacha, drops, fusion, currencies) and tools/chain/**, supabase functions you need.
+    - Session A owns the battle view (apps/web/src/game/cardrpg/spine/**, stage/**, vfx-layered/**, battle-v3/**), cinematics, rigs, portraits.
+    - Shared contracts (both prompts contain the same text; create if missing, never change silently):
+      a) apps/web/src/game/cardrpg/contracts/audio-cues.ts: AudioCue ids "ult.<unitId>.charge|release|impact|tail", "skill.<unitId>.<n>.cast|impact", "hit.<blunt|slash|magic|heavy>", "status.<burn|freeze|poison|bleed|stun|shield>.<on|off|tick>", "voice.<unitId>.<select|attack|skill|ult|hit|death|victory>", "ui.<name>", "music.<landing|home|battle|boss|victory|defeat|reveal>"; export playCue(id, opts?) -> window.__thAudio?.play(id, opts). YOU implement window.__thAudio.
+      b) apps/web/src/ui/typography.css with --font-display, --font-body, --font-num and the title treatment classes. YOU create it on day 1 (card B2) so session A can use it.
+3.4 Planner research to read once (Mac copies in /Users/bao/art/codex-prompts/): ECONOMY-V3-RESEARCH-2026-11-12.md (sections 0, 3-9, 11), BATTLE-VISUALS-AUDIO-PROCESS-2026-11-12.md (sections 5, 6, 9.4, 9.5), omg3q-video-notes.md ("Out-of-battle" part). Key reference facts (measured from the user's reference videos; learn structure, never copy art):
+    - Login screen: full-bleed key art, logo, one big orange CTA, small legal line.
+    - Home: hero squad standing LARGE on a stage in the centre; top-left avatar + level + power; top-right currency pills with "+"; side columns of painted event icons with red dots and "new" tags; bottom dock of 7-9 nav icons with labels.
+    - Panels: dark navy/purple with gold bevel frames, ribbon titles, orange primary buttons, item tiles with rarity-coloured frames and counts; batch-use dialog Min/-10/-/+/+10/Max.
+    - Everything uses a heavy display font with gradient + dark outline; never a plain system font.
+    - Battle audio: music never stops, every hit has a sound, ultimates carry a voice line, voice lines about every 7-8 s.
+
+4. RESEARCH STEPS (timebox 2 h total; write reports/v3-shell/RESEARCH.md, max 2 pages)
+---------------------------------------------------------------------------------------
+R1 Audio sources: download and inventory (name, licence, length) Kenney packs "RPG Audio", "Impact Sounds", "Interface Sounds", "Music Jingles" (kenney.nl, CC0); search OpenGameArt for CC0 loops: cozy/café/lofi home loop, light orchestral or chiptune-orchestral battle loop, boss loop, victory and defeat stings; Pixabay Music (Pixabay licence) as second source. Pick: 1 landing theme, 1 home loop, 1 battle loop, 1 boss loop, victory, defeat, gacha reveal sting, café ambience loop. Listen-check by loudness/length only (you cannot hear): reject clips with clipping (true peak > 0 dBTP) or loops that do not loop (first/last 50 ms RMS difference > 6 dB).
+R2 Cat voices without paid tools: design a "cat-speak" synthesizer (Animalese-style): each line text -> syllables -> short pitched grains from 1-3 CC0 meow/purr recordings (Freesound CC0 only) + formant filter; per-cat voice params (base pitch, speed, brightness). Test that 12 cats sound distinct (pitch spread >= 4 semitones between nearest neighbours or different timbre). If the user approves paid tools, ElevenLabs voice design replaces the synth for ult/skill calls; keep the synth for chatter.
+R3 Fonts: verify Vietnamese subset for Baloo 2 (display) and pick a condensed body face with Vietnamese (candidates: Be Vietnam Pro, Nunito, Barlow Condensed; check glyphs ă â đ ê ô ơ ư and tone marks render). Self-host via @fontsource or the font files (SIL OFL), subset to Latin + Vietnamese, woff2.
+R4 Web3 game landing patterns: study 3 live web3 game landing pages (e.g. Pixels, Off The Grid/GUNZ, MapleStory Universe) for structure only: hero, CTAs, wallet, live stats, roadmap, token section. Write a 10-line pattern list. Do not copy text or art.
+R5 Chain feasibility (read code, no deploy): confirm RelicNFT voucher mint can mint ids 30001-33000 (Genesis Café Deed) and 10001 (Star Thread) without contract change; confirm SeasonRewards voucher can pay amount*(1-fee); confirm a burn of sealed items via safeBatchTransferFrom to 0x000000000000000000000000000000000000dEaD works with RelicNFT (no transfer restrictions). Write the exact functions you will call.
+
+5. QUEUE (in this order; each card has gates; evidence paths in QUEUE.md)
+--------------------------------------------------------------------------
+B1 AUDIO ENGINE + SFX FOR EVERY EVENT  (day 1)
+  - apps/web/src/audio/engine.ts: one AudioContext, buses master/music/ambience/sfx/voice/ui with settings sliders (persist in settings), ducking (music -8 dB during ultimates and voice lines, 120 ms attack, 400 ms release), limits (1 voice line at a time, priority ult > skill > death > grunt; max 10 concurrent sfx; same-sample cooldown 50 ms; random pitch ±4% and volume ±1.5 dB on repeats), audio sprites per pack, lazy load per screen, x2/x3 speed and pause aware. window.__thAudio = { play, stop, setBus, music(id) }.
+  - Unlock on the first user gesture (landing CTA). Mute button always visible.
+  - Map EVERY existing combat and UI event to a cue: hits by type (3 variants each), crit, block, heal, death poof, status on/off/tick, UI click/hover/open/close/tab/reward fly/coin/level up, gacha reveal per rarity (5 rising tiers), forge success/fail. Default skill kits (charge/release/impact/tail) per element so every skill already sounds right before session A finishes plates.
+  - Asset pipeline: scripts/audio/build.mjs: ffmpeg loudnorm (music -18 LUFS integrated, voice -16, sfx true peak <= -1 dBTP), encode Opus/WebM 96 kbps music, 64 kbps sfx, plus MP3 fallback; write manifest + LICENSES.json. Total budget <= 12 MB.
+  - Replace the oscillator beeps (keep the synth only as last fallback).
+  - docs/audio-lab/index.html: a static sound board that plays every cue with its licence line.
+  - Gates: G1 every combat event in a 3-minute auto battle produces a sound (log cue hits; 0 silent events). G2 loudness report shows all files in range. G3 LICENSES.json covers 100% of files. G4 audio-lab works from a static server. G5 tests pass.
+
+B2 FONTS + TYPOGRAPHY TOKENS + TITLE TREATMENTS  (day 1)
+  - typography.css: --font-display Baloo 2 ExtraBold; --font-body (R3 choice); --font-num (display digits). Classes: .t-title (2-stop vertical gradient gold->orange, 3-4 px dark brown outline via paint-order stroke or layered text-shadow, 2 px drop shadow, optional ribbon), .t-label (white with dark outline), .t-number (tabular, outlined). A three.js text helper is session A's; you provide the font files and a baked digit atlas source PNG if A asks.
+  - Lint rule (eslint or a simple script in CI): no font-family outside typography.css.
+  - Gates: G1 screenshot of all title styles with Vietnamese test string "Tăng Sức Mạnh Đội Hình Ưu Đãi" renders all marks. G2 no font-family outside tokens. G3 font payload <= 400 KB.
+
+B3 ICON SYSTEM  (day 2)
+  - One style: 128 px master, chunky painted look, 3 px dark outline, light from top-left, slight 3/4 perspective, fixed palette per category. Categories: currencies (Fish, Thread, Bell, Spool, YARN, Boss Seal, Star Thread), materials, gear by slot (weapon, outfit, charm, relic), rarity frames as separate layers (grey/green/blue/purple/gold + Mythic red-gold), status effects (burn, freeze, poison, bleed, stun, shield, buff, debuff), nav (Team, Cats, Bag, Forge, Invitations, Market, Season, Guide, Settings, Wallet).
+  - Status and nav icons: draw as SVG (crisp at 18-24 px). Items/gear/currencies: Codex image generation from a fixed prompt template + palette (own originals only), then clean, outline and export webp 128/64. Replace every unicode glyph icon in the UI.
+  - Item tiles: rarity frame + icon + count bottom-right + corner tags ("new", "shard", "sealed" chain badge for on-chain items).
+  - Gates: G1 icon sheet review PNG at 24/48/96 px on dark and light backgrounds. G2 zero unicode glyph icons left in UI (grep). G3 icons total <= 3 MB.
+
+B4 WEB3 LANDING + WALLET SIGN-IN + NEW HOME (CAFÉ HUB)  (days 2-3)
+  - Route order: Landing -> (Play free as guest | Connect wallet) -> Home. Returning users with a session skip landing but can reopen it from Settings.
+  - Landing: full-bleed painted key art (café at night with the starter cats, original, Codex-made), logo in display font, short trailer loop (muted autoplay WebM recorded from the game; replace with session A's demo clip after the 18 Nov merge), CTAs "Play free" (guest burner wallet, existing) and "Connect wallet" (Core / MetaMask via existing wagmi + SIWE), live on-chain counters read from Fuji (Genesis Deeds minted / 3,000, YARN burned, items fused, Fuji tx count) with Snowtrace links, 3 short feature blocks (Battle / Own your café / Fair economy with published odds), "Avalanche Fuji testnet, no real value" badge, footer links (economy page, contracts on Snowtrace, odds). Landing music starts on CTA click.
+  - Sign-in panel: game-styled modal; shows what signing does in one sentence; error states (wrong network -> switch to Fuji button; rejected signature; no wallet installed -> guest suggestion).
+  - Home / Café hub (replace the sidebar dashboard): full-bleed café stage with the player's 4-cat squad standing LARGE in the centre (idle animation from session A's rigs when available; static art with procedural breath until then); top-left avatar + level + team power; top-right currency pills (Fish, Bell, Spool, YARN) with "+"; wallet chip (short address, network dot, Deed badge if owned); right column: Season banner with countdown, Daily quests, Events; left column: Invitations (gacha), Forge; bottom dock with labelled painted icons: Team, Cats, Bag, Forge, Market, Season, Guide; big "Fight" button bottom-right showing the next chapter node. Red-dot notification rules. Café ambience + home music.
+  - Restyle the remaining screens with the new panels (dark navy/plum with warm gold bevel frames, ribbon titles, orange primary buttons, item tiles): Team, Cats (hero detail: art on a round pedestal left, stats right with green deltas, tabs), Bag, Forge, Invitations, Market, Season, Field guide, Settings. Keep the 25-word budget per screen.
+  - Gates: G1 screenshots 1280x720 and 1440x900 of landing, sign-in, home, 6 restyled screens: no sidebar, no system font, no unicode icons. G2 guest flow and wallet flow E2E pass (Anvil 8546 for wallet; mock for guest). G3 counters show real Fuji values or a clear "offline" state (never fake numbers). G4 tests pass.
+
+B5 TUTORIAL THAT TEACHES EVERY BASIC SYSTEM  (day 3-4)
+  - First battle is a guided battle (coach marks, max 12 words per step, arrow + dim mask, can't softlock, Skip tutorial in settings): 1 roles (guardian holds front, witch hits groups, alchemist heals), 2 front row vs back row, 3 turn order bar, 4 reading enemy intent and changing targets, 5 rage -> ultimate (tap the glowing portrait), 6 statuses (burn, freeze, shield) with their icons, 7 supplies (each use costs the cat's action), 8 speed and auto.
+  - After the first battle, short first-visit tutorials per screen (3-5 steps each): Team (equip, set bonus), Forge (enhance with Blessing meter, fusion recipe), Invitations (rates, pity counter, featured guarantee), Season (pass, countdown, edition supply), Wallet/Café (what YARN, Spool, Deed, sealing and the market are; testnet only).
+  - Field guide rewritten as illustrated pages with icons: every system above + "How rewards and tokens work" + "Odds" (gacha, enhancement, fusion, drops; all numbers come from the rules tables, never typed by hand).
+  - Gates: G1 a new-player E2E walks the whole tutorial without errors. G2 every system in the list has a step or a page (checklist in QUEUE.md). G3 no step over 12 words.
+
+B6 ECONOMY V3: MUST LIST FOR THE CONTEST  (days 4-6)
+  Implement the planner's ECONOMY-V3 section 9 MUST list, no contract redeploys:
+  1) Genesis Café Deed: RelicNFT ids 30001-33000, one per id, free mint via Judge pass / guest after the "On-chain café" quest (Lv 5 for the demo; Lv 15 in config for launch); Deed card art (original); profile/home badge; "N / 3,000 minted" counter read from chain. Deed perks shown (withdraw rights, hosting seats = roadmap label, café skin).
+  2) Spool (bonded YARN, off-chain balance signed by the server): all season/boss/milestone rewards pay Spool; spend 1:1 in game; Withdraw -> YARN through a SeasonRewards voucher for amount x (1 - fee). Base fee 25%; show fee and the burned/kept amount before confirming. Withdraw needs a Deed, 7-day account age (0 for demo flag), 1 per 7 days.
+  3) Forge fusion with burn: Legendary = 3 Epic same set + 2 Star Thread + 20 YARN fee (burned). Off-chain inputs are consumed; sealed (on-chain) inputs are transferred to 0x...dEaD with safeBatchTransferFrom, then the output is minted by voucher; show both Snowtrace links. Big reveal moment with sound (ask session A for a reveal VFX only if needed; otherwise do a UI-layer reveal with the new fonts and icons). Rare/Epic fusion off-chain (4 Common -> Rare, 3 Rare -> Epic).
+  4) Gacha v3 (Bells only): cat banner rates C/R/E/L 55/33/11/1.0, soft pity from pull 50 (+6 pp per pull), hard 70, featured 50/50 with guarantee carried to the next featured banner; gear chest 50/35/14.2/0.8, soft 40, hard 60. Duplicates -> shards 5/10/20/40; stars 1->5 need 10/20/40/80 shards; selector 120 marks. Rates popover next to every pull button; pity counters visible.
+  5) Enhancement +0..+10: success 100% to +5, then 80/70/60/50/40%; on fail keep level and add +10 pp Blessing to the next try; Fish cost x1.35 per level; odds and Blessing shown before each try.
+  6) Season (4 weeks) banner with countdown on home; season edition supply counter (fixed supply, e.g. 600).
+  7) Economy page: allocation chart (players 35, team 15, treasury 12, investors 12, ecosystem 10, early testers 6, liquidity 5, advisors 3, partners 2), faucets/sinks diagram, live burn/emission, Spool withdraw fee, market fee split, all odds tables, "testnet, no real value" and a short risk line (Vietnam Decree 147/2024 means no real-money trading in VN; launch needs legal review).
+  8) Tradability rules in code and UI: cats + shards bound; Common/Rare gear bound; Epic/Legendary (and Mythic later) sealable -> tradable; Star Thread sealable; Fish/Thread/Bell/Boss Seal/keys bound; Relic editions + Deed tradable. Seal: Lv gate, 3 per day (+1 with Deed), 1 Boss Seal + seal fee burned (10% of reference 100/300/900 YARN for Epic/Legendary/Mythic, Star Thread 20), 10-minute relist delay. Quality buckets Worn/Fine/Perfect (bottom 40% / middle 45% / top 15% of the affix roll) encoded as id offset 0/1000/2000, shown as a tag; sealing snaps to the bucket floor.
+  9) Diminishing drops instead of the hard zero after 6: drops 1-6 per day full rate, 7-18 at 50% chance, then Fish/Thread only. Drop tables per the planner doc section 7.2.
+  10) Simulation: update tools/chain/token-sim.mjs with the new faucets/sinks and run 3 player mixes x 52 weeks with 20% bots; report burn/emission (target >= 1.0 at half demand), Star Thread source/sink 0.9-1.1, YARN per active hour casual vs heavy <= 3x, top-1% Spool share. Run the C2 economy cohort tool (tools/cardrpg-c2) for gear progression: first Legendary median casual day 10-16, heavy day 5-9 (heavy must progress faster per day, not per hour). If a target fails, tune config tables (packages/game-rules/src/config.ts and economy tables), re-run, max 3 tuning rounds, then report the miss honestly.
+  - SHOULD (only after MUST is green): merge 9 soft currencies into Fish / Thread / Bell (+ Boss Seal) in the UI and the save migration; dynamic seal fee from the 7-day median price.
+  - Gates: G1 Anvil E2E: guest -> quest -> Deed mint -> earn Spool -> withdraw (fee applied) -> seal Epic -> fuse Legendary with dead-address burn -> list on market -> buy with second wallet. G2 all odds on screen equal the config values (test reads both). G3 sim report in reports/v3-shell/ECONOMY-SIM.md with the numbers above. G4 no YARN path into any random outcome (test). G5 tests pass.
+
+B7 SYNC, POLISH, REPORT  (16 Nov 12:00 UTC, 18 Nov 12:00 UTC, freeze 19 Nov 12:00 UTC)
+  - Before each sync time: make sure your branch is pushed and green (full suite once). Session A merges your branch into theirs. After their merge, pull their branch into yours only if REQUESTS-TO-B.md asks for it.
+  - Write reports/v3-shell/REPORT.md (English) and STATUS-VI.md (Vietnamese): what is done, PARTIAL, cut, user items. Open a draft PR from codex/v3-shell-2026-11-13 to main (do not merge). If GitHub Actions are blocked by billing, say so and rely on local runs.
+  - Prepare reports/v3-shell/USER-DEPLOY-VI.md: exact steps the user runs to deploy the final build to Vercel with the demo flags, redeploy changed Supabase functions, top up the drip sponsor, and seed the market (no keys in the file).
+  - Freeze 19 Nov 12:00 UTC: after that only crash/flow bug fixes.
+
+6. SELF-SCORE per card (1-10, honest; target >= 8): looks like a polished game (30%), clarity for a new player (20%), web3 visibility and correctness (20%), economy soundness backed by sim (15%), stability/tests (10%), disk/asset budget (5%).
+
+7. USER-ONLY ITEMS (NEEDS-USER.md; never wait on them)
+  - (Decided 13 Nov: free audio only.)
+  - Deploy to Vercel when quota allows; redeploy Supabase functions; top up the Fuji drip sponsor 0x5eC838ECcc4eC6B6707b6479394E9E6CEEA0B000 with ~2.5 test AVAX; fix GitHub billing for CI (optional).
+  - Decisions in the planner doc that the user may override (Deed free-to-play, Spool 25% fee, rarer gacha, 4-week seasons).
+
+END OF PROMPT. Start with section 0, then section 1.

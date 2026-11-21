@@ -1,0 +1,145 @@
+PASTE-CODEX-V3-A-BATTLE-2026-11-13  (Session A of 2: battle look, skill cinematics, status FX, character animation)
+=====================================================================================================
+
+
+USER DECISIONS (final, 13 Nov 2026; these override anything below)
+- Audio: FREE sources only (CC0/OFL/Pixabay/Kenney/Sonniss + the cat-speak synth). No paid tools.
+- Spine: the user has NO Spine licence. Do not ship the Spine runtime. Use the fallback cut-out runtime (apps/web/src/game/rig/*) for EVERY unit with the same rig contract. If the designer hands over Spine JSON from their own editor, convert it with an importer script into the cut-out runtime format; never bundle spine-threejs in the demo path.
+- Designer animates only 3 cats by hand: mochi, soot, clover. Every other unit (including marigold) uses the shared template rig.
+- Pilot reviews are AUTO-APPROVED by the user. Do not wait at A3 or A5: run your own self-score and gates, record "auto-approved" in DECISIONS.md, copy the clips to /Users/bao/Desktop/TaskbarHero-REVIEW/, and continue immediately. Still apply any notes the user writes in INBOX.md later.
+- CI: local runs only (GitHub Actions is blocked). Every gate means a local run.
+
+HOW TO USE THIS PROMPT
+- Paste this whole file into a NEW Codex session. If the session dies, is cut, or says "context too long", open a new session and paste THIS SAME FILE again. It resumes from disk. Never ask the user to "continue"; never wait for a reply.
+- You are Codex. Work alone. Do NOT start subagents, helper agents, or parallel `codex exec` (the account allows max 4 model-request threads; the other session uses one). Local scripts and tools that make no model requests are fine.
+- Language: write code, docs and reports in English. Write the one user summary file (STATUS-VI.md) in Vietnamese.
+
+0. RESUME PROTOCOL (do this first, every time)
+-------------------------------------------------
+0.1 Worktree: /Users/bao/taskbar-hero-cardrpg-a6 (already has node_modules; reuse it, do NOT create another worktree).
+    Branch: codex/v3-battle-2026-11-13. If it does not exist: `git fetch origin codex/cardrpg-integrate-2026-11-12` then `git switch -c codex/v3-battle-2026-11-13 origin/codex/cardrpg-integrate-2026-11-12`. If it exists: `git switch codex/v3-battle-2026-11-13`.
+    If git complains about the worktree path, use GIT_DIR=/Users/bao/taskbar-hero/.git/worktrees/taskbar-hero-cardrpg-a6.
+0.2 State folder: reports/v3-battle/. Files: QUEUE.md (cards + status), HANDOFF.md (max 40 lines: NOW / NEXT 1-3 / LAST GOOD COMMIT / OPEN), DECISIONS.md, DISK-LOG.md, INBOX.md (user corrections; read it every time you finish a card), STATUS-VI.md (Vietnamese, max 30 lines, for the user).
+    If reports/v3-battle/ does not exist, create it and write QUEUE.md from section 5 with every card "todo".
+    If it exists: read HANDOFF.md + QUEUE.md + INBOX.md ONLY (not old logs), run `git status`, finish or revert half-done edits, and continue at the first card that is not "done".
+0.3 STOP: if the file STOP-V3A exists in the worktree root, write HANDOFF.md and stop. Otherwise never stop until QUEUE.md is empty or the clock passes 19 Nov 2026 12:00 UTC (freeze). Checkpoints, pushes, and finished cards are NOT stopping points.
+0.4 Context diet: never print whole images, base64, long logs or big JSON into the conversation. Use `| tail -n 40`, `grep -E "error|fail|FAIL"`. Look at screenshots as <=1280 px PNG, at most 4 per look. Commit after every finished card with a message "V3A <card>: <what>". Push after every card: `git push -u origin codex/v3-battle-2026-11-13` (retry 3x on network error).
+0.5 Self-repair loop for any failed gate: find -> diagnose (write 2 lines in HANDOFF) -> fix -> re-run only the failing check. Max 4 attempts on the same problem; then change the method (write why in DECISIONS.md); after 2 methods, mark the card PARTIAL with the reason and move on. A PARTIAL card is revisited once at the end.
+0.6 Research and initiatives are pre-approved: if you find a better way than this prompt describes, do it, log it in DECISIONS.md (what, why, evidence), and continue without asking. Hard limits in section 2 never change.
+
+1. DISK CHECK AND CLEANUP (first step of EVERY session, before any build)
+--------------------------------------------------------------------------
+The Mac runs 4 projects. Free space matters more than keeping old evidence.
+1.1 Print: `df -h /System/Volumes/Data | tail -1`; `du -sh /Users/bao/taskbar-hero* /Users/bao/art/* /Users/bao/tools/* /Users/bao/.codex/worktrees 2>/dev/null | sort -h | tail -25`.
+1.2 Delete WITHOUT asking (these are regenerable):
+    - /Users/bao/art/vfx-2026-11-12/review/*.mp4 and *.webm (keep the *.png film strips and backdrops).
+    - apps/web/dist-v2/* and apps/web/dist in THIS worktree except the newest one folder.
+    - playwright-report/, test-results/, *.trace.zip, .vite/ caches in THIS worktree.
+    - /Users/bao/tools/omg-ref-2026-11-12/dist-e2e.tgz.
+1.3 Delete only if all are true: it belongs to Taskbar Hero, git shows no uncommitted change, and its branch exists on origin:
+    - stopped-lane worktrees listed as "prunable" by `git worktree list` in /Users/bao/taskbar-hero: taskbar-hero-cardrpg-big2, -cardrpg-look, -cardrpg-portrait-prep, -cardrpg-sync, -ovn-sys, -ui-ledger, -ui-verify-cxr2-b, /Users/bao/.codex/worktrees/cardrpg-b-puppet-preview. Use `git worktree remove <path>` (add --force only if the only changes are untracked build output). Then `git worktree prune`.
+    - NEVER touch: /Users/bao/taskbar-hero (main checkout), taskbar-hero-chain (session B uses it), taskbar-hero-cardrpg-b2 (art sources), /Users/bao/art/look-v3, /Users/bao/tools/psd-split, /Users/bao/tools/*-rebuild, the designer Desktop folder, anything of other projects, the zaic runner.
+1.4 Never run `pkill`, `killall` or kill by name. Kill only PIDs you started yourself (record them in HANDOFF.md). Ports for this session: 5990-5993 only.
+1.5 Write DISK-LOG.md: free space before/after, what was deleted, sizes. Target: >= 25 GB free. If below 15 GB after cleanup, write it in STATUS-VI.md as a user item and continue with low-disk mode (no video renders above 720p, delete intermediate frames right after encoding).
+
+2. HARD LIMITS (never change)
+------------------------------
+- Original art only. Never copy, trace or feed any reference image/video frame (OMG 3Q or any other game) to an image or video generator. Record tool + prompt + date for every generated asset in assets/provenance.json.
+- No secrets in files, logs or chat. No deploys, no merges to main, no live database migrations, no contract deployments. Those are user-only (write them in reports/v3-battle/NEEDS-USER.md).
+- Do not edit files owned by session B (section 3.3). If you need a change there, write a request in reports/v3-battle/REQUESTS-TO-B.md and work around it.
+- Keep the rules engine deterministic. Visual changes must not change combat results. All existing tests must still pass (run the relevant subset per card; full suite at sync points).
+- Desktop first (1280x720 and 1440x900). Phone must not break, but is not optimized.
+
+3. CONTEXT YOU NEED (read once, then work)
+-------------------------------------------
+3.1 The product: Taskbar Hero / Lantern Cat Café. Turn-based squad card RPG of cats defending a café at night, on Avalanche Fuji. The painted art (12 cats: mochi, soot, clover, marigold, biscuit, brioche, cinnamon, inkcap, mallow, panko, sorrel, velvet; 12 enemies + Yarn Giant boss) is good. The battle presentation is weak.
+3.2 What exists now (branch codex/cardrpg-integrate-2026-11-12, draft PR #442):
+    - Renderer: three.js + @esotericsoftware/spine-threejs in apps/web/src/game/cardrpg/spine/*; stage slots in apps/web/src/game/cardrpg/stage/slots.json (unitHeight 0.31, rows 0.245 stage-width apart: loose); camera/feel in apps/web/src/game/cardrpg/spine/style.ts (maxZoom 1.10, shake 4 px, hitstop 60 ms, cutin 0.8 s: too timid); skills in apps/web/src/game/cardrpg/vfx-layered/timeline.ts (6-10 painted layers fade on the target; every skill has the same shape: "10 skills look like 1"). Cut-in is a small text chip. Damage numbers use a system font. Cat core sizes differ.
+    - 86 painted VFX artworks were approved by the user (keep them; they become layers inside the new system).
+    - Balance passes (first loss 13.4 min median, boss 72 s median). Do NOT retune combat numbers.
+    - Review images: /Users/bao/art/vfx-2026-11-12/review/*.png. Look at marigold-3-350.png and mochi-1-film.png first.
+3.3 File ownership between the two sessions:
+    - Session A (you) owns: apps/web/src/game/cardrpg/spine/**, stage/**, vfx-layered/**, any new apps/web/src/game/cardrpg/battle-v3/**, tools/cinematic-compositor/**, art/rig-templates/**, art/units/**, scripts/art/**, docs/vfx-lab/**, apps/web/public/cinematics/**, apps/web/public/units/**.
+    - Session B owns: audio (apps/web/src/audio/**, apps/web/public/audio/**), fonts and typography tokens (apps/web/src/ui/typography.*, apps/web/public/fonts/**), icons (apps/web/public/icons/**), all non-battle screens (landing, home, tutorial, forge, gacha, market, economy page), chain code.
+    - Shared contracts (both sessions write the SAME content; if one already exists, read it and do not change it without logging in DECISIONS.md):
+      a) apps/web/src/game/cardrpg/contracts/audio-cues.ts: export type AudioCue = string ids like "ult.<unitId>.charge|release|impact|tail", "skill.<unitId>.<n>.cast|impact", "hit.<blunt|slash|magic|heavy>", "status.<burn|freeze|poison|bleed|stun|shield>.<on|off|tick>", "voice.<unitId>.<select|attack|skill|ult|hit|death|victory>", "ui.<...>", "music.<landing|home|battle|boss|victory|defeat|reveal>". Export `playCue(id, opts?)` that calls `window.__thAudio?.play(id, opts)` and does nothing if absent. You call playCue at the right times; session B implements the engine and files.
+      b) apps/web/src/ui/typography.css tokens: --font-display (Baloo 2 ExtraBold), --font-body, --font-num. Session B creates the file and fonts. Until it exists, use a local fallback CSS var with the same names.
+3.4 Reference study (already done by the planner; do not open the videos): /mnt or Mac copy of the notes: /Users/bao/art/codex-prompts/omg3q-video-notes.md and BATTLE-VISUALS-AUDIO-PROCESS-2026-11-12.md (same folder). Read section 0-5 and 9 of the second file once. Key measured facts:
+    - Ultimate ≈ 4 s: cut-in banner with the hero's bust art + skill name (0.5 s) -> caster charge (0.3 s) -> FULL-SCREEN opaque effect plate (≈2.3 s: speed lines, giant glowing caster silhouette, slash arcs, 1-frame inverted impact frame, shards, white-out, summoned beast) -> back to the field: impact on targets, many damage numbers (0.4 s) -> "total damage" banner (1 s, while play resumes). Portrait bar stays visible.
+    - Formation: units ≈22-25% of screen height, overlapping 20-40%, centre gap ≈10-15% of screen width, decor at both edges. Feels "full".
+    - HUD: bottom row of square bust portraits with HP + rage micro-bars, gold glow when ultimate is ready, greyscale when dead; speed button bottom-left; Skip bottom-right; thin top bar. Avoid their anti-pattern: piles of floating buff words.
+
+4. RESEARCH STEPS YOU MUST DO (short, concrete; write results to reports/v3-battle/RESEARCH.md, max 2 pages)
+---------------------------------------------------------------------------------------------------------
+R1 Check installed versions: three, @esotericsoftware/spine-threejs, and whether `postprocessing` (pmndrs) and `three.quarks` are installable with the current three version. Pick exact versions. Write the import plan.
+R2 Spine licence question: read https://en.esotericsoftware.com/spine-editor-license and decide: if the user has no Spine licence (check reports/cardrpg-c/NEEDS-USER.md and DECISIONS for any answer), the template-rig path must also run on the fallback cut-out runtime (apps/web/src/game/rig/*). Write which path you use for the pilot and why.
+R3 Headless render: confirm that headless Chromium (Playwright in this repo) can render a three.js canvas frame-by-frame with a fixed clock (use `--use-angle=swiftshader` or `--use-gl=angle` if needed) and that ffmpeg is installed (`ffmpeg -version | head -1`). Measure time to render 60 frames at 1280x720. If ffmpeg is missing: `brew install ffmpeg` is allowed.
+R4 Look at 3 good open references of anime-style 2D skill effects that are free to study (e.g. talks/articles on "impact frame", "smear frame", "hit stop", "anime VFX timing"). Write 10 bullet rules you will apply (timing, contrast, shape language). Do not download or copy any art.
+Timebox research to 90 minutes total. Then build.
+
+5. QUEUE (do in this order; each card has acceptance gates; write evidence paths in QUEUE.md)
+---------------------------------------------------------------------------------------------
+A1 CORE SIZE + DENSE TWO-ROW FORMATION + CAMERA  (target: day 1)
+  - Core box rule: head top to feet, excluding ears, hats, weapons, tails, wings. All cats and normal enemies: same core height. Elite 1.15x. Boss 1.7-1.95x. Write scripts/art/core-size-check.mjs: measures the alpha bbox of each unit's core region (use the unit's runtime image; where only a full image exists, store a manual core box in art/units/<id>/core.json once) and fails if any cat is outside ±2%. Apply per-unit scale in the stage so the core boxes match.
+  - New slots (normalized stage, feet y; tune visually, these are the start): player FRONT-UP x0.34 y0.66, FRONT-DOWN x0.37 y0.94, BACK-UP x0.20 y0.58, BACK-DOWN x0.23 y0.86; enemies mirrored around x=0.5; boss takes front-centre (x0.66) with up to 2 minions behind. unitHeight 0.31 -> 0.42. Overlap 15-25% allowed; depth-sort by feet y; back row scale 0.94 and 8% darker. Centre gap <= 15% of screen width. Rules keep team size 4; enemy waves keep their rule sizes.
+  - Camera: lower the horizon so the floor fills ~70% of the frame; fitStageCamera margin 16. Add foreground decor props at both edges (counter end, plant pots, stacked cups) from existing painted assets or new original ones, so there is no empty floor.
+  - Soft contact shadow + thin element-coloured base ring (30% alpha) under every unit.
+  - Gates: G1 core-size-check passes for all 12 cats + 12 enemies + boss. G2 screenshot 1280x720 of wave 1, wave 3 and boss: no unit clipped, no unit hidden >40% by another, HUD not covering feet. G3 side-by-side before/after PNG in reports/v3-battle/A1/. G4 all battle unit tests + the cardrpg E2E subset pass.
+
+A2 BATTLE HUD + PORTRAITS + DAMAGE NUMBERS + STATUS VISUALS  (day 2)
+  - Remove the left sidebar, helper bar and text log from the battle view (log behind a button). Battle is full-bleed.
+  - Top bar 44 px: round "3/15", wave dots, pause. Bottom-left: big speed toggle x1/x2/x3 in display font. Bottom-right: Skip + Auto toggle.
+  - Bottom centre: 4 square portraits 84-96 px, bust crop from the unit's own art (eyes at 40% from top, head fills 65% of width, element-coloured gradient background, rarity frame, star row), HP bar + rage bar under each; gold pulsing frame when ultimate ready (click = cast when Auto is off); greyscale + dark when dead. Write scripts/art/make-portraits.mjs that crops portraits from runtime art with per-unit crop boxes in art/units/<id>/portrait.json. Output 256 px masters to apps/web/public/units/<id>/portrait.webp.
+  - Over each unit: HP bar 64x7 (player green, enemy red, white "recent damage" chip that drains after 0.4 s), rage bar 64x3, max 3 status icons (18 px) with stack count, extra collapse to "+N".
+  - Damage numbers: bitmap/MSDF digits baked from the display font with gradient + outline (msdf-bmfont-xml or canvas-baked atlas). Normal white-gold 28 px; crit orange 40 px, slight rotation, "CRIT"; heal green "+"; DoT 20 px; MISS grey. Rise 30 px, fade 0.7 s, stack offsets (reuse layoutLabels). Max 1 floating word per unit per 0.5 s; never floating buff names in long text.
+  - Status visuals ON THE BODY (readable at a glance): burn = flame flipbook at feet + orange tint pulse 0.6 s + embers; freeze = ice crystal overlay + cyan tint + animation timeScale 0 + shatter VFX on break; poison = green bubbles + tint; bleed = red drips; stun = 3 stars orbiting the head; shield = translucent fresnel bubble + white overlay on HP bar; buff = up-arrows + glow; debuff = down-arrows + dark smoke. Map every existing status in the rules engine to one of these (write the table in A2/STATUS-MAP.md).
+  - Total-damage banner after every ultimate (italic label "TOTAL" + big gold digits on a dark slash ribbon, lower-left, 1.0 s, overlaps resumed play).
+  - Gates: G1 screenshot at 1280x720 mid-fight with 3+ statuses active: a new viewer can name HP, rage, statuses of all 8 units within 5 s (write your own checklist and answer it honestly). G2 no system font anywhere in battle (lint: grep for font-family outside tokens). G3 FPS >= 50 on the Mac at 1280x720 (measure 10 s with requestAnimationFrame counter). G4 tests pass.
+
+A3 SKILL SEQUENCE ENGINE + POST FX + CINEMATIC COMPOSITOR + 3 PILOT ULTIMATES  (days 2-3)  USER GATE
+  - Add pmndrs `postprocessing` with ONE EffectComposer: selective Bloom, ShockWave (fire at impact point), ChromaticAberration spike, Vignette, per-element LUT grade. Quality setting Low/High; Low disables bloom/aberration.
+  - SkillSequence JSON (extend the existing PaintTimeline; do not break current skills): tracks camera (zoom,x,y,tilt keys), time (timeScale keys), dim, cutin, casterAnim, targetAnim, vfx[] (flipbook|shader|particles|painted-layer, anchor, blend), postfx keys, audio[] (AudioCue ids from contracts/audio-cues.ts + time), damage[] (time, target, split), plate (cinematic clip id + start). Impact time stays bound to the rules engine like paintTime() does now.
+  - Three tiers: Basic 0.6-0.8 s (dash or projectile, hit-spark flipbook, number; crit 3 px shake). Active 1.2-1.6 s (camera push-in 1.12 on caster 0.2 s, dim others 25%, skill VFX, 2 cues). Ultimate 3.0-4.0 s (beat sheet below).
+  - ULTIMATE BEAT SHEET (defaults; each ultimate overrides): 0.00-0.15 trigger: world timeScale 0.05, dim to 30%, vignette, cue charge-sting, music duck (playCue handles it). 0.15-0.65 cut-in: diagonal banner slides in (0.12 s ease-out-back) from the hero's side with the hero's bust art at 2x portrait size, element colour band, speed lines, skill name in display font with gradient+outline; voice cue. 0.65-0.95 caster charge on the field (aura ring + rising particles; Spine/cut-out event ult_release). 0.95-3.2 FULL-SCREEN PLATE: an opaque pre-rendered clip plays above the battlefield and below the HUD (see compositor). 3.2-3.6 back to field: impact (hitstop 100 ms, 1-frame white flash 35%, shake 10-14 px decaying 0.3 s, ShockWave, aberration 0.08 s), targets play hit, numbers pop per target. 3.6-4.6 total-damage banner while play resumes. Setting "Ultimate cinematics: Full / Short (cut-in + field impact only) / Off"; auto-Short after the same plate was seen 3 times in a session; Skip button skips the plate.
+  - CINEMATIC COMPOSITOR (tools/cinematic-compositor/): a static page with a three.js/canvas scene driven by a plate JSON timeline. Layer types: background (solid/gradient/painted), speed-line shader (radial or linear), caster silhouette or bust (from the unit's own art, with rim glow and scale 3-6x of field size), flipbooks (from the approved painted layers or Blender-rendered ones), particles (three.quarks), screen flashes, inverted impact frame (1 frame, black/white invert + radial cracks), colour grade, summoned beast layer (original creature art, e.g. giant yarn whale, teapot dragon, paper-crane flock, ghost cat). Render deterministically: Playwright headless, fixed timestep 1/30 s, `page.evaluate(renderFrame(i))`, screenshot each frame to PNG, ffmpeg -> WebM VP9 (crf 34, 1280x720, 30 fps) + MP4 H.264 fallback, target <= 600 KB per clip. Delete PNG frames right after encoding. Output apps/web/public/cinematics/<unitId>-ult.webm|mp4 + poster.webp. Command: `pnpm cine:render <plateId>` and `pnpm cine:render --all`.
+  - Distinctness rule: skills/<unitId>/signature.json with 5 fields (element palette+grade, camera preset, VFX motif, target shape, sound kit). Script scripts/art/signature-check.mjs fails if two ultimates share 3+ fields. Camera presets: push_in, whip_pan, dutch_push, drop_from_above, orbit_parallax, pull_out_wide. Motifs: slash arcs, falling meteors, ground eruption, beam, summon, vortex, needle rain, shield dome, petal storm, ink splash.
+  - Pilots: choose 3 cats of 3 different elements (suggest mochi = guardian/light shield dome, soot = witch/arcane-fire, clover = nature/alchemy). Build plate + cut-in + field impact + signature for each.
+  - VFX LAB page docs/vfx-lab/index.html (static, works from file:// or a static server, committed to repo per DEMO RULE): pick a unit+skill, play, scrub, x0.25 speed, before/after toggle, sound on.
+  - Record review clips WITH a 60 s battle: reports/v3-battle/A3/pilot-<id>.webm (720p, <=4 MB each) + film strip PNG. Then write STATUS-VI.md: "Cần bạn duyệt 3 chiêu mẫu: mở docs/vfx-lab/index.html hoặc xem 3 clip trong reports/v3-battle/A3/. Ghi 'DUYET A3' hoặc nhận xét vào reports/v3-battle/INBOX.md". Also copy the 3 clips to /Users/bao/Desktop/TaskbarHero-REVIEW/ for easy viewing.
+  - USER GATE: do NOT block. While waiting, start A5 (rig) research and A4 on actives/basics only. When INBOX.md says approved (or contains corrections), apply them and continue with A4 ultimates. If no answer after 24 h, proceed with A4 using the pilots as-is and note it.
+  - Gates: G1 each pilot plate rendered, <= 600 KB, plays in-game in sync (impact frame within ±1 frame of damage). G2 signature-check passes. G3 FPS >= 50 during an ultimate on High. G4 reduced-motion mode halves shake and removes flash. G5 tests pass, combat results unchanged (run the determinism/parity test from C2).
+
+A4 ALL ULTIMATES + ACTIVES + BASICS  (days 3-5)
+  - 12 cat ultimates + Yarn Giant boss ultimate: each with its own plate, cut-in, field impact, signature. Each cat's active skills (2-3) get distinct on-field sequences. Basics: 4 archetypes (slash, thrust, throw, staff) chosen per unit.
+  - Reuse the approved painted VFX layers inside plates and field impacts; add new flipbooks where a motif needs them. If you use Blender headless for flipbooks (emission shaders + toon ramp + Freestyle outline, 16-24 frames, 512 px RGBA), keep each .blend <= 20 MB and record it in provenance.
+  - Cut line if behind on 17 Nov 12:00 UTC: ensure every cat has at least cut-in + field impact (Short mode) and the 6 most-used cats have full plates. Log the cut in DECISIONS.md.
+  - Gates: G1 signature-check passes for all. G2 a contact sheet of all ultimates (one frame per beat) in reports/v3-battle/A4/ shows no two look alike. G3 total cinematics folder <= 12 MB. G4 tests pass.
+
+A5 CHARACTER ANIMATION: SHARED RIG TEMPLATE FOR NON-DESIGNER UNITS  (days 4-6)
+  - Designer animates 3 cats by hand (mochi, soot, clover only; decided 13 Nov). Codex makes every other unit move well using ONE shared template.
+  - Template contract (art/rig-templates/cat.template.json): bones root -> hip -> torso -> neck -> head -> (ear_l, ear_r, eye/mouth slots); torso -> shoulder_l/r -> arm_upper -> arm_lower -> hand -> weapon; hip -> leg_l, leg_r; hip -> tail_1 -> tail_2 -> tail_3. Parts (fixed names): head, ear_l, ear_r, hair_tuft, brow_l, brow_r, eye_l, eye_r, eye_l_closed, eye_r_closed, mouth_neutral, mouth_open, mouth_shout, torso, cloth, arm_upper_l, arm_lower_l, hand_l, arm_upper_r, arm_lower_r, hand_r, leg_l, leg_r, tail_1, tail_2, tail_3, weapon, accessory_1. Enemies: 3 templates (biped, floating/insect, blob/heavy).
+  - Process per unit (each step has a gate):
+    1) Master: 3/4 view, rig-ready stance (arms slightly away from body, tail visible, mouth closed), same core size rule, from the unit's existing approved concept (/Users/bao/taskbar-hero-cardrpg-b2/assets/source/look-v3/concepts/<id>.png when present). Redraw with Codex image generation from YOUR OWN concept art only; 2600 px canvas.
+    2) Split into the template parts (reuse the method/scripts from /Users/bao/tools/psd-split and the Mochi/Clover rebuild folders; do NOT re-split Mochi or Clover). Every part is a complete piece; paint hidden areas (overlap >= 12 px at joints).
+    3) pivots.json by script (joint = centroid of the parent/child overlap), then scripts/art/build-spine.mjs <id>: template + pivots + parts -> Spine 4.2 skeleton.json + .atlas + page.png (or the cut-out runtime format if R2 chose fallback).
+    4) Shared animation set authored once on the template (30 fps): idle 1.8 s loop (breath scaleY 1.00->1.025, head bob 3 px lag 0.1 s, ears ±4°, tail sine ±10° phase lag 0.12 s per segment, random blink 2.5-5 s on its own track); attack 0.55 s (anticipation 0.18 lean back 8° squash 0.95/1.05 -> strike 0.08 lunge +40 px stretch -> hold 0.06 event hit -> recover 0.23); cast 0.6 s (event cast 0.35); ultimate 1.0 s (wind-up 0.4, event ult_release 0.55, hold 0.3); hit 0.25 s (knockback -12 px, white flash); stunned loop; frozen (timeScale 0); death 0.7 s (event dust); victory loop; enter 0.5 s. Per-unit style.json scales amplitudes (energetic 1.3, calm 0.7) and picks the weapon arc.
+    5) QA: film strip 12 frames per animation; hole check (render 8 extreme poses, count transparent pixels inside the silhouette: must be 0 after 2 px erosion); loop seam diff < 1%; events present.
+  - Pilot 2 units first (one cat not in the designer's 4, one enemy) -> STATUS-VI.md asks the user to review /Users/bao/Desktop/TaskbarHero-REVIEW/rig-pilot-*.webm, same non-blocking gate as A3. Then batch the rest. Designer rigs drop in later with the same bone and event names (write docs/rig-contract.md for the designer, in Vietnamese + English, 1 page).
+  - Cut line: if not all units are done by 18 Nov 12:00 UTC, units without a rig keep their current static/painted runtime but get the procedural idle (breath + bob) so nothing stands frozen.
+  - Gates: G1 core-size-check still passes. G2 hole check 0 for all rigged units. G3 FPS >= 50 with 8 rigged units + ultimate on High. G4 tests pass.
+
+A6 INTEGRATION, SYNC WITH SESSION B, DEMO CAPTURE  (sync points 16 Nov 12:00 UTC and 18 Nov 12:00 UTC; final 19 Nov)
+  - At each sync point: `git fetch origin codex/v3-shell-2026-11-13` and merge it into your branch (you are the integrator). Resolve conflicts by ownership (section 3.3). Run the FULL suite once (unit + E2E + typecheck + lint + build), fix what broke in your files, write REQUESTS-TO-B.md for theirs.
+  - After the 18 Nov merge: record a 90 s demo video (1280x720, with sound) of: landing -> sign in as guest -> home -> battle with 2 ultimates -> victory -> forge reveal. Save to /Users/bao/Desktop/TaskbarHero-REVIEW/demo-v3.webm and reports/v3-battle/A6/.
+  - Update PR: open a draft PR from codex/v3-battle-2026-11-13 to main (do not merge) with a body that lists what changed and the review media; if GitHub Actions are blocked by billing, say so in the PR and rely on local runs.
+  - Write reports/v3-battle/REPORT.md (English) and STATUS-VI.md (Vietnamese): what is done, PARTIAL, cut, user items.
+  - Freeze 19 Nov 12:00 UTC: after that only bug fixes for crashes or broken flows.
+
+6. SELF-SCORE (write per card in QUEUE.md, 1-10, honest; target >= 8 for A1-A4)
+  Visual impact vs the measured reference (30%), readability (20%), distinctness between skills (20%), performance (10%), stability/tests (10%), disk/asset budget (10%).
+
+7. USER-ONLY ITEMS (write in NEEDS-USER.md, never wait on them)
+  - (Decided 13 Nov: no Spine licence -> cut-out runtime; pilots auto-approved; designer does 3 cats only.)
+  - Merge/deploy decisions.
+
+END OF PROMPT. Start with section 0, then section 1.
