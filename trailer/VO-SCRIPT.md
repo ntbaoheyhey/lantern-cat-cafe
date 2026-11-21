@@ -25,7 +25,7 @@ Overall voice: a warm storyteller who is a little excited to tell you about this
 | 07 | 0:55.2 | 4.2s | Calm statement card over a soft-focus cafe plate. | **Here, power is earned by playing. Never bought.** | Calm, sincere, slower. Full stop before 'Never bought'. Stress: *earned / Never*. | Music drops to piano; this is the honest moment. |
 | 08 | 1:00.1 | 5.5s | Real Fuji proof card: a gear seal that burned 2 YARN (tx on Snowtrace) over the Forge. | **But when a piece of gear matters to you, seal it on Avalanche. Now it's truly yours.** | Calm, clear, a little proud on 'truly yours'. Stress: *Avalanche / yours*. | Seal animation on screen. |
 | 09 | 1:05.6 | 2.9s | Real Fuji proof card: a Relic Market sale and its 2% fee burn. | **Keep it, or trade it on the Relic Market.** | Light, matter-of-fact. Stress: *trade*. | Market panel. |
-| 10 | 1:09.0 | 6.0s | Real Fuji proof card: a Relic Market sale and its 2% fee burn. | **Every seal and trade burns YARN, a fixed-supply token. Payouts are paced to those burns.** | Precise, confident, not salesy. Steady pace. Stress: *burns / fixed-supply / paced*. | Starts on the market card and carries into the supply counter. No hype here. |
+| 10 | 1:09.0 | 6.0s | Real Fuji proof card: a Relic Market sale and its 2% fee burn. | **Seals burn YARN, a fixed-supply token... and every sale burns part of its fee.** | Precise, confident, not salesy. Steady pace. Stress: *burn / fixed-supply / every sale*. | Starts on the market card and carries into the supply counter. No hype here. |
 | 11 | 1:15.1 | 2.2s | THE YARN GIANT | **But the Tangle is growing.** | Darker, lower, slower. Let it hang. Stress: *growing*. | Over the Yarn Giant reveal; music turns to B minor. |
 | 12 | 1:37.9 | 1.4s | STOP-DOWN: frozen frame on Soot's ultimate portrait, desaturated, silence + whisper. | **Light the lantern.** | Whisper-intense, close mic. The only sound in the silence. Stress: *lantern*. | Total silence bar (1:37.5). End before 1:39.4; the hit lands at 1:40.0. |
 | 13 | 1:45.4 | 8.0s | Back at the cafe, warm light, cats idle together. | **Lantern Cat Café. A cosy card RPG... where the light you protect is yours to keep.** | Warm, proud, slower. Small pause after 'card RPG'. Smile on 'yours to keep'. Stress: *Lantern Cat Café / yours to keep*. | Back in the warm cafe; lockup appears at 1:50. |
@@ -138,10 +138,10 @@ Music: Breakdown: piano + warm pad + soft pulse, room for the voice.
 
 **VO10** · starts 1:09.0 · must end by 1:15.0
 
-> Every seal and trade burns YARN, a fixed-supply token. Payouts are paced to those burns.
+> Seals burn YARN, a fixed-supply token... and every sale burns part of its fee.
 
 - Delivery: Precise, confident, not salesy. Steady pace.
-- Emphasis: *burns / fixed-supply / paced*
+- Emphasis: *burn / fixed-supply / every sale*
 - Cue: Starts on the market card and carries into the supply counter. No hype here.
 - Say: YARN = the word 'yarn' (not spelled out)
 - Nghĩa: Mỗi lần niêm phong và giao dịch đều đốt YARN, một token có nguồn cung cố định. Phần thưởng rút ra được điều tiết theo lượng đốt đó.
@@ -195,7 +195,7 @@ Music: Theme reprise on music box + strings, final chord rings out.
 
 `/` = short breath, `//` = full pause (the music plays here).
 
-> Every unfinished task... goes somewhere. / Out here, they knot together. // One café still keeps its lantern lit... and its cats intend to keep it that way. // Choose your path: battles, strange encounters, treasure... and a boss at the end. // Your cats fight on their own. You decide when they unleash their ultimates. // Every victory can drop new gear. Equip it, forge it stronger, and push into the next chapter. // Here, power is earned by playing. Never bought. / But when a piece of gear matters to you, seal it on Avalanche. Now it's truly yours. / Keep it, or trade it on the Relic Market. / Every seal and trade burns YARN, a fixed-supply token. Payouts are paced to those burns. / But the Tangle is growing. // Light the lantern. // Lantern Cat Café. A cosy card RPG... where the light you protect is yours to keep. // Play free in your browser.
+> Every unfinished task... goes somewhere. / Out here, they knot together. // One café still keeps its lantern lit... and its cats intend to keep it that way. // Choose your path: battles, strange encounters, treasure... and a boss at the end. // Your cats fight on their own. You decide when they unleash their ultimates. // Every victory can drop new gear. Equip it, forge it stronger, and push into the next chapter. // Here, power is earned by playing. Never bought. / But when a piece of gear matters to you, seal it on Avalanche. Now it's truly yours. / Keep it, or trade it on the Relic Market. / Seals burn YARN, a fixed-supply token... and every sale burns part of its fee. / But the Tangle is growing. // Light the lantern. // Lantern Cat Café. A cosy card RPG... where the light you protect is yours to keep. // Play free in your browser.
 
 ## Inserting your voice
 

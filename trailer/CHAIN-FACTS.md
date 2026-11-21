@@ -20,3 +20,19 @@ Also confirmed by the Avalanche thread (docs/avalanche/LIVE-E2E.md, PR #448):
 - Market listing #4 (19 Nov, still open): 0xefe712af32bfc68f18ef24be6b7180ff59a673e9db880172ed336b8fc8e6c5e8
 - Market sale (12 Nov): buy 0x9662228f168bd5080907f49bd3a01d735f91b620d5468c7778a362b74ec7fddd, withdraw 0x08d34c5a…e696
 Burn check: 1,000,000,000 − 999,999,997.975308642 = 2.024691358 YARN = 2 (seal) + 0.0246913 (sale fee burn).
+
+## Live end-to-end run, 21 Nov 2026 (after the café wallet was funded)
+
+From PR #469 (`docs/avalanche/live-e2e-2026-11-21.json`), all on Fuji (chain 43113), RelicMarketV2 `0x6Fe4…eb4`:
+
+| Step | Tx |
+|---|---|
+| Café gas (guest-drip) | `0x75b9639f85fd0b86eb435a53cecb1dc13b1312377208a18d001995d8dc6cf644` |
+| RelicNFT.mint (server voucher) | `0x90a79ef39aa2f77c2f96396b7364d39d91d7c886f94cf413089fb93643391a61` |
+| List #5 at 0.001 AVAX | `0xc9bbd0a6e649a6c4a4a7f1c689c0d72457201fef2e96c7ecb9600b699cb60b4f` |
+| Buy | `0xb16588ad63b85922f9233205c05b075aff0e3a894204c1101f6c0eb8d07e16c9` |
+| Withdraw | `0x762c833b4ff4979e4679154648602717939008402835734ed27a12b2bcd51176` |
+
+The sale fee was 5% (0.00005 AVAX): 40% of it burned (0.00002 AVAX) and 60% to treasury. AVAX listings burn AVAX,
+not YARN, so VO line 10 now says "Seals burn YARN … and every sale burns part of its fee" (true for YARN and AVAX
+listings alike). It no longer claims payouts are paced to burns.
