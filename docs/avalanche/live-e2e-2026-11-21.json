@@ -1,0 +1,104 @@
+{
+  "kind": "taskbar-hero live Fuji E2E",
+  "chainId": 43113,
+  "startedAt": "2026-11-21T02:32:52.077Z",
+  "finishedAt": "2026-11-21T02:33:30.113Z",
+  "backend": "supabase:qoalewtxflagoprrxrgh",
+  "siweDomain": "taskbarhero-eight.vercel.app",
+  "judgeAction": "boss",
+  "relic": {
+    "id": "1",
+    "rarity": 0,
+    "contract": "0xB1a1edb7A75Db6e7067E747ddee32B39c2296f2D"
+  },
+  "market": {
+    "contract": "0x6Fe415494D791E63d87613B8FBCdbb24743C7eb4",
+    "listingId": "5",
+    "priceAvax": "0.001",
+    "feeAvax": "0.00005",
+    "burnedAvax": "0.00002",
+    "treasuryAvax": "0.00003",
+    "sellerAvax": "0.00095",
+    "withdrawnAvax": "0.00095"
+  },
+  "wallets": {
+    "seller": "0x81A8BE6eb392795A4d4B7a4732cDED4A515206d3",
+    "buyer": "0x25e5bAd03C0642D5B6B9338f6cf6a3B747bA5065"
+  },
+  "finalOwnership": {
+    "seller": "0",
+    "buyer": "1"
+  },
+  "steps": [
+    {
+      "action": "Café gas (guest-drip)",
+      "actor": "sponsor",
+      "hash": "0x75b9639f85fd0b86eb435a53cecb1dc13b1312377208a18d001995d8dc6cf644",
+      "block": 61405856,
+      "payer": "0x5ec838eccc4ec6b6707b6479394e9e6ceea0b000",
+      "feeAvax": "0.00000000000336",
+      "confirmationMs": 5622,
+      "snowtrace": "https://testnet.snowtrace.io/tx/0x75b9639f85fd0b86eb435a53cecb1dc13b1312377208a18d001995d8dc6cf644"
+    },
+    {
+      "action": "RelicNFT.mint",
+      "actor": "seller",
+      "hash": "0x90a79ef39aa2f77c2f96396b7364d39d91d7c886f94cf413089fb93643391a61",
+      "block": 61405860,
+      "payer": "0x81a8be6eb392795a4d4b7a4732cded4a515206d3",
+      "feeAvax": "0.00000000001444864",
+      "confirmationMs": 4736,
+      "snowtrace": "https://testnet.snowtrace.io/tx/0x90a79ef39aa2f77c2f96396b7364d39d91d7c886f94cf413089fb93643391a61"
+    },
+    {
+      "action": "RelicNFT.setApprovalForAll",
+      "actor": "seller",
+      "hash": "0x1a73526b5921051f3c6bdfeecae11471553dfde568279b83404378c37817c9e2",
+      "block": 61405862,
+      "payer": "0x81a8be6eb392795a4d4b7a4732cded4a515206d3",
+      "feeAvax": "0.00000000000747152",
+      "confirmationMs": 4561,
+      "snowtrace": "https://testnet.snowtrace.io/tx/0x1a73526b5921051f3c6bdfeecae11471553dfde568279b83404378c37817c9e2"
+    },
+    {
+      "action": "RelicMarketV2.list",
+      "actor": "seller",
+      "hash": "0xc9bbd0a6e649a6c4a4a7f1c689c0d72457201fef2e96c7ecb9600b699cb60b4f",
+      "block": 61405866,
+      "payer": "0x81a8be6eb392795a4d4b7a4732cded4a515206d3",
+      "feeAvax": "0.00000000003296352",
+      "confirmationMs": 4633,
+      "snowtrace": "https://testnet.snowtrace.io/tx/0xc9bbd0a6e649a6c4a4a7f1c689c0d72457201fef2e96c7ecb9600b699cb60b4f"
+    },
+    {
+      "action": "Seller funds buyer gas",
+      "actor": "seller",
+      "hash": "0x1b11f56ff6aff3b3c428e7ea77d42b05899faca4a85f04176fa7bc51d6f85938",
+      "block": 61405869,
+      "payer": "0x81a8be6eb392795a4d4b7a4732cded4a515206d3",
+      "feeAvax": "0.00000000000336",
+      "confirmationMs": 2209,
+      "snowtrace": "https://testnet.snowtrace.io/tx/0x1b11f56ff6aff3b3c428e7ea77d42b05899faca4a85f04176fa7bc51d6f85938"
+    },
+    {
+      "action": "RelicMarketV2.buy",
+      "actor": "buyer",
+      "hash": "0xb16588ad63b85922f9233205c05b075aff0e3a894204c1101f6c0eb8d07e16c9",
+      "block": 61405872,
+      "payer": "0x25e5bad03c0642d5b6b9338f6cf6a3b747ba5065",
+      "feeAvax": "0.00000000002695216",
+      "confirmationMs": 4595,
+      "snowtrace": "https://testnet.snowtrace.io/tx/0xb16588ad63b85922f9233205c05b075aff0e3a894204c1101f6c0eb8d07e16c9"
+    },
+    {
+      "action": "RelicMarketV2.withdraw",
+      "actor": "seller",
+      "hash": "0x762c833b4ff4979e4679154648602717939008402835734ed27a12b2bcd51176",
+      "block": 61405874,
+      "payer": "0x81a8be6eb392795a4d4b7a4732cded4a515206d3",
+      "feeAvax": "0.00000000000677632",
+      "confirmationMs": 1307,
+      "snowtrace": "https://testnet.snowtrace.io/tx/0x762c833b4ff4979e4679154648602717939008402835734ed27a12b2bcd51176"
+    }
+  ]
+}
