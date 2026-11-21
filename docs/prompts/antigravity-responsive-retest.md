@@ -1,6 +1,6 @@
 # Paste into Antigravity: A-R2 independent responsive retest
 
-Repository ntbaoheyhey/taskbar-hero. Keep every original Claude instruction and hard stop. Codex is temporary coordinator; this is bounded read-only QA with report/screenshots only. If your permissions conflict, publish BLOCKED with the exact rule rather than expanding scope.
+Repository ntbaoheyhey/lantern-cat-cafe. Keep every original Claude instruction and hard stop. Codex is temporary coordinator; this is bounded read-only QA with report/screenshots only. If your permissions conflict, publish BLOCKED with the exact rule rather than expanding scope.
 
 Read docs/responsive-coordination.md, reports/responsive-window.md and reports/fix-stage-redraw.md on ai/codex-responsive-window. Gate: BOTH implementation reports start STATUS: DONE. Fetch main explicitly with `git fetch origin +main:refs/remotes/origin/main` and fetch the responsive branch into its explicit remote-tracking ref. Record its FULL SHA. Read/test that exact source in a detached checkout. No implementation copy, merge or stacking on another tool's branch.
 

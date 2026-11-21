@@ -9,7 +9,7 @@ Welcome to **Cat RPG v2**! This guide covers classes, idle progress, gear, chapt
 
 ## 1. What the Game Is
 
-Taskbar Hero is an ambient idle RPG where your cat battles household monsters while your browser tab stays open. As you work or browse, your cat explores 5 chapters, defeats waves of enemies, conquers chapter bosses, collects crafting materials, and equips powerful gear. Once each day, combine materials to forge an exclusive daily Relic and mint it as an NFT on Avalanche Fuji.
+Lantern Cat Café is an ambient idle RPG where your cat battles household monsters while your browser tab stays open. As you work or browse, your cat explores 5 chapters, defeats waves of enemies, conquers chapter bosses, collects crafting materials, and equips powerful gear. Once each day, combine materials to forge an exclusive daily Relic and mint it as an NFT on Avalanche Fuji.
 
 ---
 
@@ -100,7 +100,7 @@ Every day, forge a daily Relic using **30 Yarn + 1 Moon Pearl**. Limit: 1 Relic 
 
 ## 8. Demo Mode vs. Signed-In Mode
 
-Taskbar Hero supports two play modes:
+Lantern Cat Café supports two play modes:
 - **Demo Mode**: Play immediately in your browser without a wallet. Progress and items are saved locally (`localStorage`). Demo vouchers cannot mint on-chain.
 - **Signed-In Mode**: Sign in with an Ethereum-compatible wallet via SIWE. Progress syncs to the server database, persists across devices, and enables minting Relic NFTs on the Avalanche Fuji testnet (free testnet, costs no real money).
 

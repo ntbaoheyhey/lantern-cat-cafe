@@ -66,7 +66,7 @@ build on loopback 5395 (or set `SQUAD_PRODUCTION_URL`), and run `squad-performan
 Run `squad-budget.mjs` against that production build. Run the offline builder again after
 updating evidence so its embedded results match. Do not run timing measurements in parallel.
 
-Compact receipts and images live in `reports/squad/`. Full raw logs, including failed
+Compact receipts and images live in [reports/squad/](https://github.com/ntbaoheyhey/lantern-cat-cafe/tree/d89b61ab3ddd73659f45158d1abe5835b9445b81/reports/squad). Full raw logs, including failed
 attempts, and the delivery report live on the ledger branch:
-[SQUAD-SLICE-REPORT.md](https://github.com/ntbaoheyhey/taskbar-hero/blob/ai/codex-ui-ledger/reports/squad/SQUAD-SLICE-REPORT.md).
+[SQUAD-SLICE-REPORT.md](https://github.com/ntbaoheyhey/lantern-cat-cafe/blob/ai/codex-ui-ledger/reports/squad/SQUAD-SLICE-REPORT.md).
 The five drafts stack after #286; review in order, with no merge or deployment performed.

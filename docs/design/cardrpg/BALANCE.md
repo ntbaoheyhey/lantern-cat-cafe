@@ -162,4 +162,4 @@ REFERENCE: reports/cardrpg-depth/sim/economy-before-cap.json; reports/cardrpg-de
 | Source gates | G0 passed | Type/lint/build, rules/web/E2E pass; numeric tests reported separately | PASS |
 | Offline artifact and startup | G0 A3 26,120,329 bytes | 26,215,694bytes; +95,365 vs G0; current-main cold comparison belongs to P7 | MISS |
 
-Full source-bound protocol, sample limitations, floor cells and utility diagnostics: [P6 balance report](../../../reports/cardrpg-big/a4/P6-BALANCE.md). Prior sections above remain historical. Local editions add no combat stats. +12 contribution checks are display-only; combat balance at max enhancement is not established. No independent human playtest is claimed.
+Full source-bound protocol, sample limitations, floor cells and utility diagnostics: [P6 balance report](https://github.com/ntbaoheyhey/lantern-cat-cafe/blob/d89b61ab3ddd73659f45158d1abe5835b9445b81/reports/cardrpg-big/a4/P6-BALANCE.md). Prior sections above remain historical. Local editions add no combat stats. +12 contribution checks are display-only; combat balance at max enhancement is not established. No independent human playtest is claimed.

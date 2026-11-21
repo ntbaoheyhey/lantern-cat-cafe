@@ -7,7 +7,7 @@
 
 ## 1. Why
 
-The 7 cat classes in Taskbar Hero currently use temporary placeholder looks; please send one reference picture OR a few written words per class.
+The 7 cat classes in Lantern Cat Café currently use temporary placeholder looks; please send one reference picture OR a few written words per class.
 The deadline (Decision D3) for submissions is 2 Nov 2026, with the final cutoff on 5 Nov 2026.
 Without a submission (Decision D5), the look will be drawn from the written descriptions below and still shown to you for OK, or the current placeholder look will be kept.
 

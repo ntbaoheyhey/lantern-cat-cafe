@@ -13,15 +13,15 @@ component state does not change that flag or the current player run.
 ## Why these choices
 
 The inputs are the original paraphrases in
-[stats](../../reports/reference-notes/stats.md),
-[items](../../reports/reference-notes/items.md), and
-[skills](../../reports/reference-notes/skills-runes.md). We used their separation
+[stats](https://github.com/ntbaoheyhey/lantern-cat-cafe/blob/d89b61ab3ddd73659f45158d1abe5835b9445b81/reports/reference-notes/stats.md),
+[items](https://github.com/ntbaoheyhey/lantern-cat-cafe/blob/d89b61ab3ddd73659f45158d1abe5835b9445b81/reports/reference-notes/items.md), and
+[skills](https://github.com/ntbaoheyhey/lantern-cat-cafe/blob/d89b61ab3ddd73659f45158d1abe5835b9445b81/reports/reference-notes/skills-runes.md). We used their separation
 of units, conditional loot probabilities, and skill trigger types. We did not
 transfer their entity records or reconstruct their large progression tree.
 
 Our existing game uses fish, nine gear slots, seven weapon families and five
 gear qualities. This draft fits those categories. The cloth, attic and evening
-patrol vocabulary below was written for Taskbar Hero. Stable stat, slot,
+patrol vocabulary below was written for Lantern Cat Café. Stable stat, slot,
 weapon and rarity keys remain technical identifiers; none are renamed in
 saved data. Draft item and skill keys are local catalogue keys, not entitlements.
 

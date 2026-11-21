@@ -65,7 +65,7 @@ async function guest(label) {
   const account = privateKeyToAccount(generatePrivateKey());
   const { nonce } = await post('auth-nonce');
   const issuedAt = new Date();
-  const message = createSiweMessage({ domain: DOMAIN, address: account.address, statement: 'Sign in to Taskbar Hero.',
+  const message = createSiweMessage({ domain: DOMAIN, address: account.address, statement: 'Sign in to Lantern Cat Cafe.',
     uri: `https://${DOMAIN}`, chainId: 43113, version: '1', nonce, issuedAt, expirationTime: new Date(issuedAt.getTime() + 600_000) });
   const session = await post('auth-verify', { message, signature: await account.signMessage({ message }) });
   if (getAddress(session.wallet) !== account.address) throw new Error('session wallet mismatch');
@@ -130,7 +130,7 @@ async function main() {
     client.readContract({ address: C.RelicNFT, abi: nftAbi, functionName: 'balanceOf', args: [g.account.address, BigInt(voucher.relicId)] })));
   if (buyerHolds < 1n) throw new Error('Buyer does not hold the relic after purchase.');
 
-  const proof = { kind: 'taskbar-hero live Fuji E2E', chainId: 43113, startedAt, finishedAt: new Date().toISOString(),
+  const proof = { kind: 'lantern-cat-cafe live Fuji E2E', chainId: 43113, startedAt, finishedAt: new Date().toISOString(),
     backend: FUNCTIONS.replace(/^https:\/\/([^.]+)\..*/, 'supabase:$1'), siweDomain: DOMAIN, judgeAction: ACTION,
     relic: { id: voucher.relicId, rarity: voucher.rarity, contract: C.RelicNFT },
     market: { contract: C.RelicMarketV2, listingId: listingId.toString(), priceAvax: formatEther(price), feeAvax: formatEther(fee),

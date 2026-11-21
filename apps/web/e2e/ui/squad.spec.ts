@@ -6,14 +6,14 @@ test('explicit legacy routes keep the squad prototype and its render chunks unlo
   const scripts: Promise<string>[] = [];
   page.on('response', r => { if (r.status() === 200 && /\/assets\/.*\.js(?:\?|$)/.test(r.url())) scripts.push(r.text()); });
   await page.goto('/?demo&legacy=1');
-  await expect(page.getByRole('heading', { name: 'Taskbar Hero', level: 1, includeHidden: true })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Lantern Cat Café', level: 1, includeHidden: true })).toBeVisible();
   await expect(page.getByTestId('squad-prototype')).toHaveCount(0);
   expect(loaded.some(u => /SquadApp|SquadScene|art\/squad/.test(u))).toBe(false);
   // Entry chunks can be renamed by the bundler; inspect actually requested code,
   // not only filenames. The squad UI marker must be absent from the off graph.
   expect((await Promise.all(scripts)).some(s => s.includes('squad-prototype'))).toBe(false);
   await page.goto('/?squad=1&legacy=1');
-  await expect(page.getByRole('heading', { name: 'Taskbar Hero', level: 1, includeHidden: true })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Lantern Cat Café', level: 1, includeHidden: true })).toBeVisible();
   await expect(page.getByTestId('squad-prototype')).toHaveCount(0);
   expect((await Promise.all(scripts)).some(s => s.includes('squad-prototype'))).toBe(false);
 });

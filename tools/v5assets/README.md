@@ -1,4 +1,4 @@
-# Taskbar Hero V5 Asset Diet Tooling (`tools/v5assets`)
+# Lantern Cat Café V5 Asset Diet Tooling (`tools/v5assets`)
 
 Automated, deterministic, zero-dependency Node.js toolchain for image asset compression, quality gating, dead asset discovery, and deduplication.
 

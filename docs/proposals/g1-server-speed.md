@@ -7,7 +7,7 @@ Timing context: the supplied 27 October audit against origin/main `3b82d52` repo
 140–1,130ms for a v2 request that only rejected a token (about 800ms median), and
 about 860ms for a repeated preflight. These are **owner-supplied measurements from
 another machine**, not fresh authenticated measurements from this checkout. G1's
-local demo/CDP metrics are in `reports/g1-speed/metrics.json`; they do not measure
+local demo/CDP metrics are in [reports/g1-speed/metrics.json](https://github.com/ntbaoheyhey/lantern-cat-cafe/blob/d89b61ab3ddd73659f45158d1abe5835b9445b81/reports/g1-speed/metrics.json); they do not measure
 Edge Function or database latency. Estimates below distinguish request overhead
 from unmeasured DB work and are not additive guarantees.
 

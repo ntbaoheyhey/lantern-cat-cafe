@@ -62,7 +62,7 @@ if(process.argv.includes('--prepare')){
   await page.screenshot({path:`${output}/default-onboarding.png`});
   const requestsBeforeOnboardingDismissal=[...requests];
   await page.getByRole('button',{name:'Start playing',exact:true}).click();
-  await page.getByRole('heading',{name:'Taskbar Hero',exact:true}).waitFor();
+  await page.getByRole('heading',{name:'Lantern Cat Café',exact:true}).waitFor();
   await page.waitForTimeout(5000);
   await page.screenshot({path:`${output}/default-entry.png`});
   const loaded=[...new Set(requests.filter(path=>path.endsWith('.js')))];

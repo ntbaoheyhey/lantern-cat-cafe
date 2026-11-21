@@ -43,7 +43,7 @@ const message = createSiweMessage({
   nonce,
   issuedAt: new Date(),
   expirationTime: new Date(Date.now() + 10 * 60_000), // the app uses 10 minutes
-  statement: "Sign in to Taskbar Hero.",
+  statement: "Sign in to Lantern Cat Cafe.",
 });
 const signature = await walletClient.signMessage({ account: address, message });
 const { data: session } = await anon.functions.invoke("auth-verify", { body: { message, signature } });

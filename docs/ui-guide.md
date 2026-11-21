@@ -1,6 +1,6 @@
 # UI guide
 
-Cat Café Quest is Taskbar Hero's cozy dusk, pixel-art cat theme. Presentation changes must preserve game rules, numbers, contracts, database fields, API shapes, internal ids, existing class names and `data-testid` values. The [display-name table](game-rules.md#display-names) maps technical terms to the names players see.
+Cat Café Quest is Lantern Cat Café's cozy dusk, pixel-art cat theme. Presentation changes must preserve game rules, numbers, contracts, database fields, API shapes, internal ids, existing class names and `data-testid` values. The [display-name table](game-rules.md#display-names) maps technical terms to the names players see.
 
 ## File layout
 

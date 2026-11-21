@@ -1,7 +1,7 @@
 # Fresh-Clone Onboarding & Deployment Audit Report
 
 **Date**: 2026-10-24  
-**Repository**: [ntbaoheyhey/taskbar-hero](https://github.com/ntbaoheyhey/taskbar-hero)  
+**Repository**: [ntbaoheyhey/lantern-cat-cafe](https://github.com/ntbaoheyhey/lantern-cat-cafe)
 **Branch**: `antigravity/fresh-clone-test`  
 **Base Commit**: `346ec53` (`main`)  
 **Target Specifications**: Follow [README.md](file:///Users/bao/taskbar-hero/README.md) and [docs/deploy.md](file:///Users/bao/taskbar-hero/docs/deploy.md) exactly as written on a machine without local caches. Do not modify or fix any code.
@@ -30,7 +30,7 @@ The test was conducted by performing a fresh clone into an isolated empty direct
 
 | Step | Command as Written | Source Doc | Cache Status | Result | Findings / Notes |
 | --- | --- | --- | --- | --- | --- |
-| **1. Clone repo** | `git clone https://github.com/ntbaoheyhey/taskbar-hero.git` | README | Empty folder | **PASS** | Cloned 1,775 objects cleanly |
+| **1. Clone repo** | `git clone https://github.com/ntbaoheyhey/lantern-cat-cafe.git` | README | Empty folder | **PASS** | Cloned 1,775 objects cleanly |
 | **2. Install dependencies** | `pnpm install` | README | Empty store (`/tmp/clean-pnpm-store`) | **PASS** | 505 packages added in 33.9s. Warning on ignored build scripts |
 | **3. Run web dev server** | `pnpm --filter @taskbar-hero/web dev` | README | Fresh build | **PASS** | Vite ready in 697ms on `http://localhost:5173/`, returned HTTP 200 |
 | **4. Run all unit tests** | `pnpm test` | README | Fresh build | **PASS** | 6 packages, 513 tests passed across all suites |
@@ -263,7 +263,7 @@ The test was conducted by performing a fresh clone into an isolated empty direct
 
 2. **Git Submodules in Clone Step**:
    - *Friction*: If a user clones without `--recursive`, `forge test` fails until `git submodule update --init --recursive` is run.
-   - *Recommendation*: Document `git clone --recursive https://github.com/ntbaoheyhey/taskbar-hero.git` as the primary clone instruction in `README.md`.
+   - *Recommendation*: Document `git clone --recursive https://github.com/ntbaoheyhey/lantern-cat-cafe.git` as the primary clone instruction in `README.md`.
 
 3. **Supabase Test Command Discoverability**:
    - *Friction*: `pnpm --filter @taskbar-hero/supabase-tests test` is documented only in `docs/database.md`, missing from `README.md`'s "Run locally" test list.

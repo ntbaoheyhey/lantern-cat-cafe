@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Live health check for the deployed Taskbar Hero (docs/runbook.md). Dependency-free, Node 20+.
+// Live health check for the deployed Lantern Cat Café (docs/runbook.md). Dependency-free, Node 20+.
 // Read-only: GET requests, anonymous POSTs that must be refused, and eth_call on Fuji.
 // Usage: node scripts/check-live.mjs
 // Optional overrides (names only): SITE_URL, SUPABASE_URL, FUJI_RPC_URL.
@@ -14,13 +14,11 @@ const RPC = process.env.FUJI_RPC_URL || 'https://api.avax-test.network/ext/bc/C/
 const FUNCTIONS = ['auth-nonce', 'auth-verify', 'game-state', 'idle-claim', 'equip', 'boss-fight', 'upgrade', 'relic-forge', 'relic-mint-report'];
 const TIMEOUT_MS = 15000;
 
-// Contract addresses come from README.md (the "On-chain" table), the public record of the deployment.
+const registry = JSON.parse(readFileSync(join(root, 'packages/chain/deployments/43113.json'), 'utf8'));
 const readme = readFileSync(join(root, 'README.md'), 'utf8');
-const addressOf = (name) => {
-  const m = readme.match(new RegExp(`\\|\\s*${name}[^|]*\\|[^|]*?(0x[0-9a-fA-F]{40})`));
-  if (!m) throw new Error(`${name} address not found in README.md`);
-  return m[1];
-};
+const readmeRows = new Map(readme.split('\n')
+  .filter(line => line.startsWith('| '))
+  .map(line => [line.split('|')[1].trim(), line]));
 
 let failed = 0;
 function report(ok, name, detail = '') {
@@ -103,22 +101,25 @@ await check('relic 64-hex metadata path (what wallets request)', async () => {
 });
 
 // 4. Fuji, read-only
-let nft;
-let market;
-await check('README has both contract addresses', async () => {
-  nft = addressOf('RelicNFT');
-  market = addressOf('RelicMarket');
-  return `${nft}, ${market}`;
-});
+const { RelicNFT: nft, RelicMarket: market } = registry;
+for (const [name, address] of Object.entries(registry)) {
+  await check(`README links the registered ${name} on Fuji`, async () => {
+    const expected = `[${address}](https://testnet.snowtrace.io/address/${address}/contract/43113/code)`;
+    if (!readmeRows.get(name)?.includes(expected)) throw new Error('Missing or mismatched address or explorer link');
+    return address;
+  });
+}
 await check('Fuji RPC reports chain 43113', async () => {
   const id = parseInt(await rpc('eth_chainId', []), 16);
   if (id !== 43113) throw new Error(`chain id ${id}`);
 });
 if (nft && market) {
-  await check('RelicNFT has code', async () => {
-    const code = await rpc('eth_getCode', [nft, 'latest']);
-    if (code === '0x') throw new Error('no contract at the address');
-  });
+  for (const [name, address] of Object.entries(registry)) {
+    await check(`${name} has code on Fuji`, async () => {
+      const code = await rpc('eth_getCode', [address, 'latest']);
+      if (!code || code === '0x') throw new Error('No bytecode at the registered address');
+    });
+  }
   await check('RelicNFT signer() is set', async () => {
     const a = addr(await call(nft, '0x238ac933'));
     if (/^0x0{40}$/.test(a)) throw new Error('signer is the zero address');

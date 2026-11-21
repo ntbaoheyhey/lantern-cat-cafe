@@ -28,7 +28,7 @@ test.describe('Responsive visual verification & screenshots', () => {
       await page.goto('/');
 
       // Verify page content elements
-      await expect(page.getByRole('heading', { level: 1, name: 'Taskbar Hero' })).toBeVisible();
+      await expect(page.getByRole('heading', { level: 1, name: 'Lantern Cat Café' })).toBeVisible();
       await expect(
         page.getByText('Your cat fights on its own. Collect fish, upgrade gear, beat the bosses.'),
       ).toBeVisible();

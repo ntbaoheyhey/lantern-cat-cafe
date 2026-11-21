@@ -32,7 +32,7 @@ function candidates(){
    const paths=git('ls-tree','-r','--name-only',ref.sha,'reports/cardrpg-look','reports/cardrpg-big2').split('\n').filter(x=>/STATE\.md$/.test(x));
    if(!paths.some(p=>/\b(PASS|DONE)\b/.test(report(ref.sha,p))))continue;
   }
-  const prs=JSON.parse(execFileSync('gh',['pr','list','--repo','ntbaoheyhey/taskbar-hero','--head',ref.branch,'--state','open','--json','number,url,headRefOid'],{encoding:'utf8'}));
+  const prs=JSON.parse(execFileSync('gh',['pr','list','--repo','ntbaoheyhey/lantern-cat-cafe','--head',ref.branch,'--state','open','--json','number,url,headRefOid'],{encoding:'utf8'}));
   if(!prs.some(p=>p.headRefOid===ref.sha))continue;
   found.push({...ref,kind,pr:prs.find(p=>p.headRefOid===ref.sha)});
  }

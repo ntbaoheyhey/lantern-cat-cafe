@@ -8,7 +8,7 @@ ROOT=Path(__file__).resolve().parents[2]
 LIB=runpy.run_path(str(Path(__file__).with_name('build-source-library.py')))
 RATE=LIB['RATE']
 AUTHOR='Taskbar Hero project (original synthesis)'
-URL='https://github.com/ntbaoheyhey/taskbar-hero/blob/codex/v3-shell-2026-11-13/scripts/audio/synthesize-result-music.py'
+URL='https://github.com/ntbaoheyhey/lantern-cat-cafe/blob/codex/v3-shell-2026-11-13/scripts/audio/synthesize-result-music.py'
 
 
 def score(kind):

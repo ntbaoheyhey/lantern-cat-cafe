@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * tools/v5audio/render.mjs
- * Deterministic sound synthesis & cutting pipeline for Taskbar Hero V5 (AG4).
+ * Deterministic sound synthesis & cutting pipeline for Lantern Cat Café V5 (AG4).
  * Spawns ffmpeg to generate .opus (WebM container, 48kHz mono) and .m4a (AAC fallback).
  */
 

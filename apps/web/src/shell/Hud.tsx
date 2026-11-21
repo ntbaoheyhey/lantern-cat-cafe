@@ -36,7 +36,7 @@ export function Hud({
   const goals = sampleAdventure ? { soon: 'Sample: assemble a set', later: 'Sample: finish the journal' } : journeyGoals(state);
   const catKeyDef = v2.MATERIALS.find((m) => m.id === 'catKey');
   const maxKeys = catKeyDef ? catKeyDef.maxStack : 5;
-  const title = <h1 className="v2-title">Taskbar Hero</h1>;
+  const title = <h1 className="v2-title">Lantern Cat Café</h1>;
   const guidance = (
     <div className="hud-center">
       {hintText && (
@@ -129,7 +129,7 @@ export function Hud({
           </div>
         </div>
       </header>
-      <div className="shell-context">{title}<span className="visual-build-label">Candidate build, not live.</span><div className="journey-horizons" aria-label="Goal ladder"><span><b>Soon</b>{goals.soon}</span><span><b>Later</b>{goals.later}</span></div>{guidance}</div>
+      <div className="shell-context">{title}<span className="visual-build-label">Classic game mode</span><div className="journey-horizons" aria-label="Goal ladder"><span><b>Soon</b>{goals.soon}</span><span><b>Later</b>{goals.later}</span></div>{guidance}</div>
     </>
   );
 }

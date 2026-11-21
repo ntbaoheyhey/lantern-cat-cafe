@@ -20,7 +20,7 @@ The separate QA route is Landing→Guest→Class→Idle→Boss→Forge→Bag→O
 
 For the funded scenario, use only throwaway Fuji accounts and free test AVAX. Record actual mint/list/buy transaction hashes against the specified contracts and verify successful receipts. Wallet/key/login prerequisites remain owner-controlled; never share seeds/private keys. There is no mainnet or real-funds step. Pending evidence stays explicitly NOT VERIFIED.
 
-[145-second recording draft](video-script.md) · [Submission pack DRAFT](submission.md) · [Versioned baseline screenshots](../reports/submission/evidence/media-manifest.json). Baseline 6144d42 images remain historical guest/read-only evidence. The [refreshed integrated gallery](https://github.com/ntbaoheyhey/taskbar-hero/blob/ai/codex-gallery-on-stack/docs/ui/gallery/index.html) supplies current local candidate captures with fixture labels; it is not a new live recording.
+[145-second recording draft](video-script.md) · [Submission pack DRAFT](submission.md) · [Versioned baseline screenshots](https://github.com/ntbaoheyhey/lantern-cat-cafe/blob/d89b61ab3ddd73659f45158d1abe5835b9445b81/reports/submission/evidence/media-manifest.json). Baseline 6144d42 images remain historical guest/read-only evidence. The [refreshed integrated gallery](https://github.com/ntbaoheyhey/lantern-cat-cafe/blob/ai/codex-gallery-on-stack/docs/ui/gallery/index.html) supplies current local candidate captures with fixture labels; it is not a new live recording.
 
 ## Security in 2 minutes
 

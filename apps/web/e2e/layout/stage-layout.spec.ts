@@ -77,7 +77,7 @@ for (const vp of VIEWPORTS) {
       await page.setViewportSize({ width: vp.width, height: vp.height });
       await page.goto('/');
 
-      await expect(page.getByRole('heading', { level: 1, name: 'Taskbar Hero' })).toBeVisible();
+      await expect(page.getByRole('heading', { level: 1, name: 'Lantern Cat Café' })).toBeVisible();
       await expect(page.getByLabel('Currencies and keys')).toBeVisible();
       await expect(page.getByTestId('next-hint')).toBeVisible();
       const heroTab = page.getByRole('tab', { name: 'Hero', exact: true }).or(page.getByRole('tab', { name: 'Character', exact: true }));

@@ -17,7 +17,7 @@ test('first visit shows How to play; closing it reveals the game and it stays cl
   await expect(page.getByRole('tab', { name: 'Boss' })).toHaveAttribute('aria-selected', 'true');
 
   await page.reload();
-  await expect(page.getByRole('heading', { name: 'Taskbar Hero' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Lantern Cat Café' })).toBeVisible();
   await expect(dialog).toHaveCount(0);
 
   await page.getByRole('button', { name: 'Menu' }).click();

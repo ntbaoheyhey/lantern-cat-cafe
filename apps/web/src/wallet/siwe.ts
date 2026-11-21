@@ -9,7 +9,7 @@ export function buildSiweMessage(opts: { address: string; nonce: string; now?: D
   return createSiweMessage({
     domain: window.location.host,
     address: getAddress(opts.address),
-    statement: 'Sign in to Taskbar Hero.',
+    statement: 'Sign in to Lantern Cat Cafe.',
     uri: window.location.origin,
     chainId: FUJI_CHAIN_ID,
     version: '1',

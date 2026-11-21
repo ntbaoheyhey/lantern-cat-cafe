@@ -51,7 +51,7 @@ try {
   const login=async()=>{
     if(session)return session;
     const {nonce}=await post('auth-nonce');
-    const message=createSiweMessage({address:account.address,domain:new URL(origin).host,uri:origin,version:'1',chainId:43113,nonce,statement:'Sign in to Taskbar Hero.',issuedAt:new Date(),expirationTime:new Date(Date.now()+600000)});
+    const message=createSiweMessage({address:account.address,domain:new URL(origin).host,uri:origin,version:'1',chainId:43113,nonce,statement:'Sign in to Lantern Cat Cafe.',issuedAt:new Date(),expirationTime:new Date(Date.now()+600000)});
     session=(await post('auth-verify',{message,signature:await account.signMessage({message})})).token;
     return session;
   };

@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Taskbar Hero economy simulator (52 weeks, seeded, agent-based).
+// Lantern Cat Café economy simulator (52 weeks, seeded, agent-based).
 //
 // One readable model of the whole loop: battles -> gear drops -> Spool ->
 // YARN withdrawals (faucet) -> seal / fusion / studio crafts / market fees (burn),

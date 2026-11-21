@@ -88,9 +88,9 @@ try {
  }
  await page.goto(`${origin}/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&legacy=1`);
  const begin=page.getByRole('button',{name:'Start playing',exact:true});
- await begin.or(page.getByRole('heading',{name:'Taskbar Hero',exact:true})).waitFor({timeout:30000});
+ await begin.or(page.getByRole('heading',{name:'Lantern Cat Café',exact:true})).waitFor({timeout:30000});
  if(await begin.isVisible())await begin.click();
- await page.getByRole('heading',{name:'Taskbar Hero',exact:true}).waitFor({timeout:30000});
+ await page.getByRole('heading',{name:'Lantern Cat Café',exact:true}).waitFor({timeout:30000});
  assert.equal(await page.locator('.judge-demo-v9').count(),0);
  assert.deepEqual(errors,[]);
  console.log(`PASS boss in ${(elapsed/1000).toFixed(1)}s: Mochi → Clover → Soot; victory, Collection and legacy route passed.`);

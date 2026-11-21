@@ -29,7 +29,7 @@
 | Forge | 1280px | Measured color contrast on the primary "Forge" action button (`.forge-go`). | White text (`#f2f2f7`) on purple background (`#b86bff`) yields a contrast ratio of 2.86:1, failing the WCAG AA requirement of 3:1 for bold graphical interface controls. | minor | ![Desktop Forge Panel](qa-screenshots/desktop-forge-panel.png) |
 | Forge | 1280px & 390px | Earned a Boss Key and examined the shard requirement notice. | Shows "You need 30 shards to forge. Idle on the strip to earn shards." but provides no indication of shard drop probability (10% per kill) or estimated idle time (~20 minutes). | minor | ![Mobile Forge With Key](qa-screenshots/03-mobile-forge-with-key.png) |
 | Keyboard Focus | 1280px | Navigated through interactive elements using the `Tab` key. | No explicit `:focus-visible` styles exist in CSS; tabs and buttons rely on browser-default faint outlines (`rgb(153, 200, 255) auto 1px`) which lack clear contrast on dark `#1b1b24` surfaces. | minor | ![Desktop Tab Focus](qa-screenshots/05-desktop-focus-tab-hero.png) |
-| Relic Metadata | N/A | Inspected token metadata fetched from `/relics/3.json`. | Grammatical typo in description: `"A epic Relic forged in Taskbar Hero..."` instead of `"An epic Relic forged in Taskbar Hero..."`. | minor | ![Desktop Forge](qa-screenshots/desktop-forge.png) |
+| Relic Metadata | N/A | Inspected token metadata fetched from `/relics/3.json`. | Grammatical typo in description: `"A epic Relic forged in Lantern Cat Café..."` instead of `"An epic Relic forged in Lantern Cat Café..."`. | minor | ![Desktop Forge](qa-screenshots/desktop-forge.png) |
 
 ---
 

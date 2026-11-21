@@ -208,7 +208,7 @@ g['skins'] = [dict(name='Mochi reviewed source rig', skeleton=2,
     joints=list(range(2, 2 + len(spec))),
     inverseBindMatrices=add(ibm.transpose(0, 2, 1).copy().reshape(-1, 16), 'MAT4'))]
 g.pop('animations', None)
-g['asset']['generator'] = f'Taskbar Hero local reviewed-source rig prototype{a.revision}'
+g['asset']['generator'] = f'Lantern Cat Café local reviewed-source rig prototype{a.revision}'
 g['buffers'] = [dict(byteLength=len(binary))]
 j = json.dumps(g, separators=(',', ':')).encode()
 j += b' ' * (-len(j) % 4)

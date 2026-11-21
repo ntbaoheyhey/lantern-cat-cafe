@@ -11,4 +11,4 @@ REFERENCE: demo built 2026-11-14T03:14:59.848Z from branch codex/v3-demo-2026-11
 - Đóng Bag → **Team** để xem đội; đóng Team → nút menu góc trên → **Wallet** để mở ví.
 - Giới hạn: ví/kinh tế live dùng Anvil/API cục bộ và mất trạng thái chain khi khởi động lại; bản lưu chỉ chơi/forge offline và xem bảng ví, không giao dịch chain.
 - Bản lưu làm mới tài khoản khi tải lại; dùng menu **Saves** để xuất/nhập tiến trình. Q9 S4 (nhịp lời thoại) vẫn tạm dừng, chưa nghiệm thu.
-- Tắt toàn bộ máy chủ demo: `kill 46445`; PID và cách khởi động lại nằm trong `reports/v3-demo/HANDOFF-DEMO.md`.
+- Tắt toàn bộ máy chủ demo: `kill 46445`; PID và cách khởi động lại nằm trong [reports/v3-demo/HANDOFF-DEMO.md](https://github.com/ntbaoheyhey/lantern-cat-cafe/blob/d89b61ab3ddd73659f45158d1abe5835b9445b81/reports/v3-demo/HANDOFF-DEMO.md).

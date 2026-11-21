@@ -171,7 +171,7 @@ export default function CafeAdventure({ active, onExit }: { active: boolean; onE
   }, [active, tab, state.boss]);
   const progress = completion(state), debug = import.meta.env.DEV && new URLSearchParams(location.search).get('adventureDebug') === '1';
   return <div className="cafe-shell" data-testid="cafe-adventure" data-paused={!active || hidden} style={{ '--cafe-impact-ms': `${CONFIG.gameplay.juice.labelMs}ms`, '--cafe-stop-ms': `${CONFIG.gameplay.juice.critStopMs}ms`, '--cafe-shake-px': `${CONFIG.gameplay.juice.maxShakePx}px`, '--cafe-settle-ms': `${CONFIG.gameplay.juice.settleMs}ms` } as CSSProperties}>
-    <header className="cafe-header"><div><div className="cafe-eyebrow">CAT CAFE QUEST <span>Sample adventure</span></div><h2>The evening patrol</h2><p>A local adventure kit, a few brave choices, and a home to come back to.</p></div>
+    <header className="cafe-header"><div><div className="cafe-eyebrow">LANTERN CAT CAFÉ <span>Sample adventure</span></div><h2>The evening patrol</h2><p>A local adventure kit, a few brave choices, and a home to come back to.</p></div>
       <div className="cafe-header-stats"><b>✦ {state.patches}<small>local patches</small></b><b>{masteryLevel(state)}<small>cafe mastery</small></b><b>{progress.percent}%<small>journal complete</small></b><button onClick={onExit}>Main game ↗</button></div></header>
     {saveError && <p role="alert">{saveError}</p>}
     {away && <section className="cafe-away" aria-label="While you were away"><div><strong>While you were away · +{away.patches} local patches</strong><p>{Math.floor(away.credited / 60)} capped minutes counted. Bosses and your kit waited; no streak was lost.</p></div><button onClick={dismissAway}>Welcome home</button></section>}

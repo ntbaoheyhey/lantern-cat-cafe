@@ -1,4 +1,4 @@
-/** Pixel icons drawn from string maps for v2 (Cat Café Quest style). */
+/** Pixel icons drawn from string maps for v2 (Lantern Cat Café style). */
 
 /** Colour per map character. Theme variables where one exists, hex fallbacks otherwise. */
 export const PALETTE: Record<string, string> = {

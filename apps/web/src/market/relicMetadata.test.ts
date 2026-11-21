@@ -20,7 +20,7 @@ describe.each(CONFIG.rarities.map((rarity) => [rarity, relicIdFor(rarity)] as co
     const name = rarity.charAt(0).toUpperCase() + rarity.slice(1);
     const meta = read(`${id}.json`);
     expect(meta.name).toBe(LABELS.relics[rarity]);
-    expect(meta.description).toMatch(/Taskbar Hero/);
+    expect(meta.description).toMatch(/Lantern Cat Café/);
     expect(meta.description).toMatch(/Fuji testnet/);
     expect(meta.image).toBe(`${SITE}${relicImageUrl(id)}`);
     expect(meta.external_url).toBe(SITE);

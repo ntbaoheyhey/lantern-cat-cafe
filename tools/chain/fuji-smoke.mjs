@@ -32,7 +32,7 @@ try{
    return record(stage,await wallet.writeContract({...simulation.request,account}));
  };
  const login=async(account)=>{
-   stage='SIWE';const {nonce}=await post('auth-nonce');const message=createSiweMessage({address:account.address,domain:new URL(origin).host,uri:origin,version:'1',chainId:43113,nonce,statement:'Sign in to Taskbar Hero.',issuedAt:new Date(),expirationTime:new Date(Date.now()+600000)});
+   stage='SIWE';const {nonce}=await post('auth-nonce');const message=createSiweMessage({address:account.address,domain:new URL(origin).host,uri:origin,version:'1',chainId:43113,nonce,statement:'Sign in to Lantern Cat Cafe.',issuedAt:new Date(),expirationTime:new Date(Date.now()+600000)});
    const session=await post('auth-verify',{message,signature:await account.signMessage({message})});
    if(dry)await client.request({method:'anvil_setBalance',params:[account.address,'0x0']});
    stage='guest-drip';const drip=await post('guest-drip',{},session.token);await record('guest-drip',drip.txHash);

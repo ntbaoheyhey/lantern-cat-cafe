@@ -52,9 +52,9 @@ export function Rail({ activeScreen, onSelectScreen }: RailProps) {
           type="button"
           className="rail-logo-btn"
           data-testid="rail-logo"
-          aria-label="Taskbar Hero home"
+          aria-label="Lantern Cat Café home"
           onClick={() => onSelectScreen('home')}
-          title="Taskbar Hero"
+          title="Lantern Cat Café"
         >
           <CatPortrait size={36} />
         </button>

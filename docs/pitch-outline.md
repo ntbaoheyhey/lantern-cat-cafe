@@ -1,4 +1,6 @@
-# Taskbar Hero — Pitch Slide Outline
+# Lantern Cat Café — Pitch Slide Outline
+
+> Archived material from an earlier build. See the [current game and submission evidence](../README.md).
 
 A 7-slide outline for a 3-minute pitch to the **Avalanche Team1 Vietnam UniHack 2026** judges.
 
@@ -26,7 +28,7 @@ A split comparison graphic: on the left, an overcrowded Web3 screen with repetit
 ## Slide 2: Product (~25s)
 
 ### Headline
-Taskbar Hero is a cozy idle RPG living in a bottom browser strip where everyday progress is gas-free and rare Relics become real on-chain collectibles.
+Lantern Cat Café is a cozy idle RPG living in a bottom browser strip where everyday progress is gas-free and rare Relics become real on-chain collectibles.
 
 ### Key Points
 - **Ambient taskbar strip**: Mochi the cat fights along the bottom strip of your web page, passively collecting Fish (gold), Yarn (shards), and Cat Keys (boss keys) while you work.
@@ -34,7 +36,7 @@ Taskbar Hero is a cozy idle RPG living in a bottom browser strip where everyday 
 - **Pure collectibles, no tokenomics**: There is no fungible in-game token; players forge rare ERC-1155 Relic NFTs once per day through verified gameplay achievements.
 
 ### Show on screen
-A live capture of the Taskbar Hero interface showing the Phaser pixel-art bottom strip (Mochi trotting, combat, HUD) with the Cat Café Quest board and tabs open above (`docs/screenshots/idle-strip.png`, `docs/screenshots/inventory.png`).
+A live capture of the Lantern Cat Café interface showing the Phaser pixel-art bottom strip (Mochi trotting, combat, HUD) with the Cat Café Quest board and tabs open above (`docs/screenshots/idle-strip.png`, `docs/screenshots/inventory.png`).
 
 ---
 
@@ -115,7 +117,7 @@ A transparent "Built & Live Today vs. Production Roadmap" checklist highlighting
 
 ## Cat RPG v2 version (draft, swap in after cut-over)
 
-A 7-slide outline for a 3-minute pitch updating Taskbar Hero to Cat RPG v2 (Cat Café Quest) for the **Avalanche Team1 Vietnam UniHack 2026** judges.
+A 7-slide outline for a 3-minute pitch updating Lantern Cat Café to Cat RPG v2 (Cat Café Quest) for the **Avalanche Team1 Vietnam UniHack 2026** judges.
 
 - **Pacing**: ~25 seconds per slide (Demo: ~45s; total <= 3 min).
 - **Core Theme**: Ambient browser dungeon crawler — 7 feline hero classes, 9 equipment slots, 5 chapters and bosses, deterministic crafting and salvage, zero gas for core gameplay, and daily Relic milestone NFTs on Avalanche Fuji.
@@ -138,14 +140,14 @@ Most Web3 games force repetitive micro-actions on-chain or center on volatile sp
 A split comparison graphic: on the left, an overcrowded Web3 screen with repetitive wallet approval prompts and volatile price charts; on the right, a calm desktop workspace where a browser taskbar game quietly hums along at the bottom of the screen (docs/screenshots/v2/problem-split.png, placeholder without backticks, to capture after V16).
 
 #### Speaker Note
-Web3 games too often sacrifice fun for gas fees, repetitive wallet popups, and fragile token economics. We designed Taskbar Hero to give desktop users a relaxing, zero-gas RPG that progresses quietly alongside work while preserving genuine digital collectibles.
+Web3 games too often sacrifice fun for gas fees, repetitive wallet popups, and fragile token economics. We designed Lantern Cat Café to give desktop users a relaxing, zero-gas RPG that progresses quietly alongside work while preserving genuine digital collectibles.
 
 ---
 
 ### Slide 2: Product v2 (~25s)
 
 #### Headline
-Cat RPG v2 expands Taskbar Hero into a rich chapter-based dungeon crawler with 7 cat classes, 9 gear slots, 5 chapters, and daily on-chain Relics (after cut-over).
+Cat RPG v2 expands Lantern Cat Café into a rich chapter-based dungeon crawler with 7 cat classes, 9 gear slots, 5 chapters, and daily on-chain Relics (after cut-over).
 
 #### Key Points
 - **7 feline classes & 9 gear slots**: Choose from 7 distinct hero archetypes (Warrior, Guardian, Rogue, Hunter, Archer, Witch, Alchemist) with dedicated weapon families, combat passives, and 9 equipment slots (5 main visual slots and 4 leveling accessories).
@@ -276,26 +278,26 @@ Placeholder screenshot references to capture during submission asset week (Card 
 
 ### Verified Media Kit & Recorded Evidence Index (Mission T3)
 
-The verified media files captured from the static v2 build are stored in [`reports/t3-demo-media/`](../reports/t3-demo-media/):
+The verified media files captured from the static v2 build are stored in [[reports/t3-demo-media/](https://github.com/ntbaoheyhey/lantern-cat-cafe/tree/d89b61ab3ddd73659f45158d1abe5835b9445b81/reports/t3-demo-media)](https://github.com/ntbaoheyhey/lantern-cat-cafe/tree/d89b61ab3ddd73659f45158d1abe5835b9445b81/reports/t3-demo-media):
 
 | File Name | Screen Description | Resolution | File Size |
 | :--- | :--- | :---: | :---: |
-| [01-title.png](../reports/t3-demo-media/01-title.png) | Onboarding modal ("How to play") over dark stage | 1600x900 | 40 KB |
-| [02-class-pick.png](../reports/t3-demo-media/02-class-pick.png) | Class selection modal: 7 cat hero classes and passives | 1600x900 | 30 KB |
-| [03-idle-loop.png](../reports/t3-demo-media/03-idle-loop.png) | Main stage: Chapter 1 Living Room, HUD counters, combat | 1600x900 | 38 KB |
-| [04-bag.png](../reports/t3-demo-media/04-bag.png) | Inventory: 9 equipment slots, character stats, "Equip best" | 1600x900 | 36 KB |
-| [05-forge-reveal.png](../reports/t3-demo-media/05-forge-reveal.png) | Forge tab: guaranteed recipes, material costs, confirm box | 1600x900 | 30 KB |
-| [06-chapter-map.png](../reports/t3-demo-media/06-chapter-map.png) | Chapter map: unlocked Ch 2, locked Ch 3–5, Boss Gate | 1600x900 | 30 KB |
-| [07-boss-arena.png](../reports/t3-demo-media/07-boss-arena.png) | Boss battle: Yarn Giant combat, telegraphs, and health bars | 1600x900 | 38 KB |
-| [08-result.png](../reports/t3-demo-media/08-result.png) | Victory modal: First-Clear Chest reward with Moon Pearl | 1600x900 | 60 KB |
-| [09-phone-stage.png](../reports/t3-demo-media/09-phone-stage.png) | Mobile viewport: responsive stage and HUD layout | 390x844 | 16 KB |
-| [10-phone-bag.png](../reports/t3-demo-media/10-phone-bag.png) | Mobile viewport: responsive inventory and character panel | 390x844 | 14 KB |
-| [11-phone-boss.png](../reports/t3-demo-media/11-phone-boss.png) | Mobile viewport: responsive boss gate and chapter map | 390x844 | 12 KB |
-| [12-phone-forge.png](../reports/t3-demo-media/12-phone-forge.png) | Mobile viewport: responsive forge workshop and recipes | 390x844 | 13 KB |
-| [13-idle-loop.mp4](../reports/t3-demo-media/13-idle-loop.mp4) | Animated idle combat loop with moving damage numbers | 1280x720 | 184 KB |
-| [13-idle-loop.gif](../reports/t3-demo-media/13-idle-loop.gif) | Animated GIF of idle combat loop | 640x360 | 1.0 MB |
-| [14-boss-fight.mp4](../reports/t3-demo-media/14-boss-fight.mp4) | Animated boss battle from gate to victory chest reveal | 1280x720 | 275 KB |
-| [14-boss-fight.gif](../reports/t3-demo-media/14-boss-fight.gif) | Animated GIF of boss battle from gate to victory chest | 640x360 | 1.3 MB |
+| [01-title.png](https://github.com/ntbaoheyhey/lantern-cat-cafe/blob/d89b61ab3ddd73659f45158d1abe5835b9445b81/reports/t3-demo-media/01-title.png) | Onboarding modal ("How to play") over dark stage | 1600x900 | 40 KB |
+| [02-class-pick.png](https://github.com/ntbaoheyhey/lantern-cat-cafe/blob/d89b61ab3ddd73659f45158d1abe5835b9445b81/reports/t3-demo-media/02-class-pick.png) | Class selection modal: 7 cat hero classes and passives | 1600x900 | 30 KB |
+| [03-idle-loop.png](https://github.com/ntbaoheyhey/lantern-cat-cafe/blob/d89b61ab3ddd73659f45158d1abe5835b9445b81/reports/t3-demo-media/03-idle-loop.png) | Main stage: Chapter 1 Living Room, HUD counters, combat | 1600x900 | 38 KB |
+| [04-bag.png](https://github.com/ntbaoheyhey/lantern-cat-cafe/blob/d89b61ab3ddd73659f45158d1abe5835b9445b81/reports/t3-demo-media/04-bag.png) | Inventory: 9 equipment slots, character stats, "Equip best" | 1600x900 | 36 KB |
+| [05-forge-reveal.png](https://github.com/ntbaoheyhey/lantern-cat-cafe/blob/d89b61ab3ddd73659f45158d1abe5835b9445b81/reports/t3-demo-media/05-forge-reveal.png) | Forge tab: guaranteed recipes, material costs, confirm box | 1600x900 | 30 KB |
+| [06-chapter-map.png](https://github.com/ntbaoheyhey/lantern-cat-cafe/blob/d89b61ab3ddd73659f45158d1abe5835b9445b81/reports/t3-demo-media/06-chapter-map.png) | Chapter map: unlocked Ch 2, locked Ch 3–5, Boss Gate | 1600x900 | 30 KB |
+| [07-boss-arena.png](https://github.com/ntbaoheyhey/lantern-cat-cafe/blob/d89b61ab3ddd73659f45158d1abe5835b9445b81/reports/t3-demo-media/07-boss-arena.png) | Boss battle: Yarn Giant combat, telegraphs, and health bars | 1600x900 | 38 KB |
+| [08-result.png](https://github.com/ntbaoheyhey/lantern-cat-cafe/blob/d89b61ab3ddd73659f45158d1abe5835b9445b81/reports/t3-demo-media/08-result.png) | Victory modal: First-Clear Chest reward with Moon Pearl | 1600x900 | 60 KB |
+| [09-phone-stage.png](https://github.com/ntbaoheyhey/lantern-cat-cafe/blob/d89b61ab3ddd73659f45158d1abe5835b9445b81/reports/t3-demo-media/09-phone-stage.png) | Mobile viewport: responsive stage and HUD layout | 390x844 | 16 KB |
+| [10-phone-bag.png](https://github.com/ntbaoheyhey/lantern-cat-cafe/blob/d89b61ab3ddd73659f45158d1abe5835b9445b81/reports/t3-demo-media/10-phone-bag.png) | Mobile viewport: responsive inventory and character panel | 390x844 | 14 KB |
+| [11-phone-boss.png](https://github.com/ntbaoheyhey/lantern-cat-cafe/blob/d89b61ab3ddd73659f45158d1abe5835b9445b81/reports/t3-demo-media/11-phone-boss.png) | Mobile viewport: responsive boss gate and chapter map | 390x844 | 12 KB |
+| [12-phone-forge.png](https://github.com/ntbaoheyhey/lantern-cat-cafe/blob/d89b61ab3ddd73659f45158d1abe5835b9445b81/reports/t3-demo-media/12-phone-forge.png) | Mobile viewport: responsive forge workshop and recipes | 390x844 | 13 KB |
+| [13-idle-loop.mp4](https://github.com/ntbaoheyhey/lantern-cat-cafe/blob/d89b61ab3ddd73659f45158d1abe5835b9445b81/reports/t3-demo-media/13-idle-loop.mp4) | Animated idle combat loop with moving damage numbers | 1280x720 | 184 KB |
+| [13-idle-loop.gif](https://github.com/ntbaoheyhey/lantern-cat-cafe/blob/d89b61ab3ddd73659f45158d1abe5835b9445b81/reports/t3-demo-media/13-idle-loop.gif) | Animated GIF of idle combat loop | 640x360 | 1.0 MB |
+| [14-boss-fight.mp4](https://github.com/ntbaoheyhey/lantern-cat-cafe/blob/d89b61ab3ddd73659f45158d1abe5835b9445b81/reports/t3-demo-media/14-boss-fight.mp4) | Animated boss battle from gate to victory chest reveal | 1280x720 | 275 KB |
+| [14-boss-fight.gif](https://github.com/ntbaoheyhey/lantern-cat-cafe/blob/d89b61ab3ddd73659f45158d1abe5835b9445b81/reports/t3-demo-media/14-boss-fight.gif) | Animated GIF of boss battle from gate to victory chest | 640x360 | 1.3 MB |
 
 ---
 
@@ -304,7 +306,7 @@ The verified media files captured from the static v2 build are stored in [`repor
 Checklist for submission week (18–19 Nov 2026, Card A27):
 
 1. **Submission deadline & platform**: "TBD, confirm with organizers" (verify official UniHack 2026 channels before submitting; do not guess).
-2. **Repository visibility**: Ensure `https://github.com/ntbaoheyhey/taskbar-hero` is made public (or organizers added as collaborators) and accessible while signed out.
+2. **Repository visibility**: Ensure `https://github.com/ntbaoheyhey/lantern-cat-cafe` is made public (or organizers added as collaborators) and accessible while signed out.
 3. **Live demo availability**: Test [https://taskbarhero-eight.vercel.app](https://taskbarhero-eight.vercel.app) in an incognito desktop browser window.
 4. **Fuji contract addresses & explorer links**: Re-verify `RelicNFT` (`0xB1a1edb7A75Db6e7067E747ddee32B39c2296f2D`) and `RelicMarket` (`0x10fcC46e439d3E31Fb1720B337C45CadB9b2ff93`) on Routescan and Snowtrace.
 5. **Signed numbers substitution**: Check `docs/proposals/numbers-v2.md` for user sign-off (Card CL8); replace `<from signed numbers>` placeholders with finalized metrics.

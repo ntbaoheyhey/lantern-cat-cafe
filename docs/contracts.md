@@ -236,7 +236,7 @@ Listing ids, prices and amounts are `uint256`, so pass and expect `bigint`.
 
 ## Fuji YARN, Market V2 and season claims
 
-**Testnet — no real value.** The user deployed the three new contracts on 2026-11-12. The existing Fuji NFT and V1 market are unchanged. All three new runtimes match local artifacts in the [read-only audit](../reports/chain/FUJI-READONLY-AUDIT.json); the [public smoke](../reports/chain/FUJI-SMOKE.md) has 18 confirmed receipts. No contract deployment was performed by Codex.
+**Testnet — no real value.** The user deployed the three new contracts on 2026-11-12. The existing Fuji NFT and V1 market are unchanged. All three new runtimes match local artifacts in the [read-only audit](https://github.com/ntbaoheyhey/lantern-cat-cafe/blob/d89b61ab3ddd73659f45158d1abe5835b9445b81/reports/chain/FUJI-READONLY-AUDIT.json); the [public smoke](https://github.com/ntbaoheyhey/lantern-cat-cafe/blob/d89b61ab3ddd73659f45158d1abe5835b9445b81/reports/chain/FUJI-SMOKE.md) has 18 confirmed receipts. No contract deployment was performed by Codex.
 
 | Contract | Deployed address |
 |---|---|
@@ -285,7 +285,7 @@ forge test --root contracts
 forge coverage --root contracts
 ```
 
-Run the harness commands separately because each owns the same local ports. Public Fuji smoke is user-run with `--fuji`, never implied by a dry-run hash. [Architecture and judge guide](chain/index.html), [research](design/chain/TOKENOMICS-RESEARCH.md), and [report](../reports/chain/CHAIN-REPORT.md) distinguish tested implementation, design assumptions and public on-chain verification versus pending frontend/timing work.
+Run the harness commands separately because each owns the same local ports. Public Fuji smoke is user-run with `--fuji`, never implied by a dry-run hash. [Architecture and judge guide](chain/index.html), [research](design/chain/TOKENOMICS-RESEARCH.md), and [report](https://github.com/ntbaoheyhey/lantern-cat-cafe/blob/d89b61ab3ddd73659f45158d1abe5835b9445b81/reports/chain/CHAIN-REPORT.md) distinguish tested implementation, design assumptions and public on-chain verification versus pending frontend/timing work.
 
 ## Optional finite RelicForge (local proof, public deployment pending)
 

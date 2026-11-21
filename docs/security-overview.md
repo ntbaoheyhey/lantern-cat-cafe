@@ -1,6 +1,6 @@
 # Security overview — DRAFT
 
-Taskbar Hero separates local guest play, authenticated server state and Fuji transactions. This source overview describes integrated candidate `1eefc3e`; live remains `340f88b`. It is not a production penetration-test report. [Current evidence and limits](../reports/n2-security-docs.md) distinguish checked-in protections from deployed verification.
+Lantern Cat Café separates local guest play, authenticated server state and Fuji transactions. This source overview describes integrated candidate `1eefc3e`; live remains `340f88b`. It is not a production penetration-test report. [Current evidence and limits](https://github.com/ntbaoheyhey/lantern-cat-cafe/blob/d89b61ab3ddd73659f45158d1abe5835b9445b81/reports/n2-security-docs.md) distinguish checked-in protections from deployed verification.
 
 ## Sign-in and identity
 
@@ -34,7 +34,7 @@ Help's public proof panel reads Fuji 43113 at the configured NFT `0xB1a1edb7A75D
 
 The [Deno import guard](../scripts/check-deno-imports.mjs) resolves each function's transitive imports with its own map; [deno-imports.test.ts](../supabase/tests/src/deno-imports.test.ts) detects missing map edges. The historical extensionless-import defect is repaired in merged source. [Bundle scanning](../scripts/check-bundle.mjs) rejects secret-looking output; it is a limited check, not a guarantee against every leak.
 
-PR #244 remains unmerged: a complete deployed Supabase function backup and tested restore path are unavailable. CLI export failed with UnsafeFunctionDownloadPathError. Partial files do not form a rollback bundle. The [owner recovery step](https://github.com/ntbaoheyhey/taskbar-hero/blob/ai/codex-ui-ledger/reports/OPTIONAL-USER-STEPS.md) requires supported recovery of source, dependencies and import maps, then local restoration testing. No backend deployment/migration or production flag change is authorized here.
+PR #244 remains unmerged: a complete deployed Supabase function backup and tested restore path are unavailable. CLI export failed with UnsafeFunctionDownloadPathError. Partial files do not form a rollback bundle. The [owner recovery step](https://github.com/ntbaoheyhey/lantern-cat-cafe/blob/ai/codex-ui-ledger/reports/OPTIONAL-USER-STEPS.md) requires supported recovery of source, dependencies and import maps, then local restoration testing. No backend deployment/migration or production flag change is authorized here.
 
 Merged code, limited live health checks and deployed-source identity are separate claims. Live function identity, full policy enforcement and a fresh funded wallet journey remain NOT VERIFIED. This overview neither certifies an audit nor clears #244. See the [security test matrix](security-test-matrix.md) for source coverage and gaps.
 

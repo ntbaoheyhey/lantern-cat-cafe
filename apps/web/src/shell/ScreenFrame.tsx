@@ -63,7 +63,7 @@ export function ScreenFrame({
         {showHud && hudProps ? (
           <Hud {...hudProps} />
         ) : (
-          <h1 className="visually-hidden-accessible">Taskbar Hero</h1>
+          <h1 className="visually-hidden-accessible">Lantern Cat Café</h1>
         )}
 
         <main data-testid="screen" className="shell-screen" tabIndex={-1}>

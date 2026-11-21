@@ -93,7 +93,7 @@ for name in docs:
     text = path.read_text()
     links = []
     for url in re.findall(r'\]\(([^)]+)\)', text):
-        evidence_prefix = 'https://github.com/ntbaoheyhey/taskbar-hero/blob/codex/cardrpg-big-delivery-2026-11-07/'
+        evidence_prefix = 'https://github.com/ntbaoheyhey/lantern-cat-cafe/blob/codex/cardrpg-big-delivery-2026-11-07/'
         if url.startswith(evidence_prefix):
             target = Path(url[len(evidence_prefix):].split('#')[0])
         elif '://' in url or url.startswith('#'):

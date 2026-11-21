@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Read-only Fuji on-chain verification script for Taskbar Hero.
+// Read-only Fuji on-chain verification script for Lantern Cat Café.
 // Uses existing viem dependency and public Avalanche Fuji RPC. No private key or wallet transactions.
 import { readFileSync, readdirSync } from 'node:fs';
 import { createRequire } from 'node:module';
@@ -80,7 +80,7 @@ async function discoverRecentTransactions() {
 
 async function main() {
   console.log('================================================================');
-  console.log('       Taskbar Hero — Avalanche Fuji On-Chain Proof');
+  console.log('       Lantern Cat Café — Avalanche Fuji On-Chain Proof');
   console.log('================================================================\n');
 
   // 1. Chain ID & RPC

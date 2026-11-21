@@ -1,4 +1,6 @@
-# Taskbar Hero — nine-slide outline (DRAFT)
+# Lantern Cat Café — nine-slide outline (DRAFT)
+
+> Archived material from an earlier build. See the [current game and submission evidence](../README.md).
 
 No slides have been published or submitted. Intended for a short owner-recorded pitch; use only evidence labelled for its exact release. The supplied planning rubric is Technical25, Avalanche Integration25, Creativity15, Impact15, Pitch10, UI/UX+Demo10; organizer confirmation and team names remain owner-controlled. [Three-minute narration](submission/pitch-3-minute.md) maps the claims to those categories.
 

@@ -104,7 +104,7 @@ nodes[body_node].setdefault('children', []).append(shield_node)
 nodes[shield_node]['translation'] = (shield_world - body_world).tolist()
 g['meshes'] = meshes
 g.pop('skins', None)
-g['asset']['generator'] = 'Taskbar Hero rigid source-module fallback1'
+g['asset']['generator'] = 'Lantern Cat Café rigid source-module fallback1'
 g['buffers'] = [dict(byteLength=len(binary))]
 j = json.dumps(g, separators=(',', ':')).encode()
 j += b' ' * (-len(j) % 4)

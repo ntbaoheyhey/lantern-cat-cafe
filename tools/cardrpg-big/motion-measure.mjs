@@ -178,7 +178,7 @@ const sourceHashes = Object.fromEntries(await Promise.all(motionSources.map(asyn
   [file, createHash('sha256').update(await readFile(file)).digest('hex')])));
 await writeFile('assets/provenance/cardrpg-big-motion.json', JSON.stringify({
   tool: 'Runtime procedural keyframe authoring, createCardClips and tools/cardrpg-big/motion-measure.mjs',
-  authorship: 'Original authored gestures on the existing original Taskbar Hero rigid-node rigs',
+  authorship: 'Original authored gestures on the existing original Lantern Cat Café rigid-node rigs',
   sources: sourceHashes, sampledKeys: 41, interpolation: 'Smoothstep between authored pose keys, quaternion tracks',
   secondaryMotion: { lagFraction: .06, weights: { tailTip: .55, tailMid: .4, other: .24 } },
   fidgets: { minimumIntervalSeconds: 4, maximumIntervalSeconds: 8, durationSeconds: 1.5 },

@@ -73,4 +73,4 @@ pnpm --filter @taskbar-hero/game-rules test src/v2/codex
 
 The CLI works from another working directory when invoked by absolute path. It uses the locked TypeScript compiler and Node standard library, loads only local rules modules in memory, creates no build output and needs no network, environment secrets or backend. Tests block Node networking, parse output, compare stdout and file output byte for byte, validate source symbols/metadata and check error exits. Current pretty JSON exceeds 200 KB; it is generated only in scratch storage and is not committed. No timestamp is included, so unchanged rules produce identical output.
 
-Builder evidence and remaining coordinator gates are in [the CXL1 report](../reports/cxl1.md). This adapter introduces no UI and does not activate proposed rune, skill, pet or workshop mechanics.
+Builder evidence and remaining coordinator gates are in [the CXL1 report](https://github.com/ntbaoheyhey/lantern-cat-cafe/blob/d89b61ab3ddd73659f45158d1abe5835b9445b81/reports/cxl1.md). This adapter introduces no UI and does not activate proposed rune, skill, pet or workshop mechanics.

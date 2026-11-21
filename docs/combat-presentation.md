@@ -71,5 +71,5 @@ with the confirmed result, without consuming the remaining cues. The parent owns
 
 `apps/web/e2e/ui/g3-combat.spec.ts` covers melee, ranged, elite, gated and round-cleared states at
 1280×720 and 390×844, additional required light/dark viewports, and a 180-frame p95 measurement.
-Set `SCREENSHOTS=1` to save evidence under `reports/g3-combat/`. Timing, HP, bounds, gate and montage
+Set `SCREENSHOTS=1` to save evidence under [reports/g3-combat/](https://github.com/ntbaoheyhey/lantern-cat-cafe/tree/d89b61ab3ddd73659f45158d1abe5835b9445b81/reports/g3-combat). Timing, HP, bounds, gate and montage
 unit tests live beside the stage; replay scaling and visibility tests live beside arena playback.

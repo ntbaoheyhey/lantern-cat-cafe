@@ -17,7 +17,7 @@ These are design examples, not a common population from which to calculate an av
 
 ## Reproducible monthly model
 
-[Model JSON](../../reports/v4-ship/S9/model-1.json), [CSV](../../reports/v4-ship/S9/revenue-1.csv), [calculator](../../tools/v4ship-lab/research/model.mjs). No economy setting is changed.
+[Model JSON](https://github.com/ntbaoheyhey/lantern-cat-cafe/blob/d89b61ab3ddd73659f45158d1abe5835b9445b81/reports/v4-ship/S9/model-1.json), [CSV](https://github.com/ntbaoheyhey/lantern-cat-cafe/blob/d89b61ab3ddd73659f45158d1abe5835b9445b81/reports/v4-ship/S9/revenue-1.csv), [calculator](../../tools/v4ship-lab/research/model.mjs). No economy setting is changed.
 
 `gross USD = MAU × pass conversion × pass price + MAU × cosmetic conversion × cosmetic spend`
 
@@ -62,4 +62,4 @@ For a future Lantern Café L1, [activated ACP-77](https://build.avax.network/doc
 
 Article 57 of Decree 147/2024 concerns virtual items, currencies and rewards. The [government explanation](https://xaydungchinhsach.chinhphu.vn/nghi-dinh-147-2024-nd-cp-khong-mua-ban-vat-pham-ao-giua-nhung-nguoi-choi-tro-choi-dien-tu-voi-nhau-119241113161443995.htm) describes restrictions on cash-out and player-to-player trading. The [official history](https://vbpl.moj.gov.vn/bothongtin/Pages/vbpq-lichsu.aspx?ItemID=171689&Keyword=) marks the decree partly amended from 8 April 2026. Inspection of [116/2026, Chapter VI](https://congbaocdn.chinhphu.vn/180507251028987904/2026/4/20/469315-1776647256_v1_1776647889_signed.pdf) found no listed amendment/repeal of Article 57; repeal of **Form 57** is different. This comparison is not a legal opinion. Obtain qualified Vietnam launch advice before enabling real-value trading, token redemption or a paid Deed offer; testnet labeling alone does not establish compliance.
 
-Research record: [LEARN/S9](../../reports/v4-ship/LEARN/S9.md). Dates and assumptions must be refreshed before using this document as a launch business plan.
+Research record: [LEARN/S9](https://github.com/ntbaoheyhey/lantern-cat-cafe/blob/d89b61ab3ddd73659f45158d1abe5835b9445b81/reports/v4-ship/LEARN/S9.md). Dates and assumptions must be refreshed before using this document as a launch business plan.
