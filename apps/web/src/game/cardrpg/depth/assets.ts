@@ -12,6 +12,10 @@ const name = (path: string) => path.split('/').at(-1)!.split('.')[0]!;
 registerModelSources(Object.fromEntries(Object.entries(models).map(([path, url]) => [name(path), url])));
 export const portraitProps = (id: string) => lookPortrait(id, portraits[`../../../../../../assets/cardrpg3/portraits/${id}.webp`]);
 export const portrait = (id: string) => portraitProps(id).src;
+export function battlePortrait(id: string, side: 'party' | 'enemy'): string {
+  if (side === 'party') return `/units/${id}/portrait.webp`;
+  return portrait(id) ?? `/units/${id}/runtime.webp`;
+}
 export const skillIcon = (id: string) => icons[`../../../../../../assets/cardrpg3/icons/${id}.svg`];
 export const MODEL_IDS = Object.keys(models).map(name);
 

@@ -14,8 +14,9 @@ try {
  const loaded=new Set(),failedPortraits=[];
  page.on('response',response=>{
   const path=new URL(response.url()).pathname;
-  if(response.ok())loaded.add(path);
-  else if(/\/units\/[^/]+\/portrait\.webp$/.test(path))failedPortraits.push(path);
+  const image=response.headers()['content-type']?.startsWith('image/');
+  if(/\/units\/[^/]+\/portrait\.webp$/.test(path)&&(!response.ok()||!image))failedPortraits.push(path);
+  if(response.ok()&&(!path.endsWith('.webp')||image))loaded.add(path);
  });
  page.on('pageerror',e=>errors.push(e.message));
  await page.goto(`${origin}/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3`);
@@ -33,7 +34,7 @@ try {
  await page.waitForFunction(()=>window.__depthReview?.sceneReady===true);
  await page.screenshot({path:resolve(out,'wave.png')});
  await page.getByRole('button',{name:'Face the Yarn Giant',exact:true}).waitFor({timeout:90000});
- assert.deepEqual(failedPortraits,[],'HUD portraits must not 404');
+ assert.deepEqual(failedPortraits,[],'Battle portraits must return image data');
  for(const id of ['needle-moth','teacup-healer','button-guard']){
   assert([...loaded].some(path=>path.includes(`/${id}-`)&&path.endsWith('.webp')),`${id} HUD portrait was not served`);
  }
