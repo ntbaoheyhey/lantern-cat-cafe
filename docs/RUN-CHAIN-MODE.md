@@ -1,6 +1,6 @@
 # Record the V9 demo on Avalanche Fuji
 
-The hosted campaign is available in [desktop Chrome](https://taskbarhero-eight.vercel.app/). For a local recording, from the repository root, after `pnpm install --frozen-lockfile` and the owner setup below, run:
+The hosted campaign is available in [desktop Chrome](https://lantern-cat-cafe.vercel.app/). For a local recording, from the repository root, after `pnpm install --frozen-lockfile` and the owner setup below, run:
 
 ```sh
 node tools/v5int/run-chain-mode.mjs
@@ -42,8 +42,8 @@ Set these in the **server's secret environment**, never in `apps/web/.env.local`
 | `GUEST_DRIP_ENABLED` | `1` |
 | `CHAIN_JUDGE_ENABLED` | `1` |
 | `FUJI_RPC_URL` | `https://api.avax-test.network/ext/bc/C/rpc` |
-| `SIWE_DOMAIN` | `taskbarhero-eight.vercel.app,127.0.0.1:6301` (comma-separated hosts) |
-| `SIWE_ALLOWED_ORIGIN` | `https://taskbarhero-eight.vercel.app,http://127.0.0.1:6301` |
+| `SIWE_DOMAIN` | `lantern-cat-cafe.vercel.app,taskbarhero-eight.vercel.app,127.0.0.1:6301` (comma-separated hosts) |
+| `SIWE_ALLOWED_ORIGIN` | `https://lantern-cat-cafe.vercel.app,https://taskbarhero-eight.vercel.app,http://127.0.0.1:6301` |
 
 `guest-drip` refuses a grant that would leave the sponsor under **1 AVAX** (`sponsor_low`), so keep the sponsor at **2 AVAX or more** before recording. Check it on [Snowtrace](https://testnet.snowtrace.io/address/0x5eC838ECcc4eC6B6707b6479394E9E6CEEA0B000). The drip sends **0.05 test AVAX per new guest** and retains the existing database caps and idempotency. The sponsor needs enough test AVAX for the transfer and gas. The operator maintains the sponsor balance. No new service subscription or paid API is needed.
 

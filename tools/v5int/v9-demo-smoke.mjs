@@ -41,8 +41,16 @@ try {
  // Observe presentations as they run; do not drive the simulation from the test.
  await page.evaluate(()=>{
   window.__demoSeen=[];window.__demoLastPlan=null;
+  window.__demoShaderEffects=new Set();
+  let previousDraws=0;
   window.__demoObserver=setInterval(()=>{
    const m=window.__depthReview,p=m?.plan;
+   const director=window.__depthScene?.ult5;
+   if(director){
+    const {draws,ok}=director.painter.gl.audit;
+    if(ok&&director.audit.active&&draws>previousDraws)window.__demoShaderEffects.add(director.painter.audit.setPiece);
+    previousDraws=draws;
+   }
    if(p&&p!==window.__demoLastPlan){window.__demoLastPlan=p;if(p.ultimate&&['mochi','clover','soot'].includes(p.actorId))window.__demoSeen.push({id:p.skillId,at:performance.now()});}
   },10);
  });
@@ -57,10 +65,10 @@ try {
  await page.screenshot({path:resolve(out,'victory.png')});
  console.log(`PASS boss in ${(elapsed/1000).toFixed(1)}s: Mochi → Clover → Soot; victory.`);
  if(process.argv.includes('--v9-deliveries')){
-  for(const id of ['mochi','clover'])assert(loaded.has(`/units/${id}/designer/idle.webm`),`${id} delivered idle was not loaded`);
+  for(const id of ['mochi','clover','soot'])assert(loaded.has(`/units/${id}/designer/idle.webm`),`${id} delivered idle was not loaded`);
   const packs=await page.evaluate(()=>window.__thAudio?.diagnostics.packs??[]);
   for(const scene of ['battle','boss'])assert(packs.includes(`v9:${scene}-v9`),`${scene} delivered music was not decoded`);
-  console.log('PASS delivered Mochi/Clover video loads and V9 battle/boss music decode. Soot remains on its fallback rig.');
+  console.log('PASS designer idles for all three cats and decoded battle and boss music.');
  }
  if(process.argv.includes('--v9-recording')){
   const hits=await page.evaluate(()=>window.__thAudio?.hits??[]);
@@ -68,10 +76,9 @@ try {
    const id=`sfx.ult.${cat}.${layer}`;
    assert(hits.some(hit=>hit.id===id&&hit.result==='played'),`${id} did not play through the delivered director/engine wiring`);
   }
-  for(const id of ['impact-core','shockwave-ring','smoke-embers','lantern-dome','tea-clover','comet-loop','fire-dome','rune-circle']){
-   for(const ext of ['json','webp'])assert(loaded.has(`/vfx/v9/${id}.${ext}`),`${id}.${ext} was not loaded`);
-  }
-  console.log('PASS recording bundle: all 12 AGS ultimate layers played and all 8 CXV flipbooks loaded.');
+  const rendered=await page.evaluate(()=>[...window.__demoShaderEffects].sort());
+  assert.deepEqual(rendered,['chimney-comet','lantern-dome','tea-clover'],'Each cat must draw its ultimate effect');
+  console.log('PASS all 12 ultimate audio layers played and all three shader effects rendered.');
  }
  if(process.argv.includes('--chain-ui')){
   await page.getByRole('button',{name:'Preview receipt fixture',exact:true}).click();
@@ -88,9 +95,9 @@ try {
  }
  await page.goto(`${origin}/?demo=1&squad=1&cardrpg2=1&a6=1&ui=v3&legacy=1`);
  const begin=page.getByRole('button',{name:'Start playing',exact:true});
- await begin.or(page.getByRole('heading',{name:'Lantern Cat Café',exact:true})).waitFor({timeout:30000});
+ await begin.or(page.getByRole('heading',{name:'Lantern Cat Café',level:1,exact:true})).waitFor({timeout:30000});
  if(await begin.isVisible())await begin.click();
- await page.getByRole('heading',{name:'Lantern Cat Café',exact:true}).waitFor({timeout:30000});
+ await page.getByRole('heading',{name:'Lantern Cat Café',level:1,exact:true}).waitFor({timeout:30000});
  assert.equal(await page.locator('.judge-demo-v9').count(),0);
  assert.deepEqual(errors,[]);
  console.log(`PASS boss in ${(elapsed/1000).toFixed(1)}s: Mochi → Clover → Soot; victory, Collection and legacy route passed.`);

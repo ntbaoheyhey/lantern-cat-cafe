@@ -1,6 +1,6 @@
 # Lantern Cat Café judge FAQ
 
-**Where should I start?** Open the game in desktop Google Chrome and choose **Play free**. Lead Mochi, Clover and Soot through Chapter 1. Some cat animations can have a black background in Safari. [Play online](https://taskbarhero-eight.vercel.app/)
+**Where should I start?** Open the game in desktop Google Chrome and choose **Play free**. Lead Mochi, Clover and Soot through Chapter 1. Some cat animations can have a black background in Safari. [Play online](https://lantern-cat-cafe.vercel.app/)
 
 **Which actions use Avalanche?** Regular battles resolve locally. After defeating the Yarn Giant, choose **Keep as Relic**. Wallet sign-in authenticates the player, the server replays the reward trial, and the wallet submits a signed voucher to mint Moon Collar. The receipt links to Snowtrace. [Production mint](https://testnet.snowtrace.io/tx/0x566fe1355cad0c4b71dcab6daa8c0f23fe94282e7f601d2f16700800ddf47c56)
 

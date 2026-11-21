@@ -8,7 +8,7 @@ import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
-const SITE = (process.env.SITE_URL || 'https://taskbarhero-eight.vercel.app').replace(/\/$/, '');
+const SITE = (process.env.SITE_URL || 'https://lantern-cat-cafe.vercel.app').replace(/\/$/, '');
 const SUPABASE = (process.env.SUPABASE_URL || 'https://qoalewtxflagoprrxrgh.supabase.co').replace(/\/$/, '');
 const RPC = process.env.FUJI_RPC_URL || 'https://api.avax-test.network/ext/bc/C/rpc';
 const FUNCTIONS = ['auth-nonce', 'auth-verify', 'game-state', 'idle-claim', 'equip', 'boss-fight', 'upgrade', 'relic-forge', 'relic-mint-report'];
@@ -130,9 +130,12 @@ if (nft && market) {
     if (/^0x0{40}$/.test(a)) throw new Error('owner is the zero address');
     return a;
   });
-  await check('RelicNFT uri(1) points at the site', async () => {
+  await check('RelicNFT uri(1) serves the published ERC-1155 metadata', async () => {
     const uri = decodeString(await call(nft, `0x0e89341c${'0'.repeat(63)}1`));
-    if (!uri.startsWith(SITE)) throw new Error(`uri is ${uri}`);
+    const id = '1'.padStart(64, '0');
+    if (uri !== 'https://taskbarhero-eight.vercel.app/relics/{id}.json') throw new Error(`Unexpected on-chain URI: ${uri}`);
+    const metadata = await fetchT(uri.replace('{id}', id));
+    if (!metadata.ok || (await metadata.json()).name !== 'Paw Charm') throw new Error('On-chain metadata failed to resolve');
     return uri;
   });
   await check('RelicMarket relicNFT() is the RelicNFT', async () => {

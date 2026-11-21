@@ -3,7 +3,7 @@ import { mkdirSync, writeFileSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-const SITE = 'https://taskbarhero-eight.vercel.app';
+const IMAGE_ORIGIN = 'https://taskbarhero-eight.vercel.app';
 const out = resolve(dirname(fileURLToPath(import.meta.url)), '../apps/web/public/relics');
 
 // IDs follow CONFIG.rarities. tools/art/gameplay-relics.py generates the linked artwork.
@@ -20,8 +20,8 @@ RELICS.forEach((r, i) => {
   const meta = {
     name: r.name,
     description: r.description,
-    image: `${SITE}/relics/${id}.svg`,
-    external_url: SITE,
+    image: `${IMAGE_ORIGIN}/relics/${id}.svg`,
+    external_url: 'https://lantern-cat-cafe.vercel.app',
     attributes: [{ trait_type: 'Rarity', value: r.label }],
   };
   const json = `${JSON.stringify(meta, null, 2)}\n`;

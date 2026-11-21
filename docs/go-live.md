@@ -20,8 +20,8 @@ Supabase dashboard > your project > **Edge Functions > Secrets** (or `supabase s
 | --- | --- | --- |
 | `AUTH_JWT_SECRET` | Random, at least 32 bytes: `openssl rand -base64 48`. Signs and checks the session JWT. Changing it signs everyone out. | all nine |
 | `GAME_SEED_SECRET` | Random: `openssl rand -base64 48`. Keys the idle-drop, boss-fight and Relic rarity seeds. Optional (falls back to `AUTH_JWT_SECRET`), but set it so the two can change independently. | the seven game functions |
-| `SIWE_DOMAIN` | The production host, no scheme or path, e.g. `taskbarhero-eight.vercel.app` (the live site). Must equal `window.location.host` of the site players sign in on. | auth-nonce, auth-verify |
-| `SIWE_ALLOWED_ORIGIN` | Comma list of exact origins allowed by CORS, e.g. `https://taskbarhero-eight.vercel.app,http://localhost:5173`. Unset means browsers are blocked. | all nine |
+| `SIWE_DOMAIN` | Accepted hosts for the live game and local recording: `lantern-cat-cafe.vercel.app,taskbarhero-eight.vercel.app,127.0.0.1:6301`. | auth-nonce, auth-verify |
+| `SIWE_ALLOWED_ORIGIN` | Exact browser origins: `https://lantern-cat-cafe.vercel.app,https://taskbarhero-eight.vercel.app,http://127.0.0.1:6301`. | Edge Functions |
 | `VOUCHER_SIGNER_PRIVATE_KEY` | The voucher signer's private key (`0x` + 64 hex). Its address must equal `signer()` on the deployed RelicNFT. Use a dedicated key that holds no funds; never reuse the deployer key. Unset or malformed: `relic-forge` answers 500 `server_error` and spends nothing. | the seven game functions (relic-forge and game-state sign) |
 | `FUJI_RPC_URL` | Optional. Fuji C-Chain RPC used to check mint receipts and `usedNonces`. Defaults to `https://api.avax-test.network/ext/bc/C/rpc`. | the seven game functions |
 
@@ -29,7 +29,7 @@ Provided by the platform, do not set: `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY
 
 Note: `AUTH_JWT_SECRET` is our own key, not the project's JWT secret, so the session token works with our Edge Functions only, not with direct PostgREST queries. The web client uses only the functions.
 
-Sign-in with `localhost:5173` against the live functions needs `SIWE_DOMAIN=localhost:5173`, so local testing against production is limited to the game calls; use a local stack for sign-in.
+The local recording host is already allowed. Sign-in from another development origin requires its exact host and origin to be added to the corresponding lists.
 
 ## 3. Web app (Vercel)
 

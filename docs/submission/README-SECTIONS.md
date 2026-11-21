@@ -4,7 +4,7 @@
 The Lantern Cat Café is the last lit shop on a street that the Tangle—the Yarn Giant born from tasks abandoned on your taskbar—is knotting up. Lead your cosy cat trio (Mochi, Clover, and Soot) into tactical card battles to protect the warmth of the cafe. Relics earned are cafe memories the Tangle cannot erase because they live forever on Avalanche.
 
 ## How to Play
-1. Open [the live game](https://taskbarhero-eight.vercel.app/) in desktop Chrome and choose **Play free**.
+1. Open [the live game](https://lantern-cat-cafe.vercel.app/) in desktop Chrome and choose **Play free**.
 2. Lead Mochi, Clover and Soot through Chapter 1. The cats attack automatically. Tap a glowing portrait to use that cat’s ultimate, or enable **Auto**.
 3. Defeat the Yarn Giant and select **Keep as Relic** to mint Moon Collar on Avalanche Fuji. The receipt shows the transaction on Snowtrace.
 

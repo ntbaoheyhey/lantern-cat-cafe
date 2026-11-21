@@ -28,7 +28,7 @@ const { createSiweMessage } = await load('viem/siwe');
 const arg = (name, fallback) => { const i = process.argv.indexOf(`--${name}`); return i > 0 ? process.argv[i + 1] : fallback; };
 const FUNCTIONS = (process.env.SUPABASE_FUNCTIONS_URL || 'https://qoalewtxflagoprrxrgh.supabase.co/functions/v1').replace(/\/+$/, '');
 const RPC = process.env.FUJI_RPC_URL || 'https://api.avax-test.network/ext/bc/C/rpc';
-const DOMAIN = arg('domain', 'taskbarhero-eight.vercel.app');
+const DOMAIN = arg('domain', 'lantern-cat-cafe.vercel.app');
 const ACTION = arg('action', 'finale');
 const OUT = arg('out');
 const C = {

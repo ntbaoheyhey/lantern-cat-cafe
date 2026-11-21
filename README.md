@@ -2,7 +2,7 @@
 
 Lead Mochi, Clover and Soot through a three-chapter browser RPG to save their café. Time the cats’ ultimates, defeat the Yarn Giant and turn the memory of that battle into a Moon Collar Relic on Avalanche Fuji.
 
-**[Play Lantern Cat Café](https://taskbarhero-eight.vercel.app/)** · [Chapter 1 mint on Snowtrace](https://testnet.snowtrace.io/tx/0x566fe1355cad0c4b71dcab6daa8c0f23fe94282e7f601d2f16700800ddf47c56) · [Mint, listing and sale receipts](docs/avalanche/LIVE-E2E.md) · [Contest game release v5-m2.18](https://github.com/ntbaoheyhey/lantern-cat-cafe/tree/v5-m2.18)
+**[Play Lantern Cat Café](https://lantern-cat-cafe.vercel.app/)** · [Chapter 1 mint on Snowtrace](https://testnet.snowtrace.io/tx/0x566fe1355cad0c4b71dcab6daa8c0f23fe94282e7f601d2f16700800ddf47c56) · [Mint, listing and sale receipts](docs/avalanche/LIVE-E2E.md) · [Contest game release v5-m2.18](https://github.com/ntbaoheyhey/lantern-cat-cafe/tree/v5-m2.18)
 
 ![Mochi casts Last Lantern Vow](docs/submission/media/hero.gif)
 
@@ -11,6 +11,8 @@ Lead Mochi, Clover and Soot through a three-chapter browser RPG to save their ca
 1. Open the game in **desktop Google Chrome** and choose **Play free**. Safari can show a black rectangle behind some animated cats during battles.
 2. Finish the first chapter and defeat its guardian, the Yarn Giant. Ordinary battles and their gear rewards resolve in the browser.
 3. Choose **Keep as Relic**, sign in with your wallet when prompted and confirm the mint on Avalanche Fuji. Open the Snowtrace link on the receipt to inspect the transaction.
+
+Returning guests with a save on the [original play address](https://taskbarhero-eight.vercel.app/) can continue there. Each hostname has its own browser save.
 
 [Watch the 58-second recording](docs/demo-v5-m2.16/demo.mp4) · [Recording walkthrough](docs/demo-v5-m2.16/index.html). This earlier run shows the battle and a labelled fixture receipt. The production mint and market receipts are linked above.
 
@@ -80,8 +82,8 @@ Combat and gear progression use bound rewards. **Spool** is a balance on the caf
 | --- | --- |
 | Drop, gacha, fusion and enhancement odds | published in [docs/ECONOMY.md](docs/ECONOMY.md), generated from the live rule table |
 | Fees | seal 13% of reference (burned); market 5% = 2% burned + 3% treasury |
-| Allocation | players 35%, team 15%, treasury 12%, investors 12%, ecosystem 10%, early testers 6%, liquidity 5%, advisors 3%, partners 2% |
-| 52-week simulation | burned / claimed **2.85×** balanced, **1.14×** at half demand; inflation capped if demand collapses ([report](docs/economy/SIM-REPORT.md)) |
+| Planned allocation | players 35%, team 15%, treasury 12%, investors 12%, ecosystem 10%, early testers 6%, liquidity 5%, advisors 3%, partners 2% |
+| 52-week simulation | burned / claimed **2.85×** balanced, **1.14×** at half demand and **0.38×** in the low-demand scenario ([report](docs/economy/SIM-REPORT.md)) |
 | Treasury | 3% of each RelicMarketV2 sale goes to treasury proceeds in the sale currency |
 
 Re-run the model with `node tools/economy/sim.mjs`.
