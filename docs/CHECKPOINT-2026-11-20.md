@@ -25,7 +25,7 @@ This note lets a new session pick up the work. Update it when the state changes.
 6. #461 boss and elite voices, boss stings, victory and defeat cues.
 7. #464 chapter intro story beat and this checkpoint. **Merged.**
 8. #466 stay on the route after a mid-route win, readable route cards, ultimate grace. **Merged** (main 4699a30 = v5-m2.17 once the owner pushes the tag).
-9. #468 a cleared route shows its summary (finds, the Ch1 Relic offer) before the café; a lost route goes back to the café; the Fight button reads "Ch 2-1 · Battle".
+9. #468 a cleared route shows its summary (finds, the Ch1 Relic offer) before the café; a lost route goes back to the café; a lost fight offers "Auto ultimates"; the Fight button reads "Ch 2-1 · Battle".
 10. #463 Codex enemy relight. Optional; merge only if its screenshots are clearly better.
 
 #455 and #458 both touch `supabase/functions/_shared/chain-campaign-manifest.ts`. After any merge that changes `packages/game-rules/src`, run `node tools/chain/campaign-manifest.mjs`. Also refresh `docs/chain/supply-study.json` hashes with `node tools/chain/supply-study.mjs`, which takes about 6 minutes; its supply numbers should stay unchanged.
@@ -60,13 +60,15 @@ A Playwright bot played the campaign on main plus #468 from an after-practice ac
 - Ch1: all stops, the Yarn Giant, the clear beat and the Ch2 intro work. Before #468 the Relic offer never showed.
 - Ch2: all stops, the Rain Spool, the clear beat and the Ch3 intro work.
 - Ch3: without upgrades the first route lost at stop 5-0, as designed. The defeat screen offers "Equip new gear · +141 Power".
+- Ch3 after Tips, Quick upgrade and Equip: with untapped ultimates (the grace rule) the Pantry Crown won twice. From the same saved state with Auto ultimates on, the crew cleared Ch3 first try, and the ending beat "The lantern stays lit" played. **The whole campaign is verified start to end in a browser.**
+- Rules sim with between-chapter upgrades, 8 seeds, Ch3 clears: auto 6, grace-1 1, grace-2 0, never casting 0. A player who taps as soon as a portrait glows matches auto. A player who never taps hits a wall at Ch3, so a lost fight now offers an "Auto ultimates" button (#468).
 - Scripts are in the session scratchpad, not the repo. `camp.cjs` drives the route with `window.__depthReview` and real buttons.
 - Battles cannot be skipped in a6 until the stop has 3 stars (`canSkip`), so a full run takes about 45 minutes at speed 1.
 
 ## Next steps
 
 1. Merge #468, then re-check the Ch1 route summary with the Relic offer on main.
-2. Confirm Ch3 and the ending after Quick upgrade and Auto-equip.
+2. Consider "tap to hold" ultimates (auto-cast by default, tap to save one for the right moment) after the contest. It keeps timing as a skill without punishing players who never tap.
 3. Add a 3-minute demo start point cut from the campaign.
 
 ## Only the owner can do these
