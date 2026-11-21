@@ -8,11 +8,13 @@ The v5-m2.14 run and walkthrough show the current build: all three designer idle
 
 The Lantern Cat Café is the last lit shop on a street tangled by abandoned tasks. Lead Mochi, Clover and Soot through a street patrol and face the Yarn Giant in a cosy browser card RPG. In the configured Avalanche mode, café memories become Relics that players can own on Fuji.
 
-**Latest integrated build:** [v5-m2.14](https://github.com/ntbaoheyhey/taskbar-hero/tree/v5-m2.14), the recording build: designer idles for Mochi, Clover and Soot, battle VFX v10, the fixed-supply YARN economy and its 52-week simulation ([ECONOMY.md](docs/ECONOMY.md)), and the live Fuji end-to-end proof. The [v5-m2.2 recording baseline](https://github.com/ntbaoheyhey/taskbar-hero/tree/v5-m2.2) remains published before the recording deadline.
+The [v5-m2.14 recording build](https://github.com/ntbaoheyhey/taskbar-hero/tree/v5-m2.14) includes designer idles for Mochi, Clover and Soot, battle VFX v10, the fixed-supply YARN economy and its 52-week simulation ([ECONOMY.md](docs/ECONOMY.md)), and the live Fuji end-to-end proof. The [v5-m2.2 recording baseline](https://github.com/ntbaoheyhey/taskbar-hero/tree/v5-m2.2) remains published before the recording deadline.
 
 ## Play in three steps
 
-Use Node 24 and pnpm 10.28.0. The local demo needs no account, wallet setup or test tokens.
+**[Play Lantern Cat Café in Chrome](https://taskbarhero-eight.vercel.app/)** · [v5-m2.18](https://github.com/ntbaoheyhey/taskbar-hero/tree/v5-m2.18)
+
+For the local demo, use Node 24 and pnpm 10.28.0. The local demo needs no account, wallet setup or test tokens.
 
 1. Clone the release branch and install its dependencies:
 
