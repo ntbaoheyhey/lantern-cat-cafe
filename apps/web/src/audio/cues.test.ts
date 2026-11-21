@@ -15,7 +15,7 @@ describe('sample cue coverage',()=>{
   for(const cat of CATS)for(const event of ['select','attack','skill','ult','hit','death','victory']){
    const samples=resolveCue(`voice.${cat}.${event}`,m)!;expect(samples.length).toBeGreaterThanOrEqual(2);
    // V10 heroes ship recorded Kokoro takes in one pack per unit (scripts/audio/v10).
-   const pack=['mochi','clover','soot'].includes(cat)?`v10-voice-${cat}`:`cat-${cat}`;
+   const pack=['mochi','clover','soot','panko'].includes(cat)?`v10-voice-${cat}`:`cat-${cat}`;
    expect(samples.every(s=>s.processedVoice&&s.pack===pack)).toBe(true);
   }
  });

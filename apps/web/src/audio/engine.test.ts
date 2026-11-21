@@ -221,21 +221,19 @@ describe('layered playback admission and variants',()=>{
   const e=new AudioEngine();await e.preloadVoices(['party-mochi']);expect(e.diagnostics.packs).toEqual([]);
   await e.unlock();await e.preloadVoices(['party-mochi']);expect(e.diagnostics.packs).toEqual(['mochi','test']);
  });
- it('packages only the selected hero voice boundary and preserves synchronous terminal playback',async()=>{
+ it('preloads a V10 hero as one voice pack and preserves synchronous terminal playback',async()=>{
   const publicRoot=resolve(import.meta.dirname,'../../public');
   const read=(path:string)=>JSON.parse(readFileSync(resolve(publicRoot,path),'utf8'));
   const manifest=read('audio/manifest.json'),delivery=read('audio/v5/manifest.json');
   const fetcher=vi.fn(async(url:string)=>url.startsWith('/audio-delivery/')?{ok:true,json:async()=>read(url.slice(1))}
    :url.endsWith('.json')?{ok:true,json:async()=>url.includes('/v5/')?delivery:manifest}:{ok:true,arrayBuffer:async()=>new ArrayBuffer(8)});
   vi.stubGlobal('fetch',fetcher);
-  const original=new AudioEngine(()=>0,'/audio/',loadV5AudioManifest);await original.unlock();await original.preloadVoices(['party-panko']);
-  const expected=original.diagnostics.packs;expect(expected).toHaveLength(11);fetcher.mockClear();
   const packed=new AudioEngine(()=>0,'/audio/',loadV5AudioManifest,new PackedAudioLoader());
   await packed.unlock();await packed.preloadVoices(['party-panko']);
-  expect(packed.diagnostics.packs).toEqual(expected);
+  expect(packed.diagnostics.packs).toEqual(['v10-voice-panko']);
   const urls=fetcher.mock.calls.map(([url])=>url);
-  expect(urls.filter(url=>url.startsWith('/audio-delivery/'))).toEqual([expect.stringMatching(/^\/audio-delivery\/voice-panko\.[a-f0-9]+\.json$/)]);
-  expect(urls.some(url=>url.endsWith('.opus')||url.endsWith('.m4a')||url.includes('mochi'))).toBe(false);
+  expect(urls.filter(url=>url.endsWith('.opus'))).toEqual(['/audio/v9/voice-v10-panko.opus']);
+  expect(urls.some(url=>url.includes('mochi'))).toBe(false);
   const requests=fetcher.mock.calls.length;packed.play('voice.panko.hit');
   expect(Context.latest.sources).toHaveLength(1);expect(Context.latest.sources[0]!.start).toHaveBeenCalledOnce();
   expect(fetcher.mock.calls).toHaveLength(requests);expect(packed.hits.at(-1)?.result).toBe('played');

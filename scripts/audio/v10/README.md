@@ -36,3 +36,7 @@ venv/bin/python preview.py /tmp/preview   # full ultimate mixdowns for review
 - `battle-v3/battle-audio.ts` plays the boss sting once when a boss battle opens and the victory/defeat sting
   (plus a surviving cat's victory line) when the field is decided.
 - Engine: death/victory lines skip the 7 s voice cadence; the cast fallback waits 1.5 s so it never talks over a name shout.
+
+## Panko (21 Nov)
+- Panko moved from grain cat-speak to 25 Kokoro takes (bm_lewis, -0.5 st), all pass the Whisper gate.
+- Panko SFX checked against Mochi/Soot/Clover: skill and ultimate layers sit at -16.5 to -17.7 LUFS like the others, so they were left as they are.

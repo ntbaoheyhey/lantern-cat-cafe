@@ -96,20 +96,29 @@ describe('V5 audio delivery',()=>{
    expect(replacements).not.toContain(`v4-ranged-${element}`);
   }
  });
+ // All delivered V5 voice heroes now ship V10 takes; the substitution rule is exercised on a legacy-shaped base.
+ const legacyVoice=(base:AudioManifest,key:string)=>{
+  const rows=read('v5/manifest.json')[key] as Array<{durationSeconds:number;variantId:string}>;
+  const cues={...base.cues,[key]:rows.map(r=>({pack:'cat-panko',start:0,duration:r.durationSeconds,bus:'voice' as const,variantId:r.variantId,processedVoice:true}))};
+  return {...base,packs:{...base.packs,'cat-panko':{opus:'/audio/cat-panko.opus'}},cues} as AudioManifest;
+ };
  it('matches every delivered voice take by identity while preserving bus, duration and processed voice treatment',()=>{
-  const base=read('manifest.json') as AudioManifest,next=applyV5Audio(base,read('v5/manifest.json'));
-  for(const hero of ['panko'])for(const phase of ['hit','death']){
-   const key=`voice.${hero}.${phase}`;
+  for(const phase of ['hit','death']){
+   const key=`voice.panko.${phase}`,base=legacyVoice(read('manifest.json') as AudioManifest,key),next=applyV5Audio(base,read('v5/manifest.json'));
    expect(next.cues[key]).toHaveLength(base.cues[key]!.length);
    base.cues[key]!.forEach((sample,index)=>{
     const after=next.cues[key]![index]!;
     expect(after).toMatchObject({duration:sample.duration,variantId:sample.variantId,bus:'voice',processedVoice:true,start:0,gainDb:0});
-    expect(after.pack).toMatch(/^v5:voice\//);expect(sample.pack).toBe(`cat-${hero}`);
+    expect(after.pack).toMatch(/^v5:voice\//);
    });
   }
  });
+ it('leaves V10 hero voice packs untouched by the V5 delivery',()=>{
+  const base=read('manifest.json') as AudioManifest,next=applyV5Audio(base,read('v5/manifest.json'));
+  for(const hero of ['mochi','clover','soot','panko'])expect(next.cues[`voice.${hero}.hit`]).toEqual(base.cues[`voice.${hero}.hit`]);
+ });
  it('keeps a missing voice variant on its original pack while using delivered peers',()=>{
-  const base=read('manifest.json') as AudioManifest,rows=read('v5/manifest.json')['voice.panko.hit'];
+  const base=legacyVoice(read('manifest.json') as AudioManifest,'voice.panko.hit'),rows=read('v5/manifest.json')['voice.panko.hit'];
   const next=applyV5Audio(base,{'voice.panko.hit':[rows[0]]});
   expect(next.cues['voice.panko.hit']![0]!.pack).toMatch(/^v5:voice\//);
   expect(next.cues['voice.panko.hit']![1]).toEqual(base.cues['voice.panko.hit']![1]);
