@@ -36,6 +36,7 @@ import { PaintedVfx } from './vfx';
 import {getV5Timeline,skillPoseTime} from '../vfx-layered/skill-timeline';
 import { cinematicBox } from './cinematics';
 import { chargeEvent } from '../depth/card-action-plan';
+import { battlePortrait } from '../depth/assets';
 import {DrawnPoses,loadDrawnPoseSet} from '../vfx-craft/drawn-poses';
 import {hasDesignerIdleBody} from './designer-idle-body';
 import {mediaClipContact} from './media-clip-contact';
@@ -585,7 +586,7 @@ export class SpineScene {
   const bannerActor=plan?.ultimate?view.actors.find(a=>a.id===plan.actorId):undefined,bannerEntry=bannerActor?this.actors.get(bannerActor.id):undefined;
   this.cinema.render(ultLive?null:frame,view.paused,view.playbackSpeed??1,view.reducedMotion,view.fixedTime!==undefined,view.battleKey,
    !view.formationC2&&plan?.ultimate&&bannerEntry?this.focusBanner.place(plan,this.bounds(bannerEntry),width,height,this.cinematicRects):undefined,
-   view.formationC2&&bannerActor&&bannerEntry?{id:bannerActor.id,name:bannerActor.name,portrait:`/units/${bannerEntry.asset}/portrait.webp`,anchors:this.anchors}:undefined);
+   view.formationC2&&bannerActor&&bannerEntry?{id:bannerActor.id,name:bannerActor.name,portrait:battlePortrait(bannerEntry.asset,bannerActor.side),anchors:this.anchors}:undefined);
   this.bossPhase.render(view,time,width,height,id=>{const entry=this.actors.get(id);return entry?this.bounds(entry):undefined;});
   this.renderHitLights(time,width,height,view);
   this.audio.render(view);
