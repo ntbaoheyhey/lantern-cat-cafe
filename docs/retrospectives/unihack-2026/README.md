@@ -2,6 +2,8 @@
 
 **23/11/2026 · Vòng chọn Top 10 · Bản game dự thi `v5-m2.18`.** Đội xác nhận đã nộp đúng. Team1 công bố mười dự án vào chung kết, trong đó không có Lantern Cat Café. Ngày 30/11 là ngày thi chung kết của mười đội đó. Hậu kiểm này đánh giá những gì một người ngoài có thể thấy ở sản phẩm. Động cơ của từng giám khảo, điểm của đội và điểm cắt vẫn là dữ liệu chưa có. [Thông báo chính thức của Team1](https://x.com/Team1VN/status/2124850456241348847) · [Lịch chung kết](https://luma.com/dar03gfl) · [Bản phát hành](https://github.com/ntbaoheyhey/lantern-cat-cafe/tree/v5-m2.18)
 
+Để chấm lại độc lập, xem [phương pháp chấm dự án theo các khung quốc tế](PHUONG-PHAP-CHAM.md). Tài liệu có tiêu chí riêng cho coding, kiến trúc, tiến trình phát hành và giá trị của công sức đã bỏ ra.
+
 ## Kết luận của mình
 
 **Bạn nhìn đúng một vấn đề thị giác.** Khi Mochi dựng khiên, người xem thấy vòm vàng, tên chiêu và lượng khiên rất rõ. Khó thấy hơn là khoảnh khắc chính con mèo ghì chân, chịu lực rồi đẩy khiên. Game thật sự di chuyển nhân vật. Cách dựng khiến phần lớn thay đổi dễ nhìn nhất nằm ở các lớp bao quanh cơ thể. Thêm một vòng hiệu ứng hoặc làm bộ lông chi tiết hơn sẽ ít tác động tới cảm giác này. [Sáu khung của Mochi](figures/02-mochi.jpg)
