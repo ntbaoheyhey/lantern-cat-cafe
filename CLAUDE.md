@@ -10,4 +10,6 @@ From a 7-day audit of session logs (script: `token-audit.mjs`).
 
 For a fresh score, start with the [scoring method and independent reviewer worksheet](docs/retrospectives/unihack-2026/PHUONG-PHAP-CHAM.md). It records the international references, Team1's published weights and how to handle missing evidence.
 
+After recording your own ratings, compare them with [Codex's completed scorecard](docs/retrospectives/unihack-2026/DIEM-HAU-KIEM.md). The scorecard distinguishes release behavior, team process and the pitch estimate.
+
 For the team's competition review, start with the [Vietnamese postmortem](docs/retrospectives/unihack-2026/README.md). It includes three visual comparisons from the published game and its Git history. The [GitHub and architecture review](docs/retrospectives/unihack-2026/GITHUB.md) covers all remote branches and includes the release-specific findings. The [evidence ledger](docs/retrospectives/unihack-2026/EVIDENCE.md) identifies the contest tag, records the read-only checks and gives three questions for Claude's second review.

@@ -6,6 +6,8 @@
 
 ## Kết luận của mình
 
+**Điểm hậu kiểm.** Năm hạng mục có bằng chứng cho 61/90 điểm. Nếu dùng bản dựng trailer trong Git làm đại diện cho pitch, tổng ước lượng là 67/100. [Phiếu điểm cho bản dự thi, coding và tiến trình](DIEM-HAU-KIEM.md)
+
 **Bạn nhìn đúng một vấn đề thị giác.** Khi Mochi dựng khiên, người xem thấy vòm vàng, tên chiêu và lượng khiên rất rõ. Khó thấy hơn là khoảnh khắc chính con mèo ghì chân, chịu lực rồi đẩy khiên. Game thật sự di chuyển nhân vật. Cách dựng khiến phần lớn thay đổi dễ nhìn nhất nằm ở các lớp bao quanh cơ thể. Thêm một vòng hiệu ứng hoặc làm bộ lông chi tiết hơn sẽ ít tác động tới cảm giác này. [Sáu khung của Mochi](figures/02-mochi.jpg)
 
 **Giả thuyết có sức giải thích tốt nhất cho kết quả vòng loại là khoảng cách giữa điều đội làm được và điều người lạ nhận ra.** Người chơi phải hiểu trong thời gian ngắn rằng quyết định của mình có ý nghĩa, rằng phần thưởng đáng giữ và rằng Avalanche giúp họ làm được một việc có giá trị. Bản công khai cho bằng chứng thuyết phục về vế cuối ở mức kỹ thuật. Bằng chứng về hai vế đầu mỏng hơn. Độ cứng của trận đánh ảnh hưởng trực tiếp tới niềm tin vào *phần thưởng của trận đó*. Cộng cả hai vấn đề lại có sức giải thích lớn hơn việc quy kết mọi chuyện cho chất lượng tranh. [Hướng dẫn chơi và receipt công khai](https://github.com/ntbaoheyhey/lantern-cat-cafe/blob/f9ad06462/README.md) · [Phạm vi nghiên cứu của đội](../../design/cardrpg/RESEARCH.md)
