@@ -82,3 +82,7 @@ node "$review/inspect_source.cjs" "$audit_out/blob-inventory.jsonl.gz" "$audit_o
 ## Lặp lại phép kiểm thông báo sở hữu
 
 Đặt file [ownership-probe.tsx](ownership-probe.tsx) vào thư mục tạm dưới tên `case.test.tsx`. Thư mục tạm dùng liên kết `src` đến `apps/web/src` và `node_modules` đến `apps/web/node_modules` của checkout đã cài đúng tag. Chạy Vitest trong JSDOM. Phép thử chỉ giả lập nguồn đăng nhập, backend và ví. Component thưởng và hàm xử lý voucher là mã dự thi. Kết quả của hậu kiểm là **1/1 tái hiện được thông báo sai trạng thái sở hữu**, không có yêu cầu giao dịch hoặc chữ ký mới. [Hành vi client](https://github.com/ntbaoheyhey/lantern-cat-cafe/blob/v5-m2.18/apps/web/src/game/cardrpg/chain/journey-client.ts)
+
+## Sau khi dọn máy
+
+Kiểm kê ghi đúng các đầu nhánh tại thời điểm hậu kiểm. Các đối tượng từng chỉ tồn tại local có thể không có trên clone mới từ GitHub. Bản tag thi và các commit công khai được dẫn trong báo cáo vẫn là nguồn dùng để đối chiếu. Gói source bổ sung của đợt đóng dự án giữ riêng các biến thể mã văn bản tìm thấy ngoài lịch sử công khai; chúng chưa được chứng nhận là một bản game có thể build.

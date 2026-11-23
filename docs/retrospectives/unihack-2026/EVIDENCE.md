@@ -88,13 +88,8 @@ cast call "$nft" 'balanceOf(address,uint256)(uint256)' 0xf7bf4c3edBdC83017534059
 2. Trong bằng chứng đúng phiên bản, có người ngoài nhóm nào tự chơi lại hoặc tự tặng vật phẩm không? Nếu có, ghi mẫu số, cách tuyển người, mốc ngày và phân biệt với tài khoản test.
 3. Có phản hồi trực tiếp từ Team1 thay đổi thứ tự giả thuyết không? Nếu có thì ưu tiên phản hồi đó. Đặc biệt cần làm rõ phạm vi quy tắc phần thưởng ngẫu nhiên, điểm sáng tạo và giá trị thực tế mà giám khảo nhìn thấy.
 
-## Bàn giao cục bộ và lần đọc của Claude
+## Bàn giao cho Claude
 
-Báo cáo được đặt trong repo `ntbaoheyhey/lantern-cat-cafe`. Tệp `CLAUDE.md` ở gốc dẫn tới bản chính, bản rà GitHub và sổ này. Nhánh Git cục bộ `codex/unihack-2026-retrospective` lưu cả dữ liệu kiểm kê cùng một commit dựa trên main công bố. Claude có thể mở nhánh này từ một worktree khác của cùng clone bằng lệnh chỉ đọc dưới đây.
+[Báo cáo kết thúc](KET-DU-AN.md) và [phiếu chấm](DIEM-HAU-KIEM.md) nằm trong nhánh GitHub `codex/unihack-2026-retrospective` của repo Lantern Cat Café. Skill có thư mục riêng dưới `.agents/skills/`. File `CLAUDE.md` dẫn tới báo cáo để Claude tìm được trong lần đọc sau.
 
-~~~sh
-git show codex/unihack-2026-retrospective:docs/retrospectives/unihack-2026/README.md
-git show codex/unihack-2026-retrospective:docs/retrospectives/unihack-2026/GITHUB.md
-~~~
-
-Ngày 23/11, Codex đã yêu cầu Claude Code đọc bản chính và ảnh Mochi bằng CLI. Claude Code trả về giới hạn tuần, hẹn mở lại vào **23:00 ngày 26/11 theo giờ Việt Nam**. Vì vậy trạng thái bàn giao là **đã lưu và đã chỉ đường, chưa có xác nhận Claude đọc hoặc phản biện**. Gói ZIP dành cho Claude chứa các báo cáo, toàn bộ chỉ mục, ba bảng hình, clip phân tích và các tệp dự án được dẫn trực tiếp. Bộ dữ liệu và nhận xét hậu kiểm được lưu cục bộ.
+Trong lần yêu cầu đọc ban đầu ngày 23/11, Claude Code trả về giới hạn tuần. Trạng thái nhận hoặc phản biện sau lần bàn giao được xác nhận riêng qua kênh gửi. Một thông báo hoặc một đường dẫn công khai chỉ chứng minh đã bàn giao tài liệu; kết quả đánh giá độc lập cần phản hồi của Claude.
