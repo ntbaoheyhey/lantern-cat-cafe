@@ -1,5 +1,7 @@
 # Lantern Cat Café · Báo cáo kết thúc UniHack
 
+Phần phân tích Mochi dưới đây là một ca riêng. [Hậu kiểm mỹ thuật toàn game](TOAN-CANH-HINH-ANH.md) đánh giá cả 25 nhân vật, bối cảnh ba chương, hoạt họa, UI, vật phẩm và hình giới thiệu. [Prompt đầy đủ cho Claude](PROMPT-CLAUDE.md)
+
 Ngày 23/11/2026. Bản game dự thi là [v5-m2.18](https://github.com/ntbaoheyhey/lantern-cat-cafe/tree/v5-m2.18). Team xác nhận đã nộp đúng. [Team1 công bố mười finalist](https://x.com/Team1VN/status/2124850456241348847). Điểm riêng của team, điểm cắt và nhận xét trực tiếp của giám khảo còn thiếu.
 
 **Điều đáng giữ là khả năng chứng minh hệ thống đã chạy thật. Điều đáng đổi trong cách làm là thứ tự kiểm chứng.** Team chứng minh được hai ví trao đổi Moon Collar. Hồ sơ còn ít bằng chứng về việc một người chơi ngoài team chủ động muốn giữ hoặc tặng chiếc vòng. Phần art cho một bài học tương tự: bản chuyển từ ảnh sang 3D đã tạo được khối có thể xoay, còn việc Mochi có thể dùng khiên một cách thuyết phục cần một phép thử riêng.

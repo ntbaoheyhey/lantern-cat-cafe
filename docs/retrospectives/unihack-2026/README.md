@@ -1,5 +1,7 @@
 # Lantern Cat Café · Hậu kiểm UniHack 2026
 
+Bản bổ sung ngày 24/11/2026 có [đánh giá toàn bộ phần hình ảnh](TOAN-CANH-HINH-ANH.md), [dữ liệu kiểm theo nhân vật](pham-vi-hinh-anh.json) và [prompt cho lượt đánh giá thứ hai](PROMPT-CLAUDE.md).
+
 **Bản bàn giao** · [Báo cáo kết thúc và hai skill tái sử dụng](KET-DU-AN.md)
 
 

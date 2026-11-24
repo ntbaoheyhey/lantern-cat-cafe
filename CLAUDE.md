@@ -8,6 +8,8 @@ From a 7-day audit of session logs (script: `token-audit.mjs`).
 
 ## Lantern Cat Café · UniHack 2026 retrospective
 
+For the second independent review, use the [full-project brief](docs/retrospectives/unihack-2026/PROMPT-CLAUDE.md). Record your own observations at the contest tag before comparing with the [whole-game visual audit](docs/retrospectives/unihack-2026/TOAN-CANH-HINH-ANH.md), including the full cast, arenas, interface, effects and items.
+
 Read the [closeout and character-production findings](docs/retrospectives/unihack-2026/KET-DU-AN.md). Reusable skills are available for [character concept-to-animation review](.agents/skills/duyet-concept-cho-hoat-hoa/SKILL.md) and [evidence-based hackathon retrospectives](.agents/skills/hau-kiem-hackathon-theo-bang-chung/SKILL.md).
 
 For a fresh score, start with the [scoring method and independent reviewer worksheet](docs/retrospectives/unihack-2026/PHUONG-PHAP-CHAM.md). It records the international references, Team1's published weights and how to handle missing evidence.
