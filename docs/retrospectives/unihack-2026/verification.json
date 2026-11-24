@@ -1,0 +1,531 @@
+{
+  "date_local": "2026-11-23",
+  "project": "Lantern Cat Café",
+  "repository": "https://github.com/ntbaoheyhey/lantern-cat-cafe",
+  "git": {
+    "contestTag": "v5-m2.18",
+    "contestCommit": "e8abba9728e842311b4faecc07117bf6b079dce9",
+    "publicGuideCommit": "f9ad06462c8024bcbf7b359f111916b3bd720e53",
+    "recordingLabel": "v5-m2.16",
+    "recordingLabelCommit": "f69f17b62a65bc2c2909b2471c0321c234c1b22a",
+    "trailerEditCommit": "0b576bdfc618e2d898639c41b08f77a56c112da9",
+    "localTestCommit": "e9c57cb0402dc260dcf8c53fc46bb240fb29e114",
+    "localTestDifferenceFromGuide": [
+      "apps/web/src/game/cardrpg/battle-v3/BattleHud.tsx",
+      "apps/web/src/game/cardrpg/depth/assets.ts",
+      "apps/web/src/game/cardrpg/spine/scene.ts",
+      "tools/v5int/v9-demo-smoke.mjs"
+    ],
+    "publicGuideTrackedPaths": 13529,
+    "publicGuideReachableCommits": 3215,
+    "publicGuideFirstParentCommits": 266,
+    "firstParentNov20And21ICT": 20,
+    "method": "Counts refer to paths and Git commits at publicGuideCommit, not effort, persons, API spend or independent evidence."
+  },
+  "contest": {
+    "officialShortlist": "https://x.com/Team1VN/status/2124850456241348847",
+    "namesInPublishedOrder": [
+      "AgentPay",
+      "Agrichain",
+      "Commitment Stake",
+      "ExNihilo",
+      "FACET",
+      "FleetShares",
+      "HomestayDorm",
+      "Payvoke",
+      "Prova",
+      "Unipass"
+    ],
+    "officialFaq": "https://team1vn.xyz/",
+    "ideasData": "https://team1vn.xyz/topics.json",
+    "ideasDataGeneratedUTC": "2026-11-23T11:08:28.617Z",
+    "ideasDataSha256AtReview": "722cd37d2be463b15e1a6e2bd79e3ed88f98232bb6c2accb6460b5f7a7f1cc56",
+    "rubricMaxima": {
+      "technical": 25,
+      "avalanche": 25,
+      "creativity": 15,
+      "impact": 15,
+      "pitch": 10,
+      "uxDemo": 10
+    },
+    "teamConfirmedCorrectSubmission": true,
+    "teamScore": null,
+    "cutoffScore": null,
+    "judgeComments": null
+  },
+  "visualSample": {
+    "source": "docs/demo-v5-m2.16/demo.mp4",
+    "sha256": "2db3198813715ce3db8dc502c411bdf5edc2086a9a2be36c491c79f1a251d4d4",
+    "video": [
+      {
+        "index": 0,
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1280,
+        "height": 720,
+        "r_frame_rate": "30/1",
+        "duration": "57.933333"
+      }
+    ],
+    "sourceScope": "Project capture of the short route, stepped page time and muted. Receipt is labelled fixture. Not a recording of judges.",
+    "framesFromZero": [
+      960,
+      981,
+      1002,
+      1011,
+      1020,
+      1038
+    ],
+    "seconds": [
+      32,
+      32.7,
+      33.4,
+      33.7,
+      34,
+      34.6
+    ],
+    "designerVideoGitBlobByRef": {
+      "v5-m2.16": "33eb37c89478b7e5d2e8a66f36f0dfcf0077c732",
+      "v5-m2.18": "33eb37c89478b7e5d2e8a66f36f0dfcf0077c732",
+      "f9ad06462c8024bcbf7b359f111916b3bd720e53": "33eb37c89478b7e5d2e8a66f36f0dfcf0077c732"
+    },
+    "artboardsSha256": {
+      "01-giao-dien.jpg": "0396c038f92e123b747d4b1c57578055a1d3d9c6b66a7b2726067bfd6f465670",
+      "02-mochi.jpg": "f540a9169422dfdc672f45532974169206e7cf2566445957d5c802aca6f8aa71",
+      "03-mochi-qua-cac-man.jpg": "6b96c8feba9dfdbed5f43513f11b9891c293dbb22e24add702938a14431d4ff7"
+    },
+    "portraitComparison": {
+      "before": "87f1a9c0001ba7fb5bd13e71bdec874ed8cf9cf0",
+      "after": "e5b47f246",
+      "sourcePaths": [
+        "assets/cardrpg-a6/illustrations/mochi.webp",
+        "apps/web/public/units/mochi/portrait.webp",
+        "assets/cardrpg3/portraits/mochi.webp",
+        "apps/web/public/units/mochi/designer/poster.webp"
+      ]
+    }
+  },
+  "webChecks": {
+    "date": "2026-11-23",
+    "method": "HTTP GET without login, no browser control",
+    "gameUrl": "https://lantern-cat-cafe.vercel.app/",
+    "httpStatus": 200,
+    "entryAsset": "/assets/index-CmZ2xbKb.js",
+    "publicGuidePR": "https://github.com/ntbaoheyhey/lantern-cat-cafe/pull/472",
+    "prCI": "https://github.com/ntbaoheyhey/lantern-cat-cafe/actions/runs/44913116333",
+    "prHead": "7131cc799c027bd1970e195f455f5d758f716e77",
+    "prResults": {
+      "changes": "success",
+      "node": "success",
+      "e2e": "success",
+      "chain-e2e": "success",
+      "contracts": "skipped"
+    }
+  },
+  "localTests": {
+    "web": {
+      "files": 5,
+      "pass": 46,
+      "rawSummary": "Tests  46 passed (46)"
+    },
+    "edge": {
+      "files": 2,
+      "pass": 14,
+      "rawSummary": "Tests  14 passed (14)"
+    },
+    "contracts": {
+      "suites": 14,
+      "pass": 128,
+      "rawSummary": "Ran 14 test suites in 9.29s (13.81s CPU time): 128 tests passed, 0 failed, 0 skipped (128 total tests)"
+    },
+    "scope": "Targeted web and Edge suites, complete Foundry suite. Historical CI separate. No live write or wallet signature."
+  },
+  "fuji": {
+    "asOf": "2026-11-23T14:54:26.711Z",
+    "rpc": "https://api.avax-test.network/ext/bc/C/rpc",
+    "network": 43113,
+    "checks": {
+      "RelicMarket": {
+        "address": "0x10fcC46e439d3E31Fb1720B337C45CadB9b2ff93",
+        "bytes": 7713
+      },
+      "RelicNFT": {
+        "address": "0xB1a1edb7A75Db6e7067E747ddee32B39c2296f2D",
+        "bytes": 14200
+      },
+      "YarnToken": {
+        "address": "0x3ae1b898c1Ded263b30D968D26Fe65211f102d6b",
+        "bytes": 8352
+      },
+      "RelicMarketV2": {
+        "address": "0x6Fe415494D791E63d87613B8FBCdbb24743C7eb4",
+        "bytes": 11477
+      },
+      "SeasonRewards": {
+        "address": "0x29d4F1b9d4577BF2bA5c6bdB849CA5fdc9bd6c11",
+        "bytes": 10585
+      }
+    },
+    "transactions": [
+      {
+        "action": "hosted-campaign-mint",
+        "hash": "0x566fe1355cad0c4b71dcab6daa8c0f23fe94282e7f601d2f16700800ddf47c56",
+        "status": "success",
+        "block": "61409492",
+        "utc": "2026-11-21T04:29:29.000Z",
+        "from": "0x551eb290db76b60e9e7404b7aa515788f439ba6f",
+        "to": "0xb1a1edb7a75db6e7067e747ddee32b39c2296f2d",
+        "events": [
+          {
+            "contract": "0xb1a1edb7a75db6e7067e747ddee32b39c2296f2d",
+            "name": "RelicForged",
+            "args": {
+              "player": "0x551eB290dB76b60E9E7404B7aA515788f439bA6F",
+              "relicId": "3",
+              "rarity": 2,
+              "nonce": "26799263118735073167838386174618992803380025833608139629814375232209942188963"
+            }
+          },
+          {
+            "contract": "0xb1a1edb7a75db6e7067e747ddee32b39c2296f2d",
+            "name": "TransferSingle",
+            "args": {
+              "operator": "0x551eB290dB76b60E9E7404B7aA515788f439bA6F",
+              "from": "0x0000000000000000000000000000000000000000",
+              "to": "0x551eB290dB76b60E9E7404B7aA515788f439bA6F",
+              "id": "3",
+              "value": "1"
+            }
+          }
+        ]
+      },
+      {
+        "action": "Café gas (guest-drip)",
+        "hash": "0x01a25bac1ff843f530810abd76bca8a78cbccdb95f0af3ab8ec4f6b43aecf1c2",
+        "status": "success",
+        "block": "61406019",
+        "utc": "2026-11-21T02:38:42.000Z",
+        "from": "0x5ec838eccc4ec6b6707b6479394e9e6ceea0b000",
+        "to": "0x46f4bf236ed633762e8b045dcc7243e5ea014a6b",
+        "events": []
+      },
+      {
+        "action": "RelicNFT.mint",
+        "hash": "0x229595d646a870f1c832e20afa671af819d04ea49590d868f190cad57898ff15",
+        "status": "success",
+        "block": "61406021",
+        "utc": "2026-11-21T02:38:47.000Z",
+        "from": "0x46f4bf236ed633762e8b045dcc7243e5ea014a6b",
+        "to": "0xb1a1edb7a75db6e7067e747ddee32b39c2296f2d",
+        "events": [
+          {
+            "contract": "0xb1a1edb7a75db6e7067e747ddee32b39c2296f2d",
+            "name": "RelicForged",
+            "args": {
+              "player": "0x46F4bf236Ed633762e8b045dcc7243e5Ea014A6B",
+              "relicId": "3",
+              "rarity": 2,
+              "nonce": "53233709245426994098489507775624690500137926273415163283341242322208743880561"
+            }
+          },
+          {
+            "contract": "0xb1a1edb7a75db6e7067e747ddee32b39c2296f2d",
+            "name": "TransferSingle",
+            "args": {
+              "operator": "0x46F4bf236Ed633762e8b045dcc7243e5Ea014A6B",
+              "from": "0x0000000000000000000000000000000000000000",
+              "to": "0x46F4bf236Ed633762e8b045dcc7243e5Ea014A6B",
+              "id": "3",
+              "value": "1"
+            }
+          }
+        ]
+      },
+      {
+        "action": "RelicNFT.setApprovalForAll",
+        "hash": "0x90978a85ca822de56d73225aab089e109c558cd9c8bdcf8197797f8b86488962",
+        "status": "success",
+        "block": "61406024",
+        "utc": "2026-11-21T02:38:50.000Z",
+        "from": "0x46f4bf236ed633762e8b045dcc7243e5ea014a6b",
+        "to": "0xb1a1edb7a75db6e7067e747ddee32b39c2296f2d",
+        "events": []
+      },
+      {
+        "action": "RelicMarketV2.list",
+        "hash": "0xf29d14fa20b80ed2a7bd0675d398b7f96ce89a33d28637a537ca109863815396",
+        "status": "success",
+        "block": "61406027",
+        "utc": "2026-11-21T02:38:55.000Z",
+        "from": "0x46f4bf236ed633762e8b045dcc7243e5ea014a6b",
+        "to": "0x6fe415494d791e63d87613b8fbcdbb24743c7eb4",
+        "events": [
+          {
+            "contract": "0x6fe415494d791e63d87613b8fbcdbb24743c7eb4",
+            "name": "Listed",
+            "args": {
+              "listingId": "6",
+              "seller": "0x46F4bf236Ed633762e8b045dcc7243e5Ea014A6B",
+              "relicId": "3",
+              "amount": "1",
+              "price": "1000000000000000",
+              "currency": 0
+            }
+          },
+          {
+            "contract": "0xb1a1edb7a75db6e7067e747ddee32b39c2296f2d",
+            "name": "TransferSingle",
+            "args": {
+              "operator": "0x6Fe415494D791E63d87613B8FBCdbb24743C7eb4",
+              "from": "0x46F4bf236Ed633762e8b045dcc7243e5Ea014A6B",
+              "to": "0x6Fe415494D791E63d87613B8FBCdbb24743C7eb4",
+              "id": "3",
+              "value": "1"
+            }
+          }
+        ]
+      },
+      {
+        "action": "Seller funds buyer gas",
+        "hash": "0xeebbec09df3e344a87040909f739459d7ed1409cb3673be41fbcce015906bef8",
+        "status": "success",
+        "block": "61406029",
+        "utc": "2026-11-21T02:39:00.000Z",
+        "from": "0x46f4bf236ed633762e8b045dcc7243e5ea014a6b",
+        "to": "0xf7bf4c3edbdc83017534059acec12891cee766fb",
+        "events": []
+      },
+      {
+        "action": "RelicMarketV2.buy",
+        "hash": "0x119b1df911379c7cf3dda5029c4a8158c25cc22d22d8fca647bb404533a6a455",
+        "status": "success",
+        "block": "61406035",
+        "utc": "2026-11-21T02:39:06.000Z",
+        "from": "0xf7bf4c3edbdc83017534059acec12891cee766fb",
+        "to": "0x6fe415494d791e63d87613b8fbcdbb24743c7eb4",
+        "events": [
+          {
+            "contract": "0x6fe415494d791e63d87613b8fbcdbb24743c7eb4",
+            "name": "Bought",
+            "args": {
+              "listingId": "6",
+              "buyer": "0xf7bf4c3edBdC83017534059aCEC12891CEe766FB",
+              "seller": "0x46F4bf236Ed633762e8b045dcc7243e5Ea014A6B",
+              "relicId": "3",
+              "amount": "1",
+              "price": "1000000000000000",
+              "currency": 0,
+              "fee": "50000000000000",
+              "burned": "20000000000000"
+            }
+          },
+          {
+            "contract": "0xb1a1edb7a75db6e7067e747ddee32b39c2296f2d",
+            "name": "TransferSingle",
+            "args": {
+              "operator": "0x6Fe415494D791E63d87613B8FBCdbb24743C7eb4",
+              "from": "0x6Fe415494D791E63d87613B8FBCdbb24743C7eb4",
+              "to": "0xf7bf4c3edBdC83017534059aCEC12891CEe766FB",
+              "id": "3",
+              "value": "1"
+            }
+          }
+        ]
+      },
+      {
+        "action": "RelicMarketV2.withdraw",
+        "hash": "0xa92dc46a1f353db779de9b5080f6dc4b18cdf17c3965b26866be1952d28dcf0c",
+        "status": "success",
+        "block": "61406037",
+        "utc": "2026-11-21T02:39:10.000Z",
+        "from": "0x46f4bf236ed633762e8b045dcc7243e5ea014a6b",
+        "to": "0x6fe415494d791e63d87613b8fbcdbb24743c7eb4",
+        "events": [
+          {
+            "contract": "0x6fe415494d791e63d87613b8fbcdbb24743c7eb4",
+            "name": "Withdrawn",
+            "args": {
+              "owner": "0x46F4bf236Ed633762e8b045dcc7243e5Ea014A6B",
+              "recipient": "0x46F4bf236Ed633762e8b045dcc7243e5Ea014A6B",
+              "currency": 0,
+              "amount": "950000000000000"
+            }
+          }
+        ]
+      }
+    ],
+    "readAtBlock": "61522512",
+    "marketV2Read": {
+      "nft": "0xB1a1edb7A75Db6e7067E747ddee32B39c2296f2D",
+      "yarn": "0x3ae1b898c1Ded263b30D968D26Fe65211f102d6b"
+    },
+    "ownership": {
+      "atBlock": "61406037",
+      "seller": "0",
+      "buyer": "1"
+    }
+  },
+  "economy": {
+    "policy": "burn-backed",
+    "weeks": 52,
+    "startAccounts": 1000,
+    "newAccountsPerWeek": 150,
+    "scenarioResults": [
+      {
+        "scenario": "balanced",
+        "policy": "burn-backed",
+        "burnPerClaim": 2.848,
+        "withdrawFill": 0.933,
+        "gates": {
+          "burn>=claims": true,
+          "fairness": true,
+          "item-sink": true,
+          "progress": true,
+          "rewards-flow": true
+        }
+      },
+      {
+        "scenario": "casual-heavy",
+        "policy": "burn-backed",
+        "burnPerClaim": 2.293,
+        "withdrawFill": 0.869,
+        "gates": {
+          "burn>=claims": true,
+          "fairness": true,
+          "item-sink": true,
+          "progress": true,
+          "rewards-flow": true
+        }
+      },
+      {
+        "scenario": "farmer-heavy",
+        "policy": "burn-backed",
+        "burnPerClaim": 2.386,
+        "withdrawFill": 0.928,
+        "gates": {
+          "burn>=claims": true,
+          "fairness": true,
+          "item-sink": true,
+          "progress": true,
+          "rewards-flow": true
+        }
+      },
+      {
+        "scenario": "half-demand",
+        "policy": "burn-backed",
+        "burnPerClaim": 1.137,
+        "withdrawFill": 0.521,
+        "gates": {
+          "burn>=claims": true,
+          "fairness": true,
+          "item-sink": true,
+          "progress": true,
+          "rewards-flow": true
+        }
+      },
+      {
+        "scenario": "low-demand",
+        "policy": "burn-backed",
+        "burnPerClaim": 0.378,
+        "withdrawFill": 0.131,
+        "gates": {
+          "burn>=claims": false,
+          "fairness": true,
+          "item-sink": true,
+          "progress": true,
+          "rewards-flow": false
+        }
+      },
+      {
+        "scenario": "half-bots",
+        "policy": "burn-backed",
+        "burnPerClaim": 1.312,
+        "withdrawFill": 0.592,
+        "gates": {
+          "burn>=claims": true,
+          "fairness": true,
+          "item-sink": true,
+          "progress": true,
+          "rewards-flow": true
+        }
+      }
+    ],
+    "scope": "Deterministic model of assumptions, not real users, demand or earnings."
+  },
+  "inventory": "inventory/summary.json",
+  "isolatedContestTag": {
+    "commit": "e8abba9728e842311b4faecc07117bf6b079dce9",
+    "node": "24.22.2",
+    "pnpm": "10.28.0",
+    "install": "pnpm install --offline --frozen-lockfile (exit 0)",
+    "commands": {
+      "typecheck": {
+        "exit": 0,
+        "seconds": 19.4
+      },
+      "lint": {
+        "exit": 0,
+        "seconds": 16.4
+      },
+      "build": {
+        "exit": 0,
+        "seconds": 21.6
+      },
+      "test": {
+        "exit": 0,
+        "seconds": 177.6,
+        "endedUtc": "2026-11-23T15:25:51.798574+00:00"
+      }
+    },
+    "unitTestPackages": {
+      "root node:test": {
+        "pass": 77,
+        "skip": 0,
+        "expectedFail": 0
+      },
+      "auth": {
+        "pass": 26,
+        "skip": 0,
+        "expectedFail": 0
+      },
+      "chain": {
+        "pass": 32,
+        "skip": 0,
+        "expectedFail": 0
+      },
+      "game-rules": {
+        "pass": 1420,
+        "skip": 11,
+        "expectedFail": 2
+      },
+      "supabase-tests": {
+        "pass": 742,
+        "skip": 0,
+        "expectedFail": 0
+      },
+      "api-contract": {
+        "pass": 16,
+        "skip": 0,
+        "expectedFail": 0
+      },
+      "web": {
+        "pass": 3302,
+        "skip": 0,
+        "expectedFail": 0
+      }
+    },
+    "workspaceTests": {
+      "pass": 5615,
+      "skip": 11,
+      "expectedFail": 2
+    },
+    "foundry": {
+      "suites": 14,
+      "pass": 128,
+      "fail": 0,
+      "skip": 0
+    },
+    "additionalFunctionalProbe": "JSDOM, real JudgeRewardV9 and journeyClient, mocked I/O, 1/1 reproduced prior-voucher ownership message",
+    "publicCIAndBrowser": "CI from GitHub PR 472 is reported separately; no manual screen control or new browser E2E run for this release reproduction."
+  }
+}
